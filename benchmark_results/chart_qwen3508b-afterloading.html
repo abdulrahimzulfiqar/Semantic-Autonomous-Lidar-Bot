@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PI Performance Chart - qwen3508b-afterloading</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 30px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #1e293b;
+        }
+        .subtitle {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .card-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .card {
+            flex: 1;
+            padding: 15px 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .card-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+            margin-bottom: 5px;
+        }
+        .card-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0f172a;
+        }
+        .chart-box {
+            position: relative;
+            height: 450px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PI Telemetry Report</h1>
+        <div class="subtitle">Session Name: <strong>qwen3508b-afterloading</strong> | Generated: 2026-07-09 20:56:22</div>
+        
+        <div class="card-row">
+            <div class="card">
+                <div class="card-title">Max Temp</div>
+                <div class="card-value">64.3 °C</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Min Temp</div>
+                <div class="card-value">43.8 °C</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Max RAM Used</div>
+                <div class="card-value">1628.4 MB</div>
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['20:53:15', '20:53:17', '20:53:19', '20:53:21', '20:53:23', '20:53:25', '20:53:27', '20:53:29', '20:53:31', '20:53:33', '20:53:35', '20:53:37', '20:53:39', '20:53:41', '20:53:43', '20:53:45', '20:53:47', '20:53:49', '20:53:51', '20:53:53', '20:53:55', '20:53:58', '20:54:00', '20:54:02', '20:54:04', '20:54:06', '20:54:08', '20:54:10', '20:54:12', '20:54:14', '20:54:16', '20:54:18', '20:54:20', '20:54:22', '20:54:24', '20:54:26', '20:54:28', '20:54:30', '20:54:32', '20:54:34', '20:54:36', '20:54:38', '20:54:40', '20:54:42', '20:54:44', '20:54:46', '20:54:48', '20:54:50', '20:54:52', '20:54:54', '20:54:56', '20:54:58', '20:55:00', '20:55:02', '20:55:04', '20:55:06', '20:55:08', '20:55:10', '20:55:12', '20:55:14', '20:55:16', '20:55:18', '20:55:20', '20:55:22', '20:55:24', '20:55:26', '20:55:28', '20:55:30', '20:55:32', '20:55:34', '20:55:36', '20:55:38', '20:55:40', '20:55:42', '20:55:44', '20:55:46', '20:55:48', '20:55:50', '20:55:52', '20:55:54', '20:55:56', '20:55:58', '20:56:00', '20:56:02', '20:56:04', '20:56:06', '20:56:08', '20:56:10', '20:56:12', '20:56:14', '20:56:16', '20:56:18', '20:56:20'],
+                datasets: [
+                    {
+                        label: 'CPU Temperature (°C)',
+                        data: [45.28, 45.28, 43.82, 45.28, 45.28, 43.82, 44.79, 43.82, 45.28, 44.3, 44.79, 45.76, 50.63, 51.12, 53.56, 54.53, 54.53, 55.02, 55.02, 57.45, 56.97, 56.97, 55.99, 57.94, 57.94, 57.94, 59.4, 59.4, 59.89, 58.43, 59.4, 59.4, 60.37, 60.37, 59.4, 59.4, 59.89, 61.84, 60.86, 59.89, 60.37, 61.35, 60.37, 61.84, 61.84, 61.35, 61.84, 62.81, 61.35, 62.32, 62.32, 62.32, 62.81, 60.86, 61.35, 62.32, 62.32, 62.32, 61.35, 62.32, 61.84, 63.3, 61.84, 61.84, 63.3, 62.81, 63.3, 62.81, 63.3, 62.81, 63.3, 62.81, 63.3, 62.32, 63.3, 63.3, 64.27, 63.3, 62.81, 63.3, 62.81, 63.3, 63.78, 61.35, 57.94, 55.5, 55.02, 53.07, 52.58, 52.09, 51.61, 51.12, 50.63],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        yAxisID: 'yTemp',
+                        borderWidth: 2,
+                        tension: 0.3,
+                        pointRadius: 2
+                    },
+                    {
+                        label: 'RAM Usage (MB)',
+                        data: [1585.47, 1585.71, 1585.71, 1585.95, 1585.95, 1585.95, 1585.95, 1585.95, 1585.95, 1585.94, 1585.94, 1586.43, 1614.61, 1614.86, 1615.32, 1615.56, 1616.05, 1616.3, 1616.54, 1617.03, 1617.27, 1617.52, 1617.76, 1618.25, 1618.5, 1618.73, 1619.23, 1619.46, 1619.71, 1620.2, 1620.44, 1620.69, 1620.93, 1621.34, 1621.59, 1619.62, 1620.1, 1620.35, 1620.59, 1620.83, 1621.32, 1621.57, 1621.82, 1622.05, 1622.55, 1622.79, 1623.03, 1623.52, 1623.77, 1624.01, 1624.5, 1624.75, 1624.98, 1625.23, 1625.72, 1625.96, 1626.45, 1626.7, 1627.18, 1627.43, 1627.68, 1628.16, 1628.41, 1621.88, 1622.12, 1622.59, 1623.08, 1623.32, 1623.57, 1624.06, 1624.3, 1624.76, 1625.0, 1625.49, 1625.73, 1625.98, 1625.97, 1626.46, 1626.22, 1626.46, 1626.7, 1627.2, 1627.43, 1627.43, 1627.43, 1627.43, 1627.43, 1627.43, 1627.42, 1627.42, 1627.41, 1627.41, 1627.41],
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        yAxisID: 'yRam',
+                        borderWidth: 2,
+                        tension: 0.3,
+                        pointRadius: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                scales: {
+                    x: {
+                        grid: { display: false }
+                    },
+                    yTemp: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Temperature (°C)',
+                            color: '#ef4444'
+                        },
+                        grid: { drawOnChartArea: true }
+                    },
+                    yRam: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'RAM Used (MB)',
+                            color: '#3b82f6'
+                        },
+                        grid: { drawOnChartArea: false }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

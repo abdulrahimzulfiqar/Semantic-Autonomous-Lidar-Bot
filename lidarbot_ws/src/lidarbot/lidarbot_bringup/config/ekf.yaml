@@ -1,0 +1,40 @@
+### ekf.yaml Configuration ###
+ekf_filter_node:
+  ros__parameters:
+    frequency: 30.0
+    sensor_timeout: 0.1
+    two_d_mode: true
+    publish_tf: true
+
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_footprint
+    world_frame: odom
+
+    # ODOMETRY (Wheel Encoders)
+    # The Arduino calculates Position (X,Y,Yaw). It does NOT calculate Velocity.
+    # So we must set X, Y, Yaw to TRUE.
+    # [x, y, z, 
+    #  roll, pitch, yaw, 
+    #  vx, vy, vz, 
+    #  vroll, vpitch, vyaw, 
+    #  ax, ay, az]
+    odom0: /odom_raw
+    odom0_config: [true,  true,  false,
+                   false, false, true,
+                   false, false, false,
+                   false, false, false,
+                   false, false, false]
+    odom0_differential: false
+    odom0_relative: false
+
+    # IMU (Gyroscope)
+    # Fusing Angular Velocity (Vyaw) from Gyro is good for quick turns
+    imu0: /imu_raw
+    imu0_config: [false, false, false,
+                  false, false, false,
+                  false, false, false,
+                  false, false, true,
+                  false, false, false]
+    imu0_differential: false
+    imu0_relative: true
