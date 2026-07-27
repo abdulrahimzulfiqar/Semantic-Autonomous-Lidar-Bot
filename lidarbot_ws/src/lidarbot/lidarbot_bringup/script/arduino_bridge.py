@@ -17,6 +17,8 @@ class ArduinoBridge(Node):
         # Parameters
         self.declare_parameter('port', '/dev/ttyUSB_ARDUINO')
         self.declare_parameter('baud', 115200)
+        self.declare_parameter('publish_tf', True)
+        self.publish_tf = self.get_parameter('publish_tf').value
         
         # Robot Physical Parameters
         # CALIBRATED 2026-02-09: 4505 ticks / 10 revs = 450.5
@@ -136,19 +138,20 @@ class ArduinoBridge(Node):
             odom.pose.pose.orientation.w = q[3]
             self.pub_odom.publish(odom)
 
-            # Broadcast TF (Direct Encoder Visualization)
-            t = TransformStamped()
-            t.header.stamp = current_time.to_msg()
-            t.header.frame_id = "odom"
-            t.child_frame_id = "base_footprint"
-            t.transform.translation.x = self.x
-            t.transform.translation.y = self.y
-            t.transform.translation.z = 0.0
-            t.transform.rotation.x = 0.0
-            t.transform.rotation.y = 0.0
-            t.transform.rotation.z = q[2]
-            t.transform.rotation.w = q[3]
-            self.tf_broadcaster.sendTransform(t)
+            # Broadcast TF (Direct Encoder Visualization - disabled if EKF handles TF)
+            if self.publish_tf:
+                t = TransformStamped()
+                t.header.stamp = current_time.to_msg()
+                t.header.frame_id = "odom"
+                t.child_frame_id = "base_footprint"
+                t.transform.translation.x = self.x
+                t.transform.translation.y = self.y
+                t.transform.translation.z = 0.0
+                t.transform.rotation.x = 0.0
+                t.transform.rotation.y = 0.0
+                t.transform.rotation.z = q[2]
+                t.transform.rotation.w = q[3]
+                self.tf_broadcaster.sendTransform(t)
 
             # Publish Imu
             imu = Imu()

@@ -136,8 +136,8 @@ void loop() {
     last_pid_time = current_time;
   }
 
-  // 4. Send Telemetry to Python Bridge
-  if (current_time - last_telemetry_time >= 50) {
+  // 4. Send Telemetry to Python Bridge (50 Hz / 20ms interval)
+  if (current_time - last_telemetry_time >= PID_INTERVAL_MS) {
     sendTelemetry();
     last_telemetry_time = current_time;
   }

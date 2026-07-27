@@ -14,7 +14,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
         (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
-        (os.path.join('share', package_name, 'script'), glob('script/*')),
+        (os.path.join('share', package_name, 'script'), [f for f in glob('script/*') if not os.path.isdir(f)]),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

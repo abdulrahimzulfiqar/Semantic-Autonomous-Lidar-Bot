@@ -35,26 +35,26 @@ def generate_launch_description():
         }]
     )
 
-    # 3. Arduino Bridge (Now broadcasts TF directly!)
+    # 3. Arduino Bridge (Sends commands & reads sensors, publish_tf disabled when EKF handles TF)
     bridge_script = os.path.join(pkg_share, 'script', 'arduino_bridge.py')
     arduino_bridge = ExecuteProcess(
-        cmd=['python3', bridge_script],
+        cmd=['python3', bridge_script, '--ros-args', '-p', 'publish_tf:=false'],
         output='screen'
     )
 
-    # 4. EKF (Disabled for direct visualization test)
-    # ekf_config = os.path.join(pkg_share, 'config', 'ekf.yaml')
-    # ekf_node = Node(
-    #     package='robot_localization',
-    #     executable='ekf_node',
-    #     name='ekf_filter_node',
-    #     output='screen',
-    #     parameters=[ekf_config]
-    # )
+    # 4. EKF Node (Fuses Wheel Odometry + MPU6050 Gyroscope)
+    ekf_config = os.path.join(pkg_share, 'config', 'ekf.yaml')
+    ekf_node = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[ekf_config]
+    )
 
     return LaunchDescription([
         robot_state_publisher,
         rplidar_node,
         arduino_bridge,
-        # ekf_node
+        ekf_node
     ])
