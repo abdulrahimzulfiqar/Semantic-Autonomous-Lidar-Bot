@@ -14,6 +14,7 @@ def generate_launch_description():
     # Paths
     params_file = os.path.join(pkg_share, 'config', 'nav2_params_real.yaml')
     map_dir = LaunchConfiguration('map', default=os.path.expanduser('~/my_home_map.yaml'))
+    use_sim_time = LaunchConfiguration('use_sim_time', default='False')
 
     # Launch Arguments
     map_arg = DeclareLaunchArgument(
@@ -28,13 +29,19 @@ def generate_launch_description():
         description='Full path to the ROS2 parameters file to use'
     )
 
+    use_sim_time_arg = DeclareLaunchArgument(
+        'use_sim_time',
+        default_value='False',
+        description='Use simulation (Gazebo) clock if true'
+    )
+
     # Include the standard Nav2 bringup launch file
     # This automatically launches map_server, amcl, planner, controller, recoveries, etc.
     nav2_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(nav2_bringup_dir, 'launch', 'bringup_launch.py')),
         launch_arguments={
             'map': map_dir,
-            'use_sim_time': 'False',
+            'use_sim_time': use_sim_time,
             'params_file': params_file,
             'autostart': 'True'
         }.items()
@@ -54,6 +61,7 @@ def generate_launch_description():
     return LaunchDescription([
         map_arg,
         params_arg,
+        use_sim_time_arg,
         nav2_launch
         # rviz_node
     ])

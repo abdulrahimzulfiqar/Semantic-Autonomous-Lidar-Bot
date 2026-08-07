@@ -3,6 +3,7 @@
 
 # Documentation & Personal FYP files
 *.pdf
+!docs/research/**/*.pdf
 *.txt
 *.dmg
 Gemini.md
@@ -19,10 +20,18 @@ node_modules/
 __pycache__/
 *.pyc
 
-# ROS 2 build files
+# ROS 2 & C++ CMake build files
 lidarbot_ws/build/
 lidarbot_ws/install/
 lidarbot_ws/log/
+**/build/
+**/bin/
+*.o
+*.a
+*.so
+*.dylib
+CMakeCache.txt
+CMakeFiles/
 
 # Python Virtual Environments
 venv/

@@ -99,7 +99,7 @@ def generate_launch_description():
             [os.path.join(pkg_ros_ign_gazebo, "launch", "ign_gazebo.launch.py")]
         ),
         launch_arguments={
-            "gz_args": ["-r -v4 ", world],
+            "gz_args": ["-r -s -v4 ", world],
             "on_exit_shutdown": "true",
         }.items(),
     )
