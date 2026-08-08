@@ -209,6 +209,9 @@ STOP — Verify Stage 2 output before moving to Stage 3.
 * **Visual Output**: Image showing rendered A* grid paths connecting passage pairs inside an area.
 * **Success Criteria**: `PathGraph` populated with non-zero, realistic metric traversal distances matching the grid A* paths.
 
+#### Stage 3 Verified Visual Output (Dual Passage Graph & Traversal Edges)
+![Stage 3 Dual Passage Graph Output](images/stage3_path_graph_output.png)
+
 ```
 STOP — Verify Stage 3 output before moving to Stage 4.
 ```
