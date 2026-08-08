@@ -177,6 +177,7 @@ STOP — Verify Stage 1 output before moving to Stage 2.
 
 ### Stage 2: 2D Grid Submap Rendering per Leaf Area
 
+* **Summary**: Render the individual leaf area into 2d occupancy grid.
 * **Goal**: Render individual leaf area polygons into 2D OpenCV binary matrices (`cv::Mat`) with obstacle boundaries and passage openings.
 * **Expected Input**: Parsed `AreaGraph` from Stage 1.
 * **Expected Output**: Rendered 2D grid submaps for each leaf area stored in `Area::grid_mat_`.
