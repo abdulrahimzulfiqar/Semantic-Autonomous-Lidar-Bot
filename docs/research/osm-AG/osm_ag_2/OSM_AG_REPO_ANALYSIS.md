@@ -229,6 +229,9 @@ STOP — Verify Stage 3 output before moving to Stage 4.
 * **Visual Output**: PNG image `show_path.png` showing the planned global trajectory overlaid on the full floor plan.
 * **Success Criteria**: Planned trajectory successfully navigates through valid passages from start to goal without cutting through walls.
 
+#### Stage 4 Verified Visual Output (Global Path Trajectory)
+![Stage 4 Global Path Planning Output](images/stage4_global_path_planning.png)
+
 ```
 STOP — Verify Stage 4 output before moving to Stage 5.
 ```
