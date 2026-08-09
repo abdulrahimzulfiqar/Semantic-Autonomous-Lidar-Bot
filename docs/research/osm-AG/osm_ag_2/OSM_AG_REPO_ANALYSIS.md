@@ -254,6 +254,9 @@ STOP — Verify Stage 4 output before moving to Stage 5.
 * **Visual Output**: 3D interactive rendering of multi-floor Area Graph nodes, doorway lines, and planned trajectories in Foxglove Studio / RViz2.
 * **Success Criteria**: `lidarbot_osmag` ROS 2 package constructed, connected to `ShanghaiTech_merge_2.osm`, and documented following modular project guidelines.
 
+#### Stage 5 Verified Visual Output (Foxglove Studio 3D Path Planning)
+![Stage 5 Foxglove Studio ROS 2 Path Planning](images/stage5_foxglove_ros2_planning.png)
+
 ```
 COMPLETE — Full 5-stage Paper 2 (osmAG) implementation & verification pipeline successfully executed on branch osmAG!
 ```
