@@ -12,6 +12,7 @@
  */
 
 #include <rclcpp/rclcpp.hpp>
+#include <ament_index_cpp/get_package_share_directory.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <nav_msgs/msg/path.hpp>
 #include <visualization_msgs/msg/marker_array.hpp>
@@ -35,6 +36,15 @@ public:
         this->get_parameter("osm_file_path", osm_file_path_);
         this->get_parameter("map_frame", map_frame_);
         this->get_parameter("resolution", resolution_);
+
+        if (osm_file_path_.empty() || osm_file_path_[0] != '/') {
+            std::string pkg_share = ament_index_cpp::get_package_share_directory("lidarbot_osmag");
+            if (osm_file_path_.empty()) {
+                osm_file_path_ = pkg_share + "/data/ShanghaiTech_merge_2.osm";
+            } else {
+                osm_file_path_ = pkg_share + "/" + osm_file_path_;
+            }
+        }
 
         RCLCPP_INFO(this->get_logger(), "Initializing osmAG Planner Node...");
         RCLCPP_INFO(this->get_logger(), "Loading OSM File: %s", osm_file_path_.c_str());
