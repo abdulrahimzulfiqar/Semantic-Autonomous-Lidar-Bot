@@ -16,7 +16,7 @@ using namespace osm_ag;
 *@param resolution The default is 0.1, is meter per pixel (m/pixel)
 *@param parameter-name description
 */
-void PlotNodePoints(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
+inline void PlotNodePoints(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
     // image的尺寸宏定义，需要用来算分辨率,需要根据规模进行缩放 TODO
     for(auto node_it = graph.nodes_.begin(); node_it!=graph.nodes_.end(); node_it++){
         int x = node_it->second->attributes_->position[0]/resolution + 9 * IMAGE_W/10;
@@ -27,7 +27,7 @@ void PlotNodePoints(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
     // cv::imwrite("show.png",image);
 }
 
-void PlotArea(AreaGraph& graph, cv::Mat& image, AreaId id, double resolution = 0.1){
+inline void PlotArea(AreaGraph& graph, cv::Mat& image, AreaId id, double resolution = 0.1){
     cv::Point2i points_2d_last;
     int i = 0;
     for(auto node_id : graph.areas_[id]->nodes_inorder_){
@@ -43,14 +43,14 @@ void PlotArea(AreaGraph& graph, cv::Mat& image, AreaId id, double resolution = 0
     // cv::imwrite("show_area.png",image);
 }
 
-void PlotAreas(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
+inline void PlotAreas(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
     for(auto area_it = graph.areas_.begin(); area_it!=graph.areas_.end(); area_it++){
         PlotArea(graph, image, area_it->first, resolution);
     }
     cv::imwrite("show_areas.png",image);
 }
 
-void PlotPassage(AreaGraph& graph, cv::Mat& image, PassageId id, double resolution = 0.1){
+inline void PlotPassage(AreaGraph& graph, cv::Mat& image, PassageId id, double resolution = 0.1){
     auto source_id = graph.passages_[id]->passage_nodes.source;
     auto target_id = graph.passages_[id]->passage_nodes.target;
 
@@ -65,7 +65,7 @@ void PlotPassage(AreaGraph& graph, cv::Mat& image, PassageId id, double resoluti
     cv::line(image, points_s, points_t, cv::Scalar(0,0,255), 1.5);
 }
 
-void PlotPassages(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
+inline void PlotPassages(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
     for(auto passage_it = graph.passages_.begin(); passage_it!=graph.passages_.end(); passage_it++){
         PlotPassage(graph, image, passage_it->first, resolution);
     }
@@ -73,7 +73,7 @@ void PlotPassages(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
 }
 
 
-void PlotPath(std::vector<Eigen::Vector3d> path, cv::Mat& image, double resolution = 0.1){
+inline void PlotPath(std::vector<Eigen::Vector3d> path, cv::Mat& image, double resolution = 0.1){
     if(path.empty()) return;
     cv::Point2i points_2d_last;
     int i = 0;
@@ -209,7 +209,7 @@ inline void PlotGlobalPath(AreaGraph& graph, std::vector<Eigen::Vector3d>& path,
 }
 
 
-void PlotAreaInGrid(AreaGraph& graph, cv::Mat& image, AreaId id, double resolution = 0.1){
+inline void PlotAreaInGrid(AreaGraph& graph, cv::Mat& image, AreaId id, double resolution = 0.1){
     std::vector<std::vector<cv::Point2i>> contour_pts(1,std::vector<cv::Point2i> ());
     cv::Point2i points_2d_last;
     int i = 0;
@@ -247,7 +247,7 @@ void PlotAreaInGrid(AreaGraph& graph, cv::Mat& image, AreaId id, double resoluti
     // cv::imwrite("show_area.png",image);
 }
 
-void PlotHighAreaInGrid(AreaGraph& graph, cv::Mat& image, AreaId id, double resolution = 0.1){
+inline void PlotHighAreaInGrid(AreaGraph& graph, cv::Mat& image, AreaId id, double resolution = 0.1){
     std::vector<std::vector<cv::Point2i>> contour_pts(1,std::vector<cv::Point2i> ());
     cv::Point2i points_2d_last;
     int i = 0;
@@ -271,7 +271,7 @@ void PlotHighAreaInGrid(AreaGraph& graph, cv::Mat& image, AreaId id, double reso
     // cv::imwrite("show_area.png",image);
 }
 
-void PlotAreasInGrid(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
+inline void PlotAreasInGrid(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
     for(auto area_it = graph.areas_.begin(); area_it!=graph.areas_.end(); area_it++){
         if(area_it->second->is_leaf){//前提：：：在pathgraph那里进行叶子的判断！！！需要改进
             PlotAreaInGrid(graph, image, area_it->first, resolution);
@@ -282,7 +282,7 @@ void PlotAreasInGrid(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
     cv::imwrite("show_areas.png",image);
 }
 
-void PlotPassageInGrid(AreaGraph& graph, cv::Mat& image, PassageId id, double resolution = 0.1){
+inline void PlotPassageInGrid(AreaGraph& graph, cv::Mat& image, PassageId id, double resolution = 0.1){
     auto source_id = graph.passages_[id]->passage_nodes.source;
     auto target_id = graph.passages_[id]->passage_nodes.target;
 
@@ -302,21 +302,21 @@ void PlotPassageInGrid(AreaGraph& graph, cv::Mat& image, PassageId id, double re
     // cv::circle(image,points_m,3,cv::Scalar(255),cv::FILLED);
 }
 
-void PlotPassagesInGrid(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
+inline void PlotPassagesInGrid(AreaGraph& graph, cv::Mat& image, double resolution = 0.1){
     for(auto passage_it = graph.passages_.begin(); passage_it!=graph.passages_.end(); passage_it++){
         PlotPassageInGrid(graph, image, passage_it->first, resolution);
     }
     // cv::imwrite("show_passages.png",image);
 }
 
-cv::Point2i XYZ2Grid(Eigen::Vector3d point, double resolution = 0.1){
+inline cv::Point2i XYZ2Grid(Eigen::Vector3d point, double resolution = 0.1){
     int x_grid = point[0]/resolution + 9 * IMAGE_W/10;
     int y_grid = point[1]/resolution +  IMAGE_H/4;
     cv::Point2i result(x_grid,y_grid);
     return result;
 }
 
-Eigen::Vector3d Grid2XYZ_vis(cv::Point pt_grid, double resolution = 0.1){
+inline Eigen::Vector3d Grid2XYZ_vis(cv::Point pt_grid, double resolution = 0.1){
     Eigen::Vector3d result;
     result[0] = (pt_grid.x - 9 * IMAGE_W/10) * resolution;
     result[1] = (pt_grid.y - IMAGE_H/4) * resolution;

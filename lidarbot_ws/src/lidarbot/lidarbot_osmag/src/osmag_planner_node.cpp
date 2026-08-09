@@ -49,14 +49,11 @@ public:
         RCLCPP_INFO(this->get_logger(), "Initializing osmAG Planner Node...");
         RCLCPP_INFO(this->get_logger(), "Loading OSM File: %s", osm_file_path_.c_str());
 
-        // Parse OSM-AG File
-        if (!Load_Osm2AreaGraph(osm_file_path_, graph_)) {
+        // Parse OSM-AG File and initialize area/passage traversal
+        if (!Init_OSMAG(graph_, osm_file_path_.c_str())) {
             RCLCPP_ERROR(this->get_logger(), "Failed to parse OSM file: %s", osm_file_path_.c_str());
             return;
         }
-
-        TraverseArea(graph_);
-        TraversePassage(graph_);
 
         RCLCPP_INFO(this->get_logger(), "Parsed %zu areas and %zu passages successfully!",
                     graph_.areas_.size(), graph_.passages_.size());
@@ -98,14 +95,18 @@ private:
             return;
         }
 
-        // Find passage closest to goal position
-        PassageId start_id = graph_.passages_.begin()->first;
+        // Find passage closest to target goal position
         PassageId goal_id = FindClosestPassage(goal_x, goal_y);
 
-        // Test planning from default start passage to goal passage
+        // Find passage for start position (default to passage #45 on the campus map)
         auto it = graph_.passages_.begin();
         std::advance(it, std::min<size_t>(45, graph_.passages_.size() - 1));
-        start_id = it->first;
+        PassageId start_id = it->first;
+
+        if (start_id == goal_id) {
+            RCLCPP_INFO(this->get_logger(), "Start and goal passages are identical (Passage %ld). Already at destination!", start_id);
+            return;
+        }
 
         RCLCPP_INFO(this->get_logger(), "Planning route from Passage %ld to Passage %ld...", start_id, goal_id);
 
@@ -116,9 +117,10 @@ private:
 
         double elapsed_ms = std::chrono::duration<double, std::milli>(t_end - t_start).count();
 
-        RCLCPP_INFO(this->get_logger(), "Plan completed in %.3f ms! Generated %zu 3D waypoints.", elapsed_ms, path_result.size());
-
-        if (!path_result.empty()) {
+        if (path_result.empty()) {
+            RCLCPP_WARN(this->get_logger(), "No valid route could be generated between Passage %ld and Passage %ld.", start_id, goal_id);
+        } else {
+            RCLCPP_INFO(this->get_logger(), "Plan completed in %.3f ms! Generated %zu 3D waypoints.", elapsed_ms, path_result.size());
             PublishPath(path_result);
         }
     }

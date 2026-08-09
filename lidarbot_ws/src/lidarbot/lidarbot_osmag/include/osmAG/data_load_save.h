@@ -30,7 +30,7 @@ bool Parsing_Osm2AreaGraph(AreaGraph& graph, const char* file_path = "../data/f1
 
 void Save_AreaGraph2Osm(const AreaGraph& graph, const char* file_path = "../data/fix_id/new.osm");
 
-bool Init_OSMAG(AreaGraph& graph, const char* file_path = "../data/fix_id/SIST_F2.osm"){
+inline bool Init_OSMAG(AreaGraph& graph, const char* file_path = "../data/fix_id/SIST_F2.osm"){
     bool initialized = false;
 
     bool sucess_read = true;

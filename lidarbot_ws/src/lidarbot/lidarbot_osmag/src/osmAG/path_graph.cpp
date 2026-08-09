@@ -394,7 +394,7 @@ void PathBase::AddEdge_AStar(PassageId start_id, PassageId end_id, Distance_Type
                 }else{
                     printf("The start vertex's pre is not null!!!\n");
                 }
-                printf("previous id %d\n",pre->passage_id);
+                printf("previous id %ld\n",pre->passage_id);
                 pre = pre->previous;
             }
             if(result_path->path.back()==start_id){

@@ -253,10 +253,29 @@ void PlanInPathGraph(AreaGraph& graph, PassageId start_id, PassageId end_id, std
     long elapaed_ms = (stop_time.tv_sec - start_time.tv_sec)*1000 + (stop_time.tv_usec - start_time.tv_usec)/1000;
     printf("The time using OSM-AG: %ld us.\n", elapsed_us);
 
-    printf("The shortest path from %ld to %ld is : ", start_id, end_id);
+    if (path_graphs.paths.empty() || !path_graphs.paths[0]) {
+        printf("ERROR: No valid path found between Passage %ld and Passage %ld!\n", start_id, end_id);
+        return;
+    }
+
     auto p = path_graphs.paths[0]->path;
-    for(auto pp=p.rbegin(); pp !=p.rend(); ++pp){
-        printf("%s -> ",graph.passages_[*pp]->info->tags["name"].c_str());
+    if (p.empty()) {
+        printf("ERROR: Planned path trajectory is empty!\n");
+        return;
+    }
+
+    printf("The shortest path from %ld to %ld is : ", start_id, end_id);
+    for (auto pp = p.rbegin(); pp != p.rend(); ++pp) {
+        if (graph.passages_.find(*pp) != graph.passages_.end() && graph.passages_[*pp]->info) {
+            auto it_name = graph.passages_[*pp]->info->tags.find("name");
+            if (it_name != graph.passages_[*pp]->info->tags.end()) {
+                printf("%s -> ", it_name->second.c_str());
+            } else {
+                printf("Passage_%ld -> ", *pp);
+            }
+        } else {
+            printf("Passage_%ld -> ", *pp);
+        }
     }
     printf("\n");
 
