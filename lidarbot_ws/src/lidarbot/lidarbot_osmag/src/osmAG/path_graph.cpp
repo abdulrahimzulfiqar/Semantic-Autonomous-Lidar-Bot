@@ -1,5 +1,5 @@
-#include "../include/pathgraph.h"
-#include "../include/area_grid_map.h"
+#include "pathgraph.h"
+#include "area_grid_map.h"
 
 using namespace osm_ag;
 double ComputeAstarDis(GridMat& grids, cv::Point2i pt_s, cv::Point2i pt_e, std::vector<cv::Point>& resPoints, bool if_show = false){

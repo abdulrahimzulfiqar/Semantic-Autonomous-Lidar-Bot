@@ -1,4 +1,4 @@
-#include "../include/astarcal.h"
+#include "astarcal.h"
  
 CalcPt* AStarCalc::findPath(CalcPt& startPoint, CalcPt& endPoint, bool isIgnoreCorner)
 {

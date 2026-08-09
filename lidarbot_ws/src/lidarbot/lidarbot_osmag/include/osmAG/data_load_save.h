@@ -1,9 +1,9 @@
 #ifndef _DATALOADSAVE_H_
 #define _DATALOADSAVE_H_
 #include <tinyxml2.h>
-#include "../include/area_grid_map.h"
-#include "../include/visualization.h"
-#include "../include/WGS84toCartesian.h"
+#include "area_grid_map.h"
+#include "visualization.h"
+#include "WGS84toCartesian.h"
 
 using namespace tinyxml2;
 using namespace osm_ag;
