@@ -991,3 +991,4 @@ int main(int argc, char * argv[]){
     Save_AreaGraph2Osm(graph);
     return 0;
 }
+#endif
