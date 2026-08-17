@@ -17,6 +17,9 @@
 #include <nav_msgs/msg/path.hpp>
 #include <visualization_msgs/msg/marker_array.hpp>
 #include <visualization_msgs/msg/marker.hpp>
+#include <tf2_ros/buffer.h>
+#include <tf2_ros/transform_listener.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 
 #include "data_load_save.h"
 #include "pathgraph.h"
@@ -29,24 +32,23 @@ class OsmAgPlannerNode : public rclcpp::Node {
 public:
     OsmAgPlannerNode() : Node("osmag_planner_node") {
         // Declare parameters
-        this->declare_parameter<std::string>("osm_file_path", "");
+        this->declare_parameter<std::string>("osm_file_path", "data/big_map_7.osm");
         this->declare_parameter<std::string>("map_frame", "map");
-        this->declare_parameter<double>("resolution", 0.1);
+        this->declare_parameter<std::string>("base_frame", "base_link");
+        this->declare_parameter<double>("resolution", 0.05);
+        this->declare_parameter<bool>("publish_markers_on_startup", true);
 
         this->get_parameter("osm_file_path", osm_file_path_);
         this->get_parameter("map_frame", map_frame_);
+        this->get_parameter("base_frame", base_frame_);
         this->get_parameter("resolution", resolution_);
 
         if (osm_file_path_.empty() || osm_file_path_[0] != '/') {
             std::string pkg_share = ament_index_cpp::get_package_share_directory("lidarbot_osmag");
-            if (osm_file_path_.empty()) {
-                osm_file_path_ = pkg_share + "/data/ShanghaiTech_merge_2.osm";
-            } else {
-                osm_file_path_ = pkg_share + "/" + osm_file_path_;
-            }
+            osm_file_path_ = pkg_share + "/" + osm_file_path_;
         }
 
-        RCLCPP_INFO(this->get_logger(), "Initializing osmAG Planner Node...");
+        RCLCPP_INFO(this->get_logger(), "Initializing osmAG Planner Node for ROS 2 Humble...");
         RCLCPP_INFO(this->get_logger(), "Loading OSM File: %s", osm_file_path_.c_str());
 
         // Parse OSM-AG File and initialize area/passage traversal
@@ -59,11 +61,15 @@ public:
                     graph_.areas_.size(), graph_.passages_.size());
 
         // Pre-compute 2D grid submaps for all leaf areas
-        RCLCPP_INFO(this->get_logger(), "Building 2D Grid Submaps for leaf areas...");
+        RCLCPP_INFO(this->get_logger(), "Building 2D Grid Submaps for leaf areas (resolution: %.3f m)...", resolution_);
         for (auto& pair : graph_.areas_) {
             InitOccupancyMap_Area(graph_, pair.first, resolution_);
         }
         RCLCPP_INFO(this->get_logger(), "2D Grid Submaps initialization complete!");
+
+        // Initialize TF2 Listener
+        tf_buffer_ = std::make_unique<tf2_ros::Buffer>(this->get_clock());
+        tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 
         // Publishers with Transient Local QoS for visualization persistence
         auto qos_transient = rclcpp::QoS(rclcpp::KeepLast(10)).transient_local().reliable();
@@ -77,6 +83,11 @@ public:
             "/goal_pose", 10,
             std::bind(&OsmAgPlannerNode::GoalCallback, this, std::placeholders::_1));
 
+        // Periodic timer to publish map markers
+        marker_timer_ = this->create_wall_timer(
+            std::chrono::seconds(2),
+            std::bind(&OsmAgPlannerNode::PublishMapMarkers, this));
+
         // Publish campus map 3D markers for Foxglove Studio / RViz2
         PublishMapMarkers();
 
@@ -88,27 +99,47 @@ private:
         double goal_x = msg->pose.position.x;
         double goal_y = msg->pose.position.y;
 
-        RCLCPP_INFO(this->get_logger(), "Received Nav Goal: (%.2f, %.2f)", goal_x, goal_y);
+        RCLCPP_INFO(this->get_logger(), "Received Navigation Goal Pose: (x=%.2f, y=%.2f)", goal_x, goal_y);
 
         if (graph_.passages_.empty()) {
             RCLCPP_WARN(this->get_logger(), "No passages available in graph!");
             return;
         }
 
-        // Find passage closest to target goal position
+        // 1. Get current robot pose from TF (map -> base_link)
+        double start_x = 0.0;
+        double start_y = 0.0;
+        bool tf_success = false;
+
+        try {
+            geometry_msgs::msg::TransformStamped tf_stamped = tf_buffer_->lookupTransform(
+                map_frame_, base_frame_, tf2::TimePointZero, tf2::durationFromSec(0.2));
+            start_x = tf_stamped.transform.translation.x;
+            start_y = tf_stamped.transform.translation.y;
+            tf_success = true;
+            RCLCPP_INFO(this->get_logger(), "Live Robot Pose located via TF: (x=%.2f, y=%.2f)", start_x, start_y);
+        } catch (const tf2::TransformException &ex) {
+            RCLCPP_WARN(this->get_logger(), "Could not look up robot transform (%s -> %s): %s. Using origin fallback.",
+                        map_frame_.c_str(), base_frame_.c_str(), ex.what());
+            // Fallback to origin or start passage
+            start_x = 0.0;
+            start_y = 0.0;
+        }
+
+        // 2. Find closest passage for start and goal
+        PassageId start_id = FindClosestPassage(start_x, start_y);
         PassageId goal_id = FindClosestPassage(goal_x, goal_y);
 
-        // Find passage for start position (default to passage #45 on the campus map)
-        auto it = graph_.passages_.begin();
-        std::advance(it, std::min<size_t>(45, graph_.passages_.size() - 1));
-        PassageId start_id = it->first;
-
         if (start_id == goal_id) {
-            RCLCPP_INFO(this->get_logger(), "Start and goal passages are identical (Passage %ld). Already at destination!", start_id);
+            RCLCPP_INFO(this->get_logger(), "Start and goal are within the same passage/room (Passage %ld). Creating direct goal trajectory.", start_id);
+            std::vector<Eigen::Vector3d> direct_path;
+            direct_path.push_back(Eigen::Vector3d(start_x, start_y, 0.0));
+            direct_path.push_back(Eigen::Vector3d(goal_x, goal_y, 0.0));
+            PublishPath(direct_path);
             return;
         }
 
-        RCLCPP_INFO(this->get_logger(), "Planning route from Passage %ld to Passage %ld...", start_id, goal_id);
+        RCLCPP_INFO(this->get_logger(), "Planning topometric route from Start Passage %ld to Goal Passage %ld...", start_id, goal_id);
 
         std::vector<Eigen::Vector3d> path_result;
         auto t_start = std::chrono::high_resolution_clock::now();
@@ -120,7 +151,13 @@ private:
         if (path_result.empty()) {
             RCLCPP_WARN(this->get_logger(), "No valid route could be generated between Passage %ld and Passage %ld.", start_id, goal_id);
         } else {
-            RCLCPP_INFO(this->get_logger(), "Plan completed in %.3f ms! Generated %zu 3D waypoints.", elapsed_ms, path_result.size());
+            // Prepend exact start pose and append exact goal pose
+            if (tf_success) {
+                path_result.insert(path_result.begin(), Eigen::Vector3d(start_x, start_y, 0.0));
+            }
+            path_result.push_back(Eigen::Vector3d(goal_x, goal_y, 0.0));
+
+            RCLCPP_INFO(this->get_logger(), "Plan completed in %.3f ms! Generated %zu waypoints.", elapsed_ms, path_result.size());
             PublishPath(path_result);
         }
     }
@@ -153,10 +190,10 @@ private:
             marker.id = id++;
             marker.type = visualization_msgs::msg::Marker::LINE_STRIP;
             marker.action = visualization_msgs::msg::Marker::ADD;
-            marker.scale.x = 0.15; // line width
+            marker.scale.x = 0.08; // line width
             marker.color.r = 0.0f;
-            marker.color.g = 0.8f;
-            marker.color.b = 0.2f;
+            marker.color.g = 0.85f;
+            marker.color.b = 0.25f;
             marker.color.a = 0.9f;
 
             for (auto node_id : pair.second->nodes_inorder_) {
@@ -186,7 +223,7 @@ private:
                 marker.id = id++;
                 marker.type = visualization_msgs::msg::Marker::LINE_LIST;
                 marker.action = visualization_msgs::msg::Marker::ADD;
-                marker.scale.x = 0.3; // doorway thickness
+                marker.scale.x = 0.15; // doorway thickness
                 marker.color.r = 1.0f;
                 marker.color.g = 0.1f;
                 marker.color.b = 0.1f;
@@ -195,10 +232,10 @@ private:
                 geometry_msgs::msg::Point p1, p2;
                 p1.x = graph_.nodes_[src_id]->attributes_->position[0];
                 p1.y = graph_.nodes_[src_id]->attributes_->position[1];
-                p1.z = 0.1;
+                p1.z = 0.05;
                 p2.x = graph_.nodes_[tgt_id]->attributes_->position[0];
                 p2.y = graph_.nodes_[tgt_id]->attributes_->position[1];
-                p2.z = 0.1;
+                p2.z = 0.05;
 
                 marker.points.push_back(p1);
                 marker.points.push_back(p2);
@@ -207,7 +244,6 @@ private:
         }
 
         map_markers_pub_->publish(marker_array);
-        RCLCPP_INFO(this->get_logger(), "Published %zu map markers to /osmag/map_markers", marker_array.markers.size());
     }
 
     void PublishPath(const std::vector<Eigen::Vector3d>& waypoints) {
@@ -222,7 +258,7 @@ private:
         line_marker.id = 0;
         line_marker.type = visualization_msgs::msg::Marker::LINE_STRIP;
         line_marker.action = visualization_msgs::msg::Marker::ADD;
-        line_marker.scale.x = 0.5; // thick route line
+        line_marker.scale.x = 0.12; // route line width
         line_marker.color.r = 1.0f; // Magenta color
         line_marker.color.g = 0.0f;
         line_marker.color.b = 1.0f;
@@ -242,7 +278,7 @@ private:
             geometry_msgs::msg::Point marker_pt;
             marker_pt.x = pt[0];
             marker_pt.y = pt[1];
-            marker_pt.z = pt[2] + 0.2; // slightly elevated above ground
+            marker_pt.z = pt[2] + 0.05; // slightly elevated
             line_marker.points.push_back(marker_pt);
         }
 
@@ -254,14 +290,19 @@ private:
 
     std::string osm_file_path_;
     std::string map_frame_;
+    std::string base_frame_;
     double resolution_;
 
     AreaGraph graph_;
+
+    std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
+    std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
 
     rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr map_markers_pub_;
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr global_path_pub_;
     rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr path_marker_pub_;
     rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr goal_sub_;
+    rclcpp::TimerBase::SharedPtr marker_timer_;
 };
 
 int main(int argc, char** argv) {
