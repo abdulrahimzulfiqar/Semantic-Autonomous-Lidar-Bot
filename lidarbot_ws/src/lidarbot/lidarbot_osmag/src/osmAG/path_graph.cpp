@@ -241,7 +241,7 @@ PathGraph::PathGraph(AreaGraph& graph, PassageGraph& passage_graph){
 PathLayer::PathLayer(AreaGraph& graph, AreaId parent_area_id):parent_area_id(parent_area_id){
     //提取该层所有的passage
     std::unordered_set<PassageId> passages_layer = graph.passage_trees[parent_area_id];
-    printf("size of passagers_layer %d\n", passages_layer.size());
+    printf("size of passagers_layer %zu\n", passages_layer.size());
 
     for(auto it = passages_layer.begin(); it!=passages_layer.end(); it++){
         // PathNode *path = (PathNode*)std::malloc(sizeof(PathNode));
@@ -267,7 +267,7 @@ PathLayer::PathLayer(AreaGraph& graph, AreaId parent_area_id):parent_area_id(par
     for(auto itt = areas_layer.begin(); itt!=areas_layer.end(); itt++){
         Find_PathInArea(graph, *itt, pathedges);
     }
-    printf("pathedges counts %d\n",pathedges.size());
+    printf("pathedges counts %zu\n",pathedges.size());
 
 }
 
@@ -340,7 +340,7 @@ void PathBase::AddEdge_AStar(PassageId start_id, PassageId end_id, Distance_Type
     dis_type = type;
     printf("Start to compute the paths, we use DISTANCE TYPE : %d\n", dis_type);
     //初始化所有Pathnode的plan值
-    printf("pathnodes size: %d\n",pathnodes.size());
+    printf("pathnodes size: %zu\n",pathnodes.size());
     for(auto it=pathnodes.begin(); it!=pathnodes.end(); it++){
         it->second->InitForPlanning();//为了避免之前算过没有恢复初始值
         // printf("pathnode id(passage) is %ld\n", it->second->passage_id);
@@ -477,7 +477,7 @@ void PathBase::FindNeighbors(std::vector<std::pair<PassageId,double>>& subs, Pas
             }
         }
     }
-    printf("neighbors counts %d\n",subs.size());
+    printf("neighbors counts %zu\n",subs.size());
 }
 
 void PathBase::PrintEdgesDistance(AreaGraph& graph, std::ofstream& outfile){
