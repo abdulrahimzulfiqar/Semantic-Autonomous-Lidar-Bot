@@ -1,6 +1,6 @@
 /**
  * @file osmag_planner_node.cpp
- * @brief ROS 2 Humble C++ Node for osmAG Semantic Hierarchical Global Path Planning
+ * @brief ROS 2 Humble C++ Node for osmAG Semantic Hierarchical Global Path Planning & Real-Time Path Execution
  * 
  * Subscribes:
  *   - /goal_pose (geometry_msgs/msg/PoseStamped): Target navigation goal from Foxglove Studio / RViz2
@@ -9,11 +9,13 @@
  *   - /osmag/map_markers (visualization_msgs/msg/MarkerArray): 3D area polygons & doorway lines
  *   - /osmag/global_path (nav_msgs/msg/Path): Hierarchical planned trajectory for Nav2 controller
  *   - /osmag/path_marker (visualization_msgs/msg/Marker): 3D thick route line for Foxglove Studio
+ *   - /cmd_vel (geometry_msgs/msg/Twist): Live wheel velocity commands driving the robot along the path
  */
 
 #include <rclcpp/rclcpp.hpp>
 #include <ament_index_cpp/get_package_share_directory.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
+#include <geometry_msgs/msg/twist.hpp>
 #include <nav_msgs/msg/path.hpp>
 #include <visualization_msgs/msg/marker_array.hpp>
 #include <visualization_msgs/msg/marker.hpp>
@@ -21,6 +23,7 @@
 #include <tf2_ros/transform_listener.h>
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <tf2/exceptions.h>
+#include <tf2/utils.h>
 
 #include "data_load_save.h"
 #include "pathgraph.h"
@@ -31,25 +34,32 @@ using namespace osm_ag;
 
 class OsmAgPlannerNode : public rclcpp::Node {
 public:
-    OsmAgPlannerNode() : Node("osmag_planner_node") {
+    OsmAgPlannerNode() : Node("osmag_planner_node"), current_waypoint_idx_(0), is_navigating_(false) {
         // Declare parameters
         this->declare_parameter<std::string>("osm_file_path", "data/big_map_7.osm");
         this->declare_parameter<std::string>("map_frame", "map");
         this->declare_parameter<std::string>("base_frame", "base_link");
         this->declare_parameter<double>("resolution", 0.05);
-        this->declare_parameter<bool>("publish_markers_on_startup", true);
+        this->declare_parameter<double>("max_linear_speed", 0.35);
+        this->declare_parameter<double>("max_angular_speed", 0.8);
+        this->declare_parameter<double>("lookahead_dist", 0.40);
+        this->declare_parameter<double>("goal_tolerance", 0.15);
 
         this->get_parameter("osm_file_path", osm_file_path_);
         this->get_parameter("map_frame", map_frame_);
         this->get_parameter("base_frame", base_frame_);
         this->get_parameter("resolution", resolution_);
+        this->get_parameter("max_linear_speed", max_linear_speed_);
+        this->get_parameter("max_angular_speed", max_angular_speed_);
+        this->get_parameter("lookahead_dist", lookahead_dist_);
+        this->get_parameter("goal_tolerance", goal_tolerance_);
 
         if (osm_file_path_.empty() || osm_file_path_[0] != '/') {
             std::string pkg_share = ament_index_cpp::get_package_share_directory("lidarbot_osmag");
             osm_file_path_ = pkg_share + "/" + osm_file_path_;
         }
 
-        RCLCPP_INFO(this->get_logger(), "Initializing osmAG Planner Node for ROS 2 Humble...");
+        RCLCPP_INFO(this->get_logger(), "Initializing osmAG Planner & Path Follower Node for ROS 2 Humble...");
         RCLCPP_INFO(this->get_logger(), "Loading OSM File: %s", osm_file_path_.c_str());
 
         // Parse OSM-AG File and initialize area/passage traversal
@@ -78,21 +88,27 @@ public:
         map_markers_pub_ = this->create_publisher<visualization_msgs::msg::MarkerArray>("/osmag/map_markers", qos_transient);
         global_path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/osmag/global_path", rclcpp::QoS(10).reliable());
         path_marker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>("/osmag/path_marker", rclcpp::QoS(10).reliable());
+        cmd_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
 
         // Subscriber for target goal pose
         goal_sub_ = this->create_subscription<geometry_msgs::msg::PoseStamped>(
             "/goal_pose", 10,
             std::bind(&OsmAgPlannerNode::GoalCallback, this, std::placeholders::_1));
 
-        // Periodic timer to publish map markers
+        // Periodic timer to publish map markers (every 2 seconds)
         marker_timer_ = this->create_wall_timer(
             std::chrono::seconds(2),
             std::bind(&OsmAgPlannerNode::PublishMapMarkers, this));
 
-        // Publish campus map 3D markers for Foxglove Studio / RViz2
+        // Real-time Path-Following Control Loop (20 Hz)
+        control_timer_ = this->create_wall_timer(
+            std::chrono::milliseconds(50),
+            std::bind(&OsmAgPlannerNode::ControlLoop, this));
+
+        // Initial publish of campus map 3D markers for Foxglove Studio / RViz2
         PublishMapMarkers();
 
-        RCLCPP_INFO(this->get_logger(), "osmAG Planner Node ready! Send a goal pose on /goal_pose to plan a route.");
+        RCLCPP_INFO(this->get_logger(), "osmAG Planner & Controller Node ready! Click /goal_pose in Foxglove to navigate.");
     }
 
 private:
@@ -107,7 +123,7 @@ private:
             return;
         }
 
-        // 1. Get current robot pose from TF (map -> base_link)
+        // 1. Get current robot pose from TF (map -> base_link or odom -> base_link)
         double start_x = 0.0;
         double start_y = 0.0;
         bool tf_success = false;
@@ -120,47 +136,147 @@ private:
             tf_success = true;
             RCLCPP_INFO(this->get_logger(), "Live Robot Pose located via TF: (x=%.2f, y=%.2f)", start_x, start_y);
         } catch (const tf2::TransformException &ex) {
-            RCLCPP_WARN(this->get_logger(), "Could not look up robot transform (%s -> %s): %s. Using origin fallback.",
-                        map_frame_.c_str(), base_frame_.c_str(), ex.what());
-            // Fallback to origin or start passage
-            start_x = 0.0;
-            start_y = 0.0;
+            try {
+                // Fallback to odom frame if map frame not yet published by AMCL
+                geometry_msgs::msg::TransformStamped tf_odom = tf_buffer_->lookupTransform(
+                    "odom", base_frame_, tf2::TimePointZero, tf2::durationFromSec(0.2));
+                start_x = tf_odom.transform.translation.x;
+                start_y = tf_odom.transform.translation.y;
+                tf_success = true;
+                RCLCPP_INFO(this->get_logger(), "Robot Pose located via Odom fallback: (x=%.2f, y=%.2f)", start_x, start_y);
+            } catch (const tf2::TransformException &ex2) {
+                RCLCPP_WARN(this->get_logger(), "TF lookup unavailable (%s). Using origin (0,0) fallback.", ex.what());
+                start_x = 0.0;
+                start_y = 0.0;
+            }
         }
 
         // 2. Find closest passage for start and goal
         PassageId start_id = FindClosestPassage(start_x, start_y);
         PassageId goal_id = FindClosestPassage(goal_x, goal_y);
 
-        if (start_id == goal_id) {
-            RCLCPP_INFO(this->get_logger(), "Start and goal are within the same passage/room (Passage %ld). Creating direct goal trajectory.", start_id);
-            std::vector<Eigen::Vector3d> direct_path;
-            direct_path.push_back(Eigen::Vector3d(start_x, start_y, 0.0));
-            direct_path.push_back(Eigen::Vector3d(goal_x, goal_y, 0.0));
-            PublishPath(direct_path);
-            return;
-        }
-
-        RCLCPP_INFO(this->get_logger(), "Planning topometric route from Start Passage %ld to Goal Passage %ld...", start_id, goal_id);
-
         std::vector<Eigen::Vector3d> path_result;
-        auto t_start = std::chrono::high_resolution_clock::now();
-        PlanInPathGraph(graph_, start_id, goal_id, path_result);
-        auto t_end = std::chrono::high_resolution_clock::now();
 
-        double elapsed_ms = std::chrono::duration<double, std::milli>(t_end - t_start).count();
-
-        if (path_result.empty()) {
-            RCLCPP_WARN(this->get_logger(), "No valid route could be generated between Passage %ld and Passage %ld.", start_id, goal_id);
+        if (start_id == goal_id) {
+            RCLCPP_INFO(this->get_logger(), "Start and goal are within the same room (Passage %ld). Creating direct goal trajectory.", start_id);
+            path_result.push_back(Eigen::Vector3d(start_x, start_y, 0.0));
+            path_result.push_back(Eigen::Vector3d(goal_x, goal_y, 0.0));
         } else {
-            // Prepend exact start pose and append exact goal pose
-            if (tf_success) {
-                path_result.insert(path_result.begin(), Eigen::Vector3d(start_x, start_y, 0.0));
+            RCLCPP_INFO(this->get_logger(), "Planning topometric route from Start Passage %ld to Goal Passage %ld...", start_id, goal_id);
+
+            auto t_start = std::chrono::high_resolution_clock::now();
+            PlanInPathGraph(graph_, start_id, goal_id, path_result);
+            auto t_end = std::chrono::high_resolution_clock::now();
+
+            double elapsed_ms = std::chrono::duration<double, std::milli>(t_end - t_start).count();
+
+            if (path_result.empty()) {
+                RCLCPP_WARN(this->get_logger(), "No valid route could be generated between Passage %ld and Passage %ld.", start_id, goal_id);
+                return;
             }
+
+            path_result.insert(path_result.begin(), Eigen::Vector3d(start_x, start_y, 0.0));
             path_result.push_back(Eigen::Vector3d(goal_x, goal_y, 0.0));
 
             RCLCPP_INFO(this->get_logger(), "Plan completed in %.3f ms! Generated %zu waypoints.", elapsed_ms, path_result.size());
-            PublishPath(path_result);
         }
+
+        // Publish visualization
+        PublishPath(path_result);
+
+        // Store active path for the velocity controller
+        active_waypoints_ = path_result;
+        current_waypoint_idx_ = 0;
+        is_navigating_ = true;
+        RCLCPP_INFO(this->get_logger(), "Starting active path following along %zu waypoints!", active_waypoints_.size());
+    }
+
+    void ControlLoop() {
+        if (!is_navigating_ || active_waypoints_.empty()) {
+            return;
+        }
+
+        // 1. Get current robot pose
+        double rx = 0.0, ry = 0.0, ryaw = 0.0;
+        bool got_pose = false;
+
+        try {
+            geometry_msgs::msg::TransformStamped tf_stamped;
+            if (tf_buffer_->canTransform(map_frame_, base_frame_, tf2::TimePointZero)) {
+                tf_stamped = tf_buffer_->lookupTransform(map_frame_, base_frame_, tf2::TimePointZero);
+            } else {
+                tf_stamped = tf_buffer_->lookupTransform("odom", base_frame_, tf2::TimePointZero);
+            }
+            rx = tf_stamped.transform.translation.x;
+            ry = tf_stamped.transform.translation.y;
+            
+            tf2::Quaternion q(
+                tf_stamped.transform.rotation.x,
+                tf_stamped.transform.rotation.y,
+                tf_stamped.transform.rotation.z,
+                tf_stamped.transform.rotation.w);
+            ryaw = tf2::getYaw(q);
+            got_pose = true;
+        } catch (const tf2::TransformException &ex) {
+            return;
+        }
+
+        // 2. Advance waypoint index if close to current waypoint
+        while (current_waypoint_idx_ < active_waypoints_.size()) {
+            double wx = active_waypoints_[current_waypoint_idx_][0];
+            double wy = active_waypoints_[current_waypoint_idx_][1];
+            double dist = std::hypot(wx - rx, wy - ry);
+            if (dist < lookahead_dist_ && current_waypoint_idx_ + 1 < active_waypoints_.size()) {
+                current_waypoint_idx_++;
+            } else {
+                break;
+            }
+        }
+
+        // 3. Check if reached final goal
+        double goal_x = active_waypoints_.back()[0];
+        double goal_y = active_waypoints_.back()[1];
+        double dist_to_goal = std::hypot(goal_x - rx, goal_y - ry);
+
+        if (dist_to_goal < goal_tolerance_) {
+            RCLCPP_INFO(this->get_logger(), "Destination Goal Reached Successfully (distance = %.2f m)!", dist_to_goal);
+            StopRobot();
+            is_navigating_ = false;
+            active_waypoints_.clear();
+            return;
+        }
+
+        // 4. Compute Pure Pursuit target waypoint
+        double tx = active_waypoints_[current_waypoint_idx_][0];
+        double ty = active_waypoints_[current_waypoint_idx_][1];
+
+        double target_heading = std::atan2(ty - ry, tx - rx);
+        double heading_err = target_heading - ryaw;
+
+        // Normalize heading error to [-pi, pi]
+        while (heading_err > M_PI) heading_err -= 2.0 * M_PI;
+        while (heading_err < -M_PI) heading_err += 2.0 * M_PI;
+
+        geometry_msgs::msg::Twist cmd;
+        if (std::abs(heading_err) > 0.8) {
+            // Rotate in place towards target
+            cmd.linear.x = 0.0;
+            cmd.angular.z = std::clamp(1.5 * heading_err, -max_angular_speed_, max_angular_speed_);
+        } else {
+            // Drive forward while steering
+            double speed_factor = std::max(0.2, std::cos(heading_err));
+            cmd.linear.x = std::min(max_linear_speed_ * speed_factor, dist_to_goal * 0.8);
+            cmd.angular.z = std::clamp(1.8 * heading_err, -max_angular_speed_, max_angular_speed_);
+        }
+
+        cmd_vel_pub_->publish(cmd);
+    }
+
+    void StopRobot() {
+        geometry_msgs::msg::Twist stop_cmd;
+        stop_cmd.linear.x = 0.0;
+        stop_cmd.angular.z = 0.0;
+        cmd_vel_pub_->publish(stop_cmd);
     }
 
     PassageId FindClosestPassage(double x, double y) {
@@ -259,7 +375,7 @@ private:
         line_marker.id = 0;
         line_marker.type = visualization_msgs::msg::Marker::LINE_STRIP;
         line_marker.action = visualization_msgs::msg::Marker::ADD;
-        line_marker.scale.x = 0.12; // route line width
+        line_marker.scale.x = 0.15; // route line width
         line_marker.color.r = 1.0f; // Magenta color
         line_marker.color.g = 0.0f;
         line_marker.color.b = 1.0f;
@@ -293,6 +409,10 @@ private:
     std::string map_frame_;
     std::string base_frame_;
     double resolution_;
+    double max_linear_speed_;
+    double max_angular_speed_;
+    double lookahead_dist_;
+    double goal_tolerance_;
 
     AreaGraph graph_;
 
@@ -302,8 +422,14 @@ private:
     rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr map_markers_pub_;
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr global_path_pub_;
     rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr path_marker_pub_;
+    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_pub_;
     rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr goal_sub_;
     rclcpp::TimerBase::SharedPtr marker_timer_;
+    rclcpp::TimerBase::SharedPtr control_timer_;
+
+    std::vector<Eigen::Vector3d> active_waypoints_;
+    size_t current_waypoint_idx_;
+    bool is_navigating_;
 };
 
 int main(int argc, char** argv) {
