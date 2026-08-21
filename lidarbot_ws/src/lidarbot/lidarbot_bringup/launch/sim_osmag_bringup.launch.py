@@ -7,7 +7,7 @@ from launch.substitutions import LaunchConfiguration
 
 
 def generate_launch_description():
-    pkg_gazebo = get_package_share_directory('lidarbot_gazebo')
+    pkg_gz = get_package_share_directory('lidarbot_gz')
     pkg_nav = get_package_share_directory('lidarbot_navigation')
     pkg_osmag = get_package_share_directory('lidarbot_osmag')
 
@@ -35,14 +35,17 @@ def generate_launch_description():
         description='Path to osmAG XML map'
     )
 
-    # 1. Launch Gazebo Simulation with big_map_7 world
-    gazebo_launch = IncludeLaunchDescription(
+    world_sdf = os.path.join(pkg_gz, 'worlds', 'big_map_7_world.sdf')
+
+    # 1. Launch Gazebo Sim (Fortress / Ignition) with big_map_7 world
+    gz_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(pkg_gazebo, 'launch', 'gazebo_big_map_7_launch.py')
+            os.path.join(pkg_gz, 'launch', 'gz_launch.py')
         ),
         launch_arguments={
             'use_sim_time': use_sim_time,
             'use_ros2_control': 'true',
+            'world': world_sdf,
         }.items()
     )
 
@@ -62,6 +65,6 @@ def generate_launch_description():
         declare_use_sim_time_cmd,
         declare_map_cmd,
         declare_osm_cmd,
-        gazebo_launch,
+        gz_launch,
         navigation_launch,
     ])
