@@ -202,10 +202,13 @@ private:
 
         try {
             geometry_msgs::msg::TransformStamped tf_stamped;
-            if (tf_buffer_->canTransform(map_frame_, base_frame_, tf2::TimePointZero)) {
+            std::string err_str;
+            if (tf_buffer_->canTransform(map_frame_, base_frame_, tf2::TimePointZero, &err_str)) {
                 tf_stamped = tf_buffer_->lookupTransform(map_frame_, base_frame_, tf2::TimePointZero);
-            } else {
+            } else if (tf_buffer_->canTransform("odom", base_frame_, tf2::TimePointZero, &err_str)) {
                 tf_stamped = tf_buffer_->lookupTransform("odom", base_frame_, tf2::TimePointZero);
+            } else {
+                return;
             }
             rx = tf_stamped.transform.translation.x;
             ry = tf_stamped.transform.translation.y;
