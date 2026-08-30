@@ -1,11 +1,20 @@
 ### ekf config file ###
+# The Extended Kalman Filter (EKF) fuses wheel odometry velocities with
+# IMU angular rate to produce a single, smooth odom → base_footprint TF.
+#
+# KEY RULE: Never fuse both position AND velocity from the SAME sensor.
+# They are correlated — the EKF assumes independent inputs.
+# Use velocities from wheels, yaw_rate from IMU. The EKF integrates
+# these into position internally.
 ekf_filter_node:
     ros__parameters:
 
         use_sim_time: true
         
         frequency: 30.0
+        sensor_timeout: 0.1
         two_d_mode: true
+        publish_tf: true
 
         map_frame: map
         odom_frame: odom
@@ -21,12 +30,15 @@ ekf_filter_node:
         #         roll_vel, pitch_vel, yaw_vel,
         #         x_accel , y_accel  , z_accel]
 
-        odom0_config: [true,  true,  false,
-                       false, false, true,
+        # From wheels: use linear velocities (vx, vy) and yaw rate only
+        odom0_config: [false, false, false,
+                       false, false, false,
                        true,  true,  false, 
                        false, false, true,
                        false, false, false]
 
+        # From IMU: use yaw angular velocity only
+        # (no x_accel — it adds noise in simulation without benefit)
         imu0_config: [false, false, false, 
                       false, false, false, 
                       false, false, false,
