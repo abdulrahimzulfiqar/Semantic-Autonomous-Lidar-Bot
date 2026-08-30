@@ -79,7 +79,7 @@ def generate_launch_description():
 
     declare_use_robot_localization_cmd = DeclareLaunchArgument(
         name="use_robot_localization",
-        default_value="True",
+        default_value="False",
         description="Use robot_localization package if true",
     )
 
