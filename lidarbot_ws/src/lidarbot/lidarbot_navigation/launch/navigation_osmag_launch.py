@@ -13,7 +13,7 @@ def generate_launch_description():
     pkg_osmag = get_package_share_directory('lidarbot_osmag')
 
     # Default file paths
-    default_map_path = os.path.join(pkg_nav, 'maps', 'big_map_7.yaml')
+    default_map_path = os.path.join(pkg_nav, 'maps', 'big_map_7_sim.yaml')
     default_params_file = os.path.join(pkg_nav, 'config', 'nav2_osmag_params.yaml')
     default_osm_file = os.path.join(pkg_osmag, 'data', 'big_map_7.osm')
 
@@ -55,12 +55,35 @@ def generate_launch_description():
         description='Full path to the osmAG XML topometric map file'
     )
 
+    x_pose = LaunchConfiguration('x_pose')
+    y_pose = LaunchConfiguration('y_pose')
+    yaw_pose = LaunchConfiguration('yaw_pose')
+
+    declare_x_pose_cmd = DeclareLaunchArgument(
+        'x_pose',
+        default_value='-1.0',
+        description='Initial robot spawn x position for AMCL'
+    )
+    declare_y_pose_cmd = DeclareLaunchArgument(
+        'y_pose',
+        default_value='0.0',
+        description='Initial robot spawn y position for AMCL'
+    )
+    declare_yaw_pose_cmd = DeclareLaunchArgument(
+        'yaw_pose',
+        default_value='0.0',
+        description='Initial robot spawn yaw angle for AMCL'
+    )
+
     lifecycle_nodes = ['map_server', 'amcl', 'controller_server']
 
     # Rewritten yaml for substitutions
     param_substitutions = {
         'use_sim_time': use_sim_time,
-        'yaml_filename': map_yaml_file
+        'yaml_filename': map_yaml_file,
+        'initial_pose.x': x_pose,
+        'initial_pose.y': y_pose,
+        'initial_pose.yaw': yaw_pose,
     }
 
     configured_params = RewrittenYaml(
@@ -85,7 +108,14 @@ def generate_launch_description():
         executable='amcl',
         name='amcl',
         output='screen',
-        parameters=[configured_params]
+        parameters=[
+            configured_params,
+            {
+                'initial_pose.x': x_pose,
+                'initial_pose.y': y_pose,
+                'initial_pose.yaw': yaw_pose,
+            }
+        ]
     )
 
     # 3. Nav2 Controller Server (Local Planner for osmAG paths)
@@ -104,9 +134,10 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'osm_file_path': osm_file,
-            'map_frame': 'map',
-            'base_frame': 'base_link',
-            'resolution': 0.05
+            'map_frame': 'map',             # Global stationary map frame
+            'base_frame': 'base_footprint',  # Must match EKF base_link_frame
+            'resolution': 0.05,
+            'use_sim_time': use_sim_time,
         }]
     )
 
@@ -129,6 +160,9 @@ def generate_launch_description():
         declare_autostart_cmd,
         declare_params_file_cmd,
         declare_osm_file_cmd,
+        declare_x_pose_cmd,
+        declare_y_pose_cmd,
+        declare_yaw_pose_cmd,
         map_server_node,
         amcl_node,
         controller_server_node,

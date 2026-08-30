@@ -35,9 +35,43 @@ def generate_launch_description():
         description='Path to osmAG XML map'
     )
 
-    world_sdf = os.path.join(pkg_gz, 'worlds', 'big_map_7_world.sdf')
+    world_file = LaunchConfiguration('world')
 
-    # 1. Launch Gazebo Sim (Fortress / Ignition) with big_map_7 world
+    default_world = os.path.join(pkg_gz, 'worlds', 'big_map_7_world.sdf')
+    declare_world_cmd = DeclareLaunchArgument(
+        'world',
+        default_value=default_world,
+        description='Full path or name of Gazebo SDF world file'
+    )
+
+    x_pose = LaunchConfiguration('x_pose')
+    y_pose = LaunchConfiguration('y_pose')
+    z_pose = LaunchConfiguration('z_pose')
+
+    yaw_pose = LaunchConfiguration('yaw_pose')
+
+    declare_x_pose_cmd = DeclareLaunchArgument(
+        'x_pose',
+        default_value='-1.0',
+        description='Initial robot spawn x position'
+    )
+    declare_y_pose_cmd = DeclareLaunchArgument(
+        'y_pose',
+        default_value='0.0',
+        description='Initial robot spawn y position'
+    )
+    declare_z_pose_cmd = DeclareLaunchArgument(
+        'z_pose',
+        default_value='0.1',
+        description='Initial robot spawn z position'
+    )
+    declare_yaw_pose_cmd = DeclareLaunchArgument(
+        'yaw_pose',
+        default_value='0.0',
+        description='Initial robot spawn yaw angle in radians'
+    )
+
+    # 1. Launch Gazebo Sim (Fortress / Ignition)
     gz_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_gz, 'launch', 'gz_launch.py')
@@ -45,7 +79,11 @@ def generate_launch_description():
         launch_arguments={
             'use_sim_time': use_sim_time,
             'use_ros2_control': 'true',
-            'world': world_sdf,
+            'world': world_file,
+            'x_pose': x_pose,
+            'y_pose': y_pose,
+            'z_pose': z_pose,
+            'yaw_pose': yaw_pose,
         }.items()
     )
 
@@ -58,13 +96,21 @@ def generate_launch_description():
             'use_sim_time': use_sim_time,
             'map': map_yaml_file,
             'osm_file': osm_file,
+            'x_pose': x_pose,
+            'y_pose': y_pose,
+            'yaw_pose': yaw_pose,
         }.items()
     )
 
     return LaunchDescription([
         declare_use_sim_time_cmd,
+        declare_world_cmd,
         declare_map_cmd,
         declare_osm_cmd,
+        declare_x_pose_cmd,
+        declare_y_pose_cmd,
+        declare_z_pose_cmd,
+        declare_yaw_pose_cmd,
         gz_launch,
         navigation_launch,
     ])

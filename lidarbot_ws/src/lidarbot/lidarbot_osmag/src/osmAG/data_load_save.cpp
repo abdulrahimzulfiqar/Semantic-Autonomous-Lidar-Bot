@@ -122,10 +122,71 @@ void TraverseArea(AreaGraph& graph){
 }
 
 void TraversePassage(AreaGraph& graph){
-    printf("Taversing Passage\n");
+    printf("Traversing Passage with Area-Passage Resolution\n");
+    // Build name -> AreaId lookup map from all parsed areas
+    std::unordered_map<std::string, AreaId> name_to_area;
+    for (const auto& ap : graph.areas_) {
+        if (ap.second && ap.second->getAttributesPtr()) {
+            auto it_name = ap.second->getAttributesPtr()->tags.find("name");
+            if (it_name != ap.second->getAttributesPtr()->tags.end()) {
+                name_to_area[it_name->second] = ap.first;
+            }
+        }
+    }
+
     for(auto it = graph.passages_.begin(); it!= graph.passages_.end(); it++){
         auto from = it->second->area_from;
         auto to = it->second->area_to;
+
+        // Try to resolve 'from' by room name tag
+        if (graph.areas_.find(from) == graph.areas_.end() && it->second->info) {
+            auto it_from = it->second->info->tags.find("from_name");
+            if (it_from != it->second->info->tags.end() && name_to_area.find(it_from->second) != name_to_area.end()) {
+                from = name_to_area[it_from->second];
+                it->second->area_from = from;
+            }
+        }
+
+        // Try to resolve 'to' by room name tag
+        if (graph.areas_.find(to) == graph.areas_.end() && it->second->info) {
+            auto it_to = it->second->info->tags.find("to_name");
+            if (it_to != it->second->info->tags.end() && name_to_area.find(it_to->second) != name_to_area.end()) {
+                to = name_to_area[it_to->second];
+                it->second->area_to = to;
+            }
+        }
+
+        // Fallback: Node-boundary matching if either from or to is still unresolved
+        auto idx1 = it->second->passage_nodes.source;
+        auto idx2 = it->second->passage_nodes.target;
+        if (graph.areas_.find(from) == graph.areas_.end() || graph.areas_.find(to) == graph.areas_.end()) {
+            std::vector<AreaId> shared_areas;
+            for (const auto& ap : graph.areas_) {
+                if (!ap.second) continue;
+                bool has_n1 = false, has_n2 = false;
+                for (auto nid : ap.second->nodes_inorder_) {
+                    if (nid == idx1) has_n1 = true;
+                    if (nid == idx2) has_n2 = true;
+                }
+                if (has_n1 && has_n2) {
+                    shared_areas.push_back(ap.first);
+                }
+            }
+            if (graph.areas_.find(from) == graph.areas_.end() && !shared_areas.empty()) {
+                from = shared_areas[0];
+                it->second->area_from = from;
+            }
+            if (graph.areas_.find(to) == graph.areas_.end()) {
+                if (shared_areas.size() >= 2) {
+                    to = (shared_areas[0] == from) ? shared_areas[1] : shared_areas[0];
+                    it->second->area_to = to;
+                } else if (shared_areas.size() == 1 && from != shared_areas[0]) {
+                    to = shared_areas[0];
+                    it->second->area_to = to;
+                }
+            }
+        }
+
         if(graph.areas_.find(from)!= graph.areas_.end()){
             graph.areas_[from]->passageids.insert(it->first);
             graph.areas_[from]->passage_nodes.insert(std::make_pair(it->second->passage_nodes.source,it->second->passage_nodes.target));
@@ -133,10 +194,8 @@ void TraversePassage(AreaGraph& graph){
                 AreaId parent_id_from = graph.areas_[from]->parent_;
                 graph.passage_trees[parent_id_from].insert(it->first);
             }
-                
         }else{
-            printf("Graph Parsing is not complete!!!!!!");
-            printf("areaid is %ld\n", from);
+            printf("Graph Parsing: area_from id is %ld for passage %ld\n", from, it->first);
         }
 
         if(graph.areas_.find(to)!= graph.areas_.end()){
@@ -146,43 +205,33 @@ void TraversePassage(AreaGraph& graph){
                 AreaId parent_id_to = graph.areas_[to]->parent_;
                 graph.passage_trees[parent_id_to].insert(it->first);
             }
-                
         }else{
-            printf("Graph Parsing is not complete!!!!!!");
-            printf("areaid is %ld\n", to);
-
+            printf("Graph Parsing: area_to id is %ld for passage %ld\n", to, it->first);
         }
 
-        auto idx1 = it->second->passage_nodes.source;
-        auto idx2 = it->second->passage_nodes.target;
-        Eigen::Vector3d center;
+        Eigen::Vector3d center(0, 0, 0);
         if(graph.nodes_.find(idx1)!= graph.nodes_.end()){
-            center=graph.nodes_[idx1]->attributes_->position;
+            center = graph.nodes_[idx1]->attributes_->position;
             if(graph.nodes_[idx1]->passage_belongto_.find(it->first)==graph.nodes_[idx1]->passage_belongto_.end()){
                 graph.nodes_[idx1]->passage_belongto_.insert(it->first);
             }
         }else{
-            printf("Graph is not complete!!!!!!");
-            printf("nodeid is %ld\n", idx1);
-
+            printf("Graph is not complete!!!!!! nodeid is %ld\n", idx1);
         }
 
         if(graph.nodes_.find(idx2)!= graph.nodes_.end()){
             center += graph.nodes_[idx2]->attributes_->position;
-
             if(graph.nodes_[idx2]->passage_belongto_.find(it->first)==graph.nodes_[idx2]->passage_belongto_.end()){
                 graph.nodes_[idx2]->passage_belongto_.insert(it->first);
             }
         }else{
-            printf("Graph is not complete!!!!!!");
-            printf("nodeid is %ld\n", idx2);
+            printf("Graph is not complete!!!!!! nodeid is %ld\n", idx2);
         }
-        // printf("center of this passage %f\n",center[0]);
 
         center = center/2.0;
         it->second->center_position = center;
     }
-    printf("Travering pass success!!!!\n");
+    printf("Traversing passage success! All passages assigned to areas.\n");
 }
 
 void PlanInStructure(AreaGraph& graph, AreaId parent_areaid, PassageId start_id, PassageId end_id){
@@ -225,23 +274,41 @@ void PlanInStructure(AreaGraph& graph, AreaId parent_areaid, PassageId start_id,
     //     printf("%ld -> ",*pp);
     // }
     for(auto pp=p.rbegin(); pp !=p.rend(); ++pp){
-        printf("%s -> ",graph.passages_[*pp]->info->tags["name"].c_str());
+        if (graph.passages_.find(*pp) != graph.passages_.end() && graph.passages_[*pp] && graph.passages_[*pp]->info) {
+            auto it_name = graph.passages_[*pp]->info->tags.find("name");
+            if (it_name != graph.passages_[*pp]->info->tags.end()) {
+                printf("%s -> ", it_name->second.c_str());
+            } else {
+                printf("Passage_%ld -> ", *pp);
+            }
+        } else {
+            printf("Passage_%ld -> ", *pp);
+        }
     }
     printf("\n");
 }
 
 void PlanInPathGraph(AreaGraph& graph, PassageId start_id, PassageId end_id, std::vector<Eigen::Vector3d>& path_result){
     //First we need to judge if the start and end points exist.
+    printf("PlanInPathGraph: Planning from Passage %ld to Passage %ld\n", start_id, end_id);
+    fflush(stdout);
     if(graph.passages_.find(start_id) == graph.passages_.end()){
-        printf("ERROR: The start point id is not in this graph!!!");
+        printf("ERROR: The start point id is not in this graph!!!\n");
+        fflush(stdout);
         return;
     }
     if(graph.passages_.find(end_id) == graph.passages_.end()){
-        printf("ERROR: The end point id is not in this graph!!!");
+        printf("ERROR: The end point id is not in this graph!!!\n");
+        fflush(stdout);
         return;
     }
+    printf("PlanInPathGraph: Building PathGraph...\n");
+    fflush(stdout);
     PassageGraph passage_graph;
     PathGraph path_graphs(graph,passage_graph);
+
+    printf("PlanInPathGraph: PathGraph built. Running A* search...\n");
+    fflush(stdout);
 
     timeval start_time, stop_time;//us级别
     gettimeofday(&start_time, NULL);
@@ -252,6 +319,7 @@ void PlanInPathGraph(AreaGraph& graph, PassageId start_id, PassageId end_id, std
     long elapsed_us = (stop_time.tv_sec - start_time.tv_sec)*1000000 + (stop_time.tv_usec - start_time.tv_usec);
     long elapaed_ms = (stop_time.tv_sec - start_time.tv_sec)*1000 + (stop_time.tv_usec - start_time.tv_usec)/1000;
     printf("The time using OSM-AG: %ld us.\n", elapsed_us);
+    fflush(stdout);
 
     if (path_graphs.paths.empty() || !path_graphs.paths[0]) {
         printf("ERROR: No valid path found between Passage %ld and Passage %ld!\n", start_id, end_id);
@@ -312,72 +380,81 @@ void PlanInPathGraph(AreaGraph& graph, PassageId start_id, PassageId end_id, std
     /*如果是用L2或者L1进行的计算，这里需要拼接A*的； 当前只是为了计算耗时，因为计算path_graph的时候就已经算过了这一部分
       之后需要进行修改
     */
+    /* 
+       Optional A* benchmark verification block with safety checks:
+    */
     if(p.size()>1){
-        //前面的p已经反转过了
-        timeval start_time_test, stop_time_test;//us级别
+        timeval start_time_test, stop_time_test;
         long elapsed_us_test = 0;
         int count = 1;
 
         PassageId last = p[0];
         for(auto it = p.begin()+1; it != p.end(); it++){
-            //首先去找这两个passage在哪一个area当中
             AreaId common_area = 0;
+            if (graph.passages_.find(last) == graph.passages_.end() || graph.passages_.find(*it) == graph.passages_.end()) {
+                continue;
+            }
             AreaId last_area_1 = graph.passages_[last]->area_from;
             AreaId last_area_2 = graph.passages_[last]->area_to;
             AreaId current_area_1 = graph.passages_[*it]->area_from;
             AreaId current_area_2 = graph.passages_[*it]->area_to;
 
-            if(last_area_1 == current_area_1 | last_area_1 == current_area_2){
+            if(last_area_1 == current_area_1 || last_area_1 == current_area_2){
                 common_area = last_area_1;
             }
-            if(last_area_2 == current_area_1 | last_area_2 == current_area_2){
+            if(last_area_2 == current_area_1 || last_area_2 == current_area_2){
                 common_area = last_area_2;
             }
-            if(common_area==0){
-                printf("CANNOT find the common area!!!\n");//一般不会出现这种情况。
-                return;
+            if(common_area == 0 || graph.areas_.find(common_area) == graph.areas_.end() || !graph.areas_[common_area]){
+                continue;
             }
-            Eigen::Vector3d center_position = graph.areas_[common_area]->center_position;
-
             GridMat grid_mat_ = graph.areas_[common_area]->grid_mat_;
+            if (grid_mat_.grid_mat.empty() || grid_mat_.grid_mat.cols == 0 || grid_mat_.grid_mat.rows == 0) {
+                continue;
+            }
 
+            Eigen::Vector3d center_position = graph.areas_[common_area]->center_position;
             Eigen::Vector3d pi = graph.passages_[last]->center_position;
             Eigen::Vector3d pj = graph.passages_[*it]->center_position;
             int x_i = (pi[0] - center_position[0])/grid_mat_.resolution + grid_mat_.origin_grid_x + grid_mat_.offset;
             int y_i = (pi[1] - center_position[1])/grid_mat_.resolution + grid_mat_.origin_grid_y + grid_mat_.offset;
             int x_j = (pj[0] - center_position[0])/grid_mat_.resolution + grid_mat_.origin_grid_x + grid_mat_.offset;
             int y_j = (pj[1] - center_position[1])/grid_mat_.resolution + grid_mat_.origin_grid_y + grid_mat_.offset;
+            
+            if (x_i < 0 || x_i >= grid_mat_.grid_mat.cols || y_i < 0 || y_i >= grid_mat_.grid_mat.rows ||
+                x_j < 0 || x_j >= grid_mat_.grid_mat.cols || y_j < 0 || y_j >= grid_mat_.grid_mat.rows) {
+                continue;
+            }
+
             cv::Point2i point_i(x_i,y_i);
             cv::Point2i point_j(x_j,y_j);
-            double res_dis;
             vector<int> dis_result;
-	        std::vector<std::vector<int>> sites;
-            for (size_t col = 0; col < grid_mat_.grid_mat.cols; col++) {
-		        std::vector<int> rows;
-		        for (size_t row = 0; row < grid_mat_.grid_mat.rows; row++) {
-			        int color = grid_mat_.grid_mat.at<uchar>(row, col);
-			        rows.push_back(color == 255 ? 0 : 1);//白色的点是障碍点？？？
-		        }
-		        sites.push_back(rows);
-	        }
+            std::vector<std::vector<int>> sites;
+            for (int col = 0; col < grid_mat_.grid_mat.cols; col++) {
+                std::vector<int> rows;
+                for (int row = 0; row < grid_mat_.grid_mat.rows; row++) {
+                    int color = grid_mat_.grid_mat.at<uchar>(row, col);
+                    rows.push_back(color == 255 ? 0 : 1);
+                }
+                sites.push_back(rows);
+            }
             AStarCalc calc = AStarCalc();
             calc.InitSites(sites);
             CalcPt startpt = CalcPt(point_i);
-	        CalcPt endpt = CalcPt(point_j);
+            CalcPt endpt = CalcPt(point_j);
 
             gettimeofday(&start_time_test, NULL);
-
-	        list<CalcPt* > reslist = calc.GetPath(startpt, endpt, dis_result);
-
+            list<CalcPt* > reslist = calc.GetPath(startpt, endpt, dis_result);
             gettimeofday(&stop_time_test, NULL);
 
             elapsed_us_test += (stop_time_test.tv_sec - start_time_test.tv_sec)*1000000 + (stop_time_test.tv_usec - start_time_test.tv_usec);
 
             last = *it;
-            printf("%d...", count);
             count++;
         }
-        printf("\nThe A* duration in OSM-AG: %ld us.\n", elapsed_us_test);
+        if (elapsed_us_test > 0) {
+            printf("The A* duration in OSM-AG: %ld us.\n", elapsed_us_test);
+        }
     }
 }
 
@@ -405,7 +482,16 @@ void PlanInPathGraph(AreaGraph& graph, PassageId start_id, PassageId end_id, std
     printf("The shortest path from %ld to %ld is : ", start_id, end_id);
     auto p = path_graphs.paths[0]->path;
     for(auto pp=p.rbegin(); pp !=p.rend(); ++pp){
-        printf("%s -> ",graph.passages_[*pp]->info->tags["name"].c_str());
+        if (graph.passages_.find(*pp) != graph.passages_.end() && graph.passages_[*pp] && graph.passages_[*pp]->info) {
+            auto it_name = graph.passages_[*pp]->info->tags.find("name");
+            if (it_name != graph.passages_[*pp]->info->tags.end()) {
+                printf("%s -> ", it_name->second.c_str());
+            } else {
+                printf("Passage_%ld -> ", *pp);
+            }
+        } else {
+            printf("Passage_%ld -> ", *pp);
+        }
     }
     printf("\n");
 
@@ -593,73 +679,77 @@ bool Parsing_Osm2AreaGraph(AreaGraph& graph, const char* file_path){
 
     //Please attention : FirstChildElement("node") or FirstChildElement("way") will not find the previous siblingElement 所以要选第一个出现的， 需要改进 还要查找之前的 
     for(XMLElement* xml_node = osm-> FirstChildElement(); xml_node!=NULL ; xml_node = xml_node -> NextSiblingElement()){
-        if(std::string(xml_node->Value())== "node"){
-            NodeId node_id = atol(xml_node->Attribute("id"));
-            // printf("nodeid : %ld\n", node_id);
-            NodeAttributes attrs;
-            attrs.geo_position.latitude = atof(xml_node->Attribute("lat"));
-            attrs.geo_position.longtitude = atof(xml_node->Attribute("lon"));
-            attrs.action = std::string(xml_node->Attribute("action"));
-            attrs.visible = std::string(xml_node->Attribute("visible"))== "true" ?  true: false;
+        if(xml_node->Value() && std::string(xml_node->Value()) == "node"){
+            const char* id_str = xml_node->Attribute("id");
+            if (!id_str) continue;
+            NodeId node_id = atol(id_str);
 
-            /*we should confirm origin node is read at first!!!!!!*/
-            if(!graph.initial && std::string(xml_node->Attribute("root"))=="true"){
-                attrs.geo_position.altitude = atof(xml_node->Attribute("alt"));
-                Eigen::Vector3d rot = {atof(xml_node->Attribute("qx")),atof(xml_node->Attribute("qy")),atof(xml_node->Attribute("qz"))};
+            const char* lat_str = xml_node->Attribute("lat");
+            const char* lon_str = xml_node->Attribute("lon");
+            const char* act_str = xml_node->Attribute("action");
+            const char* vis_str = xml_node->Attribute("visible");
+            const char* root_str = xml_node->Attribute("root");
+
+            NodeAttributes attrs;
+            attrs.geo_position.latitude = lat_str ? atof(lat_str) : 0.0;
+            attrs.geo_position.longtitude = lon_str ? atof(lon_str) : 0.0;
+            attrs.action = act_str ? std::string(act_str) : "modify";
+            attrs.visible = (vis_str && std::string(vis_str) == "true");
+
+            /* Confirm origin node: prioritize explicit root="true", or fallback to first node */
+            if(!graph.initial){
+                const char* alt_str = xml_node->Attribute("alt");
+                const char* qx_str = xml_node->Attribute("qx");
+                const char* qy_str = xml_node->Attribute("qy");
+                const char* qz_str = xml_node->Attribute("qz");
+                attrs.geo_position.altitude = alt_str ? atof(alt_str) : 0.0;
+                Eigen::Vector3d rot = {
+                    qx_str ? atof(qx_str) : 0.0,
+                    qy_str ? atof(qy_str) : 0.0,
+                    qz_str ? atof(qz_str) : 0.0
+                };
                 OriginNode::Ptr origin_ptr = std::make_unique<OriginNode>(node_id, rot, attrs.clone());
                 graph.initial = true;
                 graph.origin_ = std::make_pair(node_id, std::move(origin_ptr));
-                //TODO: 现在不能把originnode加到Nodes里面，或者不要作为originnode 再加入一次
-                printf("Checked if we have read origin node: %d\n", true);
-                // continue;
+                bool is_explicit_root = (root_str && std::string(root_str) == "true");
+                printf("Checked if we have read origin node: 1 (Node %ld%s)\n", node_id, is_explicit_root ? " with root=true" : " as default origin");
             }
 
             if(graph.initial){
                 GeoCoordinate init = graph.origin_.second->getAttributesPtr()->geo_position;
                 attrs.position = CoordinateTransform(init, attrs.geo_position);
-                // Node node(node_id, attrs.clone());
                 Node::Ptr node_ptr = std::make_unique<Node>(node_id, attrs.clone());
-                // printf("nodes:%ld\n", node_ptr->id);
                 graph.AddNodeVertex(std::move(node_ptr));
                 graph.min_node_id = std::min(graph.min_node_id, node_id);
                 graph.max_node_id = std::max(graph.max_node_id, node_id);
             }
 
-        }else if(std::string(xml_node->Value())== "way"){
-            //先由areatype判断是area还是passage  <tag k='osmAG:type' v='passage' />
+        }else if(xml_node->Value() && std::string(xml_node->Value()) == "way"){
             WayAttributes way_attrs;
             std::map<std::string, std::string> tags_;
             std::vector<NodeId> nodes_inorder_;
 
-            uint64_t way_id = atol(xml_node->Attribute("id"));
+            const char* wid_str = xml_node->Attribute("id");
+            if (!wid_str) continue;
+            uint64_t way_id = atol(wid_str);
 
-            // IF DEBUG : THIS IS IMPORTANT!!!!!!
-            // printf("way id:%ld\n", way_id);
-
-
-            way_attrs.action = std::string(xml_node->Attribute("action"));
-            way_attrs.visible = std::string(xml_node->Attribute("visible"))== "true" ?  true: false;
-
-
-            //Please attention : FirstChildElement("nd") or FirstChildElement("tag") will not find the previous siblingElement 所以要选第一个出现的， 需要改进 还要查找之前的 
-
-            // xml_node->PreviousSiblingElement()
-
-            //所以默认用0
-
+            const char* wact_str = xml_node->Attribute("action");
+            const char* wvis_str = xml_node->Attribute("visible");
+            way_attrs.action = wact_str ? std::string(wact_str) : "modify";
+            way_attrs.visible = (wvis_str && std::string(wvis_str) == "true");
 
             for(XMLElement* way_tags = xml_node -> FirstChildElement(); way_tags!= NULL; way_tags = way_tags -> NextSiblingElement()){
-                /*
-                    At first, save all tags and ref nodes of the way and then check
-                */
-                if(std::string(way_tags->Value())=="tag"){
-                    std::string key_(way_tags->Attribute("k"));
-                    std::string value_(way_tags->Attribute("v"));
-                    tags_[key_] = value_;
-                }else if(std::string(way_tags->Value())=="nd"){
-                    //对于area来说，并不一定node全部读取完了，所以nodeptr可能还有点问题，可以用nodeid
-                    //而且还要考虑如果nodeid产生了变化的话 因为area是有顺序的，所以读取的时候需要注意
-                    nodes_inorder_.emplace_back(atol(way_tags->Attribute("ref")));
+                if(way_tags->Value() && std::string(way_tags->Value()) == "tag"){
+                    const char* k_str = way_tags->Attribute("k");
+                    const char* v_str = way_tags->Attribute("v");
+                    if (k_str && v_str) {
+                        tags_[std::string(k_str)] = std::string(v_str);
+                    }
+                }else if(way_tags->Value() && std::string(way_tags->Value()) == "nd"){
+                    const char* ref_str = way_tags->Attribute("ref");
+                    if (ref_str) {
+                        nodes_inorder_.emplace_back(atol(ref_str));
+                    }
                 }
             }
 
@@ -714,34 +804,22 @@ bool Parsing_Osm2AreaGraph(AreaGraph& graph, const char* file_path){
                 assert(nodes_inorder_.size()==2);
                 nodes_id.source = nodes_inorder_[0];
                 nodes_id.target = nodes_inorder_[1];
-                AreaId from = tags_.count("osmAG:from") ? std::atol(tags_["osmAG:from"].c_str()) : 0;
-                AreaId to = tags_.count("osmAG:to") ? std::atol(tags_["osmAG:to"].c_str()) : 0;//check the node if is exist eg. wayid=0;
-                if(from < 0 && to < 0){//测试阶段有不正确的area的id！！！！！！
-                if(graph.areas_.find(from)==graph.areas_.end()){
-                    printf("This areaID which passage FROM is wrong!! way id is:%ld, from id is: %ld. ", way_id, from);
-                    sucess_parse = false;
-                    return sucess_parse;
+                std::string from_str = tags_.count("osmAG:from") ? tags_["osmAG:from"] : "";
+                std::string to_str = tags_.count("osmAG:to") ? tags_["osmAG:to"] : "";
+                AreaId from = 0;
+                AreaId to = 0;
+                if (!from_str.empty() && (isdigit(from_str[0]) || from_str[0] == '-')) {
+                    from = std::atol(from_str.c_str());
                 }
-                if(graph.areas_[from]->hasParent()){
-                    AreaId parent_id_from = graph.areas_[from]->parent_;
-                    graph.passage_trees[parent_id_from].insert(way_id);
-                }
-                if(graph.areas_.find(to)==graph.areas_.end()){
-                    printf("This areaID which passage TO is wrong!! way id is:%ld, from id is: %ld. ", way_id, to);
-                    sucess_parse = false;
-                    return sucess_parse;
-                }
-                if(graph.areas_[to]->hasParent()){
-                    AreaId parent_id_to = graph.areas_[to]->parent_;
-                    graph.passage_trees[parent_id_to].insert(way_id);
-                }
+                if (!to_str.empty() && (isdigit(to_str[0]) || to_str[0] == '-')) {
+                    to = std::atol(to_str.c_str());
                 }
 
                 tags_.erase("osmAG:from");
                 tags_.erase("osmAG:to");
                 tags_.erase("osmAG:type");//erase the explicit tags
-
-                // printf("passage left tags size:%d\n", tags_.size());
+                if (!from_str.empty()) tags_["from_name"] = from_str;
+                if (!to_str.empty()) tags_["to_name"] = to_str;
 
                 way_attrs.tags = tags_;
 

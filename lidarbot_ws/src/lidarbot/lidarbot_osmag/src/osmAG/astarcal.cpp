@@ -2,73 +2,68 @@
  
 CalcPt* AStarCalc::findPath(CalcPt& startPoint, CalcPt& endPoint, bool isIgnoreCorner)
 {
-  bool isNearEndPoint = false;
-  //首先写入起点,拷贝开启一个节点，内外隔离
+  if (startPoint.pt.x == endPoint.pt.x && startPoint.pt.y == endPoint.pt.y) {
+    return new CalcPt(startPoint.pt);
+  }
+
+  // Ensure start and end points in sites are passable
+  if (startPoint.pt.x >= 0 && startPoint.pt.x < (int)sites.size() &&
+      startPoint.pt.y >= 0 && startPoint.pt.y < (int)sites[0].size()) {
+    sites[startPoint.pt.x][startPoint.pt.y] = 0;
+  }
+  if (endPoint.pt.x >= 0 && endPoint.pt.x < (int)sites.size() &&
+      endPoint.pt.y >= 0 && endPoint.pt.y < (int)sites[0].size()) {
+    sites[endPoint.pt.x][endPoint.pt.y] = 0;
+  }
+
+  // 首先写入起点
   CalcPt* firstpt = new CalcPt(cv::Point(startPoint.pt.x, startPoint.pt.y));
   firstpt->H = calcH(firstpt, &endPoint);
   firstpt->F = calcF(firstpt);
   openList.push_back(firstpt);
-  int max_iterations = 3000;
+  int max_iterations = 100000;
   while (!openList.empty() && max_iterations-- > 0) {
-    //找到F值最小的点
+    // 找到F值最小的点
     auto curPoint = getLeastFpoint();
-    //如果计算的点在关闭列表中，说明无路可走了
-    if (!isInList(closeList, curPoint)) {
-      //找到后从开启列表中删除
-      openList.remove(curPoint);
-      //存放到关闭列表中
-      closeList.push_back(curPoint);
-    }
-    else
-    {
+    if (!curPoint) break;
+
+    // Check if reached destination
+    if (curPoint->pt.x == endPoint.pt.x && curPoint->pt.y == endPoint.pt.y) {
       return curPoint;
     }
- 
- 
-    //距离小于100时开启终点检测,
-    //用此方法测试计算比原来减少了800毫秒
 
-    if (curPoint->H < 100) isNearEndPoint = true;
- 
- 
-    //1.找到当前点周围八个点中可以通过的点
+    // 从开启列表中删除并存放到关闭列表中
+    if (!isInList(closeList, curPoint)) {
+      openList.remove(curPoint);
+      closeList.push_back(curPoint);
+    } else {
+      continue;
+    }
+
+    // 1. 找到当前点周围八个点中可以通过的点
     auto surroundPoints = getSurroundPoints(curPoint, isIgnoreCorner);
     for (auto& target : surroundPoints) {
-      //2.对某一个点，如果不在开启列表中，加入到开启列表中，设置当前格为父节点，计算F,G,H的值
+      if (target->pt.x == endPoint.pt.x && target->pt.y == endPoint.pt.y) {
+        target->parent = curPoint;
+        target->G = calcG(curPoint, target);
+        return target;
+      }
+
       CalcPt* targetpt = isInList(openList, target);
       if (!targetpt) {
-        //计算F,G,H的值
         target->G = calcG(curPoint, target);
         target->H = calcH(target, &endPoint);
         target->F = calcF(target);
- 
- 
         target->parent = curPoint;
- 
- 
-        //插入到开启列表中
         openList.push_back(target);
-      }
-      //3.对某个点在开启列表中计算G值，如果比原来的大，就什么都不做
-      //否则设置它的父节点为当前点，并更新G和F
-      else {
+      } else {
         int tempG = calcG(curPoint, targetpt);
         if (tempG < targetpt->G) {
           targetpt->parent = curPoint;
- 
- 
           targetpt->G = tempG;
           targetpt->F = calcF(targetpt);
         }
-      }
- 
- 
-      //判断快到终点后才开始计算
-      if (isNearEndPoint) {
-        CalcPt* resPoint = isInList(openList, &endPoint);
-        //返回列表里的节点指针，不要用原来传入的endpoint指针，因为发生了深拷贝 
-        if (resPoint)
-          return resPoint;
+        delete target;
       }
     }
   }

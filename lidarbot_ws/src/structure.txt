@@ -1,247 +1,404 @@
-====================================================================================================
-                        LIDARBOT / SEMANTIC WHEELCHAIR WORKSPACE ARCHITECTURE
-                                    (ROS 2 Humble Workspace: lidarbot_ws)
-====================================================================================================
-
-This file provides a complete, easy-to-read directory tree and explanation of EVERY file and folder
-in the lidarbot_ws workspace. You can edit this file to add your own notes, comments, or modifications.
-
-----------------------------------------------------------------------------------------------------
-HIGH-LEVEL DATA FLOW & PIPELINE ARCHITECTURE:
-----------------------------------------------------------------------------------------------------
-
- [ Gazebo Sim (lidarbot_gz) ]  OR  [ Real Wheelchair Hardware (lidarbot_bringup) ]
-           │                                      │
-           │ (/scan, /imu, /odom)                 │ (/scan, /imu, /odom)
-           ▼                                      ▼
- [ AMCL Localization (lidarbot_navigation) ] ◄──► [ 2D Map Server (big_map_7.yaml) ]
-           │
-           │ (Robot Pose via /tf: map -> odom -> base_footprint)
-           ▼
- [ osmAG Planner & Controller Node (lidarbot_osmag) ] ◄──► [ Semantic Map (big_map_7.osm) ]
-           │
-           │ 1. Receives /goal_pose from Foxglove Studio
-           │ 2. Computes hierarchical A* topological route across room doorways (3 ms)
-           │ 3. Publishes 3D area & doorway visual markers (/osmag/map_markers, /osmag/path_marker)
-           │ 4. Drives robot wheels via Pure Pursuit controller (/cmd_vel)
-           ▼
- [ Velocity Multiplexer (twist_mux) ]
-           │
-           │ Priority arbitration (/cmd_vel_joy > /cmd_vel)
-           ▼
- [ Differential Drive Controller / Motor Driver (diff_controller) ] ──► WHEEL MOTION!
-
-====================================================================================================
-DETAILED DIRECTORY & FILE EXPLANATIONS
-====================================================================================================
-
 lidarbot_ws/
-└── src/
-    │
-    ├── structure.txt                    <-- THIS FILE: Full architectural map & explanations
-    │
-    ├── lidarbot/                        <-- Main Meta-Package & Robot Modules
-    │   │
-    │   │===========================================================================================
-    │   │ 1. LIDARBOT_DESCRIPTION: 3D CAD Models, Physics & URDF Robot Kinematics
-    │   │===========================================================================================
-    │   ├── lidarbot_description/
-    │   │   ├── CMakeLists.txt           # CMake build rules for exporting URDF & mesh assets
-    │   │   ├── package.xml              # ROS 2 package dependencies (urdf, xacro)
-    │   │   ├── urdf/                    # Robot physical & sensor model definition files (Xacro)
-    │   │   │   ├── lidarbot.urdf.xacro  # Master URDF file combining all sub-components
-    │   │   │   ├── lidarbot_core.xacro  # Chassis dimensions, wheel joints, and caster wheel physics
-    │   │   │   ├── lidar.xacro          # RPLiDAR 2D laser scanner sensor link and scan plugin
-    │   │   │   ├── camera.xacro         # Monocular / RGB camera sensor link and optical frame
-    │   │   │   ├── imu.xacro            # MPU6050 6-DOF IMU sensor link for orientation
-    │   │   │   ├── ros2_control.xacro   # Hardware interface for differential drive controllers
-    │   │   │   ├── gazebo_control.xacro # Gazebo simulation plugins for motor control & wheel physics
-    │   │   │   └── inertial_macros.xacro# Mathematical formulas for computing box/cylinder inertia (Ixx, Iyy, Izz)
-    │   │   ├── meshes/                  # 3D Collada (.dae) mesh visual assets for Foxglove & RViz
-    │   │   │   ├── robot_chassis.dae    # Main wheelchair chassis mesh
-    │   │   │   ├── right_wheel.dae      # Wheel rim and tire mesh
-    │   │   │   ├── caster_wheel.dae     # Free-spinning caster wheel mesh
-    │   │   │   ├── caster_mount.dae     # Mechanical caster bracket mount
-    │   │   │   ├── rplidar_base.dae     # RPLiDAR stationary base mount
-    │   │   │   ├── rplidar_top.dae      # RPLiDAR rotating laser head
-    │   │   │   ├── rplidar_stand.dae    # Elevated LiDAR mounting bracket
-    │   │   │   ├── rpi_4.dae            # Raspberry Pi 4 compute board visual
-    │   │   │   ├── rpi_stand.dae        # Raspberry Pi bracket mount
-    │   │   │   ├── rpi_camera.dae       # Raspberry Pi camera module visual
-    │   │   │   ├── rpi_camera_mount.dae # Camera tilt bracket mount
-    │   │   │   ├── MPU6050.dae          # IMU sensor breakout board visual
-    │   │   │   ├── power_bank.dae       # Battery power pack visual
-    │   │   │   └── power_bank_stand.dae # Battery retaining bracket
-    │   │   ├── launch/
-    │   │   │   ├── robot_state_publisher_launch.py # Converts Xacro URDF to robot_description & broadcasts /tf
-    │   │   │   └── description_launch.py           # Launches robot_state_publisher + RViz2 to inspect URDF
-    │   │   └── rviz/
-    │   │       ├── description.rviz     # RViz configuration to view static 3D robot model
-    │   │       └── lidarbot_sim.rviz    # RViz simulation layout
-    │   │
-    │   │===========================================================================================
-    │   │ 2. LIDARBOT_GZ: Gazebo Fortress / Ignition Sim (ARM64 Apple Silicon & x86)
-    │   │===========================================================================================
-    │   ├── lidarbot_gz/
-    │   │   ├── CMakeLists.txt           # CMake build rules for Gazebo Fortress package
-    │   │   ├── package.xml              # Package dependencies (ros_gz_sim, ros_gz_bridge, ign_ros2_control)
-    │   │   ├── config/
-    │   │   │   └── lidarbot_bridge.yaml # Configures ROS 2 <-> Gazebo topics (clock, scan, imu, cmd_vel)
-    │   │   ├── launch/
-    │   │   │   └── gz_launch.py         # Spawns robot, starts physics server, EKF, ros2_control & twist_mux
-    │   │   ├── worlds/
-    │   │   │   ├── big_map_7_world.sdf  # 3D physical world matching big_map_7 floorplan & walls
-    │   │   │   └── obstacles.sdf        # Benchmark obstacle simulation world
-    │   │   ├── models/                  # Custom 3D Gazebo simulation models
-    │   │   └── urdf/                    # Gazebo Fortress specific URDF overrides
-    │   │
-    │   │===========================================================================================
-    │   │ 3. LIDARBOT_GAZEBO: Gazebo Classic (Legacy AMD64)
-    │   │===========================================================================================
-    │   ├── lidarbot_gazebo/
-    │   │   ├── CMakeLists.txt           # Build rules for Gazebo Classic
-    │   │   ├── package.xml              # Dependencies for gazebo_ros_pkgs
-    │   │   ├── launch/                  # Launch files for Gazebo Classic simulator
-    │   │   └── worlds/
-    │   │       └── big_map_7_world.world# 3D walls world for Gazebo Classic
-    │   │
-    │   │===========================================================================================
-    │   │ 4. LIDARBOT_NAVIGATION: Map Server, AMCL Localization & 2D Occupancy Grid Maps
-    │   │===========================================================================================
-    │   ├── lidarbot_navigation/
-    │   │   ├── CMakeLists.txt           # Build rules for installing maps and configs
-    │   │   ├── package.xml              # Dependencies (nav2_amcl, nav2_map_server, nav2_controller)
-    │   │   ├── config/
-    │   │   │   ├── nav2_osmag_params.yaml # AMCL localization + RegulatedPurePursuit + local costmap
-    │   │   │   ├── nav2_params.yaml       # Standard full Nav2 stack parameters (sim)
-    │   │   │   ├── nav2_params_real.yaml  # Tuned Nav2 parameters for real hardware
-    │   │   │   └── ekf.yaml               # Extended Kalman Filter fusing wheel odometry + IMU
-    │   │   ├── maps/                    # 2D Occupancy Grid Maps
-    │   │   │   ├── big_map_7.yaml       # Map metadata: origin [-9.46, -3.37], resolution 0.05m
-    │   │   │   ├── big_map_7.pgm        # 8-bit grayscale map image loaded by ROS 2 Map Server
-    │   │   │   ├── big_map_7.png        # PNG copy of big_map_7
-    │   │   │   ├── big_map_7_cleaned.png# Denoised map image used for osmAG Voronoi segmentation
-    │   │   │   ├── real_map3.yaml       # Map metadata for real room mapping test 3
-    │   │   │   ├── real_map3.pgm        # Grayscale map for real room test 3
-    │   │   │   ├── map.yaml             # Default workspace map configuration
-    │   │   │   └── map.pgm              # Default workspace map image
-    │   │   ├── launch/
-    │   │   │   ├── navigation_osmag_launch.py # Launches Map Server, AMCL, and osmAG Planner
-    │   │   │   ├── navigation_launch.py       # Launches standard full Nav2 stack
-    │   │   │   └── rviz_osmag.launch.py       # Launches RViz configured for osmAG
-    │   │   └── rviz/
-    │   │       ├── osmag_navigation.rviz # Pre-configured RViz display (Map, Robot, Markers, Path)
-    │   │       └── navigation.rviz       # Standard Nav2 RViz layout
-    │   │
-    │   │===========================================================================================
-    │   │ 5. LIDARBOT_OSMAG: osmAG Topometric Semantic Path Planning & Controller (Phase 2 Core)
-    │   │===========================================================================================
-    │   ├── lidarbot_osmag/
-    │   │   ├── CMakeLists.txt           # Builds libosmag_lib.a and osmag_planner_node executable
-    │   │   ├── package.xml              # Dependencies (rclcpp, nav_msgs, visualization_msgs, tf2)
-    │   │   ├── data/                    # Semantic Topometric Floorplans (.osm XML format)
-    │   │   │   ├── big_map_7.osm        # Semantic room polygons & doorway graph for big_map_7
-    │   │   │   └── ShanghaiTech_merge_2.osm # Benchmark multi-building dataset from research paper
-    │   │   ├── include/osmAG/           # C++ Headers for osmAG Hierarchical Planning Algorithm
-    │   │   │   ├── areagraph.h          # Top-level Area Graph topology and passage connection tree
-    │   │   │   ├── area.h               # Area class (room boundaries, child cells, bounding boxes)
-    │   │   │   ├── base_area.h          # Base area geometric definitions
-    │   │   │   ├── passage.h            # Doorway/passage definitions connecting adjacent rooms
-    │   │   │   ├── pathgraph.h          # Two-layer hierarchical path search graph
-    │   │   │   ├── node.h               # Topological graph node data structures
-    │   │   │   ├── astarcal.h           # Fast A* path computation between doorway centroids
-    │   │   │   ├── area_grid_map.h      # Submap grid generator for localized intra-room traversal
-    │   │   │   ├── data_load_save.h     # High-speed XML parser for loading .osm files
-    │   │   │   ├── visualization.h      # MarkerArray visualizer generating 3D RViz/Foxglove lines
-    │   │   │   └── WGS84toCartesian.h   # Geodetic GPS (Lat/Lon) <-> Metric Cartesian (X/Y) transforms
-    │   │   ├── src/
-    │   │   │   ├── osmag_planner_node.cpp # ROS 2 Humble Node: /goal_pose -> A* Plan -> Pure Pursuit /cmd_vel
-    │   │   │   └── osmAG/                 # C++ Source Implementations
-    │   │   │       ├── area.cpp           # Room polygon bounding calculations
-    │   │   │       ├── astarcal.cpp       # A* algorithm implementation on passage network
-    │   │   │       ├── data_load_save.cpp # Parser translating .osm XML tags to C++ AreaGraph
-    │   │   │       ├── node.cpp           # Node creation and coordinate assignments
-    │   │   │       └── path_graph.cpp     # Hierarchical multi-layer path planning logic
-    │   │   └── launch/
-    │   │       └── osmag.launch.py      # Standalone launch file for testing osmAG planner
-    │   │
-    │   │===========================================================================================
-    │   │ 6. LIDARBOT_BRINGUP: Master Launch Files & Hardware Bridges
-    │   │===========================================================================================
-    │   ├── lidarbot_bringup/
-    │   │   ├── package.xml              # Package dependencies
-    │   │   ├── setup.py                 # Python package setup and launch file install declarations
-    │   │   ├── config/
-    │   │   │   ├── controllers.yaml     # ros2_control diff_drive controller velocity & wheel limits
-    │   │   │   └── ekf.yaml             # Robot localization EKF parameters
-    │   │   ├── launch/
-    │   │   │   ├── sim_osmag_bringup.launch.py # MASTER LAUNCH: Gazebo Sim + Nav2 + osmAG + Foxglove
-    │   │   │   ├── real_robot.launch.py        # Master launch file for physical robot hardware
-    │   │   │   └── real_robot_direct.launch.py # Direct hardware bringup without simulator
-    │   │   └── script/
-    │   │       ├── arduino_bridge.py    # Serial communication bridge sending PWM to Arduino motor driver
-    │   │       └── imu_fall_detector.py # Safety monitor checking IMU pitch/roll for tip-over prevention
-    │   │
-    │   │===========================================================================================
-    │   │ 7. LIDARBOT_SLAM: Simultaneous Localization and Mapping (For New Unmapped Buildings)
-    │   │===========================================================================================
-    │   ├── lidarbot_slam/
-    │   │   ├── CMakeLists.txt           # Build rules for slam package
-    │   │   ├── package.xml              # Dependencies for slam_toolbox
-    │   │   ├── config/
-    │   │   │   └── mapper_params_online_async.yaml # SLAM Toolbox async 2D scan-matching parameters
-    │   │   ├── launch/
-    │   │   │   └── online_async_launch.py # Launches SLAM Toolbox to generate new floorplans
-    │   │   └── rviz/
-    │   │       └── lidarbot_slam.rviz   # RViz layout for watching live map generation
-    │   │
-    │   │===========================================================================================
-    │   │ 8. LIDARBOT_TELEOP: Manual Control & Velocity Command Multiplexing
-    │   │===========================================================================================
-    │   ├── lidarbot_teleop/
-    │   │   ├── CMakeLists.txt           # Build rules for teleop package
-    │   │   ├── package.xml              # Dependencies (teleop_twist_joy, twist_mux)
-    │   │   ├── config/
-    │   │   │   ├── twist_mux.yaml       # Priority arbitrator: Joystick (p=100) > osmAG/Nav2 (p=10)
-    │   │   │   └── joystick.yaml        # PS4/Logitech gamepad axis button mapping
-    │   │   └── launch/
-    │   │       └── joystick_launch.py   # Launches joystick driver node
-    │   │
-    │   │===========================================================================================
-    │   │ 9. LIDARBOT_ARUCO & LIDARBOT_LLM: Visual Docking & Natural Language Scaffolding
-    │   │===========================================================================================
-    │   ├── lidarbot_aruco/              # Vision-based ArUco marker precision docking & station detection
-    │   └── lidarbot_llm/                # Scaffolding for Phase 3/4/5 LLM Copilot & Natural Language Planner
-    │
-    │===============================================================================================
-    │ 10. RPLIDAR_ROS: Official Driver for Slamtec RPLiDAR Hardware
-    │===============================================================================================
-    └── rplidar_ros/
-        ├── CMakeLists.txt               # Build rules for C++ driver and SDK
-        ├── package.xml                  # Package metadata
-        ├── launch/                      # Launch files for different RPLiDAR models (A1, A2, A3, S1, S2, C1)
-        ├── include/                     # Header files for RPLiDAR ROS 2 driver node
-        ├── sdk/                         # Slamtec C++ Low-Level Hardware Serial Communication SDK
-        ├── scripts/                     # Linux udev rules to assign fixed /dev/rplidar serial port
-        └── src/
-            ├── rplidar_node.cpp         # ROS 2 Node reading serial packets and publishing /scan
-            └── rplidar_client.cpp       # Client utility to query LiDAR health status
-
-====================================================================================================
-SUMMARY OF RUNTIME TOPICS & MESSAGES
-====================================================================================================
-
-| Topic Name                   | Message Type                     | Publishing Node           | Purpose                                      |
-|------------------------------|----------------------------------|---------------------------|----------------------------------------------|
-| `/scan`                      | `sensor_msgs/msg/LaserScan`      | Gazebo / rplidar_node     | 2D Laser rays for obstacles & AMCL           |
-| `/odom`                      | `nav_msgs/msg/Odometry`          | ekf_node                  | Filtered wheel odometry + IMU position       |
-| `/tf`                        | `tf2_msgs/msg/TFMessage`         | robot_state_publisher/amcl| Full spatial coordinate transform tree       |
-| `/map`                       | `nav_msgs/msg/OccupancyGrid`     | map_server                | 2D static floorplan grid                     |
-| `/goal_pose`                 | `geometry_msgs/msg/PoseStamped`  | Foxglove Studio / RViz2   | Target navigation destination clicked by user|
-| `/osmag/map_markers`         | `visualization_msgs/MarkerArray` | osmag_planner_node        | 3D green room polygons & red doorway markers |
-| `/osmag/global_path`         | `nav_msgs/msg/Path`              | osmag_planner_node        | Computed hierarchical multi-room path        |
-| `/osmag/path_marker`         | `visualization_msgs/Marker`      | osmag_planner_node        | 3D thick magenta route line for Foxglove     |
-| `/cmd_vel`                   | `geometry_msgs/msg/Twist`        | osmag_planner_node        | Wheel linear & angular velocity commands     |
-| `/diff_controller/cmd_vel...`| `geometry_msgs/msg/Twist`        | twist_mux                 | Arbitrated motor command fed to wheels       |
-
-====================================================================================================
+└── src
+    ├── lidarbot
+    │   ├── .github
+    │   │   └── workflows
+    │   │       └── lidarbot_ci_action.yml // continuous integration file created by developer
+    │   ├── config
+    │   │   └── ekf.yaml
+    │   ├── docs
+    │   │   ├── images
+    │   │   │   ├── Motor_Driver_HAT.png
+    │   │   │   ├── encoders.jpg
+    │   │   │   ├── gazebo_mapping.gif
+    │   │   │   ├── gazebo_navigation.gif
+    │   │   │   ├── gazebo_test_drive.gif
+    │   │   │   ├── generated_aruco_marker.png
+    │   │   │   ├── hall_effect_sensors.png
+    │   │   │   ├── hardwarecomp.png
+    │   │   │   ├── joint_state_publisher_gui.gif
+    │   │   │   ├── joy_tester.png
+    │   │   │   ├── lidarbot_aruco_marker.png
+    │   │   │   ├── lidarbot_aruco_test.gif
+    │   │   │   ├── lidarbot_rviz.png
+    │   │   │   ├── lidarbot_wiring.png
+    │   │   │   ├── motor_connection_tests.gif
+    │   │   │   ├── motor_control_hierarchy.jpg
+    │   │   │   ├── motor_pins.jpg
+    │   │   │   ├── motors.jpg
+    │   │   │   ├── mpu6050.jpg
+    │   │   │   ├── nav2_topics.png
+    │   │   │   ├── nav_end.png
+    │   │   │   ├── nav_start.png
+    │   │   │   ├── raspi_config_1.png
+    │   │   │   ├── raspi_config_2.png
+    │   │   │   ├── raspi_config_3.png
+    │   │   │   ├── raspi_config_4.png
+    │   │   │   ├── real_mapping.gif
+    │   │   │   ├── resman.png
+    │   │   │   ├── ros2_control_arch.png
+    │   │   │   ├── save_map.png
+    │   │   │   ├── side_view.jpg
+    │   │   │   ├── time_interval.jpg
+    │   │   │   ├── top_view.jpg
+    │   │   │   └── wireless_gamepad.jpg
+    │   │   └── index.md
+    │   ├── lidarbot
+    │   │   ├── CMakeLists.txt
+    │   │   └── package.xml
+    │   ├── lidarbot_aruco
+    │   │   ├── config
+    │   │   │   ├── chessboard_calibration.yaml
+    │   │   │   ├── params_1.yaml
+    │   │   │   └── params_2.yaml
+    │   │   ├── launch
+    │   │   │   └── trajectory_visualizer_launch.py
+    │   │   ├── lidarbot_aruco
+    │   │   │   ├── __init__.py
+    │   │   │   ├── aruco_trajectory_visualizer.py
+    │   │   │   ├── detect_aruco_marker.py
+    │   │   │   └── generate_aruco_marker.py
+    │   │   ├── resource
+    │   │   │   └── lidarbot_aruco
+    │   │   ├── tags
+    │   │   │   ├── DICT_4X4_50_id1.png
+    │   │   │   └── DICT_4X4_50_id24.png
+    │   │   ├── test
+    │   │   │   ├── test_copyright.py
+    │   │   │   ├── test_flake8.py
+    │   │   │   └── test_pep257.py
+    │   │   ├── package.xml
+    │   │   ├── setup.cfg
+    │   │   └── setup.py
+    │   ├── lidarbot_bringup
+    │   │   ├── __pycache__
+    │   │   │   └── setup.cpython-314.pyc
+    │   │   ├── config
+    │   │   │   ├── controllers.yaml
+    │   │   │   └── ekf.yaml
+    │   │   ├── launch
+    │   │   │   ├── __pycache__
+    │   │   │   │   └── real_robot.launch.cpython-314.pyc
+    │   │   │   ├── real_robot.launch.py
+    │   │   │   ├── real_robot_direct.launch.py
+    │   │   │   └── sim_osmag_bringup.launch.py
+    │   │   ├── lidarbot_bringup
+    │   │   │   ├── __init__.py
+    │   │   │   └── arduino_bridge.py
+    │   │   ├── resource
+    │   │   │   └── lidarbot_bringup
+    │   │   ├── script
+    │   │   │   ├── __pycache__
+    │   │   │   │   └── arduino_bridge.cpython-314.pyc
+    │   │   │   ├── arduino_bridge.py
+    │   │   │   └── imu_fall_detector.py
+    │   │   ├── package.xml
+    │   │   └── setup.py
+    │   ├── lidarbot_description
+    │   │   ├── launch
+    │   │   │   ├── description_launch.py
+    │   │   │   └── robot_state_publisher_launch.py
+    │   │   ├── meshes
+    │   │   │   ├── MPU6050.dae
+    │   │   │   ├── caster_mount.dae
+    │   │   │   ├── caster_wheel.dae
+    │   │   │   ├── power_bank.dae
+    │   │   │   ├── power_bank_stand.dae
+    │   │   │   ├── right_wheel.dae
+    │   │   │   ├── robot_chassis.dae
+    │   │   │   ├── rpi_4.dae
+    │   │   │   ├── rpi_camera.dae
+    │   │   │   ├── rpi_camera_mount.dae
+    │   │   │   ├── rpi_stand.dae
+    │   │   │   ├── rplidar_base.dae
+    │   │   │   ├── rplidar_stand.dae
+    │   │   │   └── rplidar_top.dae
+    │   │   ├── rviz
+    │   │   │   ├── description.rviz
+    │   │   │   └── lidarbot_sim.rviz
+    │   │   ├── urdf
+    │   │   │   ├── camera.xacro
+    │   │   │   ├── gazebo_control.xacro
+    │   │   │   ├── imu.xacro
+    │   │   │   ├── inertial_macros.xacro
+    │   │   │   ├── lidar.xacro
+    │   │   │   ├── lidarbot.urdf.xacro
+    │   │   │   ├── lidarbot_core.xacro
+    │   │   │   └── ros2_control.xacro
+    │   │   ├── CMakeLists.txt
+    │   │   └── package.xml
+    │   ├── lidarbot_gazebo
+    │   │   ├── config
+    │   │   │   └── gazebo_params.yaml
+    │   │   ├── launch
+    │   │   │   ├── gazebo_big_map_7.launch.py
+    │   │   │   ├── gazebo_big_map_7_launch.py
+    │   │   │   └── gazebo_launch.py
+    │   │   ├── worlds
+    │   │   │   ├── big_map_7_world.world
+    │   │   │   └── obstacles.world
+    │   │   ├── CMakeLists.txt
+    │   │   └── package.xml
+    │   ├── lidarbot_gz
+    │   │   ├── config
+    │   │   │   └── lidarbot_bridge.yaml
+    │   │   ├── launch
+    │   │   │   └── gz_launch.py
+    │   │   ├── models
+    │   │   │   ├── construction_barrel
+    │   │   │   │   ├── materials
+    │   │   │   │   │   └── textures
+    │   │   │   │   │       ├── Construction_Barrel_Diffuse.png
+    │   │   │   │   │       └── Construction_Barrel_Spec.png
+    │   │   │   │   ├── meshes
+    │   │   │   │   │   └── construction_barrel.dae
+    │   │   │   │   ├── model-1_3.sdf
+    │   │   │   │   ├── model-1_4.sdf
+    │   │   │   │   ├── model.config
+    │   │   │   │   └── model.sdf
+    │   │   │   └── construction_cone
+    │   │   │       ├── materials
+    │   │   │       │   └── textures
+    │   │   │       │       └── Construction_Cone_Diffuse.png
+    │   │   │       ├── meshes
+    │   │   │       │   └── construction_cone.dae
+    │   │   │       ├── model-1_3.sdf
+    │   │   │       ├── model-1_4.sdf
+    │   │   │       ├── model.config
+    │   │   │       └── model.sdf
+    │   │   ├── urdf
+    │   │   │   ├── lidarbot_gz.urdf.xacro
+    │   │   │   ├── lidarbot_gz_core.xacro
+    │   │   │   └── sensors.xacro
+    │   │   ├── worlds
+    │   │   │   ├── big_map_7_world.sdf
+    │   │   │   └── obstacles.sdf
+    │   │   ├── CMakeLists.txt
+    │   │   └── package.xml
+    │   ├── lidarbot_llm
+    │   │   ├── __pycache__
+    │   │   │   └── setup.cpython-314.pyc
+    │   │   ├── config
+    │   │   ├── launch
+    │   │   │   └── __pycache__
+    │   │   │       └── llm_navigation.launch.cpython-314.pyc
+    │   │   ├── lidarbot_llm
+    │   │   └── script
+    │   │       └── __pycache__
+    │   │           ├── grid_to_osmag.cpython-314.pyc
+    │   │           └── osmag_llm_planner.cpython-314.pyc
+    │   ├── lidarbot_navigation
+    │   │   ├── config
+    │   │   │   ├── ekf.yaml
+    │   │   │   ├── nav2_osmag_params.yaml
+    │   │   │   ├── nav2_params.yaml
+    │   │   │   └── nav2_params_real.yaml
+    │   │   ├── launch
+    │   │   │   ├── localization_launch.py
+    │   │   │   ├── nav2_real.launch.py
+    │   │   │   ├── navigation_launch.py
+    │   │   │   ├── navigation_osmag.launch.py
+    │   │   │   ├── navigation_osmag_launch.py
+    │   │   │   ├── rviz_osmag.launch.py
+    │   │   │   └── rviz_osmag_launch.py
+    │   │   ├── lidarbot_navigation
+    │   │   │   └── __init__.py
+    │   │   ├── maps
+    │   │   │   ├── big_map_7.pgm
+    │   │   │   ├── big_map_7.png
+    │   │   │   ├── big_map_7.yaml
+    │   │   │   ├── big_map_7_cleaned.png
+    │   │   │   ├── real_map3.pgm
+    │   │   │   ├── real_map3.yaml
+    │   │   │   ├── sim_map.data
+    │   │   │   ├── sim_map.pgm
+    │   │   │   ├── sim_map.posegraph
+    │   │   │   └── sim_map.yaml
+    │   │   ├── rviz
+    │   │   │   ├── lidarbot_nav.rviz
+    │   │   │   └── osmag_navigation.rviz
+    │   │   ├── scripts
+    │   │   │   └── trajectory_visualizer.py
+    │   │   ├── CMakeLists.txt
+    │   │   └── package.xml
+    │   ├── lidarbot_osmag
+    │   │   ├── config
+    │   │   │   └── osmag_params.yaml
+    │   │   ├── data
+    │   │   │   ├── ShanghaiTech_merge_2.osm
+    │   │   │   └── big_map_7.osm
+    │   │   ├── include
+    │   │   │   └── osmAG
+    │   │   │       ├── WGS84toCartesian.h
+    │   │   │       ├── area.h
+    │   │   │       ├── area_grid_map.h
+    │   │   │       ├── areagraph.h
+    │   │   │       ├── astarcal.h
+    │   │   │       ├── base_area.h
+    │   │   │       ├── data_load_save.h
+    │   │   │       ├── node.h
+    │   │   │       ├── passage.h
+    │   │   │       ├── pathgraph.h
+    │   │   │       └── visualization.h
+    │   │   ├── launch
+    │   │   │   ├── osmag.launch.py
+    │   │   │   └── osmag_launch.py
+    │   │   ├── src
+    │   │   │   ├── osmAG
+    │   │   │   │   ├── area.cpp
+    │   │   │   │   ├── astarcal.cpp
+    │   │   │   │   ├── data_load_save.cpp
+    │   │   │   │   ├── node.cpp
+    │   │   │   │   └── path_graph.cpp
+    │   │   │   └── osmag_planner_node.cpp
+    │   │   ├── CMakeLists.txt
+    │   │   ├── README.md
+    │   │   └── package.xml
+    │   ├── lidarbot_slam
+    │   │   ├── config
+    │   │   │   └── mapper_params_online_async.yaml
+    │   │   ├── launch
+    │   │   │   └── online_async_launch.py
+    │   │   ├── rviz
+    │   │   │   └── lidarbot_slam.rviz
+    │   │   ├── CMakeLists.txt
+    │   │   └── package.xml
+    │   ├── lidarbot_teleop
+    │   │   ├── config
+    │   │   │   ├── joystick.yaml
+    │   │   │   └── twist_mux.yaml
+    │   │   ├── launch
+    │   │   │   └── joystick_launch.py
+    │   │   ├── CMakeLists.txt
+    │   │   └── package.xml
+    │   ├── .gitignore
+    │   ├── LICENSE
+    │   └── README.md
+    ├── rplidar_ros
+    │   ├── debian
+    │   │   └── udev
+    │   ├── include
+    │   │   ├── rplidar_node.hpp
+    │   │   └── visibility.h
+    │   ├── launch
+    │   │   ├── rplidar_a1_launch.py
+    │   │   ├── rplidar_a2m12_launch.py
+    │   │   ├── rplidar_a2m7_launch.py
+    │   │   ├── rplidar_a2m8_launch.py
+    │   │   ├── rplidar_a3_launch.py
+    │   │   ├── rplidar_c1_launch.py
+    │   │   ├── rplidar_s1_launch.py
+    │   │   ├── rplidar_s1_tcp_launch.py
+    │   │   ├── rplidar_s2_launch.py
+    │   │   ├── rplidar_s2e_launch.py
+    │   │   ├── rplidar_s3_launch.py
+    │   │   ├── rplidar_t1_launch.py
+    │   │   ├── view_rplidar_a1_launch.py
+    │   │   ├── view_rplidar_a2m12_launch.py
+    │   │   ├── view_rplidar_a2m7_launch.py
+    │   │   ├── view_rplidar_a2m8_launch.py
+    │   │   ├── view_rplidar_a3_launch.py
+    │   │   ├── view_rplidar_c1_launch.py
+    │   │   ├── view_rplidar_s1_launch.py
+    │   │   ├── view_rplidar_s1_tcp_launch.py
+    │   │   ├── view_rplidar_s2_launch.py
+    │   │   ├── view_rplidar_s2e_launch.py
+    │   │   ├── view_rplidar_s3_launch.py
+    │   │   └── view_rplidar_t1_launch.py
+    │   ├── rviz
+    │   │   └── rplidar_ros.rviz
+    │   ├── scripts
+    │   │   ├── create_udev_rules.sh
+    │   │   ├── delete_udev_rules.sh
+    │   │   └── rplidar.rules
+    │   ├── sdk
+    │   │   ├── include
+    │   │   │   ├── rplidar.h
+    │   │   │   ├── rplidar_cmd.h
+    │   │   │   ├── rplidar_driver.h
+    │   │   │   ├── rplidar_protocol.h
+    │   │   │   ├── rptypes.h
+    │   │   │   ├── sl_crc.h
+    │   │   │   ├── sl_lidar.h
+    │   │   │   ├── sl_lidar_cmd.h
+    │   │   │   ├── sl_lidar_driver.h
+    │   │   │   ├── sl_lidar_driver_impl.h
+    │   │   │   ├── sl_lidar_protocol.h
+    │   │   │   └── sl_types.h
+    │   │   ├── src
+    │   │   │   ├── arch
+    │   │   │   │   ├── linux
+    │   │   │   │   │   ├── arch_linux.h
+    │   │   │   │   │   ├── net_serial.cpp
+    │   │   │   │   │   ├── net_serial.h
+    │   │   │   │   │   ├── net_socket.cpp
+    │   │   │   │   │   ├── thread.hpp
+    │   │   │   │   │   ├── timer.cpp
+    │   │   │   │   │   └── timer.h
+    │   │   │   │   ├── macOS
+    │   │   │   │   │   ├── arch_macOS.h
+    │   │   │   │   │   ├── net_serial.cpp
+    │   │   │   │   │   ├── net_serial.h
+    │   │   │   │   │   ├── net_socket.cpp
+    │   │   │   │   │   ├── thread.hpp
+    │   │   │   │   │   ├── timer.cpp
+    │   │   │   │   │   └── timer.h
+    │   │   │   │   └── win32
+    │   │   │   │       ├── arch_win32.h
+    │   │   │   │       ├── net_serial.cpp
+    │   │   │   │       ├── net_serial.h
+    │   │   │   │       ├── net_socket.cpp
+    │   │   │   │       ├── timer.cpp
+    │   │   │   │       ├── timer.h
+    │   │   │   │       └── winthread.hpp
+    │   │   │   ├── dataunpacker
+    │   │   │   │   ├── unpacker
+    │   │   │   │   │   ├── handler_capsules.cpp
+    │   │   │   │   │   ├── handler_capsules.h
+    │   │   │   │   │   ├── handler_hqnode.cpp
+    │   │   │   │   │   ├── handler_hqnode.h
+    │   │   │   │   │   ├── handler_normalnode.cpp
+    │   │   │   │   │   └── handler_normalnode.h
+    │   │   │   │   ├── dataunnpacker_commondef.h
+    │   │   │   │   ├── dataunnpacker_internal.h
+    │   │   │   │   ├── dataunpacker.cpp
+    │   │   │   │   ├── dataunpacker.h
+    │   │   │   │   └── dataupacker_namespace.h
+    │   │   │   ├── hal
+    │   │   │   │   ├── abs_rxtx.h
+    │   │   │   │   ├── assert.h
+    │   │   │   │   ├── byteops.h
+    │   │   │   │   ├── byteorder.h
+    │   │   │   │   ├── event.h
+    │   │   │   │   ├── locker.h
+    │   │   │   │   ├── socket.h
+    │   │   │   │   ├── thread.cpp
+    │   │   │   │   ├── thread.h
+    │   │   │   │   ├── types.h
+    │   │   │   │   ├── util.h
+    │   │   │   │   └── waiter.h
+    │   │   │   ├── rplidar_driver.cpp
+    │   │   │   ├── sdkcommon.h
+    │   │   │   ├── sl_async_transceiver.cpp
+    │   │   │   ├── sl_async_transceiver.h
+    │   │   │   ├── sl_crc.cpp
+    │   │   │   ├── sl_lidar_driver.cpp
+    │   │   │   ├── sl_lidarprotocol_codec.cpp
+    │   │   │   ├── sl_lidarprotocol_codec.h
+    │   │   │   ├── sl_serial_channel.cpp
+    │   │   │   ├── sl_tcp_channel.cpp
+    │   │   │   └── sl_udp_channel.cpp
+    │   │   └── Makefile
+    │   ├── src
+    │   │   ├── rplidar_client.cpp
+    │   │   └── rplidar_node.cpp
+    │   ├── .gitignore
+    │   ├── CHANGELOG.rst
+    │   ├── CMakeLists.txt
+    │   ├── LICENSE
+    │   ├── README.md
+    │   ├── package.xml
+    │   ├── rplidar_A1.png
+    │   └── rplidar_A2.png
+    ├── .DS_Store
+    └── structure.txt

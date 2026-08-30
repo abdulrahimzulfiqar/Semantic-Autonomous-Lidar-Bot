@@ -6,6 +6,20 @@ double ComputeAstarDis(GridMat& grids, cv::Point2i pt_s, cv::Point2i pt_e, std::
 	// std::vector<Point> resPoints;
     double res_dis;
     vector<int> dis_result;
+    // Safety: check grid_mat is valid before accessing
+    if (grids.grid_mat.empty() || grids.grid_mat.cols == 0 || grids.grid_mat.rows == 0) {
+        printf("ERR: ComputeAstarDis called with empty grid_mat!\n");
+        fflush(stdout);
+        return std::numeric_limits<double>::max();
+    }
+    // Safety: check points are within bounds
+    if (pt_s.x < 0 || pt_s.x >= grids.grid_mat.cols || pt_s.y < 0 || pt_s.y >= grids.grid_mat.rows ||
+        pt_e.x < 0 || pt_e.x >= grids.grid_mat.cols || pt_e.y < 0 || pt_e.y >= grids.grid_mat.rows) {
+        printf("ERR: ComputeAstarDis points out of bounds! s(%d,%d) e(%d,%d) grid(%d,%d)\n",
+               pt_s.x, pt_s.y, pt_e.x, pt_e.y, grids.grid_mat.cols, grids.grid_mat.rows);
+        fflush(stdout);
+        return std::numeric_limits<double>::max();
+    }
 	std::vector<std::vector<int>> sites;
     for (size_t col = 0; col < grids.grid_mat.cols; col++) {
 		std::vector<int> rows;
@@ -82,6 +96,9 @@ void Find_PathInArea(AreaGraph& graph, AreaId area_id, std::vector<PathEdge*>& p
         printf("The current area id is %ld\n",area_id);
         //并且 from和to 应该至少有一个不同
         for(auto pathit_i = path_in_area.begin(); pathit_i != path_in_area.end(); pathit_i++){
+            if (graph.passages_.find(*pathit_i) == graph.passages_.end() || graph.passages_[*pathit_i] == nullptr) {
+                continue;
+            }
             std::unordered_set<AreaId> i;
             path_in_area_temp.erase(*pathit_i);
             AreaId idi_from = graph.passages_[*pathit_i]->area_from;
@@ -89,11 +106,14 @@ void Find_PathInArea(AreaGraph& graph, AreaId area_id, std::vector<PathEdge*>& p
             i.insert(idi_from);
             i.insert(idi_to);
             for(auto pathit_j = path_in_area_temp.begin(); pathit_j!= path_in_area_temp.end(); pathit_j++){
-            AreaId idj_from = graph.passages_[*pathit_j]->area_from;
-            AreaId idj_to = graph.passages_[*pathit_j]->area_to;
-            bool diff = i.count(idj_from) && i.count(idj_to); //是false的话 说明有不一样的元素
+                if (graph.passages_.find(*pathit_j) == graph.passages_.end() || graph.passages_[*pathit_j] == nullptr) {
+                    continue;
+                }
+                AreaId idj_from = graph.passages_[*pathit_j]->area_from;
+                AreaId idj_to = graph.passages_[*pathit_j]->area_to;
+                bool diff = i.count(idj_from) && i.count(idj_to); //是false的话 说明有不一样的元素
                 if(diff){
-                printf("This two passages %ld and %ld  are similar!!!\n",*pathit_i,*pathit_j);
+                    printf("This two passages %ld and %ld  are similar!!!\n",*pathit_i,*pathit_j);
                     continue;
                 }else{
                     //说明有一个区域是不同的
@@ -139,6 +159,9 @@ void Find_PathInArea(AreaGraph& graph, AreaId area_id, std::vector<PathEdge*>& p
         fflush(stdout);
         //并且 from和to 应该至少有一个不同
         for(auto pathit_i = path_in_area.begin(); pathit_i != path_in_area.end(); pathit_i++){
+            if (graph.passages_.find(*pathit_i) == graph.passages_.end() || graph.passages_[*pathit_i] == nullptr) {
+                continue;
+            }
             std::unordered_set<AreaId> i;
             path_in_area_temp.erase(*pathit_i);
             AreaId idi_from = graph.passages_[*pathit_i]->area_from;
@@ -146,11 +169,14 @@ void Find_PathInArea(AreaGraph& graph, AreaId area_id, std::vector<PathEdge*>& p
             i.insert(idi_from);
             i.insert(idi_to);
             for(auto pathit_j = path_in_area_temp.begin(); pathit_j!= path_in_area_temp.end(); pathit_j++){
-            AreaId idj_from = graph.passages_[*pathit_j]->area_from;
-            AreaId idj_to = graph.passages_[*pathit_j]->area_to;
-            bool diff = i.count(idj_from) && i.count(idj_to); //是false的话 说明有不一样的元素
+                if (graph.passages_.find(*pathit_j) == graph.passages_.end() || graph.passages_[*pathit_j] == nullptr) {
+                    continue;
+                }
+                AreaId idj_from = graph.passages_[*pathit_j]->area_from;
+                AreaId idj_to = graph.passages_[*pathit_j]->area_to;
+                bool diff = i.count(idj_from) && i.count(idj_to); //是false的话 说明有不一样的元素
                 if(diff){
-                printf("This two passages %ld and %ld  are similar!!!\n",*pathit_i,*pathit_j);
+                    printf("This two passages %ld and %ld  are similar!!!\n",*pathit_i,*pathit_j);
                     continue;
                 }else{
                     //说明有一个区域是不同的
@@ -205,12 +231,19 @@ void Find_PathInArea(AreaGraph& graph, AreaId area_id, std::vector<PathEdge*>& p
 需要搜索找到叶节点！！不是某个区域的父亲（现在只有两个map能够证明是否是高级的区域），直接遍历所有区域，看其是否是tree的key
 */
 PathGraph::PathGraph(AreaGraph& graph, PassageGraph& passage_graph){
+    printf("PathGraph: Starting construction with %zu areas\n", graph.areas_.size());
+    fflush(stdout);
     for(auto it = graph.areas_.begin(); it!=graph.areas_.end();it++){
         if(graph.area_trees.find(it->first) ==graph.area_trees.end()){//说明该区域不是任意一个parent
+            printf("PathGraph: Processing leaf area %ld\n", it->first);
+            fflush(stdout);
             Find_PathInArea(graph, it->first, pathedges, pathedges_trj);
             passage_graph.pathedges.insert(passage_graph.pathedges.end(),pathedges.begin(),pathedges.end());
             passage_graph.pathedges_trj.insert(pathedges_trj.begin(), pathedges_trj.end());
             for(auto itt = it->second->passageids.begin(); itt != it->second->passageids.end(); itt++){
+                if (graph.passages_.find(*itt) == graph.passages_.end() || graph.passages_[*itt] == nullptr) {
+                    continue;
+                }
                 // PathNode *path = (PathNode*)std::malloc(sizeof(PathNode));
                 PathNode *path = new PathNode();
                 if(path->previous!= nullptr){
@@ -228,9 +261,12 @@ PathGraph::PathGraph(AreaGraph& graph, PassageGraph& passage_graph){
             it->second->is_leaf = false;//TODO 在这里判断很奇怪，traverse的时候应该判断
         }
     }
-    printf("The Number of edges of the whole passage graph:%ld\n", pathedges.size());
+    printf("The Number of edges of the whole passage graph:%ld, pathnodes: %zu\n", pathedges.size(), pathnodes.size());
+    fflush(stdout);
     std::ofstream out;
     PrintEdgesDistance(graph, out);
+    printf("PathGraph: Construction complete\n");
+    fflush(stdout);
 }
 
 
@@ -244,6 +280,9 @@ PathLayer::PathLayer(AreaGraph& graph, AreaId parent_area_id):parent_area_id(par
     printf("size of passagers_layer %zu\n", passages_layer.size());
 
     for(auto it = passages_layer.begin(); it!=passages_layer.end(); it++){
+        if (graph.passages_.find(*it) == graph.passages_.end() || graph.passages_[*it] == nullptr) {
+            continue;
+        }
         // PathNode *path = (PathNode*)std::malloc(sizeof(PathNode));
         PathNode *path = new PathNode();
         if(path->previous!= nullptr){
@@ -339,13 +378,28 @@ PathLayer::PathLayer(AreaGraph& graph, AreaId parent_area_id):parent_area_id(par
 void PathBase::AddEdge_AStar(PassageId start_id, PassageId end_id, Distance_Type type){
     dis_type = type;
     printf("Start to compute the paths, we use DISTANCE TYPE : %d\n", dis_type);
+    fflush(stdout);
     //初始化所有Pathnode的plan值
     printf("pathnodes size: %zu\n",pathnodes.size());
+    fflush(stdout);
     for(auto it=pathnodes.begin(); it!=pathnodes.end(); it++){
+        if (it->second == nullptr) continue;
         it->second->InitForPlanning();//为了避免之前算过没有恢复初始值
         // printf("pathnode id(passage) is %ld\n", it->second->passage_id);
     }
     // printf("TASK0\n");
+
+    // Safety: check that start_id and end_id exist in pathnodes
+    if (pathnodes.find(start_id) == pathnodes.end() || pathnodes[start_id] == nullptr) {
+        printf("ERROR: start_id %ld not found in pathnodes! Cannot plan path.\n", start_id);
+        fflush(stdout);
+        return;
+    }
+    if (pathnodes.find(end_id) == pathnodes.end() || pathnodes[end_id] == nullptr) {
+        printf("ERROR: end_id %ld not found in pathnodes! Cannot plan path.\n", end_id);
+        fflush(stdout);
+        return;
+    }
 
     //创建要记录的最短路径
     // Path* result_path = (Path*)std::malloc(sizeof(Path)); //这个是反向的路径
@@ -412,6 +466,9 @@ void PathBase::AddEdge_AStar(PassageId start_id, PassageId end_id, Distance_Type
                 continue;
             }else{
                 for(auto sub:subs){
+                    if(pathnodes.find(sub.first) == pathnodes.end() || pathnodes[sub.first] == nullptr){
+                        continue;
+                    }
                     PathNode* neigbor = pathnodes[sub.first];
                     double new_g_value = best->g_value + sub.second;
                     //判断neibor是否在openset中， is_open为true同时is_closed为false的话就在
@@ -500,13 +557,25 @@ void PathBase::PrintEdgesDistance(AreaGraph& graph, std::ofstream& outfile){
     outfile << "This file is recorded at " << time.str() << "!!!!" << std::endl;
 
     for(auto edge: pathedges){
-        outfile << "Edge!!! from id: " << edge->from << "(name: " << graph.passages_[edge->from]->info->tags["name"].c_str() << "); ";
-        outfile << "to id: " << edge->to << "(name: " << graph.passages_[edge->to]->info->tags["name"].c_str() << "); ";
+        // Safely print edge info with null checks
+        std::string from_name = "unknown";
+        std::string to_name = "unknown";
+        if (graph.passages_.find(edge->from) != graph.passages_.end() && graph.passages_[edge->from] && graph.passages_[edge->from]->info) {
+            auto it_name = graph.passages_[edge->from]->info->tags.find("name");
+            if (it_name != graph.passages_[edge->from]->info->tags.end()) {
+                from_name = it_name->second;
+            }
+        }
+        if (graph.passages_.find(edge->to) != graph.passages_.end() && graph.passages_[edge->to] && graph.passages_[edge->to]->info) {
+            auto it_name = graph.passages_[edge->to]->info->tags.find("name");
+            if (it_name != graph.passages_[edge->to]->info->tags.end()) {
+                to_name = it_name->second;
+            }
+        }
+        outfile << "Edge!!! from id: " << edge->from << "(name: " << from_name << "); ";
+        outfile << "to id: " << edge->to << "(name: " << to_name << "); ";
         outfile << "Distance L2 : " << edge->dist_L2;
         outfile << " and Distance L2 : " << edge->dist_L1 << std::endl;
-        // printf("Edge!!! from id: %ld (name: %s); ", edge->from, graph.passages_[edge->from]->info->tags["name"].c_str());
-        // printf("to id: %ld (name: %s); ", edge->to, graph.passages_[edge->to]->info->tags["name"].c_str());
-        // printf("Distance L2 : %lf \n", edge->dist_L2);
     }
 }
 

@@ -9,7 +9,9 @@ from launch.actions import (
     DeclareLaunchArgument,
     IncludeLaunchDescription,
     AppendEnvironmentVariable,
+    RegisterEventHandler,
 )
+from launch.event_handlers import OnProcessExit
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
@@ -81,6 +83,35 @@ def generate_launch_description():
         description="Use robot_localization package if true",
     )
 
+    x_pose = LaunchConfiguration("x_pose")
+    y_pose = LaunchConfiguration("y_pose")
+    z_pose = LaunchConfiguration("z_pose")
+
+    declare_x_pose_cmd = DeclareLaunchArgument(
+        name="x_pose",
+        default_value="-1.0",
+        description="Initial x-position for robot spawn",
+    )
+
+    declare_y_pose_cmd = DeclareLaunchArgument(
+        name="y_pose",
+        default_value="0.0",
+        description="Initial y-position for robot spawn",
+    )
+
+    declare_z_pose_cmd = DeclareLaunchArgument(
+        name="z_pose",
+        default_value="0.1",
+        description="Initial z-position for robot spawn",
+    )
+
+    yaw_pose = LaunchConfiguration("yaw_pose")
+    declare_yaw_pose_cmd = DeclareLaunchArgument(
+        name="yaw_pose",
+        default_value="0.0",
+        description="Initial yaw orientation for robot spawn in radians",
+    )
+
     # Start robot state publisher
     start_robot_state_publisher_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -108,7 +139,14 @@ def generate_launch_description():
     start_spawner_cmd = Node(
         package="ros_gz_sim",
         executable="create",
-        arguments=["-topic", "robot_description", "-name", "lidarbot"],
+        arguments=[
+            "-topic", "robot_description",
+            "-name", "lidarbot",
+            "-x", x_pose,
+            "-y", y_pose,
+            "-z", z_pose,
+            "-Y", yaw_pose,
+        ],
         output="screen",
     )
 
@@ -132,18 +170,32 @@ def generate_launch_description():
         output="screen",
     )
 
-    # Spawn diff_controller
-    start_diff_controller_cmd = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["diff_controller", "--controller-manager", "/controller_manager"],
+    # Spawn diff_controller after robot entity creation in Gazebo
+    start_diff_controller_cmd = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=start_spawner_cmd,
+            on_exit=[
+                Node(
+                    package="controller_manager",
+                    executable="spawner",
+                    arguments=["diff_controller", "--controller-manager", "/controller_manager", "--controller-manager-timeout", "30"],
+                ),
+            ],
+        )
     )
 
-    # Spawn joint_state_broadcaser
-    start_joint_broadcaster_cmd = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_broadcaster", "--controller-manager", "/controller_manager"],
+    # Spawn joint_state_broadcaster after robot entity creation in Gazebo
+    start_joint_broadcaster_cmd = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=start_spawner_cmd,
+            on_exit=[
+                Node(
+                    package="controller_manager",
+                    executable="spawner",
+                    arguments=["joint_broadcaster", "--controller-manager", "/controller_manager", "--controller-manager-timeout", "30"],
+                ),
+            ],
+        )
     )
 
     # Start robot localization using an Extended Kalman Filter

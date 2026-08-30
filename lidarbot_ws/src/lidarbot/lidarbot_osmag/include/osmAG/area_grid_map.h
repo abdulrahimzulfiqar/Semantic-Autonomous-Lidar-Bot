@@ -134,8 +134,14 @@ namespace osm_ag{
         // }
 
         for(auto passage : graph.areas_[area_id]->passageids){
+            if (graph.passages_.find(passage) == graph.passages_.end() || graph.passages_[passage] == nullptr) {
+                continue;
+            }
             NodeId id_i = graph.passages_[passage]->passage_nodes.source;
             NodeId id_j = graph.passages_[passage]->passage_nodes.target;
+            if (graph.nodes_.find(id_i) == graph.nodes_.end() || graph.nodes_.find(id_j) == graph.nodes_.end()) {
+                continue;
+            }
             Eigen::Vector3d pi = graph.nodes_[id_i]->attributes_->position;
             Eigen::Vector3d pj = graph.nodes_[id_j]->attributes_->position;
             Eigen::Vector3d pm = (pi+pj)/2.0;
@@ -149,9 +155,8 @@ namespace osm_ag{
             cv::Point2i point_j(x_j,y_j);
             cv::Point2i point_m(x_m,y_m);
 
-            cv::line(area_mat, point_i, point_j, cv::Scalar(255), 2);
-            cv::circle(area_mat,point_m,4,cv::Scalar(255),cv::FILLED);
-
+            cv::line(area_mat, point_i, point_j, cv::Scalar(255), 6);
+            cv::circle(area_mat, point_m, 8, cv::Scalar(255), cv::FILLED);
         }
 
 
