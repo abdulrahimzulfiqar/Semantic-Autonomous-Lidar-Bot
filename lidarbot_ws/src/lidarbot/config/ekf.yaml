@@ -1,14 +1,14 @@
 ### ekf.yaml (The Fixed Version) ###
 ekf_filter_node:
   ros__parameters:
-    frequency: 30.0
+    frequency: 30.0 #30 hz - 30 times per second
     sensor_timeout: 0.1
     two_d_mode: true
     publish_tf: true
     
-    map_frame: map
-    odom_frame: odom
-    base_link_frame: base_footprint
+    map_frame: map #The global coordinate frame of the environment map.
+    odom_frame: odom #The local coordinate frame of the robot, tied to its wheels. The coordinate frame representing the starting position where the robot woke up.
+    base_link_frame: base_footprint #The physical center of the robot, usually at the base of the mast.
     world_frame: odom
 
     # ODOMETRY (From Arduino)
