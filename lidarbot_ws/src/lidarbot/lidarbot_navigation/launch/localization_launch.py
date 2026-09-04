@@ -83,14 +83,21 @@ def generate_launch_description():
                 executable='map_server',
                 name='map_server',
                 output='screen',
-                parameters=[configured_params],
+                parameters=[configured_params, {'yaml_filename': map_yaml_file}],
             ),
             Node(
                 package='nav2_amcl',
                 executable='amcl',
                 name='amcl',
                 output='screen',
-                parameters=[configured_params],
+                parameters=[
+                    configured_params,
+                    {
+                        'initial_pose.x': x_pose,
+                        'initial_pose.y': y_pose,
+                        'initial_pose.yaw': yaw_pose,
+                    }
+                ],
             ),
             Node(
                 package='nav2_lifecycle_manager',
