@@ -2,6 +2,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, GroupAction
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
@@ -23,8 +24,17 @@ def generate_launch_description():
     autostart = LaunchConfiguration('autostart')
     params_file = LaunchConfiguration('params_file')
     osm_file = LaunchConfiguration('osm_file')
+    use_osmag = LaunchConfiguration('use_osmag')
 
-    # Declare Arguments
+    x_pose = LaunchConfiguration('x_pose')
+    y_pose = LaunchConfiguration('y_pose')
+    yaw_pose = LaunchConfiguration('yaw_pose')
+
+    declare_use_osmag_cmd = DeclareLaunchArgument(
+        'use_osmag',
+        default_value='false',
+        description='Whether to launch osmAG global planner (false for Stage 4 controller testing, true for Stage 5/6)'
+    )
     declare_map_yaml_cmd = DeclareLaunchArgument(
         'map',
         default_value=default_map_path,
@@ -132,6 +142,7 @@ def generate_launch_description():
         executable='osmag_planner_node',
         name='osmag_planner_node',
         output='screen',
+        condition=IfCondition(use_osmag),
         parameters=[{
             'osm_file_path': osm_file,
             'map_frame': 'map',             # Global stationary map frame
@@ -155,6 +166,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        declare_use_osmag_cmd,
         declare_map_yaml_cmd,
         declare_use_sim_time_cmd,
         declare_autostart_cmd,
