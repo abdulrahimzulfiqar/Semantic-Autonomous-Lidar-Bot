@@ -188,18 +188,26 @@ private:
         GetRobotPose(start_x, start_y);
         RCLCPP_INFO(this->get_logger(), "  Robot Start: (%.2f, %.2f)", start_x, start_y);
 
+        double straight_dist = std::hypot(goal_x - start_x, goal_y - start_y);
+
         // 2. Find closest passage (doorway) for start and goal
         PassageId start_id = FindClosestPassage(start_x, start_y);
         PassageId goal_id = FindClosestPassage(goal_x, goal_y);
 
         std::vector<Eigen::Vector3d> path_result;
 
-        if (start_id == goal_id) {
-            RCLCPP_INFO(this->get_logger(), "  Same room — direct path (Passage %ld)", start_id);
-            path_result.push_back(Eigen::Vector3d(start_x, start_y, 0.0));
-            path_result.push_back(Eigen::Vector3d(goal_x, goal_y, 0.0));
+        // If goal is within 5.0m (local maneuver) or within same doorway area, generate direct path
+        if (straight_dist <= 5.0 || start_id == goal_id) {
+            RCLCPP_INFO(this->get_logger(), "  Local direct goal (%.2f m) — generating direct trajectory to clicked pose", straight_dist);
+            int steps = std::max(5, static_cast<int>(std::ceil(straight_dist / 0.05)));
+            for (int s = 0; s <= steps; ++s) {
+                double alpha = static_cast<double>(s) / steps;
+                double px = start_x + alpha * (goal_x - start_x);
+                double py = start_y + alpha * (goal_y - start_y);
+                path_result.push_back(Eigen::Vector3d(px, py, 0.0));
+            }
         } else {
-            RCLCPP_INFO(this->get_logger(), "  Planning multi-room route: Door %ld → Door %ld...", start_id, goal_id);
+            RCLCPP_INFO(this->get_logger(), "  Multi-room campus route (%.2f m) — planning Door %ld → Door %ld...", straight_dist, start_id, goal_id);
 
             try {
                 auto t_start = std::chrono::high_resolution_clock::now();

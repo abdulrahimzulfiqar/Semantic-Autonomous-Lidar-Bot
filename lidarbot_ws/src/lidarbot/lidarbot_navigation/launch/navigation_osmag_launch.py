@@ -32,8 +32,8 @@ def generate_launch_description():
 
     declare_use_osmag_cmd = DeclareLaunchArgument(
         'use_osmag',
-        default_value='false',
-        description='Whether to launch osmAG global planner (false for Stage 4 controller testing, true for Stage 5/6)'
+        default_value='true',
+        description='Whether to launch osmAG global planner'
     )
     declare_map_yaml_cmd = DeclareLaunchArgument(
         'map',
