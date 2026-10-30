@@ -39,7 +39,7 @@ build-asan/
 bin/
 .idea/
 logs/
-runs/
+# Run snapshots are tracked at the project owner's request.
 /config/repro_local_cad.yaml
 cmake-build-debug/
 test_output/
@@ -64,7 +64,7 @@ cad2osm/script/core_process/dxf_filter.py
 *.[sS][kK][pP]
 *.[3][dD][mM]
 
-# CAD-derived local inputs and generated outputs must stay outside Git.
+# Original CAD inputs and utility-generated intermediate datasets remain local.
 /cad2osm/data/
 /area_graph_segment/input/
 /area_graph_segment/output/

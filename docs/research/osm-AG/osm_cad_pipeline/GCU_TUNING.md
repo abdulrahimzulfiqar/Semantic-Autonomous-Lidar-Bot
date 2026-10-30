@@ -7,9 +7,9 @@ Use **`osmAG-from-cad/config/repro_gcu.yaml`** as the single GCU configuration.
 
 ## Before and after
 
-These reference images are local CAD-derived artifacts in Git-ignored `runs/`;
-they are intentionally not distributed on GitHub. Reproduction generates the
-current after-image when the local source drawing is available.
+The project owner requested publication of the `runs/` snapshots, including these
+CAD-derived reference images. Original DXF inputs remain excluded. Reproduction
+requires the corresponding local source drawing.
 
 ### Original segmentation
 

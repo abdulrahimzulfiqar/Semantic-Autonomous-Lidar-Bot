@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-10-02T15:35:49",
+  "case": "example",
+  "dry_run": false,
+  "with_text": true,
+  "config": "config/repro_local_cad.yaml",
+  "effective_config": "runs/local-cad/example/effective_config.yaml",
+  "manifest": "runs/local-cad/example/run_manifest.json",
+  "input": {
+    "dxf": "test_floorplan.dxf",
+    "profile": "default"
+  },
+  "outputs": {
+    "svg": "runs/local-cad/example/preprocess/example.svg",
+    "bounds": "runs/local-cad/example/preprocess/example.bounds.json",
+    "png": "runs/local-cad/example/preprocess/example.png",
+    "area_graph_dir": "runs/local-cad/example/area_graph",
+    "osm": "runs/local-cad/example/area_graph/example110_filtered_osmAG.osm",
+    "room_graph": "runs/local-cad/example/area_graph/example110_filtered_roomGraph.png",
+    "texted_osm": "runs/local-cad/example/text/example_texted.osm"
+  },
+  "commands": [
+    {
+      "stage": "dxf_to_svg",
+      "command": "dxf_to_svg(/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/test_floorplan.dxf, /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/preprocess/example.svg, target_size=1000)",
+      "executed": true,
+      "success": true,
+      "message": "转换成功"
+    },
+    {
+      "stage": "svg_to_png",
+      "command": "svg_to_occupancy_grid(/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/preprocess/example.svg, /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/preprocess/example.png)",
+      "executed": true,
+      "success": true
+    },
+    {
+      "stage": "area_graph",
+      "command": "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/area_graph_segment/build/bin/area_graph_segmentation /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/preprocess/example.png --config /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/effective_config.yaml --output-dir /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/area_graph --dump-effective-config",
+      "executed": true,
+      "success": true
+    },
+    {
+      "stage": "text",
+      "command": "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/venv/bin/python /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/cad2osm/script/text_extract_module/text_extractor.py --mode full --dxf /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/test_floorplan.dxf --bounds /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/preprocess/example.bounds.json --osm /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/area_graph/example110_filtered_osmAG.osm --output /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/text/example_texted.osm --config /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/example/effective_config.yaml",
+      "executed": true,
+      "success": true
+    }
+  ]
+}
