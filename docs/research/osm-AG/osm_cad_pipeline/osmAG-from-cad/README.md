@@ -25,7 +25,7 @@ This repository provides the source code and configuration files for the CAD-to-
 1. The ShanghaiTech campus floor plans are non-public institutional building data and cannot be released without authorization.
 2. The ArchWeb floor plans were obtained from ArchWeb and remain subject to ArchWeb's copyright and current [Terms and Conditions](https://www.archweb.com/en/terms-and-conditions/), which do not permit us to redistribute or republish the downloaded CAD files. Researchers interested in these plans should obtain them independently from ArchWeb and comply with its current terms of use.
 
-To support reproducibility without embedding protected data, this repository includes processing code, configuration templates, and placeholder input paths. Users should provide only CAD files they are authorized to use from a local path outside the repository. Original protected CAD files and their derived artifacts must not be committed to this repository.
+To support reproducibility without embedding protected data, this repository includes processing code, configuration templates, and placeholder input paths. Users should provide only CAD files they are authorized to use from a local path outside the repository. Original protected CAD files remain excluded. The project owner requested publication of the existing `runs/` snapshots, including generated maps and reference images; this does not include the source CAD files.
 
 ## Reproducible Quick Start
 

@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-10-30T19:41:26",
+  "case": "gcu_first_floor",
+  "dry_run": false,
+  "with_text": false,
+  "config": "config/repro_gcu.yaml",
+  "effective_config": "runs/local-cad/gcu_first_floor/effective_config.yaml",
+  "manifest": "runs/local-cad/gcu_first_floor/run_manifest.json",
+  "input": {
+    "dxf": "gcu_first_floor.dxf",
+    "profile": "default"
+  },
+  "outputs": {
+    "source_config": "runs/local-cad/gcu_first_floor/source_config.yaml",
+    "svg": "runs/local-cad/gcu_first_floor/preprocess/gcu_first_floor.svg",
+    "bounds": "runs/local-cad/gcu_first_floor/preprocess/gcu_first_floor.bounds.json",
+    "png": "runs/local-cad/gcu_first_floor/preprocess/gcu_first_floor.png",
+    "area_graph_dir": "runs/local-cad/gcu_first_floor/area_graph",
+    "osm": "runs/local-cad/gcu_first_floor/area_graph/gcu_first_floor_reconstructed_osmAG.osm",
+    "room_graph": "runs/local-cad/gcu_first_floor/area_graph/gcu_first_floor_reconstructed_roomGraph.png",
+    "voronoi_skeleton": "runs/local-cad/gcu_first_floor/area_graph/gcu_first_floor_voronoi_skeleton.png",
+    "after_dead_end_removal": "runs/local-cad/gcu_first_floor/area_graph/gcu_first_floor_after_dead_end_removal.png",
+    "texted_osm": null,
+    "legacy_osm": null,
+    "legacy_room_graph": null,
+    "reconstructed_regions": "runs/local-cad/gcu_first_floor/area_graph/gcu_first_floor_reconstructed_regions.geojson",
+    "reconstructed_areas": "runs/local-cad/gcu_first_floor/area_graph/gcu_first_floor_reconstructed_room_areas.csv",
+    "reconstruction_labels": "runs/local-cad/gcu_first_floor/area_graph/gcu_first_floor_reconstructed_labels.npy",
+    "reconstruction_report": "runs/local-cad/gcu_first_floor/area_graph/gcu_first_floor_reconstructed_report.json"
+  },
+  "commands": [
+    {
+      "stage": "dxf_to_svg",
+      "command": "dxf_to_svg(/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/gcu_first_floor.dxf, /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/gcu_first_floor/preprocess/gcu_first_floor.svg, target_size=1000)",
+      "executed": true,
+      "success": true,
+      "message": "转换成功"
+    },
+    {
+      "stage": "svg_to_png",
+      "command": "svg_to_occupancy_grid(/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/gcu_first_floor/preprocess/gcu_first_floor.svg, /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/gcu_first_floor/preprocess/gcu_first_floor.png)",
+      "executed": true,
+      "success": true
+    },
+    {
+      "stage": "area_graph",
+      "command": "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/area_graph_segment/build/bin/area_graph_segmentation /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/gcu_first_floor/preprocess/gcu_first_floor.png --config /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/gcu_first_floor/effective_config.yaml --output-dir /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/gcu_first_floor/area_graph --dump-effective-config",
+      "executed": true,
+      "success": true
+    },
+    {
+      "stage": "occupancy_seeded_reconstruction",
+      "executed": true,
+      "success": true,
+      "command": "reconstruct_regions.reconstruct(labelled_graph, occupancy, envelope)",
+      "duration_seconds": 1.1341089168563485
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-10-02T20:04:00",
+  "case": "test_house_sm_1",
+  "dry_run": true,
+  "with_text": false,
+  "config": "config/repro_local_cad.yaml",
+  "effective_config": "runs/local-cad/test_house_sm_1/effective_config.yaml",
+  "manifest": "runs/local-cad/test_house_sm_1/run_manifest.json",
+  "input": {
+    "dxf": "Bilocale-21_clean.dxf",
+    "profile": "default"
+  },
+  "outputs": {
+    "svg": "runs/local-cad/test_house_sm_1/preprocess/test_house_sm_1.svg",
+    "bounds": "runs/local-cad/test_house_sm_1/preprocess/test_house_sm_1.bounds.json",
+    "png": "runs/local-cad/test_house_sm_1/preprocess/test_house_sm_1.png",
+    "area_graph_dir": "runs/local-cad/test_house_sm_1/area_graph",
+    "osm": null,
+    "room_graph": null,
+    "texted_osm": null
+  },
+  "commands": [
+    {
+      "stage": "dxf_to_svg",
+      "command": "dxf_to_svg(/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/Bilocale-21_clean.dxf, /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/test_house_sm_1/preprocess/test_house_sm_1.svg)",
+      "executed": false
+    },
+    {
+      "stage": "svg_to_png",
+      "command": "svg_to_occupancy_grid(/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/test_house_sm_1/preprocess/test_house_sm_1.svg, /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/test_house_sm_1/preprocess/test_house_sm_1.png)",
+      "executed": false
+    },
+    {
+      "stage": "area_graph",
+      "command": "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/area_graph_segment/build/bin/area_graph_segmentation /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/test_house_sm_1/preprocess/test_house_sm_1.png --config /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/test_house_sm_1/effective_config.yaml --output-dir /Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/runs/local-cad/test_house_sm_1/area_graph --dump-effective-config",
+      "executed": false
+    }
+  ]
+}

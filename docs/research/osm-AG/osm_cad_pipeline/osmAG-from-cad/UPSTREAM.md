@@ -12,6 +12,7 @@ Original license notices remain in their source files and component directories:
 `area_graph_segment/LICENSE` (GNU GPL v3) and `cad2osm/gui/LICENSE` (MIT).
 This provenance note does not replace those licenses.
 
-Private CAD inputs, derived maps, Python environments, build products and local
-run artifacts are excluded. GCU integration tests skip when the local input is
+Original CAD inputs, Python environments and build products are excluded.
+The project owner explicitly requested publication of the existing `runs/` snapshots,
+including derived maps and before/after reference images. GCU integration tests skip when the local input is
 unavailable; synthetic geometry/component tests remain runnable.
