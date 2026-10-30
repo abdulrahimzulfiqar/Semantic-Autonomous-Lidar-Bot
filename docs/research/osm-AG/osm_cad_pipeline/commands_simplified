@@ -1,0 +1,213 @@
+# Reproduce the accepted GCU CAD-to-osmAG map
+
+This is the final GCU workflow, including occupancy-seeded reconstruction.
+For the investigation, before/after images and limitations, see [GCU_TUNING.md](GCU_TUNING.md).
+
+## 1. Open the pipeline directory
+
+From the Semantic-Autonomous-Lidar-Bot repository root:
+
+```bash
+cd docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad
+```
+
+## 2. Build, filter and generate the map
+
+Copy this whole block after opening the directory above:
+
+```bash
+cmake -S area_graph_segment -B area_graph_segment/build
+cmake --build area_graph_segment/build -j 2
+
+./venv/bin/python cad2osm/script/layer_filter/dxf_filter_by_keywords.py gcu_clean_manual.dxf \
+  -k "PDF_WALL-2,PDF_Column,PDF_Win,PDF_Railing" \
+  -o gcu_final_clean.dxf
+
+./venv/bin/python run_pipeline.py --config config/repro_gcu.yaml \
+  --case gcu_config_parameters_testing_12
+```
+
+The historical case name is retained so existing links continue to work.
+Rerunning it overwrites generated outputs in that case, preserving its `references/` images.
+`config/repro_gcu.yaml` is the single accepted GCU configuration: fixed alpha 120,
+correct physical scale, and `geometry_reconstruction.enabled: true`.
+
+## Test another GCU floor yourself
+
+`--case` names an output folder; it does not select a DXF automatically. For a case
+not listed in the YAML, supply **`--dxf`**. Use a new case name to preserve previous
+results. Quote filenames with spaces. A continuation backslash must be the last
+character on its line, without trailing spaces.
+
+```bash
+./venv/bin/python cad2osm/script/layer_filter/dxf_filter_by_keywords.py 'FIRST FLOOR.dxf' \
+  -k "PDF_WALL-2,PDF_Column,PDF_Win,PDF_Railing" \
+  -o gcu_first_floor.dxf
+
+./venv/bin/python run_pipeline.py --config config/repro_gcu.yaml \
+  --case gcu_first_floor --dxf gcu_first_floor.dxf
+```
+
+That run inherits the ground-floor settings as an initial comparison. It is not
+calibrated automatically. The current first-floor filtered file contains a detached
+symbol outside the building, expanding its bounds and shrinking the building in
+its 1000-pixel raster. Its declared inch units and current bounds imply a resolution
+of **0.07297218950194169 m/pixel**, rather than the ground floor's 0.05864395131342248.
+
+To compare with that scale while retaining approximately the same physical alpha
+radius, use a separate output case:
+
+```bash
+./venv/bin/python run_pipeline.py --config config/repro_gcu.yaml \
+  --case gcu_first_floor_scaled --dxf gcu_first_floor.dxf \
+  --resolution 0.07297218950194169 \
+  --set area_graph.alpha.fixed_value=78
+```
+
+This is a proposed comparison, not a verified fix for every missed room.
+Alpha is in pixels squared: `120 × (0.05864395131342248 / 0.07297218950194169)² ≈ 78`.
+Keeping alpha 120 after correcting scale changes its physical radius.
+
+Prefer removing detached symbols/details in a separate CAD copy before filtering.
+After geometry/layers change, recalculate the bounds, resolution and alpha; the
+numbers above may no longer apply. Keep the original source DXF.
+The current ground-floor `level` is 1; use `--set level=2` for the first floor if
+that matches your floor-numbering convention. Level tags do not improve detection.
+
+## Test a non-GCU drawing
+
+Layer names, units, scale and doorway widths must be checked for each drawing.
+
+1. Export DWG to DXF if needed and preserve the original drawing.
+2. Inspect its layers:
+
+```bash
+./venv/bin/python cad2osm/script/analysis/dxf_layer_info.py 'other_building.dxf'
+```
+
+3. Filter using that drawing's structural layers. Replace the example layer names
+below with actual names from its layer report. Exclude furniture, dimensions, text,
+legends and detached details; door swing arcs must not become blocking walls.
+
+```bash
+./venv/bin/python cad2osm/script/layer_filter/dxf_filter_by_keywords.py 'other_building.dxf' \
+  -k "A-WALL,A-COLS,A-GLAZ" \
+  -o other_building_clean.dxf
+```
+
+4. Run with an explicit DXF and a unique case. **Replace the example resolution
+0.05 and example door/corridor widths below with measured values.** Reset fixed
+alpha to `null` to start with the dynamic calculation rather than GCU's fixed 120.
+
+```bash
+./venv/bin/python run_pipeline.py --config config/repro_gcu.yaml \
+  --case other_building --dxf other_building_clean.dxf \
+  --resolution 0.05 \
+  --set area_graph.alpha.fixed_value=null \
+  --set map_preprocessing.door_width=1.0 \
+  --set map_preprocessing.corridor_width=1.5
+```
+
+This reuses the pipeline/reconstruction settings, not a universal GCU calibration.
+For persistent settings, copy the YAML to `config/repro_other_building.yaml`, edit
+it, and use that file. Do not overwrite the accepted GCU configuration.
+A dynamically created case uses the `default` profile/global settings; it does not
+automatically copy another case's overrides. Geographic root values also need to
+be set appropriately for another building; the current origin is illustrative.
+
+5. Check `preprocess/<case>.png` first, then the raw/pruned skeleton and final map.
+If walls or openings are wrong in the raster, correct geometry/layers first.
+Reconstruction cannot reliably separate a room that has no distinct graph label.
+
+### Calculate scale from generated bounds and declared DXF units
+
+```text
+meters/pixel = (max_x_padded - min_x_padded) × meters_per_CAD_unit / svg_width_px
+```
+
+Unit factors: meters → 1; millimeters → 0.001; centimeters → 0.01; inches → 0.0254;
+feet → 0.3048. If declared units are absent or incorrect, use a known physical
+length for calibration instead. Coordinate magnitude alone does not establish units.
+
+After an initial run has generated the bounds, adapt both paths in this calculator:
+
+```bash
+./venv/bin/python - <<'PY'
+import json
+from pathlib import Path
+import ezdxf
+from ezdxf import units
+
+drawing = ezdxf.readfile('other_building_clean.dxf')
+unit_code = int(drawing.header.get('$INSUNITS', 0))
+if unit_code == 0:
+    raise SystemExit('DXF units are unspecified: calibrate using a known dimension.')
+bounds = json.loads(Path('runs/local-cad/other_building/preprocess/other_building.bounds.json').read_text())
+resolution = (bounds['max_x_padded'] - bounds['min_x_padded']) * units.conversion_factor(unit_code, units.M) / bounds['svg_width_px']
+print(f'Use --resolution {resolution:.12f}')
+PY
+```
+
+Rerun with the calculated resolution. Reconsider fixed alpha whenever the raster
+scale changes. Use measured dimensions to verify even a declared DXF unit.
+
+## 3. Open the accepted outputs
+
+All paths below are relative to `osmAG-from-cad/`:
+
+```text
+runs/local-cad/gcu_config_parameters_testing_12/
+├── run_manifest.json
+├── effective_config.yaml
+├── source_config.yaml
+├── validation_report.json       # Recorded verification of the retained final output
+├── preprocess/                  # SVG, bounds and occupancy PNG
+├── references/                  # Preserved before-images for the improvement record
+└── area_graph/
+    ├── gcu_config_parameters_testing_12_reconstructed_roomGraph.png
+    ├── gcu_config_parameters_testing_12_reconstructed_osmAG.osm
+    ├── gcu_config_parameters_testing_12_reconstructed_room_areas.csv
+    ├── gcu_config_parameters_testing_12_reconstructed_regions.geojson
+    ├── gcu_config_parameters_testing_12_reconstructed_labels.npy
+    ├── gcu_config_parameters_testing_12_reconstructed_report.json
+    ├── gcu_config_parameters_testing_12_voronoi_skeleton.png
+    ├── gcu_config_parameters_testing_12_after_dead_end_removal.png
+    ├── building_envelope.png
+    └── stage_01_room_labels.csv
+```
+
+Use the files with `_reconstructed_` for the final map and areas. The manifest also
+records their exact paths. The area CSV contains `room_name,area_m2` rows without a
+header. The GeoJSON uses image pixels, not geographic coordinates.
+
+Areas with holes are OSM multipolygon relations. A reader that only reads area
+ways must be adapted before it can preserve the central exclusion.
+
+## 4. Run checks when changing code or configuration
+
+```bash
+ctest --test-dir area_graph_segment/build --output-on-failure
+./venv/bin/python area_graph_segment/test/test_reconstruction.py
+./venv/bin/python area_graph_segment/test/test_gcu_pipeline.py
+```
+
+The integration tests use temporary run folders and clean them automatically.
+
+## Environment setup, only if rebuilding the Python environment
+
+The current `venv` already has these dependencies. For a fresh environment:
+
+```bash
+python3 -m venv venv
+./venv/bin/python -m pip install ezdxf svgwrite svgpathtools cairosvg pyyaml \
+  -r requirements-reconstruction.txt
+```
+
+CMake also requires the installed C++ dependencies: CGAL, Boost, Qt and yaml-cpp.
+
+## Physical scale and geographic reference
+
+The DXF declares inches. At the selected layers, 3% padding and 1000-pixel raster,
+resolution is approximately **0.058644 m/pixel**. Recalculate it if those inputs change.
+The configured geographic origin remains an example. Override it with surveyed
+values using `--root-lat`, `--root-lon`, `--root-pixel-x`, and `--root-pixel-y` when needed.
