@@ -43,3 +43,5 @@ venv/
 
 # Keep the ROS osmAG package build manifest despite the generic *.txt rule.
 !lidarbot_ws/src/lidarbot/lidarbot_osmag/CMakeLists.txt
+# Keep the Gazebo package manifest needed to install simulation controller profiles.
+!lidarbot_ws/src/lidarbot/lidarbot_gz/CMakeLists.txt

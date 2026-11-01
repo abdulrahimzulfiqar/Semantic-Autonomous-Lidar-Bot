@@ -1,0 +1,48 @@
+{
+  "simulation_only": true,
+  "distance_target_m": 0.4,
+  "turn_target_deg": 45,
+  "linear_speed_command_mps": 0.06,
+  "angular_speed_command_radps": 0.15,
+  "reference_robot_radius_m": 0.18,
+  "ground_truth_fed_to_amcl": false,
+  "acceptance": {
+    "distance_tolerance_m": 0.05,
+    "turn_tolerance_deg": 5,
+    "localization_p95_position_m": 0.25,
+    "localization_p95_yaw_deg": 5,
+    "stop_drift_limit_m": 0.02
+  },
+  "minimum_planned_path_clearance_m": 3.3936487195797667,
+  "start_truth": [
+    -0.05864395179618064,
+    -12.96031324026137,
+    -3.8130022648183603e-16
+  ],
+  "straight_distance_m": 0.4079832134933837,
+  "turn_achieved_deg": 46.12828744073359,
+  "stop_drift_m": 0.0,
+  "final_truth": [
+    0.3668330520983936,
+    -13.001405927125761,
+    0.8050885949381571
+  ],
+  "experiment_sim_seconds": 21.415999999999997,
+  "completed_motion_sequence": true,
+  "wall_seconds": 29.562479104000886,
+  "velocity_messages_sent": 506,
+  "nonzero_velocity_messages_sent": 300,
+  "readiness": {
+    "ground_truth_received": true,
+    "amcl_pose_received": true,
+    "scan_received": true,
+    "clock_received": true
+  },
+  "timestamp_matched_samples": 379,
+  "p95_position_error_m": 0.06999744123561474,
+  "p95_yaw_error_deg": 5.277450615460424,
+  "max_position_error_m": 0.07539856569143474,
+  "passed": false,
+  "limitations": "One short open-space trial; no contact sensor, collision-free route or recovery claim. Clearance and distance/turn limits use truth as a test supervisor; AMCL receives no truth.",
+  "trace_retention_note": "Exploratory per-sample trace omitted during cleanup; aggregate metrics retained. Final acceptance and user-run reports retain complete samples."
+}

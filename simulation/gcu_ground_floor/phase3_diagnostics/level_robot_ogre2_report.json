@@ -1,0 +1,102 @@
+{
+  "purpose": "stationary consistency against raster-derived simulation",
+  "velocity_commands_sent": 0,
+  "nonzero_commands_observed": 0,
+  "ready": true,
+  "requested_wall_seconds": 60.0,
+  "measurement_wall_seconds": 60.000615474999904,
+  "measurement_sim_seconds": 48.361000000000004,
+  "scans_with_timestamped_tf": 484,
+  "tf_lookup_retries": 8655,
+  "camera_images": 1402,
+  "camera_size": [
+    640,
+    480
+  ],
+  "resolution_m": 0.05864395201206207,
+  "scan_beams": 360,
+  "positive_infinite_beams": 43,
+  "nan_beams": 0,
+  "negative_infinite_beams": 0,
+  "finite_out_of_range_beams": 0,
+  "compared_beams": 314,
+  "median_absolute_range_error_m": 0.014379652217030525,
+  "p95_absolute_range_error_m": 0.17100301608443227,
+  "unexpected_short_return_beams": 11,
+  "missing_expected_return_beams": 0,
+  "unexpected_return_samples": [
+    {
+      "index": 2,
+      "angle_deg": -177.90419945506517,
+      "observed_m": 7.000738143920898,
+      "expected_m": 7.477103881537914
+    },
+    {
+      "index": 14,
+      "angle_deg": -165.8768740955865,
+      "observed_m": 7.672056198120117,
+      "expected_m": 7.858289569616318
+    },
+    {
+      "index": 42,
+      "angle_deg": -137.8131149234695,
+      "observed_m": 5.173715591430664,
+      "expected_m": 5.908378165215254
+    },
+    {
+      "index": 74,
+      "angle_deg": -105.74024729819295,
+      "observed_m": 4.342638969421387,
+      "expected_m": null
+    },
+    {
+      "index": 167,
+      "angle_deg": -12.528475762232992,
+      "observed_m": 8.663455963134766,
+      "expected_m": 8.840575765818357
+    },
+    {
+      "index": 169,
+      "angle_deg": -10.523921535653209,
+      "observed_m": 4.743207931518555,
+      "expected_m": 8.913880705833435
+    },
+    {
+      "index": 184,
+      "angle_deg": 4.510235163695173,
+      "observed_m": 8.458606719970703,
+      "expected_m": 8.679304897785187
+    },
+    {
+      "index": 185,
+      "angle_deg": 5.512512276985064,
+      "observed_m": 7.146246910095215,
+      "expected_m": 7.535747833549976
+    },
+    {
+      "index": 190,
+      "angle_deg": 10.523897843434524,
+      "observed_m": 5.626638889312744,
+      "expected_m": null
+    },
+    {
+      "index": 241,
+      "angle_deg": 61.64003062121902,
+      "observed_m": 3.7659223079681396,
+      "expected_m": 4.09041565284133
+    },
+    {
+      "index": 334,
+      "angle_deg": 154.85180215717898,
+      "observed_m": 8.369780540466309,
+      "expected_m": null
+    }
+  ],
+  "max_position_drift_m": 1.3877787807814457e-17,
+  "max_yaw_drift_deg": 0.0,
+  "stationary_pose_is_odometry_based": true,
+  "scan_stability_median_std_m": 0.009961746136880929,
+  "stationary_check_passed": true,
+  "scan_accuracy_gate_passed": false,
+  "note": "Pose stability is not ground truth or AMCL accuracy. Range comparison uses the final scan; thresholds are diagnostic gates."
+}

@@ -1,0 +1,42 @@
+{
+  "purpose": "stationary consistency against raster-derived simulation",
+  "velocity_commands_sent": 0,
+  "nonzero_commands_observed": 0,
+  "ready": true,
+  "requested_wall_seconds": 60.0,
+  "measurement_wall_seconds": 60.00151767599982,
+  "measurement_sim_seconds": 52.516000000000005,
+  "scans_with_timestamped_tf": 526,
+  "tf_lookup_retries": 14780,
+  "camera_images": 1491,
+  "camera_size": [
+    640,
+    480
+  ],
+  "resolution_m": 0.05864395201206207,
+  "scan_beams": 360,
+  "positive_infinite_beams": 46,
+  "nan_beams": 0,
+  "negative_infinite_beams": 0,
+  "finite_out_of_range_beams": 0,
+  "compared_beams": 314,
+  "median_absolute_range_error_m": 0.008946038782596588,
+  "p95_absolute_range_error_m": 0.02810630891472101,
+  "unexpected_short_return_beams": 1,
+  "missing_expected_return_beams": 0,
+  "unexpected_return_samples": [
+    {
+      "index": 241,
+      "angle_deg": 61.64003062121902,
+      "observed_m": 3.7646400928497314,
+      "expected_m": 4.09041565284133
+    }
+  ],
+  "max_position_drift_m": 1.3877787807814457e-17,
+  "max_yaw_drift_deg": 0.0,
+  "stationary_pose_is_odometry_based": true,
+  "scan_stability_median_std_m": 0.00999684195398972,
+  "stationary_check_passed": true,
+  "scan_accuracy_gate_passed": false,
+  "note": "Pose stability is not ground truth or AMCL accuracy. Range comparison uses the final scan; thresholds are diagnostic gates."
+}

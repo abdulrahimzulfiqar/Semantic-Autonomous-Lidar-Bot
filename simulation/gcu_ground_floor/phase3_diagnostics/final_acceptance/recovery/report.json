@@ -1,0 +1,104 @@
+{
+  "mode": "recovery",
+  "simulation_only": true,
+  "passed": true,
+  "initial_truth": [
+    -0.05864395179618064,
+    -12.96031324026137,
+    -3.8130022648183603e-16
+  ],
+  "acceptance": {
+    "position_m": 0.15,
+    "heading_deg": 3,
+    "consecutive_pose_updates": 3,
+    "simulation_timeout_s": 30,
+    "wall_timeout_s": 60
+  },
+  "injected_prior": {
+    "x": 0.14135604868657753,
+    "y": -13.110313240266368,
+    "yaw_deg": 8,
+    "position_stddev_m": 0.25,
+    "yaw_stddev_deg": 10
+  },
+  "recovery_sim_seconds": 2.7440000000000015,
+  "recovery_wall_seconds": 3.115093475998947,
+  "stationary_update_requests": 6,
+  "final_truth_drift_m": 0.0,
+  "limitations": "Local uncertain-prior correction with repeated no-motion updates; not global/kidnapped recovery or moving recovery.",
+  "nonzero_velocity_messages_sent": 0,
+  "zero_velocity_messages_sent_including_cleanup": 0,
+  "wall_seconds": 6.112851120000414,
+  "trace": [
+    {
+      "sim_elapsed": 0.0470000000000006,
+      "position_error_m": 0.21182703085459484,
+      "heading_error_deg": 7.221955298211273,
+      "estimate": [
+        0.10979989499102796,
+        -13.088755295213012,
+        0.12604689838563526
+      ]
+    },
+    {
+      "sim_elapsed": 0.136000000000001,
+      "position_error_m": 0.1704200606574742,
+      "heading_error_deg": 5.907882238771699,
+      "estimate": [
+        0.07823656513719249,
+        -13.061835263283715,
+        0.10311199688665958
+      ]
+    },
+    {
+      "sim_elapsed": 0.6290000000000013,
+      "position_error_m": 0.14301799376364424,
+      "heading_error_deg": 4.331348575612761,
+      "estimate": [
+        0.05831154053696248,
+        -13.042627026186267,
+        0.07559629369600887
+      ]
+    },
+    {
+      "sim_elapsed": 1.1270000000000007,
+      "position_error_m": 0.1165076693728338,
+      "heading_error_deg": 3.021059973446233,
+      "estimate": [
+        0.04120400452891658,
+        -13.02035008428561,
+        0.05272744343684885
+      ]
+    },
+    {
+      "sim_elapsed": 1.6550000000000011,
+      "position_error_m": 0.08825469332315372,
+      "heading_error_deg": 1.6620421736638864,
+      "estimate": [
+        0.01727540201472318,
+        -13.005314824794569,
+        0.02900810823743782
+      ]
+    },
+    {
+      "sim_elapsed": 2.2560000000000002,
+      "position_error_m": 0.06783916277035769,
+      "heading_error_deg": 1.0102168793667035,
+      "estimate": [
+        -0.000255650779942962,
+        -12.994852468825718,
+        0.01763161070417096
+      ]
+    },
+    {
+      "sim_elapsed": 2.7440000000000015,
+      "position_error_m": 0.04088730813343195,
+      "heading_error_deg": 0.39937356380415795,
+      "estimate": [
+        -0.02871768504281174,
+        -12.988173436323214,
+        0.006970383633805825
+      ]
+    }
+  ]
+}

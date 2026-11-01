@@ -1,0 +1,259 @@
+{
+  "domain": 78,
+  "cases": [
+    {
+      "case": "recovery",
+      "checker_exit": 0,
+      "passed": true,
+      "launch_exits": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "mode": "recovery",
+        "simulation_only": true,
+        "passed": true,
+        "initial_truth": [
+          -0.05864395179618064,
+          -12.96031324026137,
+          -3.8130022648183603e-16
+        ],
+        "acceptance": {
+          "position_m": 0.15,
+          "heading_deg": 3,
+          "consecutive_pose_updates": 3,
+          "simulation_timeout_s": 30,
+          "wall_timeout_s": 60
+        },
+        "injected_prior": {
+          "x": 0.14135604868657753,
+          "y": -13.110313240266368,
+          "yaw_deg": 8,
+          "position_stddev_m": 0.25,
+          "yaw_stddev_deg": 10
+        },
+        "recovery_sim_seconds": 2.7440000000000015,
+        "recovery_wall_seconds": 3.115093475998947,
+        "stationary_update_requests": 6,
+        "final_truth_drift_m": 0.0,
+        "limitations": "Local uncertain-prior correction with repeated no-motion updates; not global/kidnapped recovery or moving recovery.",
+        "nonzero_velocity_messages_sent": 0,
+        "zero_velocity_messages_sent_including_cleanup": 0,
+        "wall_seconds": 6.112851120000414
+      }
+    },
+    {
+      "case": "watchdog",
+      "checker_exit": 0,
+      "passed": true,
+      "launch_exits": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "mode": "watchdog",
+        "simulation_only": true,
+        "passed": true,
+        "initial_truth": [
+          -0.05864395179618064,
+          -12.96031324026137,
+          -3.8130022648183603e-16
+        ],
+        "acceptance": {
+          "command_mps": 0.05,
+          "command_duration_sim_s": 2,
+          "controller_timeout_s": 0.5,
+          "stop_by_sim_s": 1.0,
+          "stopped_speed_mps": 0.005,
+          "stable_sim_s": 0.3,
+          "maximum_coast_m": 0.05,
+          "post_stop_drift_m": 0.01
+        },
+        "messages_observed_after_silence_settle": 0,
+        "explicit_zero_messages_before_stop": 0,
+        "stop_after_last_command_sim_s": 0.702,
+        "coast_distance_m": 0.030000001901977595,
+        "post_stop_drift_m": 2.9878877150224525e-13,
+        "driven_distance_m": 0.09298611515033785,
+        "limitations": "Direct simulated-controller watchdog only; mux/network/process-crash/hardware stopping are not certified.",
+        "nonzero_velocity_messages_sent": 43,
+        "zero_velocity_messages_sent_including_cleanup": 20,
+        "wall_seconds": 8.340149111998471
+      }
+    },
+    {
+      "case": "motion_1",
+      "checker_exit": 0,
+      "passed": true,
+      "launch_exits": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "simulation_only": true,
+        "distance_target_m": 0.4,
+        "turn_target_deg": 45,
+        "linear_speed_command_mps": 0.06,
+        "angular_speed_command_radps": 0.15,
+        "reference_robot_radius_m": 0.18,
+        "ground_truth_fed_to_amcl": false,
+        "acceptance": {
+          "distance_tolerance_m": 0.05,
+          "turn_tolerance_deg": 5,
+          "localization_p95_position_m": 0.25,
+          "localization_p95_yaw_deg": 5,
+          "stop_drift_limit_m": 0.02
+        },
+        "minimum_planned_path_clearance_m": 3.3936487195797667,
+        "start_truth": [
+          -0.05864395179618064,
+          -12.96031324026137,
+          -3.8130022648183603e-16
+        ],
+        "straight_distance_m": 0.41038321232305547,
+        "turn_achieved_deg": 46.12828744073268,
+        "stop_drift_m": 0.0,
+        "final_truth": [
+          0.36923305092528197,
+          -13.00140593167485,
+          0.8050885948705676
+        ],
+        "experiment_sim_seconds": 21.467000000000002,
+        "completed_motion_sequence": true,
+        "wall_seconds": 28.927022492000106,
+        "velocity_messages_sent": 506,
+        "nonzero_velocity_messages_sent": 303,
+        "readiness": {
+          "ground_truth_received": true,
+          "amcl_pose_received": true,
+          "scan_received": true,
+          "clock_received": true
+        },
+        "timestamp_matched_samples": 372,
+        "p95_position_error_m": 0.08710948213659307,
+        "p95_yaw_error_deg": 2.3196420606149775,
+        "max_position_error_m": 0.09100541658012058,
+        "passed": true,
+        "limitations": "One short open-space trial; no contact sensor, collision-free route or recovery claim. Clearance and distance/turn limits use truth as a test supervisor; AMCL receives no truth."
+      }
+    },
+    {
+      "case": "motion_2",
+      "checker_exit": 0,
+      "passed": true,
+      "launch_exits": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "simulation_only": true,
+        "distance_target_m": 0.4,
+        "turn_target_deg": 45,
+        "linear_speed_command_mps": 0.06,
+        "angular_speed_command_radps": 0.15,
+        "reference_robot_radius_m": 0.18,
+        "ground_truth_fed_to_amcl": false,
+        "acceptance": {
+          "distance_tolerance_m": 0.05,
+          "turn_tolerance_deg": 5,
+          "localization_p95_position_m": 0.25,
+          "localization_p95_yaw_deg": 5,
+          "stop_drift_limit_m": 0.02
+        },
+        "minimum_planned_path_clearance_m": 3.3936487195797667,
+        "start_truth": [
+          -0.05864395179618064,
+          -12.96031324026137,
+          -3.8130022648183603e-16
+        ],
+        "straight_distance_m": 0.4091832129082954,
+        "turn_achieved_deg": 45.84701738678323,
+        "stop_drift_m": 0.0,
+        "final_truth": [
+          0.367831821669075,
+          -13.00121149555309,
+          0.8001795063756854
+        ],
+        "experiment_sim_seconds": 21.444,
+        "completed_motion_sequence": true,
+        "wall_seconds": 29.223707414001183,
+        "velocity_messages_sent": 511,
+        "nonzero_velocity_messages_sent": 305,
+        "readiness": {
+          "ground_truth_received": true,
+          "amcl_pose_received": true,
+          "scan_received": true,
+          "clock_received": true
+        },
+        "timestamp_matched_samples": 380,
+        "p95_position_error_m": 0.04057706675660191,
+        "p95_yaw_error_deg": 2.052214240211958,
+        "max_position_error_m": 0.0476509898111072,
+        "passed": true,
+        "limitations": "One short open-space trial; no contact sensor, collision-free route or recovery claim. Clearance and distance/turn limits use truth as a test supervisor; AMCL receives no truth."
+      }
+    },
+    {
+      "case": "motion_3",
+      "checker_exit": 0,
+      "passed": true,
+      "launch_exits": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "simulation_only": true,
+        "distance_target_m": 0.4,
+        "turn_target_deg": 45,
+        "linear_speed_command_mps": 0.06,
+        "angular_speed_command_radps": 0.15,
+        "reference_robot_radius_m": 0.18,
+        "ground_truth_fed_to_amcl": false,
+        "acceptance": {
+          "distance_tolerance_m": 0.05,
+          "turn_tolerance_deg": 5,
+          "localization_p95_position_m": 0.25,
+          "localization_p95_yaw_deg": 5,
+          "stop_drift_limit_m": 0.02
+        },
+        "minimum_planned_path_clearance_m": 3.3936487195797667,
+        "start_truth": [
+          -0.05864395179618064,
+          -12.96031324026137,
+          -3.8130022648183603e-16
+        ],
+        "straight_distance_m": 0.41038321232303226,
+        "turn_achieved_deg": 45.98765241375591,
+        "stop_drift_m": 0.0,
+        "final_truth": [
+          0.36913231669216806,
+          -13.00130883823318,
+          0.8026340506063127
+        ],
+        "experiment_sim_seconds": 21.479,
+        "completed_motion_sequence": true,
+        "wall_seconds": 29.370331887001157,
+        "velocity_messages_sent": 515,
+        "nonzero_velocity_messages_sent": 305,
+        "readiness": {
+          "ground_truth_received": true,
+          "amcl_pose_received": true,
+          "scan_received": true,
+          "clock_received": true
+        },
+        "timestamp_matched_samples": 364,
+        "p95_position_error_m": 0.04556002970575985,
+        "p95_yaw_error_deg": 2.418539562051208,
+        "max_position_error_m": 0.04949003244022407,
+        "passed": true,
+        "limitations": "One short open-space trial; no contact sensor, collision-free route or recovery claim. Clearance and distance/turn limits use truth as a test supervisor; AMCL receives no truth."
+      }
+    }
+  ],
+  "all_passed": true
+}
