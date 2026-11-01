@@ -1,0 +1,113 @@
+{
+  "clock_messages": 225,
+  "scan_messages": 3,
+  "odometry_messages": 47,
+  "camera_info_messages": 7,
+  "camera_image_messages": 7,
+  "velocity_commands_sent": 0,
+  "odometry_frame": "odom",
+  "last_position": [
+    6.0934070553674036e-15,
+    -1.2010796682315095e-24,
+    0.0
+  ],
+  "last_sim_time": 4.51,
+  "first_sim_time": 4.286,
+  "camera_size": [
+    640,
+    480
+  ],
+  "image_size": [
+    640,
+    480
+  ],
+  "image_bytes": 921600,
+  "image_encoding": "rgb8",
+  "scan_frame": "lidar_link",
+  "scan_beams": 360,
+  "finite_beams": 321,
+  "nearest_return_m": 3.4993841648101807,
+  "scan_range_limits": [
+    0.15000000596046448,
+    12.0
+  ],
+  "wall_seconds": 3.200597542999958,
+  "topics": {
+    "/camera/camera_info": [
+      "sensor_msgs/msg/CameraInfo"
+    ],
+    "/camera/image_raw": [
+      "sensor_msgs/msg/Image"
+    ],
+    "/camera/image_raw/compressed": [
+      "sensor_msgs/msg/CompressedImage"
+    ],
+    "/camera/image_raw/compressedDepth": [
+      "sensor_msgs/msg/CompressedImage"
+    ],
+    "/camera/image_raw/theora": [
+      "theora_image_transport/msg/Packet"
+    ],
+    "/clock": [
+      "rosgraph_msgs/msg/Clock"
+    ],
+    "/cmd_vel": [
+      "geometry_msgs/msg/Twist"
+    ],
+    "/cmd_vel_joy": [
+      "geometry_msgs/msg/Twist"
+    ],
+    "/diagnostics": [
+      "diagnostic_msgs/msg/DiagnosticArray"
+    ],
+    "/diff_controller/cmd_vel_unstamped": [
+      "geometry_msgs/msg/Twist"
+    ],
+    "/diff_controller/odom": [
+      "nav_msgs/msg/Odometry"
+    ],
+    "/diff_controller/transition_event": [
+      "lifecycle_msgs/msg/TransitionEvent"
+    ],
+    "/dynamic_joint_states": [
+      "control_msgs/msg/DynamicJointState"
+    ],
+    "/imu_broadcaster/imu": [
+      "sensor_msgs/msg/Imu"
+    ],
+    "/joint_broadcaster/transition_event": [
+      "lifecycle_msgs/msg/TransitionEvent"
+    ],
+    "/joint_states": [
+      "sensor_msgs/msg/JointState"
+    ],
+    "/joy": [
+      "sensor_msgs/msg/Joy"
+    ],
+    "/joy/set_feedback": [
+      "sensor_msgs/msg/JoyFeedback"
+    ],
+    "/odom": [
+      "nav_msgs/msg/Odometry"
+    ],
+    "/parameter_events": [
+      "rcl_interfaces/msg/ParameterEvent"
+    ],
+    "/robot_description": [
+      "std_msgs/msg/String"
+    ],
+    "/rosout": [
+      "rcl_interfaces/msg/Log"
+    ],
+    "/scan": [
+      "sensor_msgs/msg/LaserScan"
+    ],
+    "/tf": [
+      "tf2_msgs/msg/TFMessage"
+    ],
+    "/tf_static": [
+      "tf2_msgs/msg/TFMessage"
+    ]
+  },
+  "passed": true
+}

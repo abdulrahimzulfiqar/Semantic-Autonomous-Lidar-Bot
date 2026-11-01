@@ -659,11 +659,14 @@ bool Parsing_Osm2AreaGraph(AreaGraph& graph, const char* file_path){
 
     XMLError eResult = doc.LoadFile(file_path);
     if(eResult != XML_SUCCESS){
-        printf("Cannot loda the OSMAG file!!!\n");
+        printf("Cannot load the OSMAG file!\n");
+        return false;
     }else{
         printf("Open the OSM file SUCCESSFULLY!\n");
     }
     XMLNode * osm = doc.FirstChildElement("osm");
+    if (!osm) return false;
+    std::map<AreaId, std::string> parent_references;
 
     // for each xml element child in node :
     //   check if it is one that we 
@@ -731,7 +734,7 @@ bool Parsing_Osm2AreaGraph(AreaGraph& graph, const char* file_path){
 
             const char* wid_str = xml_node->Attribute("id");
             if (!wid_str) continue;
-            uint64_t way_id = atol(wid_str);
+            AreaId way_id = std::atoll(wid_str);
 
             const char* wact_str = xml_node->Attribute("action");
             const char* wvis_str = xml_node->Attribute("visible");
@@ -756,11 +759,9 @@ bool Parsing_Osm2AreaGraph(AreaGraph& graph, const char* file_path){
             if(tags_["osmAG:type"]=="area"){
                 std::string areatype = tags_["osmAG:areaType"];
                 // printf("areatype:%s\n",tags_["osmAG:areaType"].c_str());
-                AreaId parent_id;
-                bool has_parent = false; 
+
                 if(tags_.find("osmAG:parent") != tags_.end()){
-                    has_parent = true;
-                    parent_id = std::atol(tags_["osmAG:parent"].c_str());
+                    parent_references[way_id] = tags_["osmAG:parent"];
                     tags_.erase("osmAG:parent");
                 }
                 tags_.erase("osmAG:areaType");
@@ -776,7 +777,7 @@ bool Parsing_Osm2AreaGraph(AreaGraph& graph, const char* file_path){
                 // Area area(way_id, way_attrs.clone(),areatype);
                 Area::Ptr area_ptr = std::make_unique<Area>(way_id, way_attrs.clone(), areatype);
 
-                if(nodes_inorder_.back()!=nodes_inorder_.front()){
+                if(nodes_inorder_.size() < 4 || nodes_inorder_.back()!=nodes_inorder_.front()){
                     printf("This is not an area!! area id is:%ld", way_id);
                     sucess_parse = false;
                     return sucess_parse;
@@ -786,11 +787,7 @@ bool Parsing_Osm2AreaGraph(AreaGraph& graph, const char* file_path){
                 assert(nodes_inorder_.back()==nodes_inorder_.front());
                 area_ptr->nodes_inorder_ = nodes_inorder_;
 
-                if(has_parent){
-                    area_ptr->setparent(parent_id);
-                    // if(graph.area_trees.find(parent_id)!= graph.area_trees.end()){
-                        graph.area_trees[parent_id].insert(way_id);
-                }
+                // Resolve canonical names only after all area declarations exist.
                 // printf("if area has parent:%d\n", area_ptr->has_parent_);
                 graph.AddArea(std::move(area_ptr));
 
@@ -836,12 +833,65 @@ bool Parsing_Osm2AreaGraph(AreaGraph& graph, const char* file_path){
             }
             
         }else{
+            if (std::string(xml_node->Value()) == "relation") {
+                for (auto *tag = xml_node->FirstChildElement("tag"); tag; tag = tag->NextSiblingElement("tag")) {
+                    const char *key = tag->Attribute("k"), *value = tag->Attribute("v");
+                    if (key && value && std::string(key) == "osmAG:type" && std::string(value) == "area") {
+                        printf("Unsupported area relation: use the simple-way navigation adapter; refusing to lose holes.\n");
+                        return false;
+                    }
+                }
+            }
             xml_left_elements.push_back(xml_node);
         }
 
     }
 
 
+    std::map<std::string, AreaId> named_areas;
+    for (const auto &entry : graph.areas_) {
+        const auto &tags = entry.second->getAttributesPtr()->tags;
+        const auto name = tags.find("name");
+        if (name != tags.end() && !named_areas.emplace(name->second, entry.first).second) {
+            printf("Duplicate osmAG area name: %s\n", name->second.c_str());
+            return false;
+        }
+    }
+    auto resolve_area = [&](const std::string &reference, AreaId &id) {
+        const auto named = named_areas.find(reference);
+        if (named != named_areas.end()) { id = named->second; return true; }
+        // Legacy numeric references remain supported, but must exist.
+        try {
+            size_t used = 0;
+            id = std::stoll(reference, &used);
+            return used == reference.size() && graph.areas_.count(id) != 0;
+        } catch (...) { return false; }
+    };
+    for (const auto &entry : parent_references) {
+        AreaId parent;
+        if (!resolve_area(entry.second, parent) || parent == entry.first) return false;
+        graph.areas_.at(entry.first)->setparent(parent);
+        graph.area_trees[parent].insert(entry.first);
+    }
+    for (const auto &entry : graph.areas_) {
+        std::set<AreaId> seen;
+        const Area *area = entry.second.get();
+        while (area->hasParent()) {
+            if (!seen.insert(area->id).second || !graph.areas_.count(area->parent_)) return false;
+            area = graph.areas_.at(area->parent_).get();
+        }
+    }
+    for (const auto &entry : graph.passages_) {
+        auto &passage = *entry.second;
+        const auto &tags = passage.getAttributesPtr()->tags;
+        auto from = tags.find("from_name"), to = tags.find("to_name");
+        if (from == tags.end() || to == tags.end() ||
+            !resolve_area(from->second, passage.area_from) ||
+            !resolve_area(to->second, passage.area_to) || passage.area_from == passage.area_to) {
+            printf("Invalid osmAG passage area reference\n");
+            return false;
+        }
+    }
     return sucess_parse;
 }
 

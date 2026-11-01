@@ -40,3 +40,6 @@ venv/
 #screen recordings of testing stages
 *.mov
 
+
+# Keep the ROS osmAG package build manifest despite the generic *.txt rule.
+!lidarbot_ws/src/lidarbot/lidarbot_osmag/CMakeLists.txt
