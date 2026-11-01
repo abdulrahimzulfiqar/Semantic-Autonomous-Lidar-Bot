@@ -1,0 +1,115 @@
+{
+  "topology_connected": true,
+  "floor_elevation_m": 0,
+  "leaf_areas": 59,
+  "structure_areas": 1,
+  "two_node_passages": 68,
+  "holes_preserved_by_partition": true,
+  "shared_node_validation": "passed",
+  "walls_from_occupancy": true,
+  "wall_boxes": 830,
+  "wall_height_assumption_m": 2.0,
+  "map_origin": [
+    -29.351297632367952,
+    -20.14419727616062,
+    0.0
+  ],
+  "resolution": 0.05864395131342248,
+  "spawn": {
+    "x": -0.05864395131342248,
+    "y": -12.960313240266368,
+    "z": 0.15,
+    "yaw": 0.0,
+    "pixel": [
+      499,
+      721
+    ]
+  },
+  "gazebo_api": "fortress",
+  "runtime_tested": false,
+  "min_interface_midpoint_clearance_m": 0.05864395201206207,
+  "min_exported_interface_length_m": 0.23457580525368993,
+  "footprint_feasibility_verified": false,
+  "reference_robot_radius_m": 0.18,
+  "interfaces_below_reference_radius": [
+    {
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_9"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_10"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_11"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_12"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_13"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_17",
+        "gcu_gf_corridor_22"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_18",
+        "gcu_gf_corridor_22"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_19",
+        "gcu_gf_corridor_22"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_20",
+        "gcu_gf_corridor_22"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_21",
+        "gcu_gf_corridor_22"
+      ],
+      "midpoint_clearance_m": 0.05864395201206207
+    },
+    {
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_40"
+      ],
+      "midpoint_clearance_m": 0.1311318725347519
+    }
+  ],
+  "wall_mask_sha256": "a4f62de7189a162ee5a292f6aedf7e59fdff360da6f1e955065300007fef02d0",
+  "note": "Static artifacts validated; actual ROS loader, Gazebo physics and navigation must still be tested on Linux."
+}

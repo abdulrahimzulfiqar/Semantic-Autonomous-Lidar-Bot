@@ -40,3 +40,22 @@ The `lidarbot_osmag` package wraps the high-performance C++ `osmAG` engine into 
 
 3. **Send a Goal Pose**:
    In RViz2 or Foxglove Studio, click the **"2D Goal Pose"** tool to send a target position on `/goal_pose`.
+
+
+## GCU map readiness (before autonomous navigation)
+
+The reconstructed CAD export contains area relations and multi-node interfaces
+that the older loader cannot consume directly. Generate the simple-way GCU
+adapter with `scripts/prepare_gcu_simulation.py` from the project root. The parser
+now resolves named area/parent references and rejects unsupported area relations.
+
+After building on ROS 2 Linux, run:
+
+```bash
+ros2 run lidarbot_osmag osmag_map_check /absolute/path/to/gcu_ground_floor.osm --expect-root-excluded
+```
+
+This checks the real parser and topology without sending commands. Gazebo,
+footprint feasibility and route execution are separate gates; see
+`docs/research/osm-AG/GCU_SIMULATION_READINESS.md`. Do not treat a connected
+point-based graph as proof of wheelchair clearance.

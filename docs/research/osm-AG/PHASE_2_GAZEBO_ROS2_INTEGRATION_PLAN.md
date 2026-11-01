@@ -1,5 +1,10 @@
 # Phase 2 Implementation Plan: ROS 2 Gazebo Simulation & Nav2 osmAG Integration
 
+> GCU status update: see [GCU_SIMULATION_READINESS.md](GCU_SIMULATION_READINESS.md) for the generated world/map bundle, adapter, parser changes, passed UTM runtime checks and remaining navigation gates. The earlier direct `FollowPath` design below is a baseline; following osmAG-Nav requires segmented `NavigateToPose` execution.
+
+
+Achievement records: [phase history](phases/README.md). Initial GCU stationary Foxglove visualization is confirmed; localization and navigation remain pending.
+
 This document outlines the complete architectural design, file structure, integration steps, testing strategy, and expected outcomes for **Phase 2: Practical ROS 2 Gazebo Simulation & Nav2 osmAG Bringup**.
 
 ---

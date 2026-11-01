@@ -211,3 +211,11 @@ The DXF declares inches. At the selected layers, 3% padding and 1000-pixel raste
 resolution is approximately **0.058644 m/pixel**. Recalculate it if those inputs change.
 The configured geographic origin remains an example. Override it with surveyed
 values using `--root-lat`, `--root-lon`, `--root-pixel-x`, and `--root-pixel-y` when needed.
+
+
+## Next: prepare the Gazebo environment
+
+After reproducing the accepted map, follow
+[GCU_SIMULATION_READINESS.md](../GCU_SIMULATION_READINESS.md) for generation from
+the project root, offline checks and the separate Linux ROS/Gazebo runtime steps.
+The map-generation command above does not launch Gazebo or autonomous navigation.

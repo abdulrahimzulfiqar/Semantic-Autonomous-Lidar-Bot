@@ -207,3 +207,15 @@ source wall/door geometry and graph labels.
 `commands_simplified` now includes `--dxf`, a separate scaled first-floor case,
 non-GCU layer inspection/filtering, and a units/bounds scale calculator. Neither
 existing floor result was changed during this documentation update.
+
+
+## Next stage: simulation preparation
+
+The accepted reconstruction remains unchanged. The new
+[simulation readiness guide](../GCU_SIMULATION_READINESS.md) documents the separate
+simple-way navigation adapter, generated GCU SDF/occupancy map, real-loader check
+CLI and remaining Linux runtime/clearance gates. Virtual sector borders are not
+used as physical Gazebo walls. This does not yet mark autonomous navigation as
+validated.
+
+Phase history: [CAD reconstruction checkpoint](../phases/01_GCU_CAD_TO_OSMAG.md) → [simulation/visualization checkpoint](../phases/02_GCU_SIMULATION_VISUALIZATION.md).

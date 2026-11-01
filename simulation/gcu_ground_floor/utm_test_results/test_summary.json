@@ -1,0 +1,31 @@
+{
+  "tested_on": "2026-10-31",
+  "environment": {
+    "host": "macOS / UTM",
+    "guest": "Ubuntu 22.04 ARM64",
+    "ros": "Humble",
+    "gazebo": "Fortress 6.16.0",
+    "vcpus": 4,
+    "memory_approx_gb": 4
+  },
+  "workspace": "/home/ubuntu/edgeosmag_test_ws",
+  "release_build": "passed",
+  "canonical_loader": "passed: 60 areas, 59 traversable sectors, 68 passages",
+  "legacy_loader": "passed: 60 areas, 59 traversable sectors, 68 passages",
+  "sdf_validation": "Valid.",
+  "headless_world_physics": {
+    "iterations": 200,
+    "exit_code": 0
+  },
+  "stationary_sensor_test": "passed; see sensor_probe.json",
+  "render_engine": "ogre",
+  "software_rendering": true,
+  "desktop_session_required": true,
+  "velocity_commands_sent": 0,
+  "navigation_tested": false,
+  "limitations": [
+    "No map/odom alignment or localization test yet",
+    "No footprint-feasible routing test yet",
+    "Ogre2 without a connected display failed EGL/OpenGL initialization; not retested with desktop"
+  ]
+}
