@@ -1,0 +1,57 @@
+{
+  "scans": 397,
+  "images": 1101,
+  "nonzero_commands": 0,
+  "fixed_map_odom_messages": 0,
+  "dynamic_map_odom_messages": 396,
+  "first_sim_time": 4.693,
+  "last_sim_time": 44.329,
+  "lifecycle_state": "active",
+  "amcl_pose_messages": 3,
+  "nomotion_update_requests": 3,
+  "wall_seconds": 45.000951657999394,
+  "sim_seconds": 39.636,
+  "velocity_commands_sent": 0,
+  "reference": "Known initial spawn; no moving ground-truth evaluation",
+  "last_pose": {
+    "x": -0.058643951313421754,
+    "y": -12.96031324026612,
+    "yaw": -4.067087283368949e-20,
+    "variance_x": 1.3055426033454232e-17,
+    "variance_y": 3.3426620035330465e-12,
+    "variance_yaw": -2.4868995751603352e-14
+  },
+  "position_error_from_spawn_m": 2.486910247752585e-13,
+  "yaw_error_from_spawn_deg": 2.330269362483683e-18,
+  "pose_history": [
+    {
+      "x": -0.058643951313421754,
+      "y": -12.96031324026612,
+      "yaw": 6.0852554385069466e-21,
+      "variance_x": 1.3055426033454232e-17,
+      "variance_y": 3.3426620035330465e-12,
+      "variance_yaw": -2.4868995751603352e-14
+    },
+    {
+      "x": -0.058643951313421754,
+      "y": -12.96031324026612,
+      "yaw": -1.475074872226543e-19,
+      "variance_x": 1.3055426033454232e-17,
+      "variance_y": 3.3426620035330465e-12,
+      "variance_yaw": -2.4868995751603352e-14
+    },
+    {
+      "x": -0.058643951313421754,
+      "y": -12.96031324026612,
+      "yaw": -4.067087283368949e-20,
+      "variance_x": 1.3055426033454232e-17,
+      "variance_y": 3.3426620035330465e-12,
+      "variance_yaw": -2.4868995751603352e-14
+    }
+  ],
+  "map_to_lidar_available": true,
+  "passed": false,
+  "limitations": "Single stationary known-initial-pose test with three explicit no-motion update requests; not recovery or navigation.",
+  "original_smoke_predicate": true,
+  "rejected_reason": "Degenerate zero-covariance seed; does not demonstrate meaningful particle-filter localization."
+}

@@ -7,16 +7,19 @@ VM for ROS 2 Humble / Gazebo Fortress tests; results are recorded below.
 
 ## Current checkpoint (2026-11-01)
 
-The user has confirmed Foxglove map/LiDAR visualization and actual camera images.
-Nearby scan returns broadly follow mapped wall edges and the earlier map-frame
-selector errors are cleared. Initial stationary visual alignment is achieved.
-The 60-second stability check and quantitative scan/alignment error are not yet
-recorded; localization, controlled motion and navigation are not complete.
+Phase 03 is finalized for bounded simulation checks: corrected sensor geometry,
+stationary AMCL, local pose-prior recovery, direct-controller watchdog stopping and
+three fresh-spawn short motion repeats were measured. The user reproduced motion
+with Foxglove. The final five-case suite passed; all isolated test launches stopped
+cleanly. One strict grazing-edge scan discrepancy remains a qualified limitation.
+Autonomous navigation, contact validation, global recovery and Pi evaluation are
+not complete.
 
-Phase history is collected in [phases/README.md](phases/README.md), linking the
-[accepted CAD reconstruction](phases/01_GCU_CAD_TO_OSMAG.md) to the
-[simulation/visualization checkpoint](phases/02_GCU_SIMULATION_VISUALIZATION.md).
-Create the next numbered record when its acceptance gate is met.
+Phase history is collected in [phases/README.md](phases/README.md). The current
+achievement record is [Checkpoint 03](phases/03_GCU_LOCALIZATION_AND_CONTROLLED_MOTION.md),
+with evidence, exact commands and limitations. The detailed work log retains earlier
+failures and historical status updates. Next is footprint-feasible autonomous
+navigation, then osmAG segmented execution.
 
 ## What the previous work contributed
 
@@ -418,3 +421,49 @@ The final simulation milestone requires reproducible route trials with completio
 collisions, localization/goal errors and latency recorded; an attractive map overlay
 alone is insufficient. These measurements provide a reproducible research baseline,
 not yet evidence of a novel EdgeOsmAG contribution.
+
+## Phase 03 investigation: sensor-plane correction
+
+The stationary investigation found a physical model issue beyond the viewer
+flicker: the caster collision was 2 mm below the drive-wheel contact plane.
+Gazebo measured ~1.09 degrees forward pitch, making the LiDAR see the floor at
+~6.57 m. The corrected support geometry keeps the model level; in a 60-second
+Ogre 1 trial p95 scan/map range error fell from 2.14 m to 0.028 m. One grazing-edge
+ray still fails the strict initial gate. A subsequent bounded stationary AMCL
+smoke test passed with a nonzero-uncertainty prior; controlled motion remains
+pending.
+See the [phase 03 plan, measurements and corrected-model command](plans/03_GCU_LOCALIZATION_AND_CONTROLLED_MOTION.md).
+The earlier Foxglove screenshots used the original model and remain historical
+qualitative evidence, not sensor-accuracy acceptance.
+
+
+Stationary AMCL is now available through `scripts/gcu_amcl.launch.py` with
+`simulation/gcu_ground_floor/amcl.yaml` and its one-shot uncertain-prior helper.
+Stop the entire fixed-transform alignment launch before starting it. The isolated
+45-second smoke test passed with ~2.5 cm / 0.23 degree error relative to the known
+spawn, nonzero pose covariance, active AMCL, dynamic map-to-odom TF and zero robot
+movement commands. This is one stationary seeded trial, not recovery or navigation.
+See the phase 03 plan for the tested Ubuntu command and full limitations.
+
+
+## Latest phase 03 controlled-motion smoke test
+
+A separate evaluation-only PosePublisher wrapper and `/gcu_ground_truth` bridge
+now provide timestamped model truth without feeding navigation TF. The simulator
+uses its own wheel-separation config (0.117 m effective collision-center separation),
+leaving hardware parameters unchanged. AMCL's current motion profile uses 120
+beams, 0.03 m/rad update triggers and 0.2 s transform tolerance.
+
+One bounded isolated trial passed: 0.40798 m forward, 45.847 degree left turn,
+zero reported post-settle drift, and p95 localization error 0.06844 m / 2.656 degrees
+across 375 same-timestamp pose pairs. This is tuned single-trial evidence, not
+recovery, contact validation, a watchdog test or autonomous navigation acceptance.
+See the phase 03 plan for the reproduction commands and rejected earlier trials.
+
+
+The user subsequently reproduced the same bounded motion test in Foxglove:
+0.40798 m forward, 45.847 degree turn, p95 localization error 0.03862 m / 2.1756
+degrees across 414 timestamp-matched pairs. The pasted report's metrics were
+recomputed and confirmed; sampled recording frames show camera/view changes and
+broad scan/map agreement. See the phase 03 plan for evidence. Recovery and watchdog
+checks remain open; this does not close the full localization/navigation milestone.

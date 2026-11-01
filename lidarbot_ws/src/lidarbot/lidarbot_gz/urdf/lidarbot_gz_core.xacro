@@ -21,7 +21,7 @@
    <joint name="base_joint" type="fixed">
      <parent link="base_footprint"/>
      <child link="base_link"/>
-     <origin xyz="-0.076 0 ${(wheel_radius + wheel_zoff / 2)}" rpy="0 0 0"/>
+     <origin xyz="-0.076 0 ${(wheel_radius + wheel_zoff)}" rpy="0 0 0"/>
    </joint>
 	
   <!-- Robot base chasis-->
@@ -230,7 +230,10 @@
   <joint name="caster_wheel_joint" type="fixed">
     <parent link="base_link"/>
     <child link="caster_wheel"/>
-    <origin xyz="0.028 0 -0.031" rpy="0 0 ${pi/2}"/>
+    <!-- Match drive-wheel ground contact at -wheel_zoff-wheel_radius.
+         Caster collision center is another 1 mm below its joint; radius 15 mm.
+         The previous -31 mm joint put it 2 mm too low, pitching LiDAR into floor. -->
+    <origin xyz="0.028 0 ${-wheel_zoff - wheel_radius + 0.015 + 0.001}" rpy="0 0 ${pi/2}"/>
   </joint>
 
   <gazebo reference="caster_wheel">

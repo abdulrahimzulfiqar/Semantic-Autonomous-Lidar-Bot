@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-01",
+  "status": "single bounded controlled-motion smoke test passed",
+  "trials": [
+    {
+      "profile": "Original wheel config, 60 beams",
+      "straight_distance_m": 0.4091832129081649,
+      "turn_achieved_deg": 46.30137607448962,
+      "p95_position_error_m": 0.07797746530682037,
+      "p95_yaw_error_deg": 6.232314625844263,
+      "passed": false
+    },
+    {
+      "profile": "Simulation wheel config, 60 beams",
+      "straight_distance_m": 0.4079832134933837,
+      "turn_achieved_deg": 46.12828744073359,
+      "p95_position_error_m": 0.06999744123561474,
+      "p95_yaw_error_deg": 5.277450615460424,
+      "passed": false
+    },
+    {
+      "profile": "Simulation wheel config, 120 beams/finer updates",
+      "straight_distance_m": 0.40798321349337874,
+      "turn_achieved_deg": 45.84701738678357,
+      "p95_position_error_m": 0.06843778683599025,
+      "p95_yaw_error_deg": 2.6561524022936744,
+      "passed": true
+    }
+  ],
+  "remaining": [
+    "AMCL initial-pose-error recovery",
+    "independent velocity-command timeout test",
+    "repeated and held-out localization trials",
+    "contact/collision validation and footprint-feasible routes",
+    "one grazing-edge strict scan discrepancy"
+  ]
+}

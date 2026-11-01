@@ -1,0 +1,24 @@
+{
+  "simulation_only": true,
+  "distance_target_m": 0.4,
+  "turn_target_deg": 45,
+  "linear_speed_command_mps": 0.06,
+  "angular_speed_command_radps": 0.15,
+  "reference_robot_radius_m": 0.18,
+  "ground_truth_fed_to_amcl": false,
+  "acceptance": {
+    "distance_tolerance_m": 0.05,
+    "turn_tolerance_deg": 5,
+    "localization_p95_position_m": 0.25,
+    "localization_p95_yaw_deg": 5,
+    "stop_drift_limit_m": 0.02
+  },
+  "error": "Simulator/ground truth/AMCL/command path not ready",
+  "completed_motion_sequence": false,
+  "wall_seconds": 46.000179562000994,
+  "velocity_messages_sent": 963,
+  "timestamp_matched_samples": 0,
+  "samples": [],
+  "passed": false,
+  "limitations": "One short open-space trial; no contact sensor, collision-free route or recovery claim. Clearance and distance/turn limits use truth as a test supervisor; AMCL receives no truth."
+}

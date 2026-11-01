@@ -1,0 +1,21 @@
+{
+  "platform": "Linux-5.15.0-191-generic-aarch64-with-glibc2.35",
+  "python": "3.10.12",
+  "files_sha256": {
+    "check_gcu_motion.py": "004088477475489fcb5c94d33dbb7097324e56c1b7515fed733d1412983703cd",
+    "check_gcu_recovery_watchdog.py": "cbf9d64fe0c33abe95309af6bf572839995074c51959116f7a45cb9e20eb24ef",
+    "run_gcu_phase3_suite.py": "81b70111f4a7a16efaf2b7468664863d49d25a514c603fed0601169e067d6063",
+    "gcu_amcl.launch.py": "976943321648aa495bda643d397a048d884ca682c92925735cb94a1a592a30bc",
+    "gcu_amcl_initial_pose.py": "4871048c850448e9c193ee1ff39df9b7cae3c476988fd2113f989f17ea267035",
+    "assets/amcl.yaml": "c941567fe12bc43969e29cce3eedf56d383f77059175e7d8dcb9f649d77de5d7",
+    "assets/controllers_sim.yaml": "981c5b3f55083bfd9410366e5a0a986d99ac318a2e991afface970653c39e210",
+    "assets/gcu_ground_floor_ogre.sdf": "a4a09125c6af8eae737df13acd249d281627cf83497e6addf4c0deeeeee5f9d0",
+    "assets/gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134",
+    "assets/gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+    "robot_profile/lidarbot_gz_core.xacro": "de66dc0c1f611a59b963c33c19d3fbc38e62ccfe35bccfc6c9de6eea70423b99",
+    "robot_profile/lidarbot_gz.urdf.xacro": "20391c00861cf349695e20fb5ea7d80e9160acab2e2682e1c6dc8d71785b6ff5",
+    "robot_profile/gcu_evaluation.urdf.xacro": "2ee7bbfd59d13fdca3916550cfc3a6fc15bfb283790007f7e03e33ead33a68de",
+    "robot_profile/sensors.xacro": "f0d252483b9790621cdb96e2beee08ac51f9156da0ead2aa774d8fedb0d97023"
+  },
+  "packages": "libignition-gazebo6:arm64\t6.16.0-2~jammy\nros-humble-diff-drive-controller\t2.50.2-1jammy.20251120.191812\nros-humble-nav2-amcl\t1.1.19-1jammy.20251017.233238\nros-humble-robot-localization\t3.5.4-1jammy.20251120.154223\n"
+}
