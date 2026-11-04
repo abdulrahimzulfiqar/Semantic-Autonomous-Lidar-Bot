@@ -1,0 +1,13 @@
+{
+  "domain": 79,
+  "partition": "gcu_plan_only_3635",
+  "checker_exit": 1,
+  "passed": false,
+  "lifecycle_shutdown_error": "Command '['/bin/bash', '-c', \"source /opt/ros/humble/setup.bash; source /home/ubuntu/lidarbot_ws/install/setup.bash; exec ros2 service call /gcu_planning_lifecycle/manage_nodes nav2_msgs/srv/ManageLifecycleNodes '{command: 4}'\"]' timed out after 11.999983331999942 seconds",
+  "launch_exits": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

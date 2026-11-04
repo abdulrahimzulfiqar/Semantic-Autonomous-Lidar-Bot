@@ -1,5 +1,12 @@
 # Checkpoint 03 plan: localization and controlled motion
 
+## Quick summary
+
+- **Scope:** AMCL localization, corrected simulated sensor/robot geometry and bounded motion.
+- **Outcome:** Five frozen checks passed; user motion reproduction confirmed.
+- **Limit:** Grazing-corner sensor discrepancy retained; autonomous navigation belongs to Phase 04.
+- **Reading guide:** The achievement record summarizes results; this file preserves the detailed investigation history.
+
 Status: finalized for bounded simulation checks, 2026-11-01. This is the plan
 and detailed measurement history. The achievement record is
 [Checkpoint 03](../phases/03_GCU_LOCALIZATION_AND_CONTROLLED_MOTION.md). Previous evidence: [phase index](../phases/README.md).

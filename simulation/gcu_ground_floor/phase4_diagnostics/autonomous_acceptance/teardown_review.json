@@ -1,0 +1,27 @@
+{
+  "functional_navigation_results_unchanged": true,
+  "crash_free_shutdown": false,
+  "classification_basis": "Both logs show bridge SIGINT before exit -11; the runner completed its evaluator and lifecycle shutdown before simulator signaling. Underlying crash cause is not established. Launch group status 0 does not certify child status.",
+  "cases": {
+    "turn_02": {
+      "scope": "post-evaluation simulator teardown",
+      "signal_line": 138,
+      "crash_line": 161,
+      "bridge": "/gcu_ground_truth (evaluation only)",
+      "exit_code": -11,
+      "full_log": "trials/acceptance_turn_02_simulator.log.gz",
+      "full_log_sha256": "56a109d5173847c93639e8d031d15bdb060f684f459a375b9148b87f12fc4c33",
+      "fixed": false
+    },
+    "click_courtyard_rejection_01": {
+      "scope": "post-evaluation simulator teardown",
+      "signal_line": 139,
+      "crash_line": 161,
+      "bridge": "/gcu_ground_truth (evaluation only)",
+      "exit_code": -11,
+      "full_log": "trials/acceptance_click_courtyard_rejection_01_simulator.log.gz",
+      "full_log_sha256": "51bf888739bf201031a2ad100d7ce89b9e2f7c2ab49d1acf8c5e75086563f419",
+      "fixed": false
+    }
+  }
+}

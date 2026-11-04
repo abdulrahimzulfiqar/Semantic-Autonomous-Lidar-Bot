@@ -1,0 +1,86 @@
+{
+  "reference_frame": "base_footprint",
+  "joint_positions": "zero / nominal level chassis",
+  "collision_geometries": 13,
+  "minimum_xy_m": [
+    -0.08049999999999999,
+    -0.10400000000000001
+  ],
+  "maximum_xy_m": [
+    0.1375,
+    0.10400000000000001
+  ],
+  "conservative_radius_bound_m": 0.14484819639885063,
+  "proposed_radius_m": 0.18,
+  "radius_covers_nominal_collision_bounds": true,
+  "radial_margin_m": 0.03515180360114936,
+  "collisions": [
+    {
+      "link": "base_link",
+      "geometry": "box",
+      "maximum_xy_radius_bound_m": 0.14484819639885063
+    },
+    {
+      "link": "base_link",
+      "geometry": "cylinder (conservative enclosing box)",
+      "maximum_xy_radius_bound_m": 0.08372126372672595
+    },
+    {
+      "link": "base_link",
+      "geometry": "box",
+      "maximum_xy_radius_bound_m": 0.08020754328615233
+    },
+    {
+      "link": "base_link",
+      "geometry": "box",
+      "maximum_xy_radius_bound_m": 0.07733692520394123
+    },
+    {
+      "link": "base_link",
+      "geometry": "box",
+      "maximum_xy_radius_bound_m": 0.10644834428021886
+    },
+    {
+      "link": "base_link",
+      "geometry": "box",
+      "maximum_xy_radius_bound_m": 0.10465658125507446
+    },
+    {
+      "link": "base_link",
+      "geometry": "box",
+      "maximum_xy_radius_bound_m": 0.10644834428021886
+    },
+    {
+      "link": "base_link",
+      "geometry": "box",
+      "maximum_xy_radius_bound_m": 0.11237882362794158
+    },
+    {
+      "link": "base_link",
+      "geometry": "box",
+      "maximum_xy_radius_bound_m": 0.13957883077315128
+    },
+    {
+      "link": "left_wheel",
+      "geometry": "sphere (conservative enclosing box)",
+      "maximum_xy_radius_bound_m": 0.1372087825177383
+    },
+    {
+      "link": "right_wheel",
+      "geometry": "sphere (conservative enclosing box)",
+      "maximum_xy_radius_bound_m": 0.1372087825177383
+    },
+    {
+      "link": "caster_wheel",
+      "geometry": "sphere (conservative enclosing box)",
+      "maximum_xy_radius_bound_m": 0.06476109943476871
+    },
+    {
+      "link": "lidar_link",
+      "geometry": "cylinder (conservative enclosing box)",
+      "maximum_xy_radius_bound_m": 0.10867354783938915
+    }
+  ],
+  "limitations": "Sphere/cylinder bounds are conservative. No swept-path, costmap, clearance, contact or articulated-joint-range acceptance is claimed.",
+  "source_urdf_sha256": "7d257139ffe3ad426ee5b68b19434716116d157095c75a73603d63737e7fd60c"
+}

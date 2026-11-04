@@ -1,0 +1,130 @@
+{
+  "purpose": "Phase 04 engineering acceptance; fresh starts, no tuning between trials",
+  "spawn": [
+    -0.05864395131342248,
+    -12.960313240266368,
+    0.0
+  ],
+  "gates": {
+    "nominal_successes_required": 9,
+    "final_position_error_m": 0.2,
+    "final_heading_error_deg": 10.0,
+    "localization_p95_position_m": 0.25,
+    "localization_p95_heading_deg": 5.0,
+    "rest_duration_sim_s": 1.0,
+    "rest_speed_mps": 0.01,
+    "rest_yaw_rate_radps": 0.02,
+    "cancel_stop_delay_sim_s": 1.0,
+    "maximum_command_mps": 0.1,
+    "swept_circle_radius_m": 0.18,
+    "wall_obstacle_contacts": 0,
+    "minimum_timestamp_match_fraction": 0.9,
+    "maximum_truth_gap_sim_s": 0.15
+  },
+  "timeout_basis": "Conservative limits for <=0.10 m/s and 0.20 rad/s in-place turns: corridor 80s for 1.5m; turn 150s for ~4m; room 300s for ~12m; obstacle detour 150s for ~3m. Separate wall timeout is 5*sim_timeout+120s, minimum 180s. No timeouts extended during acceptance.",
+  "cases": [
+    {
+      "name": "corridor",
+      "goal": [
+        1.4413560486865775,
+        -12.960313240266368,
+        0.0
+      ],
+      "repeats": 3,
+      "expected": "success",
+      "sim_timeout_s": 80.0,
+      "first_via_click": true
+    },
+    {
+      "name": "turn",
+      "goal": [
+        -3.0,
+        -10.5,
+        1.5707963267948966
+      ],
+      "repeats": 3,
+      "expected": "success",
+      "sim_timeout_s": 150.0
+    },
+    {
+      "name": "room_entry",
+      "goal": [
+        -10.0,
+        -7.5,
+        0.0
+      ],
+      "repeats": 3,
+      "expected": "success",
+      "sim_timeout_s": 300.0
+    },
+    {
+      "name": "occupied_goal",
+      "goal": [
+        -1.4074548315221413,
+        -16.244374513818027,
+        0.0
+      ],
+      "repeats": 1,
+      "expected": "rejected",
+      "sim_timeout_s": 30.0
+    },
+    {
+      "name": "courtyard_goal",
+      "goal": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "repeats": 1,
+      "expected": "rejected",
+      "sim_timeout_s": 30.0
+    },
+    {
+      "name": "blocked_passage",
+      "goal": [
+        -3.0,
+        -10.5,
+        1.5707963267948966
+      ],
+      "repeats": 1,
+      "expected": "rejected",
+      "fixture": "blocked",
+      "sim_timeout_s": 30.0
+    },
+    {
+      "name": "obstacle_detour",
+      "goal": [
+        2.4413560486865773,
+        -12.960313240266368,
+        0.0
+      ],
+      "repeats": 1,
+      "expected": "success",
+      "fixture": "detour",
+      "sim_timeout_s": 150.0
+    },
+    {
+      "name": "cancel_moving_goal",
+      "goal": [
+        2.9413560486865773,
+        -12.960313240266368,
+        0.0
+      ],
+      "repeats": 1,
+      "expected": "cancelled",
+      "sim_timeout_s": 60.0
+    },
+    {
+      "name": "click_courtyard_rejection",
+      "goal": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "repeats": 1,
+      "expected": "rejected",
+      "via_click": true,
+      "sim_timeout_s": 30.0
+    }
+  ]
+}

@@ -1,25 +1,31 @@
-# GCU simulation readiness: map adapter and world assets
+# GCU simulation readiness: map adapter and navigation baseline
 
-This step prepares the accepted ground-floor CAD result for the existing ROS 2
-code and generates an aligned Gazebo world. It does **not** claim a completed
-navigation experiment. The macOS host controls the existing Ubuntu 22.04 UTM
-VM for ROS 2 Humble / Gazebo Fortress tests; results are recorded below.
+This document records the accepted CAD map, aligned world and ROS integration.
+The macOS host controls Ubuntu 22.04 ARM64 in UTM for ROS 2 Humble / Gazebo Fortress
+tests. Physics runs headlessly; sensor rendering uses the logged-in Ubuntu display
+and Foxglove provides visualization on macOS.
 
-## Current checkpoint (2026-11-01)
+## Current checkpoint (2026-11-03)
 
-Phase 03 is finalized for bounded simulation checks: corrected sensor geometry,
-stationary AMCL, local pose-prior recovery, direct-controller watchdog stopping and
-three fresh-spawn short motion repeats were measured. The user reproduced motion
-with Foxglove. The final five-case suite passed; all isolated test launches stopped
-cleanly. One strict grazing-edge scan discrepancy remains a qualified limitation.
-Autonomous navigation, contact validation, global recovery and Pi evaluation are
-not complete.
+Phase 04 has qualified completion of its original selected-route matrix: all 16 cases
+passed, including nine autonomous corridor/turn/room-entry repeats, verified
+contact instrumentation, invalid/blocked goals, an obstacle detour, cancellation
+and validated click-to-goal display. The final runner/manual terminals use
+Cyclone DDS after Fast DDS lifecycle service-reply failures. Two issues remain
+open: final-heading correction on an additional consecutive-goal regression,
+and two evaluation ground-truth bridge segfaults after shutdown SIGINT. The
+navigation measurements passed; shutdown is not crash-free. The hardware drive
+profile and Phase 03 localization tuning are unchanged.
 
-Phase history is collected in [phases/README.md](phases/README.md). The current
-achievement record is [Checkpoint 03](phases/03_GCU_LOCALIZATION_AND_CONTROLLED_MOTION.md),
-with evidence, exact commands and limitations. The detailed work log retains earlier
-failures and historical status updates. Next is footprint-feasible autonomous
-navigation, then osmAG segmented execution.
+See [Checkpoint 04](phases/04_GCU_AUTONOMOUS_METRIC_NAVIGATION.md) for the measured
+table, raw evidence, limitations and complete Ubuntu/Foxglove commands. Phase 03
+localization/controlled-motion checks remain finalized. The grazing-corner sensor
+limitation is retained. Full osmAG-Nav integration now requires area/passage-guided
+execution in Phase 05; Pi/LLM/camera evaluation follows later.
+
+Phase history is collected in [phases/README.md](phases/README.md). The sections
+below preserve earlier implementation history and its historical status notes;
+the current checkpoint above and numbered records describe today's state.
 
 ## What the previous work contributed
 
@@ -467,3 +473,13 @@ degrees across 414 timestamp-matched pairs. The pasted report's metrics were
 recomputed and confirmed; sampled recording frames show camera/view changes and
 broad scan/map agreement. See the phase 03 plan for evidence. Recovery and watchdog
 checks remain open; this does not close the full localization/navigation milestone.
+
+
+## Phase 04 autonomous metric navigation
+
+The original seven-case no-motion preview checkpoint and the full autonomous
+acceptance matrix are retained in `simulation/gcu_ground_floor/phase4_diagnostics/`.
+All 16 final cases passed. See the [Phase 04 record](phases/04_GCU_AUTONOMOUS_METRIC_NAVIGATION.md)
+for measured results, the open consecutive-goal heading/bridge-shutdown issues,
+and interactive commands, and the [work log](plans/04_GCU_AUTONOMOUS_METRIC_NAVIGATION.md)
+for interrupted trials and integration fixes.

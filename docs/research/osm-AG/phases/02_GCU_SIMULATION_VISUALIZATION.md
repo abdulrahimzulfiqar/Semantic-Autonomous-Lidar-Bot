@@ -1,5 +1,12 @@
 # Checkpoint 02: GCU simulation and Foxglove visualization
 
+## Quick summary
+
+- **Goal:** Bring the accepted GCU map into Gazebo and view the simulated robot and sensors.
+- **Result:** Aligned world/map, ROS loader and live Foxglove LiDAR/camera visualization verified in Ubuntu UTM.
+- **Limit:** This checkpoint used known-spawn alignment; localization accuracy and autonomous motion were not established here.
+- **Next checkpoint:** Validate AMCL localization, sensor geometry and controlled motion.
+
 Date: 2026-11-01. Status: initial stationary visualization achieved;
 localization and autonomous navigation remain pending.
 
