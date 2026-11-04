@@ -1,0 +1,965 @@
+{
+  "status": "paused_at_user_request",
+  "utc": "2026-11-03T11:43:13.226637+00:00",
+  "workspace": "/home/ubuntu/edgeosmag_test_ws",
+  "suite_directory": "/home/ubuntu/edgeosmag_test_ws/results/phase4/acceptance_04",
+  "completed_cases": [
+    "contact_positive_01",
+    "corridor_01",
+    "corridor_02",
+    "corridor_03",
+    "turn_01",
+    "turn_02",
+    "turn_03",
+    "room_entry_01",
+    "room_entry_02"
+  ],
+  "remaining_cases": [
+    "room_entry_03",
+    "occupied_goal_01",
+    "courtyard_goal_01",
+    "blocked_passage_01",
+    "obstacle_detour_01",
+    "cancel_moving_goal_01",
+    "click_courtyard_rejection_01"
+  ],
+  "interrupted_case": "room_entry_03",
+  "interrupted_case_archive": "/home/ubuntu/edgeosmag_test_ws/results/phase4/acceptance_04/user_interrupted_room_entry_03",
+  "interruption_reason": "User requested pause; cancellation acknowledged; all three launch groups exited 0. This is not counted as a navigation failure.",
+  "completed_summary": {
+    "contact_positive_01": {
+      "simulation_only": true,
+      "goal": [
+        1.4413560486865775,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 30.0,
+      "wall_timeout_s": 270.0,
+      "positive_control": true,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.058643951980223874,
+        -12.960313240259481,
+        -4.565631748602696e-16
+      ],
+      "start_sim": 2.503,
+      "passed": true,
+      "wall_elapsed_s": 5.968950451999262,
+      "end_sim": 7.504,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 2986,
+        "/gcu/contacts/collision_11": 2986,
+        "/gcu/contacts/collision_12": 2986
+      },
+      "contact_event_count": 8931,
+      "sim_elapsed_s": 5.0009999999999994,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": []
+    },
+    "corridor_01": {
+      "simulation_only": true,
+      "goal": [
+        1.4413560486865775,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 80.0,
+      "wall_timeout_s": 520.0,
+      "positive_control": false,
+      "via_click_bridge": true,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.5120000000000005,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "action_status": 4,
+      "bridge_outcome": "succeeded",
+      "goal_accepted": true,
+      "action_end_sim": 24.523,
+      "rest_confirmed_sim": 25.7,
+      "final_truth": [
+        1.3739654087419575,
+        -12.91581393451868,
+        -0.013551926797048214
+      ],
+      "final_position_error_m": 0.08075695984973484,
+      "final_heading_error_deg": 0.7764682097411064,
+      "swept_truth": {
+        "valid": true,
+        "samples": 384,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 384,
+      "localization_p95_position_m": 0.06844038147927808,
+      "localization_p95_heading_deg": 1.7876018062725303,
+      "max_command_mps": 0.1,
+      "bridge_preview_valid": true,
+      "sampling_coverage": {
+        "truth_samples": 384,
+        "matched_samples": 384,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 30.577280477000386,
+      "end_sim": 25.7,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 22089,
+        "/gcu/contacts/collision_11": 22098,
+        "/gcu/contacts/collision_12": 22098
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 19.188,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ]
+    },
+    "corridor_02": {
+      "simulation_only": true,
+      "goal": [
+        1.4413560486865775,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 80.0,
+      "wall_timeout_s": 520.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.471,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 23.577,
+      "rest_confirmed_sim": 24.75,
+      "final_truth": [
+        1.3596910374367384,
+        -12.928676655387862,
+        -0.0014830204872613177
+      ],
+      "final_position_error_m": 0.08757880774029315,
+      "final_heading_error_deg": 0.08497081485150837,
+      "swept_truth": {
+        "valid": true,
+        "samples": 366,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 365,
+      "localization_p95_position_m": 0.034042733510721845,
+      "localization_p95_heading_deg": 1.1072400066556598,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 366,
+        "matched_samples": 365,
+        "matched_fraction": 0.9972677595628415,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 30.435586610001337,
+      "end_sim": 24.75,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 21102,
+        "/gcu/contacts/collision_11": 21111,
+        "/gcu/contacts/collision_12": 21111
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 18.279,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ]
+    },
+    "corridor_03": {
+      "simulation_only": true,
+      "goal": [
+        1.4413560486865775,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 80.0,
+      "wall_timeout_s": 520.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.048,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 23.137,
+      "rest_confirmed_sim": 24.299,
+      "final_truth": [
+        1.3537411493071323,
+        -12.963443472326414,
+        0.0017939432344899235
+      ],
+      "final_position_error_m": 0.08767079870755172,
+      "final_heading_error_deg": 0.1027853760223204,
+      "swept_truth": {
+        "valid": true,
+        "samples": 366,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 365,
+      "localization_p95_position_m": 0.07722535970832461,
+      "localization_p95_heading_deg": 0.690193513313074,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 366,
+        "matched_samples": 365,
+        "matched_fraction": 0.9972677595628415,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 29.147051791000194,
+      "end_sim": 24.299,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 20723,
+        "/gcu/contacts/collision_11": 20732,
+        "/gcu/contacts/collision_12": 20732
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 18.250999999999998,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ]
+    },
+    "turn_01": {
+      "simulation_only": true,
+      "goal": [
+        -3.0,
+        -10.5,
+        1.5707963267948966
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 150.0,
+      "wall_timeout_s": 870.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.445,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 64.608,
+      "rest_confirmed_sim": 65.797,
+      "final_truth": [
+        -2.9317813440790057,
+        -10.559631035816887,
+        1.6177683442507196
+      ],
+      "final_position_error_m": 0.09060709380761445,
+      "final_heading_error_deg": 2.69129835543349,
+      "swept_truth": {
+        "valid": true,
+        "samples": 1188,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 1188,
+      "localization_p95_position_m": 0.10778791728619766,
+      "localization_p95_heading_deg": 2.688744815498785,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 1188,
+        "matched_samples": 1188,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 112.33087857399914,
+      "end_sim": 65.797,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 62072,
+        "/gcu/contacts/collision_11": 62093,
+        "/gcu/contacts/collision_12": 62093
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 59.352,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ]
+    },
+    "turn_02": {
+      "simulation_only": true,
+      "goal": [
+        -3.0,
+        -10.5,
+        1.5707963267948966
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 150.0,
+      "wall_timeout_s": 870.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.089,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 66.743,
+      "rest_confirmed_sim": 67.95,
+      "final_truth": [
+        -2.9437753370518895,
+        -10.543058272929711,
+        1.6118033860689835
+      ],
+      "final_position_error_m": 0.0708182715922813,
+      "final_heading_error_deg": 2.3495314266479856,
+      "swept_truth": {
+        "valid": true,
+        "samples": 1238,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 1237,
+      "localization_p95_position_m": 0.08642536283931389,
+      "localization_p95_heading_deg": 2.6360519520286223,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 1238,
+        "matched_samples": 1237,
+        "matched_fraction": 0.9991922455573505,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 118.59851689400057,
+      "end_sim": 67.95,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 64288,
+        "/gcu/contacts/collision_11": 64318,
+        "/gcu/contacts/collision_12": 64318
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 61.861000000000004,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ]
+    },
+    "turn_03": {
+      "simulation_only": true,
+      "goal": [
+        -3.0,
+        -10.5,
+        1.5707963267948966
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 150.0,
+      "wall_timeout_s": 870.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.328,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 72.997,
+      "rest_confirmed_sim": 74.2,
+      "final_truth": [
+        -2.943941107369246,
+        -10.523753716319533,
+        1.620717369752397
+      ],
+      "final_position_error_m": 0.060883811329246064,
+      "final_heading_error_deg": 2.8602650703560624,
+      "swept_truth": {
+        "valid": true,
+        "samples": 1358,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 1358,
+      "localization_p95_position_m": 0.07506889525246344,
+      "localization_p95_heading_deg": 2.584744058922597,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 1358,
+        "matched_samples": 1358,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 129.66333950900116,
+      "end_sim": 74.2,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 70449,
+        "/gcu/contacts/collision_11": 70487,
+        "/gcu/contacts/collision_12": 70488
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 67.872,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ]
+    },
+    "room_entry_01": {
+      "simulation_only": true,
+      "goal": [
+        -10.0,
+        -7.5,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 300.0,
+      "wall_timeout_s": 1620.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.222,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 156.438,
+      "rest_confirmed_sim": 157.578,
+      "final_truth": [
+        -10.043969002273057,
+        -7.496771798069823,
+        0.11205362654620009
+      ],
+      "final_position_error_m": 0.04408735021057727,
+      "final_heading_error_deg": 6.4201998802323486,
+      "swept_truth": {
+        "valid": true,
+        "samples": 3029,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 3029,
+      "localization_p95_position_m": 0.12428599650701919,
+      "localization_p95_heading_deg": 4.484984160151053,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 3029,
+        "matched_samples": 3029,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 288.55856862400105,
+      "end_sim": 157.578,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 153948,
+        "/gcu/contacts/collision_11": 154026,
+        "/gcu/contacts/collision_12": 154025
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 151.356,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ]
+    },
+    "room_entry_02": {
+      "simulation_only": true,
+      "goal": [
+        -10.0,
+        -7.5,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 300.0,
+      "wall_timeout_s": 1620.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.23,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 165.422,
+      "rest_confirmed_sim": 166.501,
+      "final_truth": [
+        -10.020202111004748,
+        -7.474234407408068,
+        0.10851112768303875
+      ],
+      "final_position_error_m": 0.032741274420241585,
+      "final_heading_error_deg": 6.217229646443312,
+      "swept_truth": {
+        "valid": true,
+        "samples": 3208,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 3208,
+      "localization_p95_position_m": 0.09140058256160236,
+      "localization_p95_heading_deg": 4.258668822093919,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 3208,
+        "matched_samples": 3208,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 316.67227308099973,
+      "end_sim": 166.501,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 162729,
+        "/gcu/contacts/collision_12": 162774,
+        "/gcu/contacts/collision_11": 162774
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 160.27100000000002,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ]
+    }
+  },
+  "frozen_inputs_sha256": {
+    "._check_gcu_navigation.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._gcu_contact_sim.launch.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._gcu_goal_preview.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._gcu_navigation.launch.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._gcu_navigation_goal.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._gcu_navigation_metrics.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._gcu_plan_validation.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._prepare_gcu_contact_assets.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._prepare_gcu_navigation_fixtures.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._run_gcu_navigation_suite.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._run_gcu_navigation_test.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "._wait_gcu_localization.py": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "amcl_run.py": "6cb5ab009e2a42cdb848f96c724fb6cc20fba57d3934fc85ab5815585e3843fd",
+    "assets/._fastdds_udp.xml": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "assets/._nav2_autonomous.yaml": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "assets/._navigate_strict.xml": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "assets/._navigate_through_strict.xml": "37f76f4d4afb7756a4d9b1c6a8abffe322ef49e74951bb8d45cc16089a331456",
+    "assets/amcl.yaml": "c941567fe12bc43969e29cce3eedf56d383f77059175e7d8dcb9f649d77de5d7",
+    "assets/contact_v2/contact_bridge.yaml": "7e6675be38a89ee8c1cfa5271671fbf2ba4cabb94791253c657409bad8cabb2a",
+    "assets/contact_v2/contact_manifest.json": "92c49e80d66e18bbbc54cf26adedc60499f939712f1d9e3b03ef5604e575bfad",
+    "assets/contact_v2/positive_control.sdf": "0a71dcbec257a897ff42da61de0e5341773c52122afbe700073a8525d5739231",
+    "assets/contact_v2/robot.sdf": "9fcfa99402a4a71aaa5c94fbacbf8608a649e1838cea2214e2000a300143f200",
+    "assets/contact_v2/robot.urdf": "7d257139ffe3ad426ee5b68b19434716116d157095c75a73603d63737e7fd60c",
+    "assets/contact_v2/world.sdf": "2f6c1b960325ac4031d75b5715ddf8782969aa0090c411ccb350c149aca24aa0",
+    "assets/controllers_sim.yaml": "981c5b3f55083bfd9410366e5a0a986d99ac318a2e991afface970653c39e210",
+    "assets/gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+    "assets/gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134",
+    "assets/nav2_autonomous.yaml": "b9e6bf6e8cf18cfec3a909063f02deeb09deb96b0189ee0a61c022f3cf970033",
+    "assets/nav2_plan_only.yaml": "122586fa88dbc1249335ba96824a262e102e8670428fcbc1c18717a4a5764034",
+    "assets/navigate_strict.xml": "ec5b01aeb048b689131a71e229ba49c1a91728940d518596c8dbb9e7e7a86324",
+    "assets/navigate_through_strict.xml": "4d44d2ead7def92285e6cf6754fdc258508ae7be9a3e543a155074913a1bc597",
+    "assets/navigation_acceptance.json": "75a9055ccc48e72301c92f7c26a3889658c165fd6d0606fc5dfd79e92197ae87",
+    "assets/navigation_fixtures/blocked/map.pgm": "c4f83f18bdfcb5f1aa384e2acaa66263f83aa43b9f49801f7a1c0b27e38782da",
+    "assets/navigation_fixtures/blocked/map.yaml": "d2563567915ad672009c7704b4fd694b59bf168d008861d7dc30ff7a97714918",
+    "assets/navigation_fixtures/blocked/world.sdf": "2dbf97764ebf22b46b15909238ff5292209e3ece5fe0588a1d12ae42c9b0113d",
+    "assets/navigation_fixtures/detour/map.pgm": "cca6eba1e9e148a81ec8ec543f2ba01a5c6e4268f0aa98052b6ac3687ba1aa0b",
+    "assets/navigation_fixtures/detour/map.yaml": "d2563567915ad672009c7704b4fd694b59bf168d008861d7dc30ff7a97714918",
+    "assets/navigation_fixtures/detour/world.sdf": "6e7ff22e0aaaea9da6ae270978da777ad1f0759666183a955e80847773cd8881",
+    "assets/navigation_fixtures/fixtures.json": "60875831454b39747d4ab364641a03040595a6dead45e01c3bce890607eb791e",
+    "check_gcu_amcl.py": "4ae2668c943efd3a947fb5835c2252de71d1a1d606676737e5eba55a5f468269",
+    "check_gcu_motion.py": "004088477475489fcb5c94d33dbb7097324e56c1b7515fed733d1412983703cd",
+    "check_gcu_navigation.py": "8b96f714dedc5f75670b8cc50340b445b313121694e8775e2356b1b079d0fac6",
+    "check_gcu_plan_only.py": "8d5dd1806724edd517ac8fa95ec074416edddaa07404b772890d84961b88cd56",
+    "check_gcu_recovery_watchdog.py": "cbf9d64fe0c33abe95309af6bf572839995074c51959116f7a45cb9e20eb24ef",
+    "check_gcu_stationary.py": "7cbdd781bbb7b4c8cb46d6025556a4676e36b717e0584ac35175318452e9f2fe",
+    "gcu_amcl.launch.py": "976943321648aa495bda643d397a048d884ca682c92925735cb94a1a592a30bc",
+    "gcu_amcl_initial_pose.py": "4871048c850448e9c193ee1ff39df9b7cae3c476988fd2113f989f17ea267035",
+    "gcu_contact_sim.launch.py": "6ed3fdc72d278de22b05461e5f79a0a6cffb2e8bbe3867646a3d94f92913a17a",
+    "gcu_foxglove_alignment.launch.py": "1f8635c096510f746a9465f7ae9460ac4ed2a3bd946a0a5cf6394c3fe9fa6b16",
+    "gcu_goal_preview.py": "696cef6093324ba72ad3b33cf0237114c84f022b8b185ed1a75afedc71a60587",
+    "gcu_navigation.launch.py": "d7958882df4895bf1dad388cddd39d6ae5b923b5e68f6f43f0f538a1c8009f32",
+    "gcu_navigation_goal.py": "422082d458e78bbc88102e9b588f5a9283210709c50efdcdc91b5f8970620399",
+    "gcu_navigation_metrics.py": "d0d9c6fb25a7d968311e82fc096b9da9d521991a037ee4b89e84216c17a41aa8",
+    "gcu_plan_only.launch.py": "4ba36ce3a36ae76ed073cfd0ebb227574e292fd1b250d4c0b65f87305c981f6f",
+    "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5",
+    "gui_baseline.py": "e7d185e2c7e47406a9fe407b881c436b629e87ff362c98d6fc6959e6e6ac9af7",
+    "level_ogre2_run.py": "6fc5ed763ba327d3553f23f39b1015fd6852e1301c2fdfa0c040254c4885fa07",
+    "level_robot_run.py": "794f5168c5e498c376efcfab76e0e81374127704e767c8cc0d9438dc5c380a48",
+    "motion_calibrated_run.py": "b965766a3680577f2cf90df5e5c3181f2095480827b9b681ab3ee5fd1f134288",
+    "motion_dense_run.py": "4d7f8c9ef48e9ed6e5f871ae652ab6a59b5608745a850a8b10ce21a4e341adde",
+    "motion_run.py": "0946e7bb934da6e4310142a24a751dd09c2ba126e3f208a0dbbe7dd411af777c",
+    "phase3_ogre2_run.py": "0442ed655a20498694baa3994173cf9cf5ec9ff312467b8e966dd05130a4c851",
+    "phase3_stationary_run.py": "3aa68ffff2cafdf19495d863259188ee5ce771dee012e929e1e44c47396d3ca2",
+    "plan_only_cleanup_run.py": "b5bf06f0d0697a6ae4cc9d1a8abab44528ae0aaa91688b402c663734eb275a51",
+    "plan_only_corrected_run.py": "53cad2f5fa06c8a1ba7f5df07238ef72de65bc0c1089077a350164ab3c2ee734",
+    "plan_only_run.py": "52fb7300fd1d8fdaf39f11e6eb92122cdd411e84b37105d79ad83fae6b69c8be",
+    "prepare_gcu_contact_assets.py": "ec68ab75435d9da5bd765584bbe5b5699d3e58bb5110bc5ee1a2bf5ceaa95cc4",
+    "prepare_gcu_navigation_fixtures.py": "4daa262dd488bd4bb74b8c41e7a3c17e269b35a00a1a94c3420ab06b886bd536",
+    "robot_profile/gcu_evaluation.urdf.xacro": "2ee7bbfd59d13fdca3916550cfc3a6fc15bfb283790007f7e03e33ead33a68de",
+    "robot_profile/lidarbot_gz.urdf.xacro": "20391c00861cf349695e20fb5ea7d80e9160acab2e2682e1c6dc8d71785b6ff5",
+    "robot_profile/lidarbot_gz_core.xacro": "de66dc0c1f611a59b963c33c19d3fbc38e62ccfe35bccfc6c9de6eea70423b99",
+    "robot_profile/sensors.xacro": "f0d252483b9790621cdb96e2beee08ac51f9156da0ead2aa774d8fedb0d97023",
+    "robot_test.py": "c19e8016c46b68ea7bae75ca63b99a52c133090ed704f0bd4fc1d76b83b1761a",
+    "run_gcu_navigation_suite.py": "271e3ecd76b2d806c6291eb3009f227ce542568d152ffceefc49caf7001f8435",
+    "run_gcu_navigation_test.py": "3de0e06522b73393f103aef5730c163a7dace94dab4324a08e55e236e43b2659",
+    "run_gcu_phase3_suite.py": "81b70111f4a7a16efaf2b7468664863d49d25a514c603fed0601169e067d6063",
+    "run_gcu_plan_only_test.py": "db27631148b807c7c61eb93c8f5efdd68f356f9ee08637e29377ea56c0fc0edb",
+    "sensor_probe.py": "3ea574e456d59f3a74d85e0eeaf24acde3dd0f1644b047ed9489717ec5e449db",
+    "wait_gcu_localization.py": "2235e51a9d2bf1b82f211fae4e4e335f6171ec6c350b439ccc729dd53fc4cb97"
+  },
+  "active_test_processes": [],
+  "known_open_limitation": "Additional consecutive-goal return reaches position but aborts at large final heading; retained failed regression.",
+  "resume_instructions": [
+    "Keep frozen inputs unchanged and verify all hashes before continuing.",
+    "Continue remaining seven cases in the same acceptance_04 ledger using the existing runner; do not rerun nine completed cases.",
+    "Restart room_entry_03 from a fresh spawn; keep user_interrupted_room_entry_03 as an interruption archive.",
+    "Use a continuation helper outside the workspace root (e.g. results/phase4/) so frozen root Python inputs are not changed.",
+    "Do not run the suite main entrypoint against the existing output directory; it intentionally refuses overwrite.",
+    "Restart evidence packaging watcher for acceptance_04 only after resuming; previous watcher was stopped.",
+    "After completion package evidence and update docs; never mark full scope complete if cases fail."
+  ]
+}

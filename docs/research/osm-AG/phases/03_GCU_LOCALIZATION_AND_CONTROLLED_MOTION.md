@@ -1,5 +1,12 @@
 # Checkpoint 03: GCU localization and controlled motion
 
+## Quick summary
+
+- **Goal:** Localize the simulated robot and verify bounded translation, turning and stopping.
+- **Result:** All five frozen simulation checks passed using AMCL and wheel-odometry EKF; the user reproduced motion in Foxglove.
+- **Limit:** A grazing-corner LiDAR discrepancy remains; these were supervised motion checks.
+- **Next checkpoint:** Add and evaluate autonomous Nav2 planning and execution.
+
 Date: 2026-11-01. Status: **complete for bounded simulation smoke-test scope,
 with the grazing-edge sensor limitation retained**. Autonomous navigation is not
 complete. Previous checkpoint: [simulation/visualization](02_GCU_SIMULATION_VISUALIZATION.md).

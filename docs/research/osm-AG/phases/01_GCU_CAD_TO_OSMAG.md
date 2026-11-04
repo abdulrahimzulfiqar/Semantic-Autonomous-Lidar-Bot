@@ -1,5 +1,12 @@
 # Checkpoint 01: accepted GCU CAD-to-osmAG reconstruction
 
+## Quick summary
+
+- **Goal:** Convert the GCU ground-floor CAD drawing into usable osmAG geometry.
+- **Result:** Accepted reconstruction with 34 regions and 35 interfaces; side rooms separated and the central enclosure excluded.
+- **Limit:** Geometry acceptance does not establish robot traversability or generalize to every CAD drawing.
+- **Next checkpoint:** Adapt the map for ROS, simulation and sensor visualization.
+
 ## Outcome
 
 The user accepted the reconstructed ground-floor trial-12 result. The pipeline

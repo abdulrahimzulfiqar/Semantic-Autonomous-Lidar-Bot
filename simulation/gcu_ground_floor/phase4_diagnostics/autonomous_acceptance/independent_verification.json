@@ -1,0 +1,40 @@
+{
+  "crash_free_shutdown": false,
+  "acceptance_cases_verified": 16,
+  "raw_report_hashes_verified": 65,
+  "metric_and_sweep_cases_verified": [
+    "blocked_passage_01",
+    "cancel_moving_goal_01",
+    "click_courtyard_rejection_01",
+    "corridor_01",
+    "corridor_02",
+    "corridor_03",
+    "courtyard_goal_01",
+    "obstacle_detour_01",
+    "occupied_goal_01",
+    "room_entry_01",
+    "room_entry_02",
+    "room_entry_03",
+    "turn_01",
+    "turn_02",
+    "turn_03"
+  ],
+  "fixture_connectivity": {
+    "detour": {
+      "spawn_label": 1,
+      "goal_label": 1,
+      "connected": true,
+      "conservative_radius_m": 0.18,
+      "pgm_sha256": "cca6eba1e9e148a81ec8ec543f2ba01a5c6e4268f0aa98052b6ac3687ba1aa0b"
+    },
+    "blocked": {
+      "spawn_label": 1,
+      "goal_label": 2,
+      "connected": false,
+      "conservative_radius_m": 0.18,
+      "pgm_sha256": "c4f83f18bdfcb5f1aa384e2acaa66263f83aa43b9f49801f7a1c0b27e38782da"
+    }
+  },
+  "source_files_verified": 31,
+  "qualified_scope": "original selected-route matrix; consecutive-goal heading and bridge shutdown issues remain open"
+}
