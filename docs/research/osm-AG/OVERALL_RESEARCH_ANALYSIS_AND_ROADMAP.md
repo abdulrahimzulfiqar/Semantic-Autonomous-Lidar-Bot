@@ -1,5 +1,11 @@
 # Master Research Analysis & Implementation Roadmap
 
+> Historical analysis of the earlier repositories and project numbering. For
+> current GCU checkpoint status and the proposed next phases, use the
+> [osmAG-Nav reproduction and EdgeOsmAG roadmap](OSMAGNAV_PHASE_ROADMAP.md).
+> Earlier statements below about missing ROS2 components must not be generalized
+> to the 2026 osmAG-Nav release, which requires its own source/version audit.
+
 This document synthesizes the complete research paper progression across `docs/research/osm-AG/`, evaluates the provided author GitHub repositories, identifies critical missing components for real-world/Gazebo deployment, and defines the optimal execution sequence for our autonomous wheelchair project.
 
 ---

@@ -15,6 +15,8 @@ executes routes from AMCL, wheel odometry, LiDAR and occupancy costmaps. Evaluat
 uses separately bridged Gazebo truth; it does not steer the robot or stop it at
 the target coordinate. The old osmAG executor remains disabled.
 
+Follow-up (2026-11-05): [Phase 05](05_GCU_OSMAG_ROUTE_PREVIEW_AND_RELIABLE_HANDOFF.md) validates a separate controller/teardown repair with three two-goal sequences, five cleanup controls and the original 16-case matrix. The original failures and evidence described here remain historical records.
+
 ## What changed
 
 - Audited all 13 collision geometries: conservative nominal XY radius 0.14485 m;
