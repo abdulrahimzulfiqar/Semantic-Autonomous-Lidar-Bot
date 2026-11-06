@@ -1,0 +1,4658 @@
+{
+  "input_sha256": {
+    "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+    "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+    "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+  },
+  "interfaces": [
+    {
+      "id": "-61",
+      "areas": [
+        "gcu_gf_corridor_1",
+        "gcu_gf_corridor_2"
+      ],
+      "length_m": 5.629820175739725,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -16.889458150962763,
+          18.32623469418731
+        ],
+        "crossing": [
+          [
+            -17.128102102276184,
+            18.326234672189564
+          ],
+          [
+            -16.650814199649343,
+            18.326234716185056
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19009730803309743,
+      "best_point": [
+        -16.889457909012567,
+        15.701422430433347
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_1": [
+          -17.128102102276184,
+          18.326234672189564
+        ],
+        "gcu_gf_corridor_2": [
+          -16.650814199649343,
+          18.326234716185056
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -16.889457909012567,
+          15.701422430433347
+        ],
+        "crossing": [
+          [
+            -16.650813957699146,
+            15.70142245243109
+          ],
+          [
+            -17.128101860325987,
+            15.701422408435603
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19009728603535336,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-62",
+      "areas": [
+        "gcu_gf_corridor_1",
+        "gcu_gf_corridor_3"
+      ],
+      "length_m": 2.756265045041686,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -16.88945796318351,
+          -10.731843166845195
+        ],
+        "crossing": [
+          [
+            -17.128101914496927,
+            -10.731843115123349
+          ],
+          [
+            -16.650814011870093,
+            -10.731843218567041
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.1905930525235089,
+      "best_point": [
+        -16.889458220561693,
+        -11.919382893698232
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_1": [
+          -17.128101914496927,
+          -10.731843115123349
+        ],
+        "gcu_gf_corridor_3": [
+          -16.650814011870093,
+          -10.731843218567041
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -16.889458220561693,
+          -11.919382893698232
+        ],
+        "crossing": [
+          [
+            -16.650814269248276,
+            -11.919382945420079
+          ],
+          [
+            -17.12810217187511,
+            -11.919382841976386
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059300080166253,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-63",
+      "areas": [
+        "gcu_gf_corridor_1",
+        "gcu_gf_room_26"
+      ],
+      "length_m": 1.817962606764609,
+      "midpoint_clearance_lower_bound_m": 0.17593189341242876,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -22.293850093958113,
+          21.786227883624
+        ],
+        "crossing": [
+          [
+            -22.293850166775503,
+            21.54758393231059
+          ],
+          [
+            -22.293850021140724,
+            22.02487183493741
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19610516192202,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.267673528325034,
+      "best_point": [
+        -22.046607179438137,
+        21.78622780818281
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_1": [
+          -22.293850166775503,
+          21.54758393231059
+        ],
+        "gcu_gf_room_26": [
+          -22.293850021140724,
+          22.02487183493741
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -22.046607179438137,
+          21.78622780818281
+        ],
+        "crossing": [
+          [
+            -22.046607106620748,
+            22.02487175949622
+          ],
+          [
+            -22.046607252255527,
+            21.5475838568694
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.20173537035295297,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-64",
+      "areas": [
+        "gcu_gf_corridor_1",
+        "gcu_gf_room_27"
+      ],
+      "length_m": 0.8210156668110103,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -19.14725011657884,
+          21.551652073927134
+        ],
+        "crossing": [
+          [
+            -19.147249904966227,
+            21.313008122613805
+          ],
+          [
+            -19.14725032819145,
+            21.790296025240462
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.2016528093306178,
+      "best_point": [
+        -18.9383952539691,
+        21.551652259124886
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_1": [
+          -19.147249904966227,
+          21.313008122613805
+        ],
+        "gcu_gf_room_27": [
+          -19.14725032819145,
+          21.790296025240462
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -18.9383952539691,
+          21.551652259124886
+        ],
+        "crossing": [
+          [
+            -18.938395465581713,
+            21.790296210438214
+          ],
+          [
+            -18.93839504235649,
+            21.313008307811558
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.20165259771800592,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-65",
+      "areas": [
+        "gcu_gf_corridor_1",
+        "gcu_gf_room_44"
+      ],
+      "length_m": 0.9969471782822882,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -24.425205870229,
+          14.309124395642367
+        ],
+        "crossing": [
+          [
+            -24.663849821542403,
+            14.309124491822564
+          ],
+          [
+            -24.186561918915597,
+            14.309124299462171
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.18783089998257196,
+      "best_point": [
+        -24.425205995426815,
+        13.998481434293565
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_1": [
+          -24.663849821542403,
+          14.309124491822564
+        ],
+        "gcu_gf_room_44": [
+          -24.186561918915597,
+          14.309124299462171
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -24.425205995426815,
+          13.998481434293565
+        ],
+        "crossing": [
+          [
+            -24.186562044113412,
+            13.998481338113368
+          ],
+          [
+            -24.663849946740218,
+            13.99848153047376
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.18783083294789016,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-66",
+      "areas": [
+        "gcu_gf_corridor_1",
+        "gcu_gf_room_49"
+      ],
+      "length_m": 0.9969471697849032,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -24.425205692903447,
+          8.210153708075643
+        ],
+        "crossing": [
+          [
+            -24.66384964421685,
+            8.21015380425437
+          ],
+          [
+            -24.186561741590044,
+            8.210153611896915
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059336675056748,
+      "best_point": [
+        -24.42520581698611,
+        7.902272964465624
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_1": [
+          -24.66384964421685,
+          8.21015380425437
+        ],
+        "gcu_gf_room_49": [
+          -24.186561741590044,
+          8.210153611896915
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -24.42520581698611,
+          7.902272964465624
+        ],
+        "crossing": [
+          [
+            -24.186561865672708,
+            7.9022728682868975
+          ],
+          [
+            -24.663849768299514,
+            7.90227306064435
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059327640085488,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-67",
+      "areas": [
+        "gcu_gf_corridor_1",
+        "gcu_gf_room_52"
+      ],
+      "length_m": 0.9969471563307077,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -24.425205622359055,
+          -2.0525381306190074
+        ],
+        "crossing": [
+          [
+            -24.663849573672458,
+            -2.0525380350233435
+          ],
+          [
+            -24.186561671045652,
+            -2.052538226214671
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059301205982182,
+      "best_point": [
+        -24.425205745689496,
+        -2.3604188700740543
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_1": [
+          -24.663849573672458,
+          -2.0525380350233435
+        ],
+        "gcu_gf_room_52": [
+          -24.186561671045652,
+          -2.052538226214671
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -24.425205745689496,
+          -2.3604188700740543
+        ],
+        "crossing": [
+          [
+            -24.186561794376093,
+            -2.360418965669718
+          ],
+          [
+            -24.6638496970029,
+            -2.3604187744783904
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059292225783464,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-68",
+      "areas": [
+        "gcu_gf_corridor_2",
+        "gcu_gf_corridor_5"
+      ],
+      "length_m": 2.5803336986057546,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -13.78132863094007,
+          19.850977850263916
+        ],
+        "crossing": [
+          [
+            -14.019972582253489,
+            19.850977809382005
+          ],
+          [
+            -13.542684679626651,
+            19.850977891145828
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.1905932402734969,
+      "best_point": [
+        -13.781328442572887,
+        18.75140383097171
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_2": [
+          -14.019972582253489,
+          19.850977809382005
+        ],
+        "gcu_gf_corridor_5": [
+          -13.542684679626651,
+          19.850977891145828
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -13.781328442572887,
+          18.75140383097171
+        ],
+        "crossing": [
+          [
+            -13.542684491259468,
+            18.751403871853622
+          ],
+          [
+            -14.019972393886306,
+            18.7514037900898
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.1905931993915857,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-69",
+      "areas": [
+        "gcu_gf_corridor_2",
+        "gcu_gf_room_28"
+      ],
+      "length_m": 0.8210147111676646,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -16.156408700051664,
+          21.551652058307937
+        ],
+        "crossing": [
+          [
+            -16.15640874356359,
+            21.31300810699452
+          ],
+          [
+            -16.15640865653974,
+            21.790296009621354
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059311762067743,
+      "best_point": [
+        -15.936494045274614,
+        21.551652018210923
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_2": [
+          -16.15640874356359,
+          21.31300810699452
+        ],
+        "gcu_gf_room_28": [
+          -16.15640865653974,
+          21.790296009621354
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -15.936494045274614,
+          21.551652018210923
+        ],
+        "crossing": [
+          [
+            -15.93649400176269,
+            21.79029596952434
+          ],
+          [
+            -15.936494088786539,
+            21.313008066897506
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059310839087473,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-70",
+      "areas": [
+        "gcu_gf_corridor_3",
+        "gcu_gf_corridor_6"
+      ],
+      "length_m": 2.7562650450460504,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -13.781328546364838,
+          -10.73184325055792
+        ],
+        "crossing": [
+          [
+            -14.01997249767826,
+            -10.731843268725605
+          ],
+          [
+            -13.542684595051416,
+            -10.731843232390236
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059296880887722,
+      "best_point": [
+        -13.781328455958834,
+        -11.919382977412864
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_3": [
+          -14.01997249767826,
+          -10.731843268725605
+        ],
+        "gcu_gf_corridor_6": [
+          -13.542684595051416,
+          -10.731843232390236
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -13.781328455958834,
+          -11.919382977412864
+        ],
+        "crossing": [
+          [
+            -13.542684504645411,
+            -11.91938295924518
+          ],
+          [
+            -14.019972407272256,
+            -11.919382995580548
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059295064119297,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-71",
+      "areas": [
+        "gcu_gf_corridor_3",
+        "gcu_gf_room_56"
+      ],
+      "length_m": 1.1142358627582636,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -16.303018431648542,
+          -9.177778431056687
+        ],
+        "crossing": [
+          [
+            -16.30301856289881,
+            -9.416422382370074
+          ],
+          [
+            -16.303018300398275,
+            -8.9391344797433
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.18811731567861223,
+      "best_point": [
+        -15.934018243332549,
+        -9.17777863400075
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_3": [
+          -16.30301856289881,
+          -9.416422382370074
+        ],
+        "gcu_gf_room_56": [
+          -16.303018300398275,
+          -8.9391344797433
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -15.934018243332549,
+          -9.17777863400075
+        ],
+        "crossing": [
+          [
+            -15.934018112082281,
+            -8.939134682687364
+          ],
+          [
+            -15.934018374582816,
+            -9.416422585314137
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.18811718442834469,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-72",
+      "areas": [
+        "gcu_gf_corridor_4",
+        "gcu_gf_corridor_5"
+      ],
+      "length_m": 1.055591002450737,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -13.781328367881823,
+          16.03912113395218
+        ],
+        "crossing": [
+          [
+            -14.019972319195226,
+            16.039121230205637
+          ],
+          [
+            -13.54268441656842,
+            16.03912103769872
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059333021352565,
+      "best_point": [
+        -13.781328503887469,
+        15.701918452613775
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_4": [
+          -14.019972319195226,
+          16.039121230205637
+        ],
+        "gcu_gf_corridor_5": [
+          -13.54268441656842,
+          16.03912103769872
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -13.781328503887469,
+          15.701918452613775
+        ],
+        "crossing": [
+          [
+            -13.542684552574066,
+            15.701918356360315
+          ],
+          [
+            -14.019972455200872,
+            15.701918548867235
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059323396006533,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-73",
+      "areas": [
+        "gcu_gf_corridor_4",
+        "gcu_gf_corridor_5"
+      ],
+      "length_m": 1.0555910052832476,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -13.781328529242595,
+          17.739795282056768
+        ],
+        "crossing": [
+          [
+            -14.019972480555987,
+            17.73979516281115
+          ],
+          [
+            -13.542684577929203,
+            17.739795401302388
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059288932405494,
+      "best_point": [
+        -13.781328360749143,
+        17.402592599813552
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_4": [
+          -14.019972480555987,
+          17.73979516281115
+        ],
+        "gcu_gf_corridor_5": [
+          -13.542684577929203,
+          17.739795401302388
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -13.781328360749143,
+          17.402592599813552
+        ],
+        "crossing": [
+          [
+            -13.54268440943575,
+            17.40259271905917
+          ],
+          [
+            -14.019972312062535,
+            17.402592480567932
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.1905928206674865,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-74",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_8"
+      ],
+      "length_m": 5.51253142348754,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -6.216258834638342,
+          18.384878469615945
+        ],
+        "crossing": [
+          [
+            -6.454902785951764,
+            18.384878445173207
+          ],
+          [
+            -5.977614883324921,
+            18.384878494058682
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.29728790262684496,
+      "best_point": [
+        -6.216258598759099,
+        16.081897835135088
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_5": [
+          -6.454902785951764,
+          18.384878445173207
+        ],
+        "gcu_gf_corridor_8": [
+          -5.977614883324921,
+          18.384878494058682
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -6.216258607744975,
+          16.169630430734358
+        ],
+        "crossing": [
+          [
+            -5.9776146564315535,
+            16.169630455177096
+          ],
+          [
+            -6.454902559058397,
+            16.16963040629162
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19326375694869866,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-75",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_9"
+      ],
+      "length_m": 2.1111831060263144,
+      "midpoint_clearance_lower_bound_m": 0.02932184133539284,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.029322158841579515,
+      "best_point": [
+        -6.216259022407651,
+        14.76391849988351
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-76",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_10"
+      ],
+      "length_m": 2.111181989328158,
+      "midpoint_clearance_lower_bound_m": 0.029322208411668882,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.029322347748903077,
+      "best_point": [
+        -6.216259211314974,
+        9.690912658271767
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-77",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_11"
+      ],
+      "length_m": 2.1111819794145403,
+      "midpoint_clearance_lower_bound_m": 0.029322098877068825,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.029322238213511653,
+      "best_point": [
+        -6.216259101779583,
+        6.641427327353384
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-78",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_12"
+      ],
+      "length_m": 2.111181970209039,
+      "midpoint_clearance_lower_bound_m": 0.029321989339933907,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.029322128675588033,
+      "best_point": [
+        -6.216258992241659,
+        3.591942010612063
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-79",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_13"
+      ],
+      "length_m": 2.111181961711654,
+      "midpoint_clearance_lower_bound_m": 0.02932187980026324,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.029322021154472466,
+      "best_point": [
+        -6.216258884720544,
+        0.5277957200782377
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-80",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_corridor_14"
+      ],
+      "length_m": 3.577281883844106,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -6.21625889299084,
+          -1.935250323611257
+        ],
+        "crossing": [
+          [
+            -6.454902844304257,
+            -1.9352503737619058
+          ],
+          [
+            -5.977614941677423,
+            -1.9352502734606083
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.29728790262684496,
+      "best_point": [
+        -6.216258612231446,
+        -3.2712555985979037
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_5": [
+          -6.454902844304257,
+          -1.9352503737619058
+        ],
+        "gcu_gf_corridor_14": [
+          -5.977614941677423,
+          -1.9352502734606083
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -6.216258630641898,
+          -3.183648695320091
+        ],
+        "crossing": [
+          [
+            -5.977614679328481,
+            -3.1836486451694426
+          ],
+          [
+            -6.454902581955315,
+            -3.1836487454707396
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19274139759902154,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-81",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_room_29"
+      ],
+      "length_m": 0.8210147111673187,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -13.048279262519234,
+          21.55165219038404
+        ],
+        "crossing": [
+          [
+            -13.048279235354341,
+            21.31300823907062
+          ],
+          [
+            -13.048279289684126,
+            21.79029614169746
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059309969973093,
+      "best_point": [
+        -12.828364607742275,
+        21.551652215416972
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_5": [
+          -13.048279235354341,
+          21.31300823907062
+        ],
+        "gcu_gf_room_29": [
+          -13.048279289684126,
+          21.79029614169746
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -12.828364607742275,
+          21.551652215416972
+        ],
+        "crossing": [
+          [
+            -12.828364634907167,
+            21.790296166730393
+          ],
+          [
+            -12.828364580577382,
+            21.31300826410355
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059307253483837,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-82",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_room_30"
+      ],
+      "length_m": 0.8210156668077736,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -10.057437843571343,
+          21.551652241778285
+        ],
+        "crossing": [
+          [
+            -10.05743774865909,
+            21.313008290464882
+          ],
+          [
+            -10.057437938483595,
+            21.790296193091688
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.20165298990436575,
+      "best_point": [
+        -9.848582980962364,
+        21.551652324842973
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_5": [
+          -10.05743774865909,
+          21.313008290464882
+        ],
+        "gcu_gf_room_30": [
+          -10.057437938483595,
+          21.790296193091688
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -9.848582980962364,
+          21.551652324842973
+        ],
+        "crossing": [
+          [
+            -9.848583075874616,
+            21.790296276156376
+          ],
+          [
+            -9.848582886050112,
+            21.31300837352957
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.20165289499211347,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-83",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_room_31"
+      ],
+      "length_m": 0.8210156668075985,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -6.949308406043253,
+          21.551651953636394
+        ],
+        "crossing": [
+          [
+            -6.949308241000533,
+            21.31300800232303
+          ],
+          [
+            -6.9493085710859726,
+            21.790295904949758
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.20165297198774468,
+      "best_point": [
+        -6.740453543434352,
+        21.551652098077412
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_5": [
+          -6.949308241000533,
+          21.31300800232303
+        ],
+        "gcu_gf_room_31": [
+          -6.9493085710859726,
+          21.790295904949758
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -6.740453543434352,
+          21.551652098077412
+        ],
+        "crossing": [
+          [
+            -6.740453708477072,
+            21.790296049390776
+          ],
+          [
+            -6.740453378391632,
+            21.313008146764048
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.20165280694502474,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-84",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_room_47"
+      ],
+      "length_m": 1.1142359291500412,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -9.11913427353003,
+          14.250480077342596
+        ],
+        "crossing": [
+          [
+            -8.880490322216607,
+            14.25048007521236
+          ],
+          [
+            -9.357778224843452,
+            14.250480079472831
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.18811741899364343,
+      "best_point": [
+        -9.11913427023618,
+        14.619480287645532
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_5": [
+          -8.880490322216607,
+          14.25048007521236
+        ],
+        "gcu_gf_room_47": [
+          -9.357778224843452,
+          14.250480079472831
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -9.11913427023618,
+          14.619480287645532
+        ],
+        "crossing": [
+          [
+            -9.357778221549603,
+            14.619480289775767
+          ],
+          [
+            -8.880490318922758,
+            14.619480285515296
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.18811741686340788,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-85",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_room_47"
+      ],
+      "length_m": 1.1142348053708142,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -9.119134464404244,
+          4.105076346449698
+        ],
+        "crossing": [
+          [
+            -8.880490513090821,
+            4.105076344320604
+          ],
+          [
+            -9.357778415717666,
+            4.105076348578791
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059317593751768,
+      "best_point": [
+        -9.119134461134246,
+        4.47160095347957
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_5": [
+          -8.880490513090821,
+          4.105076344320604
+        ],
+        "gcu_gf_room_47": [
+          -9.357778415717666,
+          4.105076348578791
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -9.119134461134246,
+          4.47160095347957
+        ],
+        "crossing": [
+          [
+            -9.357778412447669,
+            4.471600955608664
+          ],
+          [
+            -8.880490509820824,
+            4.471600951350477
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059317380842433,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-86",
+      "areas": [
+        "gcu_gf_corridor_5",
+        "gcu_gf_room_53"
+      ],
+      "length_m": 1.1142348018302373,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -9.119134332207768,
+          2.0525382007580464
+        ],
+        "crossing": [
+          [
+            -8.880490380894345,
+            2.0525381986291467
+          ],
+          [
+            -9.35777828352119,
+            2.052538202886946
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059302682404633,
+      "best_point": [
+        -9.119134328938069,
+        2.419062806623256
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_5": [
+          -8.880490380894345,
+          2.0525381986291467
+        ],
+        "gcu_gf_room_53": [
+          -9.35777828352119,
+          2.052538202886946
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -9.119134328938069,
+          2.419062806623256
+        ],
+        "crossing": [
+          [
+            -9.357778280251491,
+            2.4190628087521557
+          ],
+          [
+            -8.880490377624646,
+            2.4190628044943563
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.1905930246951466,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-87",
+      "areas": [
+        "gcu_gf_corridor_6",
+        "gcu_gf_corridor_14"
+      ],
+      "length_m": 3.5186369146595653,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -6.216258505347467,
+          -10.17472526634792
+        ],
+        "crossing": [
+          [
+            -6.454902456660889,
+            -10.17472525502874
+          ],
+          [
+            -5.977614554034044,
+            -10.1747252776671
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059320148116576,
+      "best_point": [
+        -6.216258579754084,
+        -11.743450890800307
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_6": [
+          -6.454902456660889,
+          -10.17472525502874
+        ],
+        "gcu_gf_corridor_14": [
+          -5.977614554034044,
+          -10.1747252776671
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -6.216258579754084,
+          -11.743450890800307
+        ],
+        "crossing": [
+          [
+            -5.977614628440661,
+            -11.743450902119488
+          ],
+          [
+            -6.454902531067506,
+            -11.743450879481127
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.1905931901619855,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-88",
+      "areas": [
+        "gcu_gf_corridor_6",
+        "gcu_gf_room_57"
+      ],
+      "length_m": 1.1728788703020383,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -8.239475029758538,
+          -9.35371039692231
+        ],
+        "crossing": [
+          [
+            -8.239474990489027,
+            -9.592354348235729
+          ],
+          [
+            -8.239475069028048,
+            -9.11506644560889
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.1905927646299954,
+      "best_point": [
+        -7.843628411031604,
+        -9.353710331784674
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_6": [
+          -8.239474990489027,
+          -9.592354348235729
+        ],
+        "gcu_gf_room_57": [
+          -8.239475069028048,
+          -9.11506644560889
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -7.843628411031604,
+          -9.353710331784674
+        ],
+        "crossing": [
+          [
+            -7.843628450301114,
+            -9.115066380471255
+          ],
+          [
+            -7.843628371762094,
+            -9.592354283098093
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059276581995555,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-89",
+      "areas": [
+        "gcu_gf_corridor_7",
+        "gcu_gf_corridor_14"
+      ],
+      "length_m": 1.0555909578421176,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -6.216258575740397,
+          -14.338445845003577
+        ],
+        "crossing": [
+          [
+            -6.454902527053808,
+            -14.338445919884656
+          ],
+          [
+            -5.9776146244269865,
+            -14.338445770122497
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059314586058385,
+      "best_point": [
+        -6.21625846993382,
+        -14.675648512092014
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_7": [
+          -6.454902527053808,
+          -14.338445919884656
+        ],
+        "gcu_gf_corridor_14": [
+          -5.9776146244269865,
+          -14.338445770122497
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -6.21625846993382,
+          -14.675648512092014
+        ],
+        "crossing": [
+          [
+            -5.977614518620409,
+            -14.675648437210935
+          ],
+          [
+            -6.454902421247231,
+            -14.675648586973093
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059307097950473,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-90",
+      "areas": [
+        "gcu_gf_corridor_7",
+        "gcu_gf_corridor_14"
+      ],
+      "length_m": 0.9969471407615145,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -6.216258578684024,
+          -12.72573749828394
+        ],
+        "crossing": [
+          [
+            -6.4549025299974305,
+            -12.725737585841346
+          ],
+          [
+            -5.977614627370618,
+            -12.725737410726536
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059278824591175,
+      "best_point": [
+        -6.216258465723952,
+        -13.033618232930857
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_7": [
+          -6.4549025299974305,
+          -12.725737585841346
+        ],
+        "gcu_gf_corridor_14": [
+          -5.977614627370618,
+          -12.725737410726536
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -6.216258465723952,
+          -13.033618232930857
+        ],
+        "crossing": [
+          [
+            -5.977614514410545,
+            -13.033618145373453
+          ],
+          [
+            -6.454902417037358,
+            -13.033618320488262
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059270068850687,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-91",
+      "areas": [
+        "gcu_gf_corridor_8",
+        "gcu_gf_corridor_15"
+      ],
+      "length_m": 2.697621342688894,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -0.02932188975438378,
+          19.909621540110813
+        ],
+        "crossing": [
+          [
+            -0.26796584106780624,
+            19.909621540774115
+          ],
+          [
+            0.20932206155903868,
+            19.90962153944751
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059309032334681,
+      "best_point": [
+        -0.029321892973611253,
+        18.75140368102156
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_8": [
+          -0.26796584106780624,
+          19.909621540774115
+        ],
+        "gcu_gf_corridor_15": [
+          0.20932206155903868,
+          19.90962153944751
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -0.029321892973611253,
+          18.75140368102156
+        ],
+        "crossing": [
+          [
+            0.2093220583398112,
+            18.75140368035826
+          ],
+          [
+            -0.26796584428703374,
+            18.751403681684863
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.1905930896600445,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-92",
+      "areas": [
+        "gcu_gf_corridor_8",
+        "gcu_gf_room_32"
+      ],
+      "length_m": 0.8210156643812372,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -3.9584665129159347,
+          21.5516520703963
+        ],
+        "crossing": [
+          [
+            -3.9584666024514337,
+            21.313008119082895
+          ],
+          [
+            -3.9584664233804356,
+            21.790296021709707
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.20165259646216915,
+      "best_point": [
+        -3.749611650924231,
+        21.551651992037208
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_8": [
+          -3.9584666024514337,
+          21.313008119082895
+        ],
+        "gcu_gf_room_32": [
+          -3.9584664233804356,
+          21.790296021709707
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -3.749611650924231,
+          21.551651992037208
+        ],
+        "crossing": [
+          [
+            -3.749611561388732,
+            21.790295943350614
+          ],
+          [
+            -3.7496117404597302,
+            21.3130080407238
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.20165257746979037,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-93",
+      "areas": [
+        "gcu_gf_corridor_14",
+        "gcu_gf_corridor_16"
+      ],
+      "length_m": 9.852183750091811,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -0.029321984293310233,
+          -14.103870167669633
+        ],
+        "crossing": [
+          [
+            -0.2679659356067327,
+            -14.103870167006336
+          ],
+          [
+            0.20932196702011224,
+            -14.10387016833293
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059299889361725,
+      "best_point": [
+        -0.02932199745535359,
+        -18.83936920231198
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_14": [
+          -0.2679659356067327,
+          -14.103870167006336
+        ],
+        "gcu_gf_corridor_16": [
+          0.20932196702011224,
+          -14.10387016833293
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -0.02932199745535359,
+          -18.83936920231198
+        ],
+        "crossing": [
+          [
+            0.2093219538580689,
+            -18.839369202975274
+          ],
+          [
+            -0.26796594876877605,
+            -18.839369201648683
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059299823032205,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-94",
+      "areas": [
+        "gcu_gf_corridor_15",
+        "gcu_gf_corridor_22"
+      ],
+      "length_m": 5.512531423487614,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          6.157615044228152,
+          18.38487843447914
+        ],
+        "crossing": [
+          [
+            5.918971092914731,
+            18.384878460248487
+          ],
+          [
+            6.396258995541572,
+            18.384878408709795
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.29728790262684496,
+      "best_point": [
+        6.157614795546799,
+        16.081897799998252
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_15": [
+          5.918971092914731,
+          18.384878460248487
+        ],
+        "gcu_gf_corridor_22": [
+          6.396258995541572,
+          18.384878408709795
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          6.1576148050203745,
+          16.169630395597526
+        ],
+        "crossing": [
+          [
+            6.396258756333795,
+            16.16963036982818
+          ],
+          [
+            5.918970853706954,
+            16.169630421366872
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19326384370845825,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-95",
+      "areas": [
+        "gcu_gf_corridor_15",
+        "gcu_gf_room_33"
+      ],
+      "length_m": 0.8210156643812373,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          3.8998227401096206,
+          21.551652049314242
+        ],
+        "crossing": [
+          [
+            3.899822828283364,
+            21.313008098000836
+          ],
+          [
+            3.899822651935877,
+            21.79029600062765
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.20165281943523095,
+      "best_point": [
+        4.1086776021013245,
+        21.551652126481567
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_15": [
+          3.899822828283364,
+          21.313008098000836
+        ],
+        "gcu_gf_room_33": [
+          3.899822651935877,
+          21.79029600062765
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          4.1086776021013245,
+          21.551652126481567
+        ],
+        "crossing": [
+          [
+            4.1086775139275815,
+            21.790296077794974
+          ],
+          [
+            4.1086776902750675,
+            21.31300817516816
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.20165273126148797,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-96",
+      "areas": [
+        "gcu_gf_corridor_16",
+        "gcu_gf_corridor_22"
+      ],
+      "length_m": 3.5772818838440754,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          6.157614513014165,
+          -1.9352503587483154
+        ],
+        "crossing": [
+          [
+            5.918970561700743,
+            -1.9352503708611137
+          ],
+          [
+            6.3962584643275875,
+            -1.935250346635517
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.29728790262684496,
+      "best_point": [
+        6.15761458082549,
+        -3.2712556337349787
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_16": [
+          5.918970561700743,
+          -1.9352503708611137
+        ],
+        "gcu_gf_corridor_22": [
+          6.3962584643275875,
+          -1.935250346635517
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          6.157614576378845,
+          -3.183648730457165
+        ],
+        "crossing": [
+          [
+            6.396258527692267,
+            -3.1836487183443665
+          ],
+          [
+            5.918970625065422,
+            -3.183648742569963
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19274149199424398,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-97",
+      "areas": [
+        "gcu_gf_corridor_16",
+        "gcu_gf_corridor_23"
+      ],
+      "length_m": 3.518636914659609,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          6.157614556177009,
+          -10.174725301485081
+        ],
+        "crossing": [
+          [
+            5.918970604863587,
+            -10.174725311477667
+          ],
+          [
+            6.3962585074904315,
+            -10.174725291492495
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.1905931663439855,
+      "best_point": [
+        6.157614621863254,
+        -11.743450925937488
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_16": [
+          5.918970604863587,
+          -10.174725311477667
+        ],
+        "gcu_gf_corridor_23": [
+          6.3962585074904315,
+          -10.174725291492495
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          6.157614621863254,
+          -11.743450925937488
+        ],
+        "crossing": [
+          [
+            6.396258573176676,
+            -11.743450915944901
+          ],
+          [
+            5.9189706705498315,
+            -11.743450935930074
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059315635139917,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-98",
+      "areas": [
+        "gcu_gf_corridor_16",
+        "gcu_gf_corridor_24"
+      ],
+      "length_m": 1.0555909578421319,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          6.157614603424289,
+          -14.338445880140789
+        ],
+        "crossing": [
+          [
+            5.918970652110879,
+            -14.338445803933116
+          ],
+          [
+            6.396258554737699,
+            -14.338445956348462
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059311072336804,
+      "best_point": [
+        6.157614495743241,
+        -14.67564854722923
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_16": [
+          5.918970652110879,
+          -14.338445803933116
+        ],
+        "gcu_gf_corridor_24": [
+          6.396258554737699,
+          -14.338445956348462
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          6.157614495743241,
+          -14.67564854722923
+        ],
+        "crossing": [
+          [
+            6.396258447056651,
+            -14.675648623436903
+          ],
+          [
+            5.918970544429831,
+            -14.675648471021557
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059303451569498,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-99",
+      "areas": [
+        "gcu_gf_corridor_16",
+        "gcu_gf_corridor_24"
+      ],
+      "length_m": 0.9969471407615272,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          6.157614615332774,
+          -12.725737533421132
+        ],
+        "crossing": [
+          [
+            5.918970664019368,
+            -12.725737444537133
+          ],
+          [
+            6.396258566646179,
+            -12.72573762230513
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059275310871548,
+      "best_point": [
+        6.157614500661227,
+        -13.033618268068054
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_16": [
+          5.918970664019368,
+          -12.725737444537133
+        ],
+        "gcu_gf_corridor_24": [
+          6.396258566646179,
+          -12.72573762230513
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          6.157614500661227,
+          -13.033618268068054
+        ],
+        "crossing": [
+          [
+            6.396258451974632,
+            -13.033618356952053
+          ],
+          [
+            5.918970549347821,
+            -13.033618179184055
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059266422471666,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-100",
+      "areas": [
+        "gcu_gf_corridor_17",
+        "gcu_gf_corridor_22"
+      ],
+      "length_m": 2.1111831060263446,
+      "midpoint_clearance_lower_bound_m": 0.029321976484822265,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.029322299616149294,
+      "best_point": [
+        6.157615211868798,
+        14.76391846474666
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-101",
+      "areas": [
+        "gcu_gf_corridor_18",
+        "gcu_gf_corridor_22"
+      ],
+      "length_m": 2.111183098237073,
+      "midpoint_clearance_lower_bound_m": 0.0293218500007697,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.029322173133014218,
+      "best_point": [
+        6.157615085385663,
+        11.714433112952463
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-102",
+      "areas": [
+        "gcu_gf_corridor_19",
+        "gcu_gf_corridor_22"
+      ],
+      "length_m": 2.1111819794145656,
+      "midpoint_clearance_lower_bound_m": 0.029322200122809505,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.02932233383580929,
+      "best_point": [
+        6.157615246088458,
+        6.6414272922164335
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-103",
+      "areas": [
+        "gcu_gf_corridor_20",
+        "gcu_gf_corridor_22"
+      ],
+      "length_m": 2.1111819702090644,
+      "midpoint_clearance_lower_bound_m": 0.02932207363385153,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.029322207346067053,
+      "best_point": [
+        6.157615119598716,
+        3.5919419754750734
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-104",
+      "areas": [
+        "gcu_gf_corridor_21",
+        "gcu_gf_corridor_22"
+      ],
+      "length_m": 2.111181961711679,
+      "midpoint_clearance_lower_bound_m": 0.02932194714237113,
+      "sampled_local_crossing_found": false,
+      "crossing": null,
+      "best_sample_clearance_lower_bound_m": 0.029322082791646054,
+      "best_point": [
+        6.157614995044295,
+        0.5277956849412099
+      ],
+      "execution_reference_feasible": false,
+      "exclusion_reason": "no_sampled_straight_crossing"
+    },
+    {
+      "id": "-105",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_corridor_25"
+      ],
+      "length_m": 5.6298190661228915,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          16.860135777773408,
+          18.326235202146695
+        ],
+        "crossing": [
+          [
+            16.621491826459987,
+            18.326235184401718
+          ],
+          [
+            17.09877972908683,
+            18.32623521989167
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059337965270906,
+      "best_point": [
+        16.86013597291115,
+        15.701918502052958
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          16.621491826459987,
+          18.326235184401718
+        ],
+        "gcu_gf_corridor_25": [
+          17.09877972908683,
+          18.32623521989167
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          16.86013597291115,
+          15.701918502052958
+        ],
+        "crossing": [
+          [
+            17.09877992422457,
+            15.701918519797935
+          ],
+          [
+            16.621492021597728,
+            15.701918484307981
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059336190773202,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-106",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_34"
+      ],
+      "length_m": 0.8210156668075985,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          6.949308406043253,
+          21.551651953636394
+        ],
+        "crossing": [
+          [
+            6.949308241000533,
+            21.31300800232303
+          ],
+          [
+            6.9493085710859726,
+            21.790295904949758
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.20165262118236793,
+      "best_point": [
+        7.158163268652154,
+        21.55165180919538
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          6.949308241000533,
+          21.31300800232303
+        ],
+        "gcu_gf_room_34": [
+          6.9493085710859726,
+          21.790295904949758
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          7.158163268652154,
+          21.55165180919538
+        ],
+        "crossing": [
+          [
+            7.158163433694874,
+            21.790295760508744
+          ],
+          [
+            7.158163103609434,
+            21.313007857882017
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.2016525861733065,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-107",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_35"
+      ],
+      "length_m": 0.8210147135925439,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          9.998793594157416,
+          21.551652186145077
+        ],
+        "crossing": [
+          [
+            9.998793498223733,
+            21.313008234831674
+          ],
+          [
+            9.998793690091098,
+            21.79029613745848
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059310854851752,
+      "best_point": [
+        10.21870824958397,
+        21.551652097740476
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          9.998793498223733,
+          21.313008234831674
+        ],
+        "gcu_gf_room_35": [
+          9.998793690091098,
+          21.79029613745848
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          10.21870824958397,
+          21.551652097740476
+        ],
+        "crossing": [
+          [
+            10.218708345517653,
+            21.79029604905388
+          ],
+          [
+            10.218708153650288,
+            21.313008146427073
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059308819894838,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-108",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_36"
+      ],
+      "length_m": 0.8210147111673187,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          13.04827926009375,
+          21.55165219038404
+        ],
+        "crossing": [
+          [
+            13.048279232928857,
+            21.31300823907062
+          ],
+          [
+            13.048279287258643,
+            21.79029614169746
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059291155975444,
+      "best_point": [
+        13.268193914870707,
+        21.551652165351104
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          13.048279232928857,
+          21.31300823907062
+        ],
+        "gcu_gf_room_36": [
+          13.048279287258643,
+          21.79029614169746
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          13.268193914870707,
+          21.551652165351104
+        ],
+        "crossing": [
+          [
+            13.2681939420356,
+            21.790296116664525
+          ],
+          [
+            13.268193887705815,
+            21.313008214037684
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.1905929057975051,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-109",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_37"
+      ],
+      "length_m": 0.8210156643828931,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          16.097764450637733,
+          21.551651968123572
+        ],
+        "crossing": [
+          [
+            16.09776449278785,
+            21.313008016810155
+          ],
+          [
+            16.097764408487617,
+            21.79029591943699
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.2016529820985582,
+      "best_point": [
+        16.30661931262987,
+        21.551652005012237
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          16.09776449278785,
+          21.313008016810155
+        ],
+        "gcu_gf_room_37": [
+          16.097764408487617,
+          21.79029591943699
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          16.30661931262987,
+          21.551652005012237
+        ],
+        "crossing": [
+          [
+            16.306619270479754,
+            21.790295956325654
+          ],
+          [
+            16.306619354779986,
+            21.31300805369882
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.2016529399484419,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-110",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_40"
+      ],
+      "length_m": 1.348811218007069,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          10.64387716179802,
+          16.18573093647865
+        ],
+        "crossing": [
+          [
+            10.405233210484608,
+            16.185730864350937
+          ],
+          [
+            10.882521113111432,
+            16.18573100860636
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.18854370866727344,
+      "best_point": [
+        10.643877308644909,
+        15.699868831067523
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          10.405233210484608,
+          16.185730864350937
+        ],
+        "gcu_gf_room_40": [
+          10.882521113111432,
+          16.18573100860636
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          10.643877308644909,
+          15.699868831067523
+        ],
+        "crossing": [
+          [
+            10.88252125995832,
+            15.699868903195235
+          ],
+          [
+            10.405233357331497,
+            15.699868758939811
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.18854363653956163,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-111",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_40"
+      ],
+      "length_m": 0.23457614391194992,
+      "midpoint_clearance_lower_bound_m": 0.11728793871898079,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          10.685272748067593,
+          16.86013639195655
+        ],
+        "crossing": [
+          [
+            10.685273633132372,
+            17.098780343268334
+          ],
+          [
+            10.685271863002814,
+            16.62149244064477
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19318024739242112,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.23457601067472855,
+      "best_point": [
+        10.64387695796577,
+        16.860136545482153
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          10.685273633132372,
+          17.098780343268334
+        ],
+        "gcu_gf_room_40": [
+          10.685271863002814,
+          16.62149244064477
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          10.657675554666378,
+          16.860136494306953
+        ],
+        "crossing": [
+          [
+            10.6576746696016,
+            16.62149254299517
+          ],
+          [
+            10.657676439731157,
+            17.098780445618736
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.22077744079363626,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-112",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_40"
+      ],
+      "length_m": 1.0555910064555105,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          11.171672590951156,
+          17.739795521306036
+        ],
+        "crossing": [
+          [
+            10.933028639637737,
+            17.739795483538085
+          ],
+          [
+            11.410316542264574,
+            17.739795559073986
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059312819882673,
+      "best_point": [
+        11.171672644317077,
+        17.402592838688307
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          10.933028639637737,
+          17.739795483538085
+        ],
+        "gcu_gf_room_40": [
+          11.410316542264574,
+          17.739795559073986
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          11.171672644317077,
+          17.402592838688307
+        ],
+        "crossing": [
+          [
+            11.410316595630496,
+            17.402592876456257
+          ],
+          [
+            10.933028693003658,
+            17.402592800920356
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059312934329142,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-113",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_48"
+      ],
+      "length_m": 1.1142359291500412,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          9.11913427353003,
+          14.250480077342596
+        ],
+        "crossing": [
+          [
+            8.880490322216607,
+            14.25048007521236
+          ],
+          [
+            9.357778224843452,
+            14.250480079472831
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.1881172353555094,
+      "best_point": [
+        9.119134276823878,
+        13.88147986703966
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          8.880490322216607,
+          14.25048007521236
+        ],
+        "gcu_gf_room_48": [
+          9.357778224843452,
+          14.250480079472831
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          9.119134276823878,
+          13.88147986703966
+        ],
+        "crossing": [
+          [
+            9.3577782281373,
+            13.881479869169896
+          ],
+          [
+            8.880490325510456,
+            13.881479864909425
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.18811723335437947,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-114",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_50"
+      ],
+      "length_m": 1.1142348053708142,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          9.119134464404244,
+          4.105076346449698
+        ],
+        "crossing": [
+          [
+            8.880490513090821,
+            4.105076344320604
+          ],
+          [
+            9.357778415717666,
+            4.105076348578791
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059268495776394,
+      "best_point": [
+        9.119134467674243,
+        3.738551739419824
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          8.880490513090821,
+          4.105076344320604
+        ],
+        "gcu_gf_room_50": [
+          9.357778415717666,
+          4.105076348578791
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          9.119134467674243,
+          3.738551739419824
+        ],
+        "crossing": [
+          [
+            9.357778418987666,
+            3.7385517415489176
+          ],
+          [
+            8.88049051636082,
+            3.738551737290731
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059268295770648,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-115",
+      "areas": [
+        "gcu_gf_corridor_22",
+        "gcu_gf_room_54"
+      ],
+      "length_m": 1.1142348018302373,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          9.119134332207768,
+          2.0525382007580464
+        ],
+        "crossing": [
+          [
+            8.880490380894345,
+            2.0525381986291467
+          ],
+          [
+            9.35777828352119,
+            2.052538202886946
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059283640056246,
+      "best_point": [
+        9.119134335477469,
+        1.6860135948928368
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_22": [
+          8.880490380894345,
+          2.0525381986291467
+        ],
+        "gcu_gf_room_54": [
+          9.35777828352119,
+          2.052538202886946
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          9.119134335477469,
+          1.6860135948928368
+        ],
+        "crossing": [
+          [
+            9.357778286790891,
+            1.6860135970217363
+          ],
+          [
+            8.880490384164046,
+            1.6860135927639373
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059283440068708,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-116",
+      "areas": [
+        "gcu_gf_corridor_23",
+        "gcu_gf_corridor_25"
+      ],
+      "length_m": 2.756265045041731,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          16.860135985837054,
+          -10.731843213694752
+        ],
+        "crossing": [
+          [
+            16.621492034523637,
+            -10.73184326517331
+          ],
+          [
+            17.09877993715047,
+            -10.731843162216194
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059300567393223,
+      "best_point": [
+        16.860136242004593,
+        -11.91938294054781
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_23": [
+          16.621492034523637,
+          -10.73184326517331
+        ],
+        "gcu_gf_corridor_25": [
+          17.09877993715047,
+          -10.731843162216194
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          16.860136242004593,
+          -11.91938294054781
+        ],
+        "crossing": [
+          [
+            17.09878019331801,
+            -11.91938288906925
+          ],
+          [
+            16.621492290691176,
+            -11.919382992026367
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059295419537392,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-117",
+      "areas": [
+        "gcu_gf_corridor_23",
+        "gcu_gf_room_58"
+      ],
+      "length_m": 1.172878870302035,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          8.180831085152008,
+          -9.353710442600605
+        ],
+        "crossing": [
+          [
+            8.180831044452637,
+            -9.592354393914023
+          ],
+          [
+            8.180831125851379,
+            -9.115066491287186
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059301747791968,
+      "best_point": [
+        8.57667770387894,
+        -9.353710510109996
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_23": [
+          8.180831044452637,
+          -9.592354393914023
+        ],
+        "gcu_gf_room_58": [
+          8.180831125851379,
+          -9.115066491287186
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          8.57667770387894,
+          -9.353710510109996
+        ],
+        "crossing": [
+          [
+            8.57667774457831,
+            -9.115066558796578
+          ],
+          [
+            8.576677663179568,
+            -9.592354461423415
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.1905929767783494,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-118",
+      "areas": [
+        "gcu_gf_corridor_23",
+        "gcu_gf_room_59"
+      ],
+      "length_m": 1.114235862758264,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          16.24437448802,
+          -9.177778521827655
+        ],
+        "crossing": [
+          [
+            16.244374618016003,
+            -9.416422473141042
+          ],
+          [
+            16.244374358023997,
+            -8.939134570514268
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.18811737495954617,
+      "best_point": [
+        16.613374676335994,
+        -9.17777832082298
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_23": [
+          16.244374618016003,
+          -9.416422473141042
+        ],
+        "gcu_gf_room_59": [
+          16.244374358023997,
+          -8.939134570514268
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          16.613374676335994,
+          -9.17777832082298
+        ],
+        "crossing": [
+          [
+            16.61337454633999,
+            -8.939134369509594
+          ],
+          [
+            16.613374806331997,
+            -9.416422272136368
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.18811728435627018,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-119",
+      "areas": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_38"
+      ],
+      "length_m": 0.8210156643855265,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          19.1472501153661,
+          21.551652073927134
+        ],
+        "crossing": [
+          [
+            19.147249903753487,
+            21.313008122613805
+          ],
+          [
+            19.14725032697871,
+            21.790296025240462
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.2016527856675694,
+      "best_point": [
+        19.356104977358825,
+        21.55165188872938
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_25": [
+          19.147249903753487,
+          21.313008122613805
+        ],
+        "gcu_gf_room_38": [
+          19.14725032697871,
+          21.790296025240462
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          19.356104977358825,
+          21.55165188872938
+        ],
+        "crossing": [
+          [
+            19.356105188971437,
+            21.79029584004271
+          ],
+          [
+            19.356104765746213,
+            21.313007937416053
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.20165274078004458,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-120",
+      "areas": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_39"
+      ],
+      "length_m": 1.817962606764606,
+      "midpoint_clearance_lower_bound_m": 0.1759317686769215,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          22.23520632245579,
+          21.786227760195583
+        ],
+        "crossing": [
+          [
+            22.23520639388946,
+            21.547583808882173
+          ],
+          [
+            22.235206251022124,
+            22.024871711508993
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19610498349463867,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.26345617482865646,
+      "best_point": [
+        22.23520632245579,
+        21.786227760195583
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_25": [
+          22.23520639388946,
+          21.547583808882173
+        ],
+        "gcu_gf_room_39": [
+          22.235206251022124,
+          22.024871711508993
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          22.23520632245579,
+          21.786227760195583
+        ],
+        "crossing": [
+          [
+            22.235206251022124,
+            22.024871711508993
+          ],
+          [
+            22.23520639388946,
+            21.547583808882173
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19610498349463867,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-121",
+      "areas": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_43"
+      ],
+      "length_m": 0.7037269662702988,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          24.30791755343541,
+          17.505219596475783
+        ],
+        "crossing": [
+          [
+            24.546561504748812,
+            17.50521950067919
+          ],
+          [
+            24.069273602122006,
+            17.505219692272377
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059281535776762,
+      "best_point": [
+        24.307917618172816,
+        17.66649035957938
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_25": [
+          24.546561504748812,
+          17.50521950067919
+        ],
+        "gcu_gf_room_43": [
+          24.069273602122006,
+          17.505219692272377
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          24.307917618172816,
+          17.66649035957938
+        ],
+        "crossing": [
+          [
+            24.069273666859413,
+            17.666490455375975
+          ],
+          [
+            24.54656156948622,
+            17.666490263782787
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.1905927485904435,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-122",
+      "areas": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_45"
+      ],
+      "length_m": 0.996947178282409,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          24.36656158055402,
+          14.309124259779857
+        ],
+        "crossing": [
+          [
+            24.605205531867405,
+            14.309124126457656
+          ],
+          [
+            24.127917629240635,
+            14.309124393102058
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.1878304855104993,
+      "best_point": [
+        24.3665617540996,
+        14.619767221128676
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_25": [
+          24.605205531867405,
+          14.309124126457656
+        ],
+        "gcu_gf_room_45": [
+          24.127917629240635,
+          14.309124393102058
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          24.3665617540996,
+          14.619767221128676
+        ],
+        "crossing": [
+          [
+            24.127917802786214,
+            14.619767354450877
+          ],
+          [
+            24.605205705412985,
+            14.619767087806474
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.18783036026843192,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-123",
+      "areas": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_51"
+      ],
+      "length_m": 0.9969471697849042,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          24.4252056916907,
+          8.210153708075643
+        ],
+        "crossing": [
+          [
+            24.663849643004102,
+            8.21015380483497
+          ],
+          [
+            24.186561740377297,
+            8.210153611316315
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19059231835757728,
+      "best_point": [
+        24.42520556685899,
+        8.518034451685661
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_25": [
+          24.663849643004102,
+          8.21015380483497
+        ],
+        "gcu_gf_room_51": [
+          24.186561740377297,
+          8.210153611316315
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          24.42520556685899,
+          8.518034451685661
+        ],
+        "crossing": [
+          [
+            24.186561615545585,
+            8.518034354926334
+          ],
+          [
+            24.66384951817239,
+            8.518034548444989
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059225091925747,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-124",
+      "areas": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_55"
+      ],
+      "length_m": 0.9969471563307087,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          24.42520562114631,
+          -2.0525381306190074
+        ],
+        "crossing": [
+          [
+            24.663849572459714,
+            -2.052538034442743
+          ],
+          [
+            24.18656166983291,
+            -2.0525382267952716
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.190592681358267,
+      "best_point": [
+        24.425205497066823,
+        -1.7446573911639607
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_corridor_25": [
+          24.663849572459714,
+          -2.052538034442743
+        ],
+        "gcu_gf_room_55": [
+          24.18656166983291,
+          -2.0525382267952716
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          24.425205497066823,
+          -1.7446573911639607
+        ],
+        "crossing": [
+          [
+            24.18656154575342,
+            -1.744657487340225
+          ],
+          [
+            24.663849448380226,
+            -1.7446572949876964
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059261432632524,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-125",
+      "areas": [
+        "gcu_gf_room_41",
+        "gcu_gf_room_44"
+      ],
+      "length_m": 2.1698255297278313,
+      "midpoint_clearance_lower_bound_m": 0.17593189605052295,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -20.041570113871316,
+          15.687257148838544
+        ],
+        "crossing": [
+          [
+            -20.04157003526446,
+            15.925901100151954
+          ],
+          [
+            -20.041570192478172,
+            15.448613197525134
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059265382845325,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.2593792877625915,
+      "best_point": [
+        -20.041570113871316,
+        15.687257148838544
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_room_41": [
+          -20.04157003526446,
+          15.925901100151954
+        ],
+        "gcu_gf_room_44": [
+          -20.041570192478172,
+          15.448613197525134
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -20.041570113871316,
+          15.687257148838544
+        ],
+        "crossing": [
+          [
+            -20.04157003526446,
+            15.925901100151954
+          ],
+          [
+            -20.041570192478172,
+            15.448613197525134
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059265382845325,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-126",
+      "areas": [
+        "gcu_gf_room_42",
+        "gcu_gf_room_45"
+      ],
+      "length_m": 2.1698255297278273,
+      "midpoint_clearance_lower_bound_m": 0.1759317871263235,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          19.98292630846523,
+          15.687257037777645
+        ],
+        "crossing": [
+          [
+            19.982926231146525,
+            15.925900989091055
+          ],
+          [
+            19.982926385783937,
+            15.448613086464235
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19059279875992274,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.29728790262684496,
+      "best_point": [
+        20.24682400802671,
+        15.687257123278359
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_room_42": [
+          19.982926231146525,
+          15.925900989091055
+        ],
+        "gcu_gf_room_45": [
+          19.982926385783937,
+          15.448613086464235
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          20.24682400802671,
+          15.687257123278359
+        ],
+        "crossing": [
+          [
+            20.246823930708004,
+            15.925901074591769
+          ],
+          [
+            20.246824085345416,
+            15.448613171964949
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.1905929473823207,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-127",
+      "areas": [
+        "gcu_gf_room_46",
+        "gcu_gf_room_47"
+      ],
+      "length_m": 5.629820078732813,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -15.27674919689834,
+          6.128293061042929
+        ],
+        "crossing": [
+          [
+            -15.515393148211762,
+            6.128293042967621
+          ],
+          [
+            -15.038105245584918,
+            6.1282930791182375
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.19009759330848608,
+      "best_point": [
+        -15.276748998090497,
+        3.503480842516859
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_room_46": [
+          -15.515393148211762,
+          6.128293042967621
+        ],
+        "gcu_gf_room_47": [
+          -15.038105245584918,
+          6.1282930791182375
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -15.276748998090497,
+          3.503480842516859
+        ],
+        "crossing": [
+          [
+            -15.038105046777074,
+            3.503480860592167
+          ],
+          [
+            -15.51539294940392,
+            3.503480824441551
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19009757523317816,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    },
+    {
+      "id": "-128",
+      "areas": [
+        "gcu_gf_room_46",
+        "gcu_gf_room_47"
+      ],
+      "length_m": 5.6298201275927875,
+      "midpoint_clearance_lower_bound_m": 0.29728790262684496,
+      "sampled_local_crossing_found": true,
+      "crossing": {
+        "point": [
+          -15.276749419317625,
+          12.227263731298091
+        ],
+        "crossing": [
+          [
+            -15.515393370631045,
+            12.227263753527065
+          ],
+          [
+            -15.038105468004204,
+            12.227263709069117
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.29728790262684496,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "best_sample_clearance_lower_bound_m": 0.190097304187546,
+      "best_point": [
+        -15.276749663811087,
+        9.602451489991855
+      ],
+      "execution_reference_feasible": true,
+      "directed_anchors": {
+        "gcu_gf_room_46": [
+          -15.515393370631045,
+          12.227263753527065
+        ],
+        "gcu_gf_room_47": [
+          -15.038105468004204,
+          12.227263709069117
+        ]
+      },
+      "initial_audit_crossing": {
+        "point": [
+          -15.276749663811087,
+          9.602451489991855
+        ],
+        "crossing": [
+          [
+            -15.038105712497666,
+            9.602451467762881
+          ],
+          [
+            -15.515393615124507,
+            9.60245151222083
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 34,
+          "radius_m": 0.18,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.19009728195857178,
+          "clearance_search_cap_m": 0.29728790262684496
+        }
+      },
+      "anchor_policy": "nearest interface-midpoint sample with validated crossing and conservative raster connectors"
+    }
+  ],
+  "local_edge_failures": [],
+  "redundant_interface_pairs_excluded": [
+    {
+      "area": "gcu_gf_corridor_4",
+      "states": [
+        "gcu_gf_corridor_4|-72",
+        "gcu_gf_corridor_4|-73"
+      ]
+    },
+    {
+      "area": "gcu_gf_corridor_5",
+      "states": [
+        "gcu_gf_corridor_5|-72",
+        "gcu_gf_corridor_5|-73"
+      ]
+    },
+    {
+      "area": "gcu_gf_corridor_5",
+      "states": [
+        "gcu_gf_corridor_5|-84",
+        "gcu_gf_corridor_5|-85"
+      ]
+    },
+    {
+      "area": "gcu_gf_corridor_7",
+      "states": [
+        "gcu_gf_corridor_7|-89",
+        "gcu_gf_corridor_7|-90"
+      ]
+    },
+    {
+      "area": "gcu_gf_corridor_14",
+      "states": [
+        "gcu_gf_corridor_14|-89",
+        "gcu_gf_corridor_14|-90"
+      ]
+    },
+    {
+      "area": "gcu_gf_corridor_16",
+      "states": [
+        "gcu_gf_corridor_16|-98",
+        "gcu_gf_corridor_16|-99"
+      ]
+    },
+    {
+      "area": "gcu_gf_corridor_22",
+      "states": [
+        "gcu_gf_corridor_22|-110",
+        "gcu_gf_corridor_22|-111"
+      ]
+    },
+    {
+      "area": "gcu_gf_corridor_22",
+      "states": [
+        "gcu_gf_corridor_22|-110",
+        "gcu_gf_corridor_22|-112"
+      ]
+    },
+    {
+      "area": "gcu_gf_corridor_22",
+      "states": [
+        "gcu_gf_corridor_22|-111",
+        "gcu_gf_corridor_22|-112"
+      ]
+    },
+    {
+      "area": "gcu_gf_corridor_24",
+      "states": [
+        "gcu_gf_corridor_24|-98",
+        "gcu_gf_corridor_24|-99"
+      ]
+    },
+    {
+      "area": "gcu_gf_room_40",
+      "states": [
+        "gcu_gf_room_40|-110",
+        "gcu_gf_room_40|-111"
+      ]
+    },
+    {
+      "area": "gcu_gf_room_40",
+      "states": [
+        "gcu_gf_room_40|-110",
+        "gcu_gf_room_40|-112"
+      ]
+    },
+    {
+      "area": "gcu_gf_room_40",
+      "states": [
+        "gcu_gf_room_40|-111",
+        "gcu_gf_room_40|-112"
+      ]
+    },
+    {
+      "area": "gcu_gf_room_46",
+      "states": [
+        "gcu_gf_room_46|-127",
+        "gcu_gf_room_46|-128"
+      ]
+    },
+    {
+      "area": "gcu_gf_room_47",
+      "states": [
+        "gcu_gf_room_47|-84",
+        "gcu_gf_room_47|-85"
+      ]
+    },
+    {
+      "area": "gcu_gf_room_47",
+      "states": [
+        "gcu_gf_room_47|-127",
+        "gcu_gf_room_47|-128"
+      ]
+    }
+  ],
+  "base_states": 116,
+  "base_edges": 280,
+  "maximum_hierarchy_depth": 2,
+  "scope": "sampled straight crossings plus conservative leaf-raster connections; no motion certificate"
+}

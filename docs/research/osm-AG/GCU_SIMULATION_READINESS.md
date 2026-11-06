@@ -5,27 +5,15 @@ The macOS host controls Ubuntu 22.04 ARM64 in UTM for ROS 2 Humble / Gazebo Fort
 tests. Physics runs headlessly; sensor rendering uses the logged-in Ubuntu display
 and Foxglove provides visualization on macOS.
 
-## Current checkpoint (2026-11-03)
+## Current checkpoint (2026-11-06)
 
-Phase 04 has qualified completion of its original selected-route matrix: all 16 cases
-passed, including nine autonomous corridor/turn/room-entry repeats, verified
-contact instrumentation, invalid/blocked goals, an obstacle detour, cancellation
-and validated click-to-goal display. The final runner/manual terminals use
-Cyclone DDS after Fast DDS lifecycle service-reply failures. Two issues remain
-open: final-heading correction on an additional consecutive-goal regression,
-and two evaluation ground-truth bridge segfaults after shutdown SIGINT. The
-navigation measurements passed; shutdown is not crash-free. The hardware drive
-profile and Phase 03 localization tuning are unchanged.
+Phase 05's approved **paper-based routing implementation** now has a refined motion-free preview. The bounded [paper/route-quality follow-up](GCU_ROUTING_PAPER_AUDIT.md) passed 47 unit tests, 10 offline and 15 live cases. Open-space examples now connect directly (3.484 m graph reference → 1.500 m refined path); courtyard/invalid-goal rejection, closures and TF guards remain enforced. Preview publishes no velocity commands or navigation actions and measured zero drift. The separate metric profile's earlier three consecutive-goal runs, five clean shutdown controls and original 16-case matrix remain frozen; they were not rerun for this preview-only change.
 
-See [Checkpoint 04](phases/04_GCU_AUTONOMOUS_METRIC_NAVIGATION.md) for the measured
-table, raw evidence, limitations and complete Ubuntu/Foxglove commands. Phase 03
-localization/controlled-motion checks remain finalized. The grazing-corner sensor
-limitation is retained. Full osmAG-Nav integration now requires area/passage-guided
-execution in Phase 05; Pi/LLM/camera evaluation follows later.
+See [Phase 05](phases/05_GCU_OSMAG_ROUTE_PREVIEW_AND_RELIABLE_HANDOFF.md) for current Ubuntu/Foxglove commands, before/after images and verified evidence. Use `/home/ubuntu/edgeosmag_phase5_preview_v2_ws` for preview and `/home/ubuntu/edgeosmag_phase5_ws` for simulation/localization. `/osmag/global_path` is refined; `/osmag/graph_path` preserves the graph reference. Exact author-runtime parity and general continuous-space optimality are not claimed. The user confirmed the updated v2 Foxglove preview works on 2026-11-06; the bounded Phase 05 checkpoint is accepted.
 
-Phase history is collected in [phases/README.md](phases/README.md). The sections
-below preserve earlier implementation history and its historical status notes;
-the current checkpoint above and numbered records describe today's state.
+The original [Phase 04](phases/04_GCU_AUTONOMOUS_METRIC_NAVIGATION.md) evidence remains unchanged. Its heading/shutdown failures are preserved and have a bounded follow-up in Phase 05. Phase 03's grazing-corner sensor limitation remains. Phase 06 will connect ordered osmAG passage goals to Nav2; rolling raster maps and structural localization follow later. Pi/LLM/camera evaluation remains future work.
+
+Phase history is collected in [phases/README.md](phases/README.md). The sections below preserve earlier implementation history; the current checkpoint and numbered records describe today's state.
 
 ## What the previous work contributed
 

@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-05",
+  "paper": "https://arxiv.org/abs/2603.28271v1",
+  "author_project": "https://jiajiezhang7.github.io/osmAG-Nav/",
+  "project_repository": "https://github.com/jiajiezhang7/osmAG-Nav",
+  "observed_release_label": "Code (Upon Acceptance)",
+  "runtime_source_available_in_project_repository": false,
+  "status": "Exact 2026 runtime port unavailable at audited public endpoint; paper-based implementation requires explicit provenance and cannot be reported as author code.",
+  "local_package": "lidarbot_ws/src/lidarbot/lidarbot_osmag",
+  "legacy_gaps": [
+    "Direct FollowPath execution rather than segmented NavigateToPose",
+    "Short-distance straight-line bypass",
+    "Door-center fallback after failed graph route",
+    "Missing-TF synthetic (0,0) start",
+    "Goal transformation may continue with untransformed coordinates"
+  ],
+  "project_repository_commit": "9f4fa7e6cff57f460b773b7a79f64122658f920b",
+  "local_earlier_author_repository": "https://github.com/STAR-Center/osmAG",
+  "local_earlier_repository_commit": "a4c386f94c18cdf343003ca587a181b8b9765472",
+  "implementation_choice": "User explicitly approved paper-based implementation on 2026-11-05.",
+  "implementation_backend": "paper_based_reference_python_not_author_runtime",
+  "license_status": "No 2026 runtime source was incorporated; local older repository and new implementation provenance are recorded separately.",
+  "component_status": {
+    "OSM_schema": "Existing GCU adapter convention reused; new Python reader cross-checks projected coordinates.",
+    "leaf_costs": "New conservative footprint raster searches clipped to leaf sectors on reference occupancy; not yet vector-only rolling maps.",
+    "hierarchy": "V2: recursively cached child compact graphs, level-by-level multi-source Dijkstra endpoint lift, common-parent A* and validated base-graph fallback; tested deeper fixtures, no author-runtime equivalence claim.",
+    "execution_policy": "Failed raster routes and unresolved passages excluded; no Euclidean execution fallback.",
+    "localization": "AMCL/EKF baseline retained; 2026 AGLoc source compatibility unverified/deferred.",
+    "paper_exact_runtime_port": "Unavailable at audited public endpoint; not claimed.",
+    "localization_sensor_contract": "The paper describes structural LiDAR localization; its cloud_handler runtime input/topic requirements cannot be verified from the unreleased implementation. Current tests use /scan sensor_msgs/LaserScan plus wheel/EKF odometry and AMCL; no AGLoc integration is claimed.",
+    "rolling_map": "Not implemented in Phase 05: current reference raster is whole-floor; the 6x6 m controller costmap is distinct from the paper 50x50 m rolling planning raster."
+  },
+  "local_earlier_license": "MIT, copyright fengdelin; retained separately from the new reference implementation.",
+  "simulation_bridge_repair": {
+    "installed_ros_gz_bridge_version": "0.244.20",
+    "scope": "New config-file main links installed native message conversions, unsubscribes transport and releases bridge handles before ROS context shutdown. Original installation remains unchanged.",
+    "upstream_api": "https://github.com/gazebosim/ros_gz/tree/humble/ros_gz_bridge",
+    "root_cause_status": "Observed SIGINT teardown crashes; context/transport destruction ordering is the targeted repair, not a proven upstream root-cause diagnosis."
+  },
+  "follow_up_review": {
+    "date": "2026-11-06",
+    "report": "docs/research/osm-AG/GCU_ROUTING_PAPER_AUDIT.md",
+    "route_quality": "A 1.500 m physically clear direct segment is available where the fixed-anchor graph produces 3.484 m. Initial graph/safety tests did not certify geometric optimality.",
+    "hierarchy_fidelity": "Current child-subtree shortest-trace cache is not the paper recursive parent-lift graph/multi-source propagation implementation; no explicit global passage-A* fallback.",
+    "interface_pair_filter": "Sixteen candidate same-adjacent-area pairs remain as graph edges; paper Algorithm 1 excludes such pairs.",
+    "status": "Completed bounded v2 follow-up; original v1 measurements/source retained."
+  },
+  "follow_up_implementation": {
+    "date": "2026-11-06",
+    "planner_version": "phase5_preview_v2",
+    "evidence": "simulation/gcu_ground_floor/phase5_diagnostics/preview_refinement_v2/verification.json",
+    "unit_tests": 47,
+    "offline_cases": 10,
+    "live_preview_cases": 15,
+    "refinement": "Our topology-preserving visibility string-pulling extension; original footprint checker, ordered portal crossings and closures enforced. Graph cost/reference path retained separately from refined length/path.",
+    "interface_pair_filter": "16 redundant same-adjacent-area pairs excluded; 280 undirected graph edges remain.",
+    "hierarchy": "Recursive cached compact summaries and multi-source lifts; global fallback uses existing validated edges/attachments only.",
+    "retained_differences": [
+      "Two offset anchor states per passage retained as conservative graph variant",
+      "Whole-floor PGM costs, not vector-only rolling maps",
+      "No unchecked Euclidean raster-failure fallback",
+      "Single floor; vertical transition policies deferred",
+      "No global continuous-space optimality or exact author-code parity claim"
+    ],
+    "motion_scope": "Preview only; no controller changes or repeated motion matrix."
+  }
+}

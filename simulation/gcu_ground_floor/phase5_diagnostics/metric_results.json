@@ -1,0 +1,2889 @@
+{
+  "passed": true,
+  "final_group": "ordered_wait_final_02",
+  "reliability": {
+    "passed": true,
+    "trials": [
+      {
+        "name": "shutdown_01",
+        "exit": 0
+      },
+      {
+        "name": "shutdown_02",
+        "exit": 0
+      },
+      {
+        "name": "shutdown_03",
+        "exit": 0
+      },
+      {
+        "name": "shutdown_04",
+        "exit": 0
+      },
+      {
+        "name": "shutdown_05",
+        "exit": 0
+      },
+      {
+        "name": "serial_01",
+        "exit": 0
+      },
+      {
+        "name": "serial_02",
+        "exit": 0
+      },
+      {
+        "name": "serial_03",
+        "exit": 0
+      }
+    ],
+    "matrix_exit": 0
+  },
+  "matrix_passed": true,
+  "matrix": [
+    {
+      "simulation_only": true,
+      "goal": [
+        1.4413560486865775,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 30.0,
+      "wall_timeout_s": 270.0,
+      "positive_control": true,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.058643951980223874,
+        -12.960313240259481,
+        -4.565631748602696e-16
+      ],
+      "start_sim": 2.904,
+      "passed": true,
+      "wall_elapsed_s": 6.171653492000587,
+      "end_sim": 7.907,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 2870,
+        "/gcu/contacts/collision_11": 2869,
+        "/gcu/contacts/collision_12": 2869
+      },
+      "contact_event_count": 8361,
+      "sim_elapsed_s": 5.003,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [],
+      "name": "contact_positive_01",
+      "runner": {
+        "domain": 140,
+        "partition": "gcu_navigation_35047",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/positive_control.sdf"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            35088
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            35072
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/contact_positive_01/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        1.4413560486865775,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 80.0,
+      "wall_timeout_s": 520.0,
+      "positive_control": false,
+      "via_click_bridge": true,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.61,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "action_status": 4,
+      "bridge_outcome": "succeeded",
+      "goal_accepted": true,
+      "action_end_sim": 24.343,
+      "rest_confirmed_sim": 25.5,
+      "final_truth": [
+        1.35852226224648,
+        -12.959113668049897,
+        0.024502897454747468
+      ],
+      "final_position_error_m": 0.08284247189398804,
+      "final_heading_error_deg": 1.403912609998877,
+      "swept_truth": {
+        "valid": true,
+        "samples": 378,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 378,
+      "localization_p95_position_m": 0.03976746975650934,
+      "localization_p95_heading_deg": 1.2067133677073283,
+      "max_command_mps": 0.1,
+      "bridge_preview_valid": true,
+      "sampling_coverage": {
+        "truth_samples": 378,
+        "matched_samples": 378,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 29.670724434000476,
+      "end_sim": 25.5,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 21742,
+        "/gcu/contacts/collision_11": 21754,
+        "/gcu/contacts/collision_12": 21754
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 18.89,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "corridor_01",
+      "runner": {
+        "domain": 141,
+        "partition": "gcu_navigation_35297",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            35338
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            35322
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/corridor_01/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        1.4413560486865775,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 80.0,
+      "wall_timeout_s": 520.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.605,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 24.077,
+      "rest_confirmed_sim": 25.25,
+      "final_truth": [
+        1.3722277400276617,
+        -12.979206879359912,
+        0.0138779686397873
+      ],
+      "final_position_error_m": 0.07166374715460708,
+      "final_heading_error_deg": 0.7951490312747241,
+      "swept_truth": {
+        "valid": true,
+        "samples": 373,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 373,
+      "localization_p95_position_m": 0.06112877913972713,
+      "localization_p95_heading_deg": 1.1515997776464917,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 373,
+        "matched_samples": 373,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 29.45264905000022,
+      "end_sim": 25.25,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 21613,
+        "/gcu/contacts/collision_11": 21624,
+        "/gcu/contacts/collision_12": 21624
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 18.645,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "corridor_02",
+      "runner": {
+        "domain": 142,
+        "partition": "gcu_navigation_35797",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            35838
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            35822
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/corridor_02/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        1.4413560486865775,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 80.0,
+      "wall_timeout_s": 520.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.515,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 24.156,
+      "rest_confirmed_sim": 25.35,
+      "final_truth": [
+        1.3821261013247177,
+        -12.936587699288589,
+        0.0077160365890510795
+      ],
+      "final_position_error_m": 0.06380507784790287,
+      "final_heading_error_deg": 0.44209633112114644,
+      "swept_truth": {
+        "valid": true,
+        "samples": 377,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 377,
+      "localization_p95_position_m": 0.0666737952331575,
+      "localization_p95_heading_deg": 1.0133598586805534,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 377,
+        "matched_samples": 377,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 31.502173615000174,
+      "end_sim": 25.35,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 21676,
+        "/gcu/contacts/collision_11": 21685,
+        "/gcu/contacts/collision_12": 21685
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 18.835,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "corridor_03",
+      "runner": {
+        "domain": 143,
+        "partition": "gcu_navigation_36298",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            36339
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            36323
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/corridor_03/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        -3.0,
+        -10.5,
+        1.5707963267948966
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 150.0,
+      "wall_timeout_s": 870.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.36,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 64.291,
+      "rest_confirmed_sim": 65.45,
+      "final_truth": [
+        -2.9045853227721627,
+        -10.563823420414483,
+        1.6302055306820655
+      ],
+      "final_position_error_m": 0.11479281172571829,
+      "final_heading_error_deg": 3.4038966469669867,
+      "swept_truth": {
+        "valid": true,
+        "samples": 1182,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 1182,
+      "localization_p95_position_m": 0.11372607132140039,
+      "localization_p95_heading_deg": 2.876249885196271,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 1182,
+        "matched_samples": 1182,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 115.00950669599933,
+      "end_sim": 65.45,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 61984,
+        "/gcu/contacts/collision_11": 61995,
+        "/gcu/contacts/collision_12": 61995
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 59.09,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "turn_01",
+      "runner": {
+        "domain": 144,
+        "partition": "gcu_navigation_36801",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            36842
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            36826
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/turn_01/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        -3.0,
+        -10.5,
+        1.5707963267948966
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 150.0,
+      "wall_timeout_s": 870.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.182,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 64.738,
+      "rest_confirmed_sim": 65.9,
+      "final_truth": [
+        -2.9158150787683628,
+        -10.55774021780843,
+        1.6244963869007052
+      ],
+      "final_position_error_m": 0.1020834644560121,
+      "final_heading_error_deg": 3.0767868036616797,
+      "swept_truth": {
+        "valid": true,
+        "samples": 1195,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 1194,
+      "localization_p95_position_m": 0.09558014799222005,
+      "localization_p95_heading_deg": 2.373116325681358,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 1195,
+        "matched_samples": 1194,
+        "matched_fraction": 0.999163179916318,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 110.43528153199986,
+      "end_sim": 65.9,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 62429,
+        "/gcu/contacts/collision_11": 62441,
+        "/gcu/contacts/collision_12": 62441
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 59.718,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "turn_02",
+      "runner": {
+        "domain": 145,
+        "partition": "gcu_navigation_37301",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            37342
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            37326
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/turn_02/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        -3.0,
+        -10.5,
+        1.5707963267948966
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 150.0,
+      "wall_timeout_s": 870.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.664,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 65.737,
+      "rest_confirmed_sim": 66.9,
+      "final_truth": [
+        -2.945117395330128,
+        -10.543344906331171,
+        1.61780247219122
+      ],
+      "final_position_error_m": 0.06993483538414509,
+      "final_heading_error_deg": 2.6932537423876424,
+      "swept_truth": {
+        "valid": true,
+        "samples": 1205,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 1205,
+      "localization_p95_position_m": 0.091864261499673,
+      "localization_p95_heading_deg": 2.399965354461221,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 1205,
+        "matched_samples": 1205,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 109.08701038900017,
+      "end_sim": 66.9,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 63139,
+        "/gcu/contacts/collision_11": 63151,
+        "/gcu/contacts/collision_12": 63151
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 60.236000000000004,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "turn_03",
+      "runner": {
+        "domain": 146,
+        "partition": "gcu_navigation_37800",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            37841
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            37825
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/turn_03/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        -10.0,
+        -7.5,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 300.0,
+      "wall_timeout_s": 1620.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.65,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 160.434,
+      "rest_confirmed_sim": 161.581,
+      "final_truth": [
+        -10.015829418386263,
+        -7.486361845581542,
+        0.09540436715486046
+      ],
+      "final_position_error_m": 0.02089425141968599,
+      "final_heading_error_deg": 5.466267585090038,
+      "swept_truth": {
+        "valid": true,
+        "samples": 3100,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 3099,
+      "localization_p95_position_m": 0.10076354715189614,
+      "localization_p95_heading_deg": 4.514587730141324,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 3100,
+        "matched_samples": 3099,
+        "matched_fraction": 0.9996774193548387,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 266.1907556650003,
+      "end_sim": 161.581,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 157924,
+        "/gcu/contacts/collision_11": 157933,
+        "/gcu/contacts/collision_12": 157933
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 154.93099999999998,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "room_entry_01",
+      "runner": {
+        "domain": 147,
+        "partition": "gcu_navigation_38306",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            38347
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            38331
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/room_entry_01/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        -10.0,
+        -7.5,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 300.0,
+      "wall_timeout_s": 1620.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.233,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 158.96,
+      "rest_confirmed_sim": 160.064,
+      "final_truth": [
+        -10.014730188578545,
+        -7.485296493768213,
+        0.08911776399952734
+      ],
+      "final_position_error_m": 0.020812773747573773,
+      "final_heading_error_deg": 5.106071756815823,
+      "swept_truth": {
+        "valid": true,
+        "samples": 3079,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 3079,
+      "localization_p95_position_m": 0.13418391252244014,
+      "localization_p95_heading_deg": 4.823793735090372,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 3079,
+        "matched_samples": 3079,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 270.3883520270001,
+      "end_sim": 160.064,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 156301,
+        "/gcu/contacts/collision_11": 156310,
+        "/gcu/contacts/collision_12": 156310
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 153.831,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "room_entry_02",
+      "runner": {
+        "domain": 148,
+        "partition": "gcu_navigation_38807",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            38848
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            38832
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/room_entry_02/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        -10.0,
+        -7.5,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 300.0,
+      "wall_timeout_s": 1620.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.271,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 158.7,
+      "rest_confirmed_sim": 159.813,
+      "final_truth": [
+        -10.049049545060491,
+        -7.480531793244782,
+        0.10332857960346047
+      ],
+      "final_position_error_m": 0.052771857508572356,
+      "final_heading_error_deg": 5.920291514359846,
+      "swept_truth": {
+        "valid": true,
+        "samples": 3072,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 3072,
+      "localization_p95_position_m": 0.12315882834483045,
+      "localization_p95_heading_deg": 4.334521780955301,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 3072,
+        "matched_samples": 3072,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      },
+      "passed": true,
+      "wall_elapsed_s": 276.0095244230006,
+      "end_sim": 159.813,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 156249,
+        "/gcu/contacts/collision_11": 156257,
+        "/gcu/contacts/collision_12": 156258
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 153.542,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "room_entry_03",
+      "runner": {
+        "domain": 149,
+        "partition": "gcu_navigation_39317",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            39348
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            39342
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/room_entry_03/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        -1.4074548315221413,
+        -16.244374513818027,
+        0.0
+      ],
+      "expected": "rejected",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 30.0,
+      "wall_timeout_s": 270.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.584,
+      "goal_footprint": {
+        "valid": false,
+        "reason": "swept_footprint_blocked",
+        "at": [
+          -1.4074548315221413,
+          -16.244374513818027
+        ],
+        "clearance_m": 0.0,
+        "required_m": 0.18733049400150775
+      },
+      "goal_accepted": true,
+      "action_status": 6,
+      "action_end_sim": 6.6129999999999995,
+      "rest_confirmed_sim": 7.7,
+      "final_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "final_position_error_m": 3.5502604464661034,
+      "final_heading_error_deg": 2.184689370479163e-14,
+      "swept_truth": {
+        "valid": true,
+        "samples": 23,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 22,
+      "localization_p95_position_m": 0.043909248005223556,
+      "localization_p95_heading_deg": 0.028946225191145612,
+      "max_command_mps": 0.0,
+      "sampling_coverage": {
+        "truth_samples": 23,
+        "matched_samples": 22,
+        "matched_fraction": 0.9565217391304348,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 5.689795265000612,
+      "end_sim": 7.7,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 4122,
+        "/gcu/contacts/collision_11": 4122,
+        "/gcu/contacts/collision_12": 4122
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 1.1160000000000005,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "occupied_goal_01",
+      "runner": {
+        "domain": 150,
+        "partition": "gcu_navigation_39822",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            39863
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            39847
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/occupied_goal_01/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": "rejected",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 30.0,
+      "wall_timeout_s": 270.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.584,
+      "goal_footprint": {
+        "valid": false,
+        "reason": "swept_footprint_blocked",
+        "at": [
+          0.0,
+          0.0
+        ],
+        "clearance_m": 0.0,
+        "required_m": 0.18733049400150775
+      },
+      "goal_accepted": true,
+      "action_status": 6,
+      "action_end_sim": 6.616,
+      "rest_confirmed_sim": 7.7,
+      "final_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "final_position_error_m": 12.960445918207306,
+      "final_heading_error_deg": 2.184689370479163e-14,
+      "swept_truth": {
+        "valid": true,
+        "samples": 23,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 22,
+      "localization_p95_position_m": 0.06091088429559916,
+      "localization_p95_heading_deg": 0.28488288558896885,
+      "max_command_mps": 0.0,
+      "sampling_coverage": {
+        "truth_samples": 23,
+        "matched_samples": 22,
+        "matched_fraction": 0.9565217391304348,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 5.8933502099998805,
+      "end_sim": 7.7,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 4041,
+        "/gcu/contacts/collision_11": 4041,
+        "/gcu/contacts/collision_12": 4041
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 1.1160000000000005,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "courtyard_goal_01",
+      "runner": {
+        "domain": 151,
+        "partition": "gcu_navigation_40319",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            40360
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            40344
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/courtyard_goal_01/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        -3.0,
+        -10.5,
+        1.5707963267948966
+      ],
+      "expected": "rejected",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 30.0,
+      "wall_timeout_s": 270.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.382,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 6,
+      "action_end_sim": 6.4,
+      "rest_confirmed_sim": 7.5,
+      "final_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "final_position_error_m": 3.834672951179877,
+      "final_heading_error_deg": 90.00000000000003,
+      "swept_truth": {
+        "valid": true,
+        "samples": 23,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 22,
+      "localization_p95_position_m": 0.07085042416347719,
+      "localization_p95_heading_deg": 0.35267187731212013,
+      "max_command_mps": 0.0,
+      "sampling_coverage": {
+        "truth_samples": 23,
+        "matched_samples": 22,
+        "matched_fraction": 0.9565217391304348,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 6.079922062000151,
+      "end_sim": 7.5,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 3912,
+        "/gcu/contacts/collision_11": 3912,
+        "/gcu/contacts/collision_12": 3912
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 1.1180000000000003,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "blocked_passage_01",
+      "runner": {
+        "domain": 152,
+        "partition": "gcu_navigation_40816",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigation_fixtures/blocked/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigation_fixtures/blocked/map.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            40857
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            40841
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/blocked_passage_01/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        2.4413560486865773,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "success",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 150.0,
+      "wall_timeout_s": 870.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.448,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "action_status": 4,
+      "action_end_sim": 46.516,
+      "rest_confirmed_sim": 47.7,
+      "final_truth": [
+        2.374458022978831,
+        -12.87253348788095,
+        -0.04930327918066103
+      ],
+      "final_position_error_m": 0.11036589496959405,
+      "final_heading_error_deg": 2.824869813207097,
+      "swept_truth": {
+        "valid": true,
+        "samples": 826,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 825,
+      "localization_p95_position_m": 0.08470944937633801,
+      "localization_p95_heading_deg": 2.770863777223709,
+      "max_command_mps": 0.1,
+      "sampling_coverage": {
+        "truth_samples": 826,
+        "matched_samples": 825,
+        "matched_fraction": 0.9987893462469734,
+        "max_truth_gap_sim_s": 0.05000000000000426
+      },
+      "passed": true,
+      "wall_elapsed_s": 75.6578666259993,
+      "end_sim": 47.7,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 44003,
+        "/gcu/contacts/collision_11": 44012,
+        "/gcu/contacts/collision_12": 44012
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 41.252,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "obstacle_detour_01",
+      "runner": {
+        "domain": 153,
+        "partition": "gcu_navigation_41313",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigation_fixtures/detour/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            41354
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            41338
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/obstacle_detour_01/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        2.9413560486865773,
+        -12.960313240266368,
+        0.0
+      ],
+      "expected": "cancelled",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 60.0,
+      "wall_timeout_s": 420.0,
+      "positive_control": false,
+      "via_click_bridge": false,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.243,
+      "goal_footprint": {
+        "valid": true,
+        "samples": 1,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "goal_accepted": true,
+      "cancel_request_sim": 8.9,
+      "cancel_ack_count": 1,
+      "action_status": 5,
+      "action_end_sim": 8.964,
+      "rest_confirmed_sim": 10.25,
+      "final_truth": [
+        0.21122286077854482,
+        -12.954325403327402,
+        0.06139767794427615
+      ],
+      "final_position_error_m": 2.73013975428147,
+      "final_heading_error_deg": 3.517827818110484,
+      "swept_truth": {
+        "valid": true,
+        "samples": 81,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 80,
+      "localization_p95_position_m": 0.06052340763585719,
+      "localization_p95_heading_deg": 0.37510610657427806,
+      "max_command_mps": 0.1,
+      "cancel_stop_delay_sim_s": 0.34999999999999964,
+      "sampling_coverage": {
+        "truth_samples": 81,
+        "matched_samples": 80,
+        "matched_fraction": 0.9876543209876543,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 12.105300866000107,
+      "end_sim": 10.25,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 6778,
+        "/gcu/contacts/collision_11": 6808,
+        "/gcu/contacts/collision_12": 6808
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 4.007,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "cancel_moving_goal_01",
+      "runner": {
+        "domain": 154,
+        "partition": "gcu_navigation_41813",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            41854
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            41838
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/cancel_moving_goal_01/report.json"
+    },
+    {
+      "simulation_only": true,
+      "goal": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": "rejected",
+      "ground_truth_controls_successful_stop": false,
+      "sim_timeout_s": 30.0,
+      "wall_timeout_s": 270.0,
+      "positive_control": false,
+      "via_click_bridge": true,
+      "gates": {
+        "final_position_m": 0.2,
+        "final_heading_deg": 10.0,
+        "localization_p95_m": 0.25,
+        "localization_p95_deg": 5.0,
+        "rest_s": 1.0,
+        "rest_speed_mps": 0.01,
+        "rest_yaw_rate_radps": 0.02,
+        "swept_radius_m": 0.18
+      },
+      "start_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "start_sim": 6.493,
+      "goal_footprint": {
+        "valid": false,
+        "reason": "swept_footprint_blocked",
+        "at": [
+          0.0,
+          0.0
+        ],
+        "clearance_m": 0.0,
+        "required_m": 0.18733049400150775
+      },
+      "action_status": null,
+      "bridge_outcome": "rejected",
+      "goal_accepted": false,
+      "action_end_sim": 6.493,
+      "rest_confirmed_sim": 7.6,
+      "final_truth": [
+        -0.05864395179618064,
+        -12.96031324026137,
+        -3.8130022648183603e-16
+      ],
+      "final_position_error_m": 12.960445918207306,
+      "final_heading_error_deg": 2.184689370479163e-14,
+      "swept_truth": {
+        "valid": true,
+        "samples": 23,
+        "radius_m": 0.18,
+        "segment_sampling_m": 0.014660988003015518,
+        "checked_clearance_lower_bound_m": 0.29728790402412414,
+        "clearance_search_cap_m": 0.29728790402412414
+      },
+      "localization_pairs": 22,
+      "localization_p95_position_m": 0.04737357484849955,
+      "localization_p95_heading_deg": 0.04029197466888076,
+      "max_command_mps": 0.0,
+      "bridge_preview_valid": false,
+      "sampling_coverage": {
+        "truth_samples": 23,
+        "matched_samples": 22,
+        "matched_fraction": 0.9565217391304348,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      },
+      "passed": true,
+      "wall_elapsed_s": 6.3230255819999,
+      "end_sim": 7.6,
+      "contact_counts": {
+        "/gcu/contacts/collision_9": 3903,
+        "/gcu/contacts/collision_11": 3903,
+        "/gcu/contacts/collision_12": 3903
+      },
+      "contact_event_count": 0,
+      "sim_elapsed_s": 1.1069999999999993,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "velocity_publishers": [
+        {
+          "name": "controller_server",
+          "namespace": "/"
+        }
+      ],
+      "name": "click_courtyard_rejection_01",
+      "runner": {
+        "domain": 155,
+        "partition": "gcu_navigation_42314",
+        "rmw_implementation": "rmw_cyclonedds_cpp",
+        "commands": [
+          [
+            "simulator",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_phase5_sim.launch.py",
+              "assets:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2",
+              "world:=/home/ubuntu/edgeosmag_phase5_ws/assets/contact_v2/world.sdf"
+            ]
+          ],
+          [
+            "amcl",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_amcl.launch.py",
+              "map:=/home/ubuntu/edgeosmag_phase5_ws/assets/gcu_ground_floor.yaml",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/amcl.yaml"
+            ]
+          ],
+          [
+            "navigation",
+            [
+              "ros2",
+              "launch",
+              "/home/ubuntu/edgeosmag_phase5_ws/gcu_navigation.launch.py",
+              "params:=/home/ubuntu/edgeosmag_phase5_ws/assets/nav2_autonomous.yaml",
+              "tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_strict.xml",
+              "through_tree:=/home/ubuntu/edgeosmag_phase5_ws/assets/navigate_through_strict.xml"
+            ]
+          ]
+        ],
+        "checker_exit": 0,
+        "passed": true,
+        "lifecycle_shutdown_exit": 0,
+        "truth_bridge_shutdown": {
+          "passed": true,
+          "pids": [
+            42363
+          ],
+          "order": "truth bridge before simulator group"
+        },
+        "simulator_shutdown": {
+          "passed": true,
+          "command": [
+            "ign",
+            "service",
+            "-s",
+            "/server_control",
+            "--reqtype",
+            "ignition.msgs.ServerControl",
+            "--reptype",
+            "ignition.msgs.Boolean",
+            "--timeout",
+            "5000",
+            "--req",
+            "stop: true"
+          ],
+          "stdout": "data: true\n\n",
+          "stderr": "",
+          "exit": 0,
+          "server_pids": [
+            42339
+          ],
+          "still_alive_pids": []
+        },
+        "launch_exits": [
+          0,
+          0,
+          0
+        ],
+        "child_process_audit": {
+          "critical": [],
+          "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+        }
+      },
+      "raw_report": "metric/ordered_wait_final_02/matrix_01/click_courtyard_rejection_01/report.json"
+    }
+  ],
+  "scope": "Metric reliability gates only; offline and live preview have separate reports."
+}
