@@ -1,0 +1,49 @@
+{
+  "passed": false,
+  "domain": 194,
+  "partition": "gcu_06b2a_3630",
+  "scope": "Stationary GCU sensor/costmap integration only",
+  "checker_exit": 1,
+  "truth_shutdown": {
+    "passed": true,
+    "pids": [
+      3668
+    ],
+    "order": "truth bridge before simulator group"
+  },
+  "simulator_shutdown": {
+    "passed": true,
+    "command": [
+      "ign",
+      "service",
+      "-s",
+      "/server_control",
+      "--reqtype",
+      "ignition.msgs.ServerControl",
+      "--reptype",
+      "ignition.msgs.Boolean",
+      "--timeout",
+      "5000",
+      "--req",
+      "stop: true"
+    ],
+    "stdout": "data: true\n\n",
+    "stderr": "",
+    "exit": 0,
+    "server_pids": [
+      3662
+    ],
+    "still_alive_pids": []
+  },
+  "process_exits": [
+    0,
+    0,
+    -15,
+    -15
+  ],
+  "audit": {
+    "critical": [],
+    "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+  },
+  "elapsed_wall_s": 41.517347178000136
+}

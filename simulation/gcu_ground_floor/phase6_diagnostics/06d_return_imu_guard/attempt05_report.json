@@ -1,0 +1,3567 @@
+{
+  "passed": false,
+  "scope": "06D two consecutive destinations; one simulator, localization, native servers and executor",
+  "fixture": {
+    "name": "doorway_roundtrip_imu_out",
+    "spawn": [
+      24.95,
+      17.505219596475783,
+      3.141592653589793
+    ],
+    "goal": [
+      23.55,
+      17.505219596475783,
+      3.141592653589793
+    ],
+    "expected_passages": [
+      "-121"
+    ],
+    "expected_areas": [
+      "gcu_gf_corridor_25",
+      "gcu_gf_room_43"
+    ],
+    "route_length_m": 1.3999999999999986,
+    "simulation_timeout_s": 80,
+    "checker_wall_timeout_s": 500,
+    "mask_validation": {
+      "valid": true,
+      "samples": 97,
+      "radius_m": 0.19999999999999998,
+      "segment_sampling_m": 0.01466098782835562,
+      "checked_clearance_lower_bound_m": 0.2932196271479448,
+      "clearance_search_cap_m": 0.3172879026268449
+    },
+    "route_contract": {
+      "mission_id": "doorway_roundtrip_imu_out",
+      "route_revision": 1,
+      "closure_revision": 0,
+      "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+      "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+      "route_sha256": "99d3737c9ca7d3da4cec378d681213895d8f22a415ba7947beac083fcd62b0d6",
+      "policy": "refined_crossing",
+      "start": [
+        24.95,
+        17.505219596475783
+      ],
+      "goal": [
+        23.55,
+        17.505219596475783,
+        3.141592653589793
+      ],
+      "pose_stamp": 1.0,
+      "created_at": 1.0,
+      "area_ids": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_43"
+      ],
+      "passage_ids": [
+        "-121"
+      ],
+      "disabled_passages": [],
+      "path": [
+        [
+          24.95,
+          17.505219596475783
+        ],
+        [
+          23.55,
+          17.505219596475783
+        ]
+      ],
+      "segments": [
+        {
+          "index": 0,
+          "point": [
+            24.307917553435,
+            17.505219596475783
+          ],
+          "yaw": 3.141592653589793,
+          "passage_id": "-121",
+          "source_area": "gcu_gf_corridor_25",
+          "destination_area": "gcu_gf_room_43"
+        },
+        {
+          "index": 1,
+          "point": [
+            23.55,
+            17.505219596475783
+          ],
+          "yaw": 3.141592653589793,
+          "passage_id": null,
+          "source_area": "gcu_gf_room_43",
+          "destination_area": "gcu_gf_room_43"
+        }
+      ],
+      "settings": {
+        "reach_threshold_m": 0.3,
+        "crossing_hysteresis_m": 0.06,
+        "confirmation_samples": 3,
+        "maximum_pose_age_s": 0.5,
+        "maximum_observation_gap_s": 0.15,
+        "maximum_pose_step_m": 0.25,
+        "action_ack_timeout_s": 15.0
+      }
+    },
+    "input_sha256": {
+      "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+      "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+      "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+    },
+    "inflate_constraints": true,
+    "check_handoff_rest": true,
+    "local_costmap_frame": "map",
+    "execution_source_sha256": {
+      "gcu_segmented_executor.py": "f82cdb1aaa1a7f41ef949e87b8cc6eb6f682fd1c07ab425e0cc1031e804ef0f8",
+      "osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+      "osmag_mission_state.py": "e777994c13221c42a7fc72ba639960349f83fdb44563c5fbef3a3a0635299daa",
+      "check_gcu_segmented_crossing.py": "e8caa4e35671beeab04d6125de461a344996b6da72d7fbc33df17ca5ed6816a2",
+      "gcu_mission_fixture.py": "9743444209b884b598c1f63d411b852d145efce45ddad7bff59b642c181033fb",
+      "gcu_costmap_observation.py": "2238eb0b8be3b5596553616c14718c410aa0ec98b29746ae221d4fdfe910d899",
+      "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+      "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5"
+    },
+    "scope": "Offline admitted two-destination session; live success not yet established",
+    "local_costmap_publish_hz": 10.0,
+    "fuse_imu_yaw_rate": true,
+    "next_mission": {
+      "name": "doorway_roundtrip_imu_back",
+      "spawn": [
+        23.55,
+        17.505219596475783,
+        3.141592653589793
+      ],
+      "goal": [
+        24.95,
+        17.505219596475783,
+        0.0
+      ],
+      "expected_passages": [
+        "-121"
+      ],
+      "expected_areas": [
+        "gcu_gf_room_43",
+        "gcu_gf_corridor_25"
+      ],
+      "route_length_m": 1.3999999999999986,
+      "simulation_timeout_s": 80,
+      "checker_wall_timeout_s": 500,
+      "mask_validation": {
+        "valid": true,
+        "samples": 97,
+        "radius_m": 0.19999999999999998,
+        "segment_sampling_m": 0.01466098782835562,
+        "checked_clearance_lower_bound_m": 0.2932196271479448,
+        "clearance_search_cap_m": 0.3172879026268449
+      },
+      "route_contract": {
+        "mission_id": "doorway_roundtrip_imu_back",
+        "route_revision": 1,
+        "closure_revision": 0,
+        "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+        "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+        "route_sha256": "9f0de416660e0176b1c36c521aa9a928b180873c92c406d8ef0d3eb12c1c1817",
+        "policy": "refined_crossing",
+        "start": [
+          23.55,
+          17.505219596475783
+        ],
+        "goal": [
+          24.95,
+          17.505219596475783,
+          0.0
+        ],
+        "pose_stamp": 1.0,
+        "created_at": 1.0,
+        "area_ids": [
+          "gcu_gf_room_43",
+          "gcu_gf_corridor_25"
+        ],
+        "passage_ids": [
+          "-121"
+        ],
+        "disabled_passages": [],
+        "path": [
+          [
+            23.55,
+            17.505219596475783
+          ],
+          [
+            24.95,
+            17.505219596475783
+          ]
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "point": [
+              24.307917553435,
+              17.505219596475783
+            ],
+            "yaw": 0.0,
+            "passage_id": "-121",
+            "source_area": "gcu_gf_room_43",
+            "destination_area": "gcu_gf_corridor_25"
+          },
+          {
+            "index": 1,
+            "point": [
+              24.95,
+              17.505219596475783
+            ],
+            "yaw": 0.0,
+            "passage_id": null,
+            "source_area": "gcu_gf_corridor_25",
+            "destination_area": "gcu_gf_corridor_25"
+          }
+        ],
+        "settings": {
+          "reach_threshold_m": 0.3,
+          "crossing_hysteresis_m": 0.06,
+          "confirmation_samples": 3,
+          "maximum_pose_age_s": 0.5,
+          "maximum_observation_gap_s": 0.15,
+          "maximum_pose_step_m": 0.25,
+          "action_ack_timeout_s": 15.0
+        }
+      },
+      "input_sha256": {
+        "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+        "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+        "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+      },
+      "inflate_constraints": true,
+      "check_handoff_rest": true,
+      "local_costmap_frame": "map",
+      "execution_source_sha256": {
+        "gcu_segmented_executor.py": "f82cdb1aaa1a7f41ef949e87b8cc6eb6f682fd1c07ab425e0cc1031e804ef0f8",
+        "osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+        "osmag_mission_state.py": "e777994c13221c42a7fc72ba639960349f83fdb44563c5fbef3a3a0635299daa",
+        "check_gcu_segmented_crossing.py": "e8caa4e35671beeab04d6125de461a344996b6da72d7fbc33df17ca5ed6816a2",
+        "gcu_mission_fixture.py": "9743444209b884b598c1f63d411b852d145efce45ddad7bff59b642c181033fb",
+        "gcu_costmap_observation.py": "2238eb0b8be3b5596553616c14718c410aa0ec98b29746ae221d4fdfe910d899",
+        "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+        "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5"
+      },
+      "scope": "Offline admitted simulation fixture; runtime acceptance requires a separate scored trial",
+      "local_costmap_publish_hz": 10.0,
+      "fuse_imu_yaw_rate": true
+    }
+  },
+  "missions": [],
+  "error": "MissionError('stale_or_unowned_imu')",
+  "lifecycle_shutdown": {
+    "bt_navigator": true,
+    "controller_server": true,
+    "planner_server": true
+  },
+  "truth": [
+    {
+      "sim_time": 8.15,
+      "truth": [
+        24.9500000004828,
+        17.505219596470848,
+        3.1415926535897927
+      ]
+    },
+    {
+      "sim_time": 8.2,
+      "truth": [
+        24.9500000004828,
+        17.505219596470848,
+        3.1415926535897927
+      ]
+    },
+    {
+      "sim_time": 8.25,
+      "truth": [
+        24.9500000004828,
+        17.505219596470848,
+        3.1415926535897927
+      ]
+    },
+    {
+      "sim_time": 8.3,
+      "truth": [
+        24.9500000004828,
+        17.505219596470848,
+        3.1415926535897927
+      ]
+    }
+  ],
+  "localization": [
+    {
+      "sim_time": 8.15,
+      "truth": [
+        24.9500000004828,
+        17.505219596470848,
+        3.1415926535897927
+      ],
+      "estimated": [
+        24.93012099191836,
+        17.494709881529374,
+        -3.1248222102017857
+      ],
+      "position_error_m": 0.022486197758981454,
+      "yaw_error_deg": 0.9608756266959647
+    },
+    {
+      "sim_time": 8.2,
+      "truth": [
+        24.9500000004828,
+        17.505219596470848,
+        3.1415926535897927
+      ],
+      "estimated": [
+        24.93012099191836,
+        17.494709881529374,
+        -3.1248222102017857
+      ],
+      "position_error_m": 0.022486197758981454,
+      "yaw_error_deg": 0.9608756266959647
+    },
+    {
+      "sim_time": 8.25,
+      "truth": [
+        24.9500000004828,
+        17.505219596470848,
+        3.1415926535897927
+      ],
+      "estimated": [
+        24.93012099191836,
+        17.494709881529374,
+        -3.1248222102017857
+      ],
+      "position_error_m": 0.022486197758981454,
+      "yaw_error_deg": 0.9608756266959647
+    }
+  ],
+  "commands": [
+    {
+      "sim_time": 8.265,
+      "v": 0.0,
+      "w": 0.0
+    }
+  ],
+  "events": [
+    {
+      "event": "fault",
+      "wall": 40019.154047362,
+      "sim": 8.165,
+      "reason": "test_failure"
+    }
+  ],
+  "contacts": [],
+  "final_state": {
+    "state": "idle",
+    "mission_id": null,
+    "last_dispatched_segment": -1,
+    "confirmed_crossings": 0,
+    "reason": null,
+    "stop_confirmed": false,
+    "unresolved_requests": 0,
+    "scope": "pure_mock_model_no_motion"
+  },
+  "contact_publishers": {
+    "/gcu/contacts/collision_0": 1,
+    "/gcu/contacts/collision_1": 1,
+    "/gcu/contacts/collision_2": 1,
+    "/gcu/contacts/collision_3": 1,
+    "/gcu/contacts/collision_4": 1,
+    "/gcu/contacts/collision_5": 1,
+    "/gcu/contacts/collision_6": 1,
+    "/gcu/contacts/collision_7": 1,
+    "/gcu/contacts/collision_8": 1,
+    "/gcu/contacts/collision_9": 1,
+    "/gcu/contacts/collision_10": 1,
+    "/gcu/contacts/collision_11": 1,
+    "/gcu/contacts/collision_12": 1
+  },
+  "wall_elapsed_s": 5.533937120999326,
+  "failed_mission": {
+    "passed": false,
+    "scope": "06D nominal frozen-fixture simulation mission; truth evaluates only",
+    "goal": [
+      23.55,
+      17.505219596475783,
+      3.141592653589793
+    ],
+    "spawn": [
+      24.95,
+      17.505219596475783,
+      3.141592653589793
+    ],
+    "preflight": {
+      "0": {
+        "status": 4,
+        "points": [
+          [
+            24.953001930801527,
+            17.50521991558323
+          ],
+          [
+            24.916506951876052,
+            17.48957102897454
+          ],
+          [
+            24.888409111098788,
+            17.481177470169104
+          ],
+          [
+            24.860279056236557,
+            17.47290560901799
+          ],
+          [
+            24.832295754428067,
+            17.46415053659236
+          ],
+          [
+            24.80356794932255,
+            17.45826609707162
+          ],
+          [
+            24.77426387003039,
+            17.457235246352656
+          ],
+          [
+            24.74494547336713,
+            17.457696981570525
+          ],
+          [
+            24.71570940158768,
+            17.45991259474774
+          ],
+          [
+            24.68646617112268,
+            17.462070938440565
+          ],
+          [
+            24.657226520000457,
+            17.46425433753281
+          ],
+          [
+            24.627965392821586,
+            17.466151389203123
+          ],
+          [
+            24.598686368928846,
+            17.467733458709308
+          ],
+          [
+            24.569382289636685,
+            17.468732095343302
+          ],
+          [
+            24.540060313630654,
+            17.468707039943883
+          ],
+          [
+            24.51080276579456,
+            17.46673124273254
+          ],
+          [
+            24.48205706397517,
+            17.460947024809474
+          ],
+          [
+            24.453547598778876,
+            17.45409974208248
+          ],
+          [
+            24.42520636269297,
+            17.446575963571167
+          ],
+          [
+            24.366562410680906,
+            17.446575963571167
+          ],
+          [
+            24.307917551118134,
+            17.499448002925813
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 58,
+          "radius_m": 0.2,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.23457625308166996,
+          "clearance_search_cap_m": 0.317287902626845
+        }
+      },
+      "1": {
+        "status": 4,
+        "points": [
+          [
+            24.953001930801527,
+            17.50521991558323
+          ],
+          [
+            24.900317584508464,
+            17.484678067402246
+          ],
+          [
+            24.87217679161791,
+            17.476441999678872
+          ],
+          [
+            24.844154117038904,
+            17.46781220425034
+          ],
+          [
+            24.81576277015416,
+            17.460481710248832
+          ],
+          [
+            24.786576809173546,
+            17.457664767485557
+          ],
+          [
+            24.757254833167515,
+            17.45750369706072
+          ],
+          [
+            24.72797938861755,
+            17.45915019473684
+          ],
+          [
+            24.698743316838097,
+            17.461387283970698
+          ],
+          [
+            24.66951082440142,
+            17.463674484003395
+          ],
+          [
+            24.640271173279196,
+            17.465854303752867
+          ],
+          [
+            24.611017204785874,
+            17.46788021176305
+          ],
+          [
+            24.58175249826423,
+            17.4697164146062
+          ],
+          [
+            24.55247347437149,
+            17.471316380826256
+          ],
+          [
+            24.5231872917932,
+            17.47273380056483
+          ],
+          [
+            24.493890371186588,
+            17.47396151513637
+          ],
+          [
+            24.4645898712372,
+            17.47504963533972
+          ],
+          [
+            24.435282212602267,
+            17.4759945818321
+          ],
+          [
+            24.40597097462456,
+            17.476832148041257
+          ],
+          [
+            24.37665973664685,
+            17.477558754624415
+          ],
+          [
+            24.347344919326368,
+            17.478210195009314
+          ],
+          [
+            24.318030102005885,
+            17.478775731167634
+          ],
+          [
+            24.288711705342628,
+            17.479283997841566
+          ],
+          [
+            24.25939330867937,
+            17.479731415688338
+          ],
+          [
+            24.23007133267334,
+            17.480132302079046
+          ],
+          [
+            24.200752936010083,
+            17.480483077670915
+          ],
+          [
+            24.171434539346826,
+            17.480794480492268
+          ],
+          [
+            24.142112563340795,
+            17.481009241058718
+          ],
+          [
+            24.112790587334764,
+            17.480815956548913
+          ],
+          [
+            24.08385160100557,
+            17.47608764474423
+          ],
+          [
+            24.055617745202888,
+            17.46817371787053
+          ],
+          [
+            24.02668591755924,
+            17.463398874609783
+          ],
+          [
+            23.99749279789308,
+            17.46067857410141
+          ],
+          [
+            23.968242408742533,
+            17.45862045200626
+          ],
+          [
+            23.938959805507018,
+            17.457106390012786
+          ],
+          [
+            23.909659305557632,
+            17.45596100032505
+          ],
+          [
+            23.880709581200115,
+            17.451307854718625
+          ],
+          [
+            23.85454100617813,
+            17.43807860382528
+          ],
+          [
+            23.830530774848974,
+            17.421248534101114
+          ],
+          [
+            23.80224322890468,
+            17.41353505042277
+          ],
+          [
+            23.77371944633729,
+            17.420332222350925
+          ],
+          [
+            23.74655939336686,
+            17.431388812180348
+          ],
+          [
+            23.721478938548223,
+            17.446575963571167
+          ],
+          [
+            23.66283498653616,
+            17.446575963571167
+          ],
+          [
+            23.6041910345241,
+            17.446575963571167
+          ],
+          [
+            23.55,
+            17.505219596475783
+          ]
+        ],
+        "validation": {
+          "valid": true,
+          "samples": 124,
+          "radius_m": 0.2,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.2556838547389623,
+          "clearance_search_cap_m": 0.317287902626845
+        }
+      }
+    },
+    "constraint_receipts": [
+      {
+        "source": "global",
+        "observed_at": 7.959,
+        "required_cells": 799579,
+        "missing_cells": 0,
+        "free_probes": 2,
+        "map_from_grid": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "resolution": 0.05864395201206207,
+        "mask_resolution": 0.05864395201206207,
+        "stamp": 7.821,
+        "transform_stamp": null,
+        "transform_policy": "latest_native_keepout"
+      },
+      {
+        "source": "global",
+        "observed_at": 8.1,
+        "required_cells": 799579,
+        "missing_cells": 0,
+        "free_probes": 2,
+        "map_from_grid": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "resolution": 0.05864395201206207,
+        "mask_resolution": 0.05864395201206207,
+        "stamp": 8.1,
+        "transform_stamp": null,
+        "transform_policy": "latest_native_keepout"
+      },
+      {
+        "source": "local",
+        "observed_at": 8.128,
+        "required_cells": 2898,
+        "missing_cells": 0,
+        "free_probes": 1,
+        "map_from_grid": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "resolution": 0.05864395201206207,
+        "mask_resolution": 0.05864395201206207,
+        "stamp": 8.113,
+        "transform_stamp": null,
+        "transform_policy": "latest_native_keepout"
+      }
+    ],
+    "fixture": {
+      "name": "doorway_roundtrip_imu_out",
+      "spawn": [
+        24.95,
+        17.505219596475783,
+        3.141592653589793
+      ],
+      "goal": [
+        23.55,
+        17.505219596475783,
+        3.141592653589793
+      ],
+      "expected_passages": [
+        "-121"
+      ],
+      "expected_areas": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_43"
+      ],
+      "route_length_m": 1.3999999999999986,
+      "simulation_timeout_s": 80,
+      "checker_wall_timeout_s": 500,
+      "mask_validation": {
+        "valid": true,
+        "samples": 97,
+        "radius_m": 0.19999999999999998,
+        "segment_sampling_m": 0.01466098782835562,
+        "checked_clearance_lower_bound_m": 0.2932196271479448,
+        "clearance_search_cap_m": 0.3172879026268449
+      },
+      "route_contract": {
+        "mission_id": "doorway_roundtrip_imu_out",
+        "route_revision": 1,
+        "closure_revision": 0,
+        "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+        "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+        "route_sha256": "99d3737c9ca7d3da4cec378d681213895d8f22a415ba7947beac083fcd62b0d6",
+        "policy": "refined_crossing",
+        "start": [
+          24.95,
+          17.505219596475783
+        ],
+        "goal": [
+          23.55,
+          17.505219596475783,
+          3.141592653589793
+        ],
+        "pose_stamp": 1.0,
+        "created_at": 1.0,
+        "area_ids": [
+          "gcu_gf_corridor_25",
+          "gcu_gf_room_43"
+        ],
+        "passage_ids": [
+          "-121"
+        ],
+        "disabled_passages": [],
+        "path": [
+          [
+            24.95,
+            17.505219596475783
+          ],
+          [
+            23.55,
+            17.505219596475783
+          ]
+        ],
+        "segments": [
+          {
+            "index": 0,
+            "point": [
+              24.307917553435,
+              17.505219596475783
+            ],
+            "yaw": 3.141592653589793,
+            "passage_id": "-121",
+            "source_area": "gcu_gf_corridor_25",
+            "destination_area": "gcu_gf_room_43"
+          },
+          {
+            "index": 1,
+            "point": [
+              23.55,
+              17.505219596475783
+            ],
+            "yaw": 3.141592653589793,
+            "passage_id": null,
+            "source_area": "gcu_gf_room_43",
+            "destination_area": "gcu_gf_room_43"
+          }
+        ],
+        "settings": {
+          "reach_threshold_m": 0.3,
+          "crossing_hysteresis_m": 0.06,
+          "confirmation_samples": 3,
+          "maximum_pose_age_s": 0.5,
+          "maximum_observation_gap_s": 0.15,
+          "maximum_pose_step_m": 0.25,
+          "action_ack_timeout_s": 15.0
+        }
+      },
+      "input_sha256": {
+        "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+        "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+        "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+      },
+      "inflate_constraints": true,
+      "check_handoff_rest": true,
+      "local_costmap_frame": "map",
+      "execution_source_sha256": {
+        "gcu_segmented_executor.py": "f82cdb1aaa1a7f41ef949e87b8cc6eb6f682fd1c07ab425e0cc1031e804ef0f8",
+        "osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+        "osmag_mission_state.py": "e777994c13221c42a7fc72ba639960349f83fdb44563c5fbef3a3a0635299daa",
+        "check_gcu_segmented_crossing.py": "e8caa4e35671beeab04d6125de461a344996b6da72d7fbc33df17ca5ed6816a2",
+        "gcu_mission_fixture.py": "9743444209b884b598c1f63d411b852d145efce45ddad7bff59b642c181033fb",
+        "gcu_costmap_observation.py": "2238eb0b8be3b5596553616c14718c410aa0ec98b29746ae221d4fdfe910d899",
+        "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+        "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5"
+      },
+      "scope": "Offline admitted two-destination session; live success not yet established",
+      "local_costmap_publish_hz": 10.0,
+      "fuse_imu_yaw_rate": true,
+      "next_mission": {
+        "name": "doorway_roundtrip_imu_back",
+        "spawn": [
+          23.55,
+          17.505219596475783,
+          3.141592653589793
+        ],
+        "goal": [
+          24.95,
+          17.505219596475783,
+          0.0
+        ],
+        "expected_passages": [
+          "-121"
+        ],
+        "expected_areas": [
+          "gcu_gf_room_43",
+          "gcu_gf_corridor_25"
+        ],
+        "route_length_m": 1.3999999999999986,
+        "simulation_timeout_s": 80,
+        "checker_wall_timeout_s": 500,
+        "mask_validation": {
+          "valid": true,
+          "samples": 97,
+          "radius_m": 0.19999999999999998,
+          "segment_sampling_m": 0.01466098782835562,
+          "checked_clearance_lower_bound_m": 0.2932196271479448,
+          "clearance_search_cap_m": 0.3172879026268449
+        },
+        "route_contract": {
+          "mission_id": "doorway_roundtrip_imu_back",
+          "route_revision": 1,
+          "closure_revision": 0,
+          "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+          "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+          "route_sha256": "9f0de416660e0176b1c36c521aa9a928b180873c92c406d8ef0d3eb12c1c1817",
+          "policy": "refined_crossing",
+          "start": [
+            23.55,
+            17.505219596475783
+          ],
+          "goal": [
+            24.95,
+            17.505219596475783,
+            0.0
+          ],
+          "pose_stamp": 1.0,
+          "created_at": 1.0,
+          "area_ids": [
+            "gcu_gf_room_43",
+            "gcu_gf_corridor_25"
+          ],
+          "passage_ids": [
+            "-121"
+          ],
+          "disabled_passages": [],
+          "path": [
+            [
+              23.55,
+              17.505219596475783
+            ],
+            [
+              24.95,
+              17.505219596475783
+            ]
+          ],
+          "segments": [
+            {
+              "index": 0,
+              "point": [
+                24.307917553435,
+                17.505219596475783
+              ],
+              "yaw": 0.0,
+              "passage_id": "-121",
+              "source_area": "gcu_gf_room_43",
+              "destination_area": "gcu_gf_corridor_25"
+            },
+            {
+              "index": 1,
+              "point": [
+                24.95,
+                17.505219596475783
+              ],
+              "yaw": 0.0,
+              "passage_id": null,
+              "source_area": "gcu_gf_corridor_25",
+              "destination_area": "gcu_gf_corridor_25"
+            }
+          ],
+          "settings": {
+            "reach_threshold_m": 0.3,
+            "crossing_hysteresis_m": 0.06,
+            "confirmation_samples": 3,
+            "maximum_pose_age_s": 0.5,
+            "maximum_observation_gap_s": 0.15,
+            "maximum_pose_step_m": 0.25,
+            "action_ack_timeout_s": 15.0
+          }
+        },
+        "input_sha256": {
+          "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+          "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+          "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+        },
+        "inflate_constraints": true,
+        "check_handoff_rest": true,
+        "local_costmap_frame": "map",
+        "execution_source_sha256": {
+          "gcu_segmented_executor.py": "f82cdb1aaa1a7f41ef949e87b8cc6eb6f682fd1c07ab425e0cc1031e804ef0f8",
+          "osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+          "osmag_mission_state.py": "e777994c13221c42a7fc72ba639960349f83fdb44563c5fbef3a3a0635299daa",
+          "check_gcu_segmented_crossing.py": "e8caa4e35671beeab04d6125de461a344996b6da72d7fbc33df17ca5ed6816a2",
+          "gcu_mission_fixture.py": "9743444209b884b598c1f63d411b852d145efce45ddad7bff59b642c181033fb",
+          "gcu_costmap_observation.py": "2238eb0b8be3b5596553616c14718c410aa0ec98b29746ae221d4fdfe910d899",
+          "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+          "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5"
+        },
+        "scope": "Offline admitted simulation fixture; runtime acceptance requires a separate scored trial",
+        "local_costmap_publish_hz": 10.0,
+        "fuse_imu_yaw_rate": true
+      }
+    },
+    "fixture_sha256": "17205214cb6cba60d160ef677fe502f8c708656dd6bbe6e3857a5f114cf2daf6",
+    "current_contract_mask_validation": {
+      "valid": true,
+      "samples": 96,
+      "radius_m": 0.19999999999999998,
+      "segment_sampling_m": 0.01466098782835562,
+      "checked_clearance_lower_bound_m": 0.2852546283426918,
+      "clearance_search_cap_m": 0.3172879026268449
+    },
+    "snapshot": {
+      "resolution": 0.05864395131342248,
+      "origin": [
+        -29.351297632367952,
+        -20.14419727616062
+      ],
+      "mission_id": "doorway_roundtrip_imu_out",
+      "route_revision": 1,
+      "closure_revision": 0,
+      "mask_revision": 1,
+      "allowed_areas": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_43"
+      ],
+      "open_passages": [
+        "-121"
+      ],
+      "disabled_passages": [],
+      "physical_sha256": "140bdadd275b85ba99ef591af0f4cab46c7ae5fef06a044793046a5c9465f8bb",
+      "mask_sha256": "93efab4e75bfc902566e4f6cfe9ec8d5f7d92e28610a765f1fb1a3e9434484ce",
+      "radius": 0.18,
+      "padding": 0.02,
+      "shape": [
+        844,
+        1000
+      ],
+      "frame": "map",
+      "blocked_cells": 799579,
+      "scope": "Raw conservative keepout; actual costmap consumption and motion require separate checks."
+    },
+    "contract": {
+      "mission_id": "doorway_roundtrip_imu_out",
+      "route_revision": 1,
+      "closure_revision": 0,
+      "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+      "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+      "route_sha256": "a065542e686f15b68f6dd66e6a3cfebee793c56221e243d71157e0e595d00867",
+      "policy": "refined_crossing",
+      "start": [
+        24.93012099191836,
+        17.494709881529374
+      ],
+      "goal": [
+        23.55,
+        17.505219596475783,
+        3.141592653589793
+      ],
+      "pose_stamp": 40014.66188893,
+      "created_at": 40014.67588893,
+      "area_ids": [
+        "gcu_gf_corridor_25",
+        "gcu_gf_room_43"
+      ],
+      "passage_ids": [
+        "-121"
+      ],
+      "disabled_passages": [],
+      "path": [
+        [
+          24.93012099191836,
+          17.494709881529374
+        ],
+        [
+          23.55,
+          17.505219596475783
+        ]
+      ],
+      "segments": [
+        {
+          "index": 0,
+          "point": [
+            24.307917551118134,
+            17.499448002925813
+          ],
+          "yaw": 3.1339777329670144,
+          "passage_id": "-121",
+          "source_area": "gcu_gf_corridor_25",
+          "destination_area": "gcu_gf_room_43"
+        },
+        {
+          "index": 1,
+          "point": [
+            23.55,
+            17.505219596475783
+          ],
+          "yaw": 3.141592653589793,
+          "passage_id": null,
+          "source_area": "gcu_gf_room_43",
+          "destination_area": "gcu_gf_room_43"
+        }
+      ],
+      "settings": {
+        "reach_threshold_m": 0.3,
+        "crossing_hysteresis_m": 0.06,
+        "confirmation_samples": 3,
+        "maximum_pose_age_s": 0.5,
+        "maximum_observation_gap_s": 0.15,
+        "maximum_pose_step_m": 0.25,
+        "action_ack_timeout_s": 15.0
+      }
+    },
+    "native_grid_failures": [
+      {
+        "source": "local",
+        "error": "native_mask_cells_missing:1033",
+        "stamp": 7.949,
+        "observed_at": 7.959,
+        "frame": "map",
+        "resolution": 0.05864395201206207,
+        "origin": [
+          21.93283779087069,
+          14.485055974066032
+        ],
+        "map_from_grid_at_stamp": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "map_from_grid_latest": null,
+        "map_from_grid_checked": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mask_resolution_wire": 0.05864395201206207,
+        "mask_origin": [
+          -29.351297632367952,
+          -20.14419727616062
+        ],
+        "scope": "Diagnostic capture; does not relax or acknowledge the failed grid."
+      }
+    ],
+    "last_readiness": {
+      "clock": 8.128,
+      "ages": {
+        "global": 0.02800000000000047,
+        "local": 0.015000000000000568
+      },
+      "errors": {},
+      "ready": true
+    },
+    "ownership": {
+      "cmd_vel": [
+        "controller_server"
+      ],
+      "navigate_status": 1,
+      "direct_goal_publishers": 0,
+      "old_bridge_subscribers": 0
+    },
+    "dispatch_sim": 8.137,
+    "error": "MissionError('stale_or_unowned_imu')",
+    "native_captures": [
+      {
+        "label": "failure",
+        "observed_at": 8.137,
+        "state": {
+          "state": "idle",
+          "mission_id": null,
+          "last_dispatched_segment": -1,
+          "confirmed_crossings": 0,
+          "reason": null,
+          "stop_confirmed": false,
+          "unresolved_requests": 0,
+          "scope": "pure_mock_model_no_motion"
+        },
+        "grids": {
+          "global": {
+            "file": "failure_global.npz",
+            "stamp": 8.1,
+            "frame": "map",
+            "resolution": 0.05864395201206207,
+            "origin": [
+              -29.351297632367952,
+              -20.14419727616062
+            ]
+          },
+          "local": {
+            "file": "failure_local.npz",
+            "stamp": 8.113,
+            "frame": "map",
+            "resolution": 0.05864395201206207,
+            "origin": [
+              21.93283779087069,
+              14.485055974066032
+            ]
+          },
+          "global_raw": {
+            "file": "failure_global_raw.npz",
+            "stamp": 8.154,
+            "frame": "map",
+            "resolution": 0.05864395201206207,
+            "origin": [
+              -29.351297632367952,
+              -20.14419727616062
+            ]
+          },
+          "local_raw": {
+            "file": "failure_local_raw.npz",
+            "stamp": 8.164,
+            "frame": "map",
+            "resolution": 0.05864395201206207,
+            "origin": [
+              21.93283779122001,
+              14.485055974415353
+            ]
+          }
+        },
+        "scans": [
+          {
+            "file": "failure_scan_0.npz",
+            "stamp": 7.2,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          },
+          {
+            "file": "failure_scan_1.npz",
+            "stamp": 7.3,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          },
+          {
+            "file": "failure_scan_2.npz",
+            "stamp": 7.4,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          },
+          {
+            "file": "failure_scan_3.npz",
+            "stamp": 7.5,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          },
+          {
+            "file": "failure_scan_4.npz",
+            "stamp": 7.6,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          },
+          {
+            "file": "failure_scan_5.npz",
+            "stamp": 7.7,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          },
+          {
+            "file": "failure_scan_6.npz",
+            "stamp": 7.8,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          },
+          {
+            "file": "failure_scan_7.npz",
+            "stamp": 7.9,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          },
+          {
+            "file": "failure_scan_8.npz",
+            "stamp": 8.0,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          },
+          {
+            "file": "failure_scan_9.npz",
+            "stamp": 8.1,
+            "frame": "lidar_link",
+            "angle_min": -3.140000104904175,
+            "angle_increment": 0.01749303564429283,
+            "range_min": 0.15000000596046448,
+            "range_max": 12.0,
+            "map_from_scan": [
+              24.86778909244949,
+              17.484163113844307,
+              -3.1248222102017857
+            ]
+          }
+        ],
+        "pose": [
+          24.93012099191836,
+          17.494709881529374,
+          -3.1248222102017857
+        ],
+        "pose_stamp": 8.12,
+        "goal": [
+          23.55,
+          17.505219596475783,
+          3.141592653589793
+        ],
+        "segment": [
+          24.307917551118134,
+          17.499448002925813
+        ]
+      }
+    ],
+    "lifecycle_shutdown": {
+      "bt_navigator": true,
+      "controller_server": true,
+      "planner_server": true
+    },
+    "events": [
+      {
+        "event": "fault",
+        "wall": 40019.154047362,
+        "sim": 8.165,
+        "reason": "test_failure"
+      }
+    ],
+    "state": {
+      "state": "idle",
+      "mission_id": null,
+      "last_dispatched_segment": -1,
+      "confirmed_crossings": 0,
+      "reason": null,
+      "stop_confirmed": false,
+      "unresolved_requests": 0,
+      "scope": "pure_mock_model_no_motion"
+    },
+    "poses": [],
+    "tf_timing": [
+      {
+        "clock": 6.734,
+        "latest_stamp": 6.72,
+        "query_stamp": 6.72,
+        "wall": 40014.675882266
+      },
+      {
+        "clock": 7.959,
+        "latest_stamp": 7.92,
+        "query_stamp": 7.92,
+        "wall": 40018.6363724
+      },
+      {
+        "clock": 7.959,
+        "latest_stamp": 7.92,
+        "query_stamp": 7.92,
+        "wall": 40018.649219885
+      },
+      {
+        "clock": 7.959,
+        "latest_stamp": 7.92,
+        "query_stamp": 7.92,
+        "wall": 40018.650374476
+      },
+      {
+        "clock": 7.985,
+        "latest_stamp": 7.92,
+        "query_stamp": 7.92,
+        "wall": 40018.651626493
+      },
+      {
+        "clock": 7.985,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.652779875
+      },
+      {
+        "clock": 7.985,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.653925759
+      },
+      {
+        "clock": 7.985,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.654851214
+      },
+      {
+        "clock": 7.985,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.655885634
+      },
+      {
+        "clock": 7.985,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.657009151
+      },
+      {
+        "clock": 7.985,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.658070021
+      },
+      {
+        "clock": 7.985,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.659510312
+      },
+      {
+        "clock": 7.989,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.660564059
+      },
+      {
+        "clock": 7.989,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.661627969
+      },
+      {
+        "clock": 7.989,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.662536721
+      },
+      {
+        "clock": 7.989,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.66355044
+      },
+      {
+        "clock": 7.989,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.664706571
+      },
+      {
+        "clock": 7.989,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.666279611
+      },
+      {
+        "clock": 7.991,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.66723643
+      },
+      {
+        "clock": 7.991,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.668418928
+      },
+      {
+        "clock": 7.991,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.669644579
+      },
+      {
+        "clock": 7.991,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.670690829
+      },
+      {
+        "clock": 7.991,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.672422193
+      },
+      {
+        "clock": 7.993,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.673365101
+      },
+      {
+        "clock": 7.993,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.674256983
+      },
+      {
+        "clock": 7.993,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.675219343
+      },
+      {
+        "clock": 7.993,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.676364186
+      },
+      {
+        "clock": 7.993,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.677859542
+      },
+      {
+        "clock": 7.995,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.678714603
+      },
+      {
+        "clock": 7.995,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.679550628
+      },
+      {
+        "clock": 7.995,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.680665522
+      },
+      {
+        "clock": 7.995,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.681565985
+      },
+      {
+        "clock": 7.995,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.683053052
+      },
+      {
+        "clock": 7.995,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.683876748
+      },
+      {
+        "clock": 7.997,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.685115394
+      },
+      {
+        "clock": 7.997,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.68613736
+      },
+      {
+        "clock": 7.997,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.687208102
+      },
+      {
+        "clock": 7.997,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.688334368
+      },
+      {
+        "clock": 7.997,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.689946687
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.96,
+        "query_stamp": 7.96,
+        "wall": 40018.690849357
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.691881611
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.693116384
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.694030342
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.694970667
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.695827103
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.697698381
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.69871943
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.699682415
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.700762737
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.702307452
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.70321258
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.704213927
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.705721363
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.706729792
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.707661619
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.709138732
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.710109755
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.710981977
+      },
+      {
+        "clock": 8.0,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.714414757
+      },
+      {
+        "clock": 8.001,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.715352375
+      },
+      {
+        "clock": 8.001,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.717008555
+      },
+      {
+        "clock": 8.002,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.717885942
+      },
+      {
+        "clock": 8.002,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.718785446
+      },
+      {
+        "clock": 8.002,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.719855897
+      },
+      {
+        "clock": 8.002,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.72132347
+      },
+      {
+        "clock": 8.002,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.723110858
+      },
+      {
+        "clock": 8.002,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.724226586
+      },
+      {
+        "clock": 8.004,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.725480602
+      },
+      {
+        "clock": 8.004,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.726663517
+      },
+      {
+        "clock": 8.004,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.727613755
+      },
+      {
+        "clock": 8.004,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.728686247
+      },
+      {
+        "clock": 8.004,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.729704922
+      },
+      {
+        "clock": 8.004,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.730716724
+      },
+      {
+        "clock": 8.004,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.732561552
+      },
+      {
+        "clock": 8.007,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.733645415
+      },
+      {
+        "clock": 8.007,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.734592279
+      },
+      {
+        "clock": 8.007,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.735664896
+      },
+      {
+        "clock": 8.007,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.736891671
+      },
+      {
+        "clock": 8.007,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.738682308
+      },
+      {
+        "clock": 8.01,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.739700525
+      },
+      {
+        "clock": 8.01,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.740834913
+      },
+      {
+        "clock": 8.01,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.74199496
+      },
+      {
+        "clock": 8.01,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.743178749
+      },
+      {
+        "clock": 8.01,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.744983215
+      },
+      {
+        "clock": 8.013,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.746041669
+      },
+      {
+        "clock": 8.013,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.747093042
+      },
+      {
+        "clock": 8.013,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.74858265
+      },
+      {
+        "clock": 8.013,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.749641229
+      },
+      {
+        "clock": 8.013,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.751509467
+      },
+      {
+        "clock": 8.016,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.752670013
+      },
+      {
+        "clock": 8.016,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.753561979
+      },
+      {
+        "clock": 8.016,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.754598065
+      },
+      {
+        "clock": 8.016,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.755721582
+      },
+      {
+        "clock": 8.016,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.757407044
+      },
+      {
+        "clock": 8.019,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.758364655
+      },
+      {
+        "clock": 8.019,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.759237335
+      },
+      {
+        "clock": 8.019,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.760272255
+      },
+      {
+        "clock": 8.019,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.761304759
+      },
+      {
+        "clock": 8.019,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.763256553
+      },
+      {
+        "clock": 8.019,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.764308134
+      },
+      {
+        "clock": 8.021,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.76530869
+      },
+      {
+        "clock": 8.021,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.766215068
+      },
+      {
+        "clock": 8.021,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.767254903
+      },
+      {
+        "clock": 8.021,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.76830286
+      },
+      {
+        "clock": 8.021,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.769915596
+      },
+      {
+        "clock": 8.024,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.770893992
+      },
+      {
+        "clock": 8.024,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.771758966
+      },
+      {
+        "clock": 8.024,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.772777141
+      },
+      {
+        "clock": 8.024,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.773756496
+      },
+      {
+        "clock": 8.024,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.775333243
+      },
+      {
+        "clock": 8.027,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.776351918
+      },
+      {
+        "clock": 8.027,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.777158744
+      },
+      {
+        "clock": 8.027,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.778229819
+      },
+      {
+        "clock": 8.027,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.779131115
+      },
+      {
+        "clock": 8.027,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.780756471
+      },
+      {
+        "clock": 8.029,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.78159083
+      },
+      {
+        "clock": 8.029,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.782385618
+      },
+      {
+        "clock": 8.029,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.783283124
+      },
+      {
+        "clock": 8.029,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.784362196
+      },
+      {
+        "clock": 8.029,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.786045284
+      },
+      {
+        "clock": 8.032,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.786936625
+      },
+      {
+        "clock": 8.032,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.787727748
+      },
+      {
+        "clock": 8.032,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.788906747
+      },
+      {
+        "clock": 8.032,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.790015643
+      },
+      {
+        "clock": 8.032,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.79155132
+      },
+      {
+        "clock": 8.034,
+        "latest_stamp": 7.98,
+        "query_stamp": 7.98,
+        "wall": 40018.792736358
+      },
+      {
+        "clock": 8.034,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.794009161
+      },
+      {
+        "clock": 8.034,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.795143341
+      },
+      {
+        "clock": 8.034,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.795958289
+      },
+      {
+        "clock": 8.034,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.797354635
+      },
+      {
+        "clock": 8.034,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.798674006
+      },
+      {
+        "clock": 8.034,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.800588312
+      },
+      {
+        "clock": 8.034,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.801464033
+      },
+      {
+        "clock": 8.038,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.802361497
+      },
+      {
+        "clock": 8.038,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.803294199
+      },
+      {
+        "clock": 8.038,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.80481109
+      },
+      {
+        "clock": 8.038,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.806328106
+      },
+      {
+        "clock": 8.038,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.80748253
+      },
+      {
+        "clock": 8.038,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.80925913
+      },
+      {
+        "clock": 8.04,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.810182585
+      },
+      {
+        "clock": 8.04,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.81105439
+      },
+      {
+        "clock": 8.04,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.812863064
+      },
+      {
+        "clock": 8.04,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.814415985
+      },
+      {
+        "clock": 8.04,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.816720875
+      },
+      {
+        "clock": 8.044,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.818040537
+      },
+      {
+        "clock": 8.044,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.8195169
+      },
+      {
+        "clock": 8.044,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.82087809
+      },
+      {
+        "clock": 8.044,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.822307843
+      },
+      {
+        "clock": 8.044,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.823888463
+      },
+      {
+        "clock": 8.044,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.826036237
+      },
+      {
+        "clock": 8.047,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.827111935
+      },
+      {
+        "clock": 8.047,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.828211668
+      },
+      {
+        "clock": 8.047,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.829734932
+      },
+      {
+        "clock": 8.047,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.831660193
+      },
+      {
+        "clock": 8.047,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.833867281
+      },
+      {
+        "clock": 8.051,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.834967305
+      },
+      {
+        "clock": 8.051,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.835900882
+      },
+      {
+        "clock": 8.051,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.837759997
+      },
+      {
+        "clock": 8.051,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.839384146
+      },
+      {
+        "clock": 8.051,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.840629415
+      },
+      {
+        "clock": 8.051,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.842506816
+      },
+      {
+        "clock": 8.051,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.843554441
+      },
+      {
+        "clock": 8.053,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.844896263
+      },
+      {
+        "clock": 8.053,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.845980583
+      },
+      {
+        "clock": 8.053,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.847474732
+      },
+      {
+        "clock": 8.053,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.849108044
+      },
+      {
+        "clock": 8.053,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.850941584
+      },
+      {
+        "clock": 8.056,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.851870496
+      },
+      {
+        "clock": 8.056,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.852924535
+      },
+      {
+        "clock": 8.056,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.854388901
+      },
+      {
+        "clock": 8.056,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.855443607
+      },
+      {
+        "clock": 8.056,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.857566346
+      },
+      {
+        "clock": 8.059,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.858597809
+      },
+      {
+        "clock": 8.059,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.859511809
+      },
+      {
+        "clock": 8.059,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.860970011
+      },
+      {
+        "clock": 8.059,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.862378811
+      },
+      {
+        "clock": 8.059,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.864191192
+      },
+      {
+        "clock": 8.061,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.865740947
+      },
+      {
+        "clock": 8.061,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.867463731
+      },
+      {
+        "clock": 8.061,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.868931138
+      },
+      {
+        "clock": 8.061,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.870500596
+      },
+      {
+        "clock": 8.061,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.872891708
+      },
+      {
+        "clock": 8.065,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.873966698
+      },
+      {
+        "clock": 8.065,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.874949677
+      },
+      {
+        "clock": 8.065,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.876090563
+      },
+      {
+        "clock": 8.065,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.877492199
+      },
+      {
+        "clock": 8.065,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.879284835
+      },
+      {
+        "clock": 8.065,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.880673684
+      },
+      {
+        "clock": 8.067,
+        "latest_stamp": 8.02,
+        "query_stamp": 8.02,
+        "wall": 40018.881734971
+      },
+      {
+        "clock": 8.067,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.882898141
+      },
+      {
+        "clock": 8.067,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.883949847
+      },
+      {
+        "clock": 8.067,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.885906723
+      },
+      {
+        "clock": 8.067,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.887426405
+      },
+      {
+        "clock": 8.067,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.89000829
+      },
+      {
+        "clock": 8.072,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.891217696
+      },
+      {
+        "clock": 8.072,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.892953642
+      },
+      {
+        "clock": 8.072,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.894024342
+      },
+      {
+        "clock": 8.072,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.895223168
+      },
+      {
+        "clock": 8.072,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.896833696
+      },
+      {
+        "clock": 8.072,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.899026122
+      },
+      {
+        "clock": 8.074,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.900291635
+      },
+      {
+        "clock": 8.074,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.901522451
+      },
+      {
+        "clock": 8.074,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.902583904
+      },
+      {
+        "clock": 8.074,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.903581252
+      },
+      {
+        "clock": 8.074,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.906103698
+      },
+      {
+        "clock": 8.077,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.90726691
+      },
+      {
+        "clock": 8.077,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.908428373
+      },
+      {
+        "clock": 8.077,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.909547849
+      },
+      {
+        "clock": 8.077,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.910697108
+      },
+      {
+        "clock": 8.077,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.912421349
+      },
+      {
+        "clock": 8.08,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.913864097
+      },
+      {
+        "clock": 8.08,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.914913429
+      },
+      {
+        "clock": 8.08,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.915880788
+      },
+      {
+        "clock": 8.08,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.917269011
+      },
+      {
+        "clock": 8.08,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.918885163
+      },
+      {
+        "clock": 8.082,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.920396056
+      },
+      {
+        "clock": 8.082,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.921536983
+      },
+      {
+        "clock": 8.082,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.92275876
+      },
+      {
+        "clock": 8.082,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.923968166
+      },
+      {
+        "clock": 8.082,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.925921293
+      },
+      {
+        "clock": 8.082,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.927079216
+      },
+      {
+        "clock": 8.085,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.928445072
+      },
+      {
+        "clock": 8.085,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.92953764
+      },
+      {
+        "clock": 8.085,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.930571227
+      },
+      {
+        "clock": 8.085,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.932173382
+      },
+      {
+        "clock": 8.085,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.934055949
+      },
+      {
+        "clock": 8.087,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.935182548
+      },
+      {
+        "clock": 8.087,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.936180854
+      },
+      {
+        "clock": 8.087,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.937700786
+      },
+      {
+        "clock": 8.087,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.938884658
+      },
+      {
+        "clock": 8.087,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.940718282
+      },
+      {
+        "clock": 8.089,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.941601125
+      },
+      {
+        "clock": 8.089,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.94249559
+      },
+      {
+        "clock": 8.089,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.943459283
+      },
+      {
+        "clock": 8.089,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.944827305
+      },
+      {
+        "clock": 8.089,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.94684362
+      },
+      {
+        "clock": 8.091,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.947874166
+      },
+      {
+        "clock": 8.091,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.949027257
+      },
+      {
+        "clock": 8.091,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.950315471
+      },
+      {
+        "clock": 8.091,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.951380922
+      },
+      {
+        "clock": 8.091,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.953066885
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.953968097
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.954765426
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.955602493
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.956517492
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.957374552
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.958160427
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.958933805
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.959705975
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.961638526
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.962461388
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.963324988
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.964332708
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.965129121
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.965975809
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.966758476
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.967571591
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.968539324
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.969844033
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.970710882
+      },
+      {
+        "clock": 8.092,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.971546948
+      },
+      {
+        "clock": 8.098,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.973529941
+      },
+      {
+        "clock": 8.098,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.974555322
+      },
+      {
+        "clock": 8.098,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.975542174
+      },
+      {
+        "clock": 8.098,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.977187274
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.06,
+        "query_stamp": 8.06,
+        "wall": 40018.978128849
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40018.979269027
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40018.980446485
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40018.981308252
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40018.982302809
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40018.983280373
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40018.984956421
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40018.986082812
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.046259076
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.047141378
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.048171549
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.049163566
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.050613812
+      },
+      {
+        "clock": 8.1,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.051363323
+      },
+      {
+        "clock": 8.128,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.052114333
+      },
+      {
+        "clock": 8.128,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.053007549
+      },
+      {
+        "clock": 8.128,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.053764182
+      },
+      {
+        "clock": 8.128,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.054602082
+      },
+      {
+        "clock": 8.128,
+        "latest_stamp": 8.08,
+        "query_stamp": 8.08,
+        "wall": 40019.05546489
+      },
+      {
+        "clock": 8.137,
+        "latest_stamp": 8.12,
+        "query_stamp": 8.12,
+        "wall": 40019.085531133
+      }
+    ],
+    "scan_observations": [
+      [
+        6.6,
+        40014.320145368
+      ],
+      [
+        6.7,
+        40014.647138495
+      ],
+      [
+        6.8,
+        40015.41500574
+      ],
+      [
+        6.9,
+        40015.419836633
+      ],
+      [
+        7.0,
+        40015.604167792
+      ],
+      [
+        7.1,
+        40015.870166006
+      ],
+      [
+        7.2,
+        40016.161958146
+      ],
+      [
+        7.3,
+        40016.382774231
+      ],
+      [
+        7.4,
+        40016.660891046
+      ],
+      [
+        7.5,
+        40016.979487327
+      ],
+      [
+        7.6,
+        40017.331990521
+      ],
+      [
+        7.7,
+        40017.702265645
+      ],
+      [
+        7.8,
+        40017.981013812
+      ],
+      [
+        7.9,
+        40018.338517678
+      ],
+      [
+        8.0,
+        40018.725634845
+      ],
+      [
+        8.1,
+        40019.052258537
+      ],
+      [
+        8.2,
+        40019.246579847
+      ],
+      [
+        8.3,
+        40019.526336345
+      ]
+    ],
+    "truth": [
+      {
+        "sim_time": 8.15,
+        "truth": [
+          24.9500000004828,
+          17.505219596470848,
+          3.1415926535897927
+        ]
+      },
+      {
+        "sim_time": 8.2,
+        "truth": [
+          24.9500000004828,
+          17.505219596470848,
+          3.1415926535897927
+        ]
+      },
+      {
+        "sim_time": 8.25,
+        "truth": [
+          24.9500000004828,
+          17.505219596470848,
+          3.1415926535897927
+        ]
+      },
+      {
+        "sim_time": 8.3,
+        "truth": [
+          24.9500000004828,
+          17.505219596470848,
+          3.1415926535897927
+        ]
+      }
+    ],
+    "localization": [
+      {
+        "sim_time": 8.15,
+        "truth": [
+          24.9500000004828,
+          17.505219596470848,
+          3.1415926535897927
+        ],
+        "estimated": [
+          24.93012099191836,
+          17.494709881529374,
+          -3.1248222102017857
+        ],
+        "position_error_m": 0.022486197758981454,
+        "yaw_error_deg": 0.9608756266959647
+      },
+      {
+        "sim_time": 8.2,
+        "truth": [
+          24.9500000004828,
+          17.505219596470848,
+          3.1415926535897927
+        ],
+        "estimated": [
+          24.93012099191836,
+          17.494709881529374,
+          -3.1248222102017857
+        ],
+        "position_error_m": 0.022486197758981454,
+        "yaw_error_deg": 0.9608756266959647
+      },
+      {
+        "sim_time": 8.25,
+        "truth": [
+          24.9500000004828,
+          17.505219596470848,
+          3.1415926535897927
+        ],
+        "estimated": [
+          24.93012099191836,
+          17.494709881529374,
+          -3.1248222102017857
+        ],
+        "position_error_m": 0.022486197758981454,
+        "yaw_error_deg": 0.9608756266959647
+      }
+    ],
+    "commands": [
+      {
+        "sim_time": 8.265,
+        "v": 0.0,
+        "w": 0.0
+      }
+    ],
+    "plans": [
+      {
+        "sim_time": 8.134,
+        "frame": "map",
+        "points": [
+          [
+            24.953001930801527,
+            17.50521991558323
+          ],
+          [
+            24.916506951876052,
+            17.48957102897454
+          ],
+          [
+            24.888409111098788,
+            17.481177470169104
+          ],
+          [
+            24.860279056236557,
+            17.47290560901799
+          ],
+          [
+            24.832295754428067,
+            17.46415053659236
+          ],
+          [
+            24.80356794932255,
+            17.45826609707162
+          ],
+          [
+            24.77426387003039,
+            17.457235246352656
+          ],
+          [
+            24.74494547336713,
+            17.457696981570525
+          ],
+          [
+            24.71570940158768,
+            17.45991259474774
+          ],
+          [
+            24.68646617112268,
+            17.462070938440565
+          ],
+          [
+            24.657226520000457,
+            17.46425433753281
+          ],
+          [
+            24.627965392821586,
+            17.466151389203123
+          ],
+          [
+            24.598686368928846,
+            17.467733458709308
+          ],
+          [
+            24.569382289636685,
+            17.468732095343302
+          ],
+          [
+            24.540060313630654,
+            17.468707039943883
+          ],
+          [
+            24.51080276579456,
+            17.46673124273254
+          ],
+          [
+            24.48205706397517,
+            17.460947024809474
+          ],
+          [
+            24.453547598778876,
+            17.45409974208248
+          ],
+          [
+            24.42520636269297,
+            17.446575963571167
+          ],
+          [
+            24.366562410680906,
+            17.446575963571167
+          ],
+          [
+            24.307917551118134,
+            17.499448002925813
+          ]
+        ]
+      },
+      {
+        "sim_time": 8.135,
+        "frame": "map",
+        "points": [
+          [
+            24.953001930801527,
+            17.50521991558323
+          ],
+          [
+            24.900317584508464,
+            17.484678067402246
+          ],
+          [
+            24.87217679161791,
+            17.476441999678872
+          ],
+          [
+            24.844154117038904,
+            17.46781220425034
+          ],
+          [
+            24.81576277015416,
+            17.460481710248832
+          ],
+          [
+            24.786576809173546,
+            17.457664767485557
+          ],
+          [
+            24.757254833167515,
+            17.45750369706072
+          ],
+          [
+            24.72797938861755,
+            17.45915019473684
+          ],
+          [
+            24.698743316838097,
+            17.461387283970698
+          ],
+          [
+            24.66951082440142,
+            17.463674484003395
+          ],
+          [
+            24.640271173279196,
+            17.465854303752867
+          ],
+          [
+            24.611017204785874,
+            17.46788021176305
+          ],
+          [
+            24.58175249826423,
+            17.4697164146062
+          ],
+          [
+            24.55247347437149,
+            17.471316380826256
+          ],
+          [
+            24.5231872917932,
+            17.47273380056483
+          ],
+          [
+            24.493890371186588,
+            17.47396151513637
+          ],
+          [
+            24.4645898712372,
+            17.47504963533972
+          ],
+          [
+            24.435282212602267,
+            17.4759945818321
+          ],
+          [
+            24.40597097462456,
+            17.476832148041257
+          ],
+          [
+            24.37665973664685,
+            17.477558754624415
+          ],
+          [
+            24.347344919326368,
+            17.478210195009314
+          ],
+          [
+            24.318030102005885,
+            17.478775731167634
+          ],
+          [
+            24.288711705342628,
+            17.479283997841566
+          ],
+          [
+            24.25939330867937,
+            17.479731415688338
+          ],
+          [
+            24.23007133267334,
+            17.480132302079046
+          ],
+          [
+            24.200752936010083,
+            17.480483077670915
+          ],
+          [
+            24.171434539346826,
+            17.480794480492268
+          ],
+          [
+            24.142112563340795,
+            17.481009241058718
+          ],
+          [
+            24.112790587334764,
+            17.480815956548913
+          ],
+          [
+            24.08385160100557,
+            17.47608764474423
+          ],
+          [
+            24.055617745202888,
+            17.46817371787053
+          ],
+          [
+            24.02668591755924,
+            17.463398874609783
+          ],
+          [
+            23.99749279789308,
+            17.46067857410141
+          ],
+          [
+            23.968242408742533,
+            17.45862045200626
+          ],
+          [
+            23.938959805507018,
+            17.457106390012786
+          ],
+          [
+            23.909659305557632,
+            17.45596100032505
+          ],
+          [
+            23.880709581200115,
+            17.451307854718625
+          ],
+          [
+            23.85454100617813,
+            17.43807860382528
+          ],
+          [
+            23.830530774848974,
+            17.421248534101114
+          ],
+          [
+            23.80224322890468,
+            17.41353505042277
+          ],
+          [
+            23.77371944633729,
+            17.420332222350925
+          ],
+          [
+            23.74655939336686,
+            17.431388812180348
+          ],
+          [
+            23.721478938548223,
+            17.446575963571167
+          ],
+          [
+            23.66283498653616,
+            17.446575963571167
+          ],
+          [
+            23.6041910345241,
+            17.446575963571167
+          ],
+          [
+            23.55,
+            17.505219596475783
+          ]
+        ]
+      }
+    ],
+    "contacts": [],
+    "contact_counts": {
+      "/gcu/contacts/collision_9": 1395,
+      "/gcu/contacts/collision_11": 1394,
+      "/gcu/contacts/collision_12": 1391
+    },
+    "last_consumption_errors": {},
+    "wall_elapsed_s": 5.533665000002657,
+    "contact_publishers": {
+      "/gcu/contacts/collision_0": 1,
+      "/gcu/contacts/collision_1": 1,
+      "/gcu/contacts/collision_2": 1,
+      "/gcu/contacts/collision_3": 1,
+      "/gcu/contacts/collision_4": 1,
+      "/gcu/contacts/collision_5": 1,
+      "/gcu/contacts/collision_6": 1,
+      "/gcu/contacts/collision_7": 1,
+      "/gcu/contacts/collision_8": 1,
+      "/gcu/contacts/collision_9": 1,
+      "/gcu/contacts/collision_10": 1,
+      "/gcu/contacts/collision_11": 1,
+      "/gcu/contacts/collision_12": 1
+    }
+  }
+}

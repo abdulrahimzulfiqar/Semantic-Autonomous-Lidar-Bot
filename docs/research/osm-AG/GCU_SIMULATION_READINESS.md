@@ -5,13 +5,17 @@ The macOS host controls Ubuntu 22.04 ARM64 in UTM for ROS 2 Humble / Gazebo Fort
 tests. Physics runs headlessly; sensor rendering uses the logged-in Ubuntu display
 and Foxglove provides visualization on macOS.
 
-## Current checkpoint (2026-11-06)
+## Current checkpoint (2026-11-08)
 
 Phase 05's approved **paper-based routing implementation** now has a refined motion-free preview. The bounded [paper/route-quality follow-up](GCU_ROUTING_PAPER_AUDIT.md) passed 47 unit tests, 10 offline and 15 live cases. Open-space examples now connect directly (3.484 m graph reference → 1.500 m refined path); courtyard/invalid-goal rejection, closures and TF guards remain enforced. Preview publishes no velocity commands or navigation actions and measured zero drift. The separate metric profile's earlier three consecutive-goal runs, five clean shutdown controls and original 16-case matrix remain frozen; they were not rerun for this preview-only change.
 
 See [Phase 05](phases/05_GCU_OSMAG_ROUTE_PREVIEW_AND_RELIABLE_HANDOFF.md) for current Ubuntu/Foxglove commands, before/after images and verified evidence. Use `/home/ubuntu/edgeosmag_phase5_preview_v2_ws` for preview and `/home/ubuntu/edgeosmag_phase5_ws` for simulation/localization. `/osmag/global_path` is refined; `/osmag/graph_path` preserves the graph reference. Exact author-runtime parity and general continuous-space optimality are not claimed. The user confirmed the updated v2 Foxglove preview works on 2026-11-06; the bounded Phase 05 checkpoint is accepted.
 
 The original [Phase 04](phases/04_GCU_AUTONOMOUS_METRIC_NAVIGATION.md) evidence remains unchanged. Its heading/shutdown failures are preserved and have a bounded follow-up in Phase 05. Phase 03's grazing-corner sensor limitation remains. Phase 06 will connect ordered osmAG passage goals to Nav2; rolling raster maps and structural localization follow later. Pi/LLM/camera evaluation remains future work.
+
+The [Phase 06 plan](plans/06_GCU_OSMAG_SEGMENTED_NAVIGATION.md) defines continuous passage handoff, route/closure constraints, independent crossing evidence and bounded mission acceptance. [06A](phases/06A_GCU_MISSION_CONTRACT.md) and [06B1](phases/06B1_GCU_ROS_MISSION_MOCK.md) passed pure geometry and ROS mock checks. [06B2A](phases/06B2A_GCU_SENSOR_CONSTRAINT_INTEGRATION.md) has passed stationary real-sensor, transformed-grid and native-plan checks. After an earlier failed Gazebo teardown, three fresh controls passed all gates with clean exits. The intermittent hang remains a bounded limitation; [06B2B](phases/06B2B_GCU_FIRST_SEGMENTED_CROSSING.md) now passes one constrained real-Nav2 crossing, early handoff, final arrival/rest and independent scoring with clean shutdown. Broader mission/fault acceptance remains pending. The accepted Phase 05 preview stays motion-free.
+
+[06C1](phases/06C1_GCU_CONSTRAINT_MASKS.md) passed its synthetic native integration on November 8: both costmaps consumed open, closed and reopened masks, planning returned success/no-route/success, and all native children exited zero. The session took 2.77 s; all 95 unit tests passed. A costmap-refresh transaction addresses the installed 1.1.19 global-filter update behavior, and explicit deactivation fixes the observed teardown failure. Failed attempts are preserved and the test domain is clean. The 06B2A follow-up verified fresh real LiDAR after refresh and all 81 expected new local keepout cells, with 98 unit tests passing. Its shutdown hang is preserved separately; three identical follow-up controls passed in 15–16 s each, without a claimed general fix. Zero test processes remain. 06B2B subsequently passed its short crossing with 104 unit tests, independent scoring and clean exits. The next bounded group covers nominal multi-passage/consecutive missions before fault and user acceptance.
 
 Phase history is collected in [phases/README.md](phases/README.md). The sections below preserve earlier implementation history; the current checkpoint and numbered records describe today's state.
 
@@ -471,3 +475,13 @@ All 16 final cases passed. See the [Phase 04 record](phases/04_GCU_AUTONOMOUS_ME
 for measured results, the open consecutive-goal heading/bridge-shutdown issues,
 and interactive commands, and the [work log](plans/04_GCU_AUTONOMOUS_METRIC_NAVIGATION.md)
 for interrupted trials and integration fixes.
+
+[06B2B record](phases/06B2B_GCU_FIRST_SEGMENTED_CROSSING.md): accepted short trial 08 reaches the goal within 0.084 m, confirms ordered passage `-93`, hands off before the previous terminal result, rests and exits cleanly. All 104 unit tests and independent replay pass; no test processes remain. Earlier failed attempts remain preserved, and full Phase 06 remains incomplete.
+
+[Phase 06 is complete for bounded simulation scope](phases/06_GCU_SEGMENTED_NAVIGATION.md),
+accepted November 13, 2026. All 135 tests and retained automated mission/fault
+checks pass. User visual acceptance covers short-distance behavior; the longer
+manual journey remains a recorded wall-time timeout. Test processes are stopped.
+Next is [Phase 07: rolling raster and boundary goals](plans/07_GCU_ROLLING_RASTER_AND_BOUNDARY_GOALS.md).
+The full-floor planning raster and AMCL remain in Phase 06; paper-runtime
+reproduction and edge resource advantages are not claimed.

@@ -1,0 +1,32 @@
+{
+  "verification_passed": true,
+  "trial_passed": true,
+  "motion_attempted": true,
+  "historical_source_files": [
+    "scripts/gcu_mission_fixture.py",
+    "scripts/gcu_costmap_observation.py",
+    "scripts/check_gcu_segmented_crossing.py",
+    "tests/test_gcu_costmap_observation.py"
+  ],
+  "runtime_error": null,
+  "shutdown_passed": true,
+  "position_error_m": 0.10901552405964875,
+  "heading_error_deg": 0.8125648207647928,
+  "confirmed_passages": [
+    "-121"
+  ],
+  "handoff_before_terminal": true,
+  "longest_handoff_rest_sim_s": 0.0,
+  "handoff_rest_checks": [
+    {
+      "next_goal_sim": 12.485,
+      "longest_rest_sim_s": 0.0
+    }
+  ],
+  "coverage": {
+    "truth_samples": 380,
+    "matched_samples": 379,
+    "matched_fraction": 0.9973684210526316,
+    "max_truth_gap_sim_s": 0.05000000000000071
+  }
+}

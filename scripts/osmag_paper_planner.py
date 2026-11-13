@@ -40,8 +40,9 @@ def length(points):
 class PaperPlanner:
     backend='paper_based_reference_python_not_author_runtime'
 
-    def __init__(self, assets, radius=.18):
-        begin=time.perf_counter();self.assets=Path(assets);self.radius=radius
+    def __init__(self, assets, radius=.18, execution_padding=None):
+        begin=time.perf_counter();self.assets=Path(assets);self.radius=radius;self.execution_padding=execution_padding
+        if execution_padding is not None and (not math.isfinite(execution_padding) or execution_padding<0):raise ValueError('invalid_execution_padding')
         cfg=yaml.safe_load((self.assets/'gcu_ground_floor.yaml').read_text())
         self.resolution=cfg['resolution'];self.origin=cfg['origin'][:2]
         if abs(cfg['origin'][2])>1e-10:raise ValueError('rotated_map_unsupported')
@@ -236,6 +237,12 @@ class PaperPlanner:
                       graph_validation=validation,
                       preprocess_s=self.preprocess_s,query_s=time.perf_counter()-begin,
                       timing_scope='query includes endpoint searches, hierarchy query and refinement; new closure summaries are built on first use')
+        if self.execution_padding is not None:
+            from osmag_execution_route import constrain_route
+            try:result=constrain_route(self,result,self.execution_padding)
+            except ValueError as error:raise RouteError(str(error)) from error
+            result['query_s']=time.perf_counter()-begin
+            result['timing_scope']='Query includes graph search, mask construction, padded leaf routing and refinement; preprocessing is separate'
         return result
 
     def coordinate_report(self):

@@ -1,0 +1,74 @@
+{
+  "verification_passed": true,
+  "trial_passed": true,
+  "imu_evaluation": {
+    "samples": 5593,
+    "integrated_yaw_rad": 3.1554976491321955,
+    "truth_delta_rad": 3.1553751488257196,
+    "integrated_error_deg": 0.007018750550132823,
+    "active_window_maximum_gaps_s": [
+      0.03000000000000025,
+      0.03999999999999915
+    ],
+    "full_log_maximum_gap_s": 0.21999999999999886,
+    "scope": "Evaluation only; truth never feeds EKF or mission execution"
+  },
+  "missions": [
+    {
+      "verification_passed": true,
+      "position_error_m": 0.11292101515772811,
+      "heading_error_deg": 0.9164197518787316,
+      "confirmed_passages": [
+        "-121"
+      ],
+      "handoff_before_terminal": true,
+      "longest_handoff_rest_sim_s": 0.0,
+      "handoff_rest_checks": [
+        {
+          "next_goal_sim": 11.1,
+          "longest_rest_sim_s": 0.0
+        }
+      ],
+      "coverage": {
+        "truth_samples": 354,
+        "matched_samples": 354,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000000071
+      }
+    },
+    {
+      "verification_passed": true,
+      "position_error_m": 0.10888509710955135,
+      "heading_error_deg": 0.7896788081776736,
+      "confirmed_passages": [
+        "-121"
+      ],
+      "handoff_before_terminal": true,
+      "longest_handoff_rest_sim_s": 0.0,
+      "handoff_rest_checks": [
+        {
+          "next_goal_sim": 47.168,
+          "longest_rest_sim_s": 0.0
+        }
+      ],
+      "coverage": {
+        "truth_samples": 745,
+        "matched_samples": 744,
+        "matched_fraction": 0.9986577181208054,
+        "max_truth_gap_sim_s": 0.05000000000000426
+      }
+    }
+  ],
+  "continuous_session_coverage": {
+    "truth_samples": 1104,
+    "matched_samples": 1104,
+    "matched_fraction": 1.0,
+    "max_truth_gap_sim_s": 0.05000000000000426
+  },
+  "mission_generations": [
+    1,
+    2
+  ],
+  "native_processes": 5,
+  "same_session": true
+}

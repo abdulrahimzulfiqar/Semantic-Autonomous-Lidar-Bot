@@ -1,0 +1,28 @@
+{
+  "observed_utc": "2026-11-11 18:44 UTC",
+  "scope": "Read-only probe of intentional bounded human-review session, not a motion trial",
+  "process_and_bridge": {
+    "unit": "active",
+    "files": [
+      "planner_server.log",
+      "checker.log",
+      "localization.log",
+      "amcl.log",
+      "foxglove.log",
+      "simulator.log",
+      "bt_navigator.log",
+      "controller_server.log"
+    ],
+    "log": "",
+    "bridge_port": true
+  },
+  "ros": {
+    "status": {
+      "state": "ready",
+      "message": "Click a goal in the map."
+    },
+    "scan_samples": 360,
+    "map_width": 1000,
+    "probe_only_no_commands": true
+  }
+}

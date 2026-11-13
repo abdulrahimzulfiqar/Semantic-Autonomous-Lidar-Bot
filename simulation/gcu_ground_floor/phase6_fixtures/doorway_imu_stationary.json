@@ -1,0 +1,123 @@
+{
+  "name": "doorway_roundtrip_imu_plugin_out",
+  "spawn": [
+    24.95,
+    17.505219596475783,
+    3.141592653589793
+  ],
+  "goal": [
+    23.55,
+    17.505219596475783,
+    3.141592653589793
+  ],
+  "expected_passages": [
+    "-121"
+  ],
+  "expected_areas": [
+    "gcu_gf_corridor_25",
+    "gcu_gf_room_43"
+  ],
+  "route_length_m": 1.3999999999999986,
+  "simulation_timeout_s": 80,
+  "checker_wall_timeout_s": 500,
+  "mask_validation": {
+    "valid": true,
+    "samples": 97,
+    "radius_m": 0.19999999999999998,
+    "segment_sampling_m": 0.01466098782835562,
+    "checked_clearance_lower_bound_m": 0.2932196271479448,
+    "clearance_search_cap_m": 0.3172879026268449
+  },
+  "route_contract": {
+    "mission_id": "doorway_roundtrip_imu_plugin_out",
+    "route_revision": 1,
+    "closure_revision": 0,
+    "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+    "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+    "route_sha256": "99d3737c9ca7d3da4cec378d681213895d8f22a415ba7947beac083fcd62b0d6",
+    "policy": "refined_crossing",
+    "start": [
+      24.95,
+      17.505219596475783
+    ],
+    "goal": [
+      23.55,
+      17.505219596475783,
+      3.141592653589793
+    ],
+    "pose_stamp": 1.0,
+    "created_at": 1.0,
+    "area_ids": [
+      "gcu_gf_corridor_25",
+      "gcu_gf_room_43"
+    ],
+    "passage_ids": [
+      "-121"
+    ],
+    "disabled_passages": [],
+    "path": [
+      [
+        24.95,
+        17.505219596475783
+      ],
+      [
+        23.55,
+        17.505219596475783
+      ]
+    ],
+    "segments": [
+      {
+        "index": 0,
+        "point": [
+          24.307917553435,
+          17.505219596475783
+        ],
+        "yaw": 3.141592653589793,
+        "passage_id": "-121",
+        "source_area": "gcu_gf_corridor_25",
+        "destination_area": "gcu_gf_room_43"
+      },
+      {
+        "index": 1,
+        "point": [
+          23.55,
+          17.505219596475783
+        ],
+        "yaw": 3.141592653589793,
+        "passage_id": null,
+        "source_area": "gcu_gf_room_43",
+        "destination_area": "gcu_gf_room_43"
+      }
+    ],
+    "settings": {
+      "reach_threshold_m": 0.3,
+      "crossing_hysteresis_m": 0.06,
+      "confirmation_samples": 3,
+      "maximum_pose_age_s": 0.5,
+      "maximum_observation_gap_s": 0.15,
+      "maximum_pose_step_m": 0.25,
+      "action_ack_timeout_s": 15.0
+    }
+  },
+  "input_sha256": {
+    "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+    "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+    "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+  },
+  "inflate_constraints": true,
+  "check_handoff_rest": true,
+  "local_costmap_frame": "map",
+  "execution_source_sha256": {
+    "gcu_segmented_executor.py": "403702793483bef5bff37d00070310aff974ca78bd15da9881622f16eb7edcdf",
+    "osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+    "osmag_mission_state.py": "e777994c13221c42a7fc72ba639960349f83fdb44563c5fbef3a3a0635299daa",
+    "check_gcu_segmented_crossing.py": "558686410947313f1360b71ba6ec20c24cc80a6c5c16853b38b6307a2e6d9da3",
+    "gcu_mission_fixture.py": "9743444209b884b598c1f63d411b852d145efce45ddad7bff59b642c181033fb",
+    "gcu_costmap_observation.py": "2238eb0b8be3b5596553616c14718c410aa0ec98b29746ae221d4fdfe910d899",
+    "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+    "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5"
+  },
+  "scope": "Stationary IMU publication diagnostic; no navigation goals",
+  "local_costmap_publish_hz": 10.0,
+  "fuse_imu_yaw_rate": true
+}

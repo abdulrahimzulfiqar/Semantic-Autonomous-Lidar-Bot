@@ -1,0 +1,89 @@
+[
+  {
+    "name": "corridor_to_room",
+    "original": {
+      "valid": false,
+      "reason": "swept_footprint_blocked",
+      "at": [
+        3.3943073708330656,
+        20.875374672083716
+      ],
+      "clearance_m": 0.2071258250916692,
+      "required_m": 0.20733049391417782
+    },
+    "graph": {
+      "valid": false,
+      "reason": "swept_footprint_blocked",
+      "at": [
+        2.9908415169845455,
+        20.877246667578408
+      ],
+      "clearance_m": 0.2052538295969768,
+      "required_m": 0.20733049391417782
+    },
+    "refined": null,
+    "refined_validation": null,
+    "passages": [
+      "-91",
+      "-95"
+    ],
+    "length": null
+  },
+  {
+    "name": "room_to_room",
+    "original": {
+      "valid": false,
+      "reason": "swept_footprint_blocked",
+      "at": [
+        4.0450640225548895,
+        21.52781210995508
+      ],
+      "clearance_m": 0.2066224476682379,
+      "required_m": 0.20733049391417782
+    },
+    "graph": {
+      "valid": true,
+      "samples": 694,
+      "radius_m": 0.2,
+      "segment_sampling_m": 0.01466098782835562,
+      "checked_clearance_lower_bound_m": 0.22330951361717644,
+      "clearance_search_cap_m": 0.317287902626845
+    },
+    "refined": [
+      [
+        3.9,
+        22.3
+      ],
+      [
+        4.046432640626151,
+        20.99453457020525
+      ],
+      [
+        6.392190693163052,
+        18.355556761101237
+      ],
+      [
+        6.978630206297275,
+        21.815549888593164
+      ],
+      [
+        6.9493,
+        22.3
+      ]
+    ],
+    "refined_validation": {
+      "valid": true,
+      "samples": 606,
+      "radius_m": 0.2,
+      "segment_sampling_m": 0.01466098782835562,
+      "checked_clearance_lower_bound_m": 0.22040021457032938,
+      "clearance_search_cap_m": 0.317287902626845
+    },
+    "passages": [
+      "-95",
+      "-94",
+      "-106"
+    ],
+    "length": 8.839162460463745
+  }
+]

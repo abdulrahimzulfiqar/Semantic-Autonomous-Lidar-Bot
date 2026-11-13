@@ -1,0 +1,88 @@
+{
+  "passed": false,
+  "domain": 195,
+  "partition": "gcu_phase6b2b_6493",
+  "scope": "06B2B single real-Nav2 constrained crossing, simulation only",
+  "error": "RuntimeError('localization_not_ready')",
+  "truth_shutdown": {
+    "passed": true,
+    "pids": [
+      6540
+    ],
+    "order": "truth bridge before simulator group"
+  },
+  "simulator_shutdown": {
+    "passed": true,
+    "command": [
+      "ign",
+      "service",
+      "-s",
+      "/server_control",
+      "--reqtype",
+      "ignition.msgs.ServerControl",
+      "--reptype",
+      "ignition.msgs.Boolean",
+      "--timeout",
+      "5000",
+      "--req",
+      "stop: true"
+    ],
+    "stdout": "data: true\n\n",
+    "stderr": "",
+    "exit": 0,
+    "server_pids": [
+      6525
+    ],
+    "still_alive_pids": []
+  },
+  "process_exits": [
+    0,
+    0
+  ],
+  "audit": {
+    "critical": [
+      {
+        "file": "amcl.log",
+        "line": 24,
+        "message": "[map_server-1] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "amcl.log",
+        "line": 45,
+        "message": "[ekf_node-3] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "amcl.log",
+        "line": 63,
+        "message": "[amcl-5] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "amcl.log",
+        "line": 81,
+        "message": "[ERROR] [map_server-1]: process has died [pid 6753, exit code -6, cmd '/opt/ros/humble/lib/nav2_map_server/map_server --ros-args -r __node:=gcu_map_server --params-file /tmp/launch_params__xz8vou7']."
+      },
+      {
+        "file": "amcl.log",
+        "line": 92,
+        "message": "[ERROR] [python3-4]: process has died [pid 6764, exit code 1, cmd '/usr/bin/python3 /home/ubuntu/edgeosmag_phase6b2b_ws/gcu_amcl_initial_pose.py --params /home/ubuntu/edgeosmag_phase6b2b_ws/assets/amcl.yaml']."
+      },
+      {
+        "file": "amcl.log",
+        "line": 93,
+        "message": "[ERROR] [ekf_node-3]: process has died [pid 6762, exit code -6, cmd '/opt/ros/humble/lib/robot_localization/ekf_node --ros-args -r __node:=gcu_alignment_ekf --params-file /tmp/launch_params_gpl0opof']."
+      },
+      {
+        "file": "amcl.log",
+        "line": 94,
+        "message": "[ERROR] [amcl-5]: process has died [pid 6772, exit code -6, cmd '/opt/ros/humble/lib/nav2_amcl/amcl --ros-args -r __node:=amcl --params-file /home/ubuntu/edgeosmag_phase6b2b_ws/assets/amcl.yaml --params-file /tmp/launch_params_l1ay86jz']."
+      },
+      {
+        "file": "amcl.log",
+        "line": 353,
+        "message": "[ERROR] [lifecycle_manager-2]: process has died [pid 6755, exit code -9, cmd '/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager --ros-args -r __node:=gcu_map_lifecycle --params-file /tmp/launch_params_bv22_ewc']."
+      }
+    ],
+    "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+  },
+  "elapsed_wall_s": 64.19865302100061
+}

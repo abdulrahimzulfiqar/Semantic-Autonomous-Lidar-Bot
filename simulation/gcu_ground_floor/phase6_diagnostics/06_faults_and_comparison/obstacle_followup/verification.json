@@ -1,0 +1,53 @@
+{
+  "verification_passed": true,
+  "trial_passed": true,
+  "motion_attempted": true,
+  "historical_source_files": [
+    "scripts/gcu_segmented_executor.py",
+    "scripts/gcu_amcl.launch.py",
+    "scripts/check_gcu_segmented_crossing.py"
+  ],
+  "runtime_error": null,
+  "shutdown_passed": true,
+  "position_error_m": 0.07972511845760061,
+  "heading_error_deg": 1.0648598039158585,
+  "confirmed_passages": [
+    "-93"
+  ],
+  "handoff_before_terminal": true,
+  "longest_handoff_rest_sim_s": 0.0,
+  "handoff_rest_checks": [
+    {
+      "next_goal_sim": 22.552,
+      "longest_rest_sim_s": 0.0
+    }
+  ],
+  "coverage": {
+    "truth_samples": 1108,
+    "matched_samples": 1107,
+    "matched_fraction": 0.9990974729241877,
+    "max_truth_gap_sim_s": 0.05000000000001137
+  },
+  "evaluation_obstacle_clearance": true,
+  "navigation_raster_unmodified": true,
+  "unexecuted_preflight_oracle": {
+    "0": {
+      "valid": true,
+      "samples": 150,
+      "radius_m": 0.2,
+      "segment_sampling_m": 0.01466098782835562,
+      "checked_clearance_lower_bound_m": 0.317287902626845,
+      "clearance_search_cap_m": 0.317287902626845
+    },
+    "1": {
+      "valid": false,
+      "reason": "swept_footprint_blocked",
+      "at": [
+        0.7598966102975808,
+        -13.540463769549415
+      ],
+      "clearance_m": 0.19896484574580242,
+      "required_m": 0.20733049391417782
+    }
+  }
+}

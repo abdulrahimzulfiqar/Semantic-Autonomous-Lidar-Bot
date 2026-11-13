@@ -1,0 +1,294 @@
+{
+  "scope": "Existing Phase 06 nominal matrix only; not full Phase 06 or author-runtime equivalence",
+  "nominal_gate_complete": true,
+  "passed_fresh_missions": 6,
+  "common_execution_source_sha256": {
+    "gcu_segmented_executor.py": "403702793483bef5bff37d00070310aff974ca78bd15da9881622f16eb7edcdf",
+    "osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+    "osmag_mission_state.py": "e777994c13221c42a7fc72ba639960349f83fdb44563c5fbef3a3a0635299daa",
+    "check_gcu_segmented_crossing.py": "c1d6218e1e6405d55b504336423940fe21baba54b6c7570608c28005a1f98bdb",
+    "gcu_mission_fixture.py": "9743444209b884b598c1f63d411b852d145efce45ddad7bff59b642c181033fb",
+    "gcu_costmap_observation.py": "14ef0172f9765e7d85a6de4b13c7050ef2b5eef6b65127ff789eb7ece33d0147",
+    "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+    "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5",
+    "osmag_paper_planner.py": "24293360d1fca1fda64187b1695465f336867511ed855ccec1a4eae859fc6667",
+    "osmag_execution_route.py": "a71f7750ccd6b5bacd87c928c1df881bd0b5e7f317f36d1011180254cd54e868"
+  },
+  "profile_comparison_policy": "Identical native Nav2 configuration after workspace path normalization; identical AMCL parameters except declared initial pose; identical normalized sensor world and actual IMU EKF launch. Frozen pair input files also byte-identical.",
+  "cases": [
+    {
+      "fixture": "adjacent_sector_masked",
+      "expected_passages": [
+        "-93"
+      ],
+      "reference_length_m": 1.9413560486865775,
+      "evidence_folder": "06d_nominal_adjacent_sector",
+      "manifest_sha256": "eb1dea5196ec1e1c271c73446ce1b31fc9de1dc8b14eefc9346390ff080f679f",
+      "verification_sha256": "46d53ace243baf271af70b40439d3aa13a4859941327cf8caa991e86551ea14a",
+      "trials": {
+        "01": {
+          "verification_passed": true,
+          "trial_passed": true,
+          "motion_attempted": true,
+          "historical_source_files": [
+            "scripts/gcu_amcl.launch.py"
+          ],
+          "runtime_error": null,
+          "shutdown_passed": true,
+          "position_error_m": 0.057415555901071,
+          "heading_error_deg": 1.1674055560786722,
+          "confirmed_passages": [
+            "-93"
+          ],
+          "handoff_before_terminal": true,
+          "longest_handoff_rest_sim_s": 0.0,
+          "handoff_rest_checks": [
+            {
+              "next_goal_sim": 11.948,
+              "longest_rest_sim_s": 0.0
+            }
+          ],
+          "coverage": {
+            "truth_samples": 473,
+            "matched_samples": 473,
+            "matched_fraction": 1.0,
+            "max_truth_gap_sim_s": 0.05000000000000426
+          }
+        },
+        "02": {
+          "verification_passed": true,
+          "trial_passed": true,
+          "motion_attempted": true,
+          "historical_source_files": [
+            "scripts/gcu_amcl.launch.py"
+          ],
+          "runtime_error": null,
+          "shutdown_passed": true,
+          "position_error_m": 0.08836069666935809,
+          "heading_error_deg": 1.0899273740702664,
+          "confirmed_passages": [
+            "-93"
+          ],
+          "handoff_before_terminal": true,
+          "longest_handoff_rest_sim_s": 0.0,
+          "handoff_rest_checks": [
+            {
+              "next_goal_sim": 11.751,
+              "longest_rest_sim_s": 0.0
+            }
+          ],
+          "coverage": {
+            "truth_samples": 473,
+            "matched_samples": 473,
+            "matched_fraction": 1.0,
+            "max_truth_gap_sim_s": 0.05000000000000426
+          }
+        }
+      },
+      "normalized_profile_sha256": {
+        "nav2": "9a6cb40b11ece3bf19295662a13e366b86ecda89391f64368693184208fd0967",
+        "amcl_without_initial_pose": "f33b34276de6984ebf01e2d518334c0ba4a09df708eb5f46463bb5852613bd35",
+        "sensor_world_normalized_workspace": "0609c7a847383d0526384bb7b9a2399a81dbc5ec01cf796a383b7ef86dab8f3d",
+        "EKF_launch": "302ff04838fe02a29dd13d96becc5e17d5ede255770578ca3b6e41abad5c3fcd"
+      }
+    },
+    {
+      "fixture": "corridor_to_room_masked",
+      "expected_passages": [
+        "-91",
+        "-95"
+      ],
+      "reference_length_m": 5.8026204702200435,
+      "evidence_folder": "06d_nominal_enclosed_room",
+      "manifest_sha256": "9d625b1c80c23827125002962a929e1c5378380c07fb6d97402c52d58f07344d",
+      "verification_sha256": "22c3b251af517cc9db6a8a45a187c81032acdd1008649fcd6a7b495a5af59d6c",
+      "trials": {
+        "01": {
+          "verification_passed": true,
+          "trial_passed": true,
+          "motion_attempted": true,
+          "historical_source_files": [
+            "scripts/gcu_amcl.launch.py"
+          ],
+          "runtime_error": null,
+          "shutdown_passed": true,
+          "position_error_m": 0.05613124021547176,
+          "heading_error_deg": 0.48990997462471586,
+          "confirmed_passages": [
+            "-91",
+            "-95"
+          ],
+          "handoff_before_terminal": true,
+          "longest_handoff_rest_sim_s": 0.0,
+          "handoff_rest_checks": [
+            {
+              "next_goal_sim": 11.2,
+              "longest_rest_sim_s": 0.0
+            },
+            {
+              "next_goal_sim": 59.038,
+              "longest_rest_sim_s": 0.0
+            }
+          ],
+          "coverage": {
+            "truth_samples": 1304,
+            "matched_samples": 1303,
+            "matched_fraction": 0.9992331288343558,
+            "max_truth_gap_sim_s": 0.10000000000000142
+          }
+        },
+        "02": {
+          "verification_passed": true,
+          "trial_passed": true,
+          "motion_attempted": true,
+          "historical_source_files": [
+            "scripts/gcu_amcl.launch.py"
+          ],
+          "runtime_error": null,
+          "shutdown_passed": true,
+          "position_error_m": 0.04885194263979713,
+          "heading_error_deg": 0.3675069615792732,
+          "confirmed_passages": [
+            "-91",
+            "-95"
+          ],
+          "handoff_before_terminal": true,
+          "longest_handoff_rest_sim_s": 0.0,
+          "handoff_rest_checks": [
+            {
+              "next_goal_sim": 11.333,
+              "longest_rest_sim_s": 0.0
+            },
+            {
+              "next_goal_sim": 58.879,
+              "longest_rest_sim_s": 0.0
+            }
+          ],
+          "coverage": {
+            "truth_samples": 1301,
+            "matched_samples": 1300,
+            "matched_fraction": 0.9992313604919293,
+            "max_truth_gap_sim_s": 0.10000000000000142
+          }
+        }
+      },
+      "normalized_profile_sha256": {
+        "nav2": "9a6cb40b11ece3bf19295662a13e366b86ecda89391f64368693184208fd0967",
+        "amcl_without_initial_pose": "f33b34276de6984ebf01e2d518334c0ba4a09df708eb5f46463bb5852613bd35",
+        "sensor_world_normalized_workspace": "0609c7a847383d0526384bb7b9a2399a81dbc5ec01cf796a383b7ef86dab8f3d",
+        "EKF_launch": "302ff04838fe02a29dd13d96becc5e17d5ede255770578ca3b6e41abad5c3fcd"
+      }
+    },
+    {
+      "fixture": "room_to_room_masked",
+      "expected_passages": [
+        "-95",
+        "-94",
+        "-106"
+      ],
+      "reference_length_m": 8.85821360263404,
+      "evidence_folder": "06d_nominal_room_to_room",
+      "manifest_sha256": "5dbe2baa7fae242403a19f54ee05e16c98fa7ac8305d3f620178a929fb82de3f",
+      "verification_sha256": "e918acdc7f7753bb6af66d8a2d97833fd8b8d78b01b1ed5c860dce9d4a4c7807",
+      "trials": {
+        "01": {
+          "verification_passed": true,
+          "trial_passed": true,
+          "motion_attempted": true,
+          "historical_source_files": [
+            "scripts/gcu_amcl.launch.py"
+          ],
+          "runtime_error": null,
+          "shutdown_passed": true,
+          "position_error_m": 0.060827311651461394,
+          "heading_error_deg": 0.307467649391409,
+          "confirmed_passages": [
+            "-95",
+            "-94",
+            "-106"
+          ],
+          "handoff_before_terminal": true,
+          "longest_handoff_rest_sim_s": 0.0,
+          "handoff_rest_checks": [
+            {
+              "next_goal_sim": 12.373,
+              "longest_rest_sim_s": 0.0
+            },
+            {
+              "next_goal_sim": 52.814,
+              "longest_rest_sim_s": 0.0
+            },
+            {
+              "next_goal_sim": 92.056,
+              "longest_rest_sim_s": 0.0
+            }
+          ],
+          "coverage": {
+            "truth_samples": 1995,
+            "matched_samples": 1994,
+            "matched_fraction": 0.9994987468671679,
+            "max_truth_gap_sim_s": 0.05000000000001137
+          }
+        },
+        "02": {
+          "verification_passed": true,
+          "trial_passed": true,
+          "motion_attempted": true,
+          "historical_source_files": [
+            "scripts/gcu_amcl.launch.py"
+          ],
+          "runtime_error": null,
+          "shutdown_passed": true,
+          "position_error_m": 0.05138447558136268,
+          "heading_error_deg": 1.1397801000483938,
+          "confirmed_passages": [
+            "-95",
+            "-94",
+            "-106"
+          ],
+          "handoff_before_terminal": true,
+          "longest_handoff_rest_sim_s": 0.0,
+          "handoff_rest_checks": [
+            {
+              "next_goal_sim": 12.247,
+              "longest_rest_sim_s": 0.0
+            },
+            {
+              "next_goal_sim": 52.951,
+              "longest_rest_sim_s": 0.0
+            },
+            {
+              "next_goal_sim": 91.013,
+              "longest_rest_sim_s": 0.0
+            }
+          ],
+          "coverage": {
+            "truth_samples": 1969,
+            "matched_samples": 1969,
+            "matched_fraction": 1.0,
+            "max_truth_gap_sim_s": 0.05000000000001137
+          }
+        }
+      },
+      "normalized_profile_sha256": {
+        "nav2": "9a6cb40b11ece3bf19295662a13e366b86ecda89391f64368693184208fd0967",
+        "amcl_without_initial_pose": "f33b34276de6984ebf01e2d518334c0ba4a09df708eb5f46463bb5852613bd35",
+        "sensor_world_normalized_workspace": "0609c7a847383d0526384bb7b9a2399a81dbc5ec01cf796a383b7ef86dab8f3d",
+        "EKF_launch": "302ff04838fe02a29dd13d96becc5e17d5ede255770578ca3b6e41abad5c3fcd"
+      }
+    }
+  ],
+  "remaining_groups": [
+    "Fault/local-obstacle tests and matched baseline assessment/reruns",
+    "Final Foxglove acceptance and cleanup"
+  ],
+  "post_matrix_local_tests": {
+    "tests": 118,
+    "passed": true,
+    "command": "PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests",
+    "log_file": "nominal_matrix_tests118.log",
+    "log_sha256": "d460bbbcf8e95386b0fa7eca16df60ad1bb6065c628df294130520aef0ec12d0",
+    "execution_sources_match_common_pins": true,
+    "scope": "One final post-matrix suite on the current execution snapshot, including query timing metadata; earlier per-pair unit logs remain unchanged."
+  }
+}

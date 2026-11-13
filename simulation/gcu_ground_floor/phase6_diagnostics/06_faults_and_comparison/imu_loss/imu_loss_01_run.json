@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "domain": 195,
+  "partition": "gcu_phase6b2b_3734",
+  "scope": "06B2B single real-Nav2 constrained crossing, simulation only",
+  "scenario": "imu_loss",
+  "checker_exit": 0,
+  "truth_shutdown": {
+    "passed": true,
+    "pids": [
+      3789
+    ],
+    "order": "truth bridge before simulator group"
+  },
+  "simulator_shutdown": {
+    "passed": true,
+    "command": [
+      "ign",
+      "service",
+      "-s",
+      "/server_control",
+      "--reqtype",
+      "ignition.msgs.ServerControl",
+      "--reptype",
+      "ignition.msgs.Boolean",
+      "--timeout",
+      "5000",
+      "--req",
+      "stop: true"
+    ],
+    "stdout": "data: true\n\n",
+    "stderr": "",
+    "exit": 0,
+    "server_pids": [
+      3774
+    ],
+    "still_alive_pids": [],
+    "pause_before_stop": {
+      "acknowledged": true,
+      "stdout": "data: true\n\n",
+      "stderr": "",
+      "exit": 0,
+      "scope": "Pause RPC acknowledgement plus 0.25 s quiescence interval; not a separate renderer-thread ACK."
+    }
+  },
+  "process_exits": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "process_pids": [
+    3756,
+    3951,
+    4052,
+    4053,
+    4054
+  ],
+  "audit": {
+    "critical": [],
+    "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+  },
+  "elapsed_wall_s": 71.6099380239998
+}

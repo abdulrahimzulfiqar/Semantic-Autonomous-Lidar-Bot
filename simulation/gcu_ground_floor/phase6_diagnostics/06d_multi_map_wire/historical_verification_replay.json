@@ -1,0 +1,37 @@
+{
+  "verification_passed": true,
+  "trial_passed": true,
+  "motion_attempted": true,
+  "historical_source_files": [
+    "scripts/gcu_mission_fixture.py",
+    "scripts/gcu_segmented_executor.py",
+    "scripts/run_gcu_segmented_crossing.py",
+    "scripts/check_gcu_segmented_crossing.py"
+  ],
+  "runtime_error": null,
+  "shutdown_passed": true,
+  "position_error_m": 0.04895681874840346,
+  "heading_error_deg": 0.6534154947881649,
+  "confirmed_passages": [
+    "-91",
+    "-94"
+  ],
+  "handoff_before_terminal": true,
+  "longest_handoff_rest_sim_s": 0.0,
+  "handoff_rest_checks": [
+    {
+      "next_goal_sim": 11.638,
+      "longest_rest_sim_s": 0.0
+    },
+    {
+      "next_goal_sim": 74.3,
+      "longest_rest_sim_s": 0.0
+    }
+  ],
+  "coverage": {
+    "truth_samples": 1605,
+    "matched_samples": 1605,
+    "matched_fraction": 1.0,
+    "max_truth_gap_sim_s": 0.05000000000001137
+  }
+}

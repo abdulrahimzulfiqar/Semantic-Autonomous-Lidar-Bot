@@ -1,0 +1,171 @@
+{
+  "passed": false,
+  "domain": 195,
+  "partition": "gcu_phase6b2b_6825",
+  "scope": "06B2B single real-Nav2 constrained crossing, simulation only",
+  "error": "RuntimeError('localization_not_ready')",
+  "truth_shutdown": {
+    "passed": false,
+    "pids": [],
+    "order": "truth bridge before simulator group"
+  },
+  "simulator_shutdown": {
+    "passed": true,
+    "command": [
+      "ign",
+      "service",
+      "-s",
+      "/server_control",
+      "--reqtype",
+      "ignition.msgs.ServerControl",
+      "--reptype",
+      "ignition.msgs.Boolean",
+      "--timeout",
+      "5000",
+      "--req",
+      "stop: true"
+    ],
+    "stdout": "data: true\n\n",
+    "stderr": "",
+    "exit": 0,
+    "server_pids": [
+      6857
+    ],
+    "still_alive_pids": []
+  },
+  "process_exits": [
+    0,
+    0
+  ],
+  "audit": {
+    "critical": [
+      {
+        "file": "amcl.log",
+        "line": 24,
+        "message": "[map_server-1] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "amcl.log",
+        "line": 42,
+        "message": "[lifecycle_manager-2] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "amcl.log",
+        "line": 60,
+        "message": "[ekf_node-3] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "amcl.log",
+        "line": 78,
+        "message": "[amcl-5] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "amcl.log",
+        "line": 80,
+        "message": "[ERROR] [map_server-1]: process has died [pid 6955, exit code -6, cmd '/opt/ros/humble/lib/nav2_map_server/map_server --ros-args -r __node:=gcu_map_server --params-file /tmp/launch_params_x2t26a96']."
+      },
+      {
+        "file": "amcl.log",
+        "line": 81,
+        "message": "[ERROR] [ekf_node-3]: process has died [pid 6961, exit code -6, cmd '/opt/ros/humble/lib/robot_localization/ekf_node --ros-args -r __node:=gcu_alignment_ekf --params-file /tmp/launch_params_unc123sr']."
+      },
+      {
+        "file": "amcl.log",
+        "line": 82,
+        "message": "[ERROR] [lifecycle_manager-2]: process has died [pid 6957, exit code -6, cmd '/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager --ros-args -r __node:=gcu_map_lifecycle --params-file /tmp/launch_params_iq3rcc1c']."
+      },
+      {
+        "file": "amcl.log",
+        "line": 83,
+        "message": "[ERROR] [amcl-5]: process has died [pid 6969, exit code -6, cmd '/opt/ros/humble/lib/nav2_amcl/amcl --ros-args -r __node:=amcl --params-file /home/ubuntu/edgeosmag_phase6b2b_ws/assets/amcl.yaml --params-file /tmp/launch_params_ja2j4xv7']."
+      },
+      {
+        "file": "amcl.log",
+        "line": 110,
+        "message": "[ERROR] [python3-4]: process has died [pid 6964, exit code 1, cmd '/usr/bin/python3 /home/ubuntu/edgeosmag_phase6b2b_ws/gcu_amcl_initial_pose.py --params /home/ubuntu/edgeosmag_phase6b2b_ws/assets/amcl.yaml']."
+      },
+      {
+        "file": "simulator.log",
+        "line": 27,
+        "message": "[robot_state_publisher-1] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "simulator.log",
+        "line": 45,
+        "message": "[gcu_ordered_bridge-3] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "simulator.log",
+        "line": 63,
+        "message": "[gcu_ordered_bridge-4] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "simulator.log",
+        "line": 81,
+        "message": "[gcu_truth_bridge-5] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "simulator.log",
+        "line": 99,
+        "message": "[twist_mux-7] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "simulator.log",
+        "line": 117,
+        "message": "[create-8] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "simulator.log",
+        "line": 135,
+        "message": "[image_bridge-6] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'"
+      },
+      {
+        "file": "simulator.log",
+        "line": 137,
+        "message": "[ERROR] [robot_state_publisher-1]: process has died [pid 6855, exit code -6, cmd '/opt/ros/humble/lib/robot_state_publisher/robot_state_publisher --ros-args --params-file /tmp/launch_params_c01gxwtl']."
+      },
+      {
+        "file": "simulator.log",
+        "line": 138,
+        "message": "[ERROR] [gcu_ordered_bridge-4]: process has died [pid 6863, exit code -6, cmd '/home/ubuntu/edgeosmag_phase6b2b_ws/support_install/lib/gcu_truth_bridge/gcu_ordered_bridge --ros-args -p config_file:=/home/ubuntu/edgeosmag_phase6b2b_ws/assets/contact_v2/contact_bridge.yaml']."
+      },
+      {
+        "file": "simulator.log",
+        "line": 139,
+        "message": "[ERROR] [gcu_truth_bridge-5]: process has died [pid 6865, exit code -6, cmd '/home/ubuntu/edgeosmag_phase6b2b_ws/support_install/lib/gcu_truth_bridge/gcu_truth_bridge --ros-args -p source_topic:=/model/lidarbot/pose']."
+      },
+      {
+        "file": "simulator.log",
+        "line": 140,
+        "message": "[ERROR] [twist_mux-7]: process has died [pid 6872, exit code -6, cmd '/opt/ros/humble/lib/twist_mux/twist_mux --ros-args --params-file /tmp/launch_params_qvygm973 -r /cmd_vel_out:=/diff_controller/cmd_vel_unstamped']."
+      },
+      {
+        "file": "simulator.log",
+        "line": 141,
+        "message": "[ERROR] [gcu_ordered_bridge-3]: process has died [pid 6859, exit code -6, cmd '/home/ubuntu/edgeosmag_phase6b2b_ws/support_install/lib/gcu_truth_bridge/gcu_ordered_bridge --ros-args -p config_file:=/home/ubuntu/lidarbot_ws/install/lidarbot_gz/share/lidarbot_gz/config/lidarbot_bridge.yaml']."
+      },
+      {
+        "file": "simulator.log",
+        "line": 142,
+        "message": "[ERROR] [create-8]: process has died [pid 6874, exit code -6, cmd '/opt/ros/humble/lib/ros_gz_sim/create -file /home/ubuntu/edgeosmag_phase6b2b_ws/assets/contact_v2/robot.sdf -name lidarbot -x -0.5 -y -12.960313240266368 -z 0.15 -Y 0 --ros-args']."
+      },
+      {
+        "file": "simulator.log",
+        "line": 145,
+        "message": "[ERROR] [image_bridge-6]: process has died [pid 6867, exit code -6, cmd '/opt/ros/humble/lib/ros_gz_image/image_bridge /camera/image_raw --ros-args']."
+      },
+      {
+        "file": "simulator.log",
+        "line": 194,
+        "message": "[ERROR] [spawner-9]: process has died [pid 6896, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner joint_broadcaster --controller-manager-timeout 40 --ros-args']."
+      },
+      {
+        "file": "simulator.log",
+        "line": 195,
+        "message": "[ERROR] [spawner-10]: process has died [pid 6898, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner diff_controller --controller-manager-timeout 40 --ros-args']."
+      }
+    ],
+    "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+  },
+  "elapsed_wall_s": 7.143321315999856
+}

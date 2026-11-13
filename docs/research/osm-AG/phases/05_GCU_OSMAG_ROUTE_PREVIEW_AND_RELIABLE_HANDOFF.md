@@ -232,4 +232,4 @@ python3 scripts/verify_gcu_preview_refinement.py \
 
 ## Next acceptance boundary
 
-Phase 06 must execute the ordered, feasible passage transitions with `NavigateToPose`, validate actual doorway crossings, handle cancellation/failures and compare arrival/route results with the Phase 04 metric baseline. Preview success does not certify navigation along the displayed path. Full osmAG-Nav, rolling map behavior, structural localization, hardware savings and LLM/camera fusion remain future work.
+[Phase 06's detailed plan](../plans/06_GCU_OSMAG_SEGMENTED_NAVIGATION.md) executes ordered, feasible passage transitions with `NavigateToPose` and continuous handoff, validates actual crossings, handles cancellation/closures/failures and compares arrival/route results with the repaired Phase 05 metric baseline. Preview success does not certify navigation along the displayed path. Full osmAG-Nav, rolling map behavior, structural localization, hardware savings and LLM/camera fusion remain future work.

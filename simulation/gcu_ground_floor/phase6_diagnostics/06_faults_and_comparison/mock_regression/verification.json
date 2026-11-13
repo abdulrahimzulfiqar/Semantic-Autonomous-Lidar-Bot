@@ -1,0 +1,51 @@
+{
+  "verification_passed": true,
+  "scope": "Common FSM/ROS mock transport regression, not native physical motion",
+  "cases": [
+    {
+      "name": "unverified_mock_identity_rejected_without_action",
+      "passed": true
+    },
+    {
+      "name": "unsupported_frame_rejected_without_action",
+      "passed": true
+    },
+    {
+      "name": "courtyard_rejected",
+      "passed": true
+    },
+    {
+      "name": "continuous_handoff_crossing_and_final_rest",
+      "passed": true
+    },
+    {
+      "name": "busy_goal_and_whole_mission_cancel",
+      "passed": true
+    },
+    {
+      "name": "cancel_pending_send_cancels_late_acceptance",
+      "passed": true
+    },
+    {
+      "name": "navigator_rejection_is_terminal_failure",
+      "passed": true
+    },
+    {
+      "name": "ack_timeout_keeps_stop_unknown_until_resolved",
+      "passed": true
+    },
+    {
+      "name": "stale_tf_cancels_and_requires_fresh_rest",
+      "passed": true
+    },
+    {
+      "name": "absent_navigator_rejected_without_action",
+      "passed": true
+    }
+  ],
+  "child_exits": [
+    0,
+    0
+  ],
+  "command_messages": 0
+}
