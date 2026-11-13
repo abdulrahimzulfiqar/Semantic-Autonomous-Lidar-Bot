@@ -1,0 +1,94 @@
+{
+  "scope": "Execution-only comparison with identical fixed permitted-area mask and profile. Both use the same osmAG-derived scenario setup; not an end-to-end grid-only planning or resource benchmark. One baseline trial per query; no statistical speed advantage claimed.",
+  "localization_regression_assessment": "Fresh matched short and room-entry/turn metric cases plus final interface reversed-heading recovery test; unchanged parser/state fault gates retained and rerun. Original Phase 04 sixteen-case evidence remains historical, not relabelled as repeated on this profile.",
+  "comparisons": [
+    {
+      "query": "adjacent",
+      "controller_localization_sensor_and_mask_match": true,
+      "metric_final_goal": {
+        "goal": [
+          1.4413560486865775,
+          -12.960313240266368,
+          0.0
+        ],
+        "spawn": [
+          -0.5,
+          -12.960313240266368,
+          0.0
+        ],
+        "navigation_sends": 1,
+        "executed_length_m": 1.8639624560731667,
+        "dispatch_to_rest_sim_s": 23.149,
+        "position_error_m": 0.08957170288912532,
+        "heading_error_deg": 0.7947009234265744,
+        "full_wall_s": 89.31033216300057,
+        "evidence": "06_faults_and_comparison/baseline_adjacent",
+        "archive_sha256": "99d9c4eb9cc3ccf2c84748256037ed87430efbcdb0ad253b00aa1a734a26d723"
+      },
+      "segmented_reference_trial01": {
+        "goal": [
+          1.4413560486865775,
+          -12.960313240266368,
+          0.0
+        ],
+        "spawn": [
+          -0.5,
+          -12.960313240266368,
+          0.0
+        ],
+        "navigation_sends": 2,
+        "executed_length_m": 1.888686247433509,
+        "dispatch_to_rest_sim_s": 23.259,
+        "position_error_m": 0.057415555901071,
+        "heading_error_deg": 1.1674055560786722,
+        "full_wall_s": 77.82474861200171,
+        "evidence": "06d_nominal_adjacent_sector",
+        "archive_sha256": "80eac8d08a9e8338df176213f5f6888e3c48f3c928159b59307fcdafe6f29f3e"
+      }
+    },
+    {
+      "query": "corridor_room",
+      "controller_localization_sensor_and_mask_match": true,
+      "metric_final_goal": {
+        "goal": [
+          3.9,
+          22.3,
+          1.5707963267948966
+        ],
+        "spawn": [
+          -0.5,
+          19.9,
+          0.0
+        ],
+        "navigation_sends": 1,
+        "executed_length_m": 5.958926384725405,
+        "dispatch_to_rest_sim_s": 63.693999999999996,
+        "position_error_m": 0.07130714361219782,
+        "heading_error_deg": 2.631111862661916,
+        "full_wall_s": 199.78564424199976,
+        "evidence": "06_faults_and_comparison/baseline_room",
+        "archive_sha256": "f34f8a6a405bb64b795efbfbcfad0cf42a7fa8fe3f0d355d51bdfd6917bd6539"
+      },
+      "segmented_reference_trial01": {
+        "goal": [
+          3.9,
+          22.3,
+          1.5707963267948966
+        ],
+        "spawn": [
+          -0.5,
+          19.9,
+          0.0
+        ],
+        "navigation_sends": 3,
+        "executed_length_m": 5.968154511828829,
+        "dispatch_to_rest_sim_s": 64.867,
+        "position_error_m": 0.05613124021547176,
+        "heading_error_deg": 0.48990997462471586,
+        "full_wall_s": 179.94985214600456,
+        "evidence": "06d_nominal_enclosed_room",
+        "archive_sha256": "304a6483a72b76be04613b1eb444766de82a78775bc251ea814714076e5ca9a8"
+      }
+    }
+  ]
+}

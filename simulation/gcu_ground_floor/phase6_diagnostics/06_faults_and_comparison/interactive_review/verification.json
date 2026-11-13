@@ -1,0 +1,84 @@
+{
+  "verification_passed": true,
+  "trial_passed": true,
+  "scope": "Automated interface and motion acceptance; human visual review remains pending",
+  "interface_checks": [
+    "no_automatic_goal_before_click",
+    "wrong_frame_outside_and_courtyard_goals_rejected_without_dispatch",
+    "occupied_goal_rejected_without_dispatch",
+    "busy_goal_rejected",
+    "cancel_topic_stops_active_mission",
+    "recover_after_cancel_and_arrive",
+    "consecutive_return_with_reversed_heading",
+    "inactive_navigator_does_not_start_motion",
+    "recover_after_navigator_reactivation",
+    "all_passages_closed_rejects_goal_without_dispatch"
+  ],
+  "verified_arrivals": [
+    {
+      "file": "user_mission_02.json",
+      "verification_passed": true,
+      "position_error_m": 0.08323032040728269,
+      "heading_error_deg": 1.2151084406615482,
+      "confirmed_passages": [],
+      "handoff_before_terminal": true,
+      "longest_handoff_rest_sim_s": 0.0,
+      "handoff_rest_checks": [],
+      "coverage": {
+        "truth_samples": 250,
+        "matched_samples": 249,
+        "matched_fraction": 0.996,
+        "max_truth_gap_sim_s": 0.05000000000000426
+      }
+    },
+    {
+      "file": "user_mission_03.json",
+      "verification_passed": true,
+      "position_error_m": 0.1535750193857417,
+      "heading_error_deg": 1.1029472635873958,
+      "confirmed_passages": [
+        "-93"
+      ],
+      "handoff_before_terminal": true,
+      "longest_handoff_rest_sim_s": 0.0,
+      "handoff_rest_checks": [
+        {
+          "next_goal_sim": 64.046,
+          "longest_rest_sim_s": 0.0
+        }
+      ],
+      "coverage": {
+        "truth_samples": 828,
+        "matched_samples": 828,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      }
+    },
+    {
+      "file": "user_mission_05.json",
+      "verification_passed": true,
+      "position_error_m": 0.1233856688994453,
+      "heading_error_deg": 1.2519271325110677,
+      "confirmed_passages": [
+        "-93"
+      ],
+      "handoff_before_terminal": true,
+      "longest_handoff_rest_sim_s": 0.0,
+      "handoff_rest_checks": [
+        {
+          "next_goal_sim": 96.772,
+          "longest_rest_sim_s": 0.0
+        }
+      ],
+      "coverage": {
+        "truth_samples": 646,
+        "matched_samples": 646,
+        "matched_fraction": 1.0,
+        "max_truth_gap_sim_s": 0.05000000000001137
+      }
+    }
+  ],
+  "native_rejection_without_motion": true,
+  "cancel_recovery_verified": true,
+  "clean_native_exits": 6
+}

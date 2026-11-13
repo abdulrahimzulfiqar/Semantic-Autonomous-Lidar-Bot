@@ -1,0 +1,30 @@
+{
+  "checkpoint": "06A",
+  "date": "2026-11-06",
+  "status": "offline_geometry_and_mock_contract_passed",
+  "full_phase_06_complete": false,
+  "unit_tests_passed": 79,
+  "new_targeted_tests_passed": 32,
+  "gcu_offline_cases_passed": 8,
+  "ros_started": false,
+  "utm_started": false,
+  "physical_motion_tested": false,
+  "source_sha256": {
+    "scripts/osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+    "scripts/osmag_mission_state.py": "e777994c13221c42a7fc72ba639960349f83fdb44563c5fbef3a3a0635299daa",
+    "scripts/check_gcu_mission_contract.py": "4838a2884defe52b7219b585d02c404fca841294b10c9735977ba27f8224ddc3",
+    "tests/test_osmag_mission_contract.py": "78e7b7b79371bfcf43f547727e34ee6faafba647c3131022dd9b77f7bd6e9eee",
+    "tests/test_osmag_mission_state.py": "0cc7cacf4509daba5a052a9f765324f61ef0df643a1e2271b8c7b9ca4e8675ea"
+  },
+  "artifacts_sha256": {
+    "all_tests.log.gz": "98b2dfd6e880407c8fbebba81c01da3bde01bc16760e1f1e595fdaeeeec1625e",
+    "gcu_offline.log.gz": "a6db2a4f90d2fe2c3d7017d69d37f353428a37224b5ddc1b1cedc1d6848ad125",
+    "initial_unit_attempt.log.gz": "dcb635c40d00fb39713bd237cdf785b825736c76b23a3f574b0a4664334676ef",
+    "pre_order_case_all.log.gz": "086711646f2ba86887a00fdc051b0624775d5abde33802980c4e95d993043b4f",
+    "pre_order_case_targeted.log.gz": "f974f4d5ef89963c8facc77db42d7a7ad438caa56920ce296a8851b85c0c9f30",
+    "results.json": "c4ae43024f4b62738c5219433e15178b62da231634acbcd4c7c33d23977c1f7c",
+    "targeted_tests.log.gz": "c2cee3ebb19e6731d5847c09eb6bf5fed96b392c1f60a6b37fecbc8b15486cfd"
+  },
+  "initial_failure": "One exact floating-point coordinate assertion differed by 1.6e-13 m; corrected the test to use a 1e-9 m tolerance. Initial log retained.",
+  "next_checkpoint": "06B1 ROS mock-navigator integration, with no physics; costmap constraints and real motion gates remain pending."
+}

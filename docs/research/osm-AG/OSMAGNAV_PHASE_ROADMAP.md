@@ -2,8 +2,8 @@
 
 ## Quick summary
 
-- **Current position:** Phases 01–05 established the map, simulation, localization, metric navigation and tested paper-based osmAG route preview.
-- **Next:** Phase 05 automated and user visual checks are complete. Execute ordered passage goals in Phase 06; the accepted [Phase 05 preview](phases/05_GCU_OSMAG_ROUTE_PREVIEW_AND_RELIABLE_HANDOFF.md) stays motion-free.
+- **Current position:** Phases 01–06 are accepted for their recorded bounded scopes; segmented simulation navigation now has 135 passing tests and retained automated motion/fault evidence.
+- **Next:** [Phase 07](plans/07_GCU_ROLLING_RASTER_AND_BOUNDARY_GOALS.md) adds the rolling planning raster and validated boundary proxy goals. It is planned, not implemented.
 - **Authors' workflow:** Phases 06–09 add segmented execution, rolling raster maps, structural localization and integrated evaluation.
 - **Our research:** Phases 10–13 evaluate Pi 4B deployment, camera perception, language reasoning and their combined resource/accuracy tradeoffs. This sequence is provisional.
 
@@ -31,7 +31,7 @@ would not reproduce the authors' rolling-map architecture.
 | Phase | Planned work and expected result | Relationship to the paper | Completion gate |
 | --- | --- | --- | --- |
 | **05 — Reliable execution and osmAG route preview** | Repair the consecutive-goal/shutdown gaps, record source availability and the explicitly approved paper-based routing implementation, validate frames and feasible passages, and display an osmAG route from a clicked destination. | Prepare the planner and interfaces in §§4, 5.2–5.3 and 7. | Reliable metric regressions plus correct, motion-free osmAG route previews and explicit failure results. [Measured Phase 05 record](phases/05_GCU_OSMAG_ROUTE_PREVIEW_AND_RELIABLE_HANDOFF.md); bounded [quality/fidelity follow-up](GCU_ROUTING_PAPER_AUDIT.md) passed (47 unit / 10 offline / 15 live preview cases), with user visual acceptance. |
-| **06 — Segmented osmAG navigation** | Dispatch passage-derived `NavigateToPose` goals, monitor area transitions and show the complete osmAG route alongside the active Nav2 segment. Initially retain the static floor map. | Implement the execution pattern in §5.4 and the action boundary in §4.3. | Repeated room-to-room missions cross the expected interfaces; cancellation, rejection and blocked-passage handling work without unsafe fallback. |
+| **06 — Segmented osmAG navigation** | Dispatch passage-derived `NavigateToPose` goals with continuous handoff, enforce/monitor transitions, and show the full route alongside the active Nav2 segment. Retain the static map. [Detailed plan](plans/06_GCU_OSMAG_SEGMENTED_NAVIGATION.md). | Implement §5.4 and §4.3; refined crossing targets and topology constraints are explicit adaptations. | Repeated missions confirm ordered crossings, final arrival, cancellation/closure handling and clean teardown; user visual acceptance. |
 | **07 — Rolling raster and boundary goals** | Rasterize nearby osmAG geometry online, supply it to Nav2 and project segment goals inside the available map. | Reproduce §5.1, Figure 4 and §5.4.1. | Missions cross window boundaries, excluded regions stay blocked, and Nav2 planning no longer consumes a full-floor raster. Measure the memory of each remaining component. |
 | **08 — Structure-based localization** | Audit sensor compatibility, then integrate/evaluate the authors' AGLoc estimator and Nav2 pose/TF adapter against our AMCL baseline. | Reproduce the relevant capabilities in §6 and the localization interfaces in §7. | Measured tracking, clutter and recovery trials pass with one TF owner. Report any sensor-driven adaptation explicitly. |
 | **09 — Integrated paper-aligned baseline in simulation** | Freeze the combined stack and evaluate end-to-end routes, obstacle/closure handling, localization, planning latency and map scaling. | Evaluate the assembled architecture in §§4–7 using experiments motivated by §8. | Reproducible single-floor simulation report, repeat trials, versioned inputs and a clear list of reproduced/omitted paper capabilities. |
@@ -106,3 +106,13 @@ Integration milestones can provide useful engineering evidence. Novelty, edge
 resource savings and generalization remain hypotheses until comparisons support
 them. Each completed phase gets a new achievement record with a four-bullet
 summary, results, limitations and reproduction commands.
+
+[06B2B record](phases/06B2B_GCU_FIRST_SEGMENTED_CROSSING.md): one constrained mission now passes ordered crossing, early handoff, final arrival/rest, independent replay and clean exits, with 104 unit tests. Earlier failures and the limited shutdown-mitigation claim are retained. This is a short-fixture result, not full Phase 06 acceptance.
+
+[Phase 06 is complete for bounded simulation scope](phases/06_GCU_SEGMENTED_NAVIGATION.md),
+accepted November 13, 2026. All 135 tests and retained automated mission/fault
+checks pass. User visual acceptance covers short-distance behavior; the longer
+manual journey remains a recorded wall-time timeout. Test processes are stopped.
+Next is [Phase 07: rolling raster and boundary goals](plans/07_GCU_ROLLING_RASTER_AND_BOUNDARY_GOALS.md).
+The full-floor planning raster and AMCL remain in Phase 06; paper-runtime
+reproduction and edge resource advantages are not claimed.

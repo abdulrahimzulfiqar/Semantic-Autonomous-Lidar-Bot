@@ -1,0 +1,54 @@
+{
+  "verification_passed": true,
+  "trial_passed": true,
+  "motion_attempted": true,
+  "historical_source_files": [
+    "scripts/gcu_amcl.launch.py"
+  ],
+  "runtime_error": null,
+  "shutdown_passed": true,
+  "truth_rest": {
+    "start_sim": 17.75,
+    "confirmed_sim": 18.75
+  },
+  "post_rest_hold_sim_s": 1.0500000000000007,
+  "coverage": {
+    "truth_samples": 230,
+    "matched_samples": 230,
+    "matched_fraction": 1.0,
+    "max_truth_gap_sim_s": 0.09999999999999964
+  },
+  "native_cancel_confirmed": true,
+  "no_later_segment": true,
+  "closure_stop_delay_sim_s": 0.2970000000000006,
+  "closure_revision": 1,
+  "mask_revision": 2,
+  "graph_no_route": true,
+  "native_no_route": true,
+  "native_mask_replay": {
+    "global": {
+      "required_cells": 834090,
+      "missing_cells": 0,
+      "free_probes": 2,
+      "map_from_grid": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "resolution": 0.05864395201206207,
+      "mask_resolution": 0.05864395201206207
+    },
+    "local": {
+      "required_cells": 4956,
+      "missing_cells": 0,
+      "free_probes": 1,
+      "map_from_grid": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "resolution": 0.05864395201206207,
+      "mask_resolution": 0.05864395201206207
+    }
+  }
+}

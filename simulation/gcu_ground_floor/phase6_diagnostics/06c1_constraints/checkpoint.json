@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-06",
+  "checkpoint": "06C1",
+  "offline_geometry_passed": true,
+  "unit_tests_passed": 95,
+  "new_mask_and_config_tests": 15,
+  "offline_gcu_cases_passed": 7,
+  "native_integration_passed": false,
+  "full_phase_06_complete": false,
+  "source_sha256": {
+    "scripts/osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+    "scripts/check_gcu_constraint_masks.py": "d6ae2f638ad8572593a7e838552e185d5d28e60de89509e69de05ffbdf92bbe5",
+    "scripts/check_constraint_costmaps_ros.py": "a128021d1797f659294430088b5c890537306784397252cb1a7db20a0424f8fb",
+    "scripts/prepare_constraint_costmap_test.py": "7f39ce10c747e65d4565791c163734a5b0f9465c11ec53b7b0e791f2d5544cca",
+    "scripts/run_constraint_costmap_test.py": "500ebe97aa3f3f34e4aa171f73787d3d0eff4d965f83bc83d28bf9e5e0fb286c",
+    "tests/test_osmag_constraint_mask.py": "d9d9f9569c969a2b55be80ea86984f67befb0aff4dfbeeba0b393b6ec7353952"
+  },
+  "artifacts_sha256": {
+    "process_cleanup.json": "e8da51a14bbea711f90e51222e1610c29c50dcbdb1a884a997f4f2afdcd40a90",
+    "mask_tests.log.gz": "dbdba6e3d8e40bdfe1b4a5771d2761d61e3f00d93784fd8df36f02d474dc420d",
+    "native_report.json": "8360c92b01973aa83b1970caa92d7cbd77bbd29e30beb537ace3c9bf47743bdf",
+    "results.json": "365308681cebc5c8f72a8fbd5109d1c8ec07c8cc834264c22a5c079ae08c6179",
+    "local_tests.log.gz": "843147ef62e5c263d7c8e9ede20926bb01e0a19f099a8e4ce1efb545ee6c1325",
+    "native_run.json": "82e053aff38de26d1c7a174f8c0e55488d1fd2e526d888b4622cf7da1bb65a27",
+    "short_open_mask.npz": "8ede38fba63378f69507bd5201736943a23513ec9a53ed06b9158e76b30acf49",
+    "installed_capabilities.json": "c9486b9217d3d1318425f21004730923831082048e78bb4238b26313f8db850e",
+    "native_evidence.tar.gz": "6ac155ae5fbd8a5e1967bffdd95a812b79ff79ddac5aa2248f7218871ff9846d",
+    "initial_mask_tests.log.gz": "f1d3a407d633fb753f4e00895304c347a148cf265f201a0a7e03c2b9cdaa988e",
+    "native_manifest.json": "e6bd1b495d13d137519151de7f69f6a4deabcec71f8a9b65cae9a11958804b45"
+  },
+  "resume": "Diagnose failed native close-update observations and standalone local-costmap exit -6 before any motion test. Open revision succeeded; close/reopen sequence did not pass."
+}

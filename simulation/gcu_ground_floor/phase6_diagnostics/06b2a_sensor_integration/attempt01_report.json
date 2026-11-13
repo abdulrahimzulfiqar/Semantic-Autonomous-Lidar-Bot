@@ -1,0 +1,64 @@
+{
+  "passed": false,
+  "scope": "06B2A stationary real GCU sensor/costmap integration; no navigator or mission dispatch",
+  "revisions": [],
+  "error": "ExtrapolationException('Lookup would require extrapolation into the past.  Requested time 1.880000 but the earliest data is at time 1.900000, when looking up transform from frame [base_footprint] to frame [map]')",
+  "lifecycle_states": {},
+  "scans": [
+    {
+      "stamp": 1.7,
+      "received": 1.71,
+      "count": 360,
+      "finite": 314,
+      "frame": "lidar_link"
+    },
+    {
+      "stamp": 1.8,
+      "received": 1.813,
+      "count": 360,
+      "finite": 314,
+      "frame": "lidar_link"
+    },
+    {
+      "stamp": 1.9,
+      "received": 1.907,
+      "count": 360,
+      "finite": 314,
+      "frame": "lidar_link"
+    }
+  ],
+  "commands": [],
+  "odometry": [
+    [
+      1.72,
+      -4.1302473235788707e-19,
+      6.439898459398958e-20
+    ],
+    [
+      1.76,
+      -2.0272900103034383e-19,
+      3.320750859309207e-20
+    ],
+    [
+      1.78,
+      -1.3113184872808498e-19,
+      1.242500111026497e-20
+    ],
+    [
+      1.8199999999999998,
+      5.1172562944852815e-21,
+      2.513447132130296e-20
+    ],
+    [
+      1.8599999999999999,
+      1.0588380197481537e-19,
+      -6.425270981205161e-21
+    ],
+    [
+      1.88,
+      1.121176297452838e-19,
+      -2.3389661363082197e-20
+    ]
+  ],
+  "elapsed_wall_s": 0.33605583500002467
+}

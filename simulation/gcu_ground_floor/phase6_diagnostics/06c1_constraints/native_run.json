@@ -1,0 +1,33 @@
+{
+  "passed": false,
+  "domain": 193,
+  "source_sha256": {
+    "gcu_process_audit.py": "4034e8fa076a469a3984e2de4e848850783461a8cf6b913df642609caac0eb32",
+    "run_constraint_costmap_test.py": "500ebe97aa3f3f34e4aa171f73787d3d0eff4d965f83bc83d28bf9e5e0fb286c",
+    "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5",
+    "manifest.json": "4f8fc81775a8671195d69cf032bf7c80f4d3b75f2bae9e51cad81d55b2cd7fdc",
+    "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+    "params.yaml": "38ed4448ea9290912d5b2d14b59738f3fa0f10d0bfbc5f4b4c61b3e6fbec364f",
+    "check_constraint_costmaps_ros.py": "a128021d1797f659294430088b5c890537306784397252cb1a7db20a0424f8fb"
+  },
+  "scope": "Synthetic plan-only native costmaps",
+  "checker_exit": 1,
+  "child_exits": [
+    1,
+    0,
+    -6,
+    0
+  ],
+  "child_audit": {
+    "critical": [
+      {
+        "file": "local.log",
+        "line": 30,
+        "message": "terminate called without an active exception"
+      }
+    ],
+    "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+  },
+  "inputs_unchanged": true,
+  "elapsed_wall_s": 38.13841901200021
+}

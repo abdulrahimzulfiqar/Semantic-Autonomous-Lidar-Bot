@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checkpoint": "06B1",
+  "unit_tests_passed": 80,
+  "ros_mock_cases_passed": 10,
+  "runtime_files_verified": 48,
+  "current_sources_matched": [
+    "simulation/gcu_ground_floor/gcu_ground_floor.osm",
+    "simulation/gcu_ground_floor/gcu_ground_floor.pgm",
+    "simulation/gcu_ground_floor/gcu_ground_floor.yaml",
+    "simulation/gcu_ground_floor/readiness_report.json",
+    "simulation/gcu_ground_floor/regions_pixels.geojson",
+    "scripts/audit_gcu_interfaces.py",
+    "scripts/check_gcu_mission_ros.py",
+    "scripts/gcu_mission_mock_adapter.py",
+    "scripts/gcu_navigation_metrics.py",
+    "scripts/gcu_plan_validation.py",
+    "scripts/gcu_process_audit.py",
+    "scripts/osmag_hierarchy.py",
+    "scripts/osmag_mission_contract.py",
+    "scripts/osmag_mission_state.py",
+    "scripts/osmag_paper_planner.py",
+    "scripts/osmag_route_refinement.py",
+    "scripts/run_gcu_mission_mock_test.py"
+  ],
+  "accepted_session_wall_s": 23.369898478999858,
+  "initial_failed_attempt_preserved": true,
+  "old_result_before_new_acceptance_verified": true,
+  "process_cleanup_verified": true,
+  "verifier_sha256": "3b6cb451d3d235a2e009cfd964b335d5bbd404a179f2da3f8a2c3f646cb3e79e",
+  "scope": "Mock ROS transport/state evidence; TF and action outcomes are synthetic. No real Nav2, physical motion or costmap constraint claim."
+}

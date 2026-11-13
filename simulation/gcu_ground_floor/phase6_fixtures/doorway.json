@@ -1,0 +1,248 @@
+{
+  "name": "doorway",
+  "spawn": [
+    24.95,
+    17.505219596475783,
+    3.141592653589793
+  ],
+  "goal": [
+    23.55,
+    17.505219596475783,
+    3.141592653589793
+  ],
+  "expected_passages": [
+    "-121"
+  ],
+  "expected_areas": [
+    "gcu_gf_corridor_25",
+    "gcu_gf_room_43"
+  ],
+  "route_length_m": 1.3999999999999986,
+  "simulation_timeout_s": 80,
+  "checker_wall_timeout_s": 420,
+  "mask_validation": {
+    "valid": true,
+    "samples": 97,
+    "radius_m": 0.2,
+    "segment_sampling_m": 0.01466098782835562,
+    "checked_clearance_lower_bound_m": 0.2932196271479448,
+    "clearance_search_cap_m": 0.317287902626845
+  },
+  "route": {
+    "lca": "gcu_gf_floor",
+    "compact_search_nodes": 118,
+    "base_nodes": 116,
+    "lift_levels": {
+      "@start": [
+        "gcu_gf_corridor_25"
+      ],
+      "@goal": [
+        "gcu_gf_room_43"
+      ]
+    },
+    "fallback_used": false,
+    "method": "paper_based_recursive_compact_multisource_lift_astar_expand",
+    "graph_cost_m": 1.4535488911734502,
+    "passage_ids": [
+      "-121"
+    ],
+    "area_ids": [
+      "gcu_gf_corridor_25",
+      "gcu_gf_room_43"
+    ],
+    "backend": "paper_based_reference_python_not_author_runtime",
+    "planner_version": "phase5_preview_v2",
+    "path": [
+      [
+        24.95,
+        17.505219596475783
+      ],
+      [
+        23.55,
+        17.505219596475783
+      ]
+    ],
+    "graph_path": [
+      [
+        24.95,
+        17.505219596475783
+      ],
+      [
+        24.923679308204555,
+        17.534541442713323
+      ],
+      [
+        24.865035356891134,
+        17.534541442713323
+      ],
+      [
+        24.806391405577713,
+        17.534541442713323
+      ],
+      [
+        24.747747454264285,
+        17.534541442713323
+      ],
+      [
+        24.689103502950864,
+        17.534541442713323
+      ],
+      [
+        24.630459551637443,
+        17.534541442713323
+      ],
+      [
+        24.571815600324022,
+        17.534541442713323
+      ],
+      [
+        24.546561504748812,
+        17.50521950067919
+      ],
+      [
+        24.069273602122006,
+        17.505219692272377
+      ],
+      [
+        24.04402003850322,
+        17.534541442713323
+      ],
+      [
+        23.985376087189792,
+        17.534541442713323
+      ],
+      [
+        23.92673213587637,
+        17.534541442713323
+      ],
+      [
+        23.86808818456295,
+        17.534541442713323
+      ],
+      [
+        23.80944423324953,
+        17.534541442713323
+      ],
+      [
+        23.750800281936108,
+        17.534541442713323
+      ],
+      [
+        23.69215633062268,
+        17.534541442713323
+      ],
+      [
+        23.63351237930926,
+        17.534541442713323
+      ],
+      [
+        23.57486842799584,
+        17.534541442713323
+      ],
+      [
+        23.55,
+        17.505219596475783
+      ]
+    ],
+    "refined_length_m": 1.3999999999999986,
+    "refinement": {
+      "applied": true,
+      "method": "topology_preserving_visibility_string_pulling",
+      "attempts": 1,
+      "budget_exhausted": false,
+      "reference_poses": 20,
+      "refined_poses": 2,
+      "topology": {
+        "valid": true,
+        "crossings": [
+          {
+            "passage_id": "-121",
+            "point": [
+              24.307917553435,
+              17.505219596475783
+            ]
+          }
+        ],
+        "passage_ids": [
+          "-121"
+        ]
+      },
+      "scope": "Shortening within the selected passage sequence; no global continuous-space optimality claim"
+    },
+    "start": [
+      24.95,
+      17.505219596475783
+    ],
+    "goal": [
+      23.55,
+      17.505219596475783
+    ],
+    "frame": "map",
+    "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+    "disabled_passages": [],
+    "validation": {
+      "valid": true,
+      "samples": 97,
+      "radius_m": 0.18,
+      "segment_sampling_m": 0.01466098782835562,
+      "checked_clearance_lower_bound_m": 0.29728790262684496,
+      "clearance_search_cap_m": 0.29728790262684496
+    },
+    "graph_validation": {
+      "valid": true,
+      "samples": 105,
+      "radius_m": 0.18,
+      "segment_sampling_m": 0.01466098782835562,
+      "checked_clearance_lower_bound_m": 0.29728790262684496,
+      "clearance_search_cap_m": 0.29728790262684496
+    },
+    "preprocess_s": 8.156530875014141,
+    "query_s": 0.255373541964218,
+    "timing_scope": "query includes endpoint searches, hierarchy query and refinement; new closure summaries are built on first use"
+  },
+  "scope": "Frozen physical-doorway fixture, post-keepout inflation repair; runtime acceptance pending",
+  "input_sha256": {
+    "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+    "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+    "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+  },
+  "check_handoff_rest": true,
+  "portal": {
+    "id": "-121",
+    "areas": [
+      "gcu_gf_corridor_25",
+      "gcu_gf_room_43"
+    ],
+    "width": 0.7037269662702988,
+    "point": [
+      24.30791755343541,
+      17.505219596475783
+    ],
+    "clearance": 0.35186357846136573,
+    "tags": {
+      "name": "gcu_gf_p_61",
+      "osmAG:type": "passage",
+      "osmAG:from": "gcu_gf_corridor_25",
+      "osmAG:to": "gcu_gf_room_43",
+      "level": "1",
+      "height": "0",
+      "source": "shared_region_interface"
+    },
+    "anchors": {
+      "gcu_gf_corridor_25": [
+        24.546561504748812,
+        17.50521950067919
+      ],
+      "gcu_gf_room_43": [
+        24.069273602122006,
+        17.505219692272377
+      ]
+    }
+  },
+  "inflate_constraints": true,
+  "execution_source_sha256": {
+    "gcu_segmented_executor.py": "68938297a522dd0bd6deadcf86f4e605a63e36c0ca59091664c71d618db6993e",
+    "osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+    "osmag_mission_state.py": "e777994c13221c42a7fc72ba639960349f83fdb44563c5fbef3a3a0635299daa"
+  }
+}

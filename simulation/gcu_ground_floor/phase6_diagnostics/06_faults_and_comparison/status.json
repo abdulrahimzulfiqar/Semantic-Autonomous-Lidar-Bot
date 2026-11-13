@@ -1,0 +1,76 @@
+{
+  "scope": "Bounded Phase 06 accepted; automated evidence plus limited user short-distance visual review",
+  "updated_local_date": "2026-11-11",
+  "completed": {
+    "one_live_cancel_near_handoff": true,
+    "one_upcoming_passage_closure_no_route": true,
+    "required_executor_imu_loss": true,
+    "physical_obstacle_followup": true,
+    "matched_execution_comparisons": true,
+    "fresh_mock_controls": true,
+    "final_live_interface": true
+  },
+  "cancel": {
+    "folder": "cancel",
+    "manifest_sha256": "7f526c66211470c5a8d9be768a05f900af392cef13bfc3682946be8d5664be6c",
+    "verification_sha256": "3e779b11ddf4c7b074fcb43e45899c8b979b8ad1c2565142caea4d3ec9fb5f41",
+    "stop_delay_sim_s": 0.28300000000000125
+  },
+  "remaining": [],
+  "following_group": "Phase 07 rolling raster and boundary goals",
+  "closure": {
+    "folder": "closure",
+    "manifest_sha256": "b2226fe5496deef2e2f7fe1cf60a71366a92639614fa5adff50935079b03488b",
+    "verification_sha256": "6a07a4f55a9ace57124548909426d5fcde3dd2e268cb52935e1b9691e9cec1c8",
+    "stop_delay_sim_s": 0.2970000000000006,
+    "native_closed_mask_verified": true,
+    "graph_and_native_no_route": true
+  },
+  "local_tests": 135,
+  "phase_complete": true,
+  "human_visual_review_pending": false,
+  "evidence": {
+    "cancel": {
+      "manifest.json": "7f526c66211470c5a8d9be768a05f900af392cef13bfc3682946be8d5664be6c",
+      "verification.json": "3e779b11ddf4c7b074fcb43e45899c8b979b8ad1c2565142caea4d3ec9fb5f41"
+    },
+    "closure": {
+      "manifest.json": "b2226fe5496deef2e2f7fe1cf60a71366a92639614fa5adff50935079b03488b",
+      "verification.json": "6a07a4f55a9ace57124548909426d5fcde3dd2e268cb52935e1b9691e9cec1c8"
+    },
+    "imu_loss": {
+      "manifest.json": "ec07093d9bb749135aa68ed0e205fab5797999237c10527a34b8c00e98f727ed",
+      "verification.json": "bd7fbe3ea3ce594f9fd75d70e371d80dfbef64196dccdbd8c5c7049c4eb25e4f"
+    },
+    "obstacle": {
+      "manifest.json": "986322c89f3fea0e022dd43c7d895d9952bb4003079d2becc73b76b621c98549",
+      "verification.json": "a34119332718e44d8ca1267bd99e3c55a81df1cc276d51061902b6143716f575"
+    },
+    "obstacle_followup": {
+      "manifest.json": "4063b287b23bebafff9bf89ef8e5cb0651fcb3ee3c1b5891b674b1b314b811e6",
+      "verification.json": "43691a7069dda6d7e0a404bf1c6df500e6d687b9f7ba3e084009840077f5a816"
+    },
+    "baseline_adjacent": {
+      "manifest.json": "c92edd8e0b334ef26276d2bbd156d674a1a989cade97a4a7dee7e43a912e22f3",
+      "verification.json": "a814e9fe89690f4ceffc9971f3ade4ca94301400f00e8cc0392dde1b7ca0bfce"
+    },
+    "baseline_room": {
+      "manifest.json": "dd7a9144ab50dbff10d94142f35e2e2596d5aa071b05ed045b0c2b51c3107ba6",
+      "verification.json": "3b5ae42ad2d4fa8056e9eb57179a93b61443700026e8bbe8b568cd833130e1d5"
+    },
+    "mock_regression": {
+      "manifest.json": "1ff10d6437aa08136d18a7b81041cea1450bf02211542b7c6bfd34897cc32dc0",
+      "verification.json": "63a1a11bb7a1b6faaa1e8b42b3c213efb2fac01710c5337de969752ef90554e0"
+    },
+    "interactive_review": {
+      "manifest.json": "12e3cfb843ceed8782791ca59b48679aff1d3a970f2a8d05737f04efe6075fa5",
+      "verification.json": "0fde2c463761798c9663c8dc45f21a41b092f524127ad8ff3488c24eca049256"
+    }
+  },
+  "matched_comparison_sha256": "ae0bca9b964687bffb4ca5b509f2f57ede43c8b3fb130022eea529504ea320b9",
+  "tests_sha256": "6e5ad91f33bbd5ebb11043b83c2d605880c6f20f70c1426f0ba0cab868feee23",
+  "human_review_readiness_sha256": "0aeb2ee66668ab6796ccd9a7781646f084885145595db3ca89f2ed7eda1e71de",
+  "human_review_running": false,
+  "accepted_date": "2026-11-13",
+  "user_review_scope": "Short-distance behavior confirmed; longer manual journey timed out and remains failed. Automated retained trials establish longer bounded mission results."
+}

@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "domain": 186,
+  "namespace": "/gcu_phase6b1_2405707513",
+  "source_sha256": {
+    "assets/gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+    "assets/gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+    "assets/gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134",
+    "assets/readiness_report.json": "a4dfb3e016dee33ba5b057ab0db33218b0b9af0095bf5de523e9dcd0d4a5fac0",
+    "assets/regions_pixels.geojson": "5329d8e6d10f17706a5d67ede5c9e845e16e14441e344a5a46b2f079e85e040c",
+    "audit_gcu_interfaces.py": "46e7a47cf81b0607601608865fd7e04638bf58d98ce07f793821612f43341736",
+    "check_gcu_mission_ros.py": "518eedc632fa820c95562106dd63c5e625819e9736a1956d8d9e70e427048007",
+    "gcu_mission_mock_adapter.py": "fe3d796aaf54ba75cacb4c9a8f755b032d72cca49974c6d934c801b08bf1beae",
+    "gcu_navigation_metrics.py": "d0d9c6fb25a7d968311e82fc096b9da9d521991a037ee4b89e84216c17a41aa8",
+    "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5",
+    "gcu_process_audit.py": "4034e8fa076a469a3984e2de4e848850783461a8cf6b913df642609caac0eb32",
+    "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+    "osmag_execution_route.py": "a71f7750ccd6b5bacd87c928c1df881bd0b5e7f317f36d1011180254cd54e868",
+    "osmag_hierarchy.py": "ac001472ef3177cc74e62c090bd111ed520f45ff1a45d882a36429fd4c55bda5",
+    "osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+    "osmag_mission_state.py": "e777994c13221c42a7fc72ba639960349f83fdb44563c5fbef3a3a0635299daa",
+    "osmag_paper_planner.py": "24293360d1fca1fda64187b1695465f336867511ed855ccec1a4eae859fc6667",
+    "osmag_route_refinement.py": "c795ea531c4409f0d281001274dc19c12527eadfe2212280aa67c8b2c2b6084d",
+    "run_gcu_mission_mock_test.py": "b4c52ac01d1f9d2946914629874ba383ec4a03fd812a30fa888874c2a06fa6e9"
+  },
+  "scope": "06B1 ROS mock only, no Gazebo, robot controller or real NavigateToPose",
+  "checker_exit": 0,
+  "child_exits": [
+    0,
+    0
+  ],
+  "child_audit": {
+    "critical": [],
+    "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+  },
+  "inputs_unchanged": true,
+  "elapsed_wall_s": 28.15218204299981
+}

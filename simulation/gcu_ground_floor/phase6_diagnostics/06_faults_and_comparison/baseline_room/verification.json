@@ -1,0 +1,30 @@
+{
+  "verification_passed": true,
+  "trial_passed": true,
+  "motion_attempted": true,
+  "historical_source_files": [
+    "scripts/gcu_segmented_executor.py",
+    "scripts/gcu_amcl.launch.py",
+    "scripts/run_gcu_segmented_crossing.py",
+    "scripts/check_gcu_segmented_crossing.py"
+  ],
+  "runtime_error": null,
+  "shutdown_passed": true,
+  "position_error_m": 0.07130714361219782,
+  "heading_error_deg": 2.631111862661916,
+  "confirmed_passages": [
+    "-91",
+    "-95"
+  ],
+  "handoff_before_terminal": null,
+  "longest_handoff_rest_sim_s": 0.0,
+  "handoff_rest_checks": [],
+  "coverage": {
+    "truth_samples": 1281,
+    "matched_samples": 1281,
+    "matched_fraction": 1.0,
+    "max_truth_gap_sim_s": 0.05000000000001137
+  },
+  "execution_mode": "metric_final_goal",
+  "single_navigation_goal": true
+}

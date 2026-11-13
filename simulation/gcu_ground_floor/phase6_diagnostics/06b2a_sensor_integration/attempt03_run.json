@@ -1,0 +1,57 @@
+{
+  "passed": false,
+  "domain": 194,
+  "partition": "gcu_06b2a_4559",
+  "scope": "Stationary GCU sensor/costmap integration only",
+  "checker_exit": 0,
+  "truth_shutdown": {
+    "passed": true,
+    "pids": [
+      4607
+    ],
+    "order": "truth bridge before simulator group"
+  },
+  "simulator_shutdown": {
+    "passed": false,
+    "command": [
+      "ign",
+      "service",
+      "-s",
+      "/server_control",
+      "--reqtype",
+      "ignition.msgs.ServerControl",
+      "--reptype",
+      "ignition.msgs.Boolean",
+      "--timeout",
+      "5000",
+      "--req",
+      "stop: true"
+    ],
+    "stdout": "data: true\n\n",
+    "stderr": "",
+    "exit": 0,
+    "server_pids": [
+      4591
+    ],
+    "still_alive_pids": [
+      4591
+    ]
+  },
+  "process_exits": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "audit": {
+    "critical": [
+      {
+        "file": "simulator.log",
+        "line": 164,
+        "message": "[ERROR] [ign-2]: process has died [pid 4591, exit code -9, cmd 'ign gazebo -r -s -v 3 /home/ubuntu/edgeosmag_phase6b2a_ws/assets/contact_v2/world.sdf']."
+      }
+    ],
+    "scope": "launch child errors and fatal log patterns; group exit 0 is insufficient"
+  },
+  "elapsed_wall_s": 45.99826787400002
+}

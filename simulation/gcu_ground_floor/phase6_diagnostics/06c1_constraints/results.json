@@ -1,0 +1,159 @@
+{
+  "passed": true,
+  "scope": "06C1A offline raw masks and synthetic costmap observations only",
+  "ros_started": false,
+  "physical_motion_tested": false,
+  "input_sha256": {
+    "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+    "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+    "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+  },
+  "source_sha256": {
+    "check_gcu_constraint_masks.py": "d6ae2f638ad8572593a7e838552e185d5d28e60de89509e69de05ffbdf92bbe5",
+    "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+    "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5",
+    "osmag_paper_planner.py": "170ba6382845453e493b4fff83fb46cbefd97730c918539bc5274d9a8069b9be",
+    "osmag_hierarchy.py": "ac001472ef3177cc74e62c090bd111ed520f45ff1a45d882a36429fd4c55bda5",
+    "osmag_route_refinement.py": "c795ea531c4409f0d281001274dc19c12527eadfe2212280aa67c8b2c2b6084d"
+  },
+  "cases": [
+    {
+      "name": "open_refined_short_route",
+      "passed": true,
+      "snapshot": {
+        "resolution": 0.05864395131342248,
+        "origin": [
+          -29.351297632367952,
+          -20.14419727616062
+        ],
+        "mission_id": "short_open",
+        "route_revision": 1,
+        "closure_revision": 0,
+        "mask_revision": 1,
+        "allowed_areas": [
+          "gcu_gf_corridor_14",
+          "gcu_gf_corridor_16"
+        ],
+        "open_passages": [
+          "-93"
+        ],
+        "disabled_passages": [],
+        "physical_sha256": "140bdadd275b85ba99ef591af0f4cab46c7ae5fef06a044793046a5c9465f8bb",
+        "mask_sha256": "95e619770d872f87554ecccbbc8f0bd3cd41831ddce6c4412831b58466c392ed",
+        "radius": 0.18,
+        "padding": 0.02,
+        "shape": [
+          844,
+          1000
+        ],
+        "frame": "map",
+        "blocked_cells": 804770,
+        "scope": "Raw conservative keepout; actual costmap consumption and motion require separate checks."
+      },
+      "path_validation": {
+        "valid": true,
+        "samples": 104,
+        "radius_m": 0.19999999999999998,
+        "segment_sampling_m": 0.01466098782835562,
+        "checked_clearance_lower_bound_m": 0.3172879026268449,
+        "clearance_search_cap_m": 0.3172879026268449
+      }
+    },
+    {
+      "name": "closed_interface_straddling_spawn_rejected",
+      "passed": true,
+      "reason": "robot_footprint_intersects_constraint",
+      "expected_rejection": true
+    },
+    {
+      "name": "clear_start_closure_blocks_direct_shortcut",
+      "passed": true,
+      "snapshot": {
+        "resolution": 0.05864395131342248,
+        "origin": [
+          -29.351297632367952,
+          -20.14419727616062
+        ],
+        "mission_id": "closed_clear_start",
+        "route_revision": 1,
+        "closure_revision": 1,
+        "mask_revision": 2,
+        "allowed_areas": [
+          "gcu_gf_corridor_14",
+          "gcu_gf_corridor_15",
+          "gcu_gf_corridor_16",
+          "gcu_gf_corridor_22",
+          "gcu_gf_corridor_5",
+          "gcu_gf_corridor_8"
+        ],
+        "open_passages": [
+          "-74",
+          "-80",
+          "-91",
+          "-94",
+          "-96"
+        ],
+        "disabled_passages": [
+          "-93"
+        ],
+        "physical_sha256": "140bdadd275b85ba99ef591af0f4cab46c7ae5fef06a044793046a5c9465f8bb",
+        "mask_sha256": "1195bae3b6317284b0b26461ed5dc5391297eea04dfc16330806cac0985bdbcb",
+        "radius": 0.18,
+        "padding": 0.02,
+        "shape": [
+          844,
+          1000
+        ],
+        "frame": "map",
+        "blocked_cells": 740122,
+        "scope": "Raw conservative keepout; actual costmap consumption and motion require separate checks."
+      },
+      "alternate_passages": [
+        "-80",
+        "-74",
+        "-91",
+        "-94",
+        "-96"
+      ],
+      "scope": "Initial pose and closure barrier only; full alternate execution not certified."
+    },
+    {
+      "name": "reopen_replaces_snapshot_without_mutating_old",
+      "passed": true,
+      "new_hash": "91c97ad7b1a87d5a8f1db97c4264566d852efafbcb19907e7afb8a4a9397ab41",
+      "old_hash": "1195bae3b6317284b0b26461ed5dc5391297eea04dfc16330806cac0985bdbcb"
+    },
+    {
+      "name": "walls_and_unknown_courtyard_preserved",
+      "passed": true,
+      "physical_nonfree_cells_preserved": 352813
+    },
+    {
+      "name": "unmasked_costmap_is_not_acknowledgement",
+      "passed": true,
+      "reason": "mask_constraints_not_consumed"
+    },
+    {
+      "name": "both_observations_required_and_expire",
+      "passed": true,
+      "observations": {
+        "global": {
+          "stamp": 10.1,
+          "observed_at": 10.2,
+          "mask_sha256": "95e619770d872f87554ecccbbc8f0bd3cd41831ddce6c4412831b58466c392ed",
+          "checked_blocked_cells": 804770,
+          "free_probes": 2
+        },
+        "local": {
+          "stamp": 10.1,
+          "observed_at": 10.2,
+          "mask_sha256": "95e619770d872f87554ecccbbc8f0bd3cd41831ddce6c4412831b58466c392ed",
+          "checked_blocked_cells": 804770,
+          "free_probes": 2
+        }
+      },
+      "scope": "Synthetic arrays, not native ROS costmaps."
+    }
+  ],
+  "elapsed_wall_s": 10.04890749999322
+}

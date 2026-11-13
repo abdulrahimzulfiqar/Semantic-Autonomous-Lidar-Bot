@@ -18,9 +18,11 @@ results distinct from planned work, and put detailed evidence and commands below
 | 03 — Localization and controlled motion | Complete for bounded simulation checks; known sensor limitation retained | [Phase 03](03_GCU_LOCALIZATION_AND_CONTROLLED_MOTION.md) |
 | 04 — Footprint-feasible autonomous navigation | Original 16-case matrix passed; bounded follow-up repairs validated in Phase 05 | [Phase 04](04_GCU_AUTONOMOUS_METRIC_NAVIGATION.md) |
 | 05 — Reliable execution and osmAG route preview | Complete for bounded scope: 47 unit / 10 offline / 15 live preview cases passed; user visual acceptance confirmed | [Phase 05](05_GCU_OSMAG_ROUTE_PREVIEW_AND_RELIABLE_HANDOFF.md) |
+| 06 — osmAG-guided segmented navigation | Complete for bounded simulation scope; 135 tests, retained automated motion/fault evidence and limited short-distance user visual acceptance | [Phase 06](06_GCU_SEGMENTED_NAVIGATION.md) |
+| 07 — Rolling raster and boundary goals | Planned; not implemented | [Phase 07 plan](../plans/07_GCU_ROLLING_RASTER_AND_BOUNDARY_GOALS.md) |
 
-Full osmAG-Nav simulation remains in progress. The current forward sequence is
-the [osmAG-Nav reproduction and EdgeOsmAG roadmap](../OSMAGNAV_PHASE_ROADMAP.md),
-covering proposed phases 05–13 and their relationship to the authors' paper.
-The earlier [integration design](../PHASE_2_GAZEBO_ROS2_INTEGRATION_PLAN.md)
-is retained as implementation history.
+Phase 06 component records retain the development history and failed attempts.
+The consolidated completion record above defines the accepted scope. Long manual
+navigation timed out on the slow VM; automated longer mission evidence remains
+separate from the user's short-distance review. Full osmAG-Nav simulation remains
+in progress; see the [forward roadmap](../OSMAGNAV_PHASE_ROADMAP.md).
