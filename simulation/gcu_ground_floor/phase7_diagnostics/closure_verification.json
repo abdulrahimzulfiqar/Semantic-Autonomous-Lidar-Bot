@@ -1,0 +1,120 @@
+{
+  "passed": true,
+  "date": "2026-11-14",
+  "checks": {
+    "unittests": {
+      "passed": true,
+      "exit_code": 0,
+      "command": [
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "error": null
+    },
+    "native": {
+      "passed": true,
+      "exit_code": 0,
+      "command": [
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/venv/bin/python",
+        "scripts/verify_gcu_rolling_native.py",
+        "--evidence",
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/native_windows"
+      ],
+      "error": null
+    },
+    "forward": {
+      "passed": true,
+      "exit_code": 0,
+      "command": [
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/venv/bin/python",
+        "scripts/verify_gcu_rolling_motion.py",
+        "--evidence",
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/rolling_motion",
+        "--trial",
+        "03"
+      ],
+      "error": null
+    },
+    "reverse": {
+      "passed": true,
+      "exit_code": 0,
+      "command": [
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/venv/bin/python",
+        "scripts/verify_gcu_rolling_motion.py",
+        "--evidence",
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/reverse_boundary",
+        "--trial",
+        "02",
+        "--case-prefix",
+        "reverse_boundary"
+      ],
+      "error": null
+    },
+    "obstacle": {
+      "passed": true,
+      "exit_code": 0,
+      "command": [
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/venv/bin/python",
+        "scripts/verify_gcu_rolling_motion.py",
+        "--evidence",
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/obstacle",
+        "--trial",
+        "02",
+        "--case-prefix",
+        "obstacle"
+      ],
+      "error": null
+    },
+    "source_recovery": {
+      "passed": true,
+      "exit_code": 0,
+      "command": [
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/venv/bin/python",
+        "scripts/verify_gcu_rolling_motion.py",
+        "--evidence",
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/source_loss",
+        "--trial",
+        "05",
+        "--case-prefix",
+        "source_loss"
+      ],
+      "error": null
+    },
+    "manual": {
+      "passed": true,
+      "exit_code": 0,
+      "command": [
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/venv/bin/python",
+        "scripts/verify_gcu_rolling_motion.py",
+        "--evidence",
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/manual_review",
+        "--trial",
+        "01",
+        "--results-prefix",
+        "manual_20261114_072600",
+        "--report-file",
+        "user_mission_01.json"
+      ],
+      "error": null
+    },
+    "comparison": {
+      "passed": true,
+      "exit_code": 0,
+      "command": [
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/docs/research/osm-AG/osm_cad_pipeline/osmAG-from-cad/venv/bin/python",
+        "scripts/compare_gcu_rolling_resources.py",
+        "--rolling",
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/rolling_motion/attempt03.tar.gz",
+        "--baseline",
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/static_baseline/attempt01.tar.gz",
+        "--output",
+        "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/matched_comparison.json"
+      ],
+      "error": null
+    }
+  }
+}

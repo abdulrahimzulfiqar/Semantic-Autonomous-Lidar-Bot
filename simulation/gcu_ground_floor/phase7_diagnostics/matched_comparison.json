@@ -1,0 +1,127 @@
+{
+  "scope": "One trial per variant, matched query/profile/world/localization. Windowed OSM raster versus static PGM; rasterization and proxy dispatch differ. No statistical speed claim.",
+  "controlled_inputs_match": true,
+  "rolling": {
+    "executed_length_m": 4.3128705515969346,
+    "position_error_m": 0.09732419449166277,
+    "heading_error_deg": 1.1116326485429526,
+    "dispatch_to_truth_rest_sim_s": 47.453,
+    "full_wall_s": 129.90239235199988,
+    "resource_interval_wall_s": 101.79637744199863,
+    "native_grid_shapes": {
+      "global": [
+        128,
+        128
+      ],
+      "local": [
+        102,
+        102
+      ]
+    },
+    "resources": {
+      "map_server": {
+        "rss_dispatch_kib": 25268,
+        "rss_stop_kib": 25532,
+        "cpu_delta_s": 2.8600000000000003,
+        "cpu_percent_of_one_core": 2.809530232674111
+      },
+      "ekf_node": {
+        "rss_dispatch_kib": 17832,
+        "rss_stop_kib": 18096,
+        "cpu_delta_s": 4.41,
+        "cpu_percent_of_one_core": 4.332177736396094
+      },
+      "amcl": {
+        "rss_dispatch_kib": 42120,
+        "rss_stop_kib": 42384,
+        "cpu_delta_s": 4.31,
+        "cpu_percent_of_one_core": 4.23394241357532
+      },
+      "planner_server": {
+        "rss_dispatch_kib": 24812,
+        "rss_stop_kib": 27444,
+        "cpu_delta_s": 4.36,
+        "cpu_percent_of_one_core": 4.283060074985708
+      },
+      "controller_server": {
+        "rss_dispatch_kib": 24116,
+        "rss_stop_kib": 28096,
+        "cpu_delta_s": 4.8,
+        "cpu_percent_of_one_core": 4.7152954953971085
+      },
+      "bt_navigator": {
+        "rss_dispatch_kib": 22272,
+        "rss_stop_kib": 23036,
+        "cpu_delta_s": 4.6,
+        "cpu_percent_of_one_core": 4.518824849755562
+      }
+    },
+    "scope": "Two RSS samples per process, shared pages not deduplicated; CPU sampled dispatch through post-score rest. Not peaks, PSS, evaluator, Gazebo or whole-stack RAM."
+  },
+  "static": {
+    "executed_length_m": 4.314382254931442,
+    "position_error_m": 0.09758173365300556,
+    "heading_error_deg": 1.0673377024845765,
+    "dispatch_to_truth_rest_sim_s": 47.742999999999995,
+    "full_wall_s": 129.8874452780001,
+    "resource_interval_wall_s": 102.50992671899803,
+    "native_grid_shapes": {
+      "global": [
+        844,
+        1000
+      ],
+      "local": [
+        102,
+        102
+      ]
+    },
+    "resources": {
+      "map_server": {
+        "rss_dispatch_kib": 25012,
+        "rss_stop_kib": 25012,
+        "cpu_delta_s": 2.85,
+        "cpu_percent_of_one_core": 2.7802185517237454
+      },
+      "ekf_node": {
+        "rss_dispatch_kib": 18440,
+        "rss_stop_kib": 18964,
+        "cpu_delta_s": 4.5,
+        "cpu_percent_of_one_core": 4.389818765879598
+      },
+      "amcl": {
+        "rss_dispatch_kib": 42872,
+        "rss_stop_kib": 43136,
+        "cpu_delta_s": 4.35,
+        "cpu_percent_of_one_core": 4.243491473683611
+      },
+      "planner_server": {
+        "rss_dispatch_kib": 116288,
+        "rss_stop_kib": 116580,
+        "cpu_delta_s": 7.48,
+        "cpu_percent_of_one_core": 7.296854304173199
+      },
+      "controller_server": {
+        "rss_dispatch_kib": 28580,
+        "rss_stop_kib": 29240,
+        "cpu_delta_s": 4.66,
+        "cpu_percent_of_one_core": 4.54590121088865
+      },
+      "bt_navigator": {
+        "rss_dispatch_kib": 22228,
+        "rss_stop_kib": 23284,
+        "cpu_delta_s": 4.430000000000001,
+        "cpu_percent_of_one_core": 4.321532696188139
+      }
+    },
+    "scope": "Two RSS samples per process, shared pages not deduplicated; CPU sampled dispatch through post-score rest. Not peaks, PSS, evaluator, Gazebo or whole-stack RAM."
+  },
+  "retained_full_map_users": [
+    "AMCL",
+    "Python graph preprocessing/evaluator"
+  ],
+  "interpretation": "Grid cell counts directly show bounded metric planning. RSS/CPU are exploratory component samples, not proof of building-size-independent total memory or Pi performance.",
+  "archive_sha256": {
+    "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/rolling_motion/attempt03.tar.gz": "2f1910595533d8ebe57e21577c372900dea58c728ec607ff697960910ae36e55",
+    "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/simulation/gcu_ground_floor/phase7_diagnostics/static_baseline/attempt01.tar.gz": "ce39bab183ba716dbc0528bde96d2e28b890ae6e2091188104815ef06f0ebb2b"
+  }
+}

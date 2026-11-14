@@ -102,7 +102,7 @@ class MissionState:
         self.active = token; self.state = 'executing'
         return []
 
-    def result(self, uuid, outcome, now):
+    def result(self, uuid, outcome, now, proxy=False):
         self._time(now)
         if outcome not in ['succeeded', 'cancelled', 'aborted']:
             raise MissionError('unknown_action_result')
@@ -117,13 +117,23 @@ class MissionState:
         self.active = None
         if outcome != 'succeeded':
             return self.cancel(now, 'navigation_action_'+outcome)
+        if proxy:
+            # A boundary proxy is not the original segment/final destination.
+            self.state = 'waiting_proxy'
+            return []
         if attempt.segment == len(self.contract.segments)-1:
             self.final_action_succeeded = True; self.state = 'verifying'
         else:
             self.intermediate_succeeded = True; self.state = 'waiting_handoff'
         return []
 
-    def advance(self, point, confirmed_crossings, now):
+    def repeat_current(self, now):
+        self._time(now)
+        if self.state not in ['executing','waiting_proxy'] or self.pending is not None:
+            raise MissionError('proxy_refresh_not_ready')
+        return self._send(self.index, now)
+
+    def advance(self, point, confirmed_crossings, now, allow_handoff=True):
         """Use fresh pose + CrossingMonitor count from the future runtime adapter.
 
         Proximity can dispatch ONE goal beyond an unconfirmed crossing; a count
@@ -138,6 +148,8 @@ class MissionState:
                 self.confirmed+1, len(self.contract.passage_ids)):
             raise MissionError('invalid_crossing_progress')
         self.confirmed = confirmed_crossings
+        if not allow_handoff:
+            return []
         if self.state not in ['executing', 'waiting_handoff'] or self.pending is not None:
             return []
         if self.index == len(self.contract.segments)-1:

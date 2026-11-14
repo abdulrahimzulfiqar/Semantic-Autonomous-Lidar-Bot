@@ -1,0 +1,61 @@
+{
+  "verification_passed": true,
+  "source_loss_and_recovery": true,
+  "source_loss": {
+    "passed": true,
+    "stop_delay_sim_s": 0.7850000000000001,
+    "rest": {
+      "start_sim": 17.4,
+      "confirmed_sim": 18.4
+    },
+    "coverage": {
+      "truth_samples": 199,
+      "matched_samples": 198,
+      "matched_fraction": 0.9949748743718593,
+      "max_truth_gap_sim_s": 0.05000000000000071
+    },
+    "verification_passed": true,
+    "physical_motion": true,
+    "window_count": 1,
+    "proxy_goals": 1,
+    "native_global_shape": [
+      128,
+      128
+    ],
+    "source_loss": true,
+    "scope": "Bounded actual-physics windowed mission; static route preprocessing/AMCL retained"
+  },
+  "recovery": {
+    "verification_passed": true,
+    "position_error_m": 0.1624422691534155,
+    "heading_error_deg": 2.2641335995352376,
+    "confirmed_passages": [
+      "-93"
+    ],
+    "handoff_before_terminal": true,
+    "longest_handoff_rest_sim_s": 0.5,
+    "handoff_rest_checks": [
+      {
+        "next_goal_sim": 20.375,
+        "longest_rest_sim_s": 0.5
+      }
+    ],
+    "coverage": {
+      "truth_samples": 587,
+      "matched_samples": 586,
+      "matched_fraction": 0.9982964224872232,
+      "max_truth_gap_sim_s": 0.05000000000000426
+    },
+    "physical_motion": true,
+    "window_count": 1,
+    "proxy_goals": 0,
+    "native_global_shape": [
+      128,
+      128
+    ],
+    "source_loss": false,
+    "scope": "Bounded actual-physics windowed mission; static route preprocessing/AMCL retained"
+  },
+  "same_native_processes": true,
+  "scope": "Physical stop, source restoration and guarded same-session recovery"
+}

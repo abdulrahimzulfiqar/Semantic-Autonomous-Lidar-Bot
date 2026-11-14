@@ -1,0 +1,161 @@
+{
+  "scope": "Offline OSM-only candidate; no ROS, native costmaps or motion",
+  "source_sha256": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+  "reference_sha256": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+  "preprocess_s": 0.06131804100004956,
+  "leaf_count": 59,
+  "passage_count": 68,
+  "fixed_shape": [
+    128,
+    128
+  ],
+  "windows": [
+    {
+      "frame": "map",
+      "origin": [
+        -4.310330421536552,
+        -16.74284809998212
+      ],
+      "resolution": 0.05864395131342248,
+      "shape": [
+        128,
+        128
+      ],
+      "revision": 1,
+      "stamp": 1.0,
+      "source_sha256": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+      "sha256": "7856536d119b44e9b71e7c99ed3e5ecfd5b67403ccc573be4a1487c4bdf94c83",
+      "grid_bytes": 16384,
+      "free_cells": 15139,
+      "unknown_cells": 418,
+      "occupied_cells": 827,
+      "edge_policy": "One occupied border cell; no outside-window traversal",
+      "scope": "OSM-only candidate; physical fidelity and native admission separate",
+      "center": [
+        -0.5,
+        -12.960313240266368
+      ],
+      "render_s": 0.004742624994833022,
+      "false_free_vs_reference_cells": 0,
+      "conservative_nonfree_vs_reference_cells": 557,
+      "physical_fidelity_passed": true
+    },
+    {
+      "frame": "map",
+      "origin": [
+        -0.7916933427312038,
+        -15.804544878967357
+      ],
+      "resolution": 0.05864395131342248,
+      "shape": [
+        128,
+        128
+      ],
+      "revision": 2,
+      "stamp": 2.0,
+      "source_sha256": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+      "sha256": "6c3b4f3f2143a45911b9322fd5f8cacf91306506da86f94367e60e3d9a0e165b",
+      "grid_bytes": 16384,
+      "free_cells": 13748,
+      "unknown_cells": 1575,
+      "occupied_cells": 1061,
+      "edge_policy": "One occupied border cell; no outside-window traversal",
+      "scope": "OSM-only candidate; physical fidelity and native admission separate",
+      "center": [
+        3.0,
+        -12.0
+      ],
+      "render_s": 0.005355041997972876,
+      "false_free_vs_reference_cells": 0,
+      "conservative_nonfree_vs_reference_cells": 624,
+      "physical_fidelity_passed": true
+    },
+    {
+      "frame": "map",
+      "origin": [
+        2.1991481742533416,
+        -13.810650534310994
+      ],
+      "resolution": 0.05864395131342248,
+      "shape": [
+        128,
+        128
+      ],
+      "revision": 3,
+      "stamp": 3.0,
+      "source_sha256": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+      "sha256": "648c53dada2b31717e9c1b264f6024d274159257729166b0de88ea3addd32c64",
+      "grid_bytes": 16384,
+      "free_cells": 13061,
+      "unknown_cells": 1895,
+      "occupied_cells": 1428,
+      "edge_policy": "One occupied border cell; no outside-window traversal",
+      "scope": "OSM-only candidate; physical fidelity and native admission separate",
+      "center": [
+        6.0,
+        -10.0
+      ],
+      "render_s": 0.006855833998997696,
+      "false_free_vs_reference_cells": 0,
+      "conservative_nonfree_vs_reference_cells": 810,
+      "physical_fidelity_passed": true
+    }
+  ],
+  "fidelity_gate_passed": true,
+  "native_motion_admitted": false,
+  "remaining": [
+    "Physical fidelity gaps, if present, must be resolved before native planning",
+    "Native raster/constraint revision and proxy-goal integration",
+    "Bounded cross-window motion, resource comparison and user review"
+  ],
+  "retained_full_map_users": [
+    "Existing graph preprocessing and AMCL; evaluation reference in this offline audit"
+  ],
+  "full_floor_evaluation": {
+    "tile_count": 56,
+    "covered_reference_cells": 844000,
+    "reference_cells": 844000,
+    "all_reference_cells_covered": true,
+    "unique_false_free_cells": 0,
+    "failing_tiles": [],
+    "render_p50_s": 0.004432937497767853,
+    "render_p95_s": 0.0069974477501091314,
+    "timing_scope": "Local offline Python run, not a VM/Pi or online 10 Hz benchmark"
+  },
+  "route_clearance_checks": [
+    {
+      "fixture": "adjacent_sector_masked",
+      "padded_radius_m": 0.2,
+      "checked_short_segments": 8,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "fixture": "corridor_to_room_masked",
+      "padded_radius_m": 0.2,
+      "checked_short_segments": 25,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "fixture": "room_to_room_masked",
+      "padded_radius_m": 0.2,
+      "checked_short_segments": 37,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "fixture": "doorway",
+      "padded_radius_m": 0.2,
+      "checked_short_segments": 6,
+      "passed": true,
+      "failures": []
+    }
+  ],
+  "offline_geometry_gate_passed": true,
+  "source_files_sha256": {
+    "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/scripts/check_gcu_rolling_raster.py": "d163d34a504697db0fbdbd2410fce6d661cb2ad9902b65f12daf6808b3192972",
+    "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/scripts/osmag_rolling_raster.py": "0dc9ee38fe2eeaa029df13442f4513dac0349cd0c1a816f618a79da24318da13",
+    "/Users/teamincredibles/Desktop/Setups/Downloads/Semantic-Autonomous-Wheelchair/scripts/osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96"
+  }
+}

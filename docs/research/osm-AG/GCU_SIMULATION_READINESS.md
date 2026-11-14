@@ -5,7 +5,18 @@ The macOS host controls Ubuntu 22.04 ARM64 in UTM for ROS 2 Humble / Gazebo Fort
 tests. Physics runs headlessly; sensor rendering uses the logged-in Ubuntu display
 and Foxglove provides visualization on macOS.
 
-## Current checkpoint (2026-11-08)
+## Current checkpoint (2026-11-14)
+
+- **Accepted:** Phases 01–07 for their recorded bounded simulation scopes; see [phase history](phases/README.md).
+- **Phase 07 automated results:** 169 regression tests, bounded moving Nav2 windows, forward/reverse crossings, physical obstacle clearance, source-loss stop/recovery and matched static-map comparison pass.
+- **Phase 07 user result:** Successful clicked-goal mission across 16 windows with 10 proxies, final rest and clean shutdown. User acceptance confirmed November 14, 2026. No robot/navigation processes remain in Ubuntu.
+- **Next:** Phase 08 evaluates structure-based localization. AMCL and route preprocessing still retain full-floor data; Pi/camera/language evaluation follows later.
+
+The [Phase 07 record](phases/07_GCU_ROLLING_RASTER.md) contains measured results,
+limits, exact replays and the Nav2/controller explanation. Use its new review
+workspace rather than the earlier Phase 05/06 launch commands below.
+
+## Historical checkpoint (2026-11-08)
 
 Phase 05's approved **paper-based routing implementation** now has a refined motion-free preview. The bounded [paper/route-quality follow-up](GCU_ROUTING_PAPER_AUDIT.md) passed 47 unit tests, 10 offline and 15 live cases. Open-space examples now connect directly (3.484 m graph reference → 1.500 m refined path); courtyard/invalid-goal rejection, closures and TF guards remain enforced. Preview publishes no velocity commands or navigation actions and measured zero drift. The separate metric profile's earlier three consecutive-goal runs, five clean shutdown controls and original 16-case matrix remain frozen; they were not rerun for this preview-only change.
 
@@ -482,6 +493,6 @@ for interrupted trials and integration fixes.
 accepted November 13, 2026. All 135 tests and retained automated mission/fault
 checks pass. User visual acceptance covers short-distance behavior; the longer
 manual journey remains a recorded wall-time timeout. Test processes are stopped.
-Next is [Phase 07: rolling raster and boundary goals](plans/07_GCU_ROLLING_RASTER_AND_BOUNDARY_GOALS.md).
+Phase 07 subsequently completed [rolling raster and boundary goals](phases/07_GCU_ROLLING_RASTER.md) with user acceptance on November 14; Phase 08 evaluates structure-based localization.
 The full-floor planning raster and AMCL remain in Phase 06; paper-runtime
 reproduction and edge resource advantages are not claimed.

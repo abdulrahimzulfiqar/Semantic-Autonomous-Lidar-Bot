@@ -20,6 +20,7 @@ def main():
     p.add_argument('--close-upcoming-passage',action='store_true',help='Close the first upcoming passage, stop, and require explicit no route')
     p.add_argument('--drop-required-imu',action='store_true',help='Stop forwarding real IMU samples to the executor; EKF input remains unchanged')
     p.add_argument('--metric-baseline',action='store_true',help='Send only the final Nav2 goal, with the same fixed scenario mask/profile')
+    p.add_argument('--drop-window-source',action='store_true',help='Phase 07 raster heartbeat loss while moving')
     p.add_argument('--interactive',action='store_true');p.add_argument('--session-wall-timeout',type=float,default=900.)
     a=p.parse_args()
     fixture=None;fixture_sha=None
@@ -33,6 +34,9 @@ def main():
     if a.drop_required_imu and (a.cancel_near_handoff or a.close_upcoming_passage or a.diagnose_stationary or not fixture or fixture.get('next_mission') or not fixture.get('fuse_imu_yaw_rate')):p.error('IMU loss requires one admitted IMU-enabled motion fixture')
     if a.metric_baseline and (a.drop_required_imu or a.cancel_near_handoff or a.close_upcoming_passage or a.diagnose_stationary or not fixture):p.error('baseline requires an admitted normal-motion fixture')
     if a.interactive and (a.metric_baseline or a.drop_required_imu or a.cancel_near_handoff or a.close_upcoming_passage or a.diagnose_stationary or not fixture or fixture.get('next_mission') or not 0<a.session_wall_timeout<=1200):p.error('interactive mode requires one seed profile and a bounded session')
+    rolling=bool(fixture and fixture.get('rolling_window'))
+    if rolling and (a.metric_baseline or a.close_upcoming_passage or a.drop_required_imu or a.cancel_near_handoff or a.diagnose_stationary):p.error('rolling fixtures use their own window/fault mode')
+    if a.drop_window_source and (not rolling or a.interactive or fixture.get('next_mission')):p.error('window loss requires one noninteractive rolling fixture')
     import os
     simulation_guard(a.execute,os.environ)
     import rclpy
@@ -58,7 +62,7 @@ def main():
     # Contact evidence must not starve mission/scan callbacks. Each node retains
     # its mutually-exclusive group; TF has its own listener group.
     executor=MultiThreadedExecutor(num_threads=3);executor.add_node(adapter);executor.add_node(evaluator)
-    grids={};truth=[];matched=[];commands=[];contacts=[];counts={};plans=[];subs=[];recording=False;begin=time.monotonic();last_match=-1.
+    grids={};truth=[];matched=[];commands=[];contacts=[];counts={};plans=[];subs=[];recording=False;begin=time.monotonic();last_match=-1.;rolling_manager=None
     recent_scans=[]
     forwarding_imu=True;imu_forwarding=[]
     if a.drop_required_imu:
@@ -92,6 +96,17 @@ def main():
     subs.append(evaluator.create_subscription(TFMessage,'/gcu_ground_truth',truth_cb,sensor_queue))
     subs.append(evaluator.create_subscription(Twist,'/cmd_vel',lambda m:commands.append({'sim_time':adapter.sim(),'v':m.linear.x,'w':m.angular.z}),100))
     subs.append(evaluator.create_subscription(NavPath,'/plan',lambda m:plans.append({'sim_time':adapter.sim(),'frame':m.header.frame_id,'points':[[p.pose.position.x,p.pose.position.y] for p in m.poses]}),10))
+    if rolling:
+        def followed_path(m):
+            if rolling_manager is None or not m.poses:return
+            try:
+                v=adapter.buffer.lookup_transform('map',m.header.frame_id,Time.from_msg(m.header.stamp)).transform
+                yaw=angle(v.rotation);c=math.cos(yaw);s=math.sin(yaw)
+                rolling_manager.last_native_plan=[[v.translation.x+c*p.pose.position.x-s*p.pose.position.y,
+                    v.translation.y+s*p.pose.position.x+c*p.pose.position.y] for p in m.poses]
+                rolling_manager.last_native_plan_stamp=stamp(m.header.stamp)
+            except Exception:pass
+        subs.append(evaluator.create_subscription(NavPath,'/received_global_plan',followed_path,10))
     collisions=json.loads((a.workspace/'assets/contact_v2/contact_manifest.json').read_text())['collisions']
     for item in collisions:
         topic=item['topic'];subs.append(evaluator.create_subscription(Contacts,topic,lambda m,t=topic:contact_cb(m,t),qos_profile_sensor_data))
@@ -128,7 +143,7 @@ def main():
     def step():
         nonlocal last_match
         executor.spin_once(timeout_sec=.015)
-        if a.interactive and stop_requested and adapter.enabled and adapter.model.state in ['dispatching','executing','waiting_handoff','verifying']:adapter.cancel('user_cancel')
+        if a.interactive and stop_requested and adapter.enabled and adapter.model.state in ['dispatching','executing','waiting_handoff','waiting_proxy','verifying']:adapter.cancel('user_cancel')
         for item in truth[-200:]:
             if item['sim_time']<=last_match:continue
             try:
@@ -137,11 +152,24 @@ def main():
                 matched.append(dict(item,estimated=pose,position_error_m=math.dist(pose[:2],actual[:2]),yaw_error_deg=math.degrees(abs(math.atan2(math.sin(pose[2]-actual[2]),math.cos(pose[2]-actual[2]))))));last_match=item['sim_time']
             except Exception:pass
         if time.monotonic()-begin>wall_timeout:raise RuntimeError('crossing_wall_timeout')
+        if rolling_manager is not None:rolling_manager.tick()
     def wait(predicate,seconds=30):
         end=time.monotonic()+seconds
         while not predicate():
             if time.monotonic()>end:raise RuntimeError('preflight_timeout')
             step()
+    def fresh_localized_pose():
+        result=[]
+        def available():
+            from osmag_mission_contract import MissionError
+            try:result[:]=adapter.pose();return True
+            except MissionError as error:
+                if str(error)!='stale_robot_tf':raise
+                return False
+        # Setup at rest can race independently delivered /clock and TF. Wait
+        # for a genuinely fresh sample; retain the same .15 s age requirement.
+        wait(available,2)
+        return result
     def transition(name,code):
         if code==4:
             from lifecycle_msgs.srv import GetState
@@ -181,6 +209,7 @@ def main():
             capture['scans'].append(row)
         report.setdefault('native_captures',[]).append(capture)
     def consumed():
+        if rolling_manager is not None:return rolling_manager.ready()
         current=adapter.sim()
         for key,m in grids.items():
             s=stamp(m.header.stamp)
@@ -234,7 +263,7 @@ def main():
         report['last_readiness']={'clock':current,'ages':{k:current-v['stamp'] for k,v in observations.items()},'errors':dict(last_errors),'ready':ready}
         return ready
     def execute_leg(leg,number):
-        nonlocal report,fixture,contract,snap,published,recording,last_grids,observations,last_errors,msg,capture_prefix,sim_timeout,forwarding_imu
+        nonlocal report,fixture,contract,snap,published,recording,last_grids,observations,last_errors,msg,capture_prefix,sim_timeout,forwarding_imu,rolling_manager
         fixture=leg
         if number or a.interactive:
             report={'passed':False,'scope':'06D consecutive mission; same live executor and native servers','fixture':leg,'goal':leg['goal'],'spawn':leg['spawn'],'preflight':{},'constraint_receipts':[]}
@@ -244,7 +273,7 @@ def main():
         truth_begin=len(truth);match_begin=len(matched);event_begin=len(adapter.events);command_begin=len(commands);pose_begin=len(adapter.poses);tf_begin=len(adapter.tf_timing);plan_begin=len(plans)
         observations={};last_grids={};last_errors={};capture_prefix=('user_mission_'+str(number).zfill(2)+'_') if a.interactive else f'leg_{number+1}_' if sequence else ''
         sim_timeout=leg['simulation_timeout_s'] if leg else 80
-        start,tfstamp=adapter.pose();now=time.monotonic()
+        start,tfstamp=fresh_localized_pose();now=time.monotonic()
         contract=make_contract(planner,start[:2],report['goal'][:2],report['goal'][2],mission_id=fixture['name'] if fixture else '06b2b_short_01',now=now,pose_stamp=now-(adapter.sim()-tfstamp),route_revision=number+1,closure_revision=adapter.closure['revision'],disabled_passages=adapter.closure['disabled_passages'])
         expected=tuple(fixture['expected_passages']) if fixture else ('-93',)
         if contract.passage_ids!=expected or (fixture and contract.area_ids!=tuple(fixture['expected_areas'])):raise RuntimeError('fixture_topology_changed')
@@ -257,12 +286,21 @@ def main():
         from gcu_mission_fixture import validate_current_contract
         report['current_contract_mask_validation']=validate_current_contract(contract,snap)
         report['snapshot']=snap.report();report['contract']=contract.report()
-        constraint_file=capture_prefix+'constraint.npz' if a.interactive else f'constraint_{number+1}.npz' if sequence else 'constraint.npz'
+        constraint_file=capture_prefix+'constraint.npz' if a.interactive else f'constraint_{number+1}.npz' if sequence or rolling else 'constraint.npz'
         report['constraint_file']=constraint_file
         np.savez_compressed(a.output.parent/constraint_file,mask=snap.mask,combined=snap.combined,physical=planner.grid)
-        msg=OccupancyGrid();msg.header.frame_id='map';msg.header.stamp=adapter.get_clock().now().to_msg();published=stamp(msg.header.stamp)
-        msg.info.resolution=snap.resolution;msg.info.width=snap.mask.shape[1];msg.info.height=snap.mask.shape[0];msg.info.origin.position.x=snap.origin[0];msg.info.origin.position.y=snap.origin[1];msg.info.origin.orientation.w=1.;msg.data=snap.mask.ravel().astype(int).tolist();mask_pub.publish(msg)
-        info=CostmapFilterInfo();info.type=0;info.base=0.;info.multiplier=1.;info.filter_mask_topic='/osmag/constraint_mask';info_pub.publish(info)
+        if rolling:
+            from gcu_rolling_window_manager import RollingWindowManager
+            if rolling_manager is not None:rolling_manager.close()
+            rolling_manager=RollingWindowManager(evaluator,adapter,planner,contract,grids,mask_pub,info_pub,a.output.parent,wait,
+                shape=tuple(fixture['rolling_window']['shape']),shift_m=fixture['rolling_window']['shift_m'],
+                file_prefix=f'rolling_mission_{number+1}_')
+            rolling_manager.publish_window(start);adapter.window_provider=rolling_manager
+            published=rolling_manager.pending['published_sim']
+        else:
+            msg=OccupancyGrid();msg.header.frame_id='map';msg.header.stamp=adapter.get_clock().now().to_msg();published=stamp(msg.header.stamp)
+            msg.info.resolution=snap.resolution;msg.info.width=snap.mask.shape[1];msg.info.height=snap.mask.shape[0];msg.info.origin.position.x=snap.origin[0];msg.info.origin.position.y=snap.origin[1];msg.info.origin.orientation.w=1.;msg.data=snap.mask.ravel().astype(int).tolist();mask_pub.publish(msg)
+            info=CostmapFilterInfo();info.type=0;info.base=0.;info.multiplier=1.;info.filter_mask_topic='/osmag/constraint_mask';info_pub.publish(info)
         if not started:
             for name in ['planner_server','controller_server','bt_navigator']:
                 transition(name,1);transition(name,3);started.append(name)
@@ -297,7 +335,8 @@ def main():
             return 0 if report['passed'] else 1
         wait(lambda:consumed() and adapter.scan_stamp>=published and 0<=adapter.sim()-adapter.scan_stamp<=.3 and adapter.client.server_is_ready(),40)
         c=ActionClient(evaluator,ComputePathToPose,'/compute_path_to_pose');wait(c.server_is_ready)
-        for segment in contract.segments:
+        if rolling:rolling_manager.prepare()
+        for segment in ([] if rolling else contract.segments):
             from geometry_msgs.msg import PoseStamped
             req=ComputePathToPose.Goal();req.planner_id='GridBased';req.use_start=False;req.goal=PoseStamped();req.goal.header.frame_id='map';req.goal.pose.position.x,req.goal.pose.position.y=map(float,segment.point);req.goal.pose.orientation.w=1.
             f=c.send_goal_async(req);wait(f.done);h=f.result()
@@ -311,7 +350,27 @@ def main():
             'navigate_status':evaluator.count_publishers('/navigate_to_pose/_action/status'),'direct_goal_publishers':evaluator.count_publishers('/phase6_disabled_goal_pose'),
             'old_bridge_subscribers':evaluator.count_subscribers('/gcu/navigation_goal')}
         if report['ownership']!={'cmd_vel':['controller_server'],'navigate_status':1,'direct_goal_publishers':0,'old_bridge_subscribers':0}:raise RuntimeError('unexpected_execution_owner')
+        from gcu_process_resources import sample as resource_sample
+        report['resource_at_dispatch']=resource_sample()
+        report['native_grid_shapes_at_dispatch']={key:[m.info.height,m.info.width] for key,m in grids.items()}
         report['dispatch_sim']=adapter.sim();recording=True;adapter.begin(contract,consumed);report['contract']=adapter.model.contract.report()
+        if a.drop_window_source and number==0:
+            from gcu_window_loss_metrics import score_window_loss
+            wait(lambda:math.dist(adapter.pose()[0][:2],contract.start)>=.65,120)
+            report['window_loss_request']={'sim':adapter.sim(),'pose':adapter.pose()[0],'wall':time.monotonic()}
+            rolling_manager.freeze()
+            wait(lambda:adapter.model.stop_confirmed and not adapter.handles,20)
+            hold=rest_window(truth[truth_begin:],earliest=report['window_loss_request']['sim'])
+            if hold is None:wait(lambda:rest_window(truth[truth_begin:],earliest=report['window_loss_request']['sim']) is not None,10)
+            hold=rest_window(truth[truth_begin:],earliest=report['window_loss_request']['sim'])
+            wait(lambda:truth and truth[-1]['sim_time']>=hold['confirmed_sim']+1.,15)
+            report.update(events=adapter.events[event_begin:],state=adapter.model.report(),truth=truth[truth_begin:],
+                localization=matched[match_begin:],commands=commands[command_begin:])
+            report['window_loss']=score_window_loss(report)
+            report['rolling']=rolling_manager.report();report['expected_window_source_loss']=True
+            report['resource_at_stop']=resource_sample()
+            report['passed']=bool(report['window_loss']['passed'] and not contacts)
+            return
         if sequence:capture_native(f'leg_{number+1}_dispatch')
         if a.cancel_near_handoff or a.close_upcoming_passage or a.drop_required_imu:
             from std_msgs.msg import Empty,String
@@ -398,13 +457,16 @@ def main():
         monitor=CrossingMonitor(truth_contract,planner.leaves,planner.passage_segments)
         for item in leg_truth[1:]:monitor.observe(item['truth'][:2],item['sim_time'])
         report['truth_crossings']=monitor.events
-        sends=[e for e in leg_events if e['event']=='send'];results=[e for e in leg_events if e['event']=='result'];first_handle=next(e['uuid'] for e in leg_events if e['event']=='accepted' and e['token']==sends[0]['token'])
+        sends=[e for e in leg_events if e['event']=='send'];results=[e for e in leg_events if e['event']=='result']
+        first_original=next(e for e in sends if e['segment']==0 and not e.get('proxy'))
+        first_handle=next(e['uuid'] for e in leg_events if e['event']=='accepted' and e['token']==first_original['token'])
         first_result=next((e for e in results if e['uuid']==first_handle),None)
-        report['handoff']=None if a.metric_baseline or not contract.passage_ids else {'next_goal_sim':sends[1]['sim'],'first_result':first_result,'before_intermediate_terminal':first_result is None or sends[1]['wall']<first_result['wall'],
-            'confirmed_at_next_goal':sends[1]['confirmed']}
+        next_original=next((e for e in sends if e['segment']==1),None)
+        report['handoff']=None if a.metric_baseline or not contract.passage_ids else {'next_goal_sim':next_original['sim'],'first_result':first_result,'before_intermediate_terminal':first_result is None or next_original['wall']<first_result['wall'],
+            'confirmed_at_next_goal':next_original['confirmed']}
         report['handoffs']=[]
         for index in range(0 if a.metric_baseline else len(contract.passage_ids)):
-            send=next(e for e in sends if e['segment']==index);next_send=next(e for e in sends if e['segment']==index+1)
+            send=next(e for e in sends if e['segment']==index and not e.get('proxy'));next_send=next(e for e in sends if e['segment']==index+1)
             handle=next(e['uuid'] for e in leg_events if e['event']=='accepted' and e['token']==send['token'])
             terminal=next((e for e in results if e['uuid']==handle),None)
             report['handoffs'].append({'segment':index,'passage_id':contract.passage_ids[index],'next_goal_sim':next_send['sim'],'before_intermediate_terminal':terminal is None or next_send['wall']<terminal['wall']})
@@ -412,7 +474,16 @@ def main():
         report['passed']=bool(monitor.confirmed==len(contract.passage_ids) and all(h['before_intermediate_terminal'] for h in report['handoffs']) and report['position_error_m']<=.20 and report['heading_error_deg']<=10 and report['swept_truth']['valid'] and report['coverage']['matched_fraction']>=.9 and report['coverage']['max_truth_gap_sim_s']<=.15 and report['localization_p95_m']<=.25 and report['localization_p95_deg']<=5 and max(abs(v['v']) for v in leg_commands)<=.10001)
         report.update(events=leg_events,state=adapter.model.report(),poses=adapter.poses[pose_begin:],tf_timing=adapter.tf_timing[tf_begin:],scan_observations=list(adapter.scan_observations),truth=leg_truth,localization=leg_matched,commands=leg_commands,plans=plans[plan_begin:],contacts=list(contacts),contact_counts=dict(counts),last_consumption_errors=dict(last_errors),imu_samples=[v for v in adapter.imu_samples if leg_truth[0]['sim_time']<=v['sim_time']<=leg_truth[-1]['sim_time']])
         report['contact_publishers']={item['topic']:evaluator.count_publishers(item['topic']) for item in collisions}
+        report['resource_at_stop']=resource_sample()
+        report['native_grid_shapes_at_stop']={key:[m.info.height,m.info.width] for key,m in grids.items()}
         report['passed']=bool(report['passed'] and not contacts and all(v==1 for v in report['contact_publishers'].values()))
+        if rolling:
+            report['rolling']=rolling_manager.report()
+            report['planning_map_subscribers']=[{'name':i.node_name,'namespace':i.node_namespace} for i in evaluator.get_subscriptions_info_by_topic('/map')]
+            if any('costmap' in i['name'] for i in report['planning_map_subscribers']):raise RuntimeError('full_floor_map_still_used_by_costmap')
+            if not a.interactive and not fixture.get('allow_short_window_mission'):
+                report['passed']=bool(report['passed'] and len(report['rolling']['windows'])>=3
+                    and any(e.get('proxy') for e in leg_events if e['event']=='send'))
         if fixture and fixture.get('physical_obstacle'):report['passed']=bool(report['passed'] and report['passed_obstacle'])
         missions.append(json.loads(json.dumps(report)))
         if sequence:(a.output.parent/f'mission_{number+1}.json').write_text(json.dumps(report,indent=2)+'\n')
@@ -422,6 +493,31 @@ def main():
         wait(lambda:adapter.sim()>0 and adapter.scan_stamp is not None and adapter.buffer.can_transform('map','base_footprint',Time()),50)
         if not a.interactive:
             execute_leg(session_fixture,0)
+            if a.drop_window_source and session_fixture.get('recover_window_source'):
+                fault_report=json.loads(json.dumps(report));fault_report['contacts']=list(contacts)
+                fault_report['contact_publishers']={item['topic']:evaluator.count_publishers(item['topic']) for item in collisions}
+                (a.output.parent/'source_loss_mission.json').write_text(json.dumps(fault_report,indent=2)+'\n')
+                restored=adapter.sim();rolling_manager.resume()
+                wait(lambda:consumed() and all(v['stamp']>=restored for v in rolling_manager.committed['gate'].observations.values()),15)
+                def recovery_ready():
+                    from osmag_mission_contract import MissionError
+                    try:adapter.recover();return True
+                    except MissionError as error:
+                        if str(error)!='stale_robot_tf':raise
+                        return False
+                wait(recovery_ready,2)
+                point,tfstamp=fresh_localized_pose();now=time.monotonic()
+                goal=list(session_fixture['spawn']);goal[2]=math.pi
+                preview=make_contract(planner,point[:2],goal[:2],goal[2],mission_id=session_fixture['name']+'_recovery',
+                    now=now,pose_stamp=now-(adapter.sim()-tfstamp),route_revision=2,closure_revision=adapter.closure['revision'])
+                recovery_leg=dict(session_fixture,name=preview.mission_id,spawn=point,goal=goal,
+                    expected_passages=list(preview.passage_ids),expected_areas=list(preview.area_ids),
+                    route_contract=preview.report(),allow_short_window_mission=True)
+                execute_leg(recovery_leg,1)
+                (a.output.parent/'recovery_mission.json').write_text(json.dumps(report,indent=2)+'\n')
+                report['source_loss_and_recovery']=dict(source_loss_file='source_loss_mission.json',
+                    recovery_file='recovery_mission.json',source_restored_sim=restored,same_runtime_processes=True)
+                report['passed']=bool(report['passed'] and fault_report['passed'])
             if sequence:execute_leg(session_fixture['next_mission'],1)
         else:
             session_status('ready',message='Click a goal in the map.')
@@ -474,16 +570,21 @@ def main():
             if adapter.model.contract is not None and adapter.model.state not in ['succeeded','cancelled','failed']:raise RuntimeError('session_has_unsettled_mission')
             report['passed']=bool(review_good and not contacts and (adapter.model.contract is None or adapter.model.stop_confirmed))
     except Exception as e:
+        import traceback
+        report['error_traceback']=traceback.format_exc()
         report['error']=repr(e)
+        adapter.cancel('test_failure')
         try:capture_native('failure')
         except Exception as capture_error:report['capture_error']=str(capture_error)
-        adapter.cancel('test_failure')
         try:
-            end=time.monotonic()+5
-            while adapter.model._unresolved() and time.monotonic()<end:step()
+            end=time.monotonic()+15
+            while adapter.model.contract is not None and not adapter.model.stop_confirmed and time.monotonic()<end:
+                executor.spin_once(timeout_sec=.015)
         except Exception:pass
     finally:
         adapter.enabled=False
+        if rolling_manager is not None:
+            report['rolling']=rolling_manager.report();rolling_manager.close()
         report['lifecycle_shutdown']={}
         for name in reversed(started):
             try:transition(name,4);report['lifecycle_shutdown'][name]=True

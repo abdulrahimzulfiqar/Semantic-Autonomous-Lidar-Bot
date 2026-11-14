@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-14",
+  "recorded_wall": 1794642486.9279082,
+  "remaining_robot_processes": [],
+  "review_workspace": "/home/ubuntu/edgeosmag_phase7_review_final_ws",
+  "reviews": [
+    {
+      "directory": "manual_20261114_072600",
+      "run.json": {
+        "passed": true,
+        "error": null,
+        "process_exits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "missions": null,
+        "final_state": null,
+        "elapsed_wall_s": 815.4833986800004
+      },
+      "report.json": {
+        "passed": true,
+        "error": null,
+        "process_exits": null,
+        "missions": [
+          {
+            "file": "user_mission_01.json",
+            "goal": [
+              5.394357576897789,
+              -3.288339168868827,
+              1.5395082453632307
+            ],
+            "outcome": "succeeded",
+            "reason": null
+          }
+        ],
+        "final_state": {
+          "state": "succeeded",
+          "mission_id": "review_1",
+          "last_dispatched_segment": 1,
+          "confirmed_crossings": 1,
+          "reason": null,
+          "stop_confirmed": true,
+          "unresolved_requests": 0,
+          "scope": "pure_mock_model_no_motion"
+        },
+        "elapsed_wall_s": null
+      }
+    }
+  ]
+}
