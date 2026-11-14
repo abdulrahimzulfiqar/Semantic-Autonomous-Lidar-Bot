@@ -2,8 +2,8 @@
 
 ## Quick summary
 
-- **Current position:** Phases 01–06 are accepted for their recorded bounded scopes; segmented simulation navigation now has 135 passing tests and retained automated motion/fault evidence.
-- **Next:** [Phase 07](plans/07_GCU_ROLLING_RASTER_AND_BOUNDARY_GOALS.md) adds the rolling planning raster and validated boundary proxy goals. It is planned, not implemented.
+- **Current position:** Phases 01–07 are accepted for their recorded bounded scopes; rolling-window segmented navigation has 169 passing tests, automated motion/fault evidence and user visual acceptance.
+- **Next:** Phase 08 evaluates structure-based localization against the retained full-map AMCL baseline. [Phase 07](phases/07_GCU_ROLLING_RASTER.md) is complete for bounded simulation scope, accepted November 14, 2026.
 - **Authors' workflow:** Phases 06–09 add segmented execution, rolling raster maps, structural localization and integrated evaluation.
 - **Our research:** Phases 10–13 evaluate Pi 4B deployment, camera perception, language reasoning and their combined resource/accuracy tradeoffs. This sequence is provisional.
 
@@ -113,6 +113,6 @@ summary, results, limitations and reproduction commands.
 accepted November 13, 2026. All 135 tests and retained automated mission/fault
 checks pass. User visual acceptance covers short-distance behavior; the longer
 manual journey remains a recorded wall-time timeout. Test processes are stopped.
-Next is [Phase 07: rolling raster and boundary goals](plans/07_GCU_ROLLING_RASTER_AND_BOUNDARY_GOALS.md).
+Phase 07 is now [complete for bounded simulation scope](phases/07_GCU_ROLLING_RASTER.md); next is Phase 08 structure-based localization.
 The full-floor planning raster and AMCL remain in Phase 06; paper-runtime
 reproduction and edge resource advantages are not claimed.

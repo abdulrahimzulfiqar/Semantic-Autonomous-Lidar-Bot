@@ -22,6 +22,11 @@ def prepare(baseline,source_assets,destination,fixture_path=None):
                  'osmag_route_refinement.py','audit_gcu_interfaces.py','gcu_navigation_metrics.py','gcu_quiescent_shutdown.py','gcu_mission_fixture.py',
                  'gcu_costmap_observation.py','osmag_constraint_mask.py','gcu_plan_validation.py','osmag_execution_route.py','gcu_cancel_metrics.py','gcu_closure.py','gcu_physical_obstacle.py','gcu_metric_baseline.py','gcu_user_mission.py','check_gcu_review_interface.py']:
         shutil.copy2(source/name,destination/name)
+    shutil.copy2(source/'gcu_process_resources.py',destination/'gcu_process_resources.py')
+    if fixture and fixture.get('rolling_window'):
+        for name in ['gcu_rolling_window_manager.py','osmag_rolling_raster.py','osmag_window_goal.py',
+                     'osmag_window_route.py','osmag_window_admission.py','gcu_window_loss_metrics.py']:
+            shutil.copy2(source/name,destination/name)
     if fixture:verify_runtime_sources(fixture,destination)
     if fixture and fixture.get('fuse_imu_yaw_rate'):
         # Keep wheel translation, replace encoder yaw rate with measured IMU

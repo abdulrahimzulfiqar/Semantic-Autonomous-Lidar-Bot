@@ -62,7 +62,7 @@ def verify(folder,trial='06',case_prefix='crossing',mission_scorer=None):
     return result
 
 
-def score_mission(report,arrays,planner):
+def score_mission(report,arrays,planner,*,allow_proxy_repeats=False):
     """Replay one leg independently of ROS; session callers audit process continuity."""
     assert report['passed']
     result={}
@@ -93,11 +93,25 @@ def score_mission(report,arrays,planner):
     assert validate_path(arrays['combined'],planner.resolution,planner.origin,[v['truth'][:2] for v in truth],.18)['valid']
     final=truth[-1]['truth'];position=math.dist(final[:2],stored['goal'][:2]);heading=math.degrees(abs(math.atan2(math.sin(final[2]-stored['goal'][2]),math.cos(final[2]-stored['goal'][2]))))
     assert position<=.20 and heading<=10 and not report['contacts']
-    events=report['events'];sends=[e for e in events if e['event']=='send'];assert len(sends)==(1 if metric else len(expected)+1)
+    events=report['events'];sends=[e for e in events if e['event']=='send']
+    if allow_proxy_repeats:
+        assert not metric and len(sends)>=len(expected)+1
+        assert {e['segment'] for e in sends}==set(range(len(expected)+1))
+        for old,new in zip(sends,sends[1:]):
+            assert new['segment'] in [old['segment'],old['segment']+1]
+            if new['segment']==old['segment']:assert old.get('proxy')
+        for send in sends:
+            assert np.allclose(send['original_segment_point'],stored['segments'][send['segment']]['point'],atol=1e-6,rtol=0)
+    else:assert len(sends)==(1 if metric else len(expected)+1)
     for index in range(0 if metric else len(expected)):
-        old=next(e['uuid'] for e in events if e['event']=='accepted' and e['token']==sends[index]['token'])
-        end=next(e for e in events if e['event']=='result' and e['uuid']==old);assert sends[index+1]['wall']<end['wall']
-    terminal=next(e for e in events if e['event']=='result' and e['outcome']=='succeeded');assert rest_window(truth,earliest=terminal['sim']) is not None
+        prior=next(e for e in sends if e['segment']==index and not e.get('proxy'))
+        following=next(e for e in sends if e['segment']==index+1)
+        old=next(e['uuid'] for e in events if e['event']=='accepted' and e['token']==prior['token'])
+        end=next(e for e in events if e['event']=='result' and e['uuid']==old);assert following['wall']<end['wall']
+    final_send=next(e for e in reversed(sends) if not e.get('proxy'))
+    final_uuid=next(e['uuid'] for e in events if e['event']=='accepted' and e['token']==final_send['token'])
+    terminal=next(e for e in events if e['event']=='result' and e['uuid']==final_uuid and e['outcome']=='succeeded')
+    assert rest_window(truth,earliest=terminal['sim']) is not None
     cov=coverage(truth,report['localization']);assert cov['matched_fraction']>=.9 and cov['max_truth_gap_sim_s']<=.15
     assert np.percentile([r['position_error_m'] for r in report['localization']],95)<=.25
     assert np.percentile([r['yaw_error_deg'] for r in report['localization']],95)<=5

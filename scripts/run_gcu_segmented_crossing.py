@@ -12,6 +12,9 @@ def main():
     p.add_argument('--diagnose-stationary',action='store_true')
     p.add_argument('--cancel-near-handoff',action='store_true');p.add_argument('--close-upcoming-passage',action='store_true');p.add_argument('--drop-required-imu',action='store_true');p.add_argument('--metric-baseline',action='store_true')
     p.add_argument('--interactive',action='store_true');p.add_argument('--foxglove',action='store_true');p.add_argument('--session-wall-timeout',type=float,default=900.);a=p.parse_args()
+    # Fault mode is frozen in an admitted Phase 07 fixture, rather than allowing
+    # arbitrary runtime source manipulation through the general launcher.
+    drop_window_source=False
     if a.interactive and (a.metric_baseline or a.drop_required_imu or a.close_upcoming_passage or a.cancel_near_handoff or a.diagnose_stationary or not a.fixture or not 0<a.session_wall_timeout<=1200):p.error('interactive mode requires one seed profile and a bounded session')
     if a.foxglove and not a.interactive:p.error('Foxglove is enabled only for interactive review')
     if a.metric_baseline and (a.drop_required_imu or a.close_upcoming_passage or a.cancel_near_handoff or a.diagnose_stationary or not a.fixture):p.error('baseline requires an admitted normal-motion fixture')
@@ -25,6 +28,7 @@ def main():
         from gcu_mission_fixture import load_fixture,verify_runtime_sources
         fixture,_=load_fixture(a.fixture)
         verify_runtime_sources(fixture,w)
+        drop_window_source=bool(fixture.get('drop_window_source'))
     for name in ['assets/contact_v2/contact_manifest.json','assets/cyclonedds_local.xml','assets/gcu_ground_floor.osm','assets/nav2_sensor_constraints.yaml']:
         if not (w/name).is_file():raise RuntimeError('missing_preflight_asset:'+name)
     env=os.environ.copy()
@@ -46,6 +50,8 @@ def main():
     def launch(name,command):
         log=(a.output/(name+'.log')).open('w');logs.append(log)
         proc=subprocess.Popen(['/bin/bash','-c',setup+shlex.join(command)],env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True);processes.append(proc)
+    if fixture and fixture.get('rolling_window'):
+        status.update(scope='Phase 07 bounded rolling-window simulation; truth evaluates only',scenario='interactive' if a.interactive else 'window_source_loss' if drop_window_source else 'rolling_nominal')
     begin=time.monotonic();checker_process=None
     try:
         launch('simulator',['ros2','launch',str(w/'gcu_phase6_sim.launch.py'),'assets:='+str(w/'assets/contact_v2'),'world:='+str(w/'assets/contact_v2/world.sdf')]);time.sleep(6)
@@ -62,6 +68,7 @@ def main():
         if a.cancel_near_handoff:command+=['--cancel-near-handoff']
         if a.close_upcoming_passage:command+=['--close-upcoming-passage']
         if a.drop_required_imu:command+=['--drop-required-imu']
+        if drop_window_source:command+=['--drop-window-source']
         if a.metric_baseline:command+=['--metric-baseline']
         if a.interactive:command+=['--interactive','--session-wall-timeout',str(a.session_wall_timeout)]
         with (a.output/'checker.log').open('w') as log:

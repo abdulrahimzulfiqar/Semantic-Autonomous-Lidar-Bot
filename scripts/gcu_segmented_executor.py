@@ -71,6 +71,7 @@ def create_executor(planner,execute=False,require_imu=False,imu_topic='/imu_broa
             self.client=ActionClient(self,NavigateToPose,'/navigate_to_pose')
             self.last_tf=None;self.offset=0.;self.rest_samples=[];self.scan_stamp=None;self.scan_wall=None
             self.readiness=None;self.final_action_sim=None;self.fault_reason=None;self.enabled=False
+            self.window_provider=None;self.proxy_tokens={};self.proxy_active=False;self.proxy_window_revision=None
             self.last_clock=None;self.clock_wall=time.monotonic();self.poses=[]
             self.tf_timing=[];self.scan_observations=[]
             self.imu_observations=[];self.imu_samples=[];self.require_imu=require_imu;self.imu_topic=imu_topic
@@ -159,11 +160,19 @@ def create_executor(planner,execute=False,require_imu=False,imu_topic='/imu_broa
                     from gcu_closure import require_closure_contract
                     require_closure_contract(self.model.contract,self.closure)
                     self.healthy();point,_=self.pose();segment=effect['segment']
+                    resolved=self.window_provider.resolve(segment,point,self.model.contract) if self.window_provider else None
+                    actual_point=resolved.point if resolved else segment.point
+                    actual_yaw=resolved.yaw if resolved else segment.yaw
+                    self.native_target_point=actual_point
+                    self.proxy_active=bool(resolved and resolved.proxy)
+                    self.proxy_tokens[effect['token']]=self.proxy_active
+                    self.proxy_window_revision=resolved.window_revision if resolved else None
                     target=PoseStamped();target.header.frame_id='map';target.header.stamp=self.get_clock().now().to_msg()
-                    target.pose.position.x,target.pose.position.y=map(float,segment.point)
-                    target.pose.orientation.z=math.sin(segment.yaw/2);target.pose.orientation.w=math.cos(segment.yaw/2)
+                    target.pose.position.x,target.pose.position.y=map(float,actual_point)
+                    target.pose.orientation.z=math.sin(actual_yaw/2);target.pose.orientation.w=math.cos(actual_yaw/2)
                     self.goal_pub.publish(target);req=NavigateToPose.Goal();req.pose=target
-                    self.event('send',token=effect['token'],segment=segment.index,point=segment.point,pose=point,confirmed=self.model.confirmed)
+                    self.event('send',token=effect['token'],segment=segment.index,point=actual_point,pose=point,confirmed=self.model.confirmed,
+                        original_segment_point=segment.point,proxy=self.proxy_active,window_revision=self.proxy_window_revision)
                     self.client.send_goal_async(req).add_done_callback(lambda f,t=effect['token']:self.accepted(f,t))
                 elif effect['uuid'] in self.handles:
                     self.event('cancel_request',uuid=effect['uuid']);self.handles[effect['uuid']].cancel_goal_async()
@@ -184,9 +193,16 @@ def create_executor(planner,execute=False,require_imu=False,imu_topic='/imu_broa
             try:
                 reply=future.result();outcome={4:'succeeded',5:'cancelled',6:'aborted'}[reply.status]
                 self.event('result',uuid=ident,outcome=outcome)
-                self.effects(self.model.result(ident,outcome,time.monotonic()));self.handles.pop(ident,None)
+                attempt=next((v for v in self.model.attempts.values() if v.uuid==ident),None)
+                proxy=bool(attempt and self.proxy_tokens.get(attempt.token,False))
+                self.effects(self.model.result(ident,outcome,time.monotonic(),proxy=proxy));self.handles.pop(ident,None)
                 if self.model.state=='verifying':self.final_action_sim=self.sim()
             except Exception as e:self.cancel('result_error:'+str(e))
+
+        @serialized
+        def refresh_proxy(self):
+            if self.proxy_active and self.model.state in ['executing','waiting_proxy'] and self.model.pending is None:
+                self.effects(self.model.repeat_current(time.monotonic()))
 
         @serialized
         def recover(self):
@@ -211,7 +227,7 @@ def create_executor(planner,execute=False,require_imu=False,imu_topic='/imu_broa
         @serialized
         def cancel(self,reason):
             if self.fault_reason is None:self.fault_reason=reason;self.event('fault',reason=reason)
-            self.effects(self.model.cancel(time.monotonic(),reason))
+            self.effects(self.model.cancel(time.monotonic(),self.fault_reason))
 
         @serialized
         def tick(self):
@@ -222,13 +238,13 @@ def create_executor(planner,execute=False,require_imu=False,imu_topic='/imu_broa
                 if time.monotonic()-self.clock_wall>2:raise MissionError('simulation_clock_stalled')
                 self.effects(self.model.check_deadlines(time.monotonic()))
                 point,stamp=self.pose()
-                if self.model.state in ['dispatching','executing','waiting_handoff','verifying']:
+                if self.model.state in ['dispatching','executing','waiting_handoff','waiting_proxy','verifying']:
                     self.healthy()
                     if stamp>self.last_tf:
                         event=self.monitor.observe(point[:2],stamp+self.offset);self.last_tf=stamp
                         self.poses.append({'sim_time':stamp,'pose':point})
                         if event:self.event('crossing',**event)
-                        self.effects(self.model.advance(point[:2],self.monitor.confirmed,time.monotonic()))
+                        self.effects(self.model.advance(point[:2],self.monitor.confirmed,time.monotonic(),allow_handoff=not self.proxy_active))
                     if self.model.state=='verifying':
                         self.model.confirm_final(point,rest_window(self.rest_samples,earliest=self.final_action_sim) is not None,time.monotonic())
                 elif self.model.state in ['cancelling','failed']:
