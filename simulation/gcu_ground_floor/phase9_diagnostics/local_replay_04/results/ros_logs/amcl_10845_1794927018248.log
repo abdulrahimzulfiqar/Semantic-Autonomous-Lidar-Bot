@@ -1,0 +1,22 @@
+[INFO] [1794927018.316225669] [amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1794927018.318486375] [amcl]: Creating
+[INFO] [1794927018.855814862] [amcl]: Configuring
+[INFO] [1794927018.856268447] [amcl]: initTransforms
+[INFO] [1794927018.892746501] [amcl]: initPubSub
+[INFO] [1794927018.909200714] [amcl]: Subscribed to map topic.
+[INFO] [1794927018.960864894] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[INFO] [1794927019.061959063] [amcl]: Activating
+[INFO] [1794927019.062187624] [amcl]: initialPoseReceived
+[INFO] [1794927019.062510910] [amcl]: Setting pose (0.000000): -0.500 -12.960 0.000
+[INFO] [1794927019.063975651] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1794927020.327713480] [amcl]: createLaserObject
+[INFO] [1794927021.642583146] [amcl]: Message Filter dropping message: frame 'replay_laser' at time 1.600 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1794927078.931324551] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1794927078.931623687] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1794927078.931826081] [amcl]: Deactivating
+[INFO] [1794927078.931915194] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1794927078.942290863] [amcl]: Cleaning up
+[INFO] [1794927078.951675048] [amcl]: Destroying bond (amcl) to lifecycle manager.

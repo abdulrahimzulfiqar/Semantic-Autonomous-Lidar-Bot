@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "scope": "Single processor-in-loop pilot correctness; no repeated benchmark or real-time hardware claim",
+  "role_runs_passed": true,
+  "criteria_source": "Inherited Phase 06/07 pilot correctness gates",
+  "thresholds": {
+    "goal_position_m": 0.2,
+    "goal_heading_deg": 10,
+    "localization_p95_m": 0.25,
+    "localization_p95_deg": 5,
+    "matched_fraction": 0.9,
+    "max_truth_gap_sim_s": 0.15,
+    "maximum_linear_command_m_s": 0.10001,
+    "swept_radius_m": 0.18,
+    "rest_duration_sim_s": 1.0
+  },
+  "observed_sim_per_wall_s": 0.6325061730516065,
+  "simulator_rate_source": "Source scan span divided by simulator observer wall receipt span",
+  "position_error_m": 0.0810660607964806,
+  "heading_error_deg": 1.0345138913559964,
+  "localization_p95_m": 0.04184575593510878,
+  "localization_p95_deg": 0.3768546532550474,
+  "coverage": {
+    "truth_samples": 411,
+    "matched_samples": 411,
+    "matched_fraction": 1.0,
+    "max_truth_gap_sim_s": 0.05000000000000426
+  },
+  "truth_crossings": [
+    {
+      "index": 0,
+      "passage_id": "-93",
+      "source_area": "gcu_gf_corridor_14",
+      "destination_area": "gcu_gf_corridor_16",
+      "crossing_point": [
+        -0.029321981068880378,
+        -12.943771120960982
+      ],
+      "confirmed_at": 44.2
+    }
+  ],
+  "confirmed_passages": 1,
+  "expected_passages": 1,
+  "truth_rest": {
+    "start_sim": 56.05,
+    "confirmed_sim": 57.05
+  },
+  "swept_truth": {
+    "valid": true,
+    "samples": 411,
+    "radius_m": 0.18,
+    "segment_sampling_m": 0.01466098782835562,
+    "checked_clearance_lower_bound_m": 0.29728790262684496,
+    "clearance_search_cap_m": 0.29728790262684496
+  },
+  "contacts": [],
+  "contact_publishers": {
+    "/gcu/contacts/collision_0": 1,
+    "/gcu/contacts/collision_1": 1,
+    "/gcu/contacts/collision_2": 1,
+    "/gcu/contacts/collision_3": 1,
+    "/gcu/contacts/collision_4": 1,
+    "/gcu/contacts/collision_5": 1,
+    "/gcu/contacts/collision_6": 1,
+    "/gcu/contacts/collision_7": 1,
+    "/gcu/contacts/collision_8": 1,
+    "/gcu/contacts/collision_9": 1,
+    "/gcu/contacts/collision_10": 1,
+    "/gcu/contacts/collision_11": 1,
+    "/gcu/contacts/collision_12": 1
+  },
+  "executed_length_m": 1.4270737304499739,
+  "sim_duration_s": 18.554000000000002,
+  "actor_wall_duration_s": 91.54180498300002,
+  "command_bounds_passed": true
+}

@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-14",
+  "paper": {
+    "path": "docs/research/osm-AG/Robust Lifelong localization.pdf",
+    "sha256": "635d7908f692cc113740dcc76992787ad7a1b8008592410d42b497bf23e43447",
+    "pages": 9,
+    "doi": "10.1109/LRA.2023.3334158",
+    "reviewed_sections": [
+      "III-B",
+      "III-C",
+      "III-E Eq.8",
+      "III-F Eq.9",
+      "III-G Eq.10",
+      "IV-A",
+      "IV-C/Table II"
+    ]
+  },
+  "author_project": {
+    "url": "https://github.com/jiajiezhang7/osmAG-Nav",
+    "commit": "9f4fa7e6cff57f460b773b7a79f64122658f920b",
+    "tree_files": 30,
+    "ros_package_manifests": [],
+    "source_files": [],
+    "project_page": "https://jiajiezhang7.github.io/osmAG-Nav/",
+    "code_link_label": "Code (Upon Acceptance)",
+    "scope": "Audited this public endpoint and revision; not proof that no other author repository exists."
+  },
+  "sensor": {
+    "existing": "one horizontal 360-beam LaserScan, 10 Hz, 12 m",
+    "original_paper": "Hesai PandarQT 64-line 3D LiDAR, 10 Hz; vertical-column furthest-return filter",
+    "adaptation": "2D reference, original Eq.8 weights, deterministic Eq.10 weighting approximation, shared odometry prediction; no 3D clutter prefilter or global rescue"
+  },
+  "conclusion": "Keep accepted AMCL baseline and independent paper-inspired 2D reference; do not claim original AGLoc/AGLoc++ runtime equivalence."
+}

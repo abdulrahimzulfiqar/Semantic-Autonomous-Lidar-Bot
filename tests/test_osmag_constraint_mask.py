@@ -95,6 +95,7 @@ class GateTests(MaskFixture,unittest.TestCase):
         self.observe('local');self.assertTrue(self.gate.ready(10.2));self.assertFalse(self.gate.ready(11.))
 
     def test_missing_mask_cells_and_stale_clearing_are_not_acknowledgements(self):
+        self.observe('global')
         with self.assertRaisesRegex(ConstraintError,'not_consumed'):self.observe('global',grid=self.grid)
         data=self.snap.combined.copy();data[80,100]=100
         with self.assertRaisesRegex(ConstraintError,'free_probe_blocked'):self.observe('global',grid=data)
@@ -114,6 +115,9 @@ class GateTests(MaskFixture,unittest.TestCase):
         self.observe('global')
         self.observe('local',grid=self.snap.combined[40:120,40:120],origin=(-2,-2))
         self.assertTrue(self.gate.ready(10.2))
+        with self.assertRaisesRegex(ConstraintError, 'does_not_overlap'):
+            self.observe('local', grid=self.snap.combined[40:120,40:120], origin=(20,20))
+        self.assertFalse(self.gate.ready(10.2))
 
 
 class ConfigTests(unittest.TestCase):

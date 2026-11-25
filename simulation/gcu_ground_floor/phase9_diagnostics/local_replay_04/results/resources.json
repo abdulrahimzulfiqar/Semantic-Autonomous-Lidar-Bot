@@ -1,0 +1,5165 @@
+{
+  "samples": [
+    {
+      "wall_monotonic": 4942.75774398,
+      "utc": "2026-11-17T14:50:18.294983+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.04,
+          "memory_kib": {
+            "Rss": 12136,
+            "Pss": 6772,
+            "Private_Dirty": 1604
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3268932,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59400",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4943.792155524,
+      "utc": "2026-11-17T14:50:19.329391+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.5,
+          "memory_kib": {
+            "Rss": 23076,
+            "Pss": 13717,
+            "Private_Dirty": 6212
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 0.34,
+          "memory_kib": {
+            "Rss": 36492,
+            "Pss": 27464,
+            "Private_Dirty": 22756
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.22,
+          "memory_kib": {
+            "Rss": 14608,
+            "Pss": 5845,
+            "Private_Dirty": 3112
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 0.98,
+          "memory_kib": {
+            "Rss": 38900,
+            "Pss": 24255,
+            "Private_Dirty": 20588
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 1.01,
+          "memory_kib": {
+            "Rss": 38796,
+            "Pss": 24076,
+            "Private_Dirty": 20340
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3208792,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4944.893359535,
+      "utc": "2026-11-17T14:50:20.430596+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.58,
+          "memory_kib": {
+            "Rss": 23296,
+            "Pss": 13778,
+            "Private_Dirty": 6432
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 0.46,
+          "memory_kib": {
+            "Rss": 40044,
+            "Pss": 30812,
+            "Private_Dirty": 26244
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.3,
+          "memory_kib": {
+            "Rss": 14824,
+            "Pss": 5901,
+            "Private_Dirty": 3328
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 2.04,
+          "memory_kib": {
+            "Rss": 48936,
+            "Pss": 32328,
+            "Private_Dirty": 27628
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 2.1,
+          "memory_kib": {
+            "Rss": 50380,
+            "Pss": 33741,
+            "Private_Dirty": 28896
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3182336,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4945.970038185,
+      "utc": "2026-11-17T14:50:21.507273+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.66,
+          "memory_kib": {
+            "Rss": 23296,
+            "Pss": 13778,
+            "Private_Dirty": 6432
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 1.46,
+          "memory_kib": {
+            "Rss": 43128,
+            "Pss": 33896,
+            "Private_Dirty": 29328
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.4,
+          "memory_kib": {
+            "Rss": 14840,
+            "Pss": 5917,
+            "Private_Dirty": 3344
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 3.18,
+          "memory_kib": {
+            "Rss": 49092,
+            "Pss": 32484,
+            "Private_Dirty": 27784
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 2.97,
+          "memory_kib": {
+            "Rss": 50476,
+            "Pss": 33837,
+            "Private_Dirty": 28992
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3179564,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4946.999839585,
+      "utc": "2026-11-17T14:50:22.537073+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.72,
+          "memory_kib": {
+            "Rss": 23296,
+            "Pss": 13778,
+            "Private_Dirty": 6432
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 1.71,
+          "memory_kib": {
+            "Rss": 41268,
+            "Pss": 32036,
+            "Private_Dirty": 27344
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.47,
+          "memory_kib": {
+            "Rss": 14852,
+            "Pss": 5929,
+            "Private_Dirty": 3356
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 3.89,
+          "memory_kib": {
+            "Rss": 49176,
+            "Pss": 32575,
+            "Private_Dirty": 27868
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 3.56,
+          "memory_kib": {
+            "Rss": 50488,
+            "Pss": 33856,
+            "Private_Dirty": 29004
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3179584,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4948.029896832,
+      "utc": "2026-11-17T14:50:23.567131+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.78,
+          "memory_kib": {
+            "Rss": 23296,
+            "Pss": 13778,
+            "Private_Dirty": 6432
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 1.79,
+          "memory_kib": {
+            "Rss": 41276,
+            "Pss": 32044,
+            "Private_Dirty": 27352
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.54,
+          "memory_kib": {
+            "Rss": 14868,
+            "Pss": 5945,
+            "Private_Dirty": 3372
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 4.49,
+          "memory_kib": {
+            "Rss": 49240,
+            "Pss": 32642,
+            "Private_Dirty": 27932
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 4.1,
+          "memory_kib": {
+            "Rss": 50496,
+            "Pss": 33865,
+            "Private_Dirty": 29012
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3177576,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4949.060355873,
+      "utc": "2026-11-17T14:50:24.597588+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.82,
+          "memory_kib": {
+            "Rss": 23296,
+            "Pss": 13778,
+            "Private_Dirty": 6432
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 1.88,
+          "memory_kib": {
+            "Rss": 41284,
+            "Pss": 32052,
+            "Private_Dirty": 27360
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.59,
+          "memory_kib": {
+            "Rss": 14872,
+            "Pss": 5949,
+            "Private_Dirty": 3376
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 5.09,
+          "memory_kib": {
+            "Rss": 49284,
+            "Pss": 32688,
+            "Private_Dirty": 27976
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 4.63,
+          "memory_kib": {
+            "Rss": 50500,
+            "Pss": 33872,
+            "Private_Dirty": 29016
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3171540,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4950.093584044,
+      "utc": "2026-11-17T14:50:25.630818+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.88,
+          "memory_kib": {
+            "Rss": 23296,
+            "Pss": 13778,
+            "Private_Dirty": 6432
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 1.97,
+          "memory_kib": {
+            "Rss": 41288,
+            "Pss": 32056,
+            "Private_Dirty": 27364
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.65,
+          "memory_kib": {
+            "Rss": 14876,
+            "Pss": 5953,
+            "Private_Dirty": 3380
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 5.69,
+          "memory_kib": {
+            "Rss": 49320,
+            "Pss": 32725,
+            "Private_Dirty": 28012
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 5.15,
+          "memory_kib": {
+            "Rss": 50508,
+            "Pss": 33882,
+            "Private_Dirty": 29024
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3171540,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4951.131203554,
+      "utc": "2026-11-17T14:50:26.668438+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.93,
+          "memory_kib": {
+            "Rss": 23300,
+            "Pss": 13782,
+            "Private_Dirty": 6436
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 2.07,
+          "memory_kib": {
+            "Rss": 41300,
+            "Pss": 32069,
+            "Private_Dirty": 27376
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.72,
+          "memory_kib": {
+            "Rss": 14880,
+            "Pss": 5957,
+            "Private_Dirty": 3384
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 6.3,
+          "memory_kib": {
+            "Rss": 49364,
+            "Pss": 32770,
+            "Private_Dirty": 28056
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 5.68,
+          "memory_kib": {
+            "Rss": 50512,
+            "Pss": 33887,
+            "Private_Dirty": 29028
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3171540,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4952.175395435,
+      "utc": "2026-11-17T14:50:27.712630+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.98,
+          "memory_kib": {
+            "Rss": 23300,
+            "Pss": 13783,
+            "Private_Dirty": 6436
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 2.15,
+          "memory_kib": {
+            "Rss": 41304,
+            "Pss": 32073,
+            "Private_Dirty": 27380
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.77,
+          "memory_kib": {
+            "Rss": 14884,
+            "Pss": 5961,
+            "Private_Dirty": 3388
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 6.9,
+          "memory_kib": {
+            "Rss": 49420,
+            "Pss": 32834,
+            "Private_Dirty": 28112
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 6.22,
+          "memory_kib": {
+            "Rss": 50516,
+            "Pss": 33893,
+            "Private_Dirty": 29032
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3171548,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4953.214217097,
+      "utc": "2026-11-17T14:50:28.751451+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.02,
+          "memory_kib": {
+            "Rss": 23304,
+            "Pss": 13786,
+            "Private_Dirty": 6440
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 2.24,
+          "memory_kib": {
+            "Rss": 41316,
+            "Pss": 32084,
+            "Private_Dirty": 27392
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.83,
+          "memory_kib": {
+            "Rss": 14892,
+            "Pss": 5969,
+            "Private_Dirty": 3396
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 7.51,
+          "memory_kib": {
+            "Rss": 49456,
+            "Pss": 32861,
+            "Private_Dirty": 28148
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 6.76,
+          "memory_kib": {
+            "Rss": 50528,
+            "Pss": 33903,
+            "Private_Dirty": 29044
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167744,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4954.256508035,
+      "utc": "2026-11-17T14:50:29.793741+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.07,
+          "memory_kib": {
+            "Rss": 23304,
+            "Pss": 13786,
+            "Private_Dirty": 6440
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 2.38,
+          "memory_kib": {
+            "Rss": 41388,
+            "Pss": 32157,
+            "Private_Dirty": 27464
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.9,
+          "memory_kib": {
+            "Rss": 14896,
+            "Pss": 5973,
+            "Private_Dirty": 3400
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 8.13,
+          "memory_kib": {
+            "Rss": 49500,
+            "Pss": 32911,
+            "Private_Dirty": 28192
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 7.3,
+          "memory_kib": {
+            "Rss": 50536,
+            "Pss": 33912,
+            "Private_Dirty": 29052
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167760,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4955.298615919,
+      "utc": "2026-11-17T14:50:30.835852+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.12,
+          "memory_kib": {
+            "Rss": 23304,
+            "Pss": 13787,
+            "Private_Dirty": 6440
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 2.5,
+          "memory_kib": {
+            "Rss": 41392,
+            "Pss": 32161,
+            "Private_Dirty": 27468
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 0.95,
+          "memory_kib": {
+            "Rss": 14896,
+            "Pss": 5973,
+            "Private_Dirty": 3400
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 8.75,
+          "memory_kib": {
+            "Rss": 49544,
+            "Pss": 32958,
+            "Private_Dirty": 28236
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 7.83,
+          "memory_kib": {
+            "Rss": 50540,
+            "Pss": 33919,
+            "Private_Dirty": 29056
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167760,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4956.338552663,
+      "utc": "2026-11-17T14:50:31.875787+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.17,
+          "memory_kib": {
+            "Rss": 23304,
+            "Pss": 13786,
+            "Private_Dirty": 6440
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 2.62,
+          "memory_kib": {
+            "Rss": 41396,
+            "Pss": 32165,
+            "Private_Dirty": 27472
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.01,
+          "memory_kib": {
+            "Rss": 14896,
+            "Pss": 5973,
+            "Private_Dirty": 3400
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 9.37,
+          "memory_kib": {
+            "Rss": 49592,
+            "Pss": 33000,
+            "Private_Dirty": 28284
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 8.36,
+          "memory_kib": {
+            "Rss": 50548,
+            "Pss": 33923,
+            "Private_Dirty": 29064
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167760,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4957.382903929,
+      "utc": "2026-11-17T14:50:32.920138+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.22,
+          "memory_kib": {
+            "Rss": 23304,
+            "Pss": 13787,
+            "Private_Dirty": 6440
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 2.74,
+          "memory_kib": {
+            "Rss": 41396,
+            "Pss": 32165,
+            "Private_Dirty": 27472
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.07,
+          "memory_kib": {
+            "Rss": 14896,
+            "Pss": 5973,
+            "Private_Dirty": 3400
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 9.98,
+          "memory_kib": {
+            "Rss": 49636,
+            "Pss": 33047,
+            "Private_Dirty": 28328
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 8.9,
+          "memory_kib": {
+            "Rss": 50552,
+            "Pss": 33928,
+            "Private_Dirty": 29068
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167744,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4958.4223736,
+      "utc": "2026-11-17T14:50:33.959607+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.27,
+          "memory_kib": {
+            "Rss": 23304,
+            "Pss": 13786,
+            "Private_Dirty": 6440
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 2.85,
+          "memory_kib": {
+            "Rss": 41396,
+            "Pss": 32164,
+            "Private_Dirty": 27472
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.13,
+          "memory_kib": {
+            "Rss": 14896,
+            "Pss": 5973,
+            "Private_Dirty": 3400
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 10.59,
+          "memory_kib": {
+            "Rss": 49676,
+            "Pss": 33081,
+            "Private_Dirty": 28368
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 9.44,
+          "memory_kib": {
+            "Rss": 50564,
+            "Pss": 33939,
+            "Private_Dirty": 29080
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167768,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4959.459736912,
+      "utc": "2026-11-17T14:50:34.996971+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.33,
+          "memory_kib": {
+            "Rss": 23304,
+            "Pss": 13786,
+            "Private_Dirty": 6440
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 2.97,
+          "memory_kib": {
+            "Rss": 41400,
+            "Pss": 32169,
+            "Private_Dirty": 27476
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.2,
+          "memory_kib": {
+            "Rss": 14900,
+            "Pss": 5977,
+            "Private_Dirty": 3404
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 11.19,
+          "memory_kib": {
+            "Rss": 49728,
+            "Pss": 33134,
+            "Private_Dirty": 28420
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 9.97,
+          "memory_kib": {
+            "Rss": 50572,
+            "Pss": 33947,
+            "Private_Dirty": 29088
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167744,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4960.500361233,
+      "utc": "2026-11-17T14:50:36.037599+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.37,
+          "memory_kib": {
+            "Rss": 23308,
+            "Pss": 13790,
+            "Private_Dirty": 6444
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 3.09,
+          "memory_kib": {
+            "Rss": 41400,
+            "Pss": 32169,
+            "Private_Dirty": 27476
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.25,
+          "memory_kib": {
+            "Rss": 14900,
+            "Pss": 5977,
+            "Private_Dirty": 3404
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 11.79,
+          "memory_kib": {
+            "Rss": 49772,
+            "Pss": 33178,
+            "Private_Dirty": 28464
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 10.51,
+          "memory_kib": {
+            "Rss": 50576,
+            "Pss": 33951,
+            "Private_Dirty": 29092
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167992,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4961.540134892,
+      "utc": "2026-11-17T14:50:37.077371+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.43,
+          "memory_kib": {
+            "Rss": 23308,
+            "Pss": 13790,
+            "Private_Dirty": 6444
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 3.21,
+          "memory_kib": {
+            "Rss": 41400,
+            "Pss": 32169,
+            "Private_Dirty": 27476
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.32,
+          "memory_kib": {
+            "Rss": 14900,
+            "Pss": 5977,
+            "Private_Dirty": 3404
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 12.43,
+          "memory_kib": {
+            "Rss": 49812,
+            "Pss": 33218,
+            "Private_Dirty": 28504
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 11.05,
+          "memory_kib": {
+            "Rss": 50580,
+            "Pss": 33955,
+            "Private_Dirty": 29096
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3163720,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4962.576858226,
+      "utc": "2026-11-17T14:50:38.114092+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.48,
+          "memory_kib": {
+            "Rss": 23308,
+            "Pss": 13790,
+            "Private_Dirty": 6444
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 3.33,
+          "memory_kib": {
+            "Rss": 41400,
+            "Pss": 32168,
+            "Private_Dirty": 27476
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.38,
+          "memory_kib": {
+            "Rss": 14900,
+            "Pss": 5977,
+            "Private_Dirty": 3404
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 13.02,
+          "memory_kib": {
+            "Rss": 49852,
+            "Pss": 33257,
+            "Private_Dirty": 28544
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 11.6,
+          "memory_kib": {
+            "Rss": 50588,
+            "Pss": 33963,
+            "Private_Dirty": 29104
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3163720,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4963.611761986,
+      "utc": "2026-11-17T14:50:39.149001+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.53,
+          "memory_kib": {
+            "Rss": 23308,
+            "Pss": 13791,
+            "Private_Dirty": 6444
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 3.45,
+          "memory_kib": {
+            "Rss": 41400,
+            "Pss": 32169,
+            "Private_Dirty": 27476
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.44,
+          "memory_kib": {
+            "Rss": 14900,
+            "Pss": 5978,
+            "Private_Dirty": 3404
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 13.62,
+          "memory_kib": {
+            "Rss": 49892,
+            "Pss": 33330,
+            "Private_Dirty": 28584
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 12.12,
+          "memory_kib": {
+            "Rss": 50592,
+            "Pss": 33982,
+            "Private_Dirty": 29108
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3166996,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4964.659296132,
+      "utc": "2026-11-17T14:50:40.196533+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.58,
+          "memory_kib": {
+            "Rss": 23308,
+            "Pss": 13791,
+            "Private_Dirty": 6444
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 3.57,
+          "memory_kib": {
+            "Rss": 41400,
+            "Pss": 32169,
+            "Private_Dirty": 27476
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.5,
+          "memory_kib": {
+            "Rss": 14900,
+            "Pss": 5978,
+            "Private_Dirty": 3404
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 14.22,
+          "memory_kib": {
+            "Rss": 49932,
+            "Pss": 33369,
+            "Private_Dirty": 28624
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 12.66,
+          "memory_kib": {
+            "Rss": 50596,
+            "Pss": 33979,
+            "Private_Dirty": 29112
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3171484,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4965.703199363,
+      "utc": "2026-11-17T14:50:41.240435+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.62,
+          "memory_kib": {
+            "Rss": 23308,
+            "Pss": 13791,
+            "Private_Dirty": 6444
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 3.67,
+          "memory_kib": {
+            "Rss": 41400,
+            "Pss": 32169,
+            "Private_Dirty": 27476
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.55,
+          "memory_kib": {
+            "Rss": 14900,
+            "Pss": 5977,
+            "Private_Dirty": 3404
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 14.84,
+          "memory_kib": {
+            "Rss": 49976,
+            "Pss": 33390,
+            "Private_Dirty": 28668
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 13.2,
+          "memory_kib": {
+            "Rss": 50604,
+            "Pss": 33983,
+            "Private_Dirty": 29120
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3170112,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4966.744120382,
+      "utc": "2026-11-17T14:50:42.281357+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.68,
+          "memory_kib": {
+            "Rss": 23308,
+            "Pss": 13790,
+            "Private_Dirty": 6444
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 3.8,
+          "memory_kib": {
+            "Rss": 41400,
+            "Pss": 32169,
+            "Private_Dirty": 27476
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.61,
+          "memory_kib": {
+            "Rss": 14900,
+            "Pss": 5977,
+            "Private_Dirty": 3404
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 15.45,
+          "memory_kib": {
+            "Rss": 50016,
+            "Pss": 33426,
+            "Private_Dirty": 28708
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 13.74,
+          "memory_kib": {
+            "Rss": 50604,
+            "Pss": 33979,
+            "Private_Dirty": 29120
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3169860,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4967.787987109,
+      "utc": "2026-11-17T14:50:43.325221+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.73,
+          "memory_kib": {
+            "Rss": 23312,
+            "Pss": 13794,
+            "Private_Dirty": 6448
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 3.93,
+          "memory_kib": {
+            "Rss": 41404,
+            "Pss": 32172,
+            "Private_Dirty": 27480
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.68,
+          "memory_kib": {
+            "Rss": 14904,
+            "Pss": 5981,
+            "Private_Dirty": 3408
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 16.06,
+          "memory_kib": {
+            "Rss": 50064,
+            "Pss": 33469,
+            "Private_Dirty": 28756
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 14.27,
+          "memory_kib": {
+            "Rss": 50616,
+            "Pss": 33990,
+            "Private_Dirty": 29132
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167588,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4968.826675979,
+      "utc": "2026-11-17T14:50:44.363911+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.78,
+          "memory_kib": {
+            "Rss": 23312,
+            "Pss": 13795,
+            "Private_Dirty": 6448
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 4.05,
+          "memory_kib": {
+            "Rss": 41408,
+            "Pss": 32177,
+            "Private_Dirty": 27484
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.74,
+          "memory_kib": {
+            "Rss": 14904,
+            "Pss": 5981,
+            "Private_Dirty": 3408
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 16.66,
+          "memory_kib": {
+            "Rss": 50108,
+            "Pss": 33522,
+            "Private_Dirty": 28800
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 14.81,
+          "memory_kib": {
+            "Rss": 50616,
+            "Pss": 33995,
+            "Private_Dirty": 29132
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167600,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4969.871893993,
+      "utc": "2026-11-17T14:50:45.409131+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.84,
+          "memory_kib": {
+            "Rss": 23312,
+            "Pss": 13795,
+            "Private_Dirty": 6448
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 4.16,
+          "memory_kib": {
+            "Rss": 41408,
+            "Pss": 32177,
+            "Private_Dirty": 27484
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.8,
+          "memory_kib": {
+            "Rss": 14904,
+            "Pss": 5982,
+            "Private_Dirty": 3408
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 17.27,
+          "memory_kib": {
+            "Rss": 50148,
+            "Pss": 33586,
+            "Private_Dirty": 28840
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 15.35,
+          "memory_kib": {
+            "Rss": 50624,
+            "Pss": 34014,
+            "Private_Dirty": 29140
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167324,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61835",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4970.928898922,
+      "utc": "2026-11-17T14:50:46.466134+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.89,
+          "memory_kib": {
+            "Rss": 23312,
+            "Pss": 13795,
+            "Private_Dirty": 6448
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 4.29,
+          "memory_kib": {
+            "Rss": 41408,
+            "Pss": 32177,
+            "Private_Dirty": 27484
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.85,
+          "memory_kib": {
+            "Rss": 14904,
+            "Pss": 5981,
+            "Private_Dirty": 3408
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 17.92,
+          "memory_kib": {
+            "Rss": 50188,
+            "Pss": 33602,
+            "Private_Dirty": 28880
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 15.9,
+          "memory_kib": {
+            "Rss": 50628,
+            "Pss": 34005,
+            "Private_Dirty": 29144
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167576,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4971.972054365,
+      "utc": "2026-11-17T14:50:47.509289+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.94,
+          "memory_kib": {
+            "Rss": 23312,
+            "Pss": 13795,
+            "Private_Dirty": 6448
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 4.4,
+          "memory_kib": {
+            "Rss": 41408,
+            "Pss": 32177,
+            "Private_Dirty": 27484
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.92,
+          "memory_kib": {
+            "Rss": 14904,
+            "Pss": 5981,
+            "Private_Dirty": 3408
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 18.54,
+          "memory_kib": {
+            "Rss": 50236,
+            "Pss": 33650,
+            "Private_Dirty": 28928
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 16.44,
+          "memory_kib": {
+            "Rss": 50632,
+            "Pss": 34009,
+            "Private_Dirty": 29148
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3167056,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4973.011104998,
+      "utc": "2026-11-17T14:50:48.548343+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.98,
+          "memory_kib": {
+            "Rss": 23312,
+            "Pss": 13795,
+            "Private_Dirty": 6448
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 4.53,
+          "memory_kib": {
+            "Rss": 41408,
+            "Pss": 32177,
+            "Private_Dirty": 27484
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 1.98,
+          "memory_kib": {
+            "Rss": 14904,
+            "Pss": 5981,
+            "Private_Dirty": 3408
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 19.14,
+          "memory_kib": {
+            "Rss": 50276,
+            "Pss": 33690,
+            "Private_Dirty": 28968
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 16.98,
+          "memory_kib": {
+            "Rss": 50632,
+            "Pss": 34009,
+            "Private_Dirty": 29148
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3165300,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4974.057014299,
+      "utc": "2026-11-17T14:50:49.594248+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.04,
+          "memory_kib": {
+            "Rss": 23312,
+            "Pss": 13793,
+            "Private_Dirty": 6448
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 4.64,
+          "memory_kib": {
+            "Rss": 41408,
+            "Pss": 32175,
+            "Private_Dirty": 27484
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.03,
+          "memory_kib": {
+            "Rss": 14904,
+            "Pss": 5981,
+            "Private_Dirty": 3408
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 19.76,
+          "memory_kib": {
+            "Rss": 50312,
+            "Pss": 33753,
+            "Private_Dirty": 29004
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 17.52,
+          "memory_kib": {
+            "Rss": 50640,
+            "Pss": 34050,
+            "Private_Dirty": 29156
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3162572,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4975.093285291,
+      "utc": "2026-11-17T14:50:50.630522+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.09,
+          "memory_kib": {
+            "Rss": 23316,
+            "Pss": 13797,
+            "Private_Dirty": 6452
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 4.76,
+          "memory_kib": {
+            "Rss": 41408,
+            "Pss": 32175,
+            "Private_Dirty": 27484
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.09,
+          "memory_kib": {
+            "Rss": 14908,
+            "Pss": 5985,
+            "Private_Dirty": 3412
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 20.37,
+          "memory_kib": {
+            "Rss": 50356,
+            "Pss": 33742,
+            "Private_Dirty": 29048
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 18.05,
+          "memory_kib": {
+            "Rss": 50648,
+            "Pss": 34004,
+            "Private_Dirty": 29164
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3162580,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61835",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4976.129764926,
+      "utc": "2026-11-17T14:50:51.667000+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.14,
+          "memory_kib": {
+            "Rss": 23316,
+            "Pss": 13825,
+            "Private_Dirty": 6452
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 4.89,
+          "memory_kib": {
+            "Rss": 41408,
+            "Pss": 32201,
+            "Private_Dirty": 27484
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.16,
+          "memory_kib": {
+            "Rss": 14908,
+            "Pss": 6009,
+            "Private_Dirty": 3412
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 21.0,
+          "memory_kib": {
+            "Rss": 50396,
+            "Pss": 33967,
+            "Private_Dirty": 29088
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 18.6,
+          "memory_kib": {
+            "Rss": 50648,
+            "Pss": 34187,
+            "Private_Dirty": 29164
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3220056,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4977.163394246,
+      "utc": "2026-11-17T14:50:52.700634+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.19,
+          "memory_kib": {
+            "Rss": 23320,
+            "Pss": 13844,
+            "Private_Dirty": 6456
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 5.0,
+          "memory_kib": {
+            "Rss": 41412,
+            "Pss": 32220,
+            "Private_Dirty": 27488
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.23,
+          "memory_kib": {
+            "Rss": 14912,
+            "Pss": 6027,
+            "Private_Dirty": 3416
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 21.63,
+          "memory_kib": {
+            "Rss": 50432,
+            "Pss": 34088,
+            "Private_Dirty": 29124
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 19.16,
+          "memory_kib": {
+            "Rss": 50660,
+            "Pss": 34285,
+            "Private_Dirty": 29176
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3239292,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61835",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4978.194010338,
+      "utc": "2026-11-17T14:50:53.731246+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.24,
+          "memory_kib": {
+            "Rss": 23320,
+            "Pss": 13844,
+            "Private_Dirty": 6456
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 5.12,
+          "memory_kib": {
+            "Rss": 41412,
+            "Pss": 32220,
+            "Private_Dirty": 27488
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.28,
+          "memory_kib": {
+            "Rss": 14912,
+            "Pss": 6027,
+            "Private_Dirty": 3416
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 22.22,
+          "memory_kib": {
+            "Rss": 50480,
+            "Pss": 34136,
+            "Private_Dirty": 29172
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 19.7,
+          "memory_kib": {
+            "Rss": 50660,
+            "Pss": 34285,
+            "Private_Dirty": 29176
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3236156,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4979.222610357,
+      "utc": "2026-11-17T14:50:54.759845+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.28,
+          "memory_kib": {
+            "Rss": 23320,
+            "Pss": 13836,
+            "Private_Dirty": 6456
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 5.21,
+          "memory_kib": {
+            "Rss": 41412,
+            "Pss": 32212,
+            "Private_Dirty": 27488
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.33,
+          "memory_kib": {
+            "Rss": 14912,
+            "Pss": 6019,
+            "Private_Dirty": 3416
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 22.76,
+          "memory_kib": {
+            "Rss": 50520,
+            "Pss": 34097,
+            "Private_Dirty": 29212
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 20.2,
+          "memory_kib": {
+            "Rss": 50664,
+            "Pss": 34210,
+            "Private_Dirty": 29180
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3224264,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4980.253278342,
+      "utc": "2026-11-17T14:50:55.790513+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.32,
+          "memory_kib": {
+            "Rss": 23320,
+            "Pss": 13811,
+            "Private_Dirty": 6456
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 5.33,
+          "memory_kib": {
+            "Rss": 41412,
+            "Pss": 32191,
+            "Private_Dirty": 27488
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.39,
+          "memory_kib": {
+            "Rss": 14912,
+            "Pss": 5999,
+            "Private_Dirty": 3416
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 23.34,
+          "memory_kib": {
+            "Rss": 50556,
+            "Pss": 34102,
+            "Private_Dirty": 29248
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 20.71,
+          "memory_kib": {
+            "Rss": 50668,
+            "Pss": 34183,
+            "Private_Dirty": 29184
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3235024,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4981.280490832,
+      "utc": "2026-11-17T14:50:56.817724+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.38,
+          "memory_kib": {
+            "Rss": 23320,
+            "Pss": 13836,
+            "Private_Dirty": 6456
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 5.43,
+          "memory_kib": {
+            "Rss": 41412,
+            "Pss": 32212,
+            "Private_Dirty": 27488
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.44,
+          "memory_kib": {
+            "Rss": 14912,
+            "Pss": 6019,
+            "Private_Dirty": 3416
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 23.95,
+          "memory_kib": {
+            "Rss": 50592,
+            "Pss": 34168,
+            "Private_Dirty": 29284
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 21.25,
+          "memory_kib": {
+            "Rss": 50672,
+            "Pss": 34218,
+            "Private_Dirty": 29188
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3239920,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4982.311503846,
+      "utc": "2026-11-17T14:50:57.848742+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.42,
+          "memory_kib": {
+            "Rss": 23320,
+            "Pss": 13831,
+            "Private_Dirty": 6456
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 5.55,
+          "memory_kib": {
+            "Rss": 41412,
+            "Pss": 32208,
+            "Private_Dirty": 27488
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.5,
+          "memory_kib": {
+            "Rss": 14912,
+            "Pss": 6014,
+            "Private_Dirty": 3416
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 24.54,
+          "memory_kib": {
+            "Rss": 50632,
+            "Pss": 34201,
+            "Private_Dirty": 29324
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 21.77,
+          "memory_kib": {
+            "Rss": 50672,
+            "Pss": 34210,
+            "Private_Dirty": 29188
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3188540,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4983.342510075,
+      "utc": "2026-11-17T14:50:58.879745+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.47,
+          "memory_kib": {
+            "Rss": 23320,
+            "Pss": 13831,
+            "Private_Dirty": 6456
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 5.68,
+          "memory_kib": {
+            "Rss": 41416,
+            "Pss": 32212,
+            "Private_Dirty": 27492
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.55,
+          "memory_kib": {
+            "Rss": 14912,
+            "Pss": 6014,
+            "Private_Dirty": 3416
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 25.15,
+          "memory_kib": {
+            "Rss": 50672,
+            "Pss": 34241,
+            "Private_Dirty": 29364
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 22.31,
+          "memory_kib": {
+            "Rss": 50676,
+            "Pss": 34215,
+            "Private_Dirty": 29192
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3187816,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4984.371334949,
+      "utc": "2026-11-17T14:50:59.908569+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.51,
+          "memory_kib": {
+            "Rss": 23320,
+            "Pss": 13830,
+            "Private_Dirty": 6456
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 5.79,
+          "memory_kib": {
+            "Rss": 41416,
+            "Pss": 32210,
+            "Private_Dirty": 27492
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.61,
+          "memory_kib": {
+            "Rss": 14912,
+            "Pss": 6013,
+            "Private_Dirty": 3416
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 25.69,
+          "memory_kib": {
+            "Rss": 50720,
+            "Pss": 34288,
+            "Private_Dirty": 29412
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 22.82,
+          "memory_kib": {
+            "Rss": 50680,
+            "Pss": 34217,
+            "Private_Dirty": 29196
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3230756,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4985.40268667,
+      "utc": "2026-11-17T14:51:00.939920+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.55,
+          "memory_kib": {
+            "Rss": 23324,
+            "Pss": 13834,
+            "Private_Dirty": 6460
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 5.9,
+          "memory_kib": {
+            "Rss": 41416,
+            "Pss": 32210,
+            "Private_Dirty": 27492
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.66,
+          "memory_kib": {
+            "Rss": 14916,
+            "Pss": 6017,
+            "Private_Dirty": 3420
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 26.27,
+          "memory_kib": {
+            "Rss": 50764,
+            "Pss": 34332,
+            "Private_Dirty": 29456
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 23.34,
+          "memory_kib": {
+            "Rss": 50688,
+            "Pss": 34225,
+            "Private_Dirty": 29204
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3217484,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4986.434020087,
+      "utc": "2026-11-17T14:51:01.971253+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.61,
+          "memory_kib": {
+            "Rss": 23324,
+            "Pss": 13838,
+            "Private_Dirty": 6460
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 6.01,
+          "memory_kib": {
+            "Rss": 41416,
+            "Pss": 32214,
+            "Private_Dirty": 27492
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.72,
+          "memory_kib": {
+            "Rss": 14916,
+            "Pss": 6021,
+            "Private_Dirty": 3420
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 26.84,
+          "memory_kib": {
+            "Rss": 50800,
+            "Pss": 34375,
+            "Private_Dirty": 29492
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 23.86,
+          "memory_kib": {
+            "Rss": 50700,
+            "Pss": 34244,
+            "Private_Dirty": 29216
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3240592,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4987.464723575,
+      "utc": "2026-11-17T14:51:03.001962+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.66,
+          "memory_kib": {
+            "Rss": 23324,
+            "Pss": 13832,
+            "Private_Dirty": 6460
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 6.14,
+          "memory_kib": {
+            "Rss": 41416,
+            "Pss": 32209,
+            "Private_Dirty": 27492
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.79,
+          "memory_kib": {
+            "Rss": 14916,
+            "Pss": 6016,
+            "Private_Dirty": 3420
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 27.51,
+          "memory_kib": {
+            "Rss": 50840,
+            "Pss": 34409,
+            "Private_Dirty": 29532
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 24.42,
+          "memory_kib": {
+            "Rss": 50700,
+            "Pss": 34239,
+            "Private_Dirty": 29216
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3224276,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4988.492154129,
+      "utc": "2026-11-17T14:51:04.029389+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.71,
+          "memory_kib": {
+            "Rss": 23324,
+            "Pss": 13832,
+            "Private_Dirty": 6460
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 6.26,
+          "memory_kib": {
+            "Rss": 41416,
+            "Pss": 32208,
+            "Private_Dirty": 27492
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.84,
+          "memory_kib": {
+            "Rss": 14916,
+            "Pss": 6016,
+            "Private_Dirty": 3420
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 28.07,
+          "memory_kib": {
+            "Rss": 50876,
+            "Pss": 34441,
+            "Private_Dirty": 29568
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 24.93,
+          "memory_kib": {
+            "Rss": 50704,
+            "Pss": 34239,
+            "Private_Dirty": 29220
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3217576,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4989.520927706,
+      "utc": "2026-11-17T14:51:05.058162+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.75,
+          "memory_kib": {
+            "Rss": 23324,
+            "Pss": 13830,
+            "Private_Dirty": 6460
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 6.36,
+          "memory_kib": {
+            "Rss": 41416,
+            "Pss": 32207,
+            "Private_Dirty": 27492
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.89,
+          "memory_kib": {
+            "Rss": 14916,
+            "Pss": 6014,
+            "Private_Dirty": 3420
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 28.64,
+          "memory_kib": {
+            "Rss": 50916,
+            "Pss": 34480,
+            "Private_Dirty": 29608
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 25.43,
+          "memory_kib": {
+            "Rss": 50708,
+            "Pss": 34241,
+            "Private_Dirty": 29224
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3218856,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61835",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4990.554739834,
+      "utc": "2026-11-17T14:51:06.091975+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.79,
+          "memory_kib": {
+            "Rss": 23324,
+            "Pss": 13831,
+            "Private_Dirty": 6460
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 6.47,
+          "memory_kib": {
+            "Rss": 41416,
+            "Pss": 32207,
+            "Private_Dirty": 27492
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.94,
+          "memory_kib": {
+            "Rss": 14916,
+            "Pss": 6015,
+            "Private_Dirty": 3420
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 29.21,
+          "memory_kib": {
+            "Rss": 50960,
+            "Pss": 34524,
+            "Private_Dirty": 29652
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 25.94,
+          "memory_kib": {
+            "Rss": 50712,
+            "Pss": 34245,
+            "Private_Dirty": 29228
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3218140,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4991.586289015,
+      "utc": "2026-11-17T14:51:07.123523+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.85,
+          "memory_kib": {
+            "Rss": 23328,
+            "Pss": 13835,
+            "Private_Dirty": 6464
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 6.59,
+          "memory_kib": {
+            "Rss": 41420,
+            "Pss": 32211,
+            "Private_Dirty": 27496
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.0,
+          "memory_kib": {
+            "Rss": 14920,
+            "Pss": 6019,
+            "Private_Dirty": 3424
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 29.72,
+          "memory_kib": {
+            "Rss": 51000,
+            "Pss": 34564,
+            "Private_Dirty": 29692
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 26.47,
+          "memory_kib": {
+            "Rss": 50716,
+            "Pss": 34249,
+            "Private_Dirty": 29232
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3217492,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4992.614753917,
+      "utc": "2026-11-17T14:51:08.151988+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.9,
+          "memory_kib": {
+            "Rss": 23328,
+            "Pss": 13835,
+            "Private_Dirty": 6464
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 6.7,
+          "memory_kib": {
+            "Rss": 41420,
+            "Pss": 32211,
+            "Private_Dirty": 27496
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.05,
+          "memory_kib": {
+            "Rss": 14920,
+            "Pss": 6019,
+            "Private_Dirty": 3424
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 30.28,
+          "memory_kib": {
+            "Rss": 51048,
+            "Pss": 34612,
+            "Private_Dirty": 29740
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 26.97,
+          "memory_kib": {
+            "Rss": 50724,
+            "Pss": 34257,
+            "Private_Dirty": 29240
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3223588,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4993.647805729,
+      "utc": "2026-11-17T14:51:09.185040+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.93,
+          "memory_kib": {
+            "Rss": 23328,
+            "Pss": 13835,
+            "Private_Dirty": 6464
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 6.81,
+          "memory_kib": {
+            "Rss": 41424,
+            "Pss": 32215,
+            "Private_Dirty": 27500
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.11,
+          "memory_kib": {
+            "Rss": 14920,
+            "Pss": 6019,
+            "Private_Dirty": 3424
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 30.87,
+          "memory_kib": {
+            "Rss": 51088,
+            "Pss": 34652,
+            "Private_Dirty": 29780
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 27.49,
+          "memory_kib": {
+            "Rss": 50724,
+            "Pss": 34257,
+            "Private_Dirty": 29240
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3210708,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4994.679260703,
+      "utc": "2026-11-17T14:51:10.216494+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 2.98,
+          "memory_kib": {
+            "Rss": 23328,
+            "Pss": 13835,
+            "Private_Dirty": 6464
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 6.92,
+          "memory_kib": {
+            "Rss": 41424,
+            "Pss": 32215,
+            "Private_Dirty": 27500
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.16,
+          "memory_kib": {
+            "Rss": 14920,
+            "Pss": 6019,
+            "Private_Dirty": 3424
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 31.43,
+          "memory_kib": {
+            "Rss": 51124,
+            "Pss": 34688,
+            "Private_Dirty": 29816
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 27.99,
+          "memory_kib": {
+            "Rss": 50728,
+            "Pss": 34261,
+            "Private_Dirty": 29244
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3210656,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4995.708941891,
+      "utc": "2026-11-17T14:51:11.246176+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.02,
+          "memory_kib": {
+            "Rss": 23328,
+            "Pss": 13835,
+            "Private_Dirty": 6464
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 7.03,
+          "memory_kib": {
+            "Rss": 41424,
+            "Pss": 32215,
+            "Private_Dirty": 27500
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.21,
+          "memory_kib": {
+            "Rss": 14920,
+            "Pss": 6019,
+            "Private_Dirty": 3424
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 32.01,
+          "memory_kib": {
+            "Rss": 51164,
+            "Pss": 34728,
+            "Private_Dirty": 29856
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 28.51,
+          "memory_kib": {
+            "Rss": 50736,
+            "Pss": 34269,
+            "Private_Dirty": 29252
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3195160,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59400",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4996.735725972,
+      "utc": "2026-11-17T14:51:12.272959+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.06,
+          "memory_kib": {
+            "Rss": 23328,
+            "Pss": 13835,
+            "Private_Dirty": 6464
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 7.14,
+          "memory_kib": {
+            "Rss": 41424,
+            "Pss": 32215,
+            "Private_Dirty": 27500
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.27,
+          "memory_kib": {
+            "Rss": 14920,
+            "Pss": 6019,
+            "Private_Dirty": 3424
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 32.56,
+          "memory_kib": {
+            "Rss": 51208,
+            "Pss": 34772,
+            "Private_Dirty": 29900
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 29.01,
+          "memory_kib": {
+            "Rss": 50736,
+            "Pss": 34269,
+            "Private_Dirty": 29252
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3203148,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4997.766896718,
+      "utc": "2026-11-17T14:51:13.304130+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.11,
+          "memory_kib": {
+            "Rss": 23328,
+            "Pss": 13835,
+            "Private_Dirty": 6464
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 7.23,
+          "memory_kib": {
+            "Rss": 41424,
+            "Pss": 32215,
+            "Private_Dirty": 27500
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.32,
+          "memory_kib": {
+            "Rss": 14920,
+            "Pss": 6019,
+            "Private_Dirty": 3424
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 33.14,
+          "memory_kib": {
+            "Rss": 51244,
+            "Pss": 34808,
+            "Private_Dirty": 29936
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 29.52,
+          "memory_kib": {
+            "Rss": 50740,
+            "Pss": 34273,
+            "Private_Dirty": 29256
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3201556,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4998.804958887,
+      "utc": "2026-11-17T14:51:14.342192+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.16,
+          "memory_kib": {
+            "Rss": 23328,
+            "Pss": 13812,
+            "Private_Dirty": 6464
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 7.32,
+          "memory_kib": {
+            "Rss": 41424,
+            "Pss": 32194,
+            "Private_Dirty": 27500
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.38,
+          "memory_kib": {
+            "Rss": 14924,
+            "Pss": 6003,
+            "Private_Dirty": 3428
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 33.75,
+          "memory_kib": {
+            "Rss": 51288,
+            "Pss": 34738,
+            "Private_Dirty": 29980
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 30.05,
+          "memory_kib": {
+            "Rss": 50744,
+            "Pss": 34163,
+            "Private_Dirty": 29260
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3210376,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 4999.84081789,
+      "utc": "2026-11-17T14:51:15.378052+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.21,
+          "memory_kib": {
+            "Rss": 23332,
+            "Pss": 13815,
+            "Private_Dirty": 6468
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 7.44,
+          "memory_kib": {
+            "Rss": 41424,
+            "Pss": 32193,
+            "Private_Dirty": 27500
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.43,
+          "memory_kib": {
+            "Rss": 14924,
+            "Pss": 6002,
+            "Private_Dirty": 3428
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 34.37,
+          "memory_kib": {
+            "Rss": 51324,
+            "Pss": 34768,
+            "Private_Dirty": 30016
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 30.6,
+          "memory_kib": {
+            "Rss": 50752,
+            "Pss": 34165,
+            "Private_Dirty": 29268
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3202568,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59887",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 5000.896415521,
+      "utc": "2026-11-17T14:51:16.433651+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.27,
+          "memory_kib": {
+            "Rss": 23336,
+            "Pss": 13819,
+            "Private_Dirty": 6472
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 7.53,
+          "memory_kib": {
+            "Rss": 41428,
+            "Pss": 32197,
+            "Private_Dirty": 27504
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.5,
+          "memory_kib": {
+            "Rss": 14928,
+            "Pss": 6006,
+            "Private_Dirty": 3432
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 35.0,
+          "memory_kib": {
+            "Rss": 51364,
+            "Pss": 34808,
+            "Private_Dirty": 30056
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 31.16,
+          "memory_kib": {
+            "Rss": 50756,
+            "Pss": 34169,
+            "Private_Dirty": 29272
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3201308,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 5001.925024852,
+      "utc": "2026-11-17T14:51:17.462259+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.31,
+          "memory_kib": {
+            "Rss": 23336,
+            "Pss": 13819,
+            "Private_Dirty": 6472
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 7.6,
+          "memory_kib": {
+            "Rss": 41428,
+            "Pss": 32197,
+            "Private_Dirty": 27504
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.55,
+          "memory_kib": {
+            "Rss": 14928,
+            "Pss": 6006,
+            "Private_Dirty": 3432
+          }
+        },
+        {
+          "pid": 10847,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "observe"
+          ],
+          "cpu_s": 35.48,
+          "memory_kib": {
+            "Rss": 51388,
+            "Pss": 34832,
+            "Private_Dirty": 30080
+          }
+        },
+        {
+          "pid": 10849,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+            "--role",
+            "feed"
+          ],
+          "cpu_s": 31.54,
+          "memory_kib": {
+            "Rss": 51196,
+            "Pss": 34609,
+            "Private_Dirty": 29712
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3199864,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 5002.985496389,
+      "utc": "2026-11-17T14:51:18.522732+00:00",
+      "processes": [
+        {
+          "pid": 10844,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.37,
+          "memory_kib": {
+            "Rss": 23364,
+            "Pss": 14344,
+            "Private_Dirty": 6500
+          }
+        },
+        {
+          "pid": 10845,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "--params-file",
+            "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+          ],
+          "cpu_s": 7.66,
+          "memory_kib": {
+            "Rss": 41456,
+            "Pss": 32817,
+            "Private_Dirty": 27532
+          }
+        },
+        {
+          "pid": 10846,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-p",
+            "use_sim_time:=true"
+          ],
+          "cpu_s": 3.62,
+          "memory_kib": {
+            "Rss": 15116,
+            "Pss": 6557,
+            "Private_Dirty": 3492
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3234376,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    }
+  ]
+}

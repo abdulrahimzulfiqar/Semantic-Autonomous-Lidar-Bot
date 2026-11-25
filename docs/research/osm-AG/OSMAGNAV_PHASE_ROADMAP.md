@@ -2,12 +2,12 @@
 
 ## Quick summary
 
-- **Current position:** Phases 01–07 are accepted for their recorded bounded scopes; rolling-window segmented navigation has 169 passing tests, automated motion/fault evidence and user visual acceptance.
-- **Next:** Phase 08 evaluates structure-based localization against the retained full-map AMCL baseline. [Phase 07](phases/07_GCU_ROLLING_RASTER.md) is complete for bounded simulation scope, accepted November 14, 2026.
-- **Authors' workflow:** Phases 06–09 add segmented execution, rolling raster maps, structural localization and integrated evaluation.
-- **Our research:** Phases 10–13 evaluate Pi 4B deployment, camera perception, language reasoning and their combined resource/accuracy tradeoffs. This sequence is provisional.
+- **Current position:** Phases 01–07 retain their accepted bounded scopes. Phase 08 is closed as a preliminary localization study (183 tests, 1,260 paired frames); AMCL remains in production.
+- **Current:** [Phase 09](phases/09_PI4B_NAVIGATION_BASELINE.md) closed for the measured corridor baseline on the Pi 4B. Phase 10 camera perception is next, followed by language and combined-load experiments.
+- **Paper relationship:** osmAG routing, rolling maps and segmented execution are retained; author AGLoc/AGLoc++ integration is explicitly deferred. Exact full-stack reproduction is not claimed.
+- **Research focus:** Measure resource-budgeted navigation, perception and language on constrained hardware. CPU/RAM benefits, novelty and robustness remain claims to establish experimentally.
 
-Planned on 2026-11-04. This is the current forward roadmap for the numbered GCU
+Originally planned on 2026-11-04; reprioritized by user decision on 2026-11-14. This is the current forward roadmap for the numbered GCU
 checkpoints. It complements the measured [phase records](phases/README.md).
 The older master roadmap and “Phase 2” integration design preserve earlier work;
 their numbering and direct `FollowPath` design are historical.
@@ -33,12 +33,16 @@ would not reproduce the authors' rolling-map architecture.
 | **05 — Reliable execution and osmAG route preview** | Repair the consecutive-goal/shutdown gaps, record source availability and the explicitly approved paper-based routing implementation, validate frames and feasible passages, and display an osmAG route from a clicked destination. | Prepare the planner and interfaces in §§4, 5.2–5.3 and 7. | Reliable metric regressions plus correct, motion-free osmAG route previews and explicit failure results. [Measured Phase 05 record](phases/05_GCU_OSMAG_ROUTE_PREVIEW_AND_RELIABLE_HANDOFF.md); bounded [quality/fidelity follow-up](GCU_ROUTING_PAPER_AUDIT.md) passed (47 unit / 10 offline / 15 live preview cases), with user visual acceptance. |
 | **06 — Segmented osmAG navigation** | Dispatch passage-derived `NavigateToPose` goals with continuous handoff, enforce/monitor transitions, and show the full route alongside the active Nav2 segment. Retain the static map. [Detailed plan](plans/06_GCU_OSMAG_SEGMENTED_NAVIGATION.md). | Implement §5.4 and §4.3; refined crossing targets and topology constraints are explicit adaptations. | Repeated missions confirm ordered crossings, final arrival, cancellation/closure handling and clean teardown; user visual acceptance. |
 | **07 — Rolling raster and boundary goals** | Rasterize nearby osmAG geometry online, supply it to Nav2 and project segment goals inside the available map. | Reproduce §5.1, Figure 4 and §5.4.1. | Missions cross window boundaries, excluded regions stay blocked, and Nav2 planning no longer consumes a full-floor raster. Measure the memory of each remaining component. |
-| **08 — Structure-based localization** | Audit sensor compatibility, then integrate/evaluate the authors' AGLoc estimator and Nav2 pose/TF adapter against our AMCL baseline. | Reproduce the relevant capabilities in §6 and the localization interfaces in §7. | Measured tracking, clutter and recovery trials pass with one TF owner. Report any sensor-driven adaptation explicitly. |
-| **09 — Integrated paper-aligned baseline in simulation** | Freeze the combined stack and evaluate end-to-end routes, obstacle/closure handling, localization, planning latency and map scaling. | Evaluate the assembled architecture in §§4–7 using experiments motivated by §8. | Reproducible single-floor simulation report, repeat trials, versioned inputs and a clear list of reproduced/omitted paper capabilities. |
-| **10 — Pi 4B navigation baseline** | Run the navigation workload on the actual Pi, with Gazebo on a separate machine; measure RAM, CPU, latency, temperature and reliability. | Begin the EdgeOsmAG extension; constrained-hardware results are ours to establish. | Same frozen navigation tasks run within an explicitly measured resource budget; middleware/network costs are reported separately. |
-| **11 — Camera perception and semantic observations** | Add a measured object detector and associate observations with poses/areas, confidence and timestamps. | Extend the semantic representation toward our project goals; this is beyond the core navigation workflow being reproduced. | Useful detections/area associations with measured accuracy, latency and resource overhead. Camera display alone does not meet this gate. |
-| **12 — Language-guided tasks and map updates** | Turn bounded language requests into validated room/object goals or passage-status updates; compare feasible local-model and offboard configurations. | Our reasoning extension, informed by the related osmAG/LLM work rather than a claim about this navigation paper. | Supported tasks succeed, ambiguous/unsupported requests produce explicit outcomes, and model decisions never directly publish wheel velocities. |
-| **13 — EdgeOsmAG evaluation and paper** | Evaluate navigation, perception and reasoning together; run controlled ablations and document limitations. | Establish our contribution relative to the reproduced authors' baseline and conventional navigation. | Repeatable results showing the actual capability/resource tradeoffs; paper claims match the measured evidence. |
+| **08 — Preliminary localization study** | [Closed record](phases/08_GCU_LOCALIZATION_COMPARISON.md): separate AMCL and 2D-reference variants, source/sensor audit and two paired shadow captures retained. AMCL selected for continued deployment. | Preliminary study related to §6; author AGLoc/AGLoc++ and production structural integration remain unreproduced. | Closed by user decision November 14, 2026. Further structural recovery, TF handoff and candidate closed-loop/resource comparisons are deferred, not passed. |
+| **09 — Pi 4B navigation baseline** | [Completed for the measured corridor](phases/09_PI4B_NAVIGATION_BASELINE.md). Navigation ran on the Pi with AMCL; Gazebo and scoring ran in Ubuntu. | Establish the navigation-only baseline for the EdgeOsmAG hardware extension. | Three consecutive passes at 0.669–0.717× measured simulator rate with 2.19–2.21 average Pi CPU cores and about 370 MiB peak sampled PSS. |
+| **10 — Camera perception and semantic observations** | Add a measured object detector and associate detections with poses/areas, confidence and timestamps. | EdgeOsmAG extension beyond core navigation reproduction. | Useful detections/area associations with measured accuracy, latency, resources and navigation impact; camera display alone is insufficient. |
+| **11 — Language-guided tasks and map updates** | Convert bounded language requests into validated room/object goals or passage-status updates; compare feasible local and offboard inference explicitly. | EdgeOsmAG reasoning extension, informed by related osmAG/LLM work. | Supported tasks succeed, ambiguous requests have explicit outcomes, and language decisions do not directly command wheel velocities. |
+| **12 — Combined edge evaluation and paper** | Compare navigation alone, +camera, +language and +both under matched tasks/seeds/hardware; collect controlled ablations and limitations. | Establish the actual capability/resource tradeoff of EdgeOsmAG. | Repeatable reliability and task-quality results with CPU/RAM, deadline/thermal metrics and claims matching the evidence. |
+
+The original provisional Phase 09 integration freeze is folded into the new Pi
+baseline scope. Former Phase 10 Pi work becomes Phase 09; former Phases 11–13
+become 10–12. Completed phase numbers 01–08 are preserved. This reordering does
+not report any hardware/perception/language milestone as already achieved.
 
 Phase numbers are working checkpoints, not fixed deadlines. A phase may be split,
 combined or reordered when a dependency is discovered. Calendar estimates should
@@ -58,8 +62,9 @@ and localization compatibility are the largest current uncertainties.
    hierarchical pipeline. The 2026 project endpoint was audited in Phase 05 and
    contains a website rather than runtime packages. The user approved our
    explicitly labelled paper-based routing implementation. Exact author-runtime
-   equivalence is not claimed. AGLoc source/sensor compatibility remains a
-   separate dependency for Phase 08; that component has not been reproduced.
+   equivalence is not claimed. Phase 08 audited source/sensor compatibility and closed with AMCL retained;
+   the author localization component has not been reproduced and its integration
+   is deferred.
 3. **Keep intermediate baselines honest.** Phase 06 is osmAG-guided execution with
    a static raster. Phase 07 can bound Nav2's planning map while AMCL still uses a
    full-floor localization map. Until that dependency is addressed, report it;
@@ -67,7 +72,7 @@ and localization compatibility are the largest current uncertainties.
 4. **Check localization sensor requirements early.** Existing simulated scan and
    odometry interfaces may differ from the author's point-cloud/localization
    inputs. If a compatible sensor or a 2D adaptation is needed, record that choice
-   before Phase 08. Retaining AMCL remains a useful variant, but does not reproduce
+   if structural localization is reopened. Retaining AMCL does not reproduce
    the authors' structure-aware localization module.
 5. **Keep multi-floor work an explicit scope choice.** Add hierarchical cross-floor
    queries and elevator simulation after the single-floor baseline if needed.
@@ -83,11 +88,12 @@ and localization compatibility are the largest current uncertainties.
   Foxglove shows the high-level route and currently executing metric segment.
 - **After 07:** The served metric map follows the robot; distant segments advance
   through validated proxy goals and window updates.
-- **After 08–09:** The chosen localization module and combined stack have measured
-  evidence. This is the checkpoint for assessing single-floor architectural
-  reproduction of osmAG-Nav in simulation.
-- **After 10–13:** We can evaluate whether our edge implementation and added
-  perception/reasoning offer useful tradeoffs on Pi 4B.
+- **After 08:** A bounded localization feasibility study and recorded decision to
+  retain AMCL; original AGLoc/AGLoc++ parity remains unclaimed.
+- **After 09:** Measured navigation compute/reliability on actual Pi 4B, with
+  simulator and evaluator costs separated.
+- **After 10–12:** Evaluate whether perception/reasoning add useful capability
+  within that measured navigation budget.
 
 ## Research evidence to collect throughout
 
@@ -113,6 +119,8 @@ summary, results, limitations and reproduction commands.
 accepted November 13, 2026. All 135 tests and retained automated mission/fault
 checks pass. User visual acceptance covers short-distance behavior; the longer
 manual journey remains a recorded wall-time timeout. Test processes are stopped.
-Phase 07 is now [complete for bounded simulation scope](phases/07_GCU_ROLLING_RASTER.md); next is Phase 08 structure-based localization.
+Phase 07 is [complete for bounded simulation scope](phases/07_GCU_ROLLING_RASTER.md).
+[Phase 08 closed its preliminary study](phases/08_GCU_LOCALIZATION_COMPARISON.md)
+with AMCL retained. [Phase 09](phases/09_PI4B_NAVIGATION_BASELINE.md) then established the measured Pi corridor baseline.
 The full-floor planning raster and AMCL remain in Phase 06; paper-runtime
 reproduction and edge resource advantages are not claimed.

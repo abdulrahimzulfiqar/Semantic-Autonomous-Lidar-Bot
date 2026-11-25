@@ -1,0 +1,27 @@
+{
+  "scope": "Same-Pi callback entry/return correlation; not wire arrival, cross-host clock synchronization, causal proof or mission scoring",
+  "begin_wall": 797.3632686,
+  "end_wall": 797.373206979,
+  "durations": {},
+  "longest_calls": {},
+  "largest_actor_clock_callback_gap": null,
+  "largest_independent_clock_callback_gap": null,
+  "largest_driver_clock_callback_gap": null,
+  "matching_clock_offsets": {
+    "samples": 0,
+    "definition": "Actor entry minus independent-probe callback wall time; signed difference, not network latency",
+    "minimum_wall_s": null,
+    "p95_wall_s": null,
+    "maximum_wall_s": null
+  },
+  "retained_actor_rows": 0,
+  "retained_independent_rows": 2,
+  "actor_passed": false,
+  "actor_error": "MissionError('stale_robot_tf')",
+  "inputs_sha256": {
+    "worker": "89d0f1e0d59d0a4908b53fb3dd791c355be3c84dd7e5da05077e0b0bde7682b9",
+    "trace": "2513ad5c7547be597f14ffc169d87a0a3e397fb43022cbc7d7e708a53be5ddb7",
+    "probe": "59338d47a30863bee4538fa677f2498d977d7b00b9a4617206af7126128eb856"
+  },
+  "analyzer_sha256": "1e64c6a65b48c4d2e8f67258bba08f20abeae060ff2b340106e6b3079e385b81"
+}

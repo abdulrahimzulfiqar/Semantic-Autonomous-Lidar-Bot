@@ -1,0 +1,91 @@
+[INFO] [launch]: All log files can be found below /home/pi-project/edgeosmag_phase9_pilot_73/results/ros_logs/2026-11-25-18-30-13-007667-Pi-Project-7832
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [map_server-1]: process started with pid [7867]
+[INFO] [lifecycle_manager-2]: process started with pid [7869]
+[INFO] [ekf_node-3]: process started with pid [7871]
+[INFO] [python3-4]: process started with pid [7873]
+[INFO] [amcl-5]: process started with pid [7877]
+[lifecycle_manager-2] [INFO] [1795613413.368811389] [gcu_map_lifecycle]: Creating
+[lifecycle_manager-2] [INFO] [1795613413.444456210] [gcu_map_lifecycle]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[amcl-5] [INFO] [1795613413.459691145] [amcl]: 
+[amcl-5] 	amcl lifecycle node launched. 
+[amcl-5] 	Waiting on external lifecycle transitions to activate
+[amcl-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[amcl-5] [INFO] [1795613413.467344160] [amcl]: Creating
+[map_server-1] [INFO] [1795613413.477883660] [gcu_map_server]: 
+[map_server-1] 	gcu_map_server lifecycle node launched. 
+[map_server-1] 	Waiting on external lifecycle transitions to activate
+[map_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-1] [INFO] [1795613413.480941743] [gcu_map_server]: Creating
+[lifecycle_manager-2] [INFO] [1795613413.736324917] [gcu_map_lifecycle]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-2] [INFO] [1795613413.738222906] [gcu_map_lifecycle]: [34m[1mConfiguring gcu_map_server[0m[0m
+[map_server-1] [INFO] [1795613413.740675636] [gcu_map_server]: Configuring
+[map_server-1] [INFO] [1795613413.740891995] [map_io]: Loading yaml file: /home/pi-project/edgeosmag_phase9_pilot_73/assets/gcu_ground_floor.yaml
+[map_server-1] [INFO] [1795613413.741672725] [map_io]: resolution: 0.058644
+[map_server-1] [INFO] [1795613413.741744449] [map_io]: origin[0]: -29.3513
+[map_server-1] [INFO] [1795613413.741769617] [map_io]: origin[1]: -20.1442
+[map_server-1] [INFO] [1795613413.741791710] [map_io]: origin[2]: 0
+[map_server-1] [INFO] [1795613413.741814693] [map_io]: free_thresh: 0.196
+[map_server-1] [INFO] [1795613413.741837471] [map_io]: occupied_thresh: 0.65
+[map_server-1] [INFO] [1795613413.741863305] [map_io]: mode: trinary
+[map_server-1] [INFO] [1795613413.741886528] [map_io]: negate: 0
+[map_server-1] [INFO] [1795613413.742538198] [map_io]: Loading image_file: /home/pi-project/edgeosmag_phase9_pilot_73/assets/gcu_ground_floor.pgm
+[map_server-1] [INFO] [1795613414.183349121] [map_io]: Read map /home/pi-project/edgeosmag_phase9_pilot_73/assets/gcu_ground_floor.pgm: 1000 X 844 map @ 0.058644 m/cell
+[lifecycle_manager-2] [INFO] [1795613414.239712554] [gcu_map_lifecycle]: [34m[1mConfiguring amcl[0m[0m
+[amcl-5] [INFO] [1795613414.241456408] [amcl]: Configuring
+[amcl-5] [INFO] [1795613414.241793549] [amcl]: initTransforms
+[amcl-5] [INFO] [1795613414.323545234] [amcl]: initPubSub
+[amcl-5] [INFO] [1795613414.371634539] [amcl]: Subscribed to map topic.
+[lifecycle_manager-2] [INFO] [1795613414.413524490] [gcu_map_lifecycle]: [34m[1mActivating gcu_map_server[0m[0m
+[map_server-1] [INFO] [1795613414.415822307] [gcu_map_server]: Activating
+[map_server-1] [INFO] [1795613414.431522441] [gcu_map_server]: Creating bond (gcu_map_server) to lifecycle manager.
+[lifecycle_manager-2] [INFO] [1795613414.568249901] [gcu_map_lifecycle]: Server gcu_map_server connected with bond.
+[lifecycle_manager-2] [INFO] [1795613414.568441760] [gcu_map_lifecycle]: [34m[1mActivating amcl[0m[0m
+[amcl-5] [INFO] [1795613414.569148876] [amcl]: Activating
+[amcl-5] [INFO] [1795613414.569308770] [amcl]: Creating bond (amcl) to lifecycle manager.
+[amcl-5] [INFO] [1795613414.592189328] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[amcl-5] [INFO] [1795613414.690627699] [amcl]: createLaserObject
+[amcl-5] [INFO] [1795613414.692491391] [amcl]: Requesting no-motion update
+[lifecycle_manager-2] [INFO] [1795613414.695409340] [gcu_map_lifecycle]: Server amcl connected with bond.
+[lifecycle_manager-2] [INFO] [1795613414.695600698] [gcu_map_lifecycle]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-2] [INFO] [1795613414.695719220] [gcu_map_lifecycle]: [34m[1mCreating bond timer...[0m[0m
+[amcl-5] [INFO] [1795613415.221627067] [amcl]: Requesting no-motion update
+[amcl-5] [INFO] [1795613415.723359530] [amcl]: Requesting no-motion update
+[amcl-5] [INFO] [1795613416.261094427] [amcl]: Requesting no-motion update
+[amcl-5] [INFO] [1795613416.337222338] [amcl]: initialPoseReceived
+[amcl-5] [WARN] [1795613416.337653371] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 1.491000 but the latest data is at time 1.440000, when looking up transform from frame [base_footprint] to frame [odom])
+[amcl-5] [INFO] [1795613416.337787005] [amcl]: Setting pose (1.491000): -0.500 -12.960 0.000
+[python3-4] [INFO] [1795613416.549868588] [gcu_amcl_initial_pose]: Published one prior: position stddev 0.25 m, heading stddev 10 deg
+[INFO] [python3-4]: process has finished cleanly [pid 7873]
+[ekf_node-3] Failed to meet update rate! Took 0.034000000000000002442seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[ekf_node-3] [INFO] [1795613501.031298385] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[amcl-5] [INFO] [1795613501.031419129] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[amcl-5] [INFO] [1795613501.031690821] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[amcl-5] [INFO] [1795613501.031949569] [amcl]: Deactivating
+[amcl-5] [INFO] [1795613501.032124666] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[lifecycle_manager-2] [INFO] [1795613501.031521372] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-2] [INFO] [1795613501.031704766] [gcu_map_lifecycle]: Running Nav2 LifecycleManager rcl preshutdown (gcu_map_lifecycle)
+[lifecycle_manager-2] [INFO] [1795613501.031875511] [gcu_map_lifecycle]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [amcl-5]: sending signal 'SIGINT' to process[amcl-5]
+[INFO] [ekf_node-3]: sending signal 'SIGINT' to process[ekf_node-3]
+[INFO] [lifecycle_manager-2]: sending signal 'SIGINT' to process[lifecycle_manager-2]
+[INFO] [map_server-1]: sending signal 'SIGINT' to process[map_server-1]
+[map_server-1] [INFO] [1795613501.032385469] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-1] [INFO] [1795613501.032845537] [gcu_map_server]: Running Nav2 LifecycleNode rcl preshutdown (gcu_map_server)
+[map_server-1] [INFO] [1795613501.033213936] [gcu_map_server]: Deactivating
+[map_server-1] [INFO] [1795613501.033355588] [gcu_map_server]: Destroying bond (gcu_map_server) to lifecycle manager.
+[map_server-1] [INFO] [1795613501.044272472] [gcu_map_server]: Cleaning up
+[map_server-1] [INFO] [1795613501.049682635] [gcu_map_server]: Destroying bond (gcu_map_server) to lifecycle manager.
+[amcl-5] [INFO] [1795613501.043387059] [amcl]: Cleaning up
+[ERROR] [ekf_node-3]: process has died [pid 7871, exit code -2, cmd '/opt/ros/humble/lib/robot_localization/ekf_node --ros-args -r __node:=gcu_alignment_ekf --params-file /tmp/launch_params_tmnythpp --params-file /tmp/launch_params_2uxv3r32'].
+[map_server-1] [INFO] [1795613501.087936286] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-2] [INFO] [1795613501.088865589] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[amcl-5] [INFO] [1795613501.105234359] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[amcl-5] [INFO] [1795613501.107470400] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-1] [INFO] [1795613501.170008385] [gcu_map_server]: Destroying
+[lifecycle_manager-2] [INFO] [1795613501.191437272] [gcu_map_lifecycle]: Destroying gcu_map_lifecycle
+[amcl-5] [INFO] [1795613501.194802696] [amcl]: Destroying
+[INFO] [map_server-1]: process has finished cleanly [pid 7867]
+[INFO] [lifecycle_manager-2]: process has finished cleanly [pid 7869]
+[INFO] [amcl-5]: process has finished cleanly [pid 7877]

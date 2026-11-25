@@ -1,0 +1,18 @@
+1794845443.2953379 [INFO] [launch]: All log files can be found below /home/pi-project/edgeosmag_phase9_pilot_04/results/ros_logs/2026-11-16-21-10-43-290979-Pi-Project-6001
+1794845443.2963996 [INFO] [launch]: Default logging verbosity is set to INFO
+1794845443.5985034 [INFO] [map_server-1]: process started with pid [6012]
+1794845443.5994608 [INFO] [lifecycle_manager-2]: process started with pid [6014]
+1794845443.6007476 [INFO] [ekf_node-3]: process started with pid [6016]
+1794845443.6017971 [INFO] [python3-4]: process started with pid [6018]
+1794845443.6026256 [INFO] [amcl-5]: process started with pid [6020]
+1794845489.6690440 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1794845489.7411499 [INFO] [amcl-5]: sending signal 'SIGINT' to process[amcl-5]
+1794845489.7471287 [INFO] [python3-4]: sending signal 'SIGINT' to process[python3-4]
+1794845489.7551641 [INFO] [ekf_node-3]: sending signal 'SIGINT' to process[ekf_node-3]
+1794845489.7617753 [INFO] [lifecycle_manager-2]: sending signal 'SIGINT' to process[lifecycle_manager-2]
+1794845489.7663696 [INFO] [map_server-1]: sending signal 'SIGINT' to process[map_server-1]
+1794845489.7677464 [ERROR] [python3-4]: process has died [pid 6018, exit code -2, cmd '/usr/bin/python3 /home/pi-project/edgeosmag_phase9_pilot_04/gcu_amcl_initial_pose.py --params /home/pi-project/edgeosmag_phase9_pilot_04/assets/amcl.yaml'].
+1794845489.7688835 [ERROR] [ekf_node-3]: process has died [pid 6016, exit code -2, cmd '/opt/ros/humble/lib/robot_localization/ekf_node --ros-args -r __node:=gcu_alignment_ekf --params-file /tmp/launch_params_qfzmdev5 --params-file /tmp/launch_params_q5saqh73'].
+1794845490.9193521 [INFO] [lifecycle_manager-2]: process has finished cleanly [pid 6014]
+1794845490.9269536 [INFO] [map_server-1]: process has finished cleanly [pid 6012]
+1794845491.8118055 [INFO] [amcl-5]: process has finished cleanly [pid 6020]

@@ -1,0 +1,55 @@
+{
+  "processes": [],
+  "samples": 0,
+  "sample_span_wall_s": 0.0,
+  "stable_process_set": false,
+  "cpu_percent_one_core_total": null,
+  "sampled_concurrent_domain_pss_max_kib": null,
+  "firmware_power": {
+    "sampled_readings": 75,
+    "active_undervoltage_readings": 0,
+    "active_throttle_readings": 0,
+    "first_flags": "0x0",
+    "last_flags": "0x0",
+    "peak_cpu_temp_c": 57.452
+  },
+  "scope": "One pilot from dispatch to last native success/fault response, excluding preprocessing/rest verification/teardown. CPU uses actual sample span and 100% denotes one core. Relay and optional trace probe are separate processes. The sampler owner is excluded.",
+  "callback_tracing": false,
+  "begin_wall": 755.620827682,
+  "end_wall": 755.854311603,
+  "interval_wall_s": 0.23348392100001547,
+  "actor_passed": false,
+  "preprocessing_wall_s": 54.43518793999999,
+  "observed_rates": {},
+  "inputs_sha256": {
+    "worker": "ffdfd973086f14325df1c670ee3cce4b4db917a30bd8820fc4a521c0748f7b20",
+    "resources": "cf05ba7951bac00445941ecbd37f4cc99784d8d7ea841a1b88861a9a99f78adc",
+    "replay_feed": "646430b5f4feae1e59aecc4979a6ec6209d679c3d03b981ea9275b20c024bd2c"
+  },
+  "analyzer_sha256": "865e5b1026abcc9f879bbea260c8c6d1f738a122cb3620601d43237298432162",
+  "local_replay": {
+    "completed": false,
+    "controller_outputs": 3,
+    "maximum_abs_linear_m_s": 0.1,
+    "nonzero_linear_outputs": 3,
+    "clip_inputs": {
+      "/scan": {
+        "samples": 50,
+        "median_period_s": 0.1
+      },
+      "/imu_broadcaster/imu": {
+        "samples": 500,
+        "median_period_s": 0.01
+      },
+      "/diff_controller/odom": {
+        "samples": 250,
+        "median_period_s": 0.02
+      }
+    },
+    "maximum_publication_lateness_wall_s": {
+      "/scan": 0.072798103,
+      "/imu_broadcaster/imu": 0.085805084,
+      "/diff_controller/odom": 0.082669196
+    }
+  }
+}

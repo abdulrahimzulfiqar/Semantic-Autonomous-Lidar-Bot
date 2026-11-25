@@ -1,0 +1,27 @@
+[INFO] [1795175729.117025929] [amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795175729.133539310] [amcl]: Creating
+[WARN] [1795175729.932273549] [amcl.rclcpp]: failed to send response to /amcl/get_state (timeout): error not set, at ./src/rcl/service.c:314
+[INFO] [1795175732.573297086] [amcl]: Configuring
+[INFO] [1795175732.574991044] [amcl]: initTransforms
+[INFO] [1795175732.706475706] [amcl]: initPubSub
+[INFO] [1795175732.754199317] [amcl]: Subscribed to map topic.
+[INFO] [1795175732.976205270] [amcl]: Activating
+[INFO] [1795175732.976564066] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1795175733.028334462] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[INFO] [1795175733.363504238] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 4.500 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1795175733.461857434] [amcl]: createLaserObject
+[INFO] [1795175736.205033119] [amcl]: initialPoseReceived
+[WARN] [1795175736.205818025] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 6.163000 but the latest data is at time 4.770000, when looking up transform from frame [base_footprint] to frame [odom])
+[INFO] [1795175736.206054283] [amcl]: Setting pose (6.163000): -0.500 -12.960 0.000
+[INFO] [1795175773.267654024] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795175773.268119504] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1795175773.268612317] [amcl]: Deactivating
+[INFO] [1795175773.268833335] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1795175773.283440295] [amcl]: Cleaning up
+[WARN] [1795175773.428639772] [rcl_lifecycle]: No transition matching 4 found for current state cleaningup
+[WARN] [1795175773.428844845] [rcl_lifecycle]: No transition matching 4 found for current state cleaningup
+[ERROR] [1795175773.428921679] [amcl]: Unable to start transition 4 from current state cleaningup: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1795175773.459357503] [amcl]: Destroying bond (amcl) to lifecycle manager.

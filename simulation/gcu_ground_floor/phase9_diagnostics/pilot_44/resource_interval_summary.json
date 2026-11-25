@@ -1,0 +1,180 @@
+{
+  "processes": [
+    {
+      "pid": 2017,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_phase9_pilot_44/scan_link.py",
+        "--role",
+        "receiver"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 0.8100000000000005,
+      "cpu_percent_one_core": 19.083629994290884,
+      "sampled_pss_max_kib": 33872,
+      "sampled_rss_max_kib": 49820
+    },
+    {
+      "pid": 2018,
+      "argv": [
+        "/usr/bin/python3",
+        "/opt/ros/humble/bin/ros2",
+        "launch",
+        "/home/pi-project/edgeosmag_phase9_pilot_44/gcu_amcl.launch.py"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 0.0,
+      "cpu_percent_one_core": 0.0,
+      "sampled_pss_max_kib": 24038,
+      "sampled_rss_max_kib": 36268
+    },
+    {
+      "pid": 2044,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_map_server/map_server",
+        "--ros-args",
+        "-r",
+        "__node:=gcu_map_server"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 0.27000000000000046,
+      "cpu_percent_one_core": 6.361209998096967,
+      "sampled_pss_max_kib": 14330,
+      "sampled_rss_max_kib": 26056
+    },
+    {
+      "pid": 2046,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+        "--ros-args",
+        "-r",
+        "__node:=gcu_map_lifecycle"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 0.3200000000000003,
+      "cpu_percent_one_core": 7.539211849596399,
+      "sampled_pss_max_kib": 7852,
+      "sampled_rss_max_kib": 17844
+    },
+    {
+      "pid": 2048,
+      "argv": [
+        "/opt/ros/humble/lib/robot_localization/ekf_node",
+        "--ros-args",
+        "-r",
+        "__node:=gcu_alignment_ekf"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 0.5999999999999996,
+      "cpu_percent_one_core": 14.136022217993228,
+      "sampled_pss_max_kib": 10797,
+      "sampled_rss_max_kib": 20252
+    },
+    {
+      "pid": 2052,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_amcl/amcl",
+        "--ros-args",
+        "-r",
+        "__node:=amcl"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 0.5599999999999996,
+      "cpu_percent_one_core": 13.193620736793678,
+      "sampled_pss_max_kib": 33492,
+      "sampled_rss_max_kib": 44560
+    },
+    {
+      "pid": 2116,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_planner/planner_server",
+        "--ros-args",
+        "--params-file",
+        "/home/pi-project/edgeosmag_phase9_pilot_44/assets/nav2_sensor_constraints.yaml"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 0.56,
+      "cpu_percent_one_core": 13.193620736793688,
+      "sampled_pss_max_kib": 14554,
+      "sampled_rss_max_kib": 27416
+    },
+    {
+      "pid": 2117,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_controller/controller_server",
+        "--ros-args",
+        "--params-file",
+        "/home/pi-project/edgeosmag_phase9_pilot_44/assets/nav2_sensor_constraints.yaml"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 0.6400000000000001,
+      "cpu_percent_one_core": 15.07842369919279,
+      "sampled_pss_max_kib": 14655,
+      "sampled_rss_max_kib": 27352
+    },
+    {
+      "pid": 2118,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator",
+        "--ros-args",
+        "--params-file",
+        "/home/pi-project/edgeosmag_phase9_pilot_44/assets/nav2_sensor_constraints.yaml"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 0.75,
+      "cpu_percent_one_core": 17.670027772491547,
+      "sampled_pss_max_kib": 12255,
+      "sampled_rss_max_kib": 23672
+    },
+    {
+      "pid": 2119,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_phase9_pilot_44/worker_phase9.py",
+        "--workspace",
+        "/home/pi-project/edgeosmag_phase9_pilot_44"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.244475502,
+      "cpu_delta_s": 4.390000000000001,
+      "cpu_percent_one_core": 103.42856256165052,
+      "sampled_pss_max_kib": 180253,
+      "sampled_rss_max_kib": 201868
+    }
+  ],
+  "samples": 5,
+  "sample_span_wall_s": 4.244475502,
+  "stable_process_set": true,
+  "cpu_percent_one_core_total": 209.68432956689972,
+  "sampled_concurrent_domain_pss_max_kib": 345702,
+  "firmware_power": {
+    "sampled_readings": 86,
+    "active_undervoltage_readings": 0,
+    "active_throttle_readings": 0,
+    "first_flags": "0x0",
+    "last_flags": "0x0",
+    "peak_cpu_temp_c": 53.069
+  },
+  "scope": "One pilot from dispatch to last native success/fault response, excluding preprocessing/rest verification/teardown. CPU uses actual sample span and 100% denotes one core. Relay and optional trace probe are separate processes. The sampler owner is excluded.",
+  "callback_tracing": false,
+  "begin_wall": 638.416877957,
+  "end_wall": 644.027341303,
+  "interval_wall_s": 5.61046334599996,
+  "actor_passed": false,
+  "preprocessing_wall_s": 53.46684018199994,
+  "observed_rates": {},
+  "inputs_sha256": {
+    "worker": "9a91aec1f8e2b419c563a41a3892d7abfd8435516952deaef3aed5b471379f88",
+    "resources": "fdc293468d1914a5716d14335542c3b9f7c5ff56704873f1c877b8168629ed8b"
+  },
+  "analyzer_sha256": "865e5b1026abcc9f879bbea260c8c6d1f738a122cb3620601d43237298432162"
+}

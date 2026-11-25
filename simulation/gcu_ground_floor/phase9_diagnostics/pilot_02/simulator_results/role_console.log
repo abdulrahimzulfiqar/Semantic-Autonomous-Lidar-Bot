@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/edgeosmag_phase9_pilot_02/run_role.py", line 109, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+  File "/home/ubuntu/edgeosmag_phase9_pilot_02/run_role.py", line 48, in main
+    if not env.get('DISPLAY'):raise RuntimeError('simulator_desktop_required')
+RuntimeError: simulator_desktop_required

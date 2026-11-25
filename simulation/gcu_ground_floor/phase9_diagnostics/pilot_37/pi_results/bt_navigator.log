@@ -1,0 +1,28 @@
+[INFO] [1795266709.539231104] [bt_navigator]: 
+	bt_navigator lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795266709.539832395] [bt_navigator]: Creating
+[INFO] [1795266781.997194950] [bt_navigator]: Configuring
+[INFO] [1795266782.441415630] [bt_navigator]: Activating
+[INFO] [1795266782.960474235] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[ERROR] [1795266783.352040260] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 16.660000 but the earliest data is at time 16.700000, when looking up transform from frame [base_footprint] to frame [map]
+
+[INFO] [1795266783.352277184] [bt_navigator]: Begin navigating from current location (0.00, 0.00) to (-0.03, -12.96)
+[WARN] [1795266783.398131619] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[WARN] [1795266787.380211485] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[INFO] [1795266794.638396093] [bt_navigator]: Received goal preemption request
+[INFO] [1795266794.639460528] [bt_navigator]: Begin navigating from current location (-0.33, -12.97) to (1.00, -12.96)
+[WARN] [1795266801.590932902] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[WARN] [1795266807.024054105] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[WARN] [1795266837.312785394] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[WARN] [1795266861.114765964] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[INFO] [1795266873.808796884] [bt_navigator]: Goal succeeded
+[INFO] [1795266880.016464820] [bt_navigator]: Deactivating
+[INFO] [1795266880.016628356] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1795266884.954801284] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795266884.955020023] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[INFO] [1795266884.955230132] [bt_navigator]: Cleaning up
+[INFO] [1795266886.055201336] [bt_navigator]: Completed Cleaning up
+[INFO] [1795266886.055439056] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1795266886.281472472] [bt_navigator]: Destroying

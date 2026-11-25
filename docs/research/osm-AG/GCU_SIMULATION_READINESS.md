@@ -7,10 +7,10 @@ and Foxglove provides visualization on macOS.
 
 ## Current checkpoint (2026-11-14)
 
-- **Accepted:** Phases 01–07 for their recorded bounded simulation scopes; see [phase history](phases/README.md).
+- **Accepted/closed:** Phases 01–07 for their recorded bounded simulation scopes; Phase 08 closed as a preliminary feasibility study. See [phase history](phases/README.md).
 - **Phase 07 automated results:** 169 regression tests, bounded moving Nav2 windows, forward/reverse crossings, physical obstacle clearance, source-loss stop/recovery and matched static-map comparison pass.
 - **Phase 07 user result:** Successful clicked-goal mission across 16 windows with 10 proxies, final rest and clean shutdown. User acceptance confirmed November 14, 2026. No robot/navigation processes remain in Ubuntu.
-- **Next:** Phase 08 evaluates structure-based localization. AMCL and route preprocessing still retain full-floor data; Pi/camera/language evaluation follows later.
+- **Phase 08 closed:** Preliminary localization study retained separately (183 tests, 1,260 paired frames). AMCL stays in production; structural recovery/TF/closed-loop integration is deferred. Next is actual Pi navigation profiling with simulation/evaluation elsewhere. See the [closure record](phases/08_GCU_LOCALIZATION_COMPARISON.md).
 
 The [Phase 07 record](phases/07_GCU_ROLLING_RASTER.md) contains measured results,
 limits, exact replays and the Nav2/controller explanation. Use its new review

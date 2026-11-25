@@ -1,0 +1,21 @@
+[INFO] [1795175729.042993055] [gcu_map_lifecycle]: Creating
+[INFO] [1795175729.270278235] [gcu_map_lifecycle]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1795175731.294678000] [gcu_map_lifecycle]: Waiting for service gcu_map_server/get_state...
+[INFO] [1795175731.492030076] [gcu_map_lifecycle]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1795175731.492597259] [gcu_map_lifecycle]: [34m[1mConfiguring gcu_map_server[0m[0m
+[INFO] [1795175732.567899489] [gcu_map_lifecycle]: [34m[1mConfiguring amcl[0m[0m
+[INFO] [1795175732.802179854] [gcu_map_lifecycle]: [34m[1mActivating gcu_map_server[0m[0m
+[INFO] [1795175732.961720532] [gcu_map_lifecycle]: Server gcu_map_server connected with bond.
+[INFO] [1795175732.962027512] [gcu_map_lifecycle]: [34m[1mActivating amcl[0m[0m
+[INFO] [1795175733.455241100] [gcu_map_lifecycle]: Server amcl connected with bond.
+[INFO] [1795175733.471506204] [gcu_map_lifecycle]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1795175733.471684537] [gcu_map_lifecycle]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1795175773.271982604] [gcu_map_lifecycle]: [34m[1mHave not received a heartbeat from amcl.[0m[0m
+[ERROR] [1795175773.272218993] [gcu_map_lifecycle]: CRITICAL FAILURE: SERVER amcl IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1795175773.272572751] [gcu_map_lifecycle]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1795175773.272818176] [gcu_map_lifecycle]: [34m[1mResetting managed nodes...[0m[0m
+[INFO] [1795175773.272944787] [gcu_map_lifecycle]: [34m[1mDeactivating amcl[0m[0m
+[INFO] [1795175773.272600788] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795175773.274556412] [gcu_map_lifecycle]: Running Nav2 LifecycleManager rcl preshutdown (gcu_map_lifecycle)
+[ERROR] [1795175773.434596885] [gcu_map_lifecycle]: Failed to change state for node: amcl
+[INFO] [1795175773.434997236] [gcu_map_lifecycle]: [34m[1mDeactivating gcu_map_server[0m[0m

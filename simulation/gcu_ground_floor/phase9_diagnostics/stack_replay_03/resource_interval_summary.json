@@ -1,0 +1,244 @@
+{
+  "processes": [
+    {
+      "pid": 2391,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_stack_replay_03/replay_stack.py",
+        "--recording",
+        "/home/pi-project/edgeosmag_stack_replay_03/sensor_recording.json.gz"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 2.030000000000001,
+      "cpu_percent_one_core": 45.004256464889885,
+      "sampled_pss_max_kib": 35380,
+      "sampled_rss_max_kib": 53232
+    },
+    {
+      "pid": 2392,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_stack_replay_03/arrival_probe.py",
+        "--output",
+        "/home/pi-project/edgeosmag_stack_replay_03/results/arrival_probe.json"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 2.4100000000000037,
+      "cpu_percent_one_core": 53.42869856176588,
+      "sampled_pss_max_kib": 37855,
+      "sampled_rss_max_kib": 55580
+    },
+    {
+      "pid": 2393,
+      "argv": [
+        "/usr/bin/python3",
+        "/opt/ros/humble/bin/ros2",
+        "launch",
+        "/home/pi-project/edgeosmag_stack_replay_03/gcu_amcl.launch.py"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 0.0,
+      "cpu_percent_one_core": 0.0,
+      "sampled_pss_max_kib": 23729,
+      "sampled_rss_max_kib": 36280
+    },
+    {
+      "pid": 2428,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_map_server/map_server",
+        "--ros-args",
+        "-r",
+        "__node:=gcu_map_server"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 0.29000000000000004,
+      "cpu_percent_one_core": 6.429179494984266,
+      "sampled_pss_max_kib": 13287,
+      "sampled_rss_max_kib": 25140
+    },
+    {
+      "pid": 2430,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+        "--ros-args",
+        "-r",
+        "__node:=gcu_map_lifecycle"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 0.33000000000000007,
+      "cpu_percent_one_core": 7.315962873602786,
+      "sampled_pss_max_kib": 6559,
+      "sampled_rss_max_kib": 16644
+    },
+    {
+      "pid": 2432,
+      "argv": [
+        "/opt/ros/humble/lib/robot_localization/ekf_node",
+        "--ros-args",
+        "-r",
+        "__node:=gcu_alignment_ekf"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 0.7200000000000006,
+      "cpu_percent_one_core": 15.962100815133361,
+      "sampled_pss_max_kib": 9528,
+      "sampled_rss_max_kib": 19060
+    },
+    {
+      "pid": 2438,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_amcl/amcl",
+        "--ros-args",
+        "-r",
+        "__node:=amcl"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 0.4500000000000002,
+      "cpu_percent_one_core": 9.976313009458346,
+      "sampled_pss_max_kib": 32188,
+      "sampled_rss_max_kib": 43328
+    },
+    {
+      "pid": 2498,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_planner/planner_server",
+        "--ros-args",
+        "--params-file",
+        "/home/pi-project/edgeosmag_stack_replay_03/assets/nav2_sensor_constraints.yaml"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 0.5700000000000003,
+      "cpu_percent_one_core": 12.636663145313907,
+      "sampled_pss_max_kib": 12721,
+      "sampled_rss_max_kib": 25660
+    },
+    {
+      "pid": 2499,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_controller/controller_server",
+        "--ros-args",
+        "--params-file",
+        "/home/pi-project/edgeosmag_stack_replay_03/assets/nav2_sensor_constraints.yaml"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 0.7000000000000002,
+      "cpu_percent_one_core": 15.518709125824092,
+      "sampled_pss_max_kib": 12475,
+      "sampled_rss_max_kib": 25248
+    },
+    {
+      "pid": 2500,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator",
+        "--ros-args",
+        "--params-file",
+        "/home/pi-project/edgeosmag_stack_replay_03/assets/nav2_sensor_constraints.yaml"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 0.8099999999999996,
+      "cpu_percent_one_core": 17.957363417025007,
+      "sampled_pss_max_kib": 11048,
+      "sampled_rss_max_kib": 22588
+    },
+    {
+      "pid": 2501,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_stack_replay_03/worker_phase9.py",
+        "--workspace",
+        "/home/pi-project/edgeosmag_stack_replay_03"
+      ],
+      "samples": 5,
+      "sample_span_wall_s": 4.510684453999829,
+      "cpu_delta_s": 4.190000000000012,
+      "cpu_percent_one_core": 92.89055891029017,
+      "sampled_pss_max_kib": 182376,
+      "sampled_rss_max_kib": 206100
+    }
+  ],
+  "samples": 5,
+  "sample_span_wall_s": 4.510684453999829,
+  "stable_process_set": true,
+  "cpu_percent_one_core_total": 277.1198058182877,
+  "sampled_concurrent_domain_pss_max_kib": 376025,
+  "firmware_power": {
+    "sampled_readings": 83,
+    "active_undervoltage_readings": 0,
+    "active_throttle_readings": 0,
+    "first_flags": "0x0",
+    "last_flags": "0x0",
+    "peak_cpu_temp_c": 59.4
+  },
+  "scope": "One pilot from dispatch to last native success/fault response, excluding preprocessing/rest verification/teardown. CPU uses actual sample span and 100% denotes one core. Relay and optional trace probe are separate processes. The sampler owner is excluded.",
+  "callback_tracing": true,
+  "begin_wall": 1479.523060423,
+  "end_wall": 1484.269235134,
+  "interval_wall_s": 4.746174710999867,
+  "actor_passed": false,
+  "preprocessing_wall_s": 57.885592837999866,
+  "observed_rates": {
+    "scan": {
+      "callbacks": 47,
+      "receipt_span_wall_s": 4.60318693399995,
+      "callbacks_per_wall_s": 9.993076679166752,
+      "header_sim_per_wall_s": 0.9993076679166769,
+      "max_receipt_gap_wall_s": 0.12734699700013152
+    },
+    "clock": {
+      "callbacks": 462,
+      "receipt_span_wall_s": 4.743806894000045,
+      "callbacks_per_wall_s": 97.17933514179754,
+      "header_sim_per_wall_s": 0.9990029172549094,
+      "max_receipt_gap_wall_s": 0.025444681999942986
+    },
+    "imu": {
+      "callbacks": 474,
+      "receipt_span_wall_s": 4.731958514000098,
+      "callbacks_per_wall_s": 99.958610922004,
+      "header_sim_per_wall_s": 0.9995861092200408,
+      "max_receipt_gap_wall_s": 0.03123979099996177
+    }
+  },
+  "inputs_sha256": {
+    "worker": "a9fc8b11da85c0f965e24a3fdaec31fdece03fa7cf31f0cf3c623fc006b8e02c",
+    "resources": "db63a0a4d813b810eefafa571748f0b9110d05d590fb12fe177802bd9eb7aab8",
+    "probe": "96523a239d920f093a0e56f51acc5b805d5193c5e4927c6f552cf92d604f23f2",
+    "replay_feed": "5e802fdf618a87007ea8b7d0dafc3a9b09b5141ddbd0e092172323a94fa3904d"
+  },
+  "analyzer_sha256": "9c6b7ab4f7d76cfc8eeeeec97d54062e31601a7e4a7cf06c9256139473fabb53",
+  "local_replay": {
+    "completed": false,
+    "controller_outputs": 48,
+    "maximum_abs_linear_m_s": 0.1,
+    "nonzero_linear_outputs": 48,
+    "clip_inputs": {
+      "/scan": {
+        "samples": 50,
+        "median_period_s": 0.1
+      },
+      "/imu_broadcaster/imu": {
+        "samples": 500,
+        "median_period_s": 0.01
+      },
+      "/diff_controller/odom": {
+        "samples": 250,
+        "median_period_s": 0.02
+      }
+    },
+    "maximum_publication_lateness_wall_s": {
+      "/scan": 0.041546416,
+      "/imu_broadcaster/imu": 0.050135079,
+      "/diff_controller/odom": 0.051842919
+    }
+  }
+}

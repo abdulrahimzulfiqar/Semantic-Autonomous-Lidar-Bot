@@ -1,0 +1,17 @@
+1795265702.8017812 [INFO] [launch]: All log files can be found below /home/pi-project/edgeosmag_phase9_pilot_26/results/ros_logs/2026-11-21-17-55-02-797451-Pi-Project-5189
+1795265702.8025293 [INFO] [launch]: Default logging verbosity is set to INFO
+1795265703.1292269 [INFO] [map_server-1]: process started with pid [5213]
+1795265703.1302497 [INFO] [lifecycle_manager-2]: process started with pid [5215]
+1795265703.1311355 [INFO] [ekf_node-3]: process started with pid [5217]
+1795265703.1319923 [INFO] [python3-4]: process started with pid [5219]
+1795265703.1328890 [INFO] [amcl-5]: process started with pid [5225]
+1795265714.5567124 [INFO] [python3-4]: process has finished cleanly [pid 5219]
+1795265789.7649019 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1795265789.8211033 [INFO] [amcl-5]: sending signal 'SIGINT' to process[amcl-5]
+1795265789.8256013 [INFO] [ekf_node-3]: sending signal 'SIGINT' to process[ekf_node-3]
+1795265789.8295031 [INFO] [lifecycle_manager-2]: sending signal 'SIGINT' to process[lifecycle_manager-2]
+1795265789.8330898 [INFO] [map_server-1]: sending signal 'SIGINT' to process[map_server-1]
+1795265789.8416076 [ERROR] [ekf_node-3]: process has died [pid 5217, exit code -2, cmd '/opt/ros/humble/lib/robot_localization/ekf_node --ros-args -r __node:=gcu_alignment_ekf --params-file /tmp/launch_params_v6oqihzb --params-file /tmp/launch_params_23gv7wod'].
+1795265789.8426392 [ERROR] [map_server-1]: process has died [pid 5213, exit code -2, cmd '/opt/ros/humble/lib/nav2_map_server/map_server --ros-args -r __node:=gcu_map_server --params-file /tmp/launch_params_58ov9yt0'].
+1795265791.0848596 [INFO] [lifecycle_manager-2]: process has finished cleanly [pid 5215]
+1795265791.1165335 [INFO] [amcl-5]: process has finished cleanly [pid 5225]

@@ -1,0 +1,117 @@
+{
+  "timing": {
+    "scope": "Local AMCL/TF replay timing only; no EKF, controller, mission or localization-accuracy claim",
+    "replay_rate": 1.0,
+    "recording_duration_sim_s": 55.1,
+    "measured_replay_wall_s": 55.10390108699994,
+    "expected_scans": 552,
+    "received_unique_scans": 552,
+    "tf_queries": 1375,
+    "tf_query_failures": 0,
+    "max_pose_observation_gap_sim_s": 0.17119412299999937,
+    "max_tf_age_sim_s": 0.045377069000004155,
+    "max_scan_publication_lateness_wall_s": 0.010319727000023704,
+    "max_clock_receipt_gap_wall_s": 0.18579561499973352,
+    "clock_covers_recording": true,
+    "thresholds": {
+      "scan_publication_lateness_wall_s": 0.1,
+      "tf_age_sim_s": 0.15,
+      "pose_observation_gap_sim_s": 0.15
+    },
+    "passed": false
+  },
+  "role_passed": false,
+  "clock_path": null,
+  "amcl_updates_during_replay": 112,
+  "process_costs": [
+    {
+      "pid": 10844,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_map_server/map_server",
+        "--ros-args",
+        "-p",
+        "use_sim_time:=true"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89657593599986,
+      "cpu_delta_s": 2.55,
+      "cpu_percent_one_core": 4.731283863056584,
+      "sampled_pss_max_kib": 13844,
+      "sampled_rss_max_kib": 23336
+    },
+    {
+      "pid": 10845,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_amcl/amcl",
+        "--ros-args",
+        "--params-file",
+        "/home/pi-project/edgeosmag_phase9_local_replay_04/amcl.yaml"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89657593599986,
+      "cpu_delta_s": 5.82,
+      "cpu_percent_one_core": 10.79845964038797,
+      "sampled_pss_max_kib": 32220,
+      "sampled_rss_max_kib": 41428
+    },
+    {
+      "pid": 10846,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+        "--ros-args",
+        "-p",
+        "use_sim_time:=true"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89657593599986,
+      "cpu_delta_s": 3.0300000000000002,
+      "cpu_percent_one_core": 5.621878472573118,
+      "sampled_pss_max_kib": 6027,
+      "sampled_rss_max_kib": 14928
+    },
+    {
+      "pid": 10847,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+        "--role",
+        "observe"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89657593599986,
+      "cpu_delta_s": 31.11,
+      "cpu_percent_one_core": 57.721663129290334,
+      "sampled_pss_max_kib": 34808,
+      "sampled_rss_max_kib": 51364
+    },
+    {
+      "pid": 10849,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_phase9_local_replay_04/local_replay.py",
+        "--role",
+        "feed"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89657593599986,
+      "cpu_delta_s": 27.6,
+      "cpu_percent_one_core": 51.209190047200686,
+      "sampled_pss_max_kib": 34285,
+      "sampled_rss_max_kib": 50756
+    }
+  ],
+  "resource_scope": "Replay interval only; sampled process CPU delta over first/last in-interval sample, 100% = one core. Replay publisher and observer costs listed separately. No EKF, Nav2, route preprocessing or mission workload.",
+  "reconstruction": "SE(2) reconstruction: original scan stamps/ranges; recorded odometry interpolated at nominal 50 simulated Hz; generated replay clock nominal 100 simulated Hz",
+  "recording_sha256": "e9754ca4675dcf7944ba426ff54ee5041841ed80b4fc3d7997f9221cc19615e9",
+  "analysis_sources_sha256": {
+    "analyze_local_replay.py": "a74d615eb7e082ad5cf5bd9084c7d4303f606b1d35794c040e3dc211f55ba219",
+    "replay_timing.py": "440dfe641ff03c552752096ce853bf0c55e75aead84b2b7b04731df238a47a33"
+  },
+  "evidence_sha256": {
+    "feed.json": "93a0083e822af9c7f14fa29bf42f8eeb763f5da712ef0755696d9507111731bd",
+    "observations.json": "a5482fa80607f7c0fe77007eaf804e495efe2a51ed2f1ee8c968eae51f5b959d",
+    "resources.json": "a82408663cf81fc3734c1b5dfce20284c0aa24678c944d0e1c50a123840620f4",
+    "result.json": "1a491c02b58fe6a4af345adf3d4a580a2c05107f61b1dbad94ed8e8da7191393"
+  },
+  "passed": false
+}

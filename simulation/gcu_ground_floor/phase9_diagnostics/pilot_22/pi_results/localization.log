@@ -1,0 +1,89 @@
+[INFO] [launch]: All log files can be found below /home/pi-project/edgeosmag_phase9_pilot_22/results/ros_logs/2026-11-21-17-53-39-104184-Pi-Project-4764
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [map_server-1]: process started with pid [4797]
+[INFO] [lifecycle_manager-2]: process started with pid [4799]
+[INFO] [ekf_node-3]: process started with pid [4801]
+[INFO] [python3-4]: process started with pid [4803]
+[INFO] [amcl-5]: process started with pid [4805]
+[map_server-1] [INFO] [1795265619.504482893] [gcu_map_server]: 
+[map_server-1] 	gcu_map_server lifecycle node launched. 
+[map_server-1] 	Waiting on external lifecycle transitions to activate
+[map_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-1] [INFO] [1795265619.506546106] [gcu_map_server]: Creating
+[lifecycle_manager-2] [INFO] [1795265619.542693063] [gcu_map_lifecycle]: Creating
+[lifecycle_manager-2] [INFO] [1795265619.554920306] [gcu_map_lifecycle]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[amcl-5] [INFO] [1795265619.568477049] [amcl]: 
+[amcl-5] 	amcl lifecycle node launched. 
+[amcl-5] 	Waiting on external lifecycle transitions to activate
+[amcl-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[amcl-5] [INFO] [1795265619.570396208] [amcl]: Creating
+[lifecycle_manager-2] [INFO] [1795265619.706694241] [gcu_map_lifecycle]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-2] [INFO] [1795265619.712899769] [gcu_map_lifecycle]: [34m[1mConfiguring gcu_map_server[0m[0m
+[map_server-1] [INFO] [1795265619.716863956] [gcu_map_server]: Configuring
+[map_server-1] [INFO] [1795265619.717069194] [map_io]: Loading yaml file: /home/pi-project/edgeosmag_phase9_pilot_22/assets/gcu_ground_floor.yaml
+[map_server-1] [INFO] [1795265619.717873220] [map_io]: resolution: 0.058644
+[map_server-1] [INFO] [1795265619.717940553] [map_io]: origin[0]: -29.3513
+[map_server-1] [INFO] [1795265619.717967849] [map_io]: origin[1]: -20.1442
+[map_server-1] [INFO] [1795265619.717990774] [map_io]: origin[2]: 0
+[map_server-1] [INFO] [1795265619.718013218] [map_io]: free_thresh: 0.196
+[map_server-1] [INFO] [1795265619.718140624] [map_io]: occupied_thresh: 0.65
+[map_server-1] [INFO] [1795265619.718184401] [map_io]: mode: trinary
+[map_server-1] [INFO] [1795265619.718212364] [map_io]: negate: 0
+[map_server-1] [INFO] [1795265619.718947391] [map_io]: Loading image_file: /home/pi-project/edgeosmag_phase9_pilot_22/assets/gcu_ground_floor.pgm
+[map_server-1] [INFO] [1795265619.972582935] [map_io]: Read map /home/pi-project/edgeosmag_phase9_pilot_22/assets/gcu_ground_floor.pgm: 1000 X 844 map @ 0.058644 m/cell
+[lifecycle_manager-2] [INFO] [1795265619.992073469] [gcu_map_lifecycle]: [34m[1mConfiguring amcl[0m[0m
+[amcl-5] [INFO] [1795265619.992920957] [amcl]: Configuring
+[amcl-5] [INFO] [1795265619.993186435] [amcl]: initTransforms
+[amcl-5] [INFO] [1795265620.027484084] [amcl]: initPubSub
+[amcl-5] [INFO] [1795265620.039514422] [amcl]: Subscribed to map topic.
+[lifecycle_manager-2] [INFO] [1795265620.051301023] [gcu_map_lifecycle]: [34m[1mActivating gcu_map_server[0m[0m
+[map_server-1] [INFO] [1795265620.052142752] [gcu_map_server]: Activating
+[map_server-1] [INFO] [1795265620.061207519] [gcu_map_server]: Creating bond (gcu_map_server) to lifecycle manager.
+[amcl-5] [INFO] [1795265620.091234967] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[lifecycle_manager-2] [INFO] [1795265620.175041579] [gcu_map_lifecycle]: Server gcu_map_server connected with bond.
+[lifecycle_manager-2] [INFO] [1795265620.175198780] [gcu_map_lifecycle]: [34m[1mActivating amcl[0m[0m
+[amcl-5] [INFO] [1795265620.175977455] [amcl]: Activating
+[amcl-5] [INFO] [1795265620.176152564] [amcl]: Creating bond (amcl) to lifecycle manager.
+[lifecycle_manager-2] [INFO] [1795265620.287408436] [gcu_map_lifecycle]: Server amcl connected with bond.
+[lifecycle_manager-2] [INFO] [1795265620.287572119] [gcu_map_lifecycle]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-2] [INFO] [1795265620.287629359] [gcu_map_lifecycle]: [34m[1mCreating bond timer...[0m[0m
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[ekf_node-3] [INFO] [1795265664.750143629] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-1] [INFO] [1795265664.750231516] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-1] [INFO] [1795265664.750497272] [gcu_map_server]: Running Nav2 LifecycleNode rcl preshutdown (gcu_map_server)
+[map_server-1] [INFO] [1795265664.750692566] [gcu_map_server]: Deactivating
+[map_server-1] [INFO] [1795265664.750774954] [gcu_map_server]: Destroying bond (gcu_map_server) to lifecycle manager.
+[amcl-5] [INFO] [1795265664.750300775] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[amcl-5] [INFO] [1795265664.750465532] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[amcl-5] [INFO] [1795265664.750692584] [amcl]: Deactivating
+[amcl-5] [INFO] [1795265664.750774546] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [amcl-5]: sending signal 'SIGINT' to process[amcl-5]
+[INFO] [python3-4]: sending signal 'SIGINT' to process[python3-4]
+[INFO] [ekf_node-3]: sending signal 'SIGINT' to process[ekf_node-3]
+[INFO] [lifecycle_manager-2]: sending signal 'SIGINT' to process[lifecycle_manager-2]
+[ERROR] [python3-4]: process has died [pid 4803, exit code -2, cmd '/usr/bin/python3 /home/pi-project/edgeosmag_phase9_pilot_22/gcu_amcl_initial_pose.py --params /home/pi-project/edgeosmag_phase9_pilot_22/assets/amcl.yaml'].
+[ERROR] [ekf_node-3]: process has died [pid 4801, exit code -2, cmd '/opt/ros/humble/lib/robot_localization/ekf_node --ros-args -r __node:=gcu_alignment_ekf --params-file /tmp/launch_params_zzj5psdg --params-file /tmp/launch_params_pfte3vuv'].
+[INFO] [map_server-1]: sending signal 'SIGINT' to process[map_server-1]
+[lifecycle_manager-2] [INFO] [1795265664.751285947] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-2] [INFO] [1795265664.751537018] [gcu_map_lifecycle]: Running Nav2 LifecycleManager rcl preshutdown (gcu_map_lifecycle)
+[lifecycle_manager-2] [INFO] [1795265664.751690701] [gcu_map_lifecycle]: [34m[1mTerminating bond timer...[0m[0m
+[python3-4] Traceback (most recent call last):
+[python3-4]   File "/home/pi-project/edgeosmag_phase9_pilot_22/gcu_amcl_initial_pose.py", line 67, in <module>
+[python3-4]     raise SystemExit(main())
+[python3-4]   File "/home/pi-project/edgeosmag_phase9_pilot_22/gcu_amcl_initial_pose.py", line 36, in main
+[python3-4]     future = state.call_async(GetState.Request())
+[python3-4]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/client.py", line 117, in call_async
+[python3-4]     sequence_number = self.__client.send_request(request)
+[python3-4] KeyboardInterrupt
+[map_server-1] [INFO] [1795265664.761470667] [gcu_map_server]: Cleaning up
+[map_server-1] [INFO] [1795265664.761853347] [gcu_map_server]: Destroying bond (gcu_map_server) to lifecycle manager.
+[map_server-1] [INFO] [1795265664.821774420] [gcu_map_server]: Destroying
+[ERROR] [map_server-1]: process has died [pid 4797, exit code -2, cmd '/opt/ros/humble/lib/nav2_map_server/map_server --ros-args -r __node:=gcu_map_server --params-file /tmp/launch_params_27dpgsz5'].
+[amcl-5] [INFO] [1795265664.771786588] [amcl]: Cleaning up
+[amcl-5] [INFO] [1795265664.800790859] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[amcl-5] [INFO] [1795265664.845018840] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-2] [INFO] [1795265664.871475867] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[amcl-5] [INFO] [1795265664.887283069] [amcl]: Destroying
+[lifecycle_manager-2] [INFO] [1795265664.890646895] [gcu_map_lifecycle]: Destroying gcu_map_lifecycle
+[INFO] [lifecycle_manager-2]: process has finished cleanly [pid 4799]
+[INFO] [amcl-5]: process has finished cleanly [pid 4805]

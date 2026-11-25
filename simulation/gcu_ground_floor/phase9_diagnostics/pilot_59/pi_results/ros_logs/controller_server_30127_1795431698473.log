@@ -1,0 +1,82 @@
+[INFO] [1795431698.800580017] [controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795431698.825873443] [controller_server]: Creating controller server
+[INFO] [1795431698.882628222] [local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795431698.925380476] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [1795431775.017064227] [controller_server]: Configuring controller interface
+[INFO] [1795431775.018057404] [controller_server]: getting goal checker plugins..
+[INFO] [1795431775.019309227] [controller_server]: Controller frequency set to 10.0000Hz
+[INFO] [1795431775.019590613] [local_costmap.local_costmap]: Configuring
+[INFO] [1795431775.104201434] [local_costmap.local_costmap]: Using plugin "static_layer"
+[INFO] [1795431775.126003513] [local_costmap.local_costmap]: Subscribing to the map topic (/osmag/planning_window) with transient local durability
+[INFO] [1795431775.130545198] [local_costmap.local_costmap]: Initialized plugin "static_layer"
+[INFO] [1795431775.130729049] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[INFO] [1795431775.134826681] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[INFO] [1795431775.261474267] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1795431775.261667969] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[INFO] [1795431775.272063105] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1795431775.272866784] [local_costmap.local_costmap]: Using costmap filter "mission_keepout"
+[INFO] [1795431775.296136221] [local_costmap.local_costmap]: Initialized costmap filter "mission_keepout"
+[INFO] [1795431775.296336498] [local_costmap.local_costmap]: Using costmap filter "constraint_inflation"
+[INFO] [1795431775.303417402] [local_costmap.local_costmap]: Initialized costmap filter "constraint_inflation"
+[INFO] [1795431775.360308618] [local_costmap.local_costmap]: StaticLayer: Resizing static layer to 128 X 128 at 0.058644 m/pix
+[INFO] [1795431775.363759293] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[INFO] [1795431775.400340732] [controller_server]: Created goal checker : goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1795431775.403972925] [controller_server]: Controller Server has goal_checker  goal checkers available.
+[INFO] [1795431775.420259735] [controller_server]: Created controller : FollowPath of type nav2_rotation_shim_controller::RotationShimController
+[INFO] [1795431775.450890149] [controller_server]: Created internal controller for rotation shimming: FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1795431775.919382248] [controller_server]: Controller Server has FollowPath  controllers available.
+[INFO] [1795431776.054715188] [controller_server]: Activating
+[INFO] [1795431776.054944427] [local_costmap.local_costmap]: Activating
+[INFO] [1795431776.055027408] [local_costmap.local_costmap]: Checking transform
+[INFO] [1795431776.055376497] [local_costmap.local_costmap]: start
+[INFO] [1795431776.056952614] [local_costmap.local_costmap]: KeepoutFilter: Subscribing to "/osmag/constraint_filter_info" topic for filter info...
+[WARN] [1795431776.062642956] [local_costmap.local_costmap]: KeepoutFilter: Filter mask was not received
+[INFO] [1795431776.063155748] [local_costmap.local_costmap]: KeepoutFilter: Received filter info from /osmag/constraint_filter_info topic.
+[INFO] [1795431776.063322673] [local_costmap.local_costmap]: KeepoutFilter: Subscribing to "/osmag/constraint_mask" topic for filter mask...
+[INFO] [1795431776.071537994] [local_costmap.local_costmap]: KeepoutFilter: Received filter mask from /osmag/constraint_mask topic.
+[INFO] [1795431776.110872614] [controller_server]: Activating controller: FollowPath of type nav2_rotation_shim_controller::RotationShimController
+[INFO] [1795431776.111125593] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1795431776.111260537] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[WARN] [1795431777.663289363] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 0.71 seconds, and it should be updated every 0.50 seconds.
+[INFO] [1795431777.675178765] [local_costmap.local_costmap]: Message Filter dropping message: frame 'lidar_link' at time 64.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[WARN] [1795431777.861707747] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 0.81 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431778.061577009] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 0.81 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431778.261601493] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 0.81 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431778.461785494] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 0.83 seconds, and it should be updated every 0.50 seconds.
+[INFO] [1795431778.620616428] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1795431778.661756294] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 0.86 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431778.861695260] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 1.40 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431779.061539856] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 1.40 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431779.261531990] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 1.40 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431779.461682345] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 1.54 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431779.661810514] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 1.65 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431779.861660797] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 1.69 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1795431780.062672312] [local_costmap.local_costmap]: The /scan observation buffer has not been updated for 1.81 seconds, and it should be updated every 0.50 seconds.
+[INFO] [1795431780.183099526] [controller_server]: Deactivating
+[WARN] [1795431780.183324191] [controller_server]: [follow_path] [ActionServer] Requested to deactivate server but goal is still executing. Should check if action server is running before deactivating.
+[INFO] [1795431780.283525423] [controller_server]: [follow_path] [ActionServer] Waiting for async process to finish.
+[INFO] [1795431780.384298299] [controller_server]: [follow_path] [ActionServer] Waiting for async process to finish.
+[INFO] [1795431780.485050360] [controller_server]: [follow_path] [ActionServer] Waiting for async process to finish.
+[INFO] [1795431780.585736033] [controller_server]: [follow_path] [ActionServer] Waiting for async process to finish.
+[ERROR] [1795431780.631440065] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the future.  Requested time 67.140000 but the latest data is at time 66.500000, when looking up transform from frame [map] to frame [base_footprint]
+
+[WARN] [1795431780.633886878] [controller_server]: Control loop missed its desired rate of 10.0000Hz
+[WARN] [1795431780.634154784] [controller_server]: [follow_path] [ActionServer] Stopping the thread per request.
+[INFO] [1795431780.634253912] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1795431780.635636734] [controller_server]: Deactivating controller: FollowPath of type nav2_rotation_shim_controller::RotationShimController
+[INFO] [1795431780.635852177] [controller_server]: Deactivating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1795431780.636097823] [local_costmap.local_costmap]: Deactivating
+[INFO] [1795431780.661909278] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1795431792.994104210] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795431792.994373782] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1795431792.994604780] [controller_server]: Cleaning up
+[INFO] [1795431792.994701427] [controller_server]: Cleaning up controller: FollowPath of type nav2_rotation_shim_controller::RotationShimController
+[INFO] [1795431792.994761760] [controller_server]: Cleaning up controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1795431792.994948018] [local_costmap.local_costmap]: Cleaning up
+[INFO] [1795431793.116803119] [controller_server]: Destroying bond (controller_server) to lifecycle manager.

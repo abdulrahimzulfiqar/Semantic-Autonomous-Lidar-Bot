@@ -122,6 +122,7 @@ This repository is organized as a unified workspace, separating embedded hardwar
 * **`firmware/`**: Embedded C++ Arduino Uno firmware (`arduino_bridge` for motor PID, `calibration` for IMUs).
 * **`hardware_test/`**: Basic open-loop diagnostic code to verify motor wiring and encoder directions.
 * **`lidarbot_ws/`**: Active ROS 2 Workspace (contains `src/rplidar_ros` and the core wheelchair control packages like `lidarbot_bringup`, `lidarbot_navigation`, and `lidarbot_slam`).
+* **[`paper/`](paper/README.md)**: EdgeOsmAG paper-writing roadmap, small writing exercises, section reviews, manuscript outline and research evidence links.
 * **`scripts/`**: Utility scripts (deployment sync `transfer_node.sh` and local LLM benchmarking/monitoring tools).
 * **`web_app/`**: React Web Application for caregivers and voice control.
 

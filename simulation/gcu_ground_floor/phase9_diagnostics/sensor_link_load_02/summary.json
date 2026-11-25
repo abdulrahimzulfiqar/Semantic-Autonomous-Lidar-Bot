@@ -1,0 +1,93 @@
+{
+  "scope": "20 seconds of recorded sensor-sized traffic. Reliable DDS for wheel odometry, IMU and scan with clock at best effort. No Gazebo, localization, planning or motion.",
+  "statuses": [
+    [
+      0,
+      "probe_exit=0\n\n"
+    ],
+    [
+      0,
+      ""
+    ]
+  ],
+  "streams": {
+    "clock": {
+      "simulator": {
+        "callbacks": 2000,
+        "unique_stamps": 2000,
+        "max_sample_gap_ns": 10000000,
+        "max_callback_gap_s": 0.015012174999810668
+      },
+      "pi": {
+        "callbacks": 1999,
+        "unique_stamps": 1999,
+        "max_sample_gap_ns": 20000000,
+        "max_callback_gap_s": 0.09301463499969032
+      },
+      "matched_stamps": 1999,
+      "missing_on_pi_ns": [
+        11180000000
+      ],
+      "absent_from_source_probe_ns": [],
+      "max_source_lateness_ns": 6347854,
+      "published_bytes": 24000
+    },
+    "imu": {
+      "simulator": {
+        "callbacks": 2000,
+        "unique_stamps": 2000,
+        "max_sample_gap_ns": 10000000,
+        "max_callback_gap_s": 0.015342506999786565
+      },
+      "pi": {
+        "callbacks": 2000,
+        "unique_stamps": 2000,
+        "max_sample_gap_ns": 10000000,
+        "max_callback_gap_s": 0.0931254249999256
+      },
+      "matched_stamps": 2000,
+      "missing_on_pi_ns": [],
+      "absent_from_source_probe_ns": [],
+      "max_source_lateness_ns": 5902858,
+      "published_bytes": 648000
+    },
+    "scan": {
+      "simulator": {
+        "callbacks": 200,
+        "unique_stamps": 200,
+        "max_sample_gap_ns": 100000000,
+        "max_callback_gap_s": 0.1019233140000324
+      },
+      "pi": {
+        "callbacks": 200,
+        "unique_stamps": 200,
+        "max_sample_gap_ns": 100000000,
+        "max_callback_gap_s": 0.15396588700014036
+      },
+      "matched_stamps": 200,
+      "missing_on_pi_ns": [],
+      "absent_from_source_probe_ns": [],
+      "max_source_lateness_ns": 2347679,
+      "published_bytes": 588800
+    },
+    "wheel_odom": {
+      "simulator": {
+        "callbacks": 1000,
+        "unique_stamps": 1000,
+        "max_sample_gap_ns": 20000000,
+        "max_callback_gap_s": 0.02184161100012716
+      },
+      "pi": {
+        "callbacks": 1000,
+        "unique_stamps": 1000,
+        "max_sample_gap_ns": 20000000,
+        "max_callback_gap_s": 0.11955535000015516
+      },
+      "matched_stamps": 1000,
+      "missing_on_pi_ns": [],
+      "absent_from_source_probe_ns": [],
+      "max_source_lateness_ns": 2802214,
+      "published_bytes": 724000
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "date_pk": "2026-11-23",
+  "recorded_at_utc": "2026-11-23T10:51:15.149831+00:00",
+  "scope": "Diagnostic sequence with changing runtime variants. No completed matched reporting batch.",
+  "configured_physics_factor": 1.0,
+  "score_passes": 0,
+  "trials": [
+    {
+      "pilot": 44,
+      "variant": "Original runtime on requalified link",
+      "passed": false,
+      "score_error": "RuntimeError('watchdog:pose_observation_gap')",
+      "contacts": 0,
+      "worker_stage": "motion",
+      "goals_sent": 2,
+      "source_scans": 55,
+      "received_scans": 55,
+      "scan_interval_kind": "navigation",
+      "achieved_sim_per_wall_s": 0.9595369467455405,
+      "firmware_readings": 86,
+      "firmware_flags": [
+        "throttled=0x0"
+      ]
+    },
+    {
+      "pilot": 47,
+      "variant": "Callback trace without the separate arrival probe",
+      "passed": false,
+      "score_error": "RuntimeError('watchdog:pose_observation_gap')",
+      "contacts": 0,
+      "worker_stage": "motion",
+      "goals_sent": 2,
+      "source_scans": 30,
+      "received_scans": 30,
+      "scan_interval_kind": "navigation",
+      "achieved_sim_per_wall_s": 0.9585770163505943,
+      "firmware_readings": 81,
+      "firmware_flags": [
+        "throttled=0x0"
+      ]
+    },
+    {
+      "pilot": 48,
+      "variant": "Clear-envelope footprint validation",
+      "passed": false,
+      "score_error": "MissionError('constraint_costmaps_not_ready')",
+      "contacts": 0,
+      "worker_stage": "dispatch_admission",
+      "goals_sent": 0,
+      "source_scans": 1,
+      "received_scans": 1,
+      "scan_interval_kind": "pre_dispatch_admission",
+      "firmware_readings": 81,
+      "firmware_flags": [
+        "throttled=0x0"
+      ]
+    },
+    {
+      "pilot": 51,
+      "variant": "Pre-dispatch costmap freshness reserve",
+      "passed": false,
+      "score_error": "RuntimeError('watchdog:constraint_costmaps_not_ready')",
+      "contacts": 0,
+      "worker_stage": "motion",
+      "goals_sent": 2,
+      "source_scans": 42,
+      "received_scans": 42,
+      "scan_interval_kind": "navigation",
+      "achieved_sim_per_wall_s": 0.7149594711657031,
+      "firmware_readings": 89,
+      "firmware_flags": [
+        "throttled=0x0"
+      ]
+    },
+    {
+      "pilot": 54,
+      "variant": "Revision-only keepout mask, interrupted before actor creation",
+      "passed": false,
+      "score_error": "no_worker_report",
+      "contacts": 0,
+      "setup_error": "Pi Wi-Fi interface did not have the pinned DDS address at actor initialization",
+      "firmware_readings": 105,
+      "firmware_flags": [
+        "throttled=0x0"
+      ]
+    },
+    {
+      "pilot": 55,
+      "variant": "Revision-only keepout mask, retry after link recovery",
+      "passed": false,
+      "score_error": "MissionError('stale_robot_tf')",
+      "contacts": 0,
+      "worker_stage": "motion",
+      "goals_sent": 1,
+      "source_scans": 8,
+      "received_scans": 8,
+      "scan_interval_kind": "navigation",
+      "achieved_sim_per_wall_s": 0.6962081316516678,
+      "firmware_readings": 90,
+      "firmware_flags": [
+        "throttled=0x0"
+      ]
+    }
+  ]
+}

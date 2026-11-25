@@ -1,0 +1,138 @@
+{
+  "timing": {
+    "scope": "Local AMCL/TF replay timing only; no EKF, controller, mission or localization-accuracy claim",
+    "replay_rate": 1.0,
+    "recording_duration_sim_s": 55.1,
+    "measured_replay_wall_s": 55.10227842600034,
+    "expected_scans": 552,
+    "received_unique_scans": 552,
+    "tf_queries": 1377,
+    "tf_query_failures": 0,
+    "max_pose_observation_gap_sim_s": 0.06859736300000208,
+    "max_tf_age_sim_s": 0.023207407000000124,
+    "max_scan_publication_lateness_wall_s": 0.013649010000335693,
+    "max_clock_receipt_gap_wall_s": 0.052012443000421626,
+    "clock_covers_recording": true,
+    "thresholds": {
+      "scan_publication_lateness_wall_s": 0.1,
+      "tf_age_sim_s": 0.15,
+      "pose_observation_gap_sim_s": 0.15
+    },
+    "passed": true
+  },
+  "role_passed": true,
+  "clock_path": {
+    "source_publications": 4965,
+    "matched_receipt_stamps": 4955,
+    "max_source_publication_return_gap_wall_s": 0.018382864999693993,
+    "largest_receipt_gap_wall_s": 0.052012443000421626,
+    "gap_start": {
+      "wall": 5153.830617772,
+      "stamp": 23.987900074
+    },
+    "gap_end": {
+      "wall": 5153.882630215,
+      "stamp": 24.032397113
+    },
+    "source_publications_returned_during_receipt_gap": 4,
+    "source_stamps_during_gap_ns": [
+      23998881600,
+      24009433213,
+      24020608742,
+      24032397113
+    ],
+    "scope": "Same-host monotonic clock, publication-call return versus subscriber callback. Does not isolate middleware from callback scheduling or establish wire latency."
+  },
+  "amcl_updates_during_replay": 112,
+  "process_costs": [
+    {
+      "pid": 12474,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_map_server/map_server",
+        "--ros-args",
+        "-p",
+        "use_sim_time:=true"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89611737799987,
+      "cpu_delta_s": 2.6500000000000004,
+      "cpu_percent_one_core": 4.91686623994499,
+      "sampled_pss_max_kib": 13840,
+      "sampled_rss_max_kib": 23356
+    },
+    {
+      "pid": 12475,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_amcl/amcl",
+        "--ros-args",
+        "--params-file",
+        "/home/pi-project/edgeosmag_phase9_local_replay_05/amcl.yaml"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89611737799987,
+      "cpu_delta_s": 5.529999999999999,
+      "cpu_percent_one_core": 10.260479361092749,
+      "sampled_pss_max_kib": 32172,
+      "sampled_rss_max_kib": 41400
+    },
+    {
+      "pid": 12477,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+        "--ros-args",
+        "-p",
+        "use_sim_time:=true"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89611737799987,
+      "cpu_delta_s": 3.23,
+      "cpu_percent_one_core": 5.9930105490650245,
+      "sampled_pss_max_kib": 5924,
+      "sampled_rss_max_kib": 14848
+    },
+    {
+      "pid": 12478,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_phase9_local_replay_05/local_replay.py",
+        "--role",
+        "observe"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89611737799987,
+      "cpu_delta_s": 31.89,
+      "cpu_percent_one_core": 59.16938278937573,
+      "sampled_pss_max_kib": 35295,
+      "sampled_rss_max_kib": 51736
+    },
+    {
+      "pid": 12479,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_phase9_local_replay_05/local_replay.py",
+        "--role",
+        "feed"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.89611737799987,
+      "cpu_delta_s": 27.47,
+      "cpu_percent_one_core": 50.968420985392015,
+      "sampled_pss_max_kib": 35842,
+      "sampled_rss_max_kib": 52192
+    }
+  ],
+  "resource_scope": "Replay interval only; sampled process CPU delta over first/last in-interval sample, 100% = one core. Replay publisher and observer costs listed separately. No EKF, Nav2, route preprocessing or mission workload.",
+  "reconstruction": "SE(2) reconstruction: original scan stamps/ranges; recorded odometry interpolated at nominal 50 simulated Hz; generated replay clock nominal 100 simulated Hz",
+  "recording_sha256": "e9754ca4675dcf7944ba426ff54ee5041841ed80b4fc3d7997f9221cc19615e9",
+  "analysis_sources_sha256": {
+    "analyze_local_replay.py": "a74d615eb7e082ad5cf5bd9084c7d4303f606b1d35794c040e3dc211f55ba219",
+    "replay_timing.py": "440dfe641ff03c552752096ce853bf0c55e75aead84b2b7b04731df238a47a33"
+  },
+  "evidence_sha256": {
+    "feed.json": "65c7ec945ad64162c4576537fa3c8a40892863b9fcc854553be8a4d27ac880cb",
+    "observations.json": "17e46614d4c1ce7b49fa0c5c8e6886acf134af271b04dc52cc469b93ace1cb62",
+    "resources.json": "d5a1375bf02a27c216c5fc8c66e2a1ef1011e3814f36c93659912e8296546982",
+    "result.json": "56512295f5d6e1025b8fef7a7d35c9d1b0e04e21d8631f630113ffacb7c36e59"
+  },
+  "passed": true
+}

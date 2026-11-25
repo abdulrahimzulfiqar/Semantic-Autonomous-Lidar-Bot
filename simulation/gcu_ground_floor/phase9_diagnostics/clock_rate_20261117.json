@@ -1,0 +1,44 @@
+{
+  "scope": "Clock-only diagnostic; no robot spawned, no navigation commands",
+  "messages": 7263,
+  "wall_interval_s": 8.000412030999996,
+  "sim_interval_s": 7.2620000000000005,
+  "received_per_wall_s": 907.7032497652874,
+  "received_per_sim_s": 999.9999999999999,
+  "real_time_factor": 0.9077032497652875,
+  "process_exits": [
+    0,
+    0
+  ],
+  "shutdown": {
+    "passed": true,
+    "command": [
+      "ign",
+      "service",
+      "-s",
+      "/server_control",
+      "--reqtype",
+      "ignition.msgs.ServerControl",
+      "--reptype",
+      "ignition.msgs.Boolean",
+      "--timeout",
+      "5000",
+      "--req",
+      "stop: true"
+    ],
+    "stdout": "data: true\n\n",
+    "stderr": "",
+    "exit": 0,
+    "server_pids": [
+      3489
+    ],
+    "still_alive_pids": [],
+    "pause_before_stop": {
+      "acknowledged": true,
+      "stdout": "data: true\n\n",
+      "stderr": "",
+      "exit": 0,
+      "scope": "Pause RPC acknowledgement plus 0.25 s quiescence interval; not a separate renderer-thread ACK."
+    }
+  }
+}

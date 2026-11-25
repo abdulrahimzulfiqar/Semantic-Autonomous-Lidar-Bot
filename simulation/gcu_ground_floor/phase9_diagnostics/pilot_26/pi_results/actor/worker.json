@@ -1,0 +1,3598 @@
+{
+  "passed": false,
+  "scope": "Pi navigation actor; no ground-truth subscription",
+  "goal": [
+    1.0,
+    -12.960313240266368,
+    0.0
+  ],
+  "events": [
+    {
+      "event": "fault",
+      "wall": 2003.015985599,
+      "sim": 54.142,
+      "reason": "phase9_pilot_error"
+    }
+  ],
+  "stage": "dispatch_admission",
+  "preprocessing_wall_s": 52.735216627,
+  "timer_group_change": {
+    "period_ns": 40000000,
+    "callback_group": "separate_mutually_exclusive",
+    "callback_and_clock_preserved": true
+  },
+  "contract": {
+    "mission_id": "phase9_short_crossing",
+    "route_revision": 1,
+    "closure_revision": 0,
+    "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+    "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+    "route_sha256": "106792400e8ae81955a8a99b0cc6a017c835d545a0f87feb2c2bd1c3cc305fd7",
+    "policy": "refined_crossing",
+    "start": [
+      -0.5087990781488482,
+      -12.948277330520163
+    ],
+    "goal": [
+      1.0,
+      -12.960313240266368,
+      0.0
+    ],
+    "pose_stamp": 1994.83526029,
+    "created_at": 1994.85426029,
+    "area_ids": [
+      "gcu_gf_corridor_14",
+      "gcu_gf_corridor_16"
+    ],
+    "passage_ids": [
+      "-93"
+    ],
+    "disabled_passages": [],
+    "path": [
+      [
+        -0.5087990781488482,
+        -12.948277330520163
+      ],
+      [
+        1.0,
+        -12.960313240266368
+      ]
+    ],
+    "segments": [
+      {
+        "index": 0,
+        "point": [
+          -0.029321981091480487,
+          -12.95210218907763
+        ],
+        "yaw": -0.007976976278122966,
+        "passage_id": "-93",
+        "source_area": "gcu_gf_corridor_14",
+        "destination_area": "gcu_gf_corridor_16"
+      },
+      {
+        "index": 1,
+        "point": [
+          1.0,
+          -12.960313240266368
+        ],
+        "yaw": 0.0,
+        "passage_id": null,
+        "source_area": "gcu_gf_corridor_16",
+        "destination_area": "gcu_gf_corridor_16"
+      }
+    ],
+    "settings": {
+      "reach_threshold_m": 0.3,
+      "crossing_hysteresis_m": 0.06,
+      "confirmation_samples": 3,
+      "maximum_pose_age_s": 0.5,
+      "maximum_observation_gap_s": 0.15,
+      "maximum_pose_step_m": 0.25,
+      "action_ack_timeout_s": 15.0
+    }
+  },
+  "command_owners": [
+    "controller_server"
+  ],
+  "dispatch_sim": 54.142,
+  "dispatch_wall": 2003.012123887,
+  "admission_attempt_sim": 54.142,
+  "admission_attempt_wall": 2003.012123887,
+  "error": "MissionError('stale_scan')",
+  "failure_clock_sim": 54.142,
+  "last_scan_stamp": 53.8,
+  "native_grids": {
+    "global": {
+      "stamp": 54.029,
+      "shape": [
+        128,
+        128
+      ],
+      "origin": [
+        -4.310330123217447,
+        -16.74284805946102
+      ]
+    },
+    "local": {
+      "stamp": 54.018,
+      "shape": [
+        102,
+        102
+      ],
+      "origin": [
+        -3.4893147950485783,
+        -15.980476683304214
+      ]
+    }
+  },
+  "state": {
+    "state": "idle",
+    "mission_id": null,
+    "last_dispatched_segment": -1,
+    "confirmed_crossings": 0,
+    "reason": null,
+    "stop_confirmed": false,
+    "unresolved_requests": 0,
+    "scope": "pure_mock_model_no_motion"
+  },
+  "poses": [],
+  "tf_timing": [
+    {
+      "clock": 49.589,
+      "latest_stamp": 49.57,
+      "query_stamp": 49.57,
+      "wall": 1994.854218661
+    },
+    {
+      "clock": 54.112,
+      "latest_stamp": 54.0,
+      "query_stamp": 54.0,
+      "wall": 2002.91226411
+    }
+  ],
+  "imu_samples": [
+    {
+      "sim_time": 49.85,
+      "yaw_rate": 8.275004441115496e-09,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.86,
+      "yaw_rate": 0.0002376179787549161,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.87,
+      "yaw_rate": 0.00027817570498832843,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.88,
+      "yaw_rate": -0.00027644643210017933,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.89,
+      "yaw_rate": -8.264437495068865e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.9,
+      "yaw_rate": -4.5102288874707944e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.91,
+      "yaw_rate": -0.0006056708632180275,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.92,
+      "yaw_rate": -0.00038888570884681447,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.93,
+      "yaw_rate": -1.1831765191207537e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.94,
+      "yaw_rate": -5.834556338755176e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.95,
+      "yaw_rate": 0.00018212308574580883,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.96,
+      "yaw_rate": -3.8970639754307596e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.97,
+      "yaw_rate": 0.00017658809608414144,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.98,
+      "yaw_rate": -2.6537157710716287e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 49.99,
+      "yaw_rate": 2.3786754266569653e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.05,
+      "yaw_rate": -0.00045650870169598495,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.06,
+      "yaw_rate": 0.00016464499664709727,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.07,
+      "yaw_rate": 9.091831464951216e-08,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.08,
+      "yaw_rate": -0.0002908570013043405,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.09,
+      "yaw_rate": 4.826583471863117e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.1,
+      "yaw_rate": 0.00041802581377014636,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.11,
+      "yaw_rate": 4.675647781547147e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.12,
+      "yaw_rate": -0.00014677792123526289,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.13,
+      "yaw_rate": -0.0001660823017407799,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.14,
+      "yaw_rate": 6.124065793580973e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.15,
+      "yaw_rate": 0.00011896174653274751,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.16,
+      "yaw_rate": -0.0003346645178518494,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.17,
+      "yaw_rate": -0.00017678949519724777,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.18,
+      "yaw_rate": -6.607189963565236e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.19,
+      "yaw_rate": -6.007487185934759e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.2,
+      "yaw_rate": 0.0003159386071904404,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.21,
+      "yaw_rate": 0.0002230280924416957,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.22,
+      "yaw_rate": -2.811895154518403e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.23,
+      "yaw_rate": -4.574146808180796e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.24,
+      "yaw_rate": -5.3418325092788365e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.25,
+      "yaw_rate": 0.0004134048837316816,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.26,
+      "yaw_rate": 0.00044678033184256794,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.27,
+      "yaw_rate": 9.215650283656506e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.28,
+      "yaw_rate": 0.0001636014244221642,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.29,
+      "yaw_rate": -6.300911446001614e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.3,
+      "yaw_rate": -0.00031065090070713457,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.31,
+      "yaw_rate": -0.00020977986176285194,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.32,
+      "yaw_rate": 0.00032752320057909595,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.33,
+      "yaw_rate": 0.00016384836933844646,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.34,
+      "yaw_rate": 8.144782269417625e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.35,
+      "yaw_rate": -0.00014353587220784666,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.36,
+      "yaw_rate": -0.0002396152668005015,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.37,
+      "yaw_rate": 0.00025065616460142817,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.38,
+      "yaw_rate": 8.307964899395772e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.39,
+      "yaw_rate": 0.0002463063214922439,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.4,
+      "yaw_rate": 0.00012869466633291815,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.41,
+      "yaw_rate": 0.00011555933929311435,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.42,
+      "yaw_rate": -0.00020822708571354085,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.43,
+      "yaw_rate": 0.00019915683182473735,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.44,
+      "yaw_rate": -0.00012879796341167495,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.45,
+      "yaw_rate": -0.0001351893719635176,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.46,
+      "yaw_rate": 0.00012809809913794958,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.47,
+      "yaw_rate": 0.00016964837227320903,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.48,
+      "yaw_rate": -0.00014079409584290755,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.49,
+      "yaw_rate": -3.7011406810775965e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.5,
+      "yaw_rate": 0.00019016903095635444,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.51,
+      "yaw_rate": 0.0001249206304931026,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.52,
+      "yaw_rate": 0.00021244524088884798,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.53,
+      "yaw_rate": -0.00010028639334771384,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.54,
+      "yaw_rate": -0.00015546414781626632,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.55,
+      "yaw_rate": 0.00027685722491862185,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.56,
+      "yaw_rate": 0.00016700534897475403,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.57,
+      "yaw_rate": -3.0815934943971156e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.58,
+      "yaw_rate": 9.160711947496293e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.59,
+      "yaw_rate": 0.00031110746986931867,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.6,
+      "yaw_rate": -0.00012600531338963195,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.61,
+      "yaw_rate": 1.6808234570802865e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.62,
+      "yaw_rate": 9.648296418193479e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.63,
+      "yaw_rate": -7.68685190632079e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.64,
+      "yaw_rate": 0.00029125708237167904,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.65,
+      "yaw_rate": -3.165255360738017e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.66,
+      "yaw_rate": 0.0002730524819444168,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.67,
+      "yaw_rate": 1.2357406560326489e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.68,
+      "yaw_rate": -2.5054249728981507e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.69,
+      "yaw_rate": -5.529631772872679e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.7,
+      "yaw_rate": -6.887543981438121e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.71,
+      "yaw_rate": -4.2996348542843045e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.72,
+      "yaw_rate": 4.8362584823563656e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.73,
+      "yaw_rate": 5.446392441544489e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.74,
+      "yaw_rate": 0.00023846729622432233,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.75,
+      "yaw_rate": 0.00013778662051833383,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.76,
+      "yaw_rate": 9.637775718398541e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.77,
+      "yaw_rate": -7.30661166193608e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.78,
+      "yaw_rate": 0.0002940809359614298,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.79,
+      "yaw_rate": 0.00027864605171661164,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.8,
+      "yaw_rate": -5.022226482432651e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.81,
+      "yaw_rate": -0.00030466730131297815,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.82,
+      "yaw_rate": -0.00010769298028457289,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.83,
+      "yaw_rate": -0.00018511940070055436,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.84,
+      "yaw_rate": -9.887785940687865e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.85,
+      "yaw_rate": -0.00010443557462575395,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.86,
+      "yaw_rate": 1.6820507382816085e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.87,
+      "yaw_rate": -0.00028188756817132426,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.88,
+      "yaw_rate": 0.0001229142459343635,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.89,
+      "yaw_rate": 0.0003154253348000483,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.9,
+      "yaw_rate": -0.0003420133434791399,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.91,
+      "yaw_rate": -0.00047152603305139354,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.92,
+      "yaw_rate": 0.0002028617379062151,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.93,
+      "yaw_rate": -0.0003352865331158046,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.94,
+      "yaw_rate": 6.746539570451274e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.95,
+      "yaw_rate": 0.00042163422130047084,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.96,
+      "yaw_rate": -9.990511511414363e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.97,
+      "yaw_rate": -0.00011946054800608392,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.98,
+      "yaw_rate": -0.00011522433852434016,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 50.99,
+      "yaw_rate": 5.175431062331805e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.0,
+      "yaw_rate": 0.00018868200094125426,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.01,
+      "yaw_rate": 0.0002805919937192959,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.02,
+      "yaw_rate": 0.00021565609382188735,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.03,
+      "yaw_rate": 4.496003408455276e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.04,
+      "yaw_rate": 0.00017854625490615244,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.05,
+      "yaw_rate": -0.00043371221752485587,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.06,
+      "yaw_rate": 0.00014350806742961415,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.07,
+      "yaw_rate": -0.0002667899474472891,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.08,
+      "yaw_rate": 0.0001262337866657666,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.09,
+      "yaw_rate": 2.9011992723254994e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.1,
+      "yaw_rate": -0.00015931497113802815,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.11,
+      "yaw_rate": 0.00011724181569677882,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.12,
+      "yaw_rate": -0.00017124611210565053,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.13,
+      "yaw_rate": -0.00018839855025654372,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.14,
+      "yaw_rate": -0.0003688197234107402,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.15,
+      "yaw_rate": 0.00021776096635052586,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.16,
+      "yaw_rate": -0.0003114332795665647,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.17,
+      "yaw_rate": 0.0002462726014700024,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.18,
+      "yaw_rate": -1.4530415010322694e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.19,
+      "yaw_rate": 3.848198075221098e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.2,
+      "yaw_rate": -9.223306052262185e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.21,
+      "yaw_rate": -0.0001428541274377631,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.22,
+      "yaw_rate": -0.0002109131911059197,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.23,
+      "yaw_rate": -0.00012214995488553262,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.24,
+      "yaw_rate": 0.00012436831354653043,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.25,
+      "yaw_rate": 0.0002734834367498891,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.26,
+      "yaw_rate": -4.199808068371582e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.27,
+      "yaw_rate": -0.00020655597680706582,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.28,
+      "yaw_rate": 0.00016822313716614469,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.29,
+      "yaw_rate": -0.0002441429260267284,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.3,
+      "yaw_rate": -0.00010215453338937398,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.31,
+      "yaw_rate": 0.00019881846216321478,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.32,
+      "yaw_rate": -3.766991895426183e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.33,
+      "yaw_rate": -0.00010046000754244736,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.34,
+      "yaw_rate": 0.00016638699290270678,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.35,
+      "yaw_rate": -3.892466297348709e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.36,
+      "yaw_rate": 0.0001607774119571902,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.37,
+      "yaw_rate": 0.00014010893624964997,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.38,
+      "yaw_rate": 8.110197623539592e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.39,
+      "yaw_rate": -0.00023656469420715127,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.4,
+      "yaw_rate": -0.00013373749085139646,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.41,
+      "yaw_rate": 0.00012418968646041014,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.42,
+      "yaw_rate": -0.0004085374210473699,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.43,
+      "yaw_rate": 0.00019743610166721834,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.44,
+      "yaw_rate": 0.0001455704352465409,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.45,
+      "yaw_rate": 0.0002542350196836794,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.46,
+      "yaw_rate": -0.00011417731878561034,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.47,
+      "yaw_rate": 0.00017035601166983646,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.48,
+      "yaw_rate": -8.05451833486098e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.49,
+      "yaw_rate": -4.909922971412838e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.5,
+      "yaw_rate": -0.00010745627709143794,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.51,
+      "yaw_rate": -9.068937334818251e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.52,
+      "yaw_rate": 0.00014819247381418584,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.53,
+      "yaw_rate": -0.00010812509650474224,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.54,
+      "yaw_rate": 5.033683051295356e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.55,
+      "yaw_rate": 0.00012601230181284617,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.56,
+      "yaw_rate": -0.0001511536080541679,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.57,
+      "yaw_rate": -0.00017811167928077348,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.58,
+      "yaw_rate": -0.00016046500929988873,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.59,
+      "yaw_rate": -9.083811339088259e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.6,
+      "yaw_rate": -5.0142472946380384e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.61,
+      "yaw_rate": -0.0003243440610275337,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.62,
+      "yaw_rate": 0.00017220768957121029,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.63,
+      "yaw_rate": -0.00018562321223825488,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.64,
+      "yaw_rate": -0.0001129708471492577,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.65,
+      "yaw_rate": -0.00013554600845196548,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.66,
+      "yaw_rate": 0.00012087380229004062,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.67,
+      "yaw_rate": -8.306082884414395e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.68,
+      "yaw_rate": -6.4928623254409126e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.69,
+      "yaw_rate": -0.00010721586945078414,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.7,
+      "yaw_rate": 5.455987463939725e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.71,
+      "yaw_rate": 0.0002528204999734241,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.72,
+      "yaw_rate": 3.346755552895117e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.73,
+      "yaw_rate": 0.00010665175354634531,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.74,
+      "yaw_rate": -0.0003457876848485933,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.75,
+      "yaw_rate": -0.00017367402968452894,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.76,
+      "yaw_rate": 0.00037463111879144234,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.77,
+      "yaw_rate": -5.9475162465468625e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.78,
+      "yaw_rate": 0.0001082641384694152,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.79,
+      "yaw_rate": 6.981201191361781e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.8,
+      "yaw_rate": 8.296755137344582e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.81,
+      "yaw_rate": 2.4348006998863675e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.82,
+      "yaw_rate": 4.816750921977703e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.83,
+      "yaw_rate": -0.00012007362758220017,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.84,
+      "yaw_rate": 0.00011874852856337259,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.85,
+      "yaw_rate": -6.203908216826815e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.86,
+      "yaw_rate": 0.00015676355879511405,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.87,
+      "yaw_rate": -2.376633893910419e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.88,
+      "yaw_rate": 0.0001229601631628139,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.89,
+      "yaw_rate": 2.039376257759078e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.9,
+      "yaw_rate": 0.00014810368640201264,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.91,
+      "yaw_rate": -0.00016817708014545463,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.92,
+      "yaw_rate": 0.0002513446583130942,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.93,
+      "yaw_rate": 0.00019776568888338355,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.94,
+      "yaw_rate": 0.000193805670032244,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.95,
+      "yaw_rate": 8.084215543726989e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.96,
+      "yaw_rate": 0.00013335130009401838,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.97,
+      "yaw_rate": -8.545463442073507e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.98,
+      "yaw_rate": 0.00048754008136634374,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 51.99,
+      "yaw_rate": -0.0002657009410803706,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.0,
+      "yaw_rate": -0.00016412474313126134,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.01,
+      "yaw_rate": -5.686359517998486e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.02,
+      "yaw_rate": -1.8034520418195795e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.03,
+      "yaw_rate": -7.060318654177609e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.04,
+      "yaw_rate": -0.00011536052357251571,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.05,
+      "yaw_rate": 0.00010851464652405738,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.06,
+      "yaw_rate": -0.0001106743118482202,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.07,
+      "yaw_rate": -3.285949714855922e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.08,
+      "yaw_rate": -4.990340262750794e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.09,
+      "yaw_rate": -3.24311601888306e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.1,
+      "yaw_rate": -2.09175887865751e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.11,
+      "yaw_rate": -0.00017004978285700088,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.12,
+      "yaw_rate": -0.00036180525592832084,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.13,
+      "yaw_rate": -0.00011837398402430368,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.14,
+      "yaw_rate": -0.000276526591468387,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.15,
+      "yaw_rate": 0.0004919247947334822,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.16,
+      "yaw_rate": 1.30297460669306e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.17,
+      "yaw_rate": -0.0001191451967887333,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.18,
+      "yaw_rate": -0.0004412748853284645,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.19,
+      "yaw_rate": 0.000242835432199868,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.2,
+      "yaw_rate": 0.00011780738645665761,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.21,
+      "yaw_rate": -0.0002141152493372925,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.22,
+      "yaw_rate": -0.0007363378929067383,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.23,
+      "yaw_rate": -0.00020946599677805204,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.27,
+      "yaw_rate": 0.0002475262545156942,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.28,
+      "yaw_rate": -0.00013676488404453925,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.29,
+      "yaw_rate": -1.7962544350726528e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.3,
+      "yaw_rate": 0.00012048885310959495,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.31,
+      "yaw_rate": -5.9139145870290874e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.32,
+      "yaw_rate": -0.00018191935793275462,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.33,
+      "yaw_rate": 0.00031604579094967906,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.34,
+      "yaw_rate": 3.0878743706030672e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.35,
+      "yaw_rate": 0.00021828528303272833,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.36,
+      "yaw_rate": -4.195112738622061e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.37,
+      "yaw_rate": 2.7204192851112208e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.38,
+      "yaw_rate": -4.527563627441751e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.39,
+      "yaw_rate": 9.815466479837062e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.4,
+      "yaw_rate": 0.00013305492500077158,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.41,
+      "yaw_rate": -0.0004105550040030433,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.42,
+      "yaw_rate": -0.0003028669279398258,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.43,
+      "yaw_rate": -0.00036612337416902377,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.44,
+      "yaw_rate": 0.00042367852252265116,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.45,
+      "yaw_rate": 0.000361028936629795,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.46,
+      "yaw_rate": -0.00013738649306693266,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.47,
+      "yaw_rate": -2.044239860220653e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.48,
+      "yaw_rate": 0.00017282111528134266,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.49,
+      "yaw_rate": 4.242669020685946e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.5,
+      "yaw_rate": 0.00019292456133771795,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.51,
+      "yaw_rate": -0.00036722765857604697,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.52,
+      "yaw_rate": -0.00023966944740955442,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.53,
+      "yaw_rate": 2.3273476210676834e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.54,
+      "yaw_rate": -9.139595202983236e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.56,
+      "yaw_rate": -7.544630362107285e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.57,
+      "yaw_rate": 8.315935949646496e-09,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.58,
+      "yaw_rate": 0.00011686318097538711,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.59,
+      "yaw_rate": 9.1549552632549e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.6,
+      "yaw_rate": -0.00020225022296133875,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.61,
+      "yaw_rate": -0.000326948834271151,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.62,
+      "yaw_rate": 0.0001591478061702811,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.63,
+      "yaw_rate": -0.0003857932180864142,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.64,
+      "yaw_rate": 1.916379970748314e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.65,
+      "yaw_rate": 0.00025559545647866537,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.66,
+      "yaw_rate": 0.00025147067749869224,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.67,
+      "yaw_rate": -6.482214747947401e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.68,
+      "yaw_rate": 0.00016750381280919698,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.69,
+      "yaw_rate": 0.00012414068361935358,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.75,
+      "yaw_rate": -0.00037686814949212184,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.78,
+      "yaw_rate": 0.00013544656783764822,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.79,
+      "yaw_rate": -0.00022866719948535624,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.8,
+      "yaw_rate": 3.682983932676614e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.81,
+      "yaw_rate": 1.2080047219027155e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.82,
+      "yaw_rate": 3.343858363406199e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.83,
+      "yaw_rate": 0.00016754809848348802,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.84,
+      "yaw_rate": 0.00018439844902188478,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.85,
+      "yaw_rate": 6.156323493603302e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.86,
+      "yaw_rate": 0.00010784202460741606,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.87,
+      "yaw_rate": 0.0001823123287414603,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.88,
+      "yaw_rate": -2.927899439004717e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.89,
+      "yaw_rate": -0.00011217441717870113,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.9,
+      "yaw_rate": 0.00023905369868827594,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.91,
+      "yaw_rate": 1.205932724318278e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.92,
+      "yaw_rate": 9.475677506496849e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.93,
+      "yaw_rate": 8.627626645890324e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.94,
+      "yaw_rate": -0.00016182117916767512,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.96,
+      "yaw_rate": -1.2039003697002888e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.97,
+      "yaw_rate": -0.0002243185588697429,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.98,
+      "yaw_rate": 0.00032016032943357026,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 52.99,
+      "yaw_rate": -4.093703088913557e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.0,
+      "yaw_rate": 0.00012817697969148235,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.05,
+      "yaw_rate": 0.000158097865416104,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.07,
+      "yaw_rate": 3.425041170370263e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.08,
+      "yaw_rate": -0.0002723897876998135,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.09,
+      "yaw_rate": -4.610204934782805e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.1,
+      "yaw_rate": 0.0008498063090674581,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.11,
+      "yaw_rate": 0.000334253388106888,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.13,
+      "yaw_rate": -0.00012104865332197817,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.14,
+      "yaw_rate": -0.0003431741092612051,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.15,
+      "yaw_rate": -0.00025988592064029074,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.16,
+      "yaw_rate": -1.1583427055533297e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.17,
+      "yaw_rate": 0.0002893934205188796,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.18,
+      "yaw_rate": -7.22837341947466e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.19,
+      "yaw_rate": -0.00019325536614613187,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.2,
+      "yaw_rate": 2.425901027073572e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.21,
+      "yaw_rate": -9.875255547018418e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.22,
+      "yaw_rate": 0.0001500130557245248,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.23,
+      "yaw_rate": 0.00025512165641084796,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.24,
+      "yaw_rate": -1.8388645204000054e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.25,
+      "yaw_rate": 0.00016038465177855315,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.26,
+      "yaw_rate": 0.00017232349503045686,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.32,
+      "yaw_rate": 0.0002585645350895483,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.33,
+      "yaw_rate": 0.00024507959319369435,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.34,
+      "yaw_rate": -0.00020754766700059263,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.35,
+      "yaw_rate": 0.0002648694437658418,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.36,
+      "yaw_rate": -6.121901862012981e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.37,
+      "yaw_rate": -0.0001288891276863988,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.38,
+      "yaw_rate": -0.0001417869916098476,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.39,
+      "yaw_rate": -6.177251458393802e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.4,
+      "yaw_rate": -9.193104510373269e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.41,
+      "yaw_rate": -2.2334047822410636e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.42,
+      "yaw_rate": 6.9260436320061e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.43,
+      "yaw_rate": 0.00037004606198058767,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.44,
+      "yaw_rate": -0.00011247962093952971,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.45,
+      "yaw_rate": 6.150142364436307e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.46,
+      "yaw_rate": 0.0002466098075764978,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.47,
+      "yaw_rate": -0.0001088291806246297,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.48,
+      "yaw_rate": 0.00019293798667734653,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.49,
+      "yaw_rate": -0.00015229789378955528,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.5,
+      "yaw_rate": 5.203800664089978e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.51,
+      "yaw_rate": -2.6982251359133855e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.52,
+      "yaw_rate": -7.689941288468637e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.53,
+      "yaw_rate": 0.00011431992041888572,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.54,
+      "yaw_rate": -5.040354101022557e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.55,
+      "yaw_rate": 4.818957753043089e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.56,
+      "yaw_rate": -0.00027811369969831456,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.62,
+      "yaw_rate": 0.00014713029079700823,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.63,
+      "yaw_rate": -0.0001406400232258578,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.64,
+      "yaw_rate": 0.00025881058142382423,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.67,
+      "yaw_rate": -0.00011600598409820519,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.68,
+      "yaw_rate": -0.0001830295448602633,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.69,
+      "yaw_rate": -0.0001268108858357211,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.7,
+      "yaw_rate": 0.00016838450886499308,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.71,
+      "yaw_rate": -3.034171806668061e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.72,
+      "yaw_rate": 5.470020137765946e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.01,
+      "yaw_rate": -0.00015279533910799326,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.02,
+      "yaw_rate": 0.00014359148679703263,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.03,
+      "yaw_rate": 0.00011912257106257145,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.04,
+      "yaw_rate": 0.00020756785567594367,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.05,
+      "yaw_rate": 6.942346905951346e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.09,
+      "yaw_rate": 0.00027143924804069004,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.1,
+      "yaw_rate": -0.00019149385740591836,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.11,
+      "yaw_rate": 0.00010958263960265565,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.12,
+      "yaw_rate": 0.00019067588016002411,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.35,
+      "yaw_rate": -0.0002480893474504789,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.36,
+      "yaw_rate": 0.00029549394306737487,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.37,
+      "yaw_rate": -3.525404707428346e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.41,
+      "yaw_rate": -2.639681026927047e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.55,
+      "yaw_rate": 0.0002900113263614943,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.56,
+      "yaw_rate": -0.00011604490491636739,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.57,
+      "yaw_rate": -0.0001390259168540135,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.58,
+      "yaw_rate": -0.00011689652704872653,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.59,
+      "yaw_rate": -8.790918166706655e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.6,
+      "yaw_rate": 0.00011312280176162353,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.69,
+      "yaw_rate": 9.853920174975628e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.7,
+      "yaw_rate": 9.107632916393257e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.74,
+      "yaw_rate": -0.00016960231451256623,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.75,
+      "yaw_rate": 0.00010547978441441169,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.87,
+      "yaw_rate": -3.163398758978886e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.88,
+      "yaw_rate": 0.0002122073116596246,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.93,
+      "yaw_rate": 0.00023543450484238553,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.94,
+      "yaw_rate": 2.5795316109615486e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 54.95,
+      "yaw_rate": 7.138413180180227e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.01,
+      "yaw_rate": 0.0001799571822737479,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.02,
+      "yaw_rate": -0.00012407963941767587,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.09,
+      "yaw_rate": 0.00016038610600772494,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.1,
+      "yaw_rate": -4.980756750942107e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.11,
+      "yaw_rate": 0.00020002890138491814,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.25,
+      "yaw_rate": 0.0003992458305471306,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.39,
+      "yaw_rate": 0.00041769243017352495,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.4,
+      "yaw_rate": 0.00010170219028327038,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.53,
+      "yaw_rate": -0.0003055727615468078,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.54,
+      "yaw_rate": 0.00013214279862718193,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.55,
+      "yaw_rate": 0.00013066001081527337,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.56,
+      "yaw_rate": 0.00026551326093551375,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.57,
+      "yaw_rate": 8.938448579714989e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.62,
+      "yaw_rate": -0.0003800097051672129,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.69,
+      "yaw_rate": 7.401186012076648e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.7,
+      "yaw_rate": -8.689972464637139e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.73,
+      "yaw_rate": -4.8785860222412624e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.74,
+      "yaw_rate": -0.0002470980669232048,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.75,
+      "yaw_rate": 4.355729873501726e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.76,
+      "yaw_rate": -0.00019969376973385654,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.84,
+      "yaw_rate": -0.0003447027923878666,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.85,
+      "yaw_rate": -0.00012153455277094804,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.86,
+      "yaw_rate": -0.00013202157014157267,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.87,
+      "yaw_rate": -2.7381143304848264e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.88,
+      "yaw_rate": -0.00017600502631786845,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.89,
+      "yaw_rate": 0.00013596896071416825,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.9,
+      "yaw_rate": 8.270857318564801e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.91,
+      "yaw_rate": -7.678564279441293e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.92,
+      "yaw_rate": 1.6925980639495708e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.93,
+      "yaw_rate": 0.00020159663274372088,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.94,
+      "yaw_rate": -9.688187018595652e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.95,
+      "yaw_rate": 0.00014334746815960187,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.96,
+      "yaw_rate": -0.00016166077014804944,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.97,
+      "yaw_rate": -9.660901488295278e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.98,
+      "yaw_rate": 0.00016613073645381778,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.01,
+      "yaw_rate": -0.00010274796691956377,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.02,
+      "yaw_rate": -8.480536147966747e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.03,
+      "yaw_rate": 0.00034140847456260137,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.04,
+      "yaw_rate": 0.0001563065407947313,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.05,
+      "yaw_rate": 0.0001070958946177878,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.06,
+      "yaw_rate": -0.00013721950256345494,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.07,
+      "yaw_rate": 0.0001312916140508782,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.08,
+      "yaw_rate": -0.0001886782540590622,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.09,
+      "yaw_rate": 0.00024333292029446088,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.1,
+      "yaw_rate": -7.989724950529185e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.11,
+      "yaw_rate": 1.4259069095298665e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.12,
+      "yaw_rate": -0.00013467077758645395,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.13,
+      "yaw_rate": -0.00032423793380755803,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.14,
+      "yaw_rate": 1.2450551689342216e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.15,
+      "yaw_rate": 0.00017802969687641824,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.16,
+      "yaw_rate": 0.00017589496220464198,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.17,
+      "yaw_rate": -0.00017091925629137797,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.18,
+      "yaw_rate": 1.5866847511545515e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.19,
+      "yaw_rate": 0.00015637121204773236,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.22,
+      "yaw_rate": -0.0001747434844746569,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.23,
+      "yaw_rate": 5.156040386304884e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.24,
+      "yaw_rate": 3.064058216962588e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.25,
+      "yaw_rate": -0.00019768752384030752,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.26,
+      "yaw_rate": -0.0001186737857216115,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.27,
+      "yaw_rate": -0.00016352659788628136,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.28,
+      "yaw_rate": -0.00010017947336949156,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.29,
+      "yaw_rate": -0.00012920726301983486,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.3,
+      "yaw_rate": -0.0002465044595645257,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.31,
+      "yaw_rate": 9.901179646608666e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.32,
+      "yaw_rate": 7.039153661449375e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.33,
+      "yaw_rate": 0.0003307090720605837,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.34,
+      "yaw_rate": 1.4441608921967276e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.35,
+      "yaw_rate": -0.0001570657517271913,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.36,
+      "yaw_rate": 0.00016720706195246714,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.37,
+      "yaw_rate": 0.00017356650856199815,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.38,
+      "yaw_rate": -0.00011005282260125913,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.39,
+      "yaw_rate": -0.00037720056039583516,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.4,
+      "yaw_rate": 0.0002349492988845309,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.41,
+      "yaw_rate": -6.909386614771184e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.42,
+      "yaw_rate": -2.822110404320132e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.43,
+      "yaw_rate": -0.00038675311546479814,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.57,
+      "yaw_rate": 0.00011731385912466662,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.58,
+      "yaw_rate": -0.00013040129931429496,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.59,
+      "yaw_rate": 6.148424853562833e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.6,
+      "yaw_rate": -3.37982392191356e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.61,
+      "yaw_rate": 0.00037441137392056015,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.62,
+      "yaw_rate": -5.151425230583653e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.66,
+      "yaw_rate": -0.00011918728464701761,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.67,
+      "yaw_rate": -0.00029922549131210067,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.68,
+      "yaw_rate": 0.0004019826575209306,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.69,
+      "yaw_rate": -9.567387333734994e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.7,
+      "yaw_rate": -0.00010174455623915346,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.71,
+      "yaw_rate": -0.00015427596323264395,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.72,
+      "yaw_rate": 3.1723885526595445e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.73,
+      "yaw_rate": 0.00011241824247462047,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.74,
+      "yaw_rate": 0.00023000708102655163,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.78,
+      "yaw_rate": 0.00022770087589574635,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.86,
+      "yaw_rate": -9.040085800761861e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.87,
+      "yaw_rate": 7.067675542875675e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.89,
+      "yaw_rate": -4.4023686932391525e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.93,
+      "yaw_rate": -0.00017042567044530584,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.94,
+      "yaw_rate": -5.0153504965478746e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.96,
+      "yaw_rate": 3.098374222381418e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.97,
+      "yaw_rate": 0.0003565333318423431,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.98,
+      "yaw_rate": 9.1482110193983e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.99,
+      "yaw_rate": -0.00019436877406523462,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.0,
+      "yaw_rate": -6.672070520674466e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.01,
+      "yaw_rate": 0.00013569456986007222,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.02,
+      "yaw_rate": 0.00016296623766250766,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.03,
+      "yaw_rate": -0.00018696732480028878,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.04,
+      "yaw_rate": -3.708321153098008e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.05,
+      "yaw_rate": 1.0398365521345542e-07,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.06,
+      "yaw_rate": -4.005314867251642e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.07,
+      "yaw_rate": -0.0001261139633169614,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.08,
+      "yaw_rate": 0.0004509170622896199,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.09,
+      "yaw_rate": -0.0002406756010355391,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.1,
+      "yaw_rate": 0.00012019444822692446,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.11,
+      "yaw_rate": 0.00024245893993053982,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.12,
+      "yaw_rate": 0.00020281156516846162,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.13,
+      "yaw_rate": -3.966321859051428e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.14,
+      "yaw_rate": -0.00026517490962208216,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.15,
+      "yaw_rate": -0.0001941314364778591,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.16,
+      "yaw_rate": 0.00011982794256698856,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.17,
+      "yaw_rate": -6.483596835373559e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.18,
+      "yaw_rate": 5.50557123648024e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.19,
+      "yaw_rate": 0.0002761903036617008,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.2,
+      "yaw_rate": -6.220588660037018e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.21,
+      "yaw_rate": -5.804089034282591e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.22,
+      "yaw_rate": 0.00031913701001395314,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.23,
+      "yaw_rate": 9.667431877729389e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.24,
+      "yaw_rate": -0.0001696576991227868,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.25,
+      "yaw_rate": 0.00013346531538842285,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.26,
+      "yaw_rate": -5.612493402656961e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.27,
+      "yaw_rate": 0.00011511229871412428,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.28,
+      "yaw_rate": 0.00011492606893979585,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.29,
+      "yaw_rate": -0.0001638609680519278,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.3,
+      "yaw_rate": 0.00015322670958374196,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.33,
+      "yaw_rate": 0.00023796173330234137,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.34,
+      "yaw_rate": -5.4834693006934496e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.35,
+      "yaw_rate": -8.077319313654821e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.38,
+      "yaw_rate": 7.350473224530787e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.39,
+      "yaw_rate": -0.00012907089292565975,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.4,
+      "yaw_rate": -2.600491182998903e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.41,
+      "yaw_rate": 0.000322029095473856,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.42,
+      "yaw_rate": -6.567429034600514e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.43,
+      "yaw_rate": -0.00013330564959924428,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.44,
+      "yaw_rate": 5.6058884111416955e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.45,
+      "yaw_rate": -0.00017293601991439676,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.46,
+      "yaw_rate": 0.0003021687167641132,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.47,
+      "yaw_rate": 7.658267257850836e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.48,
+      "yaw_rate": -0.00010369339703470624,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.49,
+      "yaw_rate": 6.11950038543348e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.5,
+      "yaw_rate": -0.00010316859092066534,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.51,
+      "yaw_rate": -0.0001968722471433336,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.52,
+      "yaw_rate": 0.00026114922303633703,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.53,
+      "yaw_rate": 0.00026030359527533535,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.54,
+      "yaw_rate": -4.9625116004331006e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.56,
+      "yaw_rate": -9.283893112042217e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.57,
+      "yaw_rate": 0.00033217970609242367,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.58,
+      "yaw_rate": -3.719630530633118e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.59,
+      "yaw_rate": -1.5985709277610447e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.6,
+      "yaw_rate": -5.111495243193018e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.61,
+      "yaw_rate": -0.00020111581426849755,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.62,
+      "yaw_rate": -7.472887256874277e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.63,
+      "yaw_rate": 0.00020670029268281818,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.64,
+      "yaw_rate": 0.00014929921178811193,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.65,
+      "yaw_rate": -0.00035865129215930123,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.66,
+      "yaw_rate": -3.790280433733431e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.67,
+      "yaw_rate": -0.00012152697679807403,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.68,
+      "yaw_rate": 1.449676524910917e-07,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.69,
+      "yaw_rate": 0.00014623991965068947,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.7,
+      "yaw_rate": 3.6979452103283808e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.71,
+      "yaw_rate": -8.156743557865165e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.72,
+      "yaw_rate": 0.00023266328339192362,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.73,
+      "yaw_rate": -2.5947524960770242e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.75,
+      "yaw_rate": 3.234869301580888e-07,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.76,
+      "yaw_rate": -0.00023987792403047856,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.77,
+      "yaw_rate": -0.00013804713908313035,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.78,
+      "yaw_rate": -0.0005070625736060818,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.79,
+      "yaw_rate": -0.0005357655929707219,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.8,
+      "yaw_rate": 0.00022277700526724667,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.81,
+      "yaw_rate": -2.1674430043161952e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.82,
+      "yaw_rate": -0.00010710841094757444,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.83,
+      "yaw_rate": -0.0002943391005605978,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.86,
+      "yaw_rate": 0.00023142135670934776,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.87,
+      "yaw_rate": -7.039648332738734e-05,
+      "frame": "imu_link"
+    }
+  ],
+  "elapsed_wall_s": 64.27181245799989,
+  "final_sim": 54.142,
+  "scan_observations": [
+    [
+      51.9,
+      1997.792629742
+    ],
+    [
+      52.0,
+      1997.933878606
+    ],
+    [
+      52.1,
+      1998.135895811
+    ],
+    [
+      52.2,
+      1998.338860633
+    ],
+    [
+      52.3,
+      1998.373452252
+    ],
+    [
+      52.4,
+      1998.481889366
+    ],
+    [
+      52.5,
+      1998.745307494
+    ],
+    [
+      52.6,
+      1998.809242628
+    ],
+    [
+      52.7,
+      1999.143154497
+    ],
+    [
+      52.8,
+      1999.149504717
+    ],
+    [
+      52.9,
+      1999.709515834
+    ],
+    [
+      53.0,
+      2000.022233869
+    ],
+    [
+      53.1,
+      2000.031352536
+    ],
+    [
+      53.2,
+      2000.299162522
+    ],
+    [
+      53.3,
+      2000.838829741
+    ],
+    [
+      53.4,
+      2001.392971029
+    ],
+    [
+      53.5,
+      2001.568896534
+    ],
+    [
+      53.6,
+      2001.879077287
+    ],
+    [
+      53.7,
+      2002.056277536
+    ],
+    [
+      53.8,
+      2002.153644157
+    ]
+  ],
+  "rolling": {
+    "scope": "Live raster/constraint/proxy manager; no truth input",
+    "windows": [
+      {
+        "window": {
+          "frame": "map",
+          "origin": [
+            -4.310330123217447,
+            -16.74284805946102
+          ],
+          "resolution": 0.05864395201206207,
+          "shape": [
+            128,
+            128
+          ],
+          "revision": 1,
+          "stamp": 49.589,
+          "source_sha256": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+          "sha256": "5dd47e40f72350cae6de54f954d56bdeed9061cf9c1b2cac486d5f1092b769fe",
+          "grid_bytes": 16384,
+          "free_cells": 15136,
+          "unknown_cells": 415,
+          "occupied_cells": 833,
+          "edge_policy": "One occupied border cell; no outside-window traversal",
+          "scope": "OSM-only candidate; physical fidelity and native admission separate"
+        },
+        "snapshot": {
+          "resolution": 0.05864395201206207,
+          "origin": [
+            -4.310330123217447,
+            -16.74284805946102
+          ],
+          "mission_id": "phase9_short_crossing",
+          "route_revision": 1,
+          "closure_revision": 0,
+          "mask_revision": 1,
+          "allowed_areas": [
+            "gcu_gf_corridor_14",
+            "gcu_gf_corridor_16"
+          ],
+          "open_passages": [
+            "-93"
+          ],
+          "disabled_passages": [],
+          "physical_sha256": "79af4da35ecc0395de499980daf6a69c1367ac0d322ae10459905459b5954de6",
+          "mask_sha256": "b3de6fd5e24012aa38c2d88fc8ce3627dbd4223478781d2a9d13d8bb83f4f0e6",
+          "radius": 0.18,
+          "padding": 0.02,
+          "shape": [
+            128,
+            128
+          ],
+          "frame": "map",
+          "blocked_cells": 866,
+          "scope": "Raw conservative keepout; actual costmap consumption and motion require separate checks."
+        },
+        "file": "pilot_window_001.npz",
+        "published_sim": 49.589,
+        "committed_sim": 54.142,
+        "pose": [
+          -0.5087990781488482,
+          -12.948277330520163,
+          0.005575963970289463
+        ],
+        "raster_generation_wall_s": 0.05010076400003527,
+        "mask_and_overlap_wall_s": 0.06687069100007648,
+        "preflights": {
+          "0": {
+            "goal": {
+              "point": [
+                -0.029321981091480487,
+                -12.95210218907763
+              ],
+              "yaw": -0.007976976278122966,
+              "proxy": false,
+              "prefix": [
+                [
+                  -0.5087990781488482,
+                  -12.948277330520163
+                ],
+                [
+                  -0.029321981091480487,
+                  -12.95210218907763
+                ]
+              ],
+              "window_sha256": "5dd47e40f72350cae6de54f954d56bdeed9061cf9c1b2cac486d5f1092b769fe",
+              "window_revision": 1
+            },
+            "admission": {
+              "window_sha256": "5dd47e40f72350cae6de54f954d56bdeed9061cf9c1b2cac486d5f1092b769fe",
+              "window_revision": 1,
+              "mask_sha256": "b3de6fd5e24012aa38c2d88fc8ce3627dbd4223478781d2a9d13d8bb83f4f0e6",
+              "observed_at": 54.112,
+              "source_last_publication": 54.092,
+              "scope": "Admission only; not an action dispatch"
+            },
+            "status": 4,
+            "points": [
+              [
+                -0.4984732424334126,
+                -12.930991178676987
+              ],
+              [
+                -0.43982929042135055,
+                -12.930991178676987
+              ],
+              [
+                -0.4105073144153195,
+                -12.930991178676987
+              ],
+              [
+                -0.3811853384092885,
+                -12.930991178676987
+              ],
+              [
+                -0.35186336240325744,
+                -12.930991178676987
+              ],
+              [
+                -0.3225413863972264,
+                -12.930991178676987
+              ],
+              [
+                -0.29321941039119537,
+                -12.930991178676987
+              ],
+              [
+                -0.26389743438516433,
+                -12.930991178676987
+              ],
+              [
+                -0.2345754583791333,
+                -12.930991178676987
+              ],
+              [
+                -0.20525348237310226,
+                -12.930991178676987
+              ],
+              [
+                -0.17593150636707122,
+                -12.930991178676987
+              ],
+              [
+                -0.14660953036104019,
+                -12.930991178676987
+              ],
+              [
+                -0.08796557834897811,
+                -12.930991178676987
+              ],
+              [
+                -0.02932162633691604,
+                -12.930991178676987
+              ],
+              [
+                -0.029321981091480487,
+                -12.95210218907763
+              ]
+            ],
+            "validation": {
+              "valid": true,
+              "samples": 35,
+              "radius_m": 0.2,
+              "segment_sampling_m": 0.014660988003015518,
+              "checked_clearance_lower_bound_m": 0.31728790402412416,
+              "clearance_search_cap_m": 0.31728790402412416
+            }
+          },
+          "1": {
+            "goal": {
+              "point": [
+                1.0,
+                -12.960313240266368
+              ],
+              "yaw": 0.0,
+              "proxy": false,
+              "prefix": [
+                [
+                  -0.5087990781488482,
+                  -12.948277330520163
+                ],
+                [
+                  1.0,
+                  -12.960313240266368
+                ]
+              ],
+              "window_sha256": "5dd47e40f72350cae6de54f954d56bdeed9061cf9c1b2cac486d5f1092b769fe",
+              "window_revision": 1
+            },
+            "admission": {
+              "window_sha256": "5dd47e40f72350cae6de54f954d56bdeed9061cf9c1b2cac486d5f1092b769fe",
+              "window_revision": 1,
+              "mask_sha256": "b3de6fd5e24012aa38c2d88fc8ce3627dbd4223478781d2a9d13d8bb83f4f0e6",
+              "observed_at": 54.142,
+              "source_last_publication": 54.092,
+              "scope": "Admission only; not an action dispatch"
+            },
+            "status": 4,
+            "points": [
+              [
+                -0.4984732424334126,
+                -12.930991178676987
+              ],
+              [
+                -0.43982929042135055,
+                -12.930991178676987
+              ],
+              [
+                -0.4105073144153195,
+                -12.930991178676987
+              ],
+              [
+                -0.3811853384092885,
+                -12.930991178676987
+              ],
+              [
+                -0.35186336240325744,
+                -12.930991178676987
+              ],
+              [
+                -0.3225413863972264,
+                -12.930991178676987
+              ],
+              [
+                -0.29321941039119537,
+                -12.930991178676987
+              ],
+              [
+                -0.26389743438516433,
+                -12.930991178676987
+              ],
+              [
+                -0.2345754583791333,
+                -12.930991178676987
+              ],
+              [
+                -0.20525348237310226,
+                -12.930991178676987
+              ],
+              [
+                -0.17593150636707122,
+                -12.930991178676987
+              ],
+              [
+                -0.14660953036104019,
+                -12.930991178676987
+              ],
+              [
+                -0.11728755435500915,
+                -12.930991178676987
+              ],
+              [
+                -0.08796557834897811,
+                -12.930991178676987
+              ],
+              [
+                -0.058643602342947077,
+                -12.930991178676987
+              ],
+              [
+                -0.02932162633691604,
+                -12.930991178676987
+              ],
+              [
+                3.4966911499623166e-07,
+                -12.930991178676987
+              ],
+              [
+                0.029322325675146033,
+                -12.930991178676987
+              ],
+              [
+                0.05864430168117707,
+                -12.930991178676987
+              ],
+              [
+                0.0879662776872081,
+                -12.930991178676987
+              ],
+              [
+                0.11728825369323914,
+                -12.930991178676987
+              ],
+              [
+                0.14661022969927018,
+                -12.930991178676987
+              ],
+              [
+                0.17593220570530121,
+                -12.930991178676987
+              ],
+              [
+                0.20525418171133225,
+                -12.930991178676987
+              ],
+              [
+                0.2345761577173633,
+                -12.930991178676987
+              ],
+              [
+                0.2638981337233943,
+                -12.930991178676987
+              ],
+              [
+                0.29322010972942536,
+                -12.930991178676987
+              ],
+              [
+                0.3225420857354564,
+                -12.930991178676987
+              ],
+              [
+                0.35186406174148743,
+                -12.930991178676987
+              ],
+              [
+                0.38118603774751847,
+                -12.930991178676987
+              ],
+              [
+                0.4105080137535495,
+                -12.930991178676987
+              ],
+              [
+                0.43982998975958054,
+                -12.930991178676987
+              ],
+              [
+                0.4691519657656116,
+                -12.930991178676987
+              ],
+              [
+                0.4984739417716426,
+                -12.930991178676987
+              ],
+              [
+                0.5277959177776737,
+                -12.930991178676987
+              ],
+              [
+                0.5571178937837047,
+                -12.930991178676987
+              ],
+              [
+                0.5864398697897357,
+                -12.930991178676987
+              ],
+              [
+                0.6157618457957668,
+                -12.930991178676987
+              ],
+              [
+                0.6450838218017978,
+                -12.930991178676987
+              ],
+              [
+                0.6744057978078288,
+                -12.930991178676987
+              ],
+              [
+                0.7037277738138599,
+                -12.930991178676987
+              ],
+              [
+                0.7330497498198909,
+                -12.930991178676987
+              ],
+              [
+                0.7623717258259219,
+                -12.930991178676987
+              ],
+              [
+                0.791693701831953,
+                -12.930991178676987
+              ],
+              [
+                0.821015677837984,
+                -12.930991178676987
+              ],
+              [
+                0.850337653844015,
+                -12.930991178676987
+              ],
+              [
+                0.8796596298500461,
+                -12.930991178676987
+              ],
+              [
+                0.9089816058560771,
+                -12.930991178676987
+              ],
+              [
+                0.9383035818621082,
+                -12.930991178676987
+              ],
+              [
+                0.9676255578681392,
+                -12.930991178676987
+              ],
+              [
+                1.0,
+                -12.960313240266368
+              ]
+            ],
+            "validation": {
+              "valid": true,
+              "samples": 104,
+              "radius_m": 0.2,
+              "segment_sampling_m": 0.014660988003015518,
+              "checked_clearance_lower_bound_m": 0.31728790402412416,
+              "clearance_search_cap_m": 0.31728790402412416
+            }
+          }
+        },
+        "native": {
+          "global": {
+            "origin": [
+              -4.310330123217447,
+              -16.74284805946102
+            ],
+            "resolution": 0.05864395201206207,
+            "frame": "map",
+            "stamp": 54.029
+          },
+          "local": {
+            "origin": [
+              -3.4893147950485783,
+              -15.980476683304214
+            ],
+            "resolution": 0.05864395201206207,
+            "frame": "map",
+            "stamp": 54.018
+          }
+        },
+        "common_native_plan": []
+      }
+    ],
+    "events": [
+      {
+        "event": "window_published",
+        "sim": 49.589,
+        "revision": 1,
+        "origin": [
+          -4.310330123217447,
+          -16.74284805946102
+        ]
+      },
+      {
+        "event": "window_committed",
+        "sim": 54.142,
+        "revision": 1
+      }
+    ],
+    "frozen": false,
+    "window_shape": [
+      128,
+      128
+    ],
+    "readiness_failures": [],
+    "source_publications": [
+      {
+        "sim": 49.589,
+        "wall": 1998.526471697,
+        "revision": 1
+      },
+      {
+        "sim": 52.464,
+        "wall": 1998.60566535,
+        "revision": 1
+      },
+      {
+        "sim": 52.502,
+        "wall": 1998.759333491,
+        "revision": 1
+      },
+      {
+        "sim": 52.609,
+        "wall": 1998.811994576,
+        "revision": 1
+      },
+      {
+        "sim": 52.699,
+        "wall": 1999.026089005,
+        "revision": 1
+      },
+      {
+        "sim": 52.793,
+        "wall": 1999.131751265,
+        "revision": 1
+      },
+      {
+        "sim": 52.916,
+        "wall": 1999.714294832,
+        "revision": 1
+      },
+      {
+        "sim": 52.993,
+        "wall": 1999.93951722,
+        "revision": 1
+      },
+      {
+        "sim": 53.105,
+        "wall": 2000.051222241,
+        "revision": 1
+      },
+      {
+        "sim": 53.201,
+        "wall": 2000.310947991,
+        "revision": 1
+      },
+      {
+        "sim": 53.301,
+        "wall": 2000.799124425,
+        "revision": 1
+      },
+      {
+        "sim": 53.398,
+        "wall": 2001.2156343,
+        "revision": 1
+      },
+      {
+        "sim": 53.501,
+        "wall": 2001.584293736,
+        "revision": 1
+      },
+      {
+        "sim": 53.612,
+        "wall": 2001.885149695,
+        "revision": 1
+      },
+      {
+        "sim": 53.706,
+        "wall": 2001.998470494,
+        "revision": 1
+      },
+      {
+        "sim": 54.018,
+        "wall": 2002.171752253,
+        "revision": 1
+      },
+      {
+        "sim": 54.092,
+        "wall": 2002.55031298,
+        "revision": 1
+      }
+    ],
+    "pending_revision": null
+  }
+}

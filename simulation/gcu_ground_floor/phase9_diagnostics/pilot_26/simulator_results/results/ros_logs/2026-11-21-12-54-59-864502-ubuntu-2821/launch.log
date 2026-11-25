@@ -1,0 +1,44 @@
+1795265699.8651676 [INFO] [launch]: All log files can be found below /home/ubuntu/edgeosmag_phase9_pilot_26/results/ros_logs/2026-11-21-12-54-59-864502-ubuntu-2821
+1795265699.8652730 [INFO] [launch]: Default logging verbosity is set to INFO
+1795265699.9616036 [INFO] [robot_state_publisher-1]: process started with pid [2846]
+1795265699.9617507 [INFO] [ign-2]: process started with pid [2848]
+1795265699.9618101 [INFO] [gcu_ordered_bridge-3]: process started with pid [2850]
+1795265699.9618580 [INFO] [gcu_ordered_bridge-4]: process started with pid [2852]
+1795265699.9618998 [INFO] [gcu_truth_bridge-5]: process started with pid [2854]
+1795265699.9619381 [INFO] [twist_mux-6]: process started with pid [2856]
+1795265699.9619756 [INFO] [create-7]: process started with pid [2858]
+1795265699.9809122 [twist_mux-6] [INFO] [1795265699.979797289] [twist_mux]: Topic handler 'topics.navigation' subscribed to topic '/phase9/sim_cmd_vel': timeout = 0.500000s , priority = 10.
+1795265700.0794733 [robot_state_publisher-1] [INFO] [1795265700.079213231] [robot_state_publisher]: got segment base_footprint
+1795265700.0798740 [robot_state_publisher-1] [INFO] [1795265700.079766634] [robot_state_publisher]: got segment base_link
+1795265700.0800841 [robot_state_publisher-1] [INFO] [1795265700.080010169] [robot_state_publisher]: got segment camera_link
+1795265700.0802941 [robot_state_publisher-1] [INFO] [1795265700.080212039] [robot_state_publisher]: got segment camera_link_optical
+1795265700.0804799 [robot_state_publisher-1] [INFO] [1795265700.080412118] [robot_state_publisher]: got segment caster_wheel
+1795265700.0806379 [robot_state_publisher-1] [INFO] [1795265700.080566989] [robot_state_publisher]: got segment imu_link
+1795265700.0808043 [robot_state_publisher-1] [INFO] [1795265700.080739943] [robot_state_publisher]: got segment left_wheel
+1795265700.0809534 [robot_state_publisher-1] [INFO] [1795265700.080894230] [robot_state_publisher]: got segment lidar_link
+1795265700.0811024 [robot_state_publisher-1] [INFO] [1795265700.081035644] [robot_state_publisher]: got segment right_wheel
+1795265701.2018583 [INFO] [create-7]: process has finished cleanly [pid 2858]
+1795265701.2055480 [INFO] [spawner-8]: process started with pid [2946]
+1795265701.2056534 [INFO] [spawner-9]: process started with pid [2948]
+1795265701.4083574 [spawner-9] [INFO] [1795265701.408164472] [spawner_diff_controller]: waiting for service /controller_manager/list_controllers to become available...
+1795265701.4089091 [spawner-8] [INFO] [1795265701.408796373] [spawner_joint_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+1795265702.7517352 [spawner-9] [INFO] [1795265702.750849459] [spawner_diff_controller]: [94mLoaded [1mdiff_controller[0m
+1795265702.7690685 [spawner-8] [INFO] [1795265702.767740077] [spawner_joint_broadcaster]: [94mLoaded [1mjoint_broadcaster[0m
+1795265704.1304569 [spawner-9] [INFO] [1795265704.129684480] [spawner_diff_controller]: [92mConfigured and activated [1mdiff_controller[0m
+1795265704.1927688 [spawner-8] [INFO] [1795265704.192448337] [spawner_joint_broadcaster]: [92mConfigured and activated [1mjoint_broadcaster[0m
+1795265705.1929266 [INFO] [spawner-9]: process has finished cleanly [pid 2948]
+1795265705.2423532 [INFO] [spawner-8]: process has finished cleanly [pid 2946]
+1795265792.9430201 [INFO] [gcu_truth_bridge-5]: process has finished cleanly [pid 2854]
+1795265795.3480365 [INFO] [ign-2]: process has finished cleanly [pid 2848]
+1795265795.3853283 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1795265795.3879004 [INFO] [twist_mux-6]: sending signal 'SIGINT' to process[twist_mux-6]
+1795265795.3887401 [INFO] [gcu_ordered_bridge-4]: sending signal 'SIGINT' to process[gcu_ordered_bridge-4]
+1795265795.3893754 [INFO] [gcu_ordered_bridge-3]: sending signal 'SIGINT' to process[gcu_ordered_bridge-3]
+1795265795.3902295 [INFO] [robot_state_publisher-1]: sending signal 'SIGINT' to process[robot_state_publisher-1]
+1795265795.3904812 [robot_state_publisher-1] [INFO] [1795265795.385174333] [rclcpp]: signal_handler(signum=2)
+1795265795.3908532 [twist_mux-6] [INFO] [1795265795.385169875] [rclcpp]: signal_handler(signum=2)
+1795265795.3910093 [robot_state_publisher-1] [INFO] [1795265795.390477660] [rclcpp]: signal_handler(signum=2)
+1795265795.3914022 [ERROR] [twist_mux-6]: process has died [pid 2856, exit code -2, cmd '/opt/ros/humble/lib/twist_mux/twist_mux --ros-args --params-file /tmp/launch_params_k57761kj -r /cmd_vel_out:=/diff_controller/cmd_vel_unstamped'].
+1795265796.4161863 [INFO] [robot_state_publisher-1]: process has finished cleanly [pid 2846]
+1795265796.4303901 [INFO] [gcu_ordered_bridge-3]: process has finished cleanly [pid 2850]
+1795265796.4316018 [INFO] [gcu_ordered_bridge-4]: process has finished cleanly [pid 2852]

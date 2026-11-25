@@ -1,0 +1,117 @@
+[INFO] [launch]: All log files can be found below /home/ubuntu/edgeosmag_phase9_pilot_12/results/ros_logs/2026-11-17-15-19-24-419791-ubuntu-5416
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [robot_state_publisher-1]: process started with pid [5441]
+[INFO] [ign-2]: process started with pid [5443]
+[INFO] [gcu_ordered_bridge-3]: process started with pid [5445]
+[INFO] [gcu_ordered_bridge-4]: process started with pid [5447]
+[INFO] [gcu_truth_bridge-5]: process started with pid [5454]
+[INFO] [twist_mux-6]: process started with pid [5460]
+[INFO] [create-7]: process started with pid [5484]
+[twist_mux-6] [INFO] [1794928764.524399836] [twist_mux]: Topic handler 'topics.navigation' subscribed to topic '/phase9/sim_cmd_vel': timeout = 0.500000s , priority = 10.
+[robot_state_publisher-1] [INFO] [1794928764.553535681] [robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-1] [INFO] [1794928764.554103063] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-1] [INFO] [1794928764.554373607] [robot_state_publisher]: got segment camera_link
+[robot_state_publisher-1] [INFO] [1794928764.554667653] [robot_state_publisher]: got segment camera_link_optical
+[robot_state_publisher-1] [INFO] [1794928764.554887655] [robot_state_publisher]: got segment caster_wheel
+[robot_state_publisher-1] [INFO] [1794928764.555073491] [robot_state_publisher]: got segment imu_link
+[robot_state_publisher-1] [INFO] [1794928764.555273410] [robot_state_publisher]: got segment left_wheel
+[robot_state_publisher-1] [INFO] [1794928764.555460162] [robot_state_publisher]: got segment lidar_link
+[robot_state_publisher-1] [INFO] [1794928764.555656998] [robot_state_publisher]: got segment right_wheel
+[create-7] [INFO] [1794928764.557645396] [ros_gz_sim]: Requesting list of world names.
+[ign-2] [1;32m[Msg] [0m[1;32mIgnition Gazebo Server v[0m[1;32m6.16.0[0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mLoading SDF world file[[0m[1;32m/home/ubuntu/edgeosmag_phase9_pilot_12/assets/contact_v2/world.sdf[0m[1;32m].[0m
+[ign-2] No HOME defined in the environment. Will not log.
+[create-7] [INFO] [1794928765.314189313] [ros_gz_sim]: Requested creation of entity.
+[create-7] [INFO] [1794928765.314262230] [ros_gz_sim]: OK creation of entity.
+[INFO] [create-7]: process has finished cleanly [pid 5484]
+[INFO] [spawner-8]: process started with pid [5542]
+[INFO] [spawner-9]: process started with pid [5544]
+[gcu_ordered_bridge-3] [INFO] [1794928765.542718479] [ros_gz_bridge]: Creating GZ->ROS Bridge: [clock (gz.msgs.Clock) -> clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[gcu_ordered_bridge-3] [INFO] [1794928765.543472321] [ros_gz_bridge]: Creating GZ->ROS Bridge: [imu_broadcaster/imu (gz.msgs.IMU) -> imu_broadcaster/imu (sensor_msgs/msg/Imu)] (Lazy 0)
+[gcu_ordered_bridge-3] [INFO] [1794928765.544439416] [ros_gz_bridge]: Creating GZ->ROS Bridge: [scan (gz.msgs.LaserScan) -> scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[gcu_ordered_bridge-3] [INFO] [1794928765.545050256] [ros_gz_bridge]: Creating GZ->ROS Bridge: [camera/camera_info (gz.msgs.CameraInfo) -> camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[gcu_ordered_bridge-3] [INFO] [1794928765.545845349] [ros_gz_bridge]: Creating ROS->GZ Bridge: [diff_controller/cmd_vel_unstamped (geometry_msgs/msg/Twist) -> diff_controller/cmd_vel_unstamped (gz.msgs.Twist)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.559625262] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_0 (gz.msgs.Contacts) -> /gcu/contacts/collision_0 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.561327241] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_1 (gz.msgs.Contacts) -> /gcu/contacts/collision_1 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.562257460] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_2 (gz.msgs.Contacts) -> /gcu/contacts/collision_2 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.563247388] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_3 (gz.msgs.Contacts) -> /gcu/contacts/collision_3 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.564149274] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_4 (gz.msgs.Contacts) -> /gcu/contacts/collision_4 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.565437831] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_5 (gz.msgs.Contacts) -> /gcu/contacts/collision_5 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.566286341] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_6 (gz.msgs.Contacts) -> /gcu/contacts/collision_6 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.567034475] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_7 (gz.msgs.Contacts) -> /gcu/contacts/collision_7 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.567937777] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_8 (gz.msgs.Contacts) -> /gcu/contacts/collision_8 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.569087583] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_9 (gz.msgs.Contacts) -> /gcu/contacts/collision_9 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.570179929] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_10 (gz.msgs.Contacts) -> /gcu/contacts/collision_10 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.571360318] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_11 (gz.msgs.Contacts) -> /gcu/contacts/collision_11 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[gcu_ordered_bridge-4] [INFO] [1794928765.572383788] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/gcu/contacts/collision_12 (gz.msgs.Contacts) -> /gcu/contacts/collision_12 (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[spawner-8] [INFO] [1794928765.703875471] [spawner_joint_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-9] [INFO] [1794928765.706856631] [spawner_diff_controller]: waiting for service /controller_manager/list_controllers to become available...
+[ign-2] [1;32m[Msg] [0m[1;32mServing entity system service on [[0m[1;32m/[0m[1;32mentity/system/add[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mCreate service on [[0m[1;32m/world/gcu_ground_floor/create[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mRemove service on [[0m[1;32m/world/gcu_ground_floor/remove[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mPose service on [[0m[1;32m/world/gcu_ground_floor/set_pose[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mPose service on [[0m[1;32m/world/gcu_ground_floor/set_pose_vector[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mLight configuration service on [[0m[1;32m/world/gcu_ground_floor/light_config[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mPhysics service on [[0m[1;32m/world/gcu_ground_floor/set_physics[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mSphericalCoordinates service on [[0m[1;32m/world/gcu_ground_floor/set_spherical_coordinates[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mEnable collision service on [[0m[1;32m/world/gcu_ground_floor/enable_collision[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mDisable collision service on [[0m[1;32m/world/gcu_ground_floor/disable_collision[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mMaterial service on [[0m[1;32m/world/gcu_ground_floor/visual_config[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mMaterial service on [[0m[1;32m/world/gcu_ground_floor/wheel_slip[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mLoaded level [[0m[1;32m3[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mServing world controls on [[0m[1;32m/world/gcu_ground_floor[0m[1;32m/control], [[0m[1;32m/world/gcu_ground_floor[0m[1;32m/control/state] and [[0m[1;32m/world/gcu_ground_floor[0m[1;32m/playback/control][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mServing GUI information on [[0m[1;32m/world/gcu_ground_floor[0m[1;32m/[0m[1;32mgui/info[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mWorld [[0m[1;32mgcu_ground_floor[0m[1;32m] initialized with [[0m[1;32mphysics[0m[1;32m] physics profile.[0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mServing world SDF generation service on [[0m[1;32m/world/gcu_ground_floor[0m[1;32m/[0m[1;32mgenerate_world_sdf[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mServing world names on [[0m[1;32m/gazebo/worlds[0m[1;32m][0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mResource path add service on [[0m[1;32m/gazebo/resource_paths/add[0m[1;32m].[0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mResource path get service on [[0m[1;32m/gazebo/resource_paths/get[0m[1;32m].[0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mResource path resolve service on [[0m[1;32m/gazebo/resource_paths/resolve[0m[1;32m].[0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mResource paths published on [[0m[1;32m/gazebo/resource_paths[0m[1;32m].[0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mServer control service on [[0m[1;32m/server_control[0m[1;32m].[0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mFound no publishers on /stats, adding root stats topic[0m[1;32m[0m
+[ign-2] [1;32m[Msg] [0m[1;32mFound no publishers on /clock, adding root clock topic[0m[1;32m[0m
+[INFO] [ign-2]: process has finished cleanly [pid 5443]
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [spawner-9]: sending signal 'SIGINT' to process[spawner-9]
+[INFO] [spawner-8]: sending signal 'SIGINT' to process[spawner-8]
+[INFO] [twist_mux-6]: sending signal 'SIGINT' to process[twist_mux-6]
+[INFO] [gcu_truth_bridge-5]: sending signal 'SIGINT' to process[gcu_truth_bridge-5]
+[INFO] [gcu_ordered_bridge-4]: sending signal 'SIGINT' to process[gcu_ordered_bridge-4]
+[INFO] [gcu_ordered_bridge-3]: sending signal 'SIGINT' to process[gcu_ordered_bridge-3]
+[INFO] [robot_state_publisher-1]: sending signal 'SIGINT' to process[robot_state_publisher-1]
+[ERROR] [twist_mux-6]: process has died [pid 5460, exit code -2, cmd '/opt/ros/humble/lib/twist_mux/twist_mux --ros-args --params-file /tmp/launch_params_yiryigv4 -r /cmd_vel_out:=/diff_controller/cmd_vel_unstamped'].
+[robot_state_publisher-1] [INFO] [1794928766.816704536] [rclcpp]: signal_handler(signum=2)
+[twist_mux-6] [INFO] [1794928766.816756953] [rclcpp]: signal_handler(signum=2)
+[spawner-9] Traceback (most recent call last):
+[spawner-9]   File "/opt/ros/humble/lib/controller_manager/spawner", line 33, in <module>
+[spawner-9]     sys.exit(load_entry_point('controller-manager==2.52.2', 'console_scripts', 'spawner')())
+[spawner-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py", line 361, in main
+[spawner-9]     node.destroy_node()
+[spawner-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1690, in destroy_node
+[spawner-8] Traceback (most recent call last):
+[spawner-8]   File "/opt/ros/humble/lib/controller_manager/spawner", line 33, in <module>
+[spawner-8]     sys.exit(load_entry_point('controller-manager==2.52.2', 'console_scripts', 'spawner')())
+[spawner-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py", line 361, in main
+[spawner-8]     node.destroy_node()
+[spawner-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1690, in destroy_node
+[spawner-8]     self.destroy_client(self._clients[0])
+[spawner-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1600, in destroy_client
+[spawner-8]     client.destroy()
+[spawner-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/client.py", line 187, in destroy
+[spawner-8]     self.__client.destroy_when_not_in_use()
+[spawner-8] KeyboardInterrupt
+[spawner-9]     self.destroy_client(self._clients[0])
+[spawner-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1600, in destroy_client
+[spawner-9]     client.destroy()
+[spawner-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/client.py", line 187, in destroy
+[spawner-9]     self.__client.destroy_when_not_in_use()
+[spawner-9] KeyboardInterrupt
+[gcu_truth_bridge-5] [INFO] [1794928766.824605755] [gcu_truth_bridge]: Transport callbacks stopped before ROS shutdown; 0 pose messages
+[robot_state_publisher-1] [INFO] [1794928766.825368430] [rclcpp]: signal_handler(signum=2)
+[INFO] [robot_state_publisher-1]: process has finished cleanly [pid 5441]
+[INFO] [gcu_ordered_bridge-3]: process has finished cleanly [pid 5445]
+[INFO] [gcu_truth_bridge-5]: process has finished cleanly [pid 5454]
+[INFO] [gcu_ordered_bridge-4]: process has finished cleanly [pid 5447]
+[ERROR] [spawner-9]: process has died [pid 5544, exit code -2, cmd '/opt/ros/humble/lib/controller_manager/spawner diff_controller --controller-manager-timeout 40 --ros-args'].
+[ERROR] [spawner-8]: process has died [pid 5542, exit code -2, cmd '/opt/ros/humble/lib/controller_manager/spawner joint_broadcaster --controller-manager-timeout 40 --ros-args'].

@@ -1,0 +1,24 @@
+[INFO] [1794928144.121395679] [bt_navigator]: 
+	bt_navigator lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1794928144.122052262] [bt_navigator]: Creating
+[INFO] [1794928216.998683200] [bt_navigator]: Configuring
+[INFO] [1794928217.510439343] [bt_navigator]: Activating
+[INFO] [1794928217.852011778] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[ERROR] [1794928219.037441506] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 16.230000 but the earliest data is at time 16.300000, when looking up transform from frame [base_footprint] to frame [map]
+
+[INFO] [1794928219.037656087] [bt_navigator]: Begin navigating from current location (0.00, 0.00) to (-0.03, -12.94)
+[WARN] [1794928219.439178362] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[WARN] [1794928219.573328916] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[WARN] [1794928220.427593068] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[WARN] [1794928220.471982065] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[INFO] [1794928220.776058847] [bt_navigator]: [navigate_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1794928220.776632026] [bt_navigator]: Goal canceled
+[INFO] [1794928220.897473316] [bt_navigator]: Deactivating
+[INFO] [1794928220.897672636] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1794928225.579309067] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1794928225.579696912] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[INFO] [1794928225.579943128] [bt_navigator]: Cleaning up
+[INFO] [1794928226.428174161] [bt_navigator]: Completed Cleaning up
+[INFO] [1794928226.428481237] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.

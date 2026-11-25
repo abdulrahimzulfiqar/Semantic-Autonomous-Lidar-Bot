@@ -1,0 +1,81 @@
+{
+  "scope": "Actual Pi offline route compatibility only; no ROS or motion",
+  "preprocessing_wall_s": 50.44222471499961,
+  "contract": {
+    "mission_id": "phase9_offline_route",
+    "route_revision": 1,
+    "closure_revision": 0,
+    "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+    "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+    "route_sha256": "ae46aa2faf76ab2e2f0668cfe92c5582807b8bc40b3874cc2e30dc95bf3b1a2d",
+    "policy": "refined_crossing",
+    "start": [
+      -0.5,
+      -12.960313240266368
+    ],
+    "goal": [
+      1.0,
+      -12.960313240266368,
+      0.0
+    ],
+    "pose_stamp": 3536.34514194,
+    "created_at": 3536.34514194,
+    "area_ids": [
+      "gcu_gf_corridor_14",
+      "gcu_gf_corridor_16"
+    ],
+    "passage_ids": [
+      "-93"
+    ],
+    "disabled_passages": [],
+    "path": [
+      [
+        -0.5,
+        -12.960313240266368
+      ],
+      [
+        1.0,
+        -12.960313240266368
+      ]
+    ],
+    "segments": [
+      {
+        "index": 0,
+        "point": [
+          -0.029321981115499995,
+          -12.960313240266368
+        ],
+        "yaw": 0.0,
+        "passage_id": "-93",
+        "source_area": "gcu_gf_corridor_14",
+        "destination_area": "gcu_gf_corridor_16"
+      },
+      {
+        "index": 1,
+        "point": [
+          1.0,
+          -12.960313240266368
+        ],
+        "yaw": 0.0,
+        "passage_id": null,
+        "source_area": "gcu_gf_corridor_16",
+        "destination_area": "gcu_gf_corridor_16"
+      }
+    ],
+    "settings": {
+      "reach_threshold_m": 0.3,
+      "crossing_hysteresis_m": 0.06,
+      "confirmation_samples": 3,
+      "maximum_pose_age_s": 0.5,
+      "maximum_observation_gap_s": 0.15,
+      "maximum_pose_step_m": 0.25,
+      "action_ack_timeout_s": 15.0
+    }
+  },
+  "fingerprints": {
+    "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+    "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+    "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+  },
+  "passed": true
+}

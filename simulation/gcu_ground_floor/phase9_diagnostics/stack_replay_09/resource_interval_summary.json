@@ -1,0 +1,78 @@
+{
+  "processes": [],
+  "samples": 0,
+  "sample_span_wall_s": 0.0,
+  "stable_process_set": false,
+  "cpu_percent_one_core_total": null,
+  "sampled_concurrent_domain_pss_max_kib": null,
+  "firmware_power": {
+    "sampled_readings": 79,
+    "active_undervoltage_readings": 0,
+    "active_throttle_readings": 0,
+    "first_flags": "0x0",
+    "last_flags": "0x0",
+    "peak_cpu_temp_c": 64.757
+  },
+  "scope": "One pilot from dispatch to last native success/fault response, excluding preprocessing/rest verification/teardown. CPU uses actual sample span and 100% denotes one core. Relay and optional trace probe are separate processes. The sampler owner is excluded.",
+  "callback_tracing": true,
+  "begin_wall": 1778.120947419,
+  "end_wall": 1778.462766308,
+  "interval_wall_s": 0.3418188890000238,
+  "actor_passed": false,
+  "preprocessing_wall_s": 56.852097576000006,
+  "observed_rates": {
+    "scan": {
+      "callbacks": 3,
+      "receipt_span_wall_s": 0.20434957699990264,
+      "callbacks_per_wall_s": 9.787150183339762,
+      "header_sim_per_wall_s": 0.9787150183339901,
+      "max_receipt_gap_wall_s": 0.10330307799995353
+    },
+    "clock": {
+      "callbacks": 34,
+      "receipt_span_wall_s": 0.32788984800004073,
+      "callbacks_per_wall_s": 100.64355514903255,
+      "header_sim_per_wall_s": 0.9994209945772985,
+      "max_receipt_gap_wall_s": 0.015229578999878868
+    },
+    "imu": {
+      "callbacks": 34,
+      "receipt_span_wall_s": 0.32726033799986,
+      "callbacks_per_wall_s": 100.83715063575507,
+      "header_sim_per_wall_s": 1.0083715063575889,
+      "max_receipt_gap_wall_s": 0.013476603000071918
+    }
+  },
+  "inputs_sha256": {
+    "worker": "b60d9689cad7859e472693410916fb67d5d27ebfe9f8c500de42fb7b878d6fa9",
+    "resources": "6eb99c63f1a2abcf5c100549aee600e69a98aa28df82a8afbfd1bcf95cff270b",
+    "probe": "ce1c5ed3af5d36047b0107d37658454b7851a6e3f3702ddcaaf8434ec8debb8b",
+    "replay_feed": "ce0afe8d06987ae2d9565de4893025e349ba0281a52ed8bb6082d0540a9db139"
+  },
+  "analyzer_sha256": "9c6b7ab4f7d76cfc8eeeeec97d54062e31601a7e4a7cf06c9256139473fabb53",
+  "local_replay": {
+    "completed": false,
+    "controller_outputs": 4,
+    "maximum_abs_linear_m_s": 0.1,
+    "nonzero_linear_outputs": 4,
+    "clip_inputs": {
+      "/scan": {
+        "samples": 50,
+        "median_period_s": 0.1
+      },
+      "/imu_broadcaster/imu": {
+        "samples": 500,
+        "median_period_s": 0.01
+      },
+      "/diff_controller/odom": {
+        "samples": 250,
+        "median_period_s": 0.02
+      }
+    },
+    "maximum_publication_lateness_wall_s": {
+      "/scan": 0.050478331,
+      "/imu_broadcaster/imu": 0.059743411,
+      "/diff_controller/odom": 0.05721089
+    }
+  }
+}

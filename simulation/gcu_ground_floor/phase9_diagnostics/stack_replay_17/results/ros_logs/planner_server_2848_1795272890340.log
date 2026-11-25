@@ -1,0 +1,64 @@
+[INFO] [1795272890.388672942] [planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795272890.399964738] [planner_server]: Creating
+[INFO] [1795272890.514494149] [global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795272890.518032544] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [1795272956.236496426] [planner_server]: Configuring
+[INFO] [1795272956.236791043] [global_costmap.global_costmap]: Configuring
+[INFO] [1795272956.259344666] [global_costmap.global_costmap]: Using plugin "static_layer"
+[INFO] [1795272956.278652098] [global_costmap.global_costmap]: Subscribing to the map topic (/osmag/planning_window) with transient local durability
+[INFO] [1795272956.281986208] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[INFO] [1795272956.282179829] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[INFO] [1795272956.293703954] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[INFO] [1795272956.326086345] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1795272956.326297672] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[INFO] [1795272956.336208101] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1795272956.336399388] [global_costmap.global_costmap]: Using costmap filter "mission_keepout"
+[INFO] [1795272956.352521842] [global_costmap.global_costmap]: Initialized costmap filter "mission_keepout"
+[INFO] [1795272956.352733021] [global_costmap.global_costmap]: Using costmap filter "constraint_inflation"
+[INFO] [1795272956.363607237] [global_costmap.global_costmap]: Initialized costmap filter "constraint_inflation"
+[INFO] [1795272956.397647479] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[INFO] [1795272956.398004808] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[INFO] [1795272956.406696117] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 128 X 128 at 0.058644 m/pix
+[INFO] [1795272956.416077433] [planner_server]: Planner Server has GridBased  planners available.
+[INFO] [1795272956.498066237] [planner_server]: Activating
+[INFO] [1795272956.498257709] [global_costmap.global_costmap]: Activating
+[INFO] [1795272956.498320274] [global_costmap.global_costmap]: Checking transform
+[INFO] [1795272956.498689457] [global_costmap.global_costmap]: start
+[INFO] [1795272956.500013907] [global_costmap.global_costmap]: KeepoutFilter: Subscribing to "/osmag/constraint_filter_info" topic for filter info...
+[INFO] [1795272956.504290894] [global_costmap.global_costmap]: KeepoutFilter: Received filter info from /osmag/constraint_filter_info topic.
+[INFO] [1795272956.504460734] [global_costmap.global_costmap]: KeepoutFilter: Subscribing to "/osmag/constraint_mask" topic for filter mask...
+[INFO] [1795272956.508922266] [global_costmap.global_costmap]: KeepoutFilter: Received filter mask from /osmag/constraint_mask topic.
+[WARN] [1795272956.550680213] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272956.637960947] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272956.743815082] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[INFO] [1795272956.752553620] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[INFO] [1795272956.754629011] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[WARN] [1795272956.860897298] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272956.964253739] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272957.052931993] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272957.154026094] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272957.234043908] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272957.330474343] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272957.484064384] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272957.545269679] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272957.653010636] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272957.771230701] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272957.896050986] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795272958.030725362] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[INFO] [1795272958.570320815] [planner_server]: Deactivating
+[INFO] [1795272958.570569627] [global_costmap.global_costmap]: Deactivating
+[INFO] [1795272958.699768731] [planner_server]: Deactivating plugin GridBased of type NavfnPlanner
+[INFO] [1795272958.699966981] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1795272963.656450086] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795272963.675718116] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[INFO] [1795272963.675923014] [planner_server]: Cleaning up
+[INFO] [1795272963.708180170] [global_costmap.global_costmap]: Cleaning up
+[INFO] [1795272963.723695379] [planner_server]: Cleaning up plugin GridBased of type NavfnPlanner
+[INFO] [1795272963.724777229] [planner_server]: Destroying plugin GridBased of type NavfnPlanner
+[INFO] [1795272963.752872026] [planner_server]: Destroying bond (planner_server) to lifecycle manager.

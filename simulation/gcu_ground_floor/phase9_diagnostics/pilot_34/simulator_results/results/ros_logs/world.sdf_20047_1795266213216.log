@@ -1,0 +1,42 @@
+[INFO] [1795266213.237401545] [gz_ros2_control]: connected to service!! robot_state_publisher asking for robot_description
+[INFO] [1795266213.238011086] [gz_ros2_control]: Received URDF from param server
+[INFO] [1795266213.244787863] [gz_ros2_control]: The position_proportional_gain has been set to: 0.1
+[INFO] [1795266213.245102821] [gz_ros2_control]: Loading joint: left_wheel_joint
+[INFO] [1795266213.245303903] [gz_ros2_control]: 	State:
+[INFO] [1795266213.245464486] [gz_ros2_control]: 		 velocity
+[INFO] [1795266213.245605486] [gz_ros2_control]: 		 position
+[INFO] [1795266213.245612486] [gz_ros2_control]: 	Command:
+[INFO] [1795266213.245617861] [gz_ros2_control]: 		 velocity
+[INFO] [1795266213.245631861] [gz_ros2_control]: Loading joint: right_wheel_joint
+[INFO] [1795266213.245637694] [gz_ros2_control]: 	State:
+[INFO] [1795266213.245642403] [gz_ros2_control]: 		 velocity
+[INFO] [1795266213.245647528] [gz_ros2_control]: 		 position
+[INFO] [1795266213.245651903] [gz_ros2_control]: 	Command:
+[INFO] [1795266213.245656236] [gz_ros2_control]: 		 velocity
+[INFO] [1795266213.247289691] [gz_ros2_control]: Loading sensor: mpu6050_imu
+[INFO] [1795266213.247323857] [gz_ros2_control]: 	State:
+[INFO] [1795266213.247629940] [resource_manager]: Initialize hardware 'IgnitionSystem' 
+[WARN] [1795266213.247672523] [gz_ros2_control]: The ign_ros2_control plugin got renamed to gz_ros2_control.
+Update the <ros2_control> tag and gazebo plugin to
+<hardware>
+  <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+</hardware>
+<gazebo>
+  <plugin filename="gz_ros2_control-system"name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+    ...
+  </plugin>
+</gazebo>
+[INFO] [1795266213.247725023] [resource_manager]: Successful initialization of hardware 'IgnitionSystem'
+[INFO] [1795266213.247752440] [resource_manager]: 'configure' hardware 'IgnitionSystem' 
+[INFO] [1795266213.247756107] [gz_ros2_control]: System Successfully configured!
+[INFO] [1795266213.247764981] [resource_manager]: Successful 'configure' of hardware 'IgnitionSystem'
+[INFO] [1795266213.247768981] [resource_manager]: 'activate' hardware 'IgnitionSystem' 
+[INFO] [1795266213.247818981] [resource_manager]: Successful 'activate' of hardware 'IgnitionSystem'
+[INFO] [1795266213.247824731] [gz_ros2_control]: Loading controller_manager
+[INFO] [1795266213.385705353] [controller_manager]: Loading controller 'joint_broadcaster'
+[INFO] [1795266213.399270908] [controller_manager]: Loading controller 'diff_controller'
+[INFO] [1795266213.408291305] [controller_manager]: Configuring controller 'joint_broadcaster'
+[INFO] [1795266213.408370263] [joint_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[INFO] [1795266213.413459877] [controller_manager]: Configuring controller 'diff_controller'
+[WARN] [1795266213.458237782] [gz_ros2_control]:  Desired controller update period (0.02 s) is slower than the gazebo simulation period (0.001 s).
+[INFO] [1795266214.695541231] [gz_ros2_control]: IMU mpu6050_imu has a topic name: imu_broadcaster/imu

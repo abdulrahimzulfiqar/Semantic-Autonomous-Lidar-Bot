@@ -28,12 +28,19 @@ def main():
     def scan(m):scan_state.update(count=scan_state['count']+1,stamp=m.header.stamp.sec+m.header.stamp.nanosec/1e9)
     sub=node.create_subscription(LaserScan,'/scan',scan,qos_profile_sensor_data)
     started=time.monotonic();future=None;active=False;ready=False;last_state=0.;last_update=0.;updates=0
+    state_reply_timeouts=0
     while time.monotonic()-started<args.timeout:
         rclpy.spin_once(node,timeout_sec=.05);now=time.monotonic()
         if future is None and client.service_is_ready() and now-last_state>.5:
             future=client.call_async(GetState.Request());last_state=now
         if future is not None and future.done():
             active=future.result() is not None and future.result().current_state.label=='active';future=None
+        elif future is not None and now-last_state>1.5:
+            # A lost service response must not block all remaining readiness
+            # requests. The total readiness deadline still bounds retries.
+            client.remove_pending_request(future)
+            future=None
+            state_reply_timeouts+=1
         clock=node.get_clock().now().nanoseconds/1e9
         if active and clock>0 and buffer.can_transform('map','base_footprint',Time()):ready=True;break
         if args.request_updates and active and clock>0 and scan_state['count']>0 and updates<6 and now-last_update>.5:
@@ -41,6 +48,7 @@ def main():
                 update.call_async(Empty.Request());updates+=1;last_update=now
     print(json.dumps({'ready':ready,'amcl_active':active,'wall_seconds':time.monotonic()-started,
         'clock_sim_s':node.get_clock().now().nanoseconds/1e9,'scan':scan_state,'nomotion_requests':updates,
+        'state_reply_timeouts':state_reply_timeouts,
         'odom_to_base':buffer.can_transform('odom','base_footprint',Time()),
         'base_to_lidar':buffer.can_transform('base_footprint','lidar_link',Time()),'frames':buffer.all_frames_as_yaml()}),flush=True)
     node.destroy_node();rclpy.shutdown();return 0 if ready else 1

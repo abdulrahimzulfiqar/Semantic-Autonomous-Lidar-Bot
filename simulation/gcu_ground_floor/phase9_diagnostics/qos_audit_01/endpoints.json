@@ -1,0 +1,131 @@
+{
+  "/diff_controller/odom": {
+    "publishers": [
+      {
+        "node": "diff_controller",
+        "namespace": "/",
+        "reliability": "RELIABLE",
+        "durability": "VOLATILE",
+        "depth": 1
+      }
+    ],
+    "subscriptions": [
+      {
+        "node": "_NODE_NAME_UNKNOWN_",
+        "namespace": "_NODE_NAMESPACE_UNKNOWN_",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 10
+      }
+    ]
+  },
+  "/imu_broadcaster/imu": {
+    "publishers": [
+      {
+        "node": "ros_gz_bridge",
+        "namespace": "/",
+        "reliability": "RELIABLE",
+        "durability": "VOLATILE",
+        "depth": 10
+      }
+    ],
+    "subscriptions": [
+      {
+        "node": "_NODE_NAME_UNKNOWN_",
+        "namespace": "_NODE_NAMESPACE_UNKNOWN_",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 20
+      }
+    ]
+  },
+  "/clock": {
+    "publishers": [
+      {
+        "node": "phase9_clock_transport",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 1
+      }
+    ],
+    "subscriptions": [
+      {
+        "node": "twist_mux",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 1
+      },
+      {
+        "node": "gcu_map_lifecycle",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 1
+      },
+      {
+        "node": "phase9_truth_observer",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 1
+      },
+      {
+        "node": "robot_state_publisher",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 1
+      },
+      {
+        "node": "controller_manager",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 1
+      },
+      {
+        "node": "diff_controller",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 1
+      },
+      {
+        "node": "joint_broadcaster",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 1
+      }
+    ]
+  },
+  "/phase9/source_scan": {
+    "publishers": [
+      {
+        "node": "ros_gz_bridge",
+        "namespace": "/",
+        "reliability": "RELIABLE",
+        "durability": "VOLATILE",
+        "depth": 10
+      }
+    ],
+    "subscriptions": [
+      {
+        "node": "phase9_scan_sender",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 5
+      },
+      {
+        "node": "phase9_truth_observer",
+        "namespace": "/",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 5
+      }
+    ]
+  }
+}

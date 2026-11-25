@@ -1,0 +1,21 @@
+{
+  "scope": "Controlled no-ROS regression reproduction; not a robot trial",
+  "original_failed": true,
+  "error": "ConstraintError:window_constraints_not_freshly_consumed",
+  "original_source_sha256": "21369cfa3f4f23ce07abe491971f0b53e129b939661cc99c7eda912e1bc8f91f",
+  "fixed_source_sha256": "4c9dbb5862d56384bc4a87f0cc9ac4422425712b30fb747922df22ce6d194d39",
+  "live_failure_example": {
+    "attempt": "pilot_05",
+    "clock_sim_s": 81.043,
+    "cached_observation_age_sim_s": {
+      "global": 1.3390000000000128,
+      "local": 1.2010000000000076
+    },
+    "latest_received_grid_age_sim_s": {
+      "global": 0.09000000000000341,
+      "local": 0.06700000000000728
+    },
+    "source_heartbeat_age_sim_s": 0.0,
+    "interpretation": "Latest received grids were fresh while the earlier cached consumption receipts had expired"
+  }
+}

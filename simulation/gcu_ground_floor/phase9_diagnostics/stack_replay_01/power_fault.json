@@ -1,0 +1,41 @@
+{
+  "recorded_utc": "2026-11-20T12:01:30Z",
+  "firmware_flags": "0x50005",
+  "active_undervoltage": true,
+  "active_throttling": true,
+  "cpu_temperature_c": 50.1,
+  "firmware_arm_clock_hz": 600169920,
+  "sysfs_scaling_cur_freq_khz": 1800000,
+  "stage": "dispatch_admission",
+  "actor_error": "MissionError('stale_scan')",
+  "cold_preprocessing_wall_s": 178.395515027,
+  "last_scan_age_at_admission_sim_s": 0.4719355539999981,
+  "nav_goals_sent": 0,
+  "nonzero_commands": 0,
+  "source_clip": {
+    "/scan": {
+      "samples": 50,
+      "median_period_s": 0.1
+    },
+    "/imu_broadcaster/imu": {
+      "samples": 500,
+      "median_period_s": 0.01
+    },
+    "/diff_controller/odom": {
+      "samples": 250,
+      "median_period_s": 0.02
+    }
+  },
+  "max_input_publication_lateness_wall_s": {
+    "/scan": 0.259938917,
+    "/imu_broadcaster/imu": 0.259272157,
+    "/diff_controller/odom": 0.252851933
+  },
+  "classification": "Power fault diagnostic. Final owner report was interrupted during cleanup; later scoped cleanup and the post-run process audit are recorded separately.",
+  "process_audit": "../stack_replay_process_audit.json",
+  "idle_follow_up": {
+    "time_local": "2026-11-20T17:05:27+05:00",
+    "firmware_flags": "0x50005",
+    "temperature_c": 44.8
+  }
+}

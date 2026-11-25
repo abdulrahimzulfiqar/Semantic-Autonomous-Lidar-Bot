@@ -1,0 +1,35 @@
+[INFO] [1794922701.016272539] [amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1794922701.035201814] [amcl]: Creating
+[INFO] [1794922701.658308302] [amcl]: Configuring
+[INFO] [1794922701.658937571] [amcl]: initTransforms
+[INFO] [1794922701.695810431] [amcl]: initPubSub
+[INFO] [1794922701.708852824] [amcl]: Subscribed to map topic.
+[INFO] [1794922701.741727981] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[INFO] [1794922701.858096444] [amcl]: Activating
+[INFO] [1794922701.858292052] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1794922702.741724699] [amcl]: Requesting no-motion update
+[INFO] [1794922702.884309209] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 2.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1794922703.245430403] [amcl]: Requesting no-motion update
+[INFO] [1794922703.744536387] [amcl]: Requesting no-motion update
+[INFO] [1794922704.222706845] [amcl]: createLaserObject
+[INFO] [1794922704.245901400] [amcl]: Requesting no-motion update
+[INFO] [1794922704.759511506] [amcl]: Requesting no-motion update
+[WARN] [1794922705.141190576] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[INFO] [1794922705.234269315] [amcl]: initialPoseReceived
+[WARN] [1794922705.234769219] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 4.976000 but the latest data is at time 4.910000, when looking up transform from frame [base_footprint] to frame [odom])
+[INFO] [1794922705.234894144] [amcl]: Setting pose (4.976000): -0.500 -12.960 0.000
+[INFO] [1794922705.260460053] [amcl]: Requesting no-motion update
+[INFO] [1794922718.852018286] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 17.400 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1794922729.400408437] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 27.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1794922735.438496362] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 32.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1794922760.424037588] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 56.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1794922797.279918666] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 90.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1794922797.865307069] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1794922797.865596034] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1794922797.865824773] [amcl]: Deactivating
+[INFO] [1794922797.865928188] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1794922797.877225973] [amcl]: Cleaning up
+[INFO] [1794922798.063794385] [amcl]: Destroying bond (amcl) to lifecycle manager.

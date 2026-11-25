@@ -1,0 +1,157 @@
+{
+  "name": "phase7_rolling_nominal",
+  "spawn": [
+    -0.5,
+    -12.960313240266368,
+    0.0
+  ],
+  "goal": [
+    3.9,
+    -12.960313240266368,
+    0.0
+  ],
+  "expected_passages": [
+    "-93"
+  ],
+  "expected_areas": [
+    "gcu_gf_corridor_14",
+    "gcu_gf_corridor_16"
+  ],
+  "route_length_m": 4.4,
+  "simulation_timeout_s": 150,
+  "checker_wall_timeout_s": 700,
+  "mask_validation": {
+    "valid": true,
+    "samples": 302,
+    "radius_m": 0.19999999999999998,
+    "segment_sampling_m": 0.01466098782835562,
+    "checked_clearance_lower_bound_m": 0.3172879026268449,
+    "clearance_search_cap_m": 0.3172879026268449
+  },
+  "route_contract": {
+    "mission_id": "phase7_rolling_nominal",
+    "route_revision": 1,
+    "closure_revision": 0,
+    "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+    "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+    "route_sha256": "b24f93856bb2abdcb98e370fac8a9148da4d0af958b5ff84da9951845f81156e",
+    "policy": "refined_crossing",
+    "start": [
+      -0.5,
+      -12.960313240266368
+    ],
+    "goal": [
+      3.9,
+      -12.960313240266368,
+      0.0
+    ],
+    "pose_stamp": 1.0,
+    "created_at": 1.0,
+    "area_ids": [
+      "gcu_gf_corridor_14",
+      "gcu_gf_corridor_16"
+    ],
+    "passage_ids": [
+      "-93"
+    ],
+    "disabled_passages": [],
+    "path": [
+      [
+        -0.5,
+        -12.960313240266368
+      ],
+      [
+        3.9,
+        -12.960313240266368
+      ]
+    ],
+    "segments": [
+      {
+        "index": 0,
+        "point": [
+          -0.029321981116399942,
+          -12.960313240266368
+        ],
+        "yaw": 0.0,
+        "passage_id": "-93",
+        "source_area": "gcu_gf_corridor_14",
+        "destination_area": "gcu_gf_corridor_16"
+      },
+      {
+        "index": 1,
+        "point": [
+          3.9,
+          -12.960313240266368
+        ],
+        "yaw": 0.0,
+        "passage_id": null,
+        "source_area": "gcu_gf_corridor_16",
+        "destination_area": "gcu_gf_corridor_16"
+      }
+    ],
+    "settings": {
+      "reach_threshold_m": 0.3,
+      "crossing_hysteresis_m": 0.06,
+      "confirmation_samples": 3,
+      "maximum_pose_age_s": 0.5,
+      "maximum_observation_gap_s": 0.15,
+      "maximum_pose_step_m": 0.25,
+      "action_ack_timeout_s": 15.0
+    }
+  },
+  "input_sha256": {
+    "gcu_ground_floor.osm": "deab676587ea86701a5a54ec231532976246d68a7e1232e92b76309dd1d39017",
+    "gcu_ground_floor.pgm": "71679325aad08d29d13a1b9e126a829844a43a085b00caf7a3a823213cc2f695",
+    "gcu_ground_floor.yaml": "4a120fc87630f4ee3519b2e7940ce333dc460b145124594cbed4f645ae700134"
+  },
+  "inflate_constraints": true,
+  "check_handoff_rest": true,
+  "local_costmap_frame": "map",
+  "constraint_aware_route": true,
+  "execution_source_sha256": {
+    "gcu_segmented_executor.py": "5694771c835f54b394ac345536e2b10d735f178ae445239b1480b52289925d7b",
+    "osmag_mission_contract.py": "99b59361abd1829c5a8a173b021ab92bc9362074def0751f1d308e128da8ab8c",
+    "osmag_mission_state.py": "a4e4cd62bd2b0f0bd4e44cfd1af7dba21f22760c26b4858165fddfa64a255e03",
+    "check_gcu_segmented_crossing.py": "66e3dd9e11f6eb46ec9880e7ab62d8798b25299bef341db7c0af76a3f2d500f2",
+    "gcu_mission_fixture.py": "9743444209b884b598c1f63d411b852d145efce45ddad7bff59b642c181033fb",
+    "gcu_costmap_observation.py": "14ef0172f9765e7d85a6de4b13c7050ef2b5eef6b65127ff789eb7ece33d0147",
+    "osmag_constraint_mask.py": "25a7af70e3a0d68aa8161d27e4549c513c41b8446bad3399e2dbcff049001a96",
+    "gcu_plan_validation.py": "7a6e63a9d3793ecf6049162c6637ae848a531f280d88213b59fb6def76fc44d5",
+    "osmag_paper_planner.py": "24293360d1fca1fda64187b1695465f336867511ed855ccec1a4eae859fc6667",
+    "osmag_execution_route.py": "a71f7750ccd6b5bacd87c928c1df881bd0b5e7f317f36d1011180254cd54e868",
+    "gcu_cancel_metrics.py": "992f7a7e3de5dccbbbd4f81925493cef183cd04f44d9e31de4e6e81dfdd318a7",
+    "gcu_closure.py": "a87bf18cfdb8215c8eefea2f037d2e5480c9778e00bc25090a7f2ecdcd95faef",
+    "gcu_physical_obstacle.py": "53a3b64bd3000027717aa1cc58e2d354a7669eb9c613cc57caf50fb4e37ef812",
+    "gcu_metric_baseline.py": "a57a8cb2848bc9f6cae268b94c59fd316aba48b257709ed7f0cd6fa9c74b70e4",
+    "gcu_user_mission.py": "1a014c290d1f811cc6c0dc1f1867d751dc34414753db2eb5642a9e337ad92239",
+    "gcu_rolling_window_manager.py": "21369cfa3f4f23ce07abe491971f0b53e129b939661cc99c7eda912e1bc8f91f",
+    "osmag_rolling_raster.py": "74bacca9c37d74bbefbcb2090d04852ea7265a0331fd39acf0584c1920a34873",
+    "osmag_window_goal.py": "891c8aa977a1189038f19c9815ad66ff77c6bdd9114bd76f79cfd3753950ba87",
+    "osmag_window_route.py": "95e548ee0fd5a7f8527b702374bc04c69baa7418b0f3abb653595a624db525bf",
+    "osmag_window_admission.py": "f42ca9118066c24507c21f155d950f62b394a3a745ba9af08d81aa5dd12336f1",
+    "gcu_window_loss_metrics.py": "b9fe346b0db974d5548dcc23d4323a250b1c4fc08a528288faec395d4469b6cd",
+    "gcu_process_resources.py": "da93da95d7bea1aba61b52cf3f60f9683ae6abe22afac093d8ebb6d074ea6794"
+  },
+  "scope": "Offline admitted simulation fixture; runtime acceptance requires a separate scored trial",
+  "fuse_imu_yaw_rate": true,
+  "align_local_grid": true,
+  "local_costmap_publish_hz": 5.0,
+  "rolling_window": {
+    "shape": [
+      128,
+      128
+    ],
+    "shift_m": 0.65
+  },
+  "physical_obstacle": {
+    "center": [
+      0.6,
+      -12.960313240266368
+    ],
+    "size": [
+      0.45,
+      0.65,
+      0.6
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "scope": "Preliminary profiling only: native live with Nav2/Gazebo versus standalone offline Python replay. Co-residence, update cadence and scheduling differ; not a controlled memory/CPU winner or Pi benchmark.",
+  "controlled_resource_comparison": false,
+  "cases": {
+    "clean": {
+      "native_live": {
+        "map_server": {
+          "cpu_delta_s": 3.23,
+          "rss_last_kib": 25808,
+          "pss_last_kib": 12886
+        },
+        "ekf_node": {
+          "cpu_delta_s": 5.23,
+          "rss_last_kib": 18632,
+          "pss_last_kib": 10029
+        },
+        "amcl": {
+          "cpu_delta_s": 4.96,
+          "rss_last_kib": 43388,
+          "pss_last_kib": 32536
+        }
+      },
+      "native_interval_sim_s": 55.565000000000005,
+      "candidate_offline": {
+        "cpu_tracking_s": 44.792338403,
+        "cpu_ms_per_input_scan": 79.70166975622776,
+        "rss_after_kib": 59632,
+        "pss_after_kib": 49095,
+        "map_preprocess_wall_s": 0.0965974639984779,
+        "vector_array_bytes": 55712,
+        "wall_update_p95_ms": 182.36954445201195,
+        "wall_updates_over_100ms_fraction": 0.17259786476868327
+      }
+    },
+    "clutter": {
+      "native_live": {
+        "map_server": {
+          "cpu_delta_s": 4.4399999999999995,
+          "rss_last_kib": 25152,
+          "pss_last_kib": 12266
+        },
+        "ekf_node": {
+          "cpu_delta_s": 7.08,
+          "rss_last_kib": 17884,
+          "pss_last_kib": 9248
+        },
+        "amcl": {
+          "cpu_delta_s": 6.79,
+          "rss_last_kib": 42940,
+          "pss_last_kib": 31945
+        }
+      },
+      "native_interval_sim_s": 69.636,
+      "candidate_offline": {
+        "cpu_tracking_s": 60.150939893,
+        "cpu_ms_per_input_scan": 86.17613165186246,
+        "rss_after_kib": 59848,
+        "pss_after_kib": 49331,
+        "map_preprocess_wall_s": 0.09420934900117572,
+        "vector_array_bytes": 55712,
+        "wall_update_p95_ms": 167.40804785004002,
+        "wall_updates_over_100ms_fraction": 0.21060171919770773
+      }
+    }
+  }
+}

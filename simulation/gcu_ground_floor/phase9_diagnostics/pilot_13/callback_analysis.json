@@ -1,0 +1,220 @@
+{
+  "scope": "Same-Pi callback entry/return correlation; not wire arrival, cross-host clock synchronization, causal proof or mission scoring",
+  "begin_wall": 6912.413628412,
+  "end_wall": 6913.268691383,
+  "durations": {
+    "actor_clock": {
+      "calls": 13,
+      "max_wall_s": 0.00786009099920193,
+      "p95_wall_s": 0.006900885399772958
+    },
+    "driver_spin": {
+      "calls": 128,
+      "max_wall_s": 0.04745538699989993,
+      "p95_wall_s": 0.01963807785059543
+    },
+    "driver_clock": {
+      "calls": 9,
+      "max_wall_s": 0.00013986399972054642,
+      "p95_wall_s": 0.00013595999953395222
+    },
+    "executor_timer": {
+      "calls": 12,
+      "max_wall_s": 0.11110572100005811,
+      "p95_wall_s": 0.09765636804995664
+    },
+    "actor_imu": {
+      "calls": 8,
+      "max_wall_s": 0.00018584999997983687,
+      "p95_wall_s": 0.0001821354499497829
+    },
+    "window_tick": {
+      "calls": 127,
+      "max_wall_s": 0.011405232000470278,
+      "p95_wall_s": 0.0006062810002731562
+    },
+    "window_heartbeat": {
+      "calls": 3,
+      "max_wall_s": 0.06605759800004307,
+      "p95_wall_s": 0.06437154950008335
+    },
+    "grid_global": {
+      "calls": 1,
+      "max_wall_s": 8.611900011601392e-05,
+      "p95_wall_s": 8.611900011601392e-05
+    },
+    "grid_local": {
+      "calls": 1,
+      "max_wall_s": 8.371100011572707e-05,
+      "p95_wall_s": 8.371100011572707e-05
+    },
+    "executor_effects": {
+      "calls": 16,
+      "max_wall_s": 0.027179807000720757,
+      "p95_wall_s": 0.006882806750809323
+    },
+    "executor_accepted": {
+      "calls": 1,
+      "max_wall_s": 0.03288184099983482,
+      "p95_wall_s": 0.03288184099983482
+    }
+  },
+  "longest_calls": {
+    "actor_clock": {
+      "begin_wall": 6913.175172414,
+      "thread": 281472574288160,
+      "begin_ros": 18.296,
+      "stamp": 18.301,
+      "end_wall": 6913.183032505,
+      "end_ros": 18.301
+    },
+    "driver_spin": {
+      "begin_wall": 6912.547767874,
+      "thread": 281473347626688,
+      "begin_ros": 18.147,
+      "end_wall": 6912.595223261,
+      "end_ros": 18.161
+    },
+    "driver_clock": {
+      "begin_wall": 6913.178122986,
+      "thread": 281471956807968,
+      "begin_ros": 18.296,
+      "stamp": 18.301,
+      "end_wall": 6913.17826285,
+      "end_ros": 18.296
+    },
+    "executor_timer": {
+      "begin_wall": 6912.811622252,
+      "thread": 281472574288160,
+      "begin_ros": 18.236,
+      "end_wall": 6912.922727973,
+      "end_ros": 18.236
+    },
+    "actor_imu": {
+      "begin_wall": 6912.654597833,
+      "thread": 281471956807968,
+      "begin_ros": 18.209,
+      "stamp": 18.2,
+      "end_wall": 6912.654783683,
+      "end_ros": 18.209
+    },
+    "window_tick": {
+      "begin_wall": 6912.622311655,
+      "thread": 281473347626688,
+      "begin_ros": 18.209,
+      "end_wall": 6912.633716887,
+      "end_ros": 18.209
+    },
+    "window_heartbeat": {
+      "begin_wall": 6912.541491198,
+      "thread": 281471956807968,
+      "begin_ros": 18.147,
+      "end_wall": 6912.607548796,
+      "end_ros": 18.177
+    },
+    "grid_global": {
+      "begin_wall": 6912.503439425,
+      "thread": 281471956807968,
+      "begin_ros": 18.08,
+      "stamp": 18.08,
+      "end_wall": 6912.503525544,
+      "end_ros": 18.08
+    },
+    "grid_local": {
+      "begin_wall": 6912.665661685,
+      "thread": 281471956807968,
+      "begin_ros": 18.209,
+      "stamp": 18.191,
+      "end_wall": 6912.665745396,
+      "end_ros": 18.209
+    },
+    "executor_effects": {
+      "begin_wall": 6912.436103384,
+      "thread": 281473347626688,
+      "begin_ros": 18.049,
+      "end_wall": 6912.463283191,
+      "end_ros": 18.049
+    },
+    "executor_accepted": {
+      "begin_wall": 6912.500247407,
+      "thread": 281472574288160,
+      "begin_ros": 18.08,
+      "end_wall": 6912.533129248,
+      "end_ros": 18.147
+    }
+  },
+  "largest_actor_clock_callback_gap": {
+    "duration_wall_s": 0.2242795460006164,
+    "left": {
+      "begin_wall": 6912.803396926,
+      "thread": 281472574288160,
+      "begin_ros": 18.233,
+      "stamp": 18.236,
+      "end_wall": 6912.803521825,
+      "end_ros": 18.236
+    },
+    "right": {
+      "begin_wall": 6913.027676472,
+      "thread": 281471956807968,
+      "begin_ros": 18.236,
+      "stamp": 18.259,
+      "end_wall": 6913.027805058,
+      "end_ros": 18.259
+    },
+    "independent_clock_callbacks_during_gap": 1,
+    "independent_clock_samples_during_gap": [
+      {
+        "wall": 6913.013838898,
+        "stamp": 18.259
+      }
+    ],
+    "actor_ros_time_step": 0.022999999999999687
+  },
+  "largest_independent_clock_callback_gap": {
+    "duration_wall_s": 0.21647757200025808,
+    "left": {
+      "wall": 6912.797361326,
+      "stamp": 18.246
+    },
+    "right": {
+      "wall": 6913.013838898,
+      "stamp": 18.259
+    }
+  },
+  "largest_driver_clock_callback_gap": {
+    "duration_wall_s": 0.2243888529992546,
+    "left": {
+      "begin_wall": 6912.80383726,
+      "thread": 281472574288160,
+      "begin_ros": 18.236,
+      "stamp": 18.236,
+      "end_wall": 6912.803917767,
+      "end_ros": 18.236
+    },
+    "right": {
+      "begin_wall": 6913.028226113,
+      "thread": 281471956807968,
+      "begin_ros": 18.259,
+      "stamp": 18.259,
+      "end_wall": 6913.028331159,
+      "end_ros": 18.259
+    }
+  },
+  "matching_clock_offsets": {
+    "samples": 10,
+    "definition": "Actor entry minus independent-probe callback wall time; signed difference, not network latency",
+    "minimum_wall_s": 0.003264080000008107,
+    "p95_wall_s": 0.04791231284939383,
+    "maximum_wall_s": 0.05993982599920855
+  },
+  "retained_actor_rows": 319,
+  "retained_independent_rows": 39,
+  "actor_passed": false,
+  "actor_error": "RuntimeError('watchdog:stale_scan')",
+  "inputs_sha256": {
+    "worker": "723dcc281cb512eeaee794e127f0fe9c1d08b2021b36098c0b07a5cf589bcc40",
+    "trace": "9fe03a8b2f5239f7ebf50e7dc3984a6ee6cff67f40303c7644f17c746995948a",
+    "probe": "1d594e9efef81d765ae258c33984e28d7c89602619130bfb490d3f78ce3313c8"
+  },
+  "analyzer_sha256": "1e64c6a65b48c4d2e8f67258bba08f20abeae060ff2b340106e6b3079e385b81"
+}

@@ -98,8 +98,11 @@ def create_executor(planner,execute=False,require_imu=False,imu_topic='/imu_broa
 
         def pose(self):
             t=self.buffer.lookup_transform('map','base_footprint',Time());stamp=t.header.stamp.sec+t.header.stamp.nanosec/1e9
-            current=self.sim();query=coherent_pose_time(current,stamp)
-            self.tf_timing.append({'clock':current,'latest_stamp':stamp,'query_stamp':query,'wall':time.monotonic()})
+            current = self.sim()
+            timing = {'clock':current,'latest_stamp':stamp,'query_stamp':None,'wall':time.monotonic()}
+            self.tf_timing.append(timing)
+            query = coherent_pose_time(current, stamp)
+            timing['query_stamp'] = query
             if query<stamp:
                 # TF and /clock travel independently. Query existing buffer
                 # history, never extrapolate a future observation into now.

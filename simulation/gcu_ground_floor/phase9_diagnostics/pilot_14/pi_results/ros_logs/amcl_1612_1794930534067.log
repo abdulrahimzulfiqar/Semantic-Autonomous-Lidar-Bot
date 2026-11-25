@@ -1,0 +1,27 @@
+[INFO] [1794930534.182601948] [amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1794930534.200249296] [amcl]: Creating
+[INFO] [1794930535.395981753] [amcl]: Configuring
+[INFO] [1794930535.399986458] [amcl]: initTransforms
+[INFO] [1794930535.475993451] [amcl]: initPubSub
+[INFO] [1794930535.492550053] [amcl]: Subscribed to map topic.
+[INFO] [1794930535.547670430] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[INFO] [1794930535.679626824] [amcl]: Activating
+[INFO] [1794930535.679778637] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1794930535.806032694] [amcl]: Requesting no-motion update
+[INFO] [1794930536.078033333] [amcl]: createLaserObject
+[INFO] [1794930536.787243605] [amcl]: initialPoseReceived
+[INFO] [1794930536.787619501] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 2.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[WARN] [1794930536.787647350] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 2.546000 but the latest data is at time 2.440000, when looking up transform from frame [base_footprint] to frame [odom])
+[INFO] [1794930536.787819957] [amcl]: Setting pose (2.546000): -0.500 -12.960 0.000
+[INFO] [1794930536.791016736] [amcl]: Requesting no-motion update
+[INFO] [1794930536.839064593] [amcl]: Requesting no-motion update
+[INFO] [1794930537.340687211] [amcl]: Requesting no-motion update
+[INFO] [1794930714.022532838] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1794930714.022871338] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1794930714.023193689] [amcl]: Deactivating
+[INFO] [1794930714.023343337] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1794930714.034541914] [amcl]: Cleaning up
+[INFO] [1794930714.089415858] [amcl]: Destroying bond (amcl) to lifecycle manager.

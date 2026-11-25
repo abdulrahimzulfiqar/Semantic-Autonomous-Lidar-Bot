@@ -1,0 +1,20 @@
+{
+  "passed": false,
+  "scope": "Local AMCL timing diagnostic; no robot commands or full-stack performance claim",
+  "exit": 1,
+  "role": {
+    "passed": false,
+    "rate": 1.0,
+    "scope": "Local AMCL/TF timing diagnostic only; no full-stack resource or closed-loop mission result",
+    "error": "RuntimeError('localization_replay_not_ready')",
+    "process_exits": {
+      "map_server": -6,
+      "amcl": -6,
+      "lifecycle": -6,
+      "observer": -2,
+      "feed": -2
+    },
+    "replay_manifest_sha256": "5a842a82f9892a2d945f5f8e1844a1e10c097275c4537329443c2b20dceb219b"
+  },
+  "elapsed_wall_s": 9.79256983299274
+}

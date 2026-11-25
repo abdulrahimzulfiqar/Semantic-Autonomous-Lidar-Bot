@@ -1,0 +1,66 @@
+{
+  "passed": false,
+  "scope": "Pilot failed before motion; source and complete results retained",
+  "pi": {
+    "role": "pi",
+    "passed": false,
+    "scope": "One split-host simulation pilot, not a completed benchmark",
+    "process_exits": {
+      "localization": 0,
+      "planner_server": 0,
+      "controller_server": 0,
+      "bt_navigator": 0,
+      "actor": 1
+    },
+    "elapsed_wall_s": 125.17123590099982
+  },
+  "simulator": {
+    "role": "simulator",
+    "passed": true,
+    "scope": "One split-host simulation pilot, not a completed benchmark",
+    "truth_shutdown": {
+      "passed": true,
+      "pids": [
+        3530
+      ],
+      "order": "truth bridge before simulator group"
+    },
+    "simulator_shutdown": {
+      "passed": true,
+      "command": [
+        "ign",
+        "service",
+        "-s",
+        "/server_control",
+        "--reqtype",
+        "ignition.msgs.ServerControl",
+        "--reptype",
+        "ignition.msgs.Boolean",
+        "--timeout",
+        "5000",
+        "--req",
+        "stop: true"
+      ],
+      "stdout": "data: true\n\n",
+      "stderr": "",
+      "exit": 0,
+      "server_pids": [
+        3524
+      ],
+      "still_alive_pids": [],
+      "pause_before_stop": {
+        "acknowledged": true,
+        "stdout": "data: true\n\n",
+        "stderr": "",
+        "exit": 0,
+        "scope": "Pause RPC acknowledgement plus 0.25 s quiescence interval; not a separate renderer-thread ACK."
+      }
+    },
+    "process_exits": {
+      "observer": 0,
+      "simulator": 0
+    },
+    "elapsed_wall_s": 131.35305772699985
+  },
+  "collection_note": "Initial SFTP many-file timeout; collected complete data using a compressed SSH stream"
+}

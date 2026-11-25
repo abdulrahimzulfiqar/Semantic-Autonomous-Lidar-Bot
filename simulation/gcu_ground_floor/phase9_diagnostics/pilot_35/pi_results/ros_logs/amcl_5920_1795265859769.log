@@ -1,0 +1,30 @@
+[INFO] [1795265859.820673228] [amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795265859.825160416] [amcl]: Creating
+[INFO] [1795265860.437414431] [amcl]: Configuring
+[INFO] [1795265860.437748798] [amcl]: initTransforms
+[INFO] [1795265860.493191911] [amcl]: initPubSub
+[INFO] [1795265860.515932387] [amcl]: Subscribed to map topic.
+[INFO] [1795265860.661602116] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[INFO] [1795265861.270742354] [amcl]: Activating
+[INFO] [1795265861.271040147] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1795265861.453845351] [amcl]: Requesting no-motion update
+[INFO] [1795265861.958112220] [amcl]: Requesting no-motion update
+[INFO] [1795265862.466683707] [amcl]: Requesting no-motion update
+[INFO] [1795265862.972767038] [amcl]: Requesting no-motion update
+[INFO] [1795265863.025912068] [amcl]: createLaserObject
+[INFO] [1795265863.472795590] [amcl]: Requesting no-motion update
+[INFO] [1795265863.977331979] [amcl]: Requesting no-motion update
+[WARN] [1795265864.192672159] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[INFO] [1795265865.639887532] [amcl]: initialPoseReceived
+[WARN] [1795265865.640236158] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 3.447000 but the latest data is at time 3.430000, when looking up transform from frame [base_footprint] to frame [odom])
+[INFO] [1795265865.640358805] [amcl]: Setting pose (3.447000): -0.500 -12.960 0.000
+[INFO] [1795265910.995881620] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 26.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1795265954.594521031] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795265954.594784510] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1795265954.594993156] [amcl]: Deactivating
+[INFO] [1795265954.595074192] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1795265954.605946439] [amcl]: Cleaning up
+[INFO] [1795265954.641668351] [amcl]: Destroying bond (amcl) to lifecycle manager.

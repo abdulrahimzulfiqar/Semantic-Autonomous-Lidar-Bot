@@ -1,0 +1,25 @@
+{
+  "passed": false,
+  "scope": "One Wi-Fi split-host simulation pilot; independent scoring separate",
+  "simulator_role_pid": 2669,
+  "pi_role_exit": 1,
+  "pi": {
+    "role": "pi",
+    "passed": false,
+    "scope": "One split-host simulation pilot, not a completed benchmark",
+    "error": "RuntimeError('pi_localization_not_ready')",
+    "process_exits": {
+      "arrival_probe": 0,
+      "scan_receiver": 0,
+      "localization": 0
+    },
+    "elapsed_wall_s": 52.337948435999806
+  },
+  "simulator": {
+    "passed": false,
+    "startup_failure": "RuntimeError('phase9_source_mismatch:phase9_manifest.json')",
+    "process_exits": {},
+    "scope": "Pilot startup failure; no motion result"
+  },
+  "elapsed_wall_s": 63.16616479202639
+}

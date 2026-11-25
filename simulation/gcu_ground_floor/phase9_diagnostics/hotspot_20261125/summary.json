@@ -1,0 +1,124 @@
+{
+  "scope": "30 second hotspot sensor load without Gazebo or motion. Reliable IMU, wheel odometry and scan. Clock at best effort. Source and Pi clocks are independent.",
+  "statuses": [
+    [
+      0,
+      "probe_exit=0\n\n"
+    ],
+    [
+      0,
+      ""
+    ]
+  ],
+  "streams": {
+    "clock": {
+      "simulator": {
+        "callbacks": 3000,
+        "unique_stamps": 3000,
+        "max_sample_gap_ns": 10000000,
+        "max_callback_gap_s": 0.012308388000008108
+      },
+      "pi": {
+        "callbacks": 2968,
+        "unique_stamps": 2968,
+        "max_sample_gap_ns": 90000000,
+        "max_callback_gap_s": 0.18140904100005173
+      },
+      "matched_stamps": 2968,
+      "missing_on_pi_ns": [
+        4360000000,
+        4370000000,
+        4620000000,
+        4630000000,
+        4640000000,
+        6140000000,
+        6150000000,
+        6160000000,
+        6170000000,
+        6180000000,
+        6200000000,
+        6210000000,
+        6220000000,
+        6230000000,
+        6240000000,
+        6250000000,
+        6260000000,
+        6270000000,
+        6290000000,
+        6300000000,
+        7520000000,
+        10700000000,
+        12200000000,
+        12230000000,
+        12240000000,
+        13460000000,
+        13470000000,
+        13870000000,
+        13880000000,
+        23400000000,
+        32920000000,
+        32930000000
+      ],
+      "absent_from_source_probe_ns": [],
+      "max_source_lateness_ns": 2428425,
+      "published_bytes": 36000
+    },
+    "imu": {
+      "simulator": {
+        "callbacks": 3000,
+        "unique_stamps": 3000,
+        "max_sample_gap_ns": 10000000,
+        "max_callback_gap_s": 0.012306141000010484
+      },
+      "pi": {
+        "callbacks": 3000,
+        "unique_stamps": 3000,
+        "max_sample_gap_ns": 10000000,
+        "max_callback_gap_s": 0.180851199000017
+      },
+      "matched_stamps": 3000,
+      "missing_on_pi_ns": [],
+      "absent_from_source_probe_ns": [],
+      "max_source_lateness_ns": 2346987,
+      "published_bytes": 972000
+    },
+    "scan": {
+      "simulator": {
+        "callbacks": 300,
+        "unique_stamps": 300,
+        "max_sample_gap_ns": 100000000,
+        "max_callback_gap_s": 0.10178876599999853
+      },
+      "pi": {
+        "callbacks": 300,
+        "unique_stamps": 300,
+        "max_sample_gap_ns": 100000000,
+        "max_callback_gap_s": 0.25184225999998944
+      },
+      "matched_stamps": 300,
+      "missing_on_pi_ns": [],
+      "absent_from_source_probe_ns": [],
+      "max_source_lateness_ns": 2014396,
+      "published_bytes": 883200
+    },
+    "wheel_odom": {
+      "simulator": {
+        "callbacks": 1500,
+        "unique_stamps": 1500,
+        "max_sample_gap_ns": 20000000,
+        "max_callback_gap_s": 0.02180662200001393
+      },
+      "pi": {
+        "callbacks": 1500,
+        "unique_stamps": 1500,
+        "max_sample_gap_ns": 20000000,
+        "max_callback_gap_s": 0.1803332719999844
+      },
+      "matched_stamps": 1500,
+      "missing_on_pi_ns": [],
+      "absent_from_source_probe_ns": [],
+      "max_source_lateness_ns": 1915887,
+      "published_bytes": 1086000
+    }
+  }
+}
