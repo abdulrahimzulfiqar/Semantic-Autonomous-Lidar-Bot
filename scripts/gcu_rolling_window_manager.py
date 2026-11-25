@@ -4,14 +4,17 @@ The mission contract and passage monitor stay building-wide. Only the native
 metric target is replaced by a bounded proxy; an action success at a proxy does
 not count as original-target arrival. Ground truth is never an input here.
 """
+from array import array
 from dataclasses import asdict
 import hashlib
 import math
+import struct
 import threading
 import time
 import numpy as np
 
 from osmag_rolling_raster import RollingRaster
+from osmag_mission_contract import MissionError
 from osmag_window_goal import select_window_goal
 from osmag_window_route import prefix_to_target
 from osmag_window_admission import WindowAdmission
@@ -19,8 +22,33 @@ from osmag_constraint_mask import build_mask
 from gcu_plan_validation import validate_path
 
 
+def cached_grid_wire_message(message, serialize):
+    """Cache a CDR OccupancyGrid after checking the two header stamp fields."""
+    stamp = message.header.stamp
+    payload = serialize(message)
+    endian = {b'\x00\x00': '>', b'\x00\x01': '<'}.get(payload[:2])
+    if endian is None:
+        return None
+    fields = struct.Struct(endian+'iI')
+    if payload[4:12] != fields.pack(stamp.sec, stamp.nanosec):
+        return None
+    # Verify the patch against the installed ROS serializer on a distinct
+    # timestamp. Fall back to typed publishing for unfamiliar layouts.
+    replacement = type(stamp)(sec=123456789, nanosec=987654321)
+    message.header.stamp = replacement
+    try:
+        expected = serialize(message)
+    finally:
+        message.header.stamp = stamp
+    prefix, suffix = payload[:4], payload[12:]
+    if expected != prefix+fields.pack(replacement.sec,replacement.nanosec)+suffix:
+        return None
+    return lambda current: prefix+fields.pack(current.sec,current.nanosec)+suffix
+
+
 class RollingWindowManager:
-    def __init__(self,node,adapter,planner,contract,grids,mask_pub,info_pub,output,wait,*,shape=(128,128),shift_m=.65,file_prefix=''):
+    def __init__(self,node,adapter,planner,contract,grids,mask_pub,info_pub,output,wait,*,
+                 shape=(128,128),shift_m=.65,file_prefix='',mask_on_revision=False):
         from rclpy.qos import QoSProfile,DurabilityPolicy
         from nav_msgs.msg import OccupancyGrid
         from nav2_msgs.action import ComputePathToPose
@@ -29,6 +57,7 @@ class RollingWindowManager:
         self.grids=grids;self.mask_pub=mask_pub;self.info_pub=info_pub;self.output=output;self.wait=wait
         self.pub=node.create_publisher(OccupancyGrid,'/osmag/planning_window',QoSProfile(depth=1,durability=DurabilityPolicy.TRANSIENT_LOCAL))
         self.file_prefix=file_prefix
+        self.mask_on_revision = mask_on_revision
         self.client=ActionClient(node,ComputePathToPose,'/compute_path_to_pose')
         self.renderer=RollingRaster(planner.leaves,planner.passage_segments,
             resolution=float(np.float32(planner.resolution)),anchor=planner.origin,shape=shape,
@@ -47,14 +76,34 @@ class RollingWindowManager:
         m=OccupancyGrid();m.header.frame_id='map';m.header.stamp=self.node.get_clock().now().to_msg()
         w=state['window'];m.info.resolution=w.resolution;m.info.width=data.shape[1];m.info.height=data.shape[0]
         m.info.origin.position.x=w.origin[0];m.info.origin.position.y=w.origin[1];m.info.origin.orientation.w=1.
-        m.data=data.astype(int).ravel().tolist();return m
+        # OccupancyGrid uses an int8 sequence. Build the typed representation
+        # directly instead of converting every cell through a Python integer.
+        m.data=array('b',np.ascontiguousarray(data,dtype=np.int8).tobytes());return m
 
     def heartbeat(self):
         with self.publish_lock:
             if self.frozen or self.closed:return
             state=self.pending or self.committed
             if state is None:return
-            self.pub.publish(self.message(state['window'].grid,state));self.mask_pub.publish(self.message(state['snapshot'].mask,state))
+            if 'heartbeat_messages' not in state:
+                from rclpy.serialization import serialize_message
+                state['heartbeat_messages'] = (
+                    self.message(state['window'].grid,state), self.message(state['snapshot'].mask,state))
+                state['heartbeat_wire_messages'] = tuple(cached_grid_wire_message(message, serialize_message)
+                                                         for message in state['heartbeat_messages'])
+            publications = zip((self.pub, self.mask_pub), state['heartbeat_messages'],
+                               state['heartbeat_wire_messages'])
+            for publisher, message, wire in publications:
+                if publisher is self.mask_pub and self.mask_on_revision and state.get('mask_published'):
+                    continue
+                stamp = self.node.get_clock().now().to_msg()
+                if wire is None:
+                    message.header.stamp = stamp
+                    publisher.publish(message)
+                else:
+                    publisher.publish(wire(stamp))
+                if publisher is self.mask_pub:
+                    state['mask_published'] = True
             now=self.adapter.sim()
             with self.gate_lock:state['gate'].note_source_publication(now,state['window'].sha256)
             self.publications.append(dict(sim=now,wall=time.monotonic(),revision=state['window'].revision))
@@ -102,14 +151,29 @@ class RollingWindowManager:
     def observe(self,state):
         now=self.adapter.sim();gate=state['gate']
         with self.gate_lock:
+            validated = state.setdefault('validated_grid_messages', {})
             for key,m in list(self.grids.items()):
                 stamp=m.header.stamp.sec+m.header.stamp.nanosec/1e9
                 if stamp>now:continue
+                # This state owns one gate/snapshot. Received ROS messages are
+                # replaced on each callback and are never modified in place.
+                # Keep the original receipt stamp and recheck its lease below.
+                receipt = gate.observations.get(key)
+                if validated.get(key) is m and receipt is not None and receipt['stamp'] == stamp:
+                    if 0 <= now-stamp <= .5:
+                        continue
+                    gate.observations.pop(key,None)
+                    validated.pop(key,None)
+                    state.setdefault('last_errors',{})[key]='native_costmap_stale'
+                    continue
                 try:
                     gate.observe(key,np.asarray(m.data).reshape(m.info.height,m.info.width),m.info.resolution,
                         (m.info.origin.position.x,m.info.origin.position.y),stamp,now,frame=m.header.frame_id)
                     state.setdefault('last_errors',{}).pop(key,None)
-                except Exception as error:state.setdefault('last_errors',{})[key]=str(error)
+                    validated[key]=m
+                except Exception as error:
+                    validated.pop(key,None)
+                    state.setdefault('last_errors',{})[key]=str(error)
             return gate.ready(now)
 
     def ready(self):
@@ -133,6 +197,20 @@ class RollingWindowManager:
                     origin=[m.info.origin.position.x,m.info.origin.position.y],resolution=m.info.resolution)
             self.readiness_failures.append(record);self.failure_arrays.append(arrays)
         return ready
+
+    def ready_for_transition(self, state):
+        """Check that the consumed window has time left for a transition."""
+        if not self.observe(state):
+            return False
+        with self.gate_lock:
+            return state['gate'].can_replace(self.adapter.sim())
+
+    def admit_latest(self,state,goal):
+        # Native queries/path validation may outlast a consumption lease on a
+        # slower host. Revalidate actual received grids; never renew their stamps
+        # or reuse a receipt from before a blocking planning request.
+        self.wait(lambda:self.observe(state),10)
+        with self.gate_lock:return state['gate'].admit(goal,self.adapter.sim())
 
     def prepare(self):
         from nav2_msgs.action import ComputePathToPose
@@ -161,7 +239,7 @@ class RollingWindowManager:
             for segment in self.preflight_segments():
                 route=prefix_to_target(self.contract.path,pose[:2],segment.point)
                 goal=select_window_goal(state['window'],route,pose[:2],final_yaw=segment.yaw)
-                with self.gate_lock:receipt=state['gate'].admit(goal,self.adapter.sim())
+                receipt=self.admit_latest(state,goal)
                 key=tuple(goal.point)
                 if key not in queries:
                     req=ComputePathToPose.Goal();req.planner_id='GridBased';req.use_start=False
@@ -174,7 +252,9 @@ class RollingWindowManager:
                     check=validate_path(state['snapshot'].combined,state['window'].resolution,state['window'].origin,points,.20)
                     if reply.status!=4 or not check['valid']:raise RuntimeError('window_native_preflight_not_feasible:'+str(check))
                     queries[key]=dict(status=reply.status,points=points,validation=check)
+                receipt=self.admit_latest(state,goal)
                 cache[segment.index]=goal;checks[str(segment.index)]=dict(goal=asdict(goal),admission=receipt,**queries[key])
+            self.wait(lambda:self.observe(state),10)
             state['cache']=cache
             state['committed_sim']=self.adapter.sim();window=state['window'];snap=state['snapshot']
             name=self.file_prefix+f'window_{window.revision:03d}.npz';arrays=dict(physical=window.grid,mask=snap.mask,combined=snap.combined)
@@ -221,17 +301,21 @@ class RollingWindowManager:
         if now_wall-self.last_tick_wall<.04:return
         self.last_tick_wall=now_wall
         if self.adapter.model.state not in ['executing','waiting_handoff','waiting_proxy']:return
-        pose,_=self.adapter.pose()
+        try:
+            pose,_=self.adapter.pose()
+        except MissionError as error:
+            if str(error) == 'stale_robot_tf':
+                # A window update requires a fresh pose. The independent
+                # mission watchdog owns cancellation and continues to run.
+                return
+            raise
         if self.committed and (math.dist(pose[:2],self.committed['pose'][:2])>=self.shift_m
                 or self.adapter.model.state=='waiting_proxy'):
             # Start an asynchronous map change immediately after fresh native
             # acknowledgements, not near the end of the old lease. This keeps
             # the original .5s expiry unchanged while giving the next update a
             # full bounded overlap interval.
-            if not self.observe(self.committed):return
-            now=self.adapter.sim()
-            with self.gate_lock:
-                if not self.committed['gate'].can_replace(now):return
+            if not self.ready_for_transition(self.committed):return
             # RPP publishes its actually followed/pruned path, unlike /plan,
             # which also carries unrelated ComputePath preflight responses.
             target=getattr(self.adapter,'native_target_point',None)

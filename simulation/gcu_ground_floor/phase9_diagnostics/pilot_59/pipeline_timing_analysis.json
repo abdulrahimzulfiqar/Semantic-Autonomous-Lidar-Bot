@@ -1,0 +1,298 @@
+{
+  "scope": "Bounded diagnostic based on observed ROS stamps and local callback times. Cross-host data compare stamp coverage without inferring one-way delay.",
+  "first_stamp_ns": 63671000000,
+  "last_stamp_ns": 65671000000,
+  "actor_error": "RuntimeError('watchdog:stale_robot_tf')",
+  "motion_started": true,
+  "cross_host": {
+    "wheel_odom": {
+      "simulator": {
+        "callbacks": 100,
+        "unique_stamps": 100,
+        "max_sample_gap_ns": 20000000,
+        "max_callback_gap_s": 0.037394724000023416
+      },
+      "pi": {
+        "callbacks": 69,
+        "unique_stamps": 69,
+        "max_sample_gap_ns": 180000000,
+        "max_callback_gap_s": 0.6447198789996946
+      },
+      "matched_stamps": 69,
+      "missing_on_pi_ns": [
+        63980000000,
+        64200000000,
+        64220000000,
+        64240000000,
+        64260000000,
+        64280000000,
+        64300000000,
+        64400000000,
+        64420000000,
+        64440000000,
+        64460000000,
+        64800000000,
+        64820000000,
+        64840000000,
+        64860000000,
+        64880000000,
+        64900000000,
+        64920000000,
+        64940000000,
+        65140000000,
+        65160000000,
+        65180000000,
+        65200000000,
+        65220000000,
+        65440000000,
+        65560000000,
+        65580000000,
+        65600000000,
+        65620000000,
+        65640000000,
+        65660000000
+      ],
+      "absent_from_source_probe_ns": [],
+      "matched_after_pi_fault_ns": [
+        65500000000,
+        65520000000,
+        65540000000
+      ],
+      "latest_pi_stamp_before_fault_ns": 65480000000
+    },
+    "imu_input": {
+      "simulator": {
+        "callbacks": 200,
+        "unique_stamps": 200,
+        "max_sample_gap_ns": 10000000,
+        "max_callback_gap_s": 0.01989065199995821
+      },
+      "pi": {
+        "callbacks": 104,
+        "unique_stamps": 104,
+        "max_sample_gap_ns": 170000000,
+        "max_callback_gap_s": 0.6342684280002686
+      },
+      "matched_stamps": 104,
+      "missing_on_pi_ns": [
+        63680000000,
+        63700000000,
+        63710000000,
+        63730000000,
+        63930000000,
+        63940000000,
+        63950000000,
+        63960000000,
+        63980000000,
+        63990000000,
+        64000000000,
+        64010000000,
+        64040000000,
+        64050000000,
+        64060000000,
+        64190000000,
+        64200000000,
+        64210000000,
+        64230000000,
+        64240000000,
+        64250000000,
+        64270000000,
+        64280000000,
+        64290000000,
+        64390000000,
+        64400000000,
+        64410000000,
+        64420000000,
+        64430000000,
+        64440000000,
+        64450000000,
+        64460000000,
+        64470000000,
+        64480000000,
+        64490000000,
+        64500000000,
+        64510000000,
+        64520000000,
+        64650000000,
+        64780000000,
+        64790000000,
+        64800000000,
+        64810000000,
+        64820000000,
+        64830000000,
+        64840000000,
+        64850000000,
+        64860000000,
+        64870000000,
+        64890000000,
+        64900000000,
+        64910000000,
+        64920000000,
+        64930000000,
+        64940000000,
+        64950000000,
+        64960000000,
+        64970000000,
+        64980000000,
+        64990000000,
+        65130000000,
+        65140000000,
+        65150000000,
+        65160000000,
+        65170000000,
+        65180000000,
+        65190000000,
+        65200000000,
+        65210000000,
+        65220000000,
+        65230000000,
+        65240000000,
+        65250000000,
+        65260000000,
+        65270000000,
+        65280000000,
+        65300000000,
+        65440000000,
+        65450000000,
+        65460000000,
+        65470000000,
+        65480000000,
+        65490000000,
+        65550000000,
+        65560000000,
+        65570000000,
+        65580000000,
+        65590000000,
+        65600000000,
+        65610000000,
+        65620000000,
+        65630000000,
+        65640000000,
+        65650000000,
+        65660000000,
+        65670000000
+      ],
+      "absent_from_source_probe_ns": [],
+      "matched_after_pi_fault_ns": [
+        65520000000,
+        65530000000,
+        65540000000
+      ],
+      "latest_pi_stamp_before_fault_ns": 65510000000
+    }
+  },
+  "local_pi": {
+    "grid_global": {
+      "probe": {
+        "callbacks": 5,
+        "unique_stamps": 5,
+        "max_sample_gap_ns": 582000000,
+        "max_callback_gap_s": 0.6013785079999252
+      },
+      "actor": {
+        "callbacks": 5,
+        "unique_stamps": 5,
+        "max_sample_gap_ns": 582000000,
+        "max_callback_gap_s": 0.6153152289998616
+      },
+      "matched_stamps": 5,
+      "native_dds_source_max_gap_ns": null,
+      "native_source_to_probe_samples": 0,
+      "native_source_to_probe_max_ns": null,
+      "probe_to_actor_max_s": 0.07477421599969603,
+      "latest_probe_stamp_before_fault_ns": 65375000000,
+      "latest_actor_stamp_before_fault_ns": 65375000000
+    },
+    "grid_local": {
+      "probe": {
+        "callbacks": 3,
+        "unique_stamps": 3,
+        "max_sample_gap_ns": 406000000,
+        "max_callback_gap_s": 1.0041759659998206
+      },
+      "actor": {
+        "callbacks": 3,
+        "unique_stamps": 3,
+        "max_sample_gap_ns": 406000000,
+        "max_callback_gap_s": 1.026007749999735
+      },
+      "matched_stamps": 3,
+      "native_dds_source_max_gap_ns": null,
+      "native_source_to_probe_samples": 0,
+      "native_source_to_probe_max_ns": null,
+      "probe_to_actor_max_s": 0.025357661999805714,
+      "latest_probe_stamp_before_fault_ns": 65280000000,
+      "latest_actor_stamp_before_fault_ns": 65280000000
+    },
+    "filtered_odom": {
+      "probe": {
+        "callbacks": 39,
+        "unique_stamps": 39,
+        "max_sample_gap_ns": 231000000,
+        "max_callback_gap_s": 0.6744277080001666
+      },
+      "actor": {
+        "callbacks": 0,
+        "unique_stamps": 0,
+        "max_sample_gap_ns": null,
+        "max_callback_gap_s": null
+      },
+      "matched_stamps": 0,
+      "native_dds_source_max_gap_ns": null,
+      "native_source_to_probe_samples": 0,
+      "native_source_to_probe_max_ns": null,
+      "probe_to_actor_max_s": null,
+      "latest_probe_stamp_before_fault_ns": 65430000000,
+      "latest_actor_stamp_before_fault_ns": null
+    },
+    "map->odom": {
+      "probe": {
+        "callbacks": 16,
+        "unique_stamps": 16,
+        "max_sample_gap_ns": 300000000,
+        "max_callback_gap_s": 1.334112912999899
+      },
+      "actor": {
+        "callbacks": 16,
+        "unique_stamps": 16,
+        "max_sample_gap_ns": 300000000,
+        "max_callback_gap_s": 1.2564445160001014
+      },
+      "matched_stamps": 16,
+      "native_dds_source_max_gap_ns": null,
+      "native_source_to_probe_samples": 0,
+      "native_source_to_probe_max_ns": null,
+      "probe_to_actor_max_s": 0.18226921900031812,
+      "latest_probe_stamp_before_fault_ns": 65600000000,
+      "latest_actor_stamp_before_fault_ns": 65600000000
+    },
+    "odom->base_footprint": {
+      "probe": {
+        "callbacks": 39,
+        "unique_stamps": 39,
+        "max_sample_gap_ns": 231000000,
+        "max_callback_gap_s": 0.6687863289998859
+      },
+      "actor": {
+        "callbacks": 39,
+        "unique_stamps": 39,
+        "max_sample_gap_ns": 231000000,
+        "max_callback_gap_s": 0.5636353059999237
+      },
+      "matched_stamps": 39,
+      "native_dds_source_max_gap_ns": null,
+      "native_source_to_probe_samples": 0,
+      "native_source_to_probe_max_ns": null,
+      "probe_to_actor_max_s": 0.17883554600030038,
+      "latest_probe_stamp_before_fault_ns": 65400000000,
+      "latest_actor_stamp_before_fault_ns": 65400000000
+    }
+  },
+  "inputs_sha256": {
+    "simulator_results/results/pipeline_arrival.json": "271635b6d90755b883c6e0f1ab97354bde5c5852644362c5366b199d88d28953",
+    "pi_results/arrival_probe.json": "09967385ba49fb6dd1bf42ae04e2de1ec69690663711d5162d55a51633e7a10b",
+    "pi_results/actor/callback_trace.json": "1879943ac43883739c4dfdbb8cfe4302d8d5423cccba0acbfc44b111f7992f06",
+    "pi_results/actor/worker.json": "d051ce551e02c6568296b20f63b13b1fb1f4cfea22487e16a1b2b2fc9000ec64"
+  },
+  "analyzer_sha256": "c896a1f38b2478fcc131a6cd6820566c644a0d25224b6b01e2817da40e51220c"
+}

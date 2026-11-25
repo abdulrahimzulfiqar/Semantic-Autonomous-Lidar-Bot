@@ -1,0 +1,27 @@
+{
+  "scope": "Independent sampled rest after failed pilots; does not turn them into successful missions",
+  "attempts": [
+    {
+      "attempt": "pilot_06",
+      "error": "RuntimeError('watchdog:stale_scan')",
+      "failure_sim": 50.329,
+      "truth_rest": {
+        "start_sim": 50.35,
+        "confirmed_sim": 51.35
+      },
+      "contacts": 0,
+      "mission_succeeded": false
+    },
+    {
+      "attempt": "pilot_07",
+      "error": "RuntimeError('watchdog:stale_scan')",
+      "failure_sim": 45.676,
+      "truth_rest": {
+        "start_sim": 46.35,
+        "confirmed_sim": 47.35
+      },
+      "contacts": 0,
+      "mission_succeeded": false
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "scope": "Same-Pi callback entry/return correlation; not wire arrival, cross-host clock synchronization, causal proof or mission scoring",
+  "begin_wall": 465.578914991,
+  "end_wall": 564.844710017,
+  "durations": {
+    "actor_clock": {
+      "calls": 5158,
+      "max_wall_s": 0.004017353999984152,
+      "p95_wall_s": 0.0001840422499356009
+    },
+    "driver_spin": {
+      "calls": 20000,
+      "max_wall_s": 0.0398958880000464,
+      "p95_wall_s": 0.011172901650013493
+    },
+    "actor_imu": {
+      "calls": 1974,
+      "max_wall_s": 0.007492358999968474,
+      "p95_wall_s": 0.00018368899996517023
+    },
+    "driver_clock": {
+      "calls": 4103,
+      "max_wall_s": 0.021503996000035386,
+      "p95_wall_s": 0.00016100309999274027
+    },
+    "executor_timer": {
+      "calls": 753,
+      "max_wall_s": 0.3899871880000205,
+      "p95_wall_s": 0.23739902959997605
+    },
+    "actor_scan": {
+      "calls": 198,
+      "max_wall_s": 0.0007790129999989404,
+      "p95_wall_s": 0.00013885074998825066
+    },
+    "window_tick": {
+      "calls": 20000,
+      "max_wall_s": 1.3037787230000504,
+      "p95_wall_s": 0.0005272147499880475
+    },
+    "window_heartbeat": {
+      "calls": 191,
+      "max_wall_s": 0.2062401250000221,
+      "p95_wall_s": 0.17575353100002644
+    },
+    "grid_global": {
+      "calls": 83,
+      "max_wall_s": 0.00022970299994540255,
+      "p95_wall_s": 0.00012662989998943886
+    },
+    "grid_local": {
+      "calls": 83,
+      "max_wall_s": 0.0002001829999471738,
+      "p95_wall_s": 0.0001114993000214781
+    },
+    "executor_effects": {
+      "calls": 1160,
+      "max_wall_s": 0.19553844000000709,
+      "p95_wall_s": 0.00013211555002499149
+    },
+    "executor_accepted": {
+      "calls": 2,
+      "max_wall_s": 0.055498335999971005,
+      "p95_wall_s": 0.05436556524997229
+    },
+    "executor_result": {
+      "calls": 2,
+      "max_wall_s": 0.05359848700004477,
+      "p95_wall_s": 0.052061081200042734
+    }
+  },
+  "longest_calls": {
+    "actor_clock": {
+      "begin_wall": 480.428703836,
+      "thread": 281471663010080,
+      "begin_ros": 19.772,
+      "stamp": 19.777,
+      "end_wall": 480.43272119,
+      "end_ros": 19.777
+    },
+    "driver_spin": {
+      "begin_wall": 516.718029431,
+      "thread": 281472850568896,
+      "begin_ros": 27.013,
+      "end_wall": 516.757925319,
+      "end_ros": 27.018
+    },
+    "actor_imu": {
+      "begin_wall": 498.640336035,
+      "thread": 281471679918368,
+      "begin_ros": 23.409,
+      "stamp": 23.41,
+      "end_wall": 498.647828394,
+      "end_ros": 23.409
+    },
+    "driver_clock": {
+      "begin_wall": 505.131759592,
+      "thread": 281471671464224,
+      "begin_ros": 24.704,
+      "stamp": 24.706,
+      "end_wall": 505.153263588,
+      "end_ros": 24.709
+    },
+    "executor_timer": {
+      "begin_wall": 478.269637322,
+      "thread": 281471671464224,
+      "begin_ros": 19.345,
+      "end_wall": 478.65962451,
+      "end_ros": 19.418
+    },
+    "actor_scan": {
+      "begin_wall": 473.986635325,
+      "thread": 281471671464224,
+      "begin_ros": 18.498,
+      "stamp": 18.5,
+      "end_wall": 473.987414338,
+      "end_ros": 18.498
+    },
+    "window_tick": {
+      "begin_wall": 535.419734382,
+      "thread": 281472850568896,
+      "begin_ros": 30.743,
+      "end_wall": 536.723513105,
+      "end_ros": 30.997
+    },
+    "window_heartbeat": {
+      "begin_wall": 522.210874729,
+      "thread": 281471679918368,
+      "begin_ros": 28.11,
+      "end_wall": 522.417114854,
+      "end_ros": 28.152
+    },
+    "grid_global": {
+      "begin_wall": 550.212369835,
+      "thread": 281471671464224,
+      "begin_ros": 33.688,
+      "stamp": 33.688,
+      "end_wall": 550.212599538,
+      "end_ros": 33.688
+    },
+    "grid_local": {
+      "begin_wall": 524.387615747,
+      "thread": 281471679918368,
+      "begin_ros": 28.544,
+      "stamp": 28.544,
+      "end_wall": 524.38781593,
+      "end_ros": 28.544
+    },
+    "executor_effects": {
+      "begin_wall": 478.463703451,
+      "thread": 281471671464224,
+      "begin_ros": 19.385,
+      "end_wall": 478.659241891,
+      "end_ros": 19.418
+    },
+    "executor_accepted": {
+      "begin_wall": 465.634102783,
+      "thread": 281471663010080,
+      "begin_ros": 16.842,
+      "end_wall": 465.689601119,
+      "end_ros": 16.855
+    },
+    "executor_result": {
+      "begin_wall": 555.159571303,
+      "thread": 281471679918368,
+      "begin_ros": 34.668,
+      "end_wall": 555.21316979,
+      "end_ros": 34.678
+    }
+  },
+  "largest_actor_clock_callback_gap": {
+    "duration_wall_s": 0.3343083040000465,
+    "left": {
+      "begin_wall": 560.008543683,
+      "thread": 281471679918368,
+      "begin_ros": 35.632,
+      "stamp": 35.635,
+      "end_wall": 560.008665775,
+      "end_ros": 35.635
+    },
+    "right": {
+      "begin_wall": 560.342851987,
+      "thread": 281471671464224,
+      "begin_ros": 35.635,
+      "stamp": 35.704,
+      "end_wall": 560.342986598,
+      "end_ros": 35.704
+    },
+    "independent_clock_callbacks_during_gap": 6,
+    "independent_clock_samples_during_gap": [
+      {
+        "wall": 560.320231386,
+        "stamp": 35.64
+      },
+      {
+        "wall": 560.323674505,
+        "stamp": 35.65
+      },
+      {
+        "wall": 560.326769904,
+        "stamp": 35.672
+      },
+      {
+        "wall": 560.329410192,
+        "stamp": 35.686
+      },
+      {
+        "wall": 560.332046611,
+        "stamp": 35.699
+      },
+      {
+        "wall": 560.339007072,
+        "stamp": 35.704
+      }
+    ],
+    "actor_ros_time_step": 0.06900000000000261
+  },
+  "largest_independent_clock_callback_gap": {
+    "duration_wall_s": 0.3167955390000543,
+    "left": {
+      "wall": 560.003435847,
+      "stamp": 35.637
+    },
+    "right": {
+      "wall": 560.320231386,
+      "stamp": 35.64
+    }
+  },
+  "largest_driver_clock_callback_gap": {
+    "duration_wall_s": 0.33469482099997094,
+    "left": {
+      "begin_wall": 560.008973552,
+      "thread": 281471679918368,
+      "begin_ros": 35.635,
+      "stamp": 35.635,
+      "end_wall": 560.009050089,
+      "end_ros": 35.635
+    },
+    "right": {
+      "begin_wall": 560.343668373,
+      "thread": 281471671464224,
+      "begin_ros": 35.704,
+      "stamp": 35.704,
+      "end_wall": 560.343780947,
+      "end_ros": 35.704
+    }
+  },
+  "matching_clock_offsets": {
+    "samples": 4478,
+    "definition": "Actor entry minus independent-probe callback wall time; signed difference, not network latency",
+    "minimum_wall_s": -0.002684802999965541,
+    "p95_wall_s": 0.0241978854500644,
+    "maximum_wall_s": 0.03886176499997873
+  },
+  "retained_actor_rows": 53707,
+  "retained_independent_rows": 9574,
+  "actor_passed": true,
+  "actor_error": null,
+  "inputs_sha256": {
+    "worker": "d6c770f2c744970274ad1110e0fdb200f7374d68909e1e57cd3e2701f71c0201",
+    "trace": "770cd396b105a227dd0e818308e3ef44a425381299e401e03f5073123ffbd438",
+    "probe": "c6335d707e335bde1bdf10ec124bcb401b53d2c3729f950025baf4b462847c72"
+  },
+  "analyzer_sha256": "1e64c6a65b48c4d2e8f67258bba08f20abeae060ff2b340106e6b3079e385b81"
+}

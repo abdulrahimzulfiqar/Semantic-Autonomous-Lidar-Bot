@@ -1,0 +1,63 @@
+{
+  "scope": "Open-loop shared-input tracking comparison, AMCL-controlled trajectory; not closed-loop candidate navigation, global recovery or Pi performance",
+  "amcl": {
+    "frames": 562,
+    "position_rmse_m": 0.03264819620215041,
+    "position_p95_m": 0.04211839599226045,
+    "position_max_m": 0.04839096431433565,
+    "heading_rmse_deg": 0.25530551181441885,
+    "heading_p95_deg": 0.4658960089147739,
+    "fraction_over_025m_or_5deg": 0.0,
+    "final_position_error_m": 0.031750149472982485,
+    "max_observation_gap_sim_s": 0.10000000000000142
+  },
+  "structural_2d": {
+    "frames": 562,
+    "position_rmse_m": 0.0011379711419773897,
+    "position_p95_m": 0.0019866016216072433,
+    "position_max_m": 0.003978188721587386,
+    "heading_rmse_deg": 0.006127578276492972,
+    "heading_p95_deg": 0.011728273607359672,
+    "fraction_over_025m_or_5deg": 0.0,
+    "final_position_error_m": 0.00198720116668545,
+    "max_observation_gap_sim_s": 0.10000000000000142,
+    "accepted_fraction": 1.0,
+    "lost_frames": 0,
+    "weak_geometry_frames": 0,
+    "rejected_frames": 0,
+    "update_wall_p50_ms": 50.28229299932718,
+    "update_wall_p95_ms": 182.36954445201195
+  },
+  "odometry_only_diagnostic": {
+    "frames": 562,
+    "position_rmse_m": 0.00881334501287703,
+    "position_p95_m": 0.010440505135475531,
+    "position_max_m": 0.010848868001733722,
+    "heading_rmse_deg": 0.011566141845380542,
+    "heading_p95_deg": 0.013692209572609006,
+    "fraction_over_025m_or_5deg": 0.0,
+    "final_position_error_m": 0.0015955635182921233,
+    "max_observation_gap_sim_s": 0.10000000000000142
+  },
+  "raw_amcl_measurement_messages": 114,
+  "initial_pose": [
+    -0.5,
+    -12.960313240266368,
+    0.0
+  ],
+  "received_scans": 580,
+  "paired_scans": 562,
+  "paired_fraction": 0.9689655172413794,
+  "source_inputs_sha256": {
+    "observations.npz": "e9754ca4675dcf7944ba426ff54ee5041841ed80b4fc3d7997f9221cc19615e9",
+    "evaluation.npz": "61808fed78b707bf4688da0c9f8e97a6176cdf3d48899985b1f357cfc5ff3db9"
+  },
+  "candidate_sha256": "fa404535e28b63e0f7121ecf80262ad671384e36581b452ef7f2b905e1e33f03",
+  "truth_alignment": "None; fixed shared map frame",
+  "candidate_tracking_gate": true,
+  "decision": "Measure, do not assume a winner; closed-loop and recovery gates remain separate",
+  "verification_passed": true,
+  "baseline_navigation_passed": true,
+  "candidate_gate_is_tracking_only": true,
+  "archive_sha256": "71529682e61606e6c9c3e8b99945648fc5dc5f68e0672aa315830b79c4f044a5"
+}

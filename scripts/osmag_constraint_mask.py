@@ -143,6 +143,7 @@ class ConsumptionGate:
         if not math.isfinite(published_at):raise ConstraintError('invalid_publish_stamp')
         self.snapshot=snapshot;self.published_at=published_at;self.probes=tuple(tuple(p) for p in free_probes)
         self.observations={}
+        self.required_cells={}
         for point in self.probes:
             if cell_at(snapshot.combined,snapshot.resolution,snapshot.origin,*point)!=0:
                 raise ConstraintError('free_probe_not_permitted')
@@ -163,14 +164,25 @@ class ConsumptionGate:
                     a+size*resolution<b+total*snap.resolution-1e-7
                     for a,size,b,total in zip(origin,data.shape[::-1],snap.origin,snap.mask.shape[::-1])):
                 raise ConstraintError('global_costmap_does_not_cover_mask')
-        rows,cols=np.mgrid[:data.shape[0],:data.shape[1]]
-        x=origin[0]+(cols+.5)*resolution;y=origin[1]+(rows+.5)*resolution
         snap=self.snapshot
-        sr=np.floor((y-snap.origin[1])/snap.resolution).astype(int);sc=np.floor((x-snap.origin[0])/snap.resolution).astype(int)
-        inside=(sr>=0)&(sr<snap.mask.shape[0])&(sc>=0)&(sc<snap.mask.shape[1])
-        if not inside.any():raise ConstraintError('costmap_does_not_overlap_mask')
-        required=np.zeros_like(inside)
-        required[inside]=snap.mask[sr[inside],sc[inside]]==100
+        geometry = (data.shape, resolution, tuple(origin))
+        cached_geometry, required, blocked_count = self.required_cells.get(source, (None, None, 0))
+        if geometry != cached_geometry:
+            # Map cell centers independently along each axis. Cache the
+            # projection of this immutable mask, then check every new grid.
+            y = origin[1] + (np.arange(data.shape[0]) + .5) * resolution
+            x = origin[0] + (np.arange(data.shape[1]) + .5) * resolution
+            rows = np.floor((y - snap.origin[1]) / snap.resolution).astype(int)
+            cols = np.floor((x - snap.origin[0]) / snap.resolution).astype(int)
+            rows_inside = (rows >= 0) & (rows < snap.mask.shape[0])
+            cols_inside = (cols >= 0) & (cols < snap.mask.shape[1])
+            if not rows_inside.any() or not cols_inside.any():
+                raise ConstraintError('costmap_does_not_overlap_mask')
+            required = np.zeros(data.shape, dtype=bool)
+            required[np.ix_(rows_inside, cols_inside)] = (
+                snap.mask[np.ix_(rows[rows_inside], cols[cols_inside])] == 100)
+            blocked_count = int(required.sum())
+            self.required_cells[source] = (geometry, required, blocked_count)
         if np.any(required&(data>=0)&(data<100)):raise ConstraintError('mask_constraints_not_consumed')
         checked=0
         for point in self.probes:
@@ -180,7 +192,7 @@ class ConsumptionGate:
                 if value<0 or value>=99:raise ConstraintError('free_probe_blocked')
         if not checked:raise ConstraintError('no_free_probe_in_costmap')
         self.observations[source]={'stamp':stamp,'observed_at':now,'mask_sha256':snap.mask_sha256,
-                                   'checked_blocked_cells':int(required.sum()),'free_probes':checked}
+                                   'checked_blocked_cells':blocked_count,'free_probes':checked}
 
     def ready(self,now):
         return set(self.observations)=={'global','local'} and all(

@@ -1,0 +1,233 @@
+{
+  "scope": "Same-Pi callback entry/return correlation; not wire arrival, cross-host clock synchronization, causal proof or mission scoring",
+  "begin_wall": 1086.54985128,
+  "end_wall": 1091.552031776,
+  "durations": {
+    "driver_clock": {
+      "calls": 32,
+      "max_wall_s": 0.00020163099998171674,
+      "p95_wall_s": 0.00016808850000415987
+    },
+    "driver_spin": {
+      "calls": 430,
+      "max_wall_s": 0.009154764999948384,
+      "p95_wall_s": 0.0029279113001166456
+    },
+    "actor_clock": {
+      "calls": 62,
+      "max_wall_s": 0.00019870500000251923,
+      "p95_wall_s": 0.00015063700003565829
+    },
+    "actor_scan": {
+      "calls": 35,
+      "max_wall_s": 0.00017059399988283985,
+      "p95_wall_s": 0.0001450617000500642
+    },
+    "actor_imu": {
+      "calls": 60,
+      "max_wall_s": 0.0003812249999555206,
+      "p95_wall_s": 0.00018492510013174974
+    },
+    "executor_timer": {
+      "calls": 59,
+      "max_wall_s": 0.020516619999852992,
+      "p95_wall_s": 0.012241410700039515
+    },
+    "window_tick": {
+      "calls": 430,
+      "max_wall_s": 0.0007452650002051087,
+      "p95_wall_s": 6.84586500938166e-05
+    },
+    "window_heartbeat": {
+      "calls": 31,
+      "max_wall_s": 0.03772034700000404,
+      "p95_wall_s": 0.03247397849997924
+    },
+    "grid_global": {
+      "calls": 12,
+      "max_wall_s": 0.0004181330000392336,
+      "p95_wall_s": 0.0003578464000611347
+    },
+    "grid_local": {
+      "calls": 12,
+      "max_wall_s": 0.00014231599993763666,
+      "p95_wall_s": 0.00013509450002402446
+    }
+  },
+  "longest_calls": {
+    "driver_clock": {
+      "begin_wall": 1087.358907755,
+      "thread": 281472275444000,
+      "begin_ros": 49.018,
+      "stamp": 49.049,
+      "end_wall": 1087.359109386,
+      "end_ros": 49.018
+    },
+    "driver_spin": {
+      "begin_wall": 1088.732217777,
+      "thread": 281473118955200,
+      "begin_ros": 49.942,
+      "end_wall": 1088.741372542,
+      "end_ros": 50.008
+    },
+    "actor_clock": {
+      "begin_wall": 1087.948348453,
+      "thread": 281472283898144,
+      "begin_ros": 49.415,
+      "stamp": 49.47,
+      "end_wall": 1087.948547158,
+      "end_ros": 49.47
+    },
+    "actor_scan": {
+      "begin_wall": 1088.662685382,
+      "thread": 281472266989856,
+      "begin_ros": 49.942,
+      "stamp": 49.9,
+      "end_wall": 1088.662855976,
+      "end_ros": 49.942
+    },
+    "actor_imu": {
+      "begin_wall": 1087.90383419,
+      "thread": 281472283898144,
+      "begin_ros": 49.415,
+      "stamp": 49.38,
+      "end_wall": 1087.904215415,
+      "end_ros": 49.415
+    },
+    "executor_timer": {
+      "begin_wall": 1089.077923238,
+      "thread": 281472283898144,
+      "begin_ros": 50.205,
+      "end_wall": 1089.098439858,
+      "end_ros": 50.265
+    },
+    "window_tick": {
+      "begin_wall": 1090.465140075,
+      "thread": 281473118955200,
+      "begin_ros": 51.257,
+      "end_wall": 1090.46588534,
+      "end_ros": 51.257
+    },
+    "window_heartbeat": {
+      "begin_wall": 1087.270124268,
+      "thread": 281472266989856,
+      "begin_ros": 48.949,
+      "end_wall": 1087.307844615,
+      "end_ros": 48.949
+    },
+    "grid_global": {
+      "begin_wall": 1086.731400523,
+      "thread": 281472283898144,
+      "begin_ros": 48.549,
+      "stamp": 48.527,
+      "end_wall": 1086.731818656,
+      "end_ros": 48.549
+    },
+    "grid_local": {
+      "begin_wall": 1088.344917461,
+      "thread": 281472275444000,
+      "begin_ros": 49.7,
+      "stamp": 49.668,
+      "end_wall": 1088.345059777,
+      "end_ros": 49.7
+    }
+  },
+  "largest_actor_clock_callback_gap": {
+    "duration_wall_s": 0.10281191499984743,
+    "left": {
+      "begin_wall": 1088.631177077,
+      "thread": 281472266989856,
+      "begin_ros": 49.876,
+      "stamp": 49.942,
+      "end_wall": 1088.631267818,
+      "end_ros": 49.942
+    },
+    "right": {
+      "begin_wall": 1088.733988992,
+      "thread": 281472283898144,
+      "begin_ros": 49.942,
+      "stamp": 50.008,
+      "end_wall": 1088.734135864,
+      "end_ros": 50.008
+    },
+    "independent_clock_callbacks_during_gap": 7,
+    "independent_clock_samples_during_gap": [
+      {
+        "wall": 1088.639014315,
+        "stamp": 49.95
+      },
+      {
+        "wall": 1088.648672472,
+        "stamp": 49.957
+      },
+      {
+        "wall": 1088.667924899,
+        "stamp": 49.967
+      },
+      {
+        "wall": 1088.677348444,
+        "stamp": 49.979
+      },
+      {
+        "wall": 1088.704904,
+        "stamp": 49.99
+      },
+      {
+        "wall": 1088.709573902,
+        "stamp": 50.0
+      },
+      {
+        "wall": 1088.720547365,
+        "stamp": 50.008
+      }
+    ],
+    "actor_ros_time_step": 0.0660000000000025
+  },
+  "largest_independent_clock_callback_gap": {
+    "duration_wall_s": 0.03261651599996185,
+    "left": {
+      "wall": 1087.97911442,
+      "stamp": 49.495
+    },
+    "right": {
+      "wall": 1088.011730936,
+      "stamp": 49.504
+    }
+  },
+  "largest_driver_clock_callback_gap": {
+    "duration_wall_s": 0.19316271000002416,
+    "left": {
+      "begin_wall": 1087.518371405,
+      "thread": 281472283898144,
+      "begin_ros": 49.126,
+      "stamp": 49.15,
+      "end_wall": 1087.518489906,
+      "end_ros": 49.126
+    },
+    "right": {
+      "begin_wall": 1087.711534115,
+      "thread": 281472266989856,
+      "begin_ros": 49.247,
+      "stamp": 49.289,
+      "end_wall": 1087.711639468,
+      "end_ros": 49.247
+    }
+  },
+  "matching_clock_offsets": {
+    "samples": 60,
+    "definition": "Actor entry minus independent-probe callback wall time; signed difference, not network latency",
+    "minimum_wall_s": 0.0007061530000100902,
+    "p95_wall_s": 0.016881500200020126,
+    "maximum_wall_s": 0.01975772500009043
+  },
+  "retained_actor_rows": 1163,
+  "retained_independent_rows": 908,
+  "actor_passed": false,
+  "actor_error": "MissionError('stale_robot_tf')",
+  "inputs_sha256": {
+    "worker": "9d85fad5e57479adb567e028e49b9bc15549b68b5f5c81af8e3b89e9dcb43065",
+    "trace": "7a4f4bd10318a2badf1aa8990e70d3a8702b756c15c19484bae2454441f75ebc",
+    "probe": "ccfaf8f07bff469102c68603b31aa837a60fac34640e7286ac4364c501432332"
+  },
+  "analyzer_sha256": "1e64c6a65b48c4d2e8f67258bba08f20abeae060ff2b340106e6b3079e385b81"
+}

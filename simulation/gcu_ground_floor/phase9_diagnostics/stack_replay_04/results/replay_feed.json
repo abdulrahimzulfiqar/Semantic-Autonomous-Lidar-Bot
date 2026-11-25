@@ -1,0 +1,58 @@
+{
+  "source_clip_s": [
+    10.0,
+    15.0
+  ],
+  "clip_inputs": {
+    "/scan": {
+      "samples": 50,
+      "median_period_s": 0.1
+    },
+    "/imu_broadcaster/imu": {
+      "samples": 500,
+      "median_period_s": 0.01
+    },
+    "/diff_controller/odom": {
+      "samples": 250,
+      "median_period_s": 0.02
+    }
+  },
+  "published": {
+    "/scan": 792,
+    "/imu_broadcaster/imu": 7917,
+    "/diff_controller/odom": 3959
+  },
+  "maximum_publication_lateness_wall_s": {
+    "/scan": 0.023767111,
+    "/imu_broadcaster/imu": 0.028967492,
+    "/diff_controller/odom": 0.026135551
+  },
+  "commands": [
+    [
+      1575.982840698,
+      0.1,
+      0.005769097956323951
+    ],
+    [
+      1576.076422947,
+      0.1,
+      0.005771070855806033
+    ],
+    [
+      1576.17131082,
+      0.1,
+      0.005771367279816895
+    ],
+    [
+      1576.275261504,
+      0.0,
+      0.0
+    ],
+    [
+      1576.761783011,
+      0.0,
+      0.0
+    ]
+  ],
+  "scope": "Repeated recorded stationary clip at 1x with fixed per-repeat timestamp offset; recorded command sink has no feedback"
+}

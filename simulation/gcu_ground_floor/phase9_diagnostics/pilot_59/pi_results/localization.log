@@ -1,0 +1,122 @@
+[INFO] [launch]: All log files can be found below /home/pi-project/edgeosmag_phase9_pilot_59/results/ros_logs/2026-11-23-16-01-18-454995-Pi-Project-29976
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [map_server-1]: process started with pid [30009]
+[INFO] [lifecycle_manager-2]: process started with pid [30011]
+[INFO] [ekf_node-3]: process started with pid [30013]
+[INFO] [python3-4]: process started with pid [30015]
+[INFO] [amcl-5]: process started with pid [30017]
+[lifecycle_manager-2] [INFO] [1795431678.899215799] [gcu_map_lifecycle]: Creating
+[lifecycle_manager-2] [INFO] [1795431678.911471912] [gcu_map_lifecycle]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[map_server-1] [INFO] [1795431678.922186539] [gcu_map_server]: 
+[map_server-1] 	gcu_map_server lifecycle node launched. 
+[map_server-1] 	Waiting on external lifecycle transitions to activate
+[map_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-1] [INFO] [1795431678.931776638] [gcu_map_server]: Creating
+[amcl-5] [INFO] [1795431678.954051105] [amcl]: 
+[amcl-5] 	amcl lifecycle node launched. 
+[amcl-5] 	Waiting on external lifecycle transitions to activate
+[amcl-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[amcl-5] [INFO] [1795431678.962019645] [amcl]: Creating
+[lifecycle_manager-2] [INFO] [1795431679.053085535] [gcu_map_lifecycle]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-2] [INFO] [1795431679.053334014] [gcu_map_lifecycle]: [34m[1mConfiguring gcu_map_server[0m[0m
+[map_server-1] [INFO] [1795431679.058363340] [gcu_map_server]: Configuring
+[map_server-1] [INFO] [1795431679.058675726] [map_io]: Loading yaml file: /home/pi-project/edgeosmag_phase9_pilot_59/assets/gcu_ground_floor.yaml
+[map_server-1] [INFO] [1795431679.059576644] [map_io]: resolution: 0.058644
+[map_server-1] [INFO] [1795431679.059680032] [map_io]: origin[0]: -29.3513
+[map_server-1] [INFO] [1795431679.059709846] [map_io]: origin[1]: -20.1442
+[map_server-1] [INFO] [1795431679.059733309] [map_io]: origin[2]: 0
+[map_server-1] [INFO] [1795431679.059758327] [map_io]: free_thresh: 0.196
+[map_server-1] [INFO] [1795431679.059783642] [map_io]: occupied_thresh: 0.65
+[map_server-1] [INFO] [1795431679.059813216] [map_io]: mode: trinary
+[map_server-1] [INFO] [1795431679.059841716] [map_io]: negate: 0
+[map_server-1] [INFO] [1795431679.060614524] [map_io]: Loading image_file: /home/pi-project/edgeosmag_phase9_pilot_59/assets/gcu_ground_floor.pgm
+[map_server-1] [INFO] [1795431679.439354270] [map_io]: Read map /home/pi-project/edgeosmag_phase9_pilot_59/assets/gcu_ground_floor.pgm: 1000 X 844 map @ 0.058644 m/cell
+[lifecycle_manager-2] [INFO] [1795431679.465615535] [gcu_map_lifecycle]: [34m[1mConfiguring amcl[0m[0m
+[amcl-5] [INFO] [1795431679.467500611] [amcl]: Configuring
+[amcl-5] [INFO] [1795431679.467816423] [amcl]: initTransforms
+[amcl-5] [INFO] [1795431679.504891351] [amcl]: initPubSub
+[amcl-5] [INFO] [1795431679.530126552] [amcl]: Subscribed to map topic.
+[lifecycle_manager-2] [INFO] [1795431679.545146621] [gcu_map_lifecycle]: [34m[1mActivating gcu_map_server[0m[0m
+[map_server-1] [INFO] [1795431679.547577044] [gcu_map_server]: Activating
+[map_server-1] [INFO] [1795431679.556136912] [gcu_map_server]: Creating bond (gcu_map_server) to lifecycle manager.
+[amcl-5] [INFO] [1795431679.566344561] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[lifecycle_manager-2] [INFO] [1795431679.676383745] [gcu_map_lifecycle]: Server gcu_map_server connected with bond.
+[lifecycle_manager-2] [INFO] [1795431679.676551577] [gcu_map_lifecycle]: [34m[1mActivating amcl[0m[0m
+[amcl-5] [INFO] [1795431679.677329829] [amcl]: Activating
+[amcl-5] [INFO] [1795431679.677505217] [amcl]: Creating bond (amcl) to lifecycle manager.
+[lifecycle_manager-2] [INFO] [1795431679.791276293] [gcu_map_lifecycle]: Server amcl connected with bond.
+[lifecycle_manager-2] [INFO] [1795431679.791440273] [gcu_map_lifecycle]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-2] [INFO] [1795431679.791496550] [gcu_map_lifecycle]: [34m[1mCreating bond timer...[0m[0m
+[amcl-5] [INFO] [1795431695.450729598] [amcl]: Requesting no-motion update
+[amcl-5] [INFO] [1795431695.462786899] [amcl]: initialPoseReceived
+[amcl-5] [INFO] [1795431695.463096211] [amcl]: Setting pose (0.000000): -0.500 -12.960 0.000
+[python3-4] [INFO] [1795431695.605721677] [gcu_amcl_initial_pose]: Published one prior: position stddev 0.25 m, heading stddev 10 deg
+[amcl-5] [INFO] [1795431695.954250254] [amcl]: Requesting no-motion update
+[amcl-5] [INFO] [1795431696.300925628] [amcl]: createLaserObject
+[amcl-5] [INFO] [1795431696.458344632] [amcl]: Requesting no-motion update
+[amcl-5] [INFO] [1795431696.976652959] [amcl]: Requesting no-motion update
+[amcl-5] [INFO] [1795431697.071381773] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 11.100 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [python3-4]: process has finished cleanly [pid 30015]
+[ekf_node-3] Failed to meet update rate! Took 0.061999999999999999556seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.041000000000000001721seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.091999999999999998446seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.041000000000000001721seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.051999999999999997613seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.096000000000000001998seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.035000000000000003331seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.034000000000000002442seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.050999999999999996725seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.045999999999999999223seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.03599999999999999728seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.058000000000000002942seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.043999999999999997446seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.040000000000000000833seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.034000000000000002442seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.11700000000000000677seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[amcl-5] [INFO] [1795431741.790574873] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 40.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[ekf_node-3] Failed to meet update rate! Took 0.068000000000000004885seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.063000000000000000444seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.040000000000000000833seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.053999999999999999389seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.22300000000000000377seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.050999999999999996725seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.14000000000000001332seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.05999999999999999778seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.048000000000000000999seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.13400000000000000799seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.32700000000000001288seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.066000000000000003109seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.15700000000000000067seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.067000000000000003997seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[ekf_node-3] Failed to meet update rate! Took 0.098000000000000003775seconds. Try decreasing the rate, limiting sensor output frequency, or limiting the number of sensors.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[map_server-1] [INFO] [1795431796.594790625] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-1] [INFO] [1795431796.595066326] [gcu_map_server]: Running Nav2 LifecycleNode rcl preshutdown (gcu_map_server)
+[map_server-1] [INFO] [1795431796.595249954] [gcu_map_server]: Deactivating
+[amcl-5] [INFO] [1795431796.594853161] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[amcl-5] [INFO] [1795431796.595041567] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[amcl-5] [INFO] [1795431796.595250084] [amcl]: Deactivating
+[amcl-5] [INFO] [1795431796.595321398] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [amcl-5]: sending signal 'SIGINT' to process[amcl-5]
+[INFO] [ekf_node-3]: sending signal 'SIGINT' to process[ekf_node-3]
+[INFO] [lifecycle_manager-2]: sending signal 'SIGINT' to process[lifecycle_manager-2]
+[INFO] [map_server-1]: sending signal 'SIGINT' to process[map_server-1]
+[ERROR] [ekf_node-3]: process has died [pid 30013, exit code -2, cmd '/opt/ros/humble/lib/robot_localization/ekf_node --ros-args -r __node:=gcu_alignment_ekf --params-file /tmp/launch_params_ofca4gsl --params-file /tmp/launch_params_ebm9gjen'].
+[map_server-1] [INFO] [1795431796.595316046] [gcu_map_server]: Destroying bond (gcu_map_server) to lifecycle manager.
+[map_server-1] [INFO] [1795431796.606182440] [gcu_map_server]: Cleaning up
+[map_server-1] [INFO] [1795431796.606532992] [gcu_map_server]: Destroying bond (gcu_map_server) to lifecycle manager.
+[lifecycle_manager-2] [INFO] [1795431796.600410116] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-2] [INFO] [1795431796.600630633] [gcu_map_lifecycle]: Running Nav2 LifecycleManager rcl preshutdown (gcu_map_lifecycle)
+[lifecycle_manager-2] [INFO] [1795431796.600749873] [gcu_map_lifecycle]: [34m[1mTerminating bond timer...[0m[0m
+[amcl-5] [INFO] [1795431796.606112255] [amcl]: Cleaning up
+[ekf_node-3] [INFO] [1795431796.635496480] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[amcl-5] [INFO] [1795431796.670247976] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[amcl-5] [INFO] [1795431796.677092013] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-2] [INFO] [1795431796.691783801] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-1] [INFO] [1795431796.697048517] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[amcl-5] [INFO] [1795431796.722421534] [amcl]: Destroying
+[map_server-1] [INFO] [1795431796.774022430] [gcu_map_server]: Destroying
+[lifecycle_manager-2] [INFO] [1795431796.783478816] [gcu_map_lifecycle]: Destroying gcu_map_lifecycle
+[INFO] [amcl-5]: process has finished cleanly [pid 30017]
+[INFO] [lifecycle_manager-2]: process has finished cleanly [pid 30011]
+[INFO] [map_server-1]: process has finished cleanly [pid 30009]

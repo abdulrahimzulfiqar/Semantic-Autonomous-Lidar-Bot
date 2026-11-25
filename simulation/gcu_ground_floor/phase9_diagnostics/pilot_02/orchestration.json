@@ -1,0 +1,21 @@
+{
+  "passed": false,
+  "scope": "Failed bootstrap pilot; no simulated motion",
+  "pi": {
+    "role": "pi",
+    "passed": false,
+    "scope": "One split-host simulation pilot, not a completed benchmark",
+    "error": "RuntimeError('pi_localization_not_ready')",
+    "process_exits": {
+      "localization": 0
+    },
+    "elapsed_wall_s": 49.42890279300036
+  },
+  "simulator": {
+    "passed": false,
+    "startup_failure": "simulator_desktop_required",
+    "process_exits": {}
+  },
+  "host_collection_error": "Initial host cleanup tried to signal an already-exited simulator role; results retrieved separately",
+  "native_motion_tested": false
+}

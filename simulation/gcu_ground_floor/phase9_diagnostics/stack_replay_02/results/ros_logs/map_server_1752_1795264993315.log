@@ -1,0 +1,25 @@
+[INFO] [1795264993.407381161] [gcu_map_server]: 
+	gcu_map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795264993.410669328] [gcu_map_server]: Creating
+[INFO] [1795264993.451390265] [gcu_map_server]: Configuring
+[INFO] [1795264993.451651531] [map_io]: Loading yaml file: /home/pi-project/edgeosmag_stack_replay_02/assets/gcu_ground_floor.yaml
+[INFO] [1795264993.452904752] [map_io]: resolution: 0.058644
+[INFO] [1795264993.453065059] [map_io]: origin[0]: -29.3513
+[INFO] [1795264993.453116150] [map_io]: origin[1]: -20.1442
+[INFO] [1795264993.453146315] [map_io]: origin[2]: 0
+[INFO] [1795264993.453177036] [map_io]: free_thresh: 0.196
+[INFO] [1795264993.453203090] [map_io]: occupied_thresh: 0.65
+[INFO] [1795264993.453244736] [map_io]: mode: trinary
+[INFO] [1795264993.453277402] [map_io]: negate: 0
+[INFO] [1795264993.492817596] [map_io]: Loading image_file: /home/pi-project/edgeosmag_stack_replay_02/assets/gcu_ground_floor.pgm
+[INFO] [1795264993.756173061] [map_io]: Read map /home/pi-project/edgeosmag_stack_replay_02/assets/gcu_ground_floor.pgm: 1000 X 844 map @ 0.058644 m/cell
+[INFO] [1795264993.893116944] [gcu_map_server]: Activating
+[INFO] [1795264993.903806998] [gcu_map_server]: Creating bond (gcu_map_server) to lifecycle manager.
+[INFO] [1795265075.655513814] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795265075.655951576] [gcu_map_server]: Running Nav2 LifecycleNode rcl preshutdown (gcu_map_server)
+[INFO] [1795265075.656255806] [gcu_map_server]: Deactivating
+[INFO] [1795265075.656375598] [gcu_map_server]: Destroying bond (gcu_map_server) to lifecycle manager.
+[INFO] [1795265075.667331466] [gcu_map_server]: Cleaning up
+[INFO] [1795265075.667702046] [gcu_map_server]: Destroying bond (gcu_map_server) to lifecycle manager.

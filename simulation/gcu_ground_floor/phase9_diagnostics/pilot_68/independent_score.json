@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "scope": "Single processor-in-loop pilot correctness; no repeated benchmark or real-time hardware claim",
+  "role_runs_passed": false,
+  "criteria_source": "Inherited Phase 06/07 pilot correctness gates",
+  "thresholds": {
+    "goal_position_m": 0.2,
+    "goal_heading_deg": 10,
+    "localization_p95_m": 0.25,
+    "localization_p95_deg": 5,
+    "matched_fraction": 0.9,
+    "max_truth_gap_sim_s": 0.15,
+    "maximum_linear_command_m_s": 0.10001,
+    "swept_radius_m": 0.18,
+    "rest_duration_sim_s": 1.0
+  },
+  "error": "RuntimeError('pilot_preflight_timeout:window_native_preflight')"
+}

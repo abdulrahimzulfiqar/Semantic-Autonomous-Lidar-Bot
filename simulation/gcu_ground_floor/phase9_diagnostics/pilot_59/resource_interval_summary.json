@@ -1,0 +1,52 @@
+{
+  "processes": [],
+  "samples": 0,
+  "sample_span_wall_s": 0.0,
+  "stable_process_set": false,
+  "cpu_percent_one_core_total": null,
+  "sampled_concurrent_domain_pss_max_kib": null,
+  "firmware_power": {
+    "sampled_readings": 116,
+    "active_undervoltage_readings": 0,
+    "active_throttle_readings": 0,
+    "first_flags": "0x0",
+    "last_flags": "0x0",
+    "peak_cpu_temp_c": 65.244
+  },
+  "scope": "One pilot from dispatch to last native success/fault response, excluding preprocessing/rest verification/teardown. CPU uses actual sample span and 100% denotes one core. Relay and optional trace probe are separate processes. The sampler owner is excluded.",
+  "callback_tracing": true,
+  "begin_wall": 2876.039688897,
+  "end_wall": 2876.199996856,
+  "interval_wall_s": 0.1603079589999652,
+  "actor_passed": false,
+  "preprocessing_wall_s": 64.49670130899995,
+  "observed_rates": {
+    "scan": {
+      "callbacks": 0,
+      "receipt_span_wall_s": 0.0,
+      "callbacks_per_wall_s": null,
+      "header_sim_per_wall_s": null,
+      "max_receipt_gap_wall_s": null
+    },
+    "clock": {
+      "callbacks": 2,
+      "receipt_span_wall_s": 0.06363019899981737,
+      "callbacks_per_wall_s": 15.715808149568575,
+      "header_sim_per_wall_s": 4.086110118887687,
+      "max_receipt_gap_wall_s": 0.06363019899981737
+    },
+    "imu": {
+      "callbacks": 0,
+      "receipt_span_wall_s": 0.0,
+      "callbacks_per_wall_s": null,
+      "header_sim_per_wall_s": null,
+      "max_receipt_gap_wall_s": null
+    }
+  },
+  "inputs_sha256": {
+    "worker": "d051ce551e02c6568296b20f63b13b1fb1f4cfea22487e16a1b2b2fc9000ec64",
+    "resources": "38149ef34463ddbf25d85c2a6e440666cdd0ba6a5077b62910c2e617bf42118d",
+    "probe": "09967385ba49fb6dd1bf42ae04e2de1ec69690663711d5162d55a51633e7a10b"
+  },
+  "analyzer_sha256": "865e5b1026abcc9f879bbea260c8c6d1f738a122cb3620601d43237298432162"
+}

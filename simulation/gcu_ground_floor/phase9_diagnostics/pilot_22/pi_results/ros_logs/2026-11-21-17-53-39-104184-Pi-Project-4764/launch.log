@@ -1,0 +1,18 @@
+1795265619.1083696 [INFO] [launch]: All log files can be found below /home/pi-project/edgeosmag_phase9_pilot_22/results/ros_logs/2026-11-21-17-53-39-104184-Pi-Project-4764
+1795265619.1089985 [INFO] [launch]: Default logging verbosity is set to INFO
+1795265619.4257710 [INFO] [map_server-1]: process started with pid [4797]
+1795265619.4267082 [INFO] [lifecycle_manager-2]: process started with pid [4799]
+1795265619.4274504 [INFO] [ekf_node-3]: process started with pid [4801]
+1795265619.4281259 [INFO] [python3-4]: process started with pid [4803]
+1795265619.4289303 [INFO] [amcl-5]: process started with pid [4805]
+1795265664.7510228 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1795265664.8438983 [INFO] [amcl-5]: sending signal 'SIGINT' to process[amcl-5]
+1795265664.8504472 [INFO] [python3-4]: sending signal 'SIGINT' to process[python3-4]
+1795265664.8589289 [INFO] [ekf_node-3]: sending signal 'SIGINT' to process[ekf_node-3]
+1795265664.8705814 [INFO] [lifecycle_manager-2]: sending signal 'SIGINT' to process[lifecycle_manager-2]
+1795265664.8728483 [ERROR] [python3-4]: process has died [pid 4803, exit code -2, cmd '/usr/bin/python3 /home/pi-project/edgeosmag_phase9_pilot_22/gcu_amcl_initial_pose.py --params /home/pi-project/edgeosmag_phase9_pilot_22/assets/amcl.yaml'].
+1795265664.8738649 [ERROR] [ekf_node-3]: process has died [pid 4801, exit code -2, cmd '/opt/ros/humble/lib/robot_localization/ekf_node --ros-args -r __node:=gcu_alignment_ekf --params-file /tmp/launch_params_zzj5psdg --params-file /tmp/launch_params_pfte3vuv'].
+1795265664.8765852 [INFO] [map_server-1]: sending signal 'SIGINT' to process[map_server-1]
+1795265664.8863511 [ERROR] [map_server-1]: process has died [pid 4797, exit code -2, cmd '/opt/ros/humble/lib/nav2_map_server/map_server --ros-args -r __node:=gcu_map_server --params-file /tmp/launch_params_27dpgsz5'].
+1795265665.9401350 [INFO] [lifecycle_manager-2]: process has finished cleanly [pid 4799]
+1795265666.9425311 [INFO] [amcl-5]: process has finished cleanly [pid 4805]

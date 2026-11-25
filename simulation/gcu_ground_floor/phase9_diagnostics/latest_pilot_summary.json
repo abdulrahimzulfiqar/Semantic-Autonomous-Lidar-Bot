@@ -1,0 +1,87 @@
+{
+  "scope": "Failed diagnostic pilots; no completed Phase 09 benchmark or Pi capacity claim",
+  "attempts": [
+    {
+      "attempt": "pilot_08",
+      "mission_passed": false,
+      "error": "MissionError('stale_robot_tf')",
+      "dispatch_sim": 49.977,
+      "failure_sim": 50.701,
+      "preprocessing_wall_s": 51.59202548999974,
+      "motion_net_displacement_m": 0.012778635780156752,
+      "post_failure_sampled_rest": {
+        "start_sim": 51.2,
+        "confirmed_sim": 52.2
+      },
+      "classified_contacts": 0,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "largest_admitted_pose_gap_sim_s": null,
+      "first_unadmitted_tf_gap_sim_s": null,
+      "resource_samples": 79,
+      "sampled_whole_attempt_domain_pss_max_kib": 315231,
+      "sampled_whole_attempt_temperature_max_c": 55.504,
+      "resource_scope": "Domain-218 processes, entire attempt including startup/preprocessing; approximately 1 wall-second samples. Not a successful-motion budget or an unsampled peak.",
+      "inputs_sha256": {
+        "actor": "532c386ed9885e7db1e3e1b114dc19fb38badac6ca0178675fdd27a1dbae0865",
+        "observer": "dd9e183b606104a5123192079755adf1d87822cdc37214e867e7588ba690e46c",
+        "resources": "ac2cb8ebdb7862c51cd5b35e6686f6795d023e18c824243641c52b00d07e8c55",
+        "orchestration": "cfab8df7f3c03303ca678b6477043cad59af2dc5467386b9c3c6f8a1c760d82e"
+      }
+    },
+    {
+      "attempt": "pilot_09",
+      "mission_passed": false,
+      "error": "RuntimeError('watchdog:pose_observation_gap')",
+      "dispatch_sim": 14.127,
+      "failure_sim": 19.873,
+      "preprocessing_wall_s": 53.26090839000017,
+      "motion_net_displacement_m": 0.5253720900211098,
+      "post_failure_sampled_rest": {
+        "start_sim": 20.25,
+        "confirmed_sim": 21.25
+      },
+      "classified_contacts": 0,
+      "contact_publishers": {
+        "/gcu/contacts/collision_0": 1,
+        "/gcu/contacts/collision_1": 1,
+        "/gcu/contacts/collision_2": 1,
+        "/gcu/contacts/collision_3": 1,
+        "/gcu/contacts/collision_4": 1,
+        "/gcu/contacts/collision_5": 1,
+        "/gcu/contacts/collision_6": 1,
+        "/gcu/contacts/collision_7": 1,
+        "/gcu/contacts/collision_8": 1,
+        "/gcu/contacts/collision_9": 1,
+        "/gcu/contacts/collision_10": 1,
+        "/gcu/contacts/collision_11": 1,
+        "/gcu/contacts/collision_12": 1
+      },
+      "largest_admitted_pose_gap_sim_s": 0.13000000000000078,
+      "first_unadmitted_tf_gap_sim_s": 0.15700000000000003,
+      "resource_samples": 111,
+      "sampled_whole_attempt_domain_pss_max_kib": 318996,
+      "sampled_whole_attempt_temperature_max_c": 65.244,
+      "resource_scope": "Domain-218 processes, entire attempt including startup/preprocessing; approximately 1 wall-second samples. Not a successful-motion budget or an unsampled peak.",
+      "inputs_sha256": {
+        "actor": "e772c1353f0f1f287905522c3e3ee8106dbbb5a0ac1553c6321fcc1bce7fa92c",
+        "observer": "82fffebf7c016b8015293d172d6dd5423e71e314ca808236d5450e6abe9fb784",
+        "resources": "2dc76b30db87996961a8fef5abd63699b27e44d49742a3edf808a0f67d096c97",
+        "orchestration": "7f67db4951b863e166d62f2a06b5d91f4e6b38b592d0db87ba09e194debb8455"
+      }
+    }
+  ]
+}

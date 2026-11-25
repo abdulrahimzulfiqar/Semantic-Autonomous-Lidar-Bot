@@ -1,0 +1,22 @@
+[INFO] [1794925100.570053160] [bt_navigator]: 
+	bt_navigator lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1794925100.572386896] [bt_navigator]: Creating
+[INFO] [1794925161.699857343] [bt_navigator]: Configuring
+[INFO] [1794925162.052766493] [bt_navigator]: Activating
+[INFO] [1794925162.310056916] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[ERROR] [1794925162.928221423] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation at time 50.020000, but only time 50.200000 is in the buffer, when looking up transform from frame [base_footprint] to frame [map]
+
+[INFO] [1794925162.928446013] [bt_navigator]: Begin navigating from current location (0.00, 0.00) to (-0.03, -12.95)
+[WARN] [1794925162.965588152] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[INFO] [1794925163.281060347] [bt_navigator]: [navigate_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1794925163.281751358] [bt_navigator]: Goal canceled
+[INFO] [1794925163.416973269] [bt_navigator]: Deactivating
+[INFO] [1794925163.417204415] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1794925167.485962320] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1794925167.486202281] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[INFO] [1794925167.486451834] [bt_navigator]: Cleaning up
+[INFO] [1794925168.011781083] [bt_navigator]: Completed Cleaning up
+[INFO] [1794925168.012327522] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1794925168.040496010] [bt_navigator]: Destroying

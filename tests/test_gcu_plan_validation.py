@@ -11,6 +11,13 @@ class RouteValidationTests(unittest.TestCase):
         r=module.validate_path(np.zeros((30,30),dtype=int),.1,(0,0),[(.5,.5),(2.5,.5)])
         self.assertTrue(r['valid']);self.assertGreater(r['samples'],20)
 
+    def test_clear_envelope_retains_sample_count_and_boundary_clearance(self):
+        grid = np.zeros((26, 30), dtype=int)
+        result = module.validate_path(grid, .125, (-2., -1.), [(-1.75, -.5), (0., -.5)])
+        self.assertTrue(result['valid'])
+        self.assertEqual(result['samples'], 57)
+        self.assertEqual(result['checked_clearance_lower_bound_m'], .25)
+
     def test_clear_endpoints_do_not_allow_crossing_wall(self):
         grid=np.zeros((30,30),dtype=int);grid[:,15]=100
         self.assertFalse(module.validate_path(grid,.1,(0,0),[(.5,.5),(2.5,.5)])['valid'])

@@ -1,0 +1,22 @@
+{
+  "scope": "Last reliable Pi relay input age before the stale scan fault; LiDAR gap uses the same Pi monotonic clock",
+  "fault": {
+    "event": "fault",
+    "wall": 4260.130558888,
+    "sim": 50.916,
+    "reason": "watchdog:stale_scan"
+  },
+  "score_passed": false,
+  "latest_relayed_input_age_ms": {
+    "wheel_odom": 16.0,
+    "imu": 46.0
+  },
+  "next_scan_stamp_ns": 50900000000,
+  "next_scan_delay_after_fault_wall_ms": 685.6574569992517,
+  "inputs_sha256": {
+    "worker": "82b8051636740cb970d168a40bdac6b144fb8501b6a1f6ce01f1f823ed38d6c0",
+    "scan_receiver": "883f61c2f29817b234b0670a97dc651f0c5ff0f90f3b3def9c61dd346a05ffa4",
+    "relay": "6e58bf8c00930a23cb503451f4d312ab7eeb8c225c13d7bd0322b71a0e2d5126",
+    "score": "ece12f798fc868f97f5c3d229ab89cc09696ca281d4f61c79e6b5242ceea46ba"
+  }
+}

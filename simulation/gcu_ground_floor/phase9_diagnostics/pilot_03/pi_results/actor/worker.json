@@ -1,0 +1,915 @@
+{
+  "passed": false,
+  "scope": "Pi navigation actor; no ground-truth subscription",
+  "goal": [
+    1.0,
+    -12.960313240266368,
+    0.0
+  ],
+  "events": [
+    {
+      "event": "fault",
+      "wall": 3695.30753136,
+      "sim": 70.429,
+      "reason": "phase9_pilot_error"
+    }
+  ],
+  "preprocessing_wall_s": 52.720749867999984,
+  "contract": {
+    "mission_id": "phase9_short_crossing",
+    "route_revision": 1,
+    "closure_revision": 0,
+    "map_sha256": "03ceea6bc8b33c62009d2802071b7750284b8a822a80b6c43ad195ab232167e2",
+    "settings_sha256": "1ae98feb5d7fe118af1928e64e6c343765b5fbb792fd8488198cbbc0a83a35b0",
+    "route_sha256": "478cb2cb7c1f9b0c9cf52e89902ffda63bf17033a98c1eaee1aec67994b03242",
+    "policy": "refined_crossing",
+    "start": [
+      -0.5209164611267768,
+      -12.97491818047894
+    ],
+    "goal": [
+      1.0,
+      -12.960313240266368,
+      0.0
+    ],
+    "pose_stamp": 3671.684640989,
+    "created_at": 3671.689640989,
+    "area_ids": [
+      "gcu_gf_corridor_14",
+      "gcu_gf_corridor_16"
+    ],
+    "passage_ids": [
+      "-93"
+    ],
+    "disabled_passages": [],
+    "path": [
+      [
+        -0.5209164611267768,
+        -12.97491818047894
+      ],
+      [
+        1.0,
+        -12.960313240266368
+      ]
+    ],
+    "segments": [
+      {
+        "index": 0,
+        "point": [
+          -0.029321981143078824,
+          -12.970197534623301
+        ],
+        "yaw": 0.009602428333388965,
+        "passage_id": "-93",
+        "source_area": "gcu_gf_corridor_14",
+        "destination_area": "gcu_gf_corridor_16"
+      },
+      {
+        "index": 1,
+        "point": [
+          1.0,
+          -12.960313240266368
+        ],
+        "yaw": 0.0,
+        "passage_id": null,
+        "source_area": "gcu_gf_corridor_16",
+        "destination_area": "gcu_gf_corridor_16"
+      }
+    ],
+    "settings": {
+      "reach_threshold_m": 0.3,
+      "crossing_hysteresis_m": 0.06,
+      "confirmation_samples": 3,
+      "maximum_pose_age_s": 0.5,
+      "maximum_observation_gap_s": 0.15,
+      "maximum_pose_step_m": 0.25,
+      "action_ack_timeout_s": 15.0
+    }
+  },
+  "error": "RuntimeError('pilot_preflight_timeout')",
+  "state": {
+    "state": "idle",
+    "mission_id": null,
+    "last_dispatched_segment": -1,
+    "confirmed_crossings": 0,
+    "reason": null,
+    "stop_confirmed": false,
+    "unresolved_requests": 0,
+    "scope": "pure_mock_model_no_motion"
+  },
+  "poses": [],
+  "tf_timing": [
+    {
+      "clock": 53.402,
+      "latest_stamp": 53.397,
+      "query_stamp": 53.397,
+      "wall": 3671.689579638
+    }
+  ],
+  "imu_samples": [
+    {
+      "sim_time": 53.19,
+      "yaw_rate": -0.00025496548581546165,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.2,
+      "yaw_rate": 6.93113203696307e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.21,
+      "yaw_rate": 0.00014490796264059568,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 53.22,
+      "yaw_rate": -0.0001672246522426619,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.27,
+      "yaw_rate": 7.47015285777885e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.28,
+      "yaw_rate": 0.00014283143965858057,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.32,
+      "yaw_rate": -0.00016956095017818447,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.33,
+      "yaw_rate": -0.00010292569732659073,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 55.65,
+      "yaw_rate": 6.552541960578596e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.11,
+      "yaw_rate": 0.00019314297499847428,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.12,
+      "yaw_rate": 0.0002867716600308091,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.13,
+      "yaw_rate": 0.00040452972776445985,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 56.96,
+      "yaw_rate": 5.188287121866703e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.13,
+      "yaw_rate": -5.714534672980329e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 57.14,
+      "yaw_rate": 7.35248203364193e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 58.93,
+      "yaw_rate": 0.0002219232544206595,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 60.25,
+      "yaw_rate": 0.00016471029977470125,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 60.26,
+      "yaw_rate": 6.388343761245197e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 60.27,
+      "yaw_rate": 1.7037385869457466e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 60.28,
+      "yaw_rate": 0.000136768613862331,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 60.33,
+      "yaw_rate": -0.00031698539868730457,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 60.34,
+      "yaw_rate": 0.0005786421651632172,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 61.39,
+      "yaw_rate": -6.406805827577491e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 61.45,
+      "yaw_rate": 0.0003032467997458049,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 61.88,
+      "yaw_rate": -4.7599503708457695e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 62.2,
+      "yaw_rate": 5.9840321179443985e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 63.76,
+      "yaw_rate": 0.0001954846027259846,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 64.95,
+      "yaw_rate": -0.00022193170443810423,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 65.55,
+      "yaw_rate": -6.205037616267565e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 65.72,
+      "yaw_rate": -7.28017400408156e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 66.98,
+      "yaw_rate": 0.0003098926496898948,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 66.99,
+      "yaw_rate": 0.00021510342486922145,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 67.0,
+      "yaw_rate": -0.00011746560963785559,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 67.01,
+      "yaw_rate": 7.94772720869944e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 67.02,
+      "yaw_rate": 3.723420618616458e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 67.03,
+      "yaw_rate": 0.00020815317902552922,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 67.04,
+      "yaw_rate": -6.921729952552092e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 67.05,
+      "yaw_rate": -0.0002945046527084044,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 67.06,
+      "yaw_rate": 0.0003341601190645354,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 67.92,
+      "yaw_rate": 0.00048680726922362393,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 68.19,
+      "yaw_rate": 6.262703308348023e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 68.27,
+      "yaw_rate": 0.00020116177815816206,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 68.73,
+      "yaw_rate": 3.9098119423618907e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 68.74,
+      "yaw_rate": 1.4841445007210488e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 68.79,
+      "yaw_rate": 0.0002437283086612482,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 68.83,
+      "yaw_rate": 6.946511082102784e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 70.49,
+      "yaw_rate": 0.0004745994363442346,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 70.79,
+      "yaw_rate": 7.7195743505738e-05,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 70.8,
+      "yaw_rate": -0.00021863571177809147,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 70.97,
+      "yaw_rate": -0.00010915540951674234,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 70.98,
+      "yaw_rate": -0.0003268998530166699,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 70.99,
+      "yaw_rate": 0.00023291633049115664,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 72.56,
+      "yaw_rate": 0.000114490328924389,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 72.6,
+      "yaw_rate": -3.456005676536932e-06,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 72.75,
+      "yaw_rate": 0.0001871400658980053,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 73.32,
+      "yaw_rate": -0.00021725259297328,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 73.33,
+      "yaw_rate": -0.00022423037225796774,
+      "frame": "imu_link"
+    },
+    {
+      "sim_time": 73.69,
+      "yaw_rate": 8.135728238297088e-05,
+      "frame": "imu_link"
+    }
+  ],
+  "elapsed_wall_s": 96.1698483529999,
+  "final_sim": 70.429,
+  "scan_observations": [
+    [
+      53.2,
+      3671.018377435
+    ],
+    [
+      53.3,
+      3671.625058378
+    ],
+    [
+      56.1,
+      3674.490192726
+    ],
+    [
+      67.0,
+      3689.742639496
+    ]
+  ],
+  "rolling": {
+    "scope": "Live raster/constraint/proxy manager; no truth input",
+    "windows": [],
+    "events": [
+      {
+        "event": "window_published",
+        "sim": 53.402,
+        "revision": 1,
+        "origin": [
+          -4.310330123217447,
+          -16.74284805946102
+        ]
+      }
+    ],
+    "frozen": false,
+    "window_shape": [
+      128,
+      128
+    ],
+    "readiness_failures": [],
+    "source_publications": [
+      {
+        "sim": 53.402,
+        "wall": 3673.921592083,
+        "revision": 1
+      },
+      {
+        "sim": 56.098,
+        "wall": 3673.992381097,
+        "revision": 1
+      },
+      {
+        "sim": 56.102,
+        "wall": 3674.0600958,
+        "revision": 1
+      },
+      {
+        "sim": 56.223,
+        "wall": 3675.166364602,
+        "revision": 1
+      },
+      {
+        "sim": 56.432,
+        "wall": 3675.424802742,
+        "revision": 1
+      },
+      {
+        "sim": 56.504,
+        "wall": 3675.466438725,
+        "revision": 1
+      },
+      {
+        "sim": 56.664,
+        "wall": 3675.641948413,
+        "revision": 1
+      },
+      {
+        "sim": 56.716,
+        "wall": 3675.67327225,
+        "revision": 1
+      },
+      {
+        "sim": 56.949,
+        "wall": 3675.76891491,
+        "revision": 1
+      },
+      {
+        "sim": 57.023,
+        "wall": 3676.32172942,
+        "revision": 1
+      },
+      {
+        "sim": 57.12,
+        "wall": 3677.175774011,
+        "revision": 1
+      },
+      {
+        "sim": 57.224,
+        "wall": 3678.151538514,
+        "revision": 1
+      },
+      {
+        "sim": 57.338,
+        "wall": 3678.639052396,
+        "revision": 1
+      },
+      {
+        "sim": 57.413,
+        "wall": 3678.685069046,
+        "revision": 1
+      },
+      {
+        "sim": 57.577,
+        "wall": 3678.91665758,
+        "revision": 1
+      },
+      {
+        "sim": 57.805,
+        "wall": 3678.970502557,
+        "revision": 1
+      },
+      {
+        "sim": 57.837,
+        "wall": 3679.005549071,
+        "revision": 1
+      },
+      {
+        "sim": 58.08,
+        "wall": 3679.114161829,
+        "revision": 1
+      },
+      {
+        "sim": 58.209,
+        "wall": 3679.331356659,
+        "revision": 1
+      },
+      {
+        "sim": 58.44,
+        "wall": 3679.458368829,
+        "revision": 1
+      },
+      {
+        "sim": 58.44,
+        "wall": 3679.489924481,
+        "revision": 1
+      },
+      {
+        "sim": 58.908,
+        "wall": 3679.552658345,
+        "revision": 1
+      },
+      {
+        "sim": 58.917,
+        "wall": 3679.584788044,
+        "revision": 1
+      },
+      {
+        "sim": 59.002,
+        "wall": 3680.280984545,
+        "revision": 1
+      },
+      {
+        "sim": 59.312,
+        "wall": 3680.41033265,
+        "revision": 1
+      },
+      {
+        "sim": 60.144,
+        "wall": 3680.472964571,
+        "revision": 1
+      },
+      {
+        "sim": 60.258,
+        "wall": 3680.554918912,
+        "revision": 1
+      },
+      {
+        "sim": 60.323,
+        "wall": 3680.767005699,
+        "revision": 1
+      },
+      {
+        "sim": 61.208,
+        "wall": 3681.327107284,
+        "revision": 1
+      },
+      {
+        "sim": 61.208,
+        "wall": 3681.360847871,
+        "revision": 1
+      },
+      {
+        "sim": 61.349,
+        "wall": 3681.607253964,
+        "revision": 1
+      },
+      {
+        "sim": 61.645,
+        "wall": 3681.767366715,
+        "revision": 1
+      },
+      {
+        "sim": 61.72,
+        "wall": 3681.801335225,
+        "revision": 1
+      },
+      {
+        "sim": 61.838,
+        "wall": 3681.879582116,
+        "revision": 1
+      },
+      {
+        "sim": 62.16,
+        "wall": 3682.859347261,
+        "revision": 1
+      },
+      {
+        "sim": 62.207,
+        "wall": 3682.960426306,
+        "revision": 1
+      },
+      {
+        "sim": 62.311,
+        "wall": 3683.037539897,
+        "revision": 1
+      },
+      {
+        "sim": 62.455,
+        "wall": 3684.393472786,
+        "revision": 1
+      },
+      {
+        "sim": 63.0,
+        "wall": 3684.486540175,
+        "revision": 1
+      },
+      {
+        "sim": 63.0,
+        "wall": 3684.521902928,
+        "revision": 1
+      },
+      {
+        "sim": 63.003,
+        "wall": 3684.570302052,
+        "revision": 1
+      },
+      {
+        "sim": 63.17,
+        "wall": 3684.95951545,
+        "revision": 1
+      },
+      {
+        "sim": 63.303,
+        "wall": 3685.011814896,
+        "revision": 1
+      },
+      {
+        "sim": 63.56,
+        "wall": 3685.0641631,
+        "revision": 1
+      },
+      {
+        "sim": 63.595,
+        "wall": 3685.108816069,
+        "revision": 1
+      },
+      {
+        "sim": 63.752,
+        "wall": 3685.203810231,
+        "revision": 1
+      },
+      {
+        "sim": 63.758,
+        "wall": 3685.239150078,
+        "revision": 1
+      },
+      {
+        "sim": 63.81,
+        "wall": 3685.274231965,
+        "revision": 1
+      },
+      {
+        "sim": 64.022,
+        "wall": 3685.650179979,
+        "revision": 1
+      },
+      {
+        "sim": 64.18,
+        "wall": 3685.684377581,
+        "revision": 1
+      },
+      {
+        "sim": 64.261,
+        "wall": 3685.765147831,
+        "revision": 1
+      },
+      {
+        "sim": 64.404,
+        "wall": 3686.078423294,
+        "revision": 1
+      },
+      {
+        "sim": 64.489,
+        "wall": 3686.11822164,
+        "revision": 1
+      },
+      {
+        "sim": 64.512,
+        "wall": 3686.149949552,
+        "revision": 1
+      },
+      {
+        "sim": 64.684,
+        "wall": 3686.401775537,
+        "revision": 1
+      },
+      {
+        "sim": 64.746,
+        "wall": 3686.579392799,
+        "revision": 1
+      },
+      {
+        "sim": 64.821,
+        "wall": 3686.694709148,
+        "revision": 1
+      },
+      {
+        "sim": 64.926,
+        "wall": 3686.796494484,
+        "revision": 1
+      },
+      {
+        "sim": 65.077,
+        "wall": 3687.117414096,
+        "revision": 1
+      },
+      {
+        "sim": 65.107,
+        "wall": 3687.321936463,
+        "revision": 1
+      },
+      {
+        "sim": 65.288,
+        "wall": 3687.755721604,
+        "revision": 1
+      },
+      {
+        "sim": 65.534,
+        "wall": 3687.865263678,
+        "revision": 1
+      },
+      {
+        "sim": 65.549,
+        "wall": 3687.898830715,
+        "revision": 1
+      },
+      {
+        "sim": 65.61,
+        "wall": 3688.065520286,
+        "revision": 1
+      },
+      {
+        "sim": 65.843,
+        "wall": 3688.2671506,
+        "revision": 1
+      },
+      {
+        "sim": 65.843,
+        "wall": 3688.300901283,
+        "revision": 1
+      },
+      {
+        "sim": 65.918,
+        "wall": 3688.355392389,
+        "revision": 1
+      },
+      {
+        "sim": 66.204,
+        "wall": 3688.690273735,
+        "revision": 1
+      },
+      {
+        "sim": 66.815,
+        "wall": 3688.808746659,
+        "revision": 1
+      },
+      {
+        "sim": 66.902,
+        "wall": 3688.870874223,
+        "revision": 1
+      },
+      {
+        "sim": 67.012,
+        "wall": 3689.771041877,
+        "revision": 1
+      },
+      {
+        "sim": 67.137,
+        "wall": 3689.963951176,
+        "revision": 1
+      },
+      {
+        "sim": 67.441,
+        "wall": 3690.009000421,
+        "revision": 1
+      },
+      {
+        "sim": 67.578,
+        "wall": 3690.055770607,
+        "revision": 1
+      },
+      {
+        "sim": 67.913,
+        "wall": 3690.114050425,
+        "revision": 1
+      },
+      {
+        "sim": 67.913,
+        "wall": 3690.154270824,
+        "revision": 1
+      },
+      {
+        "sim": 68.023,
+        "wall": 3690.438586745,
+        "revision": 1
+      },
+      {
+        "sim": 68.114,
+        "wall": 3690.698969728,
+        "revision": 1
+      },
+      {
+        "sim": 68.228,
+        "wall": 3691.028830261,
+        "revision": 1
+      },
+      {
+        "sim": 68.39,
+        "wall": 3691.082655691,
+        "revision": 1
+      },
+      {
+        "sim": 68.507,
+        "wall": 3691.126818522,
+        "revision": 1
+      },
+      {
+        "sim": 68.618,
+        "wall": 3691.328381048,
+        "revision": 1
+      },
+      {
+        "sim": 68.746,
+        "wall": 3691.65957827,
+        "revision": 1
+      },
+      {
+        "sim": 68.82,
+        "wall": 3691.732322591,
+        "revision": 1
+      },
+      {
+        "sim": 68.982,
+        "wall": 3691.8532686,
+        "revision": 1
+      },
+      {
+        "sim": 69.058,
+        "wall": 3693.300037395,
+        "revision": 1
+      },
+      {
+        "sim": 69.113,
+        "wall": 3693.445513578,
+        "revision": 1
+      },
+      {
+        "sim": 69.237,
+        "wall": 3693.702576317,
+        "revision": 1
+      },
+      {
+        "sim": 69.331,
+        "wall": 3693.763865711,
+        "revision": 1
+      },
+      {
+        "sim": 69.632,
+        "wall": 3693.842909641,
+        "revision": 1
+      },
+      {
+        "sim": 69.784,
+        "wall": 3694.917873487,
+        "revision": 1
+      },
+      {
+        "sim": 69.891,
+        "wall": 3695.081879386,
+        "revision": 1
+      },
+      {
+        "sim": 70.403,
+        "wall": 3695.130063705,
+        "revision": 1
+      },
+      {
+        "sim": 70.403,
+        "wall": 3695.166287268,
+        "revision": 1
+      }
+    ],
+    "pending_revision": 1
+  }
+}

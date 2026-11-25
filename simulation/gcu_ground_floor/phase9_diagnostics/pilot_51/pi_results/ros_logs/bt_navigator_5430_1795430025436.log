@@ -1,0 +1,21 @@
+[INFO] [1795430025.536154998] [bt_navigator]: 
+	bt_navigator lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795430025.537334503] [bt_navigator]: Creating
+[INFO] [1795430098.459843753] [bt_navigator]: Configuring
+[INFO] [1795430099.011028072] [bt_navigator]: Activating
+[INFO] [1795430099.321276359] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[INFO] [1795430099.655045637] [bt_navigator]: Begin navigating from current location (-0.50, -12.95) to (-0.03, -12.95)
+[WARN] [1795430100.675808748] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[INFO] [1795430103.105969696] [bt_navigator]: Received goal preemption request
+[INFO] [1795430103.106807260] [bt_navigator]: Begin navigating from current location (-0.32, -12.95) to (1.00, -12.96)
+[INFO] [1795430105.397975260] [bt_navigator]: [navigate_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1795430105.398614502] [bt_navigator]: Goal canceled
+[INFO] [1795430105.570397224] [bt_navigator]: Deactivating
+[INFO] [1795430105.570575195] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1795430110.139522684] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795430110.140134205] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[INFO] [1795430110.140515591] [bt_navigator]: Cleaning up
+[INFO] [1795430110.730120131] [bt_navigator]: Completed Cleaning up
+[INFO] [1795430110.730470926] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.

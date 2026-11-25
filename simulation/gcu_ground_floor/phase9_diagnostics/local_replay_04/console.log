@@ -1,0 +1,33 @@
+{
+  "passed": false,
+  "rate": 1.0,
+  "scope": "Local AMCL/TF timing diagnostic only; no full-stack resource or closed-loop mission result",
+  "timing": {
+    "scope": "Local AMCL/TF replay timing only; no EKF, controller, mission or localization-accuracy claim",
+    "replay_rate": 1.0,
+    "recording_duration_sim_s": 55.1,
+    "measured_replay_wall_s": 55.10390108699994,
+    "expected_scans": 552,
+    "received_unique_scans": 552,
+    "tf_queries": 1375,
+    "tf_query_failures": 0,
+    "max_pose_observation_gap_sim_s": 0.17119412299999937,
+    "max_tf_age_sim_s": 0.045377069000004155,
+    "max_scan_publication_lateness_wall_s": 0.010319727000023704,
+    "max_clock_receipt_gap_wall_s": 0.18579561499973352,
+    "thresholds": {
+      "scan_publication_lateness_wall_s": 0.1,
+      "tf_age_sim_s": 0.15,
+      "pose_observation_gap_sim_s": 0.15
+    },
+    "passed": false
+  },
+  "process_exits": {
+    "map_server": 0,
+    "amcl": 0,
+    "lifecycle": 0,
+    "observer": 0,
+    "feed": 0
+  },
+  "replay_manifest_sha256": "38034ae7a3937d491dd068a0be9ab7361c2e2779b3dc1ed92d148fc8bc90e4d3"
+}

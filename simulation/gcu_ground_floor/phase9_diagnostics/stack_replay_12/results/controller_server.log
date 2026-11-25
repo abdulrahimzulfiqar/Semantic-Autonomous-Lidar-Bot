@@ -1,0 +1,102 @@
+[INFO] [1795266346.531246306] [controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795266346.653180063] [controller_server]: Creating controller server
+[INFO] [1795266346.910851182] [local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795266346.921952770] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [1795266417.157245832] [controller_server]: Configuring controller interface
+[INFO] [1795266417.157957641] [controller_server]: getting goal checker plugins..
+[INFO] [1795266417.158861505] [controller_server]: Controller frequency set to 10.0000Hz
+[INFO] [1795266417.159110244] [local_costmap.local_costmap]: Configuring
+[INFO] [1795266417.196207040] [local_costmap.local_costmap]: Using plugin "static_layer"
+[INFO] [1795266417.237694525] [local_costmap.local_costmap]: Subscribing to the map topic (/osmag/planning_window) with transient local durability
+[INFO] [1795266417.242543877] [local_costmap.local_costmap]: Initialized plugin "static_layer"
+[INFO] [1795266417.242711598] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[INFO] [1795266417.270995812] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[INFO] [1795266417.347804995] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1795266417.348006994] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[INFO] [1795266417.364873071] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1795266417.365079643] [local_costmap.local_costmap]: Using costmap filter "mission_keepout"
+[INFO] [1795266417.389594848] [local_costmap.local_costmap]: Initialized costmap filter "mission_keepout"
+[INFO] [1795266417.389805995] [local_costmap.local_costmap]: Using costmap filter "constraint_inflation"
+[INFO] [1795266417.402794305] [local_costmap.local_costmap]: Initialized costmap filter "constraint_inflation"
+[INFO] [1795266417.471604770] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[INFO] [1795266417.476428586] [local_costmap.local_costmap]: StaticLayer: Resizing static layer to 128 X 128 at 0.058644 m/pix
+[INFO] [1795266417.488341367] [controller_server]: Created goal checker : goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1795266417.500256852] [controller_server]: Controller Server has goal_checker  goal checkers available.
+[INFO] [1795266417.519056859] [controller_server]: Created controller : FollowPath of type nav2_rotation_shim_controller::RotationShimController
+[INFO] [1795266417.555347846] [controller_server]: Created internal controller for rotation shimming: FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1795266417.608610632] [controller_server]: Controller Server has FollowPath  controllers available.
+[INFO] [1795266417.668456553] [controller_server]: Activating
+[INFO] [1795266417.668650793] [local_costmap.local_costmap]: Activating
+[INFO] [1795266417.668715977] [local_costmap.local_costmap]: Checking transform
+[INFO] [1795266417.669075956] [local_costmap.local_costmap]: start
+[INFO] [1795266417.671173496] [local_costmap.local_costmap]: KeepoutFilter: Subscribing to "/osmag/constraint_filter_info" topic for filter info...
+[INFO] [1795266417.677172303] [local_costmap.local_costmap]: KeepoutFilter: Received filter info from /osmag/constraint_filter_info topic.
+[INFO] [1795266417.677361394] [local_costmap.local_costmap]: KeepoutFilter: Subscribing to "/osmag/constraint_mask" topic for filter mask...
+[INFO] [1795266417.689571710] [local_costmap.local_costmap]: KeepoutFilter: Received filter mask from /osmag/constraint_mask topic.
+[WARN] [1795266417.701188512] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266417.778010769] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[INFO] [1795266417.874720506] [controller_server]: Activating controller: FollowPath of type nav2_rotation_shim_controller::RotationShimController
+[INFO] [1795266417.874909375] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1795266417.875089967] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[WARN] [1795266417.896363437] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266417.979099316] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266418.093581050] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266418.211755144] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266418.284741078] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266418.407495268] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266418.486497583] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266418.630375318] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266418.704159560] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266418.790329154] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266418.977960968] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266419.158857962] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[INFO] [1795266419.161864736] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1795266419.257080187] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266419.332140291] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266419.447801718] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266419.521648756] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266419.611179566] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266419.691948755] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266419.800021740] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266419.901967401] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.003589249] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.166432081] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.194859145] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.301974525] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.393126729] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.471823286] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.616932548] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.732614401] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.776429146] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266420.922409178] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266421.038752915] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266421.123199317] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266421.174581801] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266421.290194506] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266421.410873136] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266421.552233648] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266421.632294101] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1795266421.709880629] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[INFO] [1795266421.762637769] [controller_server]: Goal was canceled. Stopping the robot.
+[INFO] [1795266421.762868416] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[WARN] [1795266421.792230751] [local_costmap.local_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[INFO] [1795266422.030781902] [controller_server]: Deactivating
+[INFO] [1795266422.031009252] [controller_server]: Deactivating controller: FollowPath of type nav2_rotation_shim_controller::RotationShimController
+[INFO] [1795266422.031087992] [controller_server]: Deactivating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1795266422.031187991] [local_costmap.local_costmap]: Deactivating
+[INFO] [1795266422.069774979] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1795266426.971090805] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795266426.971316711] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1795266426.971509561] [controller_server]: Cleaning up
+[INFO] [1795266426.971595764] [controller_server]: Cleaning up controller: FollowPath of type nav2_rotation_shim_controller::RotationShimController
+[INFO] [1795266426.971655671] [controller_server]: Cleaning up controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1795266426.971885170] [local_costmap.local_costmap]: Cleaning up
+[INFO] [1795266427.053090761] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1795266427.061119645] [local_costmap.local_costmap]: Destroying
+[INFO] [1795266427.118013604] [controller_server]: Destroying

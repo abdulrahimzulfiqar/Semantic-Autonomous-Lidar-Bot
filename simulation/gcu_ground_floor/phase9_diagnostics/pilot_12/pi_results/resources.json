@@ -1,0 +1,5157 @@
+{
+  "scope": "One-second process RSS/PSS and CPU-time samples; pilot, not repeated benchmark",
+  "samples": [
+    {
+      "wall_monotonic": 6691.312543655,
+      "utc": "2026-11-17T15:19:26.849785+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 0.01,
+          "memory_kib": {
+            "Rss": 5724,
+            "Pss": 2511,
+            "Private_Dirty": 1696
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3245736,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "58913",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6692.381043415,
+      "utc": "2026-11-17T15:19:27.918286+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 0.96,
+          "memory_kib": {
+            "Rss": 38192,
+            "Pss": 25225,
+            "Private_Dirty": 19412
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 0.72,
+          "memory_kib": {
+            "Rss": 30568,
+            "Pss": 17708,
+            "Private_Dirty": 14572
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 0.84,
+          "memory_kib": {
+            "Rss": 26268,
+            "Pss": 16271,
+            "Private_Dirty": 14204
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 0.88,
+          "memory_kib": {
+            "Rss": 28724,
+            "Pss": 17737,
+            "Private_Dirty": 15168
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3244804,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "59400",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6693.435888478,
+      "utc": "2026-11-17T15:19:28.973124+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 1.87,
+          "memory_kib": {
+            "Rss": 47028,
+            "Pss": 31035,
+            "Private_Dirty": 25760
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 1.64,
+          "memory_kib": {
+            "Rss": 45800,
+            "Pss": 29834,
+            "Private_Dirty": 24964
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 1.83,
+          "memory_kib": {
+            "Rss": 33904,
+            "Pss": 22370,
+            "Private_Dirty": 19644
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 1.77,
+          "memory_kib": {
+            "Rss": 43236,
+            "Pss": 28467,
+            "Private_Dirty": 24460
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3218992,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6694.478278997,
+      "utc": "2026-11-17T15:19:30.015520+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 2.22,
+          "memory_kib": {
+            "Rss": 47660,
+            "Pss": 30460,
+            "Private_Dirty": 26392
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 1.96,
+          "memory_kib": {
+            "Rss": 46412,
+            "Pss": 29433,
+            "Private_Dirty": 25576
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.28,
+          "memory_kib": {
+            "Rss": 36112,
+            "Pss": 24106,
+            "Private_Dirty": 21852
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 2.2,
+          "memory_kib": {
+            "Rss": 48908,
+            "Pss": 31643,
+            "Private_Dirty": 27364
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.27,
+          "memory_kib": {
+            "Rss": 29384,
+            "Pss": 19689,
+            "Private_Dirty": 12996
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.19,
+          "memory_kib": {
+            "Rss": 14796,
+            "Pss": 5624,
+            "Private_Dirty": 3328
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.2,
+          "memory_kib": {
+            "Rss": 16564,
+            "Pss": 7954,
+            "Private_Dirty": 3452
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 0.22,
+          "memory_kib": {
+            "Rss": 11236,
+            "Pss": 6397,
+            "Private_Dirty": 5672
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 0.2,
+          "memory_kib": {
+            "Rss": 15612,
+            "Pss": 6228,
+            "Private_Dirty": 3212
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3173516,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6695.519187455,
+      "utc": "2026-11-17T15:19:31.056422+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 2.43,
+          "memory_kib": {
+            "Rss": 47780,
+            "Pss": 29998,
+            "Private_Dirty": 26512
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 2.15,
+          "memory_kib": {
+            "Rss": 46540,
+            "Pss": 28985,
+            "Private_Dirty": 25704
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23883,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 2.29,
+          "memory_kib": {
+            "Rss": 49036,
+            "Pss": 31163,
+            "Private_Dirty": 27492
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.53,
+          "memory_kib": {
+            "Rss": 23600,
+            "Pss": 13490,
+            "Private_Dirty": 6676
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.26,
+          "memory_kib": {
+            "Rss": 15104,
+            "Pss": 5592,
+            "Private_Dirty": 3564
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.23,
+          "memory_kib": {
+            "Rss": 16688,
+            "Pss": 7860,
+            "Private_Dirty": 3576
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 1.22,
+          "memory_kib": {
+            "Rss": 40044,
+            "Pss": 24098,
+            "Private_Dirty": 21160
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 0.38,
+          "memory_kib": {
+            "Rss": 36812,
+            "Pss": 26686,
+            "Private_Dirty": 23168
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3139300,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60374",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6696.574103722,
+      "utc": "2026-11-17T15:19:32.111340+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 2.63,
+          "memory_kib": {
+            "Rss": 47852,
+            "Pss": 29936,
+            "Private_Dirty": 26584
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 2.34,
+          "memory_kib": {
+            "Rss": 46612,
+            "Pss": 28986,
+            "Private_Dirty": 25776
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 2.59,
+          "memory_kib": {
+            "Rss": 49120,
+            "Pss": 31077,
+            "Private_Dirty": 27576
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.57,
+          "memory_kib": {
+            "Rss": 23708,
+            "Pss": 13573,
+            "Private_Dirty": 6784
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.32,
+          "memory_kib": {
+            "Rss": 15200,
+            "Pss": 5666,
+            "Private_Dirty": 3660
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.26,
+          "memory_kib": {
+            "Rss": 16808,
+            "Pss": 7956,
+            "Private_Dirty": 3696
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 2.19,
+          "memory_kib": {
+            "Rss": 49472,
+            "Pss": 31454,
+            "Private_Dirty": 28028
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 0.51,
+          "memory_kib": {
+            "Rss": 36940,
+            "Pss": 26787,
+            "Private_Dirty": 23296
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3128824,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61835",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6697.618289553,
+      "utc": "2026-11-17T15:19:33.155524+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 2.82,
+          "memory_kib": {
+            "Rss": 47852,
+            "Pss": 29936,
+            "Private_Dirty": 26584
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 2.51,
+          "memory_kib": {
+            "Rss": 46612,
+            "Pss": 28986,
+            "Private_Dirty": 25776
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 3.38,
+          "memory_kib": {
+            "Rss": 49120,
+            "Pss": 31077,
+            "Private_Dirty": 27576
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.6,
+          "memory_kib": {
+            "Rss": 23712,
+            "Pss": 13577,
+            "Private_Dirty": 6788
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.39,
+          "memory_kib": {
+            "Rss": 15216,
+            "Pss": 5682,
+            "Private_Dirty": 3676
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.27,
+          "memory_kib": {
+            "Rss": 16812,
+            "Pss": 7960,
+            "Private_Dirty": 3700
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 3.15,
+          "memory_kib": {
+            "Rss": 49504,
+            "Pss": 31487,
+            "Private_Dirty": 28060
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 0.78,
+          "memory_kib": {
+            "Rss": 36944,
+            "Pss": 26792,
+            "Private_Dirty": 23300
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3123644,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61835",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6698.676153347,
+      "utc": "2026-11-17T15:19:34.213389+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 2.99,
+          "memory_kib": {
+            "Rss": 47852,
+            "Pss": 29935,
+            "Private_Dirty": 26584
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 2.67,
+          "memory_kib": {
+            "Rss": 46612,
+            "Pss": 28986,
+            "Private_Dirty": 25776
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 4.16,
+          "memory_kib": {
+            "Rss": 49124,
+            "Pss": 31081,
+            "Private_Dirty": 27580
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.62,
+          "memory_kib": {
+            "Rss": 23712,
+            "Pss": 13577,
+            "Private_Dirty": 6788
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.46,
+          "memory_kib": {
+            "Rss": 15228,
+            "Pss": 5694,
+            "Private_Dirty": 3688
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.28,
+          "memory_kib": {
+            "Rss": 16812,
+            "Pss": 7960,
+            "Private_Dirty": 3700
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 4.1,
+          "memory_kib": {
+            "Rss": 49516,
+            "Pss": 31499,
+            "Private_Dirty": 28072
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 1.05,
+          "memory_kib": {
+            "Rss": 36944,
+            "Pss": 26791,
+            "Private_Dirty": 23300
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3121000,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6699.721062472,
+      "utc": "2026-11-17T15:19:35.258297+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 3.16,
+          "memory_kib": {
+            "Rss": 47852,
+            "Pss": 29935,
+            "Private_Dirty": 26584
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 2.81,
+          "memory_kib": {
+            "Rss": 46612,
+            "Pss": 28985,
+            "Private_Dirty": 25776
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 4.95,
+          "memory_kib": {
+            "Rss": 49132,
+            "Pss": 31088,
+            "Private_Dirty": 27588
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.65,
+          "memory_kib": {
+            "Rss": 23712,
+            "Pss": 13577,
+            "Private_Dirty": 6788
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.52,
+          "memory_kib": {
+            "Rss": 15240,
+            "Pss": 5706,
+            "Private_Dirty": 3700
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.29,
+          "memory_kib": {
+            "Rss": 16812,
+            "Pss": 7960,
+            "Private_Dirty": 3700
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 5.08,
+          "memory_kib": {
+            "Rss": 49520,
+            "Pss": 31502,
+            "Private_Dirty": 28076
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 1.32,
+          "memory_kib": {
+            "Rss": 36944,
+            "Pss": 26791,
+            "Private_Dirty": 23300
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3121240,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6700.765548262,
+      "utc": "2026-11-17T15:19:36.302784+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 3.33,
+          "memory_kib": {
+            "Rss": 47852,
+            "Pss": 29935,
+            "Private_Dirty": 26584
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 2.96,
+          "memory_kib": {
+            "Rss": 46612,
+            "Pss": 28985,
+            "Private_Dirty": 25776
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 5.83,
+          "memory_kib": {
+            "Rss": 49136,
+            "Pss": 31092,
+            "Private_Dirty": 27592
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.67,
+          "memory_kib": {
+            "Rss": 23712,
+            "Pss": 13577,
+            "Private_Dirty": 6788
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.58,
+          "memory_kib": {
+            "Rss": 15244,
+            "Pss": 5710,
+            "Private_Dirty": 3704
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.29,
+          "memory_kib": {
+            "Rss": 16812,
+            "Pss": 7960,
+            "Private_Dirty": 3700
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 6.1,
+          "memory_kib": {
+            "Rss": 49524,
+            "Pss": 31506,
+            "Private_Dirty": 28080
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 1.61,
+          "memory_kib": {
+            "Rss": 36944,
+            "Pss": 26791,
+            "Private_Dirty": 23300
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3108580,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6701.821131039,
+      "utc": "2026-11-17T15:19:37.358366+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 3.51,
+          "memory_kib": {
+            "Rss": 47860,
+            "Pss": 29942,
+            "Private_Dirty": 26592
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 3.11,
+          "memory_kib": {
+            "Rss": 46616,
+            "Pss": 28989,
+            "Private_Dirty": 25780
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23877,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 6.68,
+          "memory_kib": {
+            "Rss": 49136,
+            "Pss": 31092,
+            "Private_Dirty": 27592
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.7,
+          "memory_kib": {
+            "Rss": 23716,
+            "Pss": 13580,
+            "Private_Dirty": 6792
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.65,
+          "memory_kib": {
+            "Rss": 15252,
+            "Pss": 5717,
+            "Private_Dirty": 3712
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.29,
+          "memory_kib": {
+            "Rss": 16812,
+            "Pss": 7959,
+            "Private_Dirty": 3700
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 7.09,
+          "memory_kib": {
+            "Rss": 49528,
+            "Pss": 31510,
+            "Private_Dirty": 28084
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 1.88,
+          "memory_kib": {
+            "Rss": 36948,
+            "Pss": 26794,
+            "Private_Dirty": 23304
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3114720,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "63296",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6702.872798211,
+      "utc": "2026-11-17T15:19:38.410035+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 3.68,
+          "memory_kib": {
+            "Rss": 47864,
+            "Pss": 29947,
+            "Private_Dirty": 26596
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 3.26,
+          "memory_kib": {
+            "Rss": 46620,
+            "Pss": 28993,
+            "Private_Dirty": 25784
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 7.53,
+          "memory_kib": {
+            "Rss": 49144,
+            "Pss": 31100,
+            "Private_Dirty": 27600
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.73,
+          "memory_kib": {
+            "Rss": 23720,
+            "Pss": 13585,
+            "Private_Dirty": 6796
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.72,
+          "memory_kib": {
+            "Rss": 15260,
+            "Pss": 5726,
+            "Private_Dirty": 3720
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.3,
+          "memory_kib": {
+            "Rss": 16816,
+            "Pss": 7964,
+            "Private_Dirty": 3704
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 8.06,
+          "memory_kib": {
+            "Rss": 49532,
+            "Pss": 31514,
+            "Private_Dirty": 28088
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 2.15,
+          "memory_kib": {
+            "Rss": 36952,
+            "Pss": 26799,
+            "Private_Dirty": 23308
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3112772,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61348",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6703.957817538,
+      "utc": "2026-11-17T15:19:39.495052+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 3.86,
+          "memory_kib": {
+            "Rss": 47864,
+            "Pss": 29946,
+            "Private_Dirty": 26596
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 3.42,
+          "memory_kib": {
+            "Rss": 46620,
+            "Pss": 28993,
+            "Private_Dirty": 25784
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23877,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 8.42,
+          "memory_kib": {
+            "Rss": 49148,
+            "Pss": 31104,
+            "Private_Dirty": 27604
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.75,
+          "memory_kib": {
+            "Rss": 23720,
+            "Pss": 13584,
+            "Private_Dirty": 6796
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.79,
+          "memory_kib": {
+            "Rss": 15264,
+            "Pss": 5729,
+            "Private_Dirty": 3724
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.31,
+          "memory_kib": {
+            "Rss": 16820,
+            "Pss": 7967,
+            "Private_Dirty": 3708
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 9.07,
+          "memory_kib": {
+            "Rss": 49540,
+            "Pss": 31522,
+            "Private_Dirty": 28096
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 2.44,
+          "memory_kib": {
+            "Rss": 36952,
+            "Pss": 26798,
+            "Private_Dirty": 23308
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3119132,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6705.008379563,
+      "utc": "2026-11-17T15:19:40.545614+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 4.03,
+          "memory_kib": {
+            "Rss": 47864,
+            "Pss": 29947,
+            "Private_Dirty": 26596
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 3.57,
+          "memory_kib": {
+            "Rss": 46620,
+            "Pss": 28993,
+            "Private_Dirty": 25784
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 9.31,
+          "memory_kib": {
+            "Rss": 49148,
+            "Pss": 31104,
+            "Private_Dirty": 27604
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.78,
+          "memory_kib": {
+            "Rss": 23720,
+            "Pss": 13585,
+            "Private_Dirty": 6796
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.86,
+          "memory_kib": {
+            "Rss": 15268,
+            "Pss": 5734,
+            "Private_Dirty": 3728
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.31,
+          "memory_kib": {
+            "Rss": 16820,
+            "Pss": 7968,
+            "Private_Dirty": 3708
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 10.08,
+          "memory_kib": {
+            "Rss": 49540,
+            "Pss": 31522,
+            "Private_Dirty": 28096
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 2.72,
+          "memory_kib": {
+            "Rss": 36952,
+            "Pss": 26799,
+            "Private_Dirty": 23308
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3109116,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "60861",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6706.065098343,
+      "utc": "2026-11-17T15:19:41.602334+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 4.2,
+          "memory_kib": {
+            "Rss": 47864,
+            "Pss": 29946,
+            "Private_Dirty": 26596
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 3.71,
+          "memory_kib": {
+            "Rss": 46620,
+            "Pss": 28992,
+            "Private_Dirty": 25784
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23877,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 10.23,
+          "memory_kib": {
+            "Rss": 49148,
+            "Pss": 31104,
+            "Private_Dirty": 27604
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.81,
+          "memory_kib": {
+            "Rss": 23720,
+            "Pss": 13584,
+            "Private_Dirty": 6796
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.92,
+          "memory_kib": {
+            "Rss": 15272,
+            "Pss": 5737,
+            "Private_Dirty": 3732
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.32,
+          "memory_kib": {
+            "Rss": 16820,
+            "Pss": 7967,
+            "Private_Dirty": 3708
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 11.11,
+          "memory_kib": {
+            "Rss": 49540,
+            "Pss": 31522,
+            "Private_Dirty": 28096
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 3.01,
+          "memory_kib": {
+            "Rss": 36952,
+            "Pss": 26798,
+            "Private_Dirty": 23308
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3096768,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6707.114920326,
+      "utc": "2026-11-17T15:19:42.652157+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 4.38,
+          "memory_kib": {
+            "Rss": 47864,
+            "Pss": 29947,
+            "Private_Dirty": 26596
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 3.87,
+          "memory_kib": {
+            "Rss": 46620,
+            "Pss": 28993,
+            "Private_Dirty": 25784
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 11.08,
+          "memory_kib": {
+            "Rss": 49152,
+            "Pss": 31108,
+            "Private_Dirty": 27608
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.83,
+          "memory_kib": {
+            "Rss": 23720,
+            "Pss": 13585,
+            "Private_Dirty": 6796
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 0.98,
+          "memory_kib": {
+            "Rss": 15276,
+            "Pss": 5742,
+            "Private_Dirty": 3736
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.32,
+          "memory_kib": {
+            "Rss": 16820,
+            "Pss": 7968,
+            "Private_Dirty": 3708
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 12.09,
+          "memory_kib": {
+            "Rss": 49540,
+            "Pss": 31522,
+            "Private_Dirty": 28096
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 3.29,
+          "memory_kib": {
+            "Rss": 36952,
+            "Pss": 26799,
+            "Private_Dirty": 23308
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3101836,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6708.165720769,
+      "utc": "2026-11-17T15:19:43.702955+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 4.54,
+          "memory_kib": {
+            "Rss": 47864,
+            "Pss": 29947,
+            "Private_Dirty": 26596
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 4.02,
+          "memory_kib": {
+            "Rss": 46620,
+            "Pss": 28993,
+            "Private_Dirty": 25784
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 12.0,
+          "memory_kib": {
+            "Rss": 49152,
+            "Pss": 31108,
+            "Private_Dirty": 27608
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.85,
+          "memory_kib": {
+            "Rss": 23720,
+            "Pss": 13585,
+            "Private_Dirty": 6796
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.05,
+          "memory_kib": {
+            "Rss": 15276,
+            "Pss": 5742,
+            "Private_Dirty": 3736
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.32,
+          "memory_kib": {
+            "Rss": 16820,
+            "Pss": 7968,
+            "Private_Dirty": 3708
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 13.13,
+          "memory_kib": {
+            "Rss": 49540,
+            "Pss": 31522,
+            "Private_Dirty": 28096
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 3.58,
+          "memory_kib": {
+            "Rss": 36952,
+            "Pss": 26799,
+            "Private_Dirty": 23308
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3105024,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "63296",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6709.215197531,
+      "utc": "2026-11-17T15:19:44.752432+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 4.72,
+          "memory_kib": {
+            "Rss": 47868,
+            "Pss": 29951,
+            "Private_Dirty": 26600
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 4.17,
+          "memory_kib": {
+            "Rss": 46624,
+            "Pss": 28997,
+            "Private_Dirty": 25788
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 12.8,
+          "memory_kib": {
+            "Rss": 49152,
+            "Pss": 31108,
+            "Private_Dirty": 27608
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.88,
+          "memory_kib": {
+            "Rss": 23724,
+            "Pss": 13589,
+            "Private_Dirty": 6800
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.11,
+          "memory_kib": {
+            "Rss": 15276,
+            "Pss": 5742,
+            "Private_Dirty": 3736
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.34,
+          "memory_kib": {
+            "Rss": 16820,
+            "Pss": 7968,
+            "Private_Dirty": 3708
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 14.07,
+          "memory_kib": {
+            "Rss": 49540,
+            "Pss": 31522,
+            "Private_Dirty": 28096
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 3.84,
+          "memory_kib": {
+            "Rss": 36956,
+            "Pss": 26803,
+            "Private_Dirty": 23312
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3111068,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61835",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6710.265539778,
+      "utc": "2026-11-17T15:19:45.802777+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 4.89,
+          "memory_kib": {
+            "Rss": 47872,
+            "Pss": 29955,
+            "Private_Dirty": 26604
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 4.32,
+          "memory_kib": {
+            "Rss": 46628,
+            "Pss": 29001,
+            "Private_Dirty": 25792
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23878,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 13.7,
+          "memory_kib": {
+            "Rss": 49160,
+            "Pss": 31116,
+            "Private_Dirty": 27616
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.9,
+          "memory_kib": {
+            "Rss": 23728,
+            "Pss": 13593,
+            "Private_Dirty": 6804
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.18,
+          "memory_kib": {
+            "Rss": 15284,
+            "Pss": 5750,
+            "Private_Dirty": 3744
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.34,
+          "memory_kib": {
+            "Rss": 16824,
+            "Pss": 7972,
+            "Private_Dirty": 3712
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 15.09,
+          "memory_kib": {
+            "Rss": 49544,
+            "Pss": 31526,
+            "Private_Dirty": 28100
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 4.13,
+          "memory_kib": {
+            "Rss": 36960,
+            "Pss": 26807,
+            "Private_Dirty": 23316
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3102640,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6711.314967599,
+      "utc": "2026-11-17T15:19:46.852202+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 5.07,
+          "memory_kib": {
+            "Rss": 47872,
+            "Pss": 29846,
+            "Private_Dirty": 26604
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 4.48,
+          "memory_kib": {
+            "Rss": 46628,
+            "Pss": 28892,
+            "Private_Dirty": 25792
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23679,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 14.46,
+          "memory_kib": {
+            "Rss": 49160,
+            "Pss": 31007,
+            "Private_Dirty": 27616
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.93,
+          "memory_kib": {
+            "Rss": 23728,
+            "Pss": 13580,
+            "Private_Dirty": 6804
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.24,
+          "memory_kib": {
+            "Rss": 15284,
+            "Pss": 5739,
+            "Private_Dirty": 3744
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.34,
+          "memory_kib": {
+            "Rss": 16828,
+            "Pss": 7965,
+            "Private_Dirty": 3716
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 16.02,
+          "memory_kib": {
+            "Rss": 49548,
+            "Pss": 31421,
+            "Private_Dirty": 28104
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 4.4,
+          "memory_kib": {
+            "Rss": 36960,
+            "Pss": 26795,
+            "Private_Dirty": 23316
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3117736,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62809",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6712.361978797,
+      "utc": "2026-11-17T15:19:47.899214+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 5.27,
+          "memory_kib": {
+            "Rss": 47876,
+            "Pss": 29847,
+            "Private_Dirty": 26608
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 4.66,
+          "memory_kib": {
+            "Rss": 46628,
+            "Pss": 28890,
+            "Private_Dirty": 25792
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23679,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 15.2,
+          "memory_kib": {
+            "Rss": 49164,
+            "Pss": 31009,
+            "Private_Dirty": 27620
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.95,
+          "memory_kib": {
+            "Rss": 23732,
+            "Pss": 13584,
+            "Private_Dirty": 6808
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.31,
+          "memory_kib": {
+            "Rss": 15284,
+            "Pss": 5739,
+            "Private_Dirty": 3744
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.35,
+          "memory_kib": {
+            "Rss": 16828,
+            "Pss": 7965,
+            "Private_Dirty": 3716
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 16.94,
+          "memory_kib": {
+            "Rss": 49548,
+            "Pss": 31419,
+            "Private_Dirty": 28104
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 4.65,
+          "memory_kib": {
+            "Rss": 36960,
+            "Pss": 26795,
+            "Private_Dirty": 23316
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3108160,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6713.460322494,
+      "utc": "2026-11-17T15:19:48.997562+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 5.48,
+          "memory_kib": {
+            "Rss": 47876,
+            "Pss": 29847,
+            "Private_Dirty": 26608
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 4.84,
+          "memory_kib": {
+            "Rss": 46628,
+            "Pss": 28890,
+            "Private_Dirty": 25792
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23679,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 16.0,
+          "memory_kib": {
+            "Rss": 49164,
+            "Pss": 31009,
+            "Private_Dirty": 27620
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 0.98,
+          "memory_kib": {
+            "Rss": 23732,
+            "Pss": 13584,
+            "Private_Dirty": 6808
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.38,
+          "memory_kib": {
+            "Rss": 15284,
+            "Pss": 5739,
+            "Private_Dirty": 3744
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.36,
+          "memory_kib": {
+            "Rss": 16828,
+            "Pss": 7965,
+            "Private_Dirty": 3716
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 17.92,
+          "memory_kib": {
+            "Rss": 49548,
+            "Pss": 31419,
+            "Private_Dirty": 28104
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 4.94,
+          "memory_kib": {
+            "Rss": 36960,
+            "Pss": 26795,
+            "Private_Dirty": 23316
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3106900,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "61835",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6714.535136367,
+      "utc": "2026-11-17T15:19:50.072373+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 5.74,
+          "memory_kib": {
+            "Rss": 47876,
+            "Pss": 29847,
+            "Private_Dirty": 26608
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 5.08,
+          "memory_kib": {
+            "Rss": 46628,
+            "Pss": 28890,
+            "Private_Dirty": 25792
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23679,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 16.76,
+          "memory_kib": {
+            "Rss": 49164,
+            "Pss": 31009,
+            "Private_Dirty": 27620
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.03,
+          "memory_kib": {
+            "Rss": 23732,
+            "Pss": 13584,
+            "Private_Dirty": 6808
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.45,
+          "memory_kib": {
+            "Rss": 15284,
+            "Pss": 5739,
+            "Private_Dirty": 3744
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.36,
+          "memory_kib": {
+            "Rss": 16828,
+            "Pss": 7965,
+            "Private_Dirty": 3716
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 18.8,
+          "memory_kib": {
+            "Rss": 49548,
+            "Pss": 31419,
+            "Private_Dirty": 28104
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 5.2,
+          "memory_kib": {
+            "Rss": 36960,
+            "Pss": 26795,
+            "Private_Dirty": 23316
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3105164,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6715.63534605,
+      "utc": "2026-11-17T15:19:51.172581+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 5.98,
+          "memory_kib": {
+            "Rss": 47876,
+            "Pss": 29847,
+            "Private_Dirty": 26608
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 5.29,
+          "memory_kib": {
+            "Rss": 46628,
+            "Pss": 28890,
+            "Private_Dirty": 25792
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23679,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 17.49,
+          "memory_kib": {
+            "Rss": 49164,
+            "Pss": 31009,
+            "Private_Dirty": 27620
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.06,
+          "memory_kib": {
+            "Rss": 23732,
+            "Pss": 13584,
+            "Private_Dirty": 6808
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.53,
+          "memory_kib": {
+            "Rss": 15284,
+            "Pss": 5739,
+            "Private_Dirty": 3744
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.38,
+          "memory_kib": {
+            "Rss": 16828,
+            "Pss": 7965,
+            "Private_Dirty": 3716
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 19.75,
+          "memory_kib": {
+            "Rss": 49548,
+            "Pss": 31419,
+            "Private_Dirty": 28104
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 5.47,
+          "memory_kib": {
+            "Rss": 36960,
+            "Pss": 26795,
+            "Private_Dirty": 23316
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3090560,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6716.729052622,
+      "utc": "2026-11-17T15:19:52.266290+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 6.18,
+          "memory_kib": {
+            "Rss": 47876,
+            "Pss": 29847,
+            "Private_Dirty": 26608
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 5.48,
+          "memory_kib": {
+            "Rss": 46628,
+            "Pss": 28890,
+            "Private_Dirty": 25792
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23679,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 18.31,
+          "memory_kib": {
+            "Rss": 49164,
+            "Pss": 31009,
+            "Private_Dirty": 27620
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.09,
+          "memory_kib": {
+            "Rss": 23732,
+            "Pss": 13584,
+            "Private_Dirty": 6808
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.6,
+          "memory_kib": {
+            "Rss": 15284,
+            "Pss": 5739,
+            "Private_Dirty": 3744
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.38,
+          "memory_kib": {
+            "Rss": 16828,
+            "Pss": 7965,
+            "Private_Dirty": 3716
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 20.76,
+          "memory_kib": {
+            "Rss": 49548,
+            "Pss": 31419,
+            "Private_Dirty": 28104
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 5.76,
+          "memory_kib": {
+            "Rss": 36960,
+            "Pss": 26795,
+            "Private_Dirty": 23316
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3090560,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "63296",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6717.795632085,
+      "utc": "2026-11-17T15:19:53.332866+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 6.39,
+          "memory_kib": {
+            "Rss": 47876,
+            "Pss": 29844,
+            "Private_Dirty": 26608
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 5.66,
+          "memory_kib": {
+            "Rss": 46632,
+            "Pss": 28889,
+            "Private_Dirty": 25796
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23655,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 19.1,
+          "memory_kib": {
+            "Rss": 49168,
+            "Pss": 30979,
+            "Private_Dirty": 27624
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.12,
+          "memory_kib": {
+            "Rss": 23732,
+            "Pss": 13583,
+            "Private_Dirty": 6808
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.67,
+          "memory_kib": {
+            "Rss": 15288,
+            "Pss": 5742,
+            "Private_Dirty": 3748
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.39,
+          "memory_kib": {
+            "Rss": 16832,
+            "Pss": 7968,
+            "Private_Dirty": 3720
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 21.69,
+          "memory_kib": {
+            "Rss": 49552,
+            "Pss": 31378,
+            "Private_Dirty": 28108
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 6.02,
+          "memory_kib": {
+            "Rss": 36964,
+            "Pss": 26799,
+            "Private_Dirty": 23320
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3075968,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6718.853320899,
+      "utc": "2026-11-17T15:19:54.390555+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 6.59,
+          "memory_kib": {
+            "Rss": 47884,
+            "Pss": 29794,
+            "Private_Dirty": 26616
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 5.85,
+          "memory_kib": {
+            "Rss": 46636,
+            "Pss": 28836,
+            "Private_Dirty": 25800
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23618,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 19.89,
+          "memory_kib": {
+            "Rss": 49176,
+            "Pss": 30960,
+            "Private_Dirty": 27632
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.15,
+          "memory_kib": {
+            "Rss": 23736,
+            "Pss": 13587,
+            "Private_Dirty": 6812
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.74,
+          "memory_kib": {
+            "Rss": 15292,
+            "Pss": 5746,
+            "Private_Dirty": 3752
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.4,
+          "memory_kib": {
+            "Rss": 16836,
+            "Pss": 7972,
+            "Private_Dirty": 3724
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 22.64,
+          "memory_kib": {
+            "Rss": 49556,
+            "Pss": 31366,
+            "Private_Dirty": 28112
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 6.3,
+          "memory_kib": {
+            "Rss": 36968,
+            "Pss": 26803,
+            "Private_Dirty": 23324
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3070816,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "63783",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6719.915418029,
+      "utc": "2026-11-17T15:19:55.452652+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 6.79,
+          "memory_kib": {
+            "Rss": 47884,
+            "Pss": 29792,
+            "Private_Dirty": 26616
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 6.03,
+          "memory_kib": {
+            "Rss": 46636,
+            "Pss": 28834,
+            "Private_Dirty": 25800
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23614,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 20.72,
+          "memory_kib": {
+            "Rss": 49180,
+            "Pss": 30960,
+            "Private_Dirty": 27636
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.18,
+          "memory_kib": {
+            "Rss": 23736,
+            "Pss": 13587,
+            "Private_Dirty": 6812
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.81,
+          "memory_kib": {
+            "Rss": 15292,
+            "Pss": 5746,
+            "Private_Dirty": 3752
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.41,
+          "memory_kib": {
+            "Rss": 16836,
+            "Pss": 7972,
+            "Private_Dirty": 3724
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 23.6,
+          "memory_kib": {
+            "Rss": 49556,
+            "Pss": 31362,
+            "Private_Dirty": 28112
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 6.58,
+          "memory_kib": {
+            "Rss": 36968,
+            "Pss": 26802,
+            "Private_Dirty": 23324
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3069360,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62809",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6720.973390471,
+      "utc": "2026-11-17T15:19:56.510625+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 6.99,
+          "memory_kib": {
+            "Rss": 47884,
+            "Pss": 29833,
+            "Private_Dirty": 26616
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 6.2,
+          "memory_kib": {
+            "Rss": 46636,
+            "Pss": 28864,
+            "Private_Dirty": 25800
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23638,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 21.5,
+          "memory_kib": {
+            "Rss": 49180,
+            "Pss": 30981,
+            "Private_Dirty": 27636
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.21,
+          "memory_kib": {
+            "Rss": 23740,
+            "Pss": 13591,
+            "Private_Dirty": 6816
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.87,
+          "memory_kib": {
+            "Rss": 15292,
+            "Pss": 5746,
+            "Private_Dirty": 3752
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.41,
+          "memory_kib": {
+            "Rss": 16836,
+            "Pss": 7972,
+            "Private_Dirty": 3724
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 24.53,
+          "memory_kib": {
+            "Rss": 49556,
+            "Pss": 31381,
+            "Private_Dirty": 28112
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 6.84,
+          "memory_kib": {
+            "Rss": 36972,
+            "Pss": 26807,
+            "Private_Dirty": 23328
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3069308,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "63296",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6722.023851674,
+      "utc": "2026-11-17T15:19:57.561087+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 7.2,
+          "memory_kib": {
+            "Rss": 47884,
+            "Pss": 29802,
+            "Private_Dirty": 26616
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 6.38,
+          "memory_kib": {
+            "Rss": 46636,
+            "Pss": 28844,
+            "Private_Dirty": 25800
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23624,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 22.28,
+          "memory_kib": {
+            "Rss": 49180,
+            "Pss": 30970,
+            "Private_Dirty": 27636
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.24,
+          "memory_kib": {
+            "Rss": 23740,
+            "Pss": 13591,
+            "Private_Dirty": 6816
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 1.94,
+          "memory_kib": {
+            "Rss": 15292,
+            "Pss": 5746,
+            "Private_Dirty": 3752
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.41,
+          "memory_kib": {
+            "Rss": 16836,
+            "Pss": 7972,
+            "Private_Dirty": 3724
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 25.5,
+          "memory_kib": {
+            "Rss": 49556,
+            "Pss": 31366,
+            "Private_Dirty": 28112
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 7.13,
+          "memory_kib": {
+            "Rss": 36972,
+            "Pss": 26807,
+            "Private_Dirty": 23328
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3070364,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "63296",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6723.101648317,
+      "utc": "2026-11-17T15:19:58.638884+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 7.4,
+          "memory_kib": {
+            "Rss": 47884,
+            "Pss": 29794,
+            "Private_Dirty": 26616
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 6.55,
+          "memory_kib": {
+            "Rss": 46636,
+            "Pss": 28836,
+            "Private_Dirty": 25800
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23618,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 23.08,
+          "memory_kib": {
+            "Rss": 49180,
+            "Pss": 30964,
+            "Private_Dirty": 27636
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.27,
+          "memory_kib": {
+            "Rss": 23740,
+            "Pss": 13591,
+            "Private_Dirty": 6816
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 2.01,
+          "memory_kib": {
+            "Rss": 15292,
+            "Pss": 5746,
+            "Private_Dirty": 3752
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.42,
+          "memory_kib": {
+            "Rss": 16836,
+            "Pss": 7972,
+            "Private_Dirty": 3724
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 26.5,
+          "memory_kib": {
+            "Rss": 49556,
+            "Pss": 31366,
+            "Private_Dirty": 28112
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 7.42,
+          "memory_kib": {
+            "Rss": 36972,
+            "Pss": 26807,
+            "Private_Dirty": 23328
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3069388,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62809",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6724.157166369,
+      "utc": "2026-11-17T15:19:59.694402+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 7.6,
+          "memory_kib": {
+            "Rss": 47884,
+            "Pss": 29791,
+            "Private_Dirty": 26616
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 6.73,
+          "memory_kib": {
+            "Rss": 46636,
+            "Pss": 28833,
+            "Private_Dirty": 25800
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23614,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 23.88,
+          "memory_kib": {
+            "Rss": 49184,
+            "Pss": 30964,
+            "Private_Dirty": 27640
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.3,
+          "memory_kib": {
+            "Rss": 23740,
+            "Pss": 13591,
+            "Private_Dirty": 6816
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 2.09,
+          "memory_kib": {
+            "Rss": 15292,
+            "Pss": 5746,
+            "Private_Dirty": 3752
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.43,
+          "memory_kib": {
+            "Rss": 16836,
+            "Pss": 7972,
+            "Private_Dirty": 3724
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 27.46,
+          "memory_kib": {
+            "Rss": 49556,
+            "Pss": 31359,
+            "Private_Dirty": 28112
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 7.7,
+          "memory_kib": {
+            "Rss": 36972,
+            "Pss": 26806,
+            "Private_Dirty": 23328
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3069324,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "63783",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6725.205567114,
+      "utc": "2026-11-17T15:20:00.742802+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 7.8,
+          "memory_kib": {
+            "Rss": 47884,
+            "Pss": 29852,
+            "Private_Dirty": 26616
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 6.91,
+          "memory_kib": {
+            "Rss": 46640,
+            "Pss": 28898,
+            "Private_Dirty": 25804
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23672,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 24.66,
+          "memory_kib": {
+            "Rss": 49188,
+            "Pss": 31007,
+            "Private_Dirty": 27644
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.33,
+          "memory_kib": {
+            "Rss": 23740,
+            "Pss": 13591,
+            "Private_Dirty": 6816
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 2.15,
+          "memory_kib": {
+            "Rss": 15296,
+            "Pss": 5750,
+            "Private_Dirty": 3756
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.44,
+          "memory_kib": {
+            "Rss": 16840,
+            "Pss": 7976,
+            "Private_Dirty": 3728
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 28.43,
+          "memory_kib": {
+            "Rss": 49560,
+            "Pss": 31387,
+            "Private_Dirty": 28116
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 7.99,
+          "memory_kib": {
+            "Rss": 36972,
+            "Pss": 26807,
+            "Private_Dirty": 23328
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3069344,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "64270",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6726.255279462,
+      "utc": "2026-11-17T15:20:01.792513+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 8.0,
+          "memory_kib": {
+            "Rss": 47892,
+            "Pss": 29809,
+            "Private_Dirty": 26624
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 7.09,
+          "memory_kib": {
+            "Rss": 46644,
+            "Pss": 28845,
+            "Private_Dirty": 25808
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23618,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 25.41,
+          "memory_kib": {
+            "Rss": 49192,
+            "Pss": 30976,
+            "Private_Dirty": 27648
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.36,
+          "memory_kib": {
+            "Rss": 23744,
+            "Pss": 13595,
+            "Private_Dirty": 6820
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 2.23,
+          "memory_kib": {
+            "Rss": 15300,
+            "Pss": 5754,
+            "Private_Dirty": 3760
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.44,
+          "memory_kib": {
+            "Rss": 16844,
+            "Pss": 7980,
+            "Private_Dirty": 3732
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 29.33,
+          "memory_kib": {
+            "Rss": 49564,
+            "Pss": 31374,
+            "Private_Dirty": 28120
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 8.25,
+          "memory_kib": {
+            "Rss": 36976,
+            "Pss": 26811,
+            "Private_Dirty": 23332
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3065340,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "63783",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6727.336133864,
+      "utc": "2026-11-17T15:20:02.873374+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 8.2,
+          "memory_kib": {
+            "Rss": 47892,
+            "Pss": 29800,
+            "Private_Dirty": 26624
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 7.26,
+          "memory_kib": {
+            "Rss": 46644,
+            "Pss": 28842,
+            "Private_Dirty": 25808
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 36116,
+            "Pss": 23614,
+            "Private_Dirty": 21856
+          }
+        },
+        {
+          "pid": 42980,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/wait_gcu_localization.py",
+            "--request-updates",
+            ""
+          ],
+          "cpu_s": 26.19,
+          "memory_kib": {
+            "Rss": 49192,
+            "Pss": 30972,
+            "Private_Dirty": 27648
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.4,
+          "memory_kib": {
+            "Rss": 23748,
+            "Pss": 13599,
+            "Private_Dirty": 6824
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 2.3,
+          "memory_kib": {
+            "Rss": 15300,
+            "Pss": 5754,
+            "Private_Dirty": 3760
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.45,
+          "memory_kib": {
+            "Rss": 16844,
+            "Pss": 7980,
+            "Private_Dirty": 3732
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 30.31,
+          "memory_kib": {
+            "Rss": 49564,
+            "Pss": 31369,
+            "Private_Dirty": 28120
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 8.55,
+          "memory_kib": {
+            "Rss": 36980,
+            "Pss": 26814,
+            "Private_Dirty": 23336
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3065360,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "63296",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6728.674872938,
+      "utc": "2026-11-17T15:20:04.212117+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 8.4,
+          "memory_kib": {
+            "Rss": 47892,
+            "Pss": 30444,
+            "Private_Dirty": 26624
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 7.45,
+          "memory_kib": {
+            "Rss": 46660,
+            "Pss": 29523,
+            "Private_Dirty": 25824
+          }
+        },
+        {
+          "pid": 42978,
+          "argv": [
+            "/usr/bin/python3",
+            "/opt/ros/humble/bin/ros2",
+            "launch",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl.launch.py"
+          ],
+          "cpu_s": 2.31,
+          "memory_kib": {
+            "Rss": 36148,
+            "Pss": 23768,
+            "Private_Dirty": 21888
+          }
+        },
+        {
+          "pid": 43031,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_map_server/map_server",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_server"
+          ],
+          "cpu_s": 1.46,
+          "memory_kib": {
+            "Rss": 23128,
+            "Pss": 12919,
+            "Private_Dirty": 6076
+          }
+        },
+        {
+          "pid": 43033,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_map_lifecycle"
+          ],
+          "cpu_s": 2.41,
+          "memory_kib": {
+            "Rss": 15508,
+            "Pss": 5899,
+            "Private_Dirty": 3840
+          }
+        },
+        {
+          "pid": 43035,
+          "argv": [
+            "/opt/ros/humble/lib/robot_localization/ekf_node",
+            "--ros-args",
+            "-r",
+            "__node:=gcu_alignment_ekf"
+          ],
+          "cpu_s": 0.51,
+          "memory_kib": {
+            "Rss": 17232,
+            "Pss": 8275,
+            "Private_Dirty": 3800
+          }
+        },
+        {
+          "pid": 43037,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/gcu_amcl_initial_pose.py",
+            "--params",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/assets/amcl.yaml"
+          ],
+          "cpu_s": 31.35,
+          "memory_kib": {
+            "Rss": 49684,
+            "Pss": 32282,
+            "Private_Dirty": 28240
+          }
+        },
+        {
+          "pid": 43048,
+          "argv": [
+            "/opt/ros/humble/lib/nav2_amcl/amcl",
+            "--ros-args",
+            "-r",
+            "__node:=amcl"
+          ],
+          "cpu_s": 8.88,
+          "memory_kib": {
+            "Rss": 24092,
+            "Pss": 13842,
+            "Private_Dirty": 10256
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3103248,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "65244",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6729.719356773,
+      "utc": "2026-11-17T15:20:05.256589+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 8.71,
+          "memory_kib": {
+            "Rss": 47992,
+            "Pss": 33857,
+            "Private_Dirty": 26724
+          }
+        },
+        {
+          "pid": 42977,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/scan_link.py",
+            "--role",
+            "receiver"
+          ],
+          "cpu_s": 7.66,
+          "memory_kib": {
+            "Rss": 46880,
+            "Pss": 32621,
+            "Private_Dirty": 25916
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3183556,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62809",
+      "cpu_frequency_khz": "1800000"
+    },
+    {
+      "wall_monotonic": 6730.736323696,
+      "utc": "2026-11-17T15:20:06.273557+00:00",
+      "processes": [
+        {
+          "pid": 42976,
+          "argv": [
+            "/usr/bin/python3",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/arrival_probe.py",
+            "--output",
+            "/home/pi-project/edgeosmag_phase9_pilot_12/results/arrival_probe.json"
+          ],
+          "cpu_s": 8.83,
+          "memory_kib": {
+            "Rss": 48140,
+            "Pss": 39410,
+            "Private_Dirty": 26744
+          }
+        }
+      ],
+      "host_memory_kib": {
+        "MemTotal": 3829688,
+        "MemAvailable": 3210096,
+        "SwapTotal": 0,
+        "SwapFree": 0
+      },
+      "temperature_millidegrees_c": "62322",
+      "cpu_frequency_khz": "1800000"
+    }
+  ]
+}

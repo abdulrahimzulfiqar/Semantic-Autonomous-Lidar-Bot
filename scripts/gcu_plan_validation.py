@@ -39,9 +39,26 @@ def validate_path(grid,resolution,origin,points,radius=.18):
     for a,b in zip(points,points[1:]):
         n=max(1,math.ceil(math.hypot(b[0]-a[0],b[1]-a[1])/spacing))
         dense.extend((a[0]+(b[0]-a[0])*i/n,a[1]+(b[1]-a[1])*i/n) for i in range(1,n+1))
-    for x,y in dense:
-        c=clearance(grid,resolution,origin,x,y,radius+2*resolution)
-        minimum=min(minimum,c);count+=1
-        if c<required:return {'valid':False,'reason':'swept_footprint_blocked','at':[x,y],'clearance_m':c,'required_m':required}
+    search = radius + 2 * resolution
+    xs, ys = zip(*dense)
+    left, right = min(xs), max(xs)
+    bottom, top = min(ys), max(ys)
+    h, w = grid.shape
+    boundary = min(left - origin[0], bottom - origin[1],
+                   origin[0] + w * resolution - right, origin[1] + h * resolution - top)
+    c0=max(0,math.floor((left-search-origin[0])/resolution))
+    c1=min(w,math.floor((right+search-origin[0])/resolution)+1)
+    r0=max(0,math.floor((bottom-search-origin[1])/resolution))
+    r1=min(h,math.floor((top+search-origin[1])/resolution)+1)
+    # If the envelope contains only free cells, every original search slice
+    # is empty of obstacles and the clearance is limited by the map boundary.
+    if boundary >= required and not np.any(grid[r0:r1, c0:c1]):
+        minimum = min(boundary, search)
+        count = len(dense)
+    else:
+        for x,y in dense:
+            c=clearance(grid,resolution,origin,x,y,search)
+            minimum=min(minimum,c);count+=1
+            if c<required:return {'valid':False,'reason':'swept_footprint_blocked','at':[x,y],'clearance_m':c,'required_m':required}
     return {'valid':True,'samples':count,'radius_m':radius,'segment_sampling_m':spacing,
-        'checked_clearance_lower_bound_m':minimum,'clearance_search_cap_m':radius+2*resolution}
+        'checked_clearance_lower_bound_m':minimum,'clearance_search_cap_m':search}

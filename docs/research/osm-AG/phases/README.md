@@ -20,6 +20,8 @@ results distinct from planned work, and put detailed evidence and commands below
 | 05 — Reliable execution and osmAG route preview | Complete for bounded scope: 47 unit / 10 offline / 15 live preview cases passed; user visual acceptance confirmed | [Phase 05](05_GCU_OSMAG_ROUTE_PREVIEW_AND_RELIABLE_HANDOFF.md) |
 | 06 — osmAG-guided segmented navigation | Complete for bounded simulation scope; 135 tests, retained automated motion/fault evidence and limited short-distance user visual acceptance | [Phase 06](06_GCU_SEGMENTED_NAVIGATION.md) |
 | 07 — Rolling raster and boundary goals | Complete for bounded simulation scope; 169 tests, automated motion/fault evidence and successful user clicked-goal review; accepted November 14, 2026 | [Phase 07](07_GCU_ROLLING_RASTER.md) |
+| 08 — Localization comparison | Closed preliminary study; 183 tests and 1,260 paired frames; AMCL retained, structural production integration deferred | [Phase 08](08_GCU_LOCALIZATION_COMPARISON.md) |
+| 09 — Pi navigation baseline | Complete for the measured corridor scope Nov 25. Three consecutive scored passes at 0.669–0.717×, with two separate fixed-rate stationary replays. | [Phase 09](09_PI4B_NAVIGATION_BASELINE.md), [hotspot and replay diagnostics](09E_PI4B_FULL_STACK_REPLAY.md), [plan](../plans/09_PI4B_NAVIGATION_BASELINE.md) |
 
 Phase 06 component records retain the development history and failed attempts.
 The consolidated completion record above defines the accepted scope. Long manual
@@ -31,4 +33,10 @@ in progress; see the [forward roadmap](../OSMAGNAV_PHASE_ROADMAP.md).
 the live Nav2 planner/controller. Automated motion, fault/recovery, matched
 static-map comparison and user visual acceptance pass. The user session records
 16 windows and 10 proxies; Ubuntu has no remaining robot processes. Full-map
-AMCL remains explicit; Phase 08 will evaluate structure-based localization.
+AMCL remains explicit. Phase 08 subsequently closed its preliminary localization
+study with AMCL retained.
+
+[Phase 08 closure record](08_GCU_LOCALIZATION_COMPARISON.md): AMCL and the
+paper-inspired structural reference remain separate. The study captures
+and scores 1,260 common scan frames; further structural integration/evaluation
+is deferred by user decision. Next is actual Pi 4B navigation baseline profiling.

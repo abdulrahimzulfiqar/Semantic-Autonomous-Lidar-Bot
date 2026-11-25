@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-14",
+  "status": "closed_preliminary_feasibility_study",
+  "authorization": "User accepted retaining AMCL, deferring further custom AGLoc work, and closing Phase 08.",
+  "production_localizer": "native Nav2 AMCL plus accepted wheel/IMU EKF",
+  "completed_scope": ["paper/source/sensor audit", "separate 2D structural reference", "183 passing unit tests", "two independently verified shared-input shadow captures", "1260 paired scan frames", "preliminary profiling with uncontrolled-comparison limitations"],
+  "deferred_not_passed": ["full author AGLoc/AGLoc++ implementation", "structural global recovery", "authoritative TF handoff", "candidate closed-loop navigation", "controlled repeated candidate resource comparisons"],
+  "claims_not_established": ["AGLoc CPU/RAM advantage on Pi", "AGLoc unsuitable for Pi", "whole-stack memory independent of map size", "exact osmAG-Nav reproduction"],
+  "retained": ["accepted AMCL baseline", "separate structural prototype", "raw captures and source snapshots", "research protocol and reproduction tools"],
+  "revisit_conditions": ["measured material AMCL bottleneck on Pi", "localization failures on required cases", "compatible author implementation becomes available"],
+  "next": "Phase 09: actual Pi 4B navigation baseline profiling, Gazebo/evaluation offboard; then camera, language and combined-workload evaluation",
+  "closure_change_scope": "Documentation, decision metadata and evidence-manifest updates only; no estimator or navigation runtime changes and no new simulation run."
+}

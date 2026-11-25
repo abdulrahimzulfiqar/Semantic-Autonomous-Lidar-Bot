@@ -1,0 +1,119 @@
+[INFO] [1794922707.324595504] [planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1794922707.438278179] [planner_server]: Creating
+[INFO] [1794922707.568409787] [global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1794922707.607181539] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [1794922779.624322478] [planner_server]: Configuring
+[INFO] [1794922779.624608330] [global_costmap.global_costmap]: Configuring
+[INFO] [1794922779.648561938] [global_costmap.global_costmap]: Using plugin "static_layer"
+[INFO] [1794922779.716692343] [global_costmap.global_costmap]: Subscribing to the map topic (/osmag/planning_window) with transient local durability
+[INFO] [1794922779.722008364] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[INFO] [1794922779.722200377] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[INFO] [1794922779.732929926] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[INFO] [1794922779.840954726] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1794922779.841127830] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[INFO] [1794922779.850662155] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1794922779.851077663] [global_costmap.global_costmap]: Using costmap filter "mission_keepout"
+[INFO] [1794922779.891681214] [global_costmap.global_costmap]: Initialized costmap filter "mission_keepout"
+[INFO] [1794922779.891884672] [global_costmap.global_costmap]: Using costmap filter "constraint_inflation"
+[INFO] [1794922779.899596826] [global_costmap.global_costmap]: Initialized costmap filter "constraint_inflation"
+[INFO] [1794922780.206077694] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 128 X 128 at 0.058644 m/pix
+[INFO] [1794922780.208967008] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[INFO] [1794922780.209140408] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[INFO] [1794922780.214199527] [planner_server]: Planner Server has GridBased  planners available.
+[INFO] [1794922780.373135370] [planner_server]: Activating
+[INFO] [1794922780.373394053] [global_costmap.global_costmap]: Activating
+[INFO] [1794922780.373470150] [global_costmap.global_costmap]: Checking transform
+[INFO] [1794922780.373565804] [global_costmap.global_costmap]: Timed out waiting for transform from base_footprint to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1794922780.873630778] [global_costmap.global_costmap]: Timed out waiting for transform from base_footprint to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1794922781.373631817] [global_costmap.global_costmap]: Timed out waiting for transform from base_footprint to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1794922781.873754206] [global_costmap.global_costmap]: Timed out waiting for transform from base_footprint to map to become available, tf error: Lookup would require extrapolation at time 75.730000, but only time 75.900000 is in the buffer, when looking up transform from frame [base_footprint] to frame [map]
+[INFO] [1794922782.374048358] [global_costmap.global_costmap]: start
+[INFO] [1794922782.378621303] [global_costmap.global_costmap]: KeepoutFilter: Subscribing to "/osmag/constraint_filter_info" topic for filter info...
+[INFO] [1794922782.386423197] [global_costmap.global_costmap]: KeepoutFilter: Received filter info from /osmag/constraint_filter_info topic.
+[INFO] [1794922782.386609301] [global_costmap.global_costmap]: KeepoutFilter: Subscribing to "/osmag/constraint_mask" topic for filter mask...
+[INFO] [1794922782.391141725] [global_costmap.global_costmap]: KeepoutFilter: Received filter mask from /osmag/constraint_mask topic.
+[WARN] [1794922782.418040781] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922782.521941899] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[INFO] [1794922782.583199404] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[INFO] [1794922782.587004724] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[WARN] [1794922782.587321671] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922782.713407725] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922782.775458985] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 0.65 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922782.789570529] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922782.835465519] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922782.966274750] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922782.975402638] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 0.85 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922783.089814903] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922783.175426933] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 1.00 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922783.202277684] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922783.375416739] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 1.03 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922783.489962434] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922783.575442733] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 1.08 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922783.775433855] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 1.18 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922783.784396625] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922783.919627966] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922783.967223015] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922783.975448663] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 1.76 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922784.021380575] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[INFO] [1794922784.034959097] [global_costmap.global_costmap]: Message Filter dropping message: frame 'lidar_link' at time 77.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[WARN] [1794922784.073702383] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922784.175402881] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 2.17 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922784.246735697] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922784.375571922] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 2.26 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922784.487257280] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922784.575639883] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 2.31 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922784.775256667] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 2.60 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922784.791740027] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922784.824412600] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922784.975552772] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 2.67 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922785.080104825] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922785.175527676] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 2.75 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922785.343314964] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922785.375441423] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 2.94 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922785.401328580] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922785.439127192] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922785.575378949] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 3.06 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922785.768275139] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922785.775450576] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 3.33 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922785.822093959] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922785.869286137] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922785.936778603] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922785.974237137] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922785.975420512] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 3.60 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922786.162238482] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922786.175408008] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 3.73 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922786.375513450] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 3.80 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922786.392701299] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922786.575582780] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 3.84 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922786.775525341] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 3.90 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922786.794660357] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922786.865713313] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922786.919193172] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922787.040820921] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922787.149844752] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922787.175438820] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 0.84 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922787.250383921] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922787.303625473] [global_costmap.global_costmap]: KeepoutFilter: New filter mask arrived from /osmag/constraint_mask topic. Updating old filter mask.
+[WARN] [1794922787.375707234] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 0.93 seconds, and it should be updated every 0.50 seconds.
+[INFO] [1794922787.382391293] [global_costmap.global_costmap]: Message Filter dropping message: frame 'lidar_link' at time 81.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[WARN] [1794922787.575271045] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 1.51 seconds, and it should be updated every 0.50 seconds.
+[WARN] [1794922787.775250143] [global_costmap.global_costmap]: The /scan observation buffer has not been updated for 1.53 seconds, and it should be updated every 0.50 seconds.
+[INFO] [1794922787.853507558] [planner_server]: Deactivating
+[INFO] [1794922787.853750000] [global_costmap.global_costmap]: Deactivating
+[INFO] [1794922787.975449570] [planner_server]: Deactivating plugin GridBased of type NavfnPlanner
+[INFO] [1794922787.975636490] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1794922796.588947591] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1794922796.589164107] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[INFO] [1794922796.589387437] [planner_server]: Cleaning up
+[INFO] [1794922796.612729256] [global_costmap.global_costmap]: Cleaning up
+[INFO] [1794922796.667008691] [planner_server]: Cleaning up plugin GridBased of type NavfnPlanner
+[INFO] [1794922796.668866415] [planner_server]: Destroying plugin GridBased of type NavfnPlanner
+[INFO] [1794922796.730560616] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1794922796.736272761] [global_costmap.global_costmap]: Destroying
+[INFO] [1794922796.835319754] [planner_server]: Destroying

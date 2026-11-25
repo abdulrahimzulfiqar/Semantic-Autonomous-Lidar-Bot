@@ -1,0 +1,26 @@
+[INFO] [1794925420.078772352] [bt_navigator]: 
+	bt_navigator lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1794925420.079610323] [bt_navigator]: Creating
+[INFO] [1794925484.796612292] [bt_navigator]: Configuring
+[INFO] [1794925485.229612124] [bt_navigator]: Activating
+[INFO] [1794925485.801458466] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[ERROR] [1794925486.385025088] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation at time 14.190000, but only time 14.300000 is in the buffer, when looking up transform from frame [base_footprint] to frame [map]
+
+[INFO] [1794925486.385325974] [bt_navigator]: Begin navigating from current location (0.00, 0.00) to (-0.03, -12.95)
+[ERROR] [1794925486.586876434] [transformPoseInTargetFrame]: Extrapolation Error looking up target frame: Lookup would require extrapolation into the past.  Requested time 14.270000 but the earliest data is at time 14.300000, when looking up transform from frame [base_footprint] to frame [map]
+
+[WARN] [1794925486.587385261] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[WARN] [1794925486.690539137] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[INFO] [1794925497.190791809] [bt_navigator]: Received goal preemption request
+[INFO] [1794925497.191594558] [bt_navigator]: Begin navigating from current location (-0.33, -12.93) to (1.00, -12.96)
+[INFO] [1794925514.306494199] [bt_navigator]: [navigate_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1794925514.307775850] [bt_navigator]: Goal canceled
+[INFO] [1794925514.342741396] [bt_navigator]: Deactivating
+[INFO] [1794925514.342978745] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1794925519.371683885] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1794925519.372108454] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[INFO] [1794925519.372427616] [bt_navigator]: Cleaning up
+[INFO] [1794925519.860972059] [bt_navigator]: Completed Cleaning up
+[INFO] [1794925519.861178223] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.

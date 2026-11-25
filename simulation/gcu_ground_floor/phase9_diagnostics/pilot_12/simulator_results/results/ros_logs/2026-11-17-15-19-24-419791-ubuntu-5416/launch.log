@@ -1,0 +1,67 @@
+1794928764.4205031 [INFO] [launch]: All log files can be found below /home/ubuntu/edgeosmag_phase9_pilot_12/results/ros_logs/2026-11-17-15-19-24-419791-ubuntu-5416
+1794928764.4206200 [INFO] [launch]: Default logging verbosity is set to INFO
+1794928764.5390744 [INFO] [robot_state_publisher-1]: process started with pid [5441]
+1794928764.5393059 [INFO] [ign-2]: process started with pid [5443]
+1794928764.5393827 [INFO] [gcu_ordered_bridge-3]: process started with pid [5445]
+1794928764.5394330 [INFO] [gcu_ordered_bridge-4]: process started with pid [5447]
+1794928764.5394747 [INFO] [gcu_truth_bridge-5]: process started with pid [5454]
+1794928764.5395133 [INFO] [twist_mux-6]: process started with pid [5460]
+1794928764.5395494 [INFO] [create-7]: process started with pid [5484]
+1794928764.5400202 [twist_mux-6] [INFO] [1794928764.524399836] [twist_mux]: Topic handler 'topics.navigation' subscribed to topic '/phase9/sim_cmd_vel': timeout = 0.500000s , priority = 10.
+1794928764.5537386 [robot_state_publisher-1] [INFO] [1794928764.553535681] [robot_state_publisher]: got segment base_footprint
+1794928764.5542109 [robot_state_publisher-1] [INFO] [1794928764.554103063] [robot_state_publisher]: got segment base_link
+1794928764.5544729 [robot_state_publisher-1] [INFO] [1794928764.554373607] [robot_state_publisher]: got segment camera_link
+1794928764.5547416 [robot_state_publisher-1] [INFO] [1794928764.554667653] [robot_state_publisher]: got segment camera_link_optical
+1794928764.5549757 [robot_state_publisher-1] [INFO] [1794928764.554887655] [robot_state_publisher]: got segment caster_wheel
+1794928764.5551498 [robot_state_publisher-1] [INFO] [1794928764.555073491] [robot_state_publisher]: got segment imu_link
+1794928764.5553536 [robot_state_publisher-1] [INFO] [1794928764.555273410] [robot_state_publisher]: got segment left_wheel
+1794928764.5555410 [robot_state_publisher-1] [INFO] [1794928764.555460162] [robot_state_publisher]: got segment lidar_link
+1794928764.5557342 [robot_state_publisher-1] [INFO] [1794928764.555656998] [robot_state_publisher]: got segment right_wheel
+1794928765.5190074 [INFO] [create-7]: process has finished cleanly [pid 5484]
+1794928765.5210633 [INFO] [spawner-8]: process started with pid [5542]
+1794928765.5211456 [INFO] [spawner-9]: process started with pid [5544]
+1794928765.7040665 [spawner-8] [INFO] [1794928765.703875471] [spawner_joint_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+1794928765.7069478 [spawner-9] [INFO] [1794928765.706856631] [spawner_diff_controller]: waiting for service /controller_manager/list_controllers to become available...
+1794928766.7987015 [INFO] [ign-2]: process has finished cleanly [pid 5443]
+1794928766.8167744 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1794928766.8195419 [INFO] [spawner-9]: sending signal 'SIGINT' to process[spawner-9]
+1794928766.8201890 [INFO] [spawner-8]: sending signal 'SIGINT' to process[spawner-8]
+1794928766.8219492 [INFO] [twist_mux-6]: sending signal 'SIGINT' to process[twist_mux-6]
+1794928766.8225777 [INFO] [gcu_truth_bridge-5]: sending signal 'SIGINT' to process[gcu_truth_bridge-5]
+1794928766.8231256 [INFO] [gcu_ordered_bridge-4]: sending signal 'SIGINT' to process[gcu_ordered_bridge-4]
+1794928766.8237464 [INFO] [gcu_ordered_bridge-3]: sending signal 'SIGINT' to process[gcu_ordered_bridge-3]
+1794928766.8249810 [INFO] [robot_state_publisher-1]: sending signal 'SIGINT' to process[robot_state_publisher-1]
+1794928766.8251760 [ERROR] [twist_mux-6]: process has died [pid 5460, exit code -2, cmd '/opt/ros/humble/lib/twist_mux/twist_mux --ros-args --params-file /tmp/launch_params_yiryigv4 -r /cmd_vel_out:=/diff_controller/cmd_vel_unstamped'].
+1794928766.8253629 [robot_state_publisher-1] [INFO] [1794928766.816704536] [rclcpp]: signal_handler(signum=2)
+1794928766.8256550 [twist_mux-6] [INFO] [1794928766.816756953] [rclcpp]: signal_handler(signum=2)
+1794928766.8257711 [spawner-9] Traceback (most recent call last):
+1794928766.8258080 [spawner-9]   File "/opt/ros/humble/lib/controller_manager/spawner", line 33, in <module>
+1794928766.8258474 [spawner-9]     sys.exit(load_entry_point('controller-manager==2.52.2', 'console_scripts', 'spawner')())
+1794928766.8258755 [spawner-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py", line 361, in main
+1794928766.8259037 [spawner-9]     node.destroy_node()
+1794928766.8259296 [spawner-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1690, in destroy_node
+1794928766.8260322 [spawner-8] Traceback (most recent call last):
+1794928766.8260615 [spawner-8]   File "/opt/ros/humble/lib/controller_manager/spawner", line 33, in <module>
+1794928766.8260872 [spawner-8]     sys.exit(load_entry_point('controller-manager==2.52.2', 'console_scripts', 'spawner')())
+1794928766.8261118 [spawner-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py", line 361, in main
+1794928766.8261366 [spawner-8]     node.destroy_node()
+1794928766.8261614 [spawner-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1690, in destroy_node
+1794928766.8262558 [spawner-8]     self.destroy_client(self._clients[0])
+1794928766.8262868 [spawner-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1600, in destroy_client
+1794928766.8263824 [spawner-8]     client.destroy()
+1794928766.8264110 [spawner-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/client.py", line 187, in destroy
+1794928766.8264358 [spawner-8]     self.__client.destroy_when_not_in_use()
+1794928766.8264620 [spawner-8] KeyboardInterrupt
+1794928766.8265519 [spawner-9]     self.destroy_client(self._clients[0])
+1794928766.8265848 [spawner-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1600, in destroy_client
+1794928766.8266096 [spawner-9]     client.destroy()
+1794928766.8266339 [spawner-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/client.py", line 187, in destroy
+1794928766.8267241 [spawner-9]     self.__client.destroy_when_not_in_use()
+1794928766.8267548 [spawner-9] KeyboardInterrupt
+1794928766.8270326 [robot_state_publisher-1] [INFO] [1794928766.825368430] [rclcpp]: signal_handler(signum=2)
+1794928767.8344939 [INFO] [robot_state_publisher-1]: process has finished cleanly [pid 5441]
+1794928767.8394072 [INFO] [gcu_ordered_bridge-3]: process has finished cleanly [pid 5445]
+1794928767.8478284 [INFO] [gcu_truth_bridge-5]: process has finished cleanly [pid 5454]
+1794928767.8556242 [INFO] [gcu_ordered_bridge-4]: process has finished cleanly [pid 5447]
+1794928767.8721342 [ERROR] [spawner-9]: process has died [pid 5544, exit code -2, cmd '/opt/ros/humble/lib/controller_manager/spawner diff_controller --controller-manager-timeout 40 --ros-args'].
+1794928767.8762527 [ERROR] [spawner-8]: process has died [pid 5542, exit code -2, cmd '/opt/ros/humble/lib/controller_manager/spawner joint_broadcaster --controller-manager-timeout 40 --ros-args'].

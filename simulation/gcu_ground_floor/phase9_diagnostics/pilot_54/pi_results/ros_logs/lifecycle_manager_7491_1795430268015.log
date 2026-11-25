@@ -1,0 +1,18 @@
+[INFO] [1795430268.308666464] [gcu_map_lifecycle]: Creating
+[INFO] [1795430268.357597541] [gcu_map_lifecycle]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1795430268.707148179] [gcu_map_lifecycle]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1795430268.708156111] [gcu_map_lifecycle]: [34m[1mConfiguring gcu_map_server[0m[0m
+[INFO] [1795430269.155305689] [gcu_map_lifecycle]: [34m[1mConfiguring amcl[0m[0m
+[INFO] [1795430269.324135027] [gcu_map_lifecycle]: [34m[1mActivating gcu_map_server[0m[0m
+[INFO] [1795430269.453168498] [gcu_map_lifecycle]: Server gcu_map_server connected with bond.
+[INFO] [1795430269.453372417] [gcu_map_lifecycle]: [34m[1mActivating amcl[0m[0m
+[INFO] [1795430269.645792779] [gcu_map_lifecycle]: Server amcl connected with bond.
+[INFO] [1795430269.645966440] [gcu_map_lifecycle]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1795430269.646048067] [gcu_map_lifecycle]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1795430333.644501857] [gcu_map_lifecycle]: [34m[1mHave not received a heartbeat from gcu_map_server.[0m[0m
+[ERROR] [1795430333.644702519] [gcu_map_lifecycle]: CRITICAL FAILURE: SERVER gcu_map_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1795430333.644944587] [gcu_map_lifecycle]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1795430333.645100157] [gcu_map_lifecycle]: [34m[1mResetting managed nodes...[0m[0m
+[INFO] [1795430333.645165859] [gcu_map_lifecycle]: [34m[1mDeactivating amcl[0m[0m
+[INFO] [1795430364.975713180] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795430364.976066061] [gcu_map_lifecycle]: Running Nav2 LifecycleManager rcl preshutdown (gcu_map_lifecycle)

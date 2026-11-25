@@ -1,0 +1,35 @@
+{
+  "scope": "30-second stationary 1x sensor delivery probe on pixel, navigation inactive",
+  "pi_frequency_mhz": 2412,
+  "pi_power_save": "on",
+  "streams": {
+    "wheel_odom": {
+      "sent": 1500,
+      "matched": 1500,
+      "max_receiver_callback_gap_s": 0.08061253699997906,
+      "max_source_callback_gap_s": 0.02608664399940608,
+      "max_source_lateness_s": 0.00705692
+    },
+    "imu": {
+      "sent": 3000,
+      "matched": 3000,
+      "max_receiver_callback_gap_s": 0.07515971999964677,
+      "max_source_callback_gap_s": 0.0156613950002793,
+      "max_source_lateness_s": 0.007326505
+    },
+    "scan": {
+      "sent": 300,
+      "matched": 300,
+      "max_receiver_callback_gap_s": 0.13770404100068845,
+      "max_source_callback_gap_s": 0.10217147299954377,
+      "max_source_lateness_s": 0.002506123
+    },
+    "clock": {
+      "sent": 3000,
+      "matched": 2997,
+      "max_receiver_callback_gap_s": 0.07465480100017885,
+      "max_source_callback_gap_s": 0.015645352999854367,
+      "max_source_lateness_s": 0.007386422
+    }
+  }
+}

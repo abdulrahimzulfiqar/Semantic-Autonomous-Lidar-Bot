@@ -1,0 +1,28 @@
+Route preprocessing completed in 57.88 wall seconds
+1795430334.373267 [218]    python3: 192.168.100.129: does not match an available interface
+[ERROR] [1795430334.373556878] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+
+>>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+This error state is being overwritten:
+
+  'error not set, at ./src/rcl/node.c:263'
+
+with this new error message:
+
+  'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+
+rcutils_reset_error() should be called after error handling to avoid this.
+<<<
+[ERROR] [1795430334.373951980] [rcl]: Failed to fini publisher for node: 1
+Traceback (most recent call last):
+  File "/home/pi-project/edgeosmag_phase9_pilot_54/worker_phase9.py", line 267, in <module>
+    raise SystemExit(main())
+  File "/home/pi-project/edgeosmag_phase9_pilot_54/worker_phase9.py", line 43, in main
+    adapter = create_executor(planner, True, require_imu=True)
+  File "/home/pi-project/edgeosmag_phase9_pilot_54/gcu_segmented_executor.py", line 346, in create_executor
+    return Executor()
+  File "/home/pi-project/edgeosmag_phase9_pilot_54/gcu_segmented_executor.py", line 62, in __init__
+    super().__init__('gcu_segmented_executor', parameter_overrides=[Parameter('use_sim_time', value=True)])
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 175, in __init__
+    self.__node = _rclpy.Node(
+rclpy._rclpy_pybind11.RCLError: error creating node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415

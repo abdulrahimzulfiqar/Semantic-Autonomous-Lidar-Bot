@@ -1,0 +1,24 @@
+[INFO] [1795175860.212183038] [amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795175860.221268384] [amcl]: Creating
+[INFO] [1795175861.525381402] [amcl]: Configuring
+[INFO] [1795175861.525955122] [amcl]: initTransforms
+[INFO] [1795175861.630756949] [amcl]: initPubSub
+[INFO] [1795175861.684165397] [amcl]: Subscribed to map topic.
+[INFO] [1795175861.787278024] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[INFO] [1795175862.019891356] [amcl]: Activating
+[INFO] [1795175862.020263300] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1795175862.051017031] [amcl]: Requesting no-motion update
+[INFO] [1795175862.076842628] [amcl]: createLaserObject
+[INFO] [1795175862.557267565] [amcl]: Requesting no-motion update
+[INFO] [1795175863.068375790] [amcl]: Requesting no-motion update
+[INFO] [1795175863.582808895] [amcl]: Requesting no-motion update
+[INFO] [1795175864.102570781] [amcl]: Requesting no-motion update
+[WARN] [1795175864.438628203] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[INFO] [1795175864.604266216] [amcl]: Requesting no-motion update
+[INFO] [1795175865.526324345] [amcl]: initialPoseReceived
+[WARN] [1795175865.526812380] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 7.372433 but the latest data is at time 7.370000, when looking up transform from frame [base_footprint] to frame [odom])
+[INFO] [1795175865.526934010] [amcl]: Setting pose (7.372433): -0.500 -12.960 0.000
+[INFO] [1795175867.361061183] [amcl]: Message Filter dropping message: frame 'lidar_link' at time 9.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'

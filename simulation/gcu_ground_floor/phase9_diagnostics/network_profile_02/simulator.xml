@@ -1,0 +1,18 @@
+<CycloneDDS>
+  <Domain id="any">
+    <General>
+      <Interfaces>
+        <NetworkInterface address="192.168.100.137" />
+      </Interfaces>
+      <AllowMulticast>false</AllowMulticast>
+    </General>
+    <Discovery>
+      <ParticipantIndex>0</ParticipantIndex>
+      <MaxAutoParticipantIndex>0</MaxAutoParticipantIndex>
+      <Peers>
+        <Peer Address="192.168.100.129:61660" />
+        <Peer Address="192.168.100.137:61660" />
+      </Peers>
+    </Discovery>
+  </Domain>
+</CycloneDDS>

@@ -1,0 +1,117 @@
+{
+  "timing": {
+    "scope": "Local AMCL/TF replay timing only; no EKF, controller, mission or localization-accuracy claim",
+    "replay_rate": 1.0,
+    "recording_duration_sim_s": 55.1,
+    "measured_replay_wall_s": 55.13893747899965,
+    "expected_scans": 552,
+    "received_unique_scans": 552,
+    "tf_queries": 1378,
+    "tf_query_failures": 0,
+    "max_pose_observation_gap_sim_s": 0.10428142600000001,
+    "max_tf_age_sim_s": 0.019981827999998814,
+    "max_scan_publication_lateness_wall_s": 0.09064540500003204,
+    "max_clock_receipt_gap_wall_s": 0.0799089020001702,
+    "clock_covers_recording": true,
+    "thresholds": {
+      "scan_publication_lateness_wall_s": 0.1,
+      "tf_age_sim_s": 0.15,
+      "pose_observation_gap_sim_s": 0.15
+    },
+    "passed": true
+  },
+  "role_passed": true,
+  "clock_path": null,
+  "amcl_updates_during_replay": 112,
+  "process_costs": [
+    {
+      "pid": 9483,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_map_server/map_server",
+        "--ros-args",
+        "-p",
+        "use_sim_time:=true"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.896620350000376,
+      "cpu_delta_s": 2.17,
+      "cpu_percent_one_core": 4.026226479338022,
+      "sampled_pss_max_kib": 13840,
+      "sampled_rss_max_kib": 23344
+    },
+    {
+      "pid": 9484,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_amcl/amcl",
+        "--ros-args",
+        "--params-file",
+        "/home/pi-project/edgeosmag_phase9_local_replay_03/amcl.yaml"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.896620350000376,
+      "cpu_delta_s": 4.91,
+      "cpu_percent_one_core": 9.110033185967598,
+      "sampled_pss_max_kib": 32141,
+      "sampled_rss_max_kib": 41356
+    },
+    {
+      "pid": 9485,
+      "argv": [
+        "/opt/ros/humble/lib/nav2_lifecycle_manager/lifecycle_manager",
+        "--ros-args",
+        "-p",
+        "use_sim_time:=true"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.896620350000376,
+      "cpu_delta_s": 2.77,
+      "cpu_percent_one_core": 5.139468823855448,
+      "sampled_pss_max_kib": 5931,
+      "sampled_rss_max_kib": 14848
+    },
+    {
+      "pid": 9486,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_phase9_local_replay_03/local_replay.py",
+        "--role",
+        "observe"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.896620350000376,
+      "cpu_delta_s": 25.56,
+      "cpu_percent_one_core": 47.42412387644232,
+      "sampled_pss_max_kib": 34308,
+      "sampled_rss_max_kib": 51084
+    },
+    {
+      "pid": 9487,
+      "argv": [
+        "/usr/bin/python3",
+        "/home/pi-project/edgeosmag_phase9_local_replay_03/local_replay.py",
+        "--role",
+        "feed"
+      ],
+      "samples": 53,
+      "sample_span_wall_s": 53.896620350000376,
+      "cpu_delta_s": 46.93,
+      "cpu_percent_one_core": 87.07410538033795,
+      "sampled_pss_max_kib": 34417,
+      "sampled_rss_max_kib": 51212
+    }
+  ],
+  "resource_scope": "Replay interval only; sampled process CPU delta over first/last in-interval sample, 100% = one core. Replay publisher and observer costs listed separately. No EKF, Nav2, route preprocessing or mission workload.",
+  "reconstruction": "SE(2) reconstruction: original scan stamps/ranges; recorded odometry interpolated at nominal 50 simulated Hz; generated replay clock nominal 100 simulated Hz",
+  "recording_sha256": "e9754ca4675dcf7944ba426ff54ee5041841ed80b4fc3d7997f9221cc19615e9",
+  "analysis_sources_sha256": {
+    "analyze_local_replay.py": "a74d615eb7e082ad5cf5bd9084c7d4303f606b1d35794c040e3dc211f55ba219",
+    "replay_timing.py": "440dfe641ff03c552752096ce853bf0c55e75aead84b2b7b04731df238a47a33"
+  },
+  "evidence_sha256": {
+    "feed.json": "74516799978c64fe25edcf9bfc540344bfa66a07b27a911bba06377f988a0f69",
+    "observations.json": "a23b198708e3485490061e60812018c6f05398ae45530979add40a5ef4af3d85",
+    "resources.json": "ae45069849b9e87a138c891e50a22972132b110eeda2d86ee1ad70bd71ac660e",
+    "result.json": "2884dbb67b49fdf2a99280731b55e42e8ff61bb486e9c6405229793b498e14f5"
+  },
+  "passed": true
+}

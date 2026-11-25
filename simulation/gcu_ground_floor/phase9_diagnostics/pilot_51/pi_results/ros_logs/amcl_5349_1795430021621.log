@@ -1,0 +1,27 @@
+[INFO] [1795430021.895284369] [amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1795430021.901555508] [amcl]: Creating
+[INFO] [1795430022.600514566] [amcl]: Configuring
+[INFO] [1795430022.600836364] [amcl]: initTransforms
+[INFO] [1795430022.694446450] [amcl]: initPubSub
+[INFO] [1795430022.719338469] [amcl]: Subscribed to map topic.
+[INFO] [1795430022.803058807] [amcl]: Received a 1000 X 844 map @ 0.059 m/pix
+[INFO] [1795430022.970629021] [amcl]: Activating
+[INFO] [1795430022.972693548] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1795430023.274245400] [amcl]: Requesting no-motion update
+[INFO] [1795430023.462545317] [amcl]: createLaserObject
+[INFO] [1795430023.772346946] [amcl]: Requesting no-motion update
+[INFO] [1795430024.278951642] [amcl]: Requesting no-motion update
+[WARN] [1795430024.659435940] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[INFO] [1795430024.717245977] [amcl]: initialPoseReceived
+[WARN] [1795430024.717579626] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 2.201000 but the latest data is at time 1.530000, when looking up transform from frame [base_footprint] to frame [odom])
+[INFO] [1795430024.717684053] [amcl]: Setting pose (2.201000): -0.500 -12.960 0.000
+[INFO] [1795430024.790706158] [amcl]: Requesting no-motion update
+[INFO] [1795430112.398803731] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1795430112.398981333] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1795430112.399148509] [amcl]: Deactivating
+[INFO] [1795430112.399234208] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1795430112.412985246] [amcl]: Cleaning up
+[INFO] [1795430112.571823764] [amcl]: Destroying bond (amcl) to lifecycle manager.

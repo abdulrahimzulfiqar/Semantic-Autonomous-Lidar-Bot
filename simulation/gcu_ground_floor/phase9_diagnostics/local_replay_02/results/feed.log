@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/pi-project/edgeosmag_phase9_local_replay_02/local_replay.py", line 177, in <module>
+    if a.role=='feed':feed(a.workspace,a.output,a.rate)
+  File "/home/pi-project/edgeosmag_phase9_local_replay_02/local_replay.py", line 59, in feed
+    if time.monotonic()-begin>25:raise RuntimeError('local_replay_warmup_timeout')
+RuntimeError: local_replay_warmup_timeout
